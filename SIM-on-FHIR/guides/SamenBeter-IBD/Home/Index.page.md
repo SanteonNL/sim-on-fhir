@@ -1,5 +1,4 @@
 # {{page-title}} 
 {{index:root}}
 eerste tekst IG. Moet elke Dataset een aparte IG in dit project??
-Misschien een goed idee.
-Dan moeten we wel een upgraded account hebben.
+Misschien een goed idee
