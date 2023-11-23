@@ -1,0 +1,17 @@
+{
+  "resourceType": "Patient",
+  "id": "PatientExample",
+  "meta": {
+    "profile": [
+      "http://sim.santeon.nl/StructureDefinition/MyPatient"
+    ]
+  },
+  "name": [
+    {
+      "given": [
+        "James"
+      ],
+      "family": "Ponder"
+    }
+  ]
+}
