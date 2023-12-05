@@ -1,0 +1,11 @@
+{
+  "id": "firely-terminal",
+  "name": "Firely Terminal",
+  "install": {
+    "app": "",
+    "file": "install.sh"
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/dotnet"
+  ]
+}
