@@ -1,4 +1,21 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// This Dev-container for VS-Code contains the following stack:
+//
+// -FHIR-Publisher: Publishes FHIR-Implementation-Guides
+// -Java: used by FHIR-Publisher
+// -Jekyll: build-tool for static websites (the FHIR Implementation Guide). Used by FHIR-Publisher
+// -Ruby: used by Jekyll
+//
+// -Sushi: converts .fsh-files to FHIR-profiles https://fshschool.org/. Used by FHIR-Publisher
+// -Node: used by Sushi 
+// 
+// -Firely Terminal: creates snapshots for Nictiz FHIR-Profiles. Used by Sushi
+// -Dotnet: used by Firely Terminal
+// 
+// -Go: publishing a module containing Go-FHIR-structs
+// -Protoc: creates Go-FHIR-structs from protobufs. Used by Go
+// -Bazel: build-tool to create protobufs from FHIR-profiles. Used by Protoc
+//
+// For format details in this file, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/go
 {
 	"name": "sim-on-fhir-dev-container",

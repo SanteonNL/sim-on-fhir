@@ -134,6 +134,8 @@ menu:
 #     description: An example Patient
 #     exampleBoolean: true
 #   Patient/bad-example: omit
+resources:
+    Patient/nl-core-Patient: omit
 #
 #
 # Groups can control certain aspects of the IG generation.  The IG
