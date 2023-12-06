@@ -1,0 +1,75 @@
+// This Dev-container for VS-Code contains the following stack:
+//
+// -FHIR-Publisher: Publishes FHIR-Implementation-Guides
+// -Java: used by FHIR-Publisher
+// -Jekyll: build-tool for static websites (the FHIR Implementation Guide). Used by FHIR-Publisher
+// -Ruby: used by Jekyll
+//
+// -Sushi: converts .fsh-files to FHIR-profiles https://fshschool.org/. Used by FHIR-Publisher
+// -Node: used by Sushi 
+// 
+// -Firely Terminal: creates snapshots for Nictiz FHIR-Profiles. Used by Sushi
+// -Dotnet: used by Firely Terminal
+// 
+// -Go: publishing a module containing Go-FHIR-structs
+// -Protoc: creates Go-FHIR-structs from protobufs. Used by Go
+// -Bazel: build-tool to create protobufs from FHIR-profiles. Used by Protoc
+//
+// For format details in this file, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/go
+{
+	"name": "sim-on-fhir-dev-container",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/go:1-1.21-bookworm",
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"installOhMyZsh": true,
+			"installOhMyZshConfig": true,
+			"upgradePackages": true,
+			"username": "vscode",
+			"userUid": "automatic",
+			"userGid": "automatic"
+		},
+		"ghcr.io/devcontainers/features/dotnet:2": {
+			"version": "6.0"
+		},
+		// "./local-features/firely-terminal": {},
+		"ghcr.io/devcontainers/features/java:1": {
+			"jdkDistro": "open",
+			"installMaven": true
+		},
+		"ghcr.io/devcontainers/features/ruby:1": {},
+		"./local-features/jekyll": {},
+		"ghcr.io/devcontainers/features/node:1": {},
+		"./local-features/sushi": "latest",
+		"ghcr.io/devcontainers-contrib/features/protoc-asdf:1": {},
+		"ghcr.io/balazs23/devcontainers-features/bazel:1": {
+			"bazelisk": "latest"
+		}
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		// Jekyll server
+		4000,
+		// Live reload server
+		35729
+	],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": {},
+			"extensions": [
+				"mitre-health.vscode-language-fsh",
+				"github.copilot",
+				"github.copilot-chat"
+			]
+		}
+	}
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	//"remoteUser": "vscode"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "sushi",
+  "name": "Sushi",
+  "install": {
+    "app": "",
+    "file": "install.sh"
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/node"
+  ]
+}
