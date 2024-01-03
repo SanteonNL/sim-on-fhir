@@ -12,7 +12,7 @@ protoc --go_out=../golang addressbook.proto
 
 
 FHIR:
-i9nstall Bazel https://bazel.build/install
+install Bazel https://bazel.build/install
 
 Generating custom profiles and protos makes use of a couple of scripts defined by the FhirProto library. To add these to your (protoc) bin, run
 ```
