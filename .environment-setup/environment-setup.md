@@ -103,7 +103,7 @@ fi
 
 echo "-----Installing Firely Terminal"
 if ! (which fhir > 0) ; then
-   sudo dotnet tool install -g firely.terminal
+   dotnet tool install -g firely.terminal
 fi
 
 
@@ -150,7 +150,7 @@ Save & exit sim-on-fhir-setup.sh (Ctrl-X)
 
 Configure permission to execute sim-on-fhir-setup.sh
 ```
-sudo chmod +x sim-on-fhir-setup.sh
+chmod +x sim-on-fhir-setup.sh
 ```
 Execute sim-on-fhir-setup.sh
 ```
