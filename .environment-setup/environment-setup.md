@@ -75,8 +75,10 @@ source ~/.bashrc
 
 echo "-----Installing npm & sushi"
 if ! (which sushi > 0) ; then
-   npm install -g npm@latest 
-   npm install -g fsh-sushi
+   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
+   sudo apt-get install -y nodejs
+   sudo npm install -g npm@latest 
+   sudo npm install -g fsh-sushi
 fi
 
 echo "-----Installing go"
