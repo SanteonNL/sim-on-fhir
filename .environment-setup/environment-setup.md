@@ -46,10 +46,10 @@ echo "-----making a bin-directory in the user-home"
 mkdir -p bin
 
 echo "-----updating package tool"
-apt update -y 
+sudo apt update -y 
 
 echo "-----Installing midnight-commander (file-explorer), java, protobuf, dotnet, the prerequisites for bazel (g++ unzip zip) and the prerequisites for jekyll (ruby-full build-essential zlib1g-dev)"
-apt install -y mc openjdk-21-jdk protobuf-compiler dotnet-sdk-6.0 g++ unzip zip ruby-full build-essential zlib1g-dev
+sudo apt install -y mc openjdk-21-jdk protobuf-compiler dotnet-sdk-6.0 g++ unzip zip ruby-full build-essential zlib1g-dev
 
 if ! (which bazel > 0) ; then
    wget https://github.com/bazelbuild/bazel/releases/download/7.0.0/bazel-7.0.0-installer-linux-x86_64.sh
@@ -71,21 +71,21 @@ source ~/.bashrc
 
 #niet nodig?
 # echo "-----Installing fonts for Java FHIR-publisher"
-# apt-get -y install libfreetype6 fontconfig
+# sudo apt-get -y install libfreetype6 fontconfig
 
 echo "-----Installing npm & sushi"
 if ! (which sushi > 0) ; then
-   curl -fsSL https://deb.nodesource.com/setup_20.x | -E bash - &&\
-   apt-get install -y nodejs
-   npm install -g npm@latest 
-   npm install -g fsh-sushi
+   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
+   sudo apt-get install -y nodejs
+   sudo npm install -g npm@latest 
+   sudo npm install -g fsh-sushi
 fi
 
 echo "-----Installing go"
 if ! (which go > 0) ; then
    wget https://go.dev/dl/go1.21.5.linux-amd64.tar.gz 
    #extract the archive you just downloaded into /usr/local, creating a fresh Go tree in /usr/local/go
-   tar -C /usr/local -xzf go1.21.5.linux-amd64.tar.gz 
+   sudo tar -C /usr/local -xzf go1.21.5.linux-amd64.tar.gz 
 
    #To set environment variables we will open the .profile file in our home directory. Then we append the PATH
    echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
@@ -98,12 +98,12 @@ go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 
 echo "-----Installing Jekyll"
 if ! (which jekyll > 0) ; then
-   cd gem install jekyll bundler
+   sudo gem install jekyll bundler
 fi
 
 echo "-----Installing Firely Terminal"
 if ! (which fhir > 0) ; then
-   dotnet tool install -g firely.terminal
+   sudo dotnet tool install -g firely.terminal
 fi
 
 
@@ -115,8 +115,8 @@ echo "-----Downloading protobuf-scripts to generate proto-files from FHIR-profil
 curl https://raw.githubusercontent.com/google/fhir/master/bazel/generate_protos_utils.sh -o ~/bin/generate_protos_utils.sh
 curl https://raw.githubusercontent.com/google/fhir/master/bazel/generate_protos.sh -o ~/bin/generate_protos.sh
 curl https://raw.githubusercontent.com/google/fhir/master/bazel/generate_definitions_and_protos.sh -o ~/bin/generate_definitions_and_protos.sh
-chmod +x ~/bin/generate_protos.sh
-chmod +x ~/bin/generate_definitions_and_protos.sh
+sudo chmod +x ~/bin/generate_protos.sh
+sudo chmod +x ~/bin/generate_definitions_and_protos.sh
 
 REPODIRECTORY="sim-on-fhir"
 if [ ! -d "$REPODIRECTORY" ]; then
@@ -134,7 +134,7 @@ if [ ! -d "$REPODIRECTORY" ]; then
    echo "-----Cloning git repo"
    git clone https://github.com/SanteonNL/$REPODIRECTORY
 
-   chmod +x ~/$REPODIRECTORY/_updatePublisher.sh
+   sudo chmod +x ~/$REPODIRECTORY/_updatePublisher.sh
 fi 
 
 echo "-----Installing/downloading Java FHIR-publisher"
@@ -142,7 +142,7 @@ PUBLISHERPATH=~/$REPODIRECTORY/input-cache/publisher.jar
 
 if [ ! -f "$PUBLISHERPATH" ] ; then 
   cd $REPODIRECTORY
-  ./_updatePublisher.sh -y
+  sudo ./_updatePublisher.sh -y
 fi
 ```
 
@@ -154,7 +154,7 @@ sudo chmod +x sim-on-fhir-setup.sh
 ```
 Execute sim-on-fhir-setup.sh
 ```
-sudo ./sim-on-fhir-setup.sh
+./sim-on-fhir-setup.sh
 ```
 
 Now, cd into the repository and start vscode
