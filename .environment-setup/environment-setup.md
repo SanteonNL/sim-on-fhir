@@ -104,6 +104,8 @@ fi
 echo "-----Installing Firely Terminal"
 if ! (which fhir > 0) ; then
    dotnet tool install -g firely.terminal
+   fhir install nictiz.fhir.nl.r4.zib2020 0.10.0-beta.1
+   fhir install nictiz.fhir.nl.r4.nl-core 0.10.0-beta.1
 fi
 
 
@@ -137,6 +139,15 @@ if [ ! -d "$REPODIRECTORY" ]; then
    sudo chmod +x ~/$REPODIRECTORY/_updatePublisher.sh
 fi 
 
+REPODIRECTORY="fhir-protos"
+if [ ! -d "$REPODIRECTORY" ]; then
+   echo "-----Cloning git repo"
+   git clone https://github.com/SanteonNL/$REPODIRECTORY
+
+
+   ln -s ~/.fhir $REPODIRECTORY/spec/.fhir
+fi 
+
 echo "-----Installing/downloading Java FHIR-publisher"
 PUBLISHERPATH=~/$REPODIRECTORY/input-cache/publisher.jar
 
@@ -162,3 +173,7 @@ Now, cd into the repository and start vscode
 cd sim-on-fhir
 code .
 ```
+
+Other commands to build stuff (WIP):
+
+bazel build //proto/google/fhir/proto/r4:nlcore_proto_zip --verbose_failures
