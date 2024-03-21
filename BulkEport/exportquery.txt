@@ -1,0 +1,1 @@
+/Patient/$export?_type=Encounter,Medication,MedicationRequest,MedicationAdministration,MedicationDispense,Patient,Condition,Observation,Procedure,Organization,PractitionerRole&
