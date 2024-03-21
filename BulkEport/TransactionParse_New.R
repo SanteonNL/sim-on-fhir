@@ -125,9 +125,14 @@ tryCatch({
     select(-inherit.1.ref:-inherit.1.iEffectiveDate)%>% #remove additional reference metadata
     rename(zibElement=inherit.1.refdisplay)%>%
     select(-valueSet,-concept)%>%
-
-    mutate(extracted_string =regmatches(filterValueset, regexpr("(?<=vs::)[^\\/]+", filterValueset, perl=TRUE)),
-           extracted_datetime = regmatches(filterValueset, regexpr("\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}", filterValueset)))
+        mutate(filterValueset = str_extract(filterValueset, '(?<=href=\\"vs::).*(?=\\" class=)'))%>% 
+        mutate(filterValueset = across(filterValueset, ~ gsub("[-T:]", "", filterValueset)))%>%
+        mutate(filterValueset = across(filterValueset, ~ gsub("/", "--", .)))
+    
+    
+    
+    mutate(extracted_string = if_else(!is.na(filterValueset), regmatches(filterValueset, regexpr("(?<=vs::)[^\\/]+", filterValueset, perl=TRUE)), NA),
+      extracted_datetime = if_else(!is.na(filterValueset), regmatches(filterValueset, regexpr("\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}", filterValueset)), NA))
   
     
     mutate(extracted_string =if_else(!is.na(filterValueset),(regmatches(filterValueset, regexpr("(?<=vs::)[^\\/]+", filterValueset, perl=TRUE))),NA),
