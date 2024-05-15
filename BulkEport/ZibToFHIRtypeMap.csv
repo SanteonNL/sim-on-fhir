@@ -1,4 +1,5 @@
 ﻿trans.shortName;trans.type
+algemene_meting;Observation
 contact;Encounter
 farmaceutisch_product;Medication
 medicatieafspraak;MedicationRequest

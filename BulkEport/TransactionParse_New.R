@@ -57,7 +57,7 @@ ZibToFHIRtypeMap <- read_delim("ZibToFHIRtypeMap.csv",
 #copy link from https://decor.nictiz.nl/ad/#/san-gen-/project/project-index/transactions ' Column FHIR >R4'
 #urltrans<-"http://decor.nictiz.nl/fhir/4.0/sansa-/StructureDefinition/2.16.840.1.113883.2.4.3.11.60.909.4.41--20240320000000?_format=json"
 
-#DECOR transaction url (non-FHIR) as backup if FHIR export is down
+#DECOR transaction url (non-FHIR)
 #copy link from https://decor.nictiz.nl/ad/#/san-gen-/project/project-index/transactions ' Column Decor JSON'
 urltrans2<-"http://decor.nictiz.nl/decor/services/RetrieveTransaction?id=2.16.840.1.113883.2.4.3.11.60.909.4.41&effectiveDate=2024-03-20T00%3A00%3A00&language=nl-NL&ui=nl-NL&format=json"
 
@@ -66,7 +66,7 @@ trans<-read_json(paste0(urltrans2))
 
 #~DECOR parse transaction for generating FHIR Bulk API Query####
 
-#Get types###
+#Get type filters (models/resources) in transaction###
 
 types<- tryCatch({
   trans|>
@@ -79,17 +79,18 @@ types<- tryCatch({
   unnest_wider(trans, names_sep = ".")%>% #model/type level
   select(trans.shortName)
            }, error = function(e) {
-             message("Top level nested valuesets not present", e$message)
+             message("Type (model/resource) filters not present", e$message)
              return(NULL)
            })
 
-#join available types with conceptmap if present
+#join available types with ZIBtoFHIR conceptmap if present
 if (!is.null(types) ) { #check if null or empty df due to filtering displays/groups
   types <- types %>%
     left_join(ZibToFHIRtypeMap, by = 'trans.shortName',suffix=c("",".drop"),copy=TRUE,relationship = 'one-to-one')%>%
+    distinct(trans.type, .keep_all=TRUE)%>% #filter out duplicate resource calls e.g. observations
     select(-contains(".drop"))
 } else {
-  message("Skipping Qtrans join: AnswerLists not present.")
+  message("error in mapping ZIB models to FHIR resources")
 }
 
 querytype<-paste0(types[["trans.type"]], collapse = ",")
@@ -144,6 +145,27 @@ tryCatch({
   return(NULL)
 })
 
+#Get elements filter####
+tryCatch({
+  elements<- 
+    trans|>
+    tibble()%>%
+    unnest_longer(trans)%>%
+    unnest_wider(trans)%>%
+    unnest_longer(concept)%>%
+    select(concept)%>%
+    unnest_wider(concept)%>% #optional 1st level unnesting if one level deeper is needed
+    unnest_longer(concept)%>%
+    select(concept,inherit)%>%
+    unnest_wider(concept,names_sep = '.')%>%
+    select(concept.shortName,inherit)%>%
+    unnest_longer(inherit, keep_empty = TRUE)%>%
+    unnest_wider(inherit),names_sep = '.')%>%
+  
+}, error = function(e) {
+  message("no root elements selected", e$message)
+  return(NULL)
+})
 
 
 
@@ -194,32 +216,6 @@ formatted_datetime <- gsub("[-T:]", "", extracted_datetime)
 # Print the formatted date and time
 print(formatted_datetime)
 
-
-#Get elements####
-tryCatch({
-elements<- 
-  trans|>
-    tibble()%>%
-    unnest_longer(trans)%>%
-    unnest_wider(trans)%>%
-    unnest_longer(concept)%>%
-    select(concept)%>%
-    unnest_wider(concept)%>% #optional 1st level unnesting if one level deeper is needed
-    unnest_longer(concept)%>%
-    select(concept)%>%
-    unnest_wider(concept)%>%
-    unnest_longer(valueSet)%>%
-    unnest_wider(valueSet,names_sep = ".")%>%
-    rename(Questionnaire.item.linkId=id,
-           Questionnaire.item.answervalueset.name=valueSet.name)%>%
-    mutate(Questionnaire.item.answervalueset.url=paste0("http://decor.nictiz.nl/fhir/ValueSet/", valueSet.id, "--", (gsub("[^0-9]", "", valueSet.effectiveDate))))%>%
-    select(Questionnaire.item.linkId,
-           Questionnaire.item.answervalueset.name,
-           Questionnaire.item.answervalueset.url)#reorder and final selection before join to Q
-}, error = function(e) {
-  message("1 level nested valuesets not present", e$message)
-  return(NULL)
-})
 
 
 Qtrans<-NULL
