@@ -1,0 +1,19 @@
+# SUSHI output
+/fsh-generated
+
+# IG Publisher generated output
+/output
+/temp
+/template
+
+# Downloaded publisher and dependencies
+/input-cache
+
+# Downloaded scripts (auto-updated by _updatePublisher)
+/_genonce.bat
+/_genonce.sh
+/_gencontinuous.bat
+/_gencontinuous.sh
+/_updatePublisher.bat
+/_updatePublisher.sh
+/_build.bat

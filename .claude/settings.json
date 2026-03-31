@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sushi --version)",
+      "Bash(java -version)",
+      "Bash(choco --version)"
+    ]
+  }
+}
