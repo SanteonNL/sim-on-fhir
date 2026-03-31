@@ -1,0 +1,54 @@
+<style>
+/* Custom CSS for mappings table - sticky header and horizontal scrolling */
+
+/* Wrapper for horizontal scrolling */
+#santeon-careplanM {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+/* Make the first column (Name/Naam) sticky */
+#santeon-careplanM td:first-child,
+#santeon-careplanM th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  min-width: 200px;
+  background-color: inherit;
+}
+
+/* Ensure headers stay visible during scroll */
+#santeon-careplanM thead tr {
+  position: sticky;
+  top: 0;
+  z-index: 11;
+}
+
+/* Add scrollbar hint */
+#santeon-careplanM {
+  box-shadow: inset -20px 0 10px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* Make mapping columns wider for better readability */
+#santeon-careplanM td:not(:first-child),
+#santeon-careplanM th:not(:first-child) {
+  min-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Responsive: on smaller screens, reduce mapping column width */
+@media (max-width: 768px) {
+  #santeon-careplanM td:not(:first-child),
+  #santeon-careplanM th:not(:first-child) {
+    min-width: 150px;
+  }
+  
+  #santeon-careplanM td:first-child,
+  #santeon-careplanM th:first-child {
+    min-width: 120px;
+  }
+}
+</style>
