@@ -2,14 +2,31 @@
 # _publish.ps1
 #
 # Publishes the generated IG to Azure Static Website storage.
-# Target: https://dlswesanhipsp04.z6.web.core.windows.net/ibd/
+# Auto-detects git branch to determine target path:
+#   main              -> ig/        (CarePlan)
+#   feature/cb-ibd-ig -> ig/ibd     (IBD)
 #
 # USAGE:
 #   .\_publish.ps1
 # ============================================================
 
 $STORAGE_ACCOUNT = "dlswesanhipsp04"
-$TARGET_PATH     = "ibd"
+
+# Auto-detect target path based on git branch
+# To add a new IG (e.g. COPD), create a feature branch and add it here:
+#   "feature/cb-copd-ig" { $TARGET_PATH = "ig/copd" }
+$branch = git rev-parse --abbrev-ref HEAD 2>$null
+switch ($branch) {
+    "main"              { $TARGET_PATH = "ig" }
+    "feature/cb-ibd-ig" { $TARGET_PATH = "ig/ibd" }
+    default {
+        Write-Host "ERROR: Unknown branch '$branch'. Add it to the switch in _publish.ps1 first." -ForegroundColor Red
+        Write-Host "Example:  `"$branch`" { `$TARGET_PATH = `"ig/<name>`" }" -ForegroundColor Yellow
+        exit 1
+    }
+}
+Write-Host "Branch: $branch -> publishing to $TARGET_PATH/" -ForegroundColor Cyan
+
 $OUTPUT_DIR      = Join-Path $PSScriptRoot "output"
 
 # Check output folder exists
