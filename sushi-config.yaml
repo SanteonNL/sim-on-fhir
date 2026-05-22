@@ -2,7 +2,7 @@ id: santeon.ibd.ig
 canonical: https://ig.santeon.nl/ibd
 name: SanteonIBDIG
 title: "Santeon IBD Implementation Guide"
-description: "Santeon internal FHIR Implementation Guide for IBD quality indicators"
+description: "Santeon FHIR Implementation Guide for IBD quality indicators"
 status: draft
 version: 0.1.0
 fhirVersion: 4.0.1
@@ -12,16 +12,14 @@ publisher:
   name: Santeon
   url: https://www.santeon.nl
 jurisdiction: urn:iso:std:iso:3166#NL "Netherlands"
-menu:
-  Home: index.html
-  Profiles: profiles.html
-  Artifacts: artifacts.html
 
 pages:
   index.md:
     title: Home
   profiles.md:
     title: Profiles
+  indicatoren.md:
+    title: Indicatoren
 parameters:
   show-inherited-invariants: false
   path-binary: input/static
