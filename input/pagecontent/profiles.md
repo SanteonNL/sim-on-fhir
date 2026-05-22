@@ -56,10 +56,10 @@ Voor elke scopie (Procedure) in denominator:
 
 Indicator = numerator / denominator × 100%
 ```
-
+<!-- 
 ### K3.1.2 Afhankelijkheid
 
-De initial population kan optioneel worden verfijnd via indicator K3.1.2 (`f_Zorgactiviteit`), die de scopie-populatie filtert op DBC-context (Contact, DBC, Fasering). Dit is **niet vereist** voor de kernberekening van K3.6.3 — de indicator werkt standalone op basis van Procedure + Observation.
+De initial population kan optioneel worden verfijnd via indicator K3.1.2 (`f_Zorgactiviteit`), die de scopie-populatie filtert op DBC-context (Contact, DBC, Fasering). Dit is **niet vereist** voor de kernberekening van K3.6.3 — de indicator werkt standalone op basis van Procedure + Observation. -->
 
 ## MeasureReport (Indicatorrapportage)
 
@@ -74,7 +74,7 @@ Rapporteert de berekende waarden van een Measure over een rapportageperiode. Bev
 | **summary** | Geaggregeerde score over alle patiënten | — | — |
 | **individual** | Score voor één patiënt | Patient reference | Verwijzingen naar concrete SanteonObservation + SanteonProcedure |
 
-### Relatie tussen resources
+<!-- ### Relatie tussen resources
 
 ```
 MeasureReport
@@ -83,4 +83,8 @@ MeasureReport
   └── evaluatedResource (alleen bij type=individual)
         ├── → SanteonObservation (calprotectine meting)
         └── → SanteonProcedure (scopie verrichting)
-```
+``` -->
+
+## Cohorts
+
+- [Santeon IBD Cohort](StructureDefinition-santeon-ibd-cohort.html)
