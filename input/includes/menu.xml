@@ -10,11 +10,14 @@
   
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-      Test
+      Use cases
       <b class="caret"></b>
     </a>
 
     <ul class="dropdown-menu">
+      <li>
+        <a href="use-cases.html">Use case - IBD</a>
+      </li>
       <li>
         <a href="indicatoren.html">Indicatoren</a>
       </li>

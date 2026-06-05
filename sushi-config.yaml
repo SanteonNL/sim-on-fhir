@@ -18,6 +18,8 @@ pages:
     title: Home
   profiles.md:
     title: Profiles
+  use-cases.md:
+    title: Use cases
   indicatoren.md:
     title: Indicatoren
 parameters:

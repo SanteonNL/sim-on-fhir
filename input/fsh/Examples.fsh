@@ -1,4 +1,102 @@
 // ============================================================
+// Voorbeeldinstanties — IBD IG
+// Gebruikt voor documentatie én validatietests
+// ============================================================
+
+// --- Patiënt ------------------------------------------------
+
+Instance: VoorbeeldIBDPatient
+InstanceOf: IBDPatient
+Title: "Voorbeeld IBD Patiënt"
+Description: "Testpatiënt voor IBD-cohort, geboren 1975 (>18 jaar)"
+* identifier[patientnummer].system = "https://santeon.nl/fhir/NamingSystem/patientnummer"
+* identifier[patientnummer].value = "P123456"
+* birthDate = "1975-06-15"
+* gender = #male
+
+// --- EpisodeOfCare (DOT/Subtraject) -------------------------
+
+Instance: VoorbeeldIBDEpisode
+InstanceOf: IBDEpisodeOfCare
+Title: "Voorbeeld IBD Subtraject (DOT)"
+Description: "DOT specialisme 0318, diagnosecode 601, zorgtype 11"
+* status = #active
+* type = http://snomed.info/sct#24028007 "IBD zorgtraject"
+* patient = Reference(VoorbeeldIBDPatient)
+* period.start = "2024-03-01"
+* extension[specialisme].valueCoding = https://santeon.nl/fhir/CodeSystem/nza-specialisme#0318 "MDL"
+* extension[diagnoseCode].valueCoding = https://santeon.nl/fhir/CodeSystem/dbc-diagnose#601 "Colitis ulcerosa"
+* extension[zorgtype].valueCoding = https://santeon.nl/fhir/CodeSystem/nza-zorgtype#11 "Regulier"
+
+// --- Condition (Diagnose) -----------------------------------
+
+Instance: VoorbeeldIBDDiagnose
+InstanceOf: IBDCondition
+Title: "Voorbeeld IBD Diagnose"
+Description: "Colitis ulcerosa (diagnosecode 601)"
+* clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
+* code = https://santeon.nl/fhir/CodeSystem/dbc-diagnose#601 "Colitis ulcerosa"
+* subject = Reference(VoorbeeldIBDPatient)
+
+// --- Contact (Encounter) ------------------------------------
+
+Instance: VoorbeeldIBDContact
+InstanceOf: IBDContact
+Title: "Voorbeeld Poliklinisch Contact"
+Description: "Poliklinisch bezoek (SS) voor IBD-scopie"
+* status = #finished
+* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "SS — Poliklinisch"
+* subject = Reference(VoorbeeldIBDPatient)
+* period.start = "2024-06-10T09:00:00Z"
+* period.end  = "2024-06-10T10:30:00Z"
+* episodeOfCare = Reference(VoorbeeldIBDEpisode)
+
+// --- Scopie (K3.1.2) ----------------------------------------
+
+Instance: VoorbeeldScopie
+InstanceOf: IBDScopie
+Title: "Voorbeeld Colonoscopie (K3.1.2)"
+Description: "Colonoscopie NZa-code 034620, uitgevoerd 10 juni 2024"
+* status = #completed
+* code = https://declaratie.nza.nl/verrichting#034620 "Colonoscopie diagnostisch"
+* subject = Reference(VoorbeeldIBDPatient)
+* performedDateTime = "2024-06-10T09:30:00Z"
+* performer.actor = Reference(VoorbeeldUitvoerder)
+* encounter = Reference(VoorbeeldIBDContact)
+* reasonReference = Reference(VoorbeeldIBDDiagnose)
+
+// --- Calprotectinemeting (K3.6.3) ---------------------------
+// Meting 45 dagen vóór de scopie → telt mee voor K3.6.3 ✓
+
+Instance: VoorbeeldCalprotectine
+InstanceOf: IBDCalprotectineMeting
+Title: "Voorbeeld Calprotectine Meting (K3.6.3)"
+Description: "Calprotectinemeting 45 dagen voor scopie (LOINC 38445-3) — valt binnen 90-dagen venster"
+* status = #final
+* code = http://loinc.org#38445-3 "Calprotectine [Massa/massa] in Feces"
+* subject = Reference(VoorbeeldIBDPatient)
+* effectiveDateTime = "2024-04-26T08:00:00Z"   // 45 dagen vóór 2024-06-10
+* valueQuantity.value = 187
+* valueQuantity.unit = "mg/kg"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #mg/kg
+* partOf = Reference(VoorbeeldScopie)
+
+// --- Uitvoerder (PractitionerRole) --------------------------
+
+Instance: VoorbeeldUitvoerder
+InstanceOf: PractitionerRole
+Title: "Voorbeeld Uitvoerder MDL-arts"
+Description: "MDL-arts met specialisme 0318, uitvoerder van de scopie"
+* active = true
+* specialty = https://santeon.nl/fhir/CodeSystem/nza-specialisme#0318 "MDL"
+
+
+
+
+
+
+// ============================================================
 // Examples for Santeon IBD IG
 // ============================================================
 
