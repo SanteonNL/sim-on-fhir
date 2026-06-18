@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+/* mag wat mij betreft allemaal weg/herschreven worden:
+
 // ============================================================
 // Voorbeeldinstanties — IBD IG
 // Gebruikt voor documentatie én validatietests
@@ -241,3 +250,5 @@ Usage: #example
 // Link naar de concrete resources die geëvalueerd zijn
 * evaluatedResource[+] = Reference(SanteonObservationExample)
 * evaluatedResource[+] = Reference(SanteonProcedureExample)
+
+*/

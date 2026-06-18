@@ -18,10 +18,10 @@ pages:
     title: Home
   profiles.md:
     title: Profiles
-  use-cases.md:
-    title: Use cases
-  indicatoren.md:
-    title: Indicatoren
+#  indicatoren.md:
+#    title: Indicatoren
+  scopie-indicator.md:
+    title: Scopie-Indicatoren
 parameters:
   show-inherited-invariants: false
   path-binary: input/static

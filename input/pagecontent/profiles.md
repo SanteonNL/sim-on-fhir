@@ -28,3 +28,11 @@ Mapped to ZIB Verrichting-v5.1(2019NL). Used for procedures including scopie (NZ
 | VerrichtingAantal | *(geen standaard FHIR mapping)* | — |
 | Uitvoerder_Specialisme | `Procedure.performer.actor` → `Practitioner.qualification` | — |
 | Aanvrager_Specialisme | `Procedure.basedOn` → `ServiceRequest.requester` → `Practitioner.qualification` | — |
+
+---
+
+## Procedure II (Verrichting)
+
+See the [MyModelProcedure](StructureDefinition-my-model-procedure.html) profile for details.
+
+

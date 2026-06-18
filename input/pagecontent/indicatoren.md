@@ -1,3 +1,4 @@
+<!--
 In deze implementation guide zijn de volgende indicatoren tot nu toe vastgelegd voor de IBD use case:
 
 
@@ -42,10 +43,10 @@ Indicator = numerator / denominator × 100%
 ```
 
 ---
-
+-->
 ### K3.1.2 f_Zorgactiviteit
 
-De initial population kan optioneel worden verfijnd via indicator K3.1.2 (`f_Zorgactiviteit`), die de scopie-populatie filtert op DBC-context (Contact, DBC, Fasering). Dit is **niet vereist** voor de kernberekening van K3.6.3 — de indicator werkt standalone op basis van Procedure + Observation.
+De initial population kan optioneel worden verfijnd via indicator K3.1.2 (`f_Zorgactiviteit`), die de scopie-populatie filtert op DBC-context (Contact, DBC, Fasering). 
 
 Zie de [IndicatorK312-scopie](StructureDefinition-ibd-scopie.html) voor meer details.
 
@@ -62,3 +63,28 @@ Voor deze indicator zijn op basis van de R functie f_Zorgactiviteit de volgende 
 | `EncounterPriorityCodingCode`     | `Encounter`    | `priority` (R/EM)                |
 | `DiagnoseCode`                    | `Condition`    | `code` (IBDDiagnoseVS)           |
 | `SubtrajectNr`                    | `EpisodeOfCare`| `identifier.value`               |
+
+---
+---
+### Indicator K3.1.2 - % patiënten dat een scopie krijgt
+
+Dit overzicht toont de opbouw van de kwaliteitsindicator en de onderliggende FHIR-artefacten.
+
+*   **Indicator-definitie:** [Measure/MeasureK312](Measure-MeasureK312.html)
+    *   **Logica-bibliotheek:** [Library/K312Criteria](Library-K312Criteria.html) (CQL)
+        *   **Startpopulatie (IBDCohort):** Filter op basis van DBC-registraties.
+            *   *HeeftIbdCarePlan (CarePlan ZBJ_IBD >= 2018) — Voor nu buiten scope*
+            *   **HeeftDbcMdl:** Specialisme `0318` + Diagnose `601`/`602` + Zorgtype `11`/`21`
+            *   **HeeftDbcInterne:** Specialisme `0313` + Diagnose `922`/`923` + Zorgtype `11`/`21`
+        *   **Noemer (Denominator):** Gelijk aan `IBDCohort`
+        *   **Teller (Numerator):** `IBDCohort` + `HeeftScopie`
+
+#### Benodigde Waardelijsten (ValueSets)
+*   [ValueSet/vs-scopie-nza](ValueSet-vs-scopie-nza.html) — NZa-verrichtingscodes voor scopie (034620, 034686, 034690, 035582)
+*   [ValueSet/vs-zorgtype-cohort](ValueSet-vs-zorgtype-cohort.html) — DBC-zorgtypes voor reguliere zorg (11, 21)
+*   [ValueSet/vs-ibd-diagnose-mdl](ValueSet-vs-ibd-diagnose-mdl.html) — IBD diagnosecodes Maag-Darm-Leverziekten (601, 602)
+*   [ValueSet/vs-ibd-diagnose-interne](ValueSet-vs-ibd-diagnose-interne.html) — IBD diagnosecodes Interne Geneeskunde (922, 923)
+
+#### Gebruikte Basisprofielen
+*   [StructureDefinition/nl-dbc](StructureDefinition-nl-dbc.html) — Generiek profiel op `EpisodeOfCare` voor DBC-registraties.
+*   [StructureDefinition/nl-verrichting](StructureDefinition-nl-verrichting.html) — Generiek profiel op `Procedure` voor NZa-verrichtingen.

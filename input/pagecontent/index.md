@@ -4,23 +4,8 @@ This implementation guide describes the Santeon FHIR profiles for IBD (Inflammat
 
 ## Scope
 
-- **SIM Profiles**: Observation (AlgemeneMeting), Procedure (Verrichting)
-- **Use cases**: IBD,
+- **SIM Profiles**: (Observation (AlgemeneMeting)), Procedure (Verrichting), Contact (Encounter), 
+- **Use cases**: IBD
 - **Indicatoren**: *Indicator K3.6.3* Percentage scopieën waarbij tot 90 dagen voorafgaand aan de scopie een calprotectine meting is gedaan & MeasureReport.
-- **Source**: HIPS data model (ZIB-based)
-
-
-
-## Structuur van de IG
-
-```
-ig-ibd/
-├── sushi-config.yaml          ← IG-metadata, versie, dependencies
-└── input/fsh/
-    ├── 01-cohort.fsh          ← IBDPatient, IBDEpisodeOfCare + extensies + valuesets
-    ├── 02-K312-scopie.fsh     ← IBDScopie (Procedure), IBDContact, IBDCondition
-    ├── 03-K363-calprotectine.fsh ← IBDCalprotectineMeting, Measure, MeasureReport
-    └── 04-examples.fsh        ← Testinstanties (validatie + documentatie)
-```
-
----
+En *Indicator K3.1.2* ....
+- **Source**: HIPS data model (ZIB-based/LogicalModels)

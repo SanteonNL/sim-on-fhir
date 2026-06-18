@@ -8,6 +8,16 @@ Zie het [Santeon IBD Cohort](StructureDefinition-santeon-ibd-cohort.html) voor d
 
 Het cohort bevat ... [omschrijving]
 
+└── Ingang 2: DBC (EpisodeOfCare)
+      ├── period.start >= 2018-01-01
+      ├── type (zorgtype) in {11, 21}
+      ├── NIET vervallen
+      └── diagnose:
+            ├── specialisme 0313 + diagnosecode in {922, 923}
+            └── OF specialisme 0318 + diagnosecode in {601, 602}
+
+Exclusie: patiënt < 18 jaar op moment van aanleveren
+
 Op basis van de datasource_queries (HIX) zijn de volgende mappings gemaakt:
 
 | SQL-veld            | FHIR resource      | Element                              |

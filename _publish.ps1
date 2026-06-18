@@ -28,11 +28,26 @@ switch ($branch) {
 Write-Host "Branch: $branch -> publishing to $TARGET_PATH/" -ForegroundColor Cyan
 
 $OUTPUT_DIR      = Join-Path $PSScriptRoot "output"
+$PUBLISH_DIR     = Join-Path $PSScriptRoot ".publish-output"
+$PREPARE_SCRIPT  = Join-Path $PSScriptRoot "_prepare_publish_output.ps1"
 
 # Check output folder exists
 if (-not (Test-Path $OUTPUT_DIR)) {
     Write-Host "ERROR: output/ folder not found. Run _genonce.bat first." -ForegroundColor Red
     exit 1
+}
+
+# Build a clean publish folder (removes local-only artifacts)
+if (Test-Path $PREPARE_SCRIPT) {
+    Write-Host "Preparing clean publish folder..." -ForegroundColor Cyan
+    & $PREPARE_SCRIPT -SourceDir $OUTPUT_DIR -PublishDir $PUBLISH_DIR
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "ERROR: Failed to prepare .publish-output folder." -ForegroundColor Red
+        exit 1
+    }
+} else {
+    Write-Host "WARNING: _prepare_publish_output.ps1 not found; publishing raw output/." -ForegroundColor Yellow
+    $PUBLISH_DIR = $OUTPUT_DIR
 }
 
 # Check az CLI is available
@@ -60,7 +75,7 @@ Write-Host "`nUploading IG to https://$STORAGE_ACCOUNT.z6.web.core.windows.net/$
 
 az storage blob upload-batch `
     --account-name $STORAGE_ACCOUNT `
-    --source $OUTPUT_DIR `
+    --source $PUBLISH_DIR `
     --destination '$web' `
     --destination-path $TARGET_PATH `
     --overwrite `
@@ -71,7 +86,7 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host "`nSetting content-type for HTML files..." -ForegroundColor Cyan
     az storage blob upload-batch `
         --account-name $STORAGE_ACCOUNT `
-        --source $OUTPUT_DIR `
+        --source $PUBLISH_DIR `
         --destination '$web' `
         --destination-path $TARGET_PATH `
         --overwrite `

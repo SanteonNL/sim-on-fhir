@@ -4,22 +4,36 @@
     <a href="index.html">Home</a>
   </li>
 
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+      (SIM) Logical Model
+      <b class="caret"></b>
+    </a>
+
+    <ul class="dropdown-menu">
+      <li> #Toevoegen?
+<!--        <a href="-">Logical Model - Scopie Indicator</a> -->
+      </li>
+    </ul>
+  </li>
+
   <li>
     <a href="profiles.html">Profiles</a>
   </li>
   
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-      Use cases
+      Indicatoren
       <b class="caret"></b>
     </a>
 
     <ul class="dropdown-menu">
+<!--      <li>
+        <a href="indicatoren.html">Indicatoren I</a>
+      </li> 
+-->
       <li>
-        <a href="use-cases.html">Use case - IBD</a>
-      </li>
-      <li>
-        <a href="indicatoren.html">Indicatoren</a>
+        <a href="scopie-indicator.html">IG - Scopie Indicator</a>
       </li>
     </ul>
   </li>
