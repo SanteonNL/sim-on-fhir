@@ -31,23 +31,33 @@ Kwaliteitsindicator die het aantal unieke volwassen IBD-patiënten telt met een 
 
 
 ## Library
-Library type: CQL, tekst, FHIRPath of SQL? (Voor nu tekst en SQL).
+
+| Gebruik | SIMveld | Database Tabel & Kolom | Intern Informatiemodel Concept | FHIR Profiel Element |
+| :--- | :--- | :--- | :--- | :--- |
+| Cohort | DBC;DBCOpeningsDatum | `EPISODE_DBCPER.BEGINDAT` | DBC Begindatum | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html)`.period.start` |
+| Cohort | DBC;x | `EPISODE_DBCPER.VERVALLEN` | DBC Vervallen Status (0/1) | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html)`.extension[vervallen]` |
+| Cohort | DBC;SpecialismeDiagnoseCode | `EPISODE_DBCPER.HOOFDDIAG` | Hoofddiagnose Code | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html)`.diagnosis.condition.extension[hoofddiag]` met [ValueSet: LocalSpecialismeDiagnoseCodes](ValueSet-local-specialisme-diagnose-codes.html) |
+| Cohort | DBC;ZorgTypeCode | `EPISODE_ZORGTYPE.CODE` | Landelijk Zorgtype (11/21) | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html)`.type.coding.code` met [ValueSet: LocalZorgtypeCodes](ValueSet-local-zorgtype-codes.html) |
+| Cohort | DBC;SpecialismeDiagnoseCode of ZorgverlenerRol;... | `CSZISLIB_SPEC.SPECCODE` | Specialismecode (0313/0318/0303) | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html)`type.text` |
+| Scopie | Verrichting;VerrichtingTypeCodeNZa | `VERRICHTING.CODE` | NZa Verrichtingcode | [MyModelProcedure](StructureDefinition-my-model-procedure.html)`.code.coding.code` met [ValueSet: LocalVerrichtingCodesNZa](ValueSet-local-verrichting-codes-nza.html)|
+| Cohort | Patient;Geboortedatum | `PATIENT_PATIENT.GEBDAT` | Geboortedatum Patiënt | `Patient.birthDate` |
 
 ### Query (IBD Cohort):
-*
+Type: CQL, tekst, FHIRPath of SQL? (Voor nu tekst en SQL).
+Zie [Technische SQL Logica](scopie-indicator.html#technische-sql-logica)*
 
 ### Used Profiles:
 1. EpisodeOfCare (nog niet kloppend); [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html)
 2. Procedure (nog niet kloppend); [MyModelProcedure](StructureDefinition-my-model-procedure.html) (of [SanteonProcedure](StructureDefinition-santeon-procedure.html))
+3. Patient (alleen voor leeftijdsfilter)
+
 
 ### Aangeroepen Valuesets
-1. **Zorgtype**: Alleen de codes `11` (Regulier) en `21` (Vervolg) worden verwerkt via de [ValueSet: LocalZorgtypeCodes](ValueSet-local-zorgtype-codes.html).
-2. **SpecialismeDiagnoseCode**: Dit veld verwacht een gecombineerde string van de Vektis-zorgsoort en de NZa-hoofddiagnose conform de [ValueSet: LocalSpecialismeDiagnoseCodes](ValueSet-local-specialisme-diagnose-codes.html) (bijv. `0318601` voor MDL met diagnose 601).
-3. **VerrichtingTypeCodeNZa**: Systemen moeten verplicht valideren tegen de [ValueSet: LocalVerrichtingCodesNZa](ValueSet-local-verrichting-codes-nza.html) om te bepalen of een verrichting telt als een geldige scopie (codes: `034620`, `034686`, `034690`, `035582`).
+1. Cohort | **Zorgtype**: Alleen de codes `11` (Regulier) en `21` (Vervolg) worden verwerkt via de [ValueSet: LocalZorgtypeCodes](ValueSet-local-zorgtype-codes.html).
+2. Cohort | **SpecialismeDiagnoseCode**: Dit veld verwacht een gecombineerde string van de Vektis-zorgsoort en de NZa-hoofddiagnose conform de [ValueSet: LocalSpecialismeDiagnoseCodes](ValueSet-local-specialisme-diagnose-codes.html) (bijv. `0318601` voor MDL met diagnose 601).
+3. Scopie| **VerrichtingTypeCodeNZa**: Systemen moeten verplicht valideren tegen de [ValueSet: LocalVerrichtingCodesNZa](ValueSet-local-verrichting-codes-nza.html) om te bepalen of een verrichting telt als een geldige scopie (codes: `034620`, `034686`, `034690`, `035582`).
 
 
----
----
 ---
 ## Technische SQL Logica*
 Hergebruikers van deze IG kunnen onderstaande SQL-query toepassen op hun relationele datamart (bijv. ChipSoft HiX EPD-tabellen) om de populatie te genereren:
@@ -99,28 +109,6 @@ De formele FHIR-definities zijn vastgelegd in de volgende opgestelde profielen e
 
 
 ---
-## Directe Relatie met ons Informatiemodel (Database-to-FHIR)
-
-<!-- SIMveld | Database Tabel & Kolom | Intern Informatiemodel Concept | FHIR Profiel Element |
-| :--- | :--- | :--- | :--- |
-DBC;DBCOpeningsDatum | `EPISODE_DBCPER.BEGINDAT` | DBC Begindatum | `MyModelEpisodeOfCare.period.start` [Santeon_DBCModel](StructureDefinition-my-model-episode-of-care.html)|
-DBC;x | `EPISODE_DBCPER.VERVALLEN` | DBC Vervallen Status (0/1) | `MyModelEpisodeOfCare.extension[vervallen]` |
-DBC;SpecialismeDiagnoseCode | `EPISODE_DBCPER.HOOFDDIAG` | Hoofddiagnose Code | `MyModelEpisodeOfCare.diagnosis.condition.extension[hoofddiag]` [Valueset-LocalSpecialismeDiagnoseCodes](Valueset-local-specialisme-diagnose-codes.html)|
-Contact;? | `EPISODE_ZORGTYPE.CODE` | Landelijk Zorgtype (11/21) | `MyModelEncounter.type.coding.code` [Santeon_ContactModel](StructureDefinition-my-model-encounter.html) en [Valueset-LocalZorgtypeCodes](Valueset-local-zorgtype-codes.html)|
-DBC;SpecialismeDiagnoseCode of ZorgverlenerRol;ZorgverlenerRolSpecialismeCode | `CSZISLIB_SPEC.SPECCODE` | Specialismecode (0313/0318/0303) | `MyModelEpisodeOfCare.type.text` |
-Verrichting;VerrichtingTypeCodeNZa | `VERRICHTING.CODE` | NZa Verrichtingcode | `MyModelProcedure.code.coding.code` [Santeon_VerrichtingModel](StructureDefinition-my-model-procedure.html) en [Valueset-LocalVerrichtingCodesNZa](Valueset-local-verrichting-codes-nza.html)|
-Patient;Geboortedatum | `PATIENT_PATIENT.GEBDAT` | Geboortedatum Patiënt | `Patient.birthDate` | -->
-
-| SIMveld | Database Tabel & Kolom | Intern Informatiemodel Concept | FHIR Profiel Element & Pagina |
-| :--- | :--- | :--- | :--- |
-| DBC;DBCOpeningsDatum | `EPISODE_DBCPER.BEGINDAT` | DBC Begindatum | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html) (`period.start`) |
-| DBC;x | `EPISODE_DBCPER.VERVALLEN` | DBC Vervallen Status (0/1) | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html) (`extension[vervallen]`) |
-| DBC;SpecialismeDiagnoseCode | `EPISODE_DBCPER.HOOFDDIAG` | Hoofddiagnose Code | [ValueSet: LocalSpecialismeDiagnoseCodes](ValueSet-local-specialisme-diagnose-codes.html) via `extension[hoofddiag]` |
-| DBC;ZorgTypeCode | `EPISODE_ZORGTYPE.CODE` | Landelijk Zorgtype (11/21) | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html) en [ValueSet: LocalZorgtypeCodes](ValueSet-local-zorgtype-codes.html) |
-| DBC;SpecialismeDiagnoseCode of ZorgverlenerRol;... | `CSZISLIB_SPEC.SPECCODE` | Specialismecode (0313/0318/0303) | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html) (`type.text`) |
-| Verrichting;VerrichtingTypeCodeNZa | `VERRICHTING.CODE` | NZa Verrichtingcode | [MyModelProcedure](StructureDefinition-my-model-procedure.html) en [ValueSet: LocalVerrichtingCodesNZa](ValueSet-local-verrichting-codes-nza.html) |
-| Patient;Geboortedatum | `PATIENT_PATIENT.GEBDAT` | Geboortedatum Patiënt | `Patient.birthDate` |
-
 <!--
 ## Technische Gegevensspecificatie (ValueSets)
 
