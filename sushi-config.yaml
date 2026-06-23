@@ -21,7 +21,9 @@ pages:
 #  indicatoren.md:
 #    title: Indicatoren
   scopie-indicator.md:
-    title: Scopie-Indicatoren
+    title: Scopie-Indicatoren (oud)
+  scopie-indicator-clean.md:
+    title: Scopie-Indicatoren (clean)
 parameters:
   show-inherited-invariants: false
   path-binary: input/static

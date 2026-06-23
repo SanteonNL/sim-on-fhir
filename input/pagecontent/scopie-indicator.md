@@ -31,8 +31,9 @@ Kwaliteitsindicator die het aantal unieke volwassen IBD-patiënten telt met een 
 
 
 ## Library
+**Gebruikte Datasetvelden**
 
-| Gebruik | SIMveld | Database Tabel & Kolom | Intern Informatiemodel Concept | FHIR Profiel Element |
+| Gebruik | SIMveld | Database Tabel & Kolom | Concept | FHIR |
 | :--- | :--- | :--- | :--- | :--- |
 | Cohort | DBC;DBCOpeningsDatum | `EPISODE_DBCPER.BEGINDAT` | DBC Begindatum | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html)`.period.start` |
 | Cohort | DBC;x | `EPISODE_DBCPER.VERVALLEN` | DBC Vervallen Status (0/1) | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html)`.extension[vervallen]` |
@@ -42,9 +43,9 @@ Kwaliteitsindicator die het aantal unieke volwassen IBD-patiënten telt met een 
 | Scopie | Verrichting;VerrichtingTypeCodeNZa | `VERRICHTING.CODE` | NZa Verrichtingcode | [MyModelProcedure](StructureDefinition-my-model-procedure.html)`.code.coding.code` met [ValueSet: LocalVerrichtingCodesNZa](ValueSet-local-verrichting-codes-nza.html)|
 | Cohort | Patient;Geboortedatum | `PATIENT_PATIENT.GEBDAT` | Geboortedatum Patiënt | `Patient.birthDate` |
 
-### Query (IBD Cohort):
+### Query:
 Type: CQL, tekst, FHIRPath of SQL? (Voor nu tekst en SQL).
-Zie [Technische SQL Logica](scopie-indicator.html#technische-sql-logica)*
+Zie [Technische SQL Logica Cohort](scopie-indicator.html#technische-sql-logica)*
 
 ### Used Profiles:
 1. EpisodeOfCare (nog niet kloppend); [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html)
