@@ -11,35 +11,57 @@ Een DBC geopend op of na 01-01-2018 met zorgtype `11` of `21`, die niet is verva
 <!-- EpisodeOfCare.code=dbc...
 Patient.birthdate=>18y 20200101 -->
 
-| Conceptueel | FHIR profiel & element | Waarde |
+| Conceptueel | FHIR profiel & element | Waarde of Terminologie |
 | :--- | :--- | :--- |
-| DBC Begindatum | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html)`.period.start` |
-| DBC Vervallen Status (0/1) | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html)`.extension[vervallen]` |
-| Hoofddiagnose Code | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html)`.diagnosis.condition.extension[hoofddiag]` met [ValueSet: LocalSpecialismeDiagnoseCodes](ValueSet-local-specialisme-diagnose-codes.html) |
-| Landelijk Zorgtype (11/21) | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html)`.type.coding.code` met [ValueSet: LocalZorgtypeCodes](ValueSet-local-zorgtype-codes.html) |
-| Specialismecode (0313/0318/0303) | [MyModelEpisodeOfCare](StructureDefinition-my-model-episode-of-care.html)`type.text` |
-| Geboortedatum Patiënt | `Patient.birthDate` | => 18 jaar |
+| Geboortedatum | [PatientSan](StructureDefinition-PatientSan.html)`.birthDate` | >= 18 jaar | |
+| SpecialismeDiagnoseCode | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.diagnosis` | [ValueSet: LocalSpecialismeDiagnoseCodes](ValueSet-local-specialisme-diagnose-codes.html) |
+| SpecialismeDiagnoseSysteem | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.diagnosis.coding.system` | Systeem behorend bij de SpecialismeDiagnoseCode |
+| SpecialismeDiagnoseOmschrijving | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.diagnosis.coding.display` | Omschrijving behorend bij de SpecialismeDiagnoseCode |
+| ZorgTypeCode | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.type.coding.code` | [ValueSet: LocalZorgtypeCodes](ValueSet-local-zorgtype-codes.html) |
+| ZorgTypeCodeSysteem | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.type.coding.system` | Systeem behorend bij de ZorgTypeCode |
+| ZorgTypeCodeOmschrijving | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.type.coding.display` | Omschrijving behorend bij de ZorgTypeCode |
+| DBC Geldig | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.status` | Active |
+| DBC OpeningsDatum | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.period.start` | >= 2018-01-01 |
 
 
 ## Measure
-Definitie: Kwaliteitsindicator die het aantal unieke volwassen IBD-patiënten telt met een scopie-verrichting vanaf 2018.
+Definitie: Kwaliteitsindicator die het aantal volwassen IBD-patiënten telt met een scopie-verrichting vanaf 2018.
 
 <!-- **Initial Population:** IBD cohort -->
 **Denominator:** [IBD cohort](scopie-indicator-clean.html#ibd-cohort)
 
-**Numerator:** IBD cohort **met scopie** ([NZa Verrichtingcode:](ValueSet-local-verrichting-codes-nza.html) `034620`, `034686`, `034690`, `035582`)
+**Numerator:** IBD cohort **met scopie** ([LocalVerrichtingCodesNZa:](ValueSet-local-verrichting-codes-nza.html) `034620`, `034686`, `034690`, `035582`)
 
-<!-- Procedure.code=nza... -->
 ### Gebruikte profielen Measure
 
-| Conceptueel | FHIR profiel & element | Waarde |
+| Conceptueel | FHIR profiel & element | Waarde of Terminologie |
 | :--- | :--- | :--- |
-| IBD cohort | zie [gebruikte profielen IBD cohort](scopie-indicator-clean.html#ibd-cohort) |
-| NZa Verrichtingcode | [MyModelProcedure](StructureDefinition-my-model-procedure.html)`.code.coding.code` met [ValueSet: LocalVerrichtingCodesNZa](ValueSet-local-verrichting-codes-nza.html)|
+| IBD cohort | zie [IBD Cohort](scopie-indicator-clean.html#ibd-cohort) | |
+| VerrichtingTypeCode | [ProcedureSan](StructureDefinition-ProcedureSan.html)`.code.coding.code` | [ValueSet: LocalVerrichtingCodesNZa](ValueSet-local-verrichting-codes-nza.html) |
 
 ## FHIR query
-GET ...
+**Cohort**
+```text
+GET [base]/Patient?
+  birthdate=le[Peildatum-18J]
 
-<!-- ## Korte omschrijving?
-check: *3* juist (inidcator)profielen (episodeofcare,procedure,patient.geboortedatum) -->
+  // Profile: PatientSan
+
+GET [base]/EpisodeOfCare?
+  diagnosis-code:in=ValueSet/LocalSpecialismeDiagnoseCodes&
+  type:in=ValueSet/LocalZorgtypeCodes&
+  status=active&
+  period-start=ge2018-01-01
+
+  //Profile: EpisodeOfCareSan
+```
+**Numerator**
+```text
+GET [base]/Procedure?
+  code:in=ValueSet/LocalVerrichtingCodesNZa
+
+  // Profile: ProcedureSan
+```
+
+
 

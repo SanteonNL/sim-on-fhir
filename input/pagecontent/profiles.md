@@ -1,22 +1,38 @@
 # Profiles
 
-## Observation (AlgemeneMeting)
+## EpisodeOfCare Santeon (DBC)
 
-See the [SanteonObservation](StructureDefinition-santeon-observation.html) profile for details.
+See the [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html) profile for details.
 
-Mapped to ZIB AlgemeneMeting-v3.0(2019NL). Used for general measurements including calprotectine (LOINC `38445-3`) in the IBD use case (indicator K3.6.3: % scopieën waarbij tot 90 dagen voorafgaand aan de scopie een calprotectine meting is gedaan).
-
-| ZIB-veld | FHIR path | Deident |
+| SIM-veld | FHIR path | Deident |
 |----------|-----------|----------|
-| Identificatienummer | `Observation.subject` → `Patient.identifier:bsn` | hash |
-| MetingDatumTijd | `Observation.effectiveDateTime` | dateshift |
-| MetingNaamCode | `Observation.code.coding.code` | — |
+| DBCOpeningsDatum | `EpisodeOfCare.period.start` | dateshift |
+| etc. | |
 
-## Procedure (Verrichting)
+## Patient Santeon
 
-See the [SanteonProcedure](StructureDefinition-santeon-procedure.html) profile for details.
+See the [PatientSan](StructureDefinition-PatientSan.html) profile for details.
 
-Mapped to ZIB Verrichting-v5.1(2019NL). Used for procedures including scopie (NZa codes 034620, 034686, 034690, 035582) in the IBD use case (indicator K3.6.3).
+| SIM-veld | FHIR path | Deident |
+|----------|-----------|----------|
+| Geboortedatum | `Patient.birthDate` | dateshift |
+| etc. | |
+
+## Procedure Santeon (Verrichting)
+
+See the [ProcedureSan](StructureDefinition-ProcedureSan.html) profile for details.
+
+| SIM-veld | FHIR path | Deident |
+|----------|-----------|----------|
+| VerrichtingTypeCode | `Procedure.code.coding.code` | — |
+| etc. | |
+
+---
+# Archief
+- See the [SanteonObservation](StructureDefinition-santeon-observation.html) profile for details.
+- See the [SanteonProcedure](StructureDefinition-santeon-procedure.html) profile for details.
+
+<!-- voorbeeld:
 
 | ZIB-veld | FHIR path | Deident |
 |----------|-----------|----------|
@@ -28,11 +44,9 @@ Mapped to ZIB Verrichting-v5.1(2019NL). Used for procedures including scopie (NZ
 | VerrichtingAantal | *(geen standaard FHIR mapping)* | — |
 | Uitvoerder_Specialisme | `Procedure.performer.actor` → `Practitioner.qualification` | — |
 | Aanvrager_Specialisme | `Procedure.basedOn` → `ServiceRequest.requester` → `Practitioner.qualification` | — |
+-->
 
----
 
-## Procedure II (Verrichting)
 
-See the [MyModelProcedure](StructureDefinition-my-model-procedure.html) profile for details.
 
 
