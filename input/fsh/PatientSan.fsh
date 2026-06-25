@@ -2,6 +2,12 @@ Profile: PatientSan
 Parent: Patient
 Id: PatientSan
 Title: "Santeon Patient"
+Description: """
+**De-identificatie:**
+
+- identifier → hashed
+- birthDate →  dateshift
+"""
 
 // Meta overhead
 * meta 0..0
@@ -43,9 +49,8 @@ Title: "Santeon Patient"
 
 * identifier.value ^mapping[0].identity = "sim"
 * identifier.value ^mapping[0].map = "Patient;Identificatienummer"
-* identifier.value ^mapping[0].comment = "uitleg/title"
+* identifier.value ^mapping[0].comment = "hashed"
 
 * birthDate ^mapping[0].identity = "sim"
 * birthDate ^mapping[0].map = "Patient;Geboortedatum"
-* birthDate ^mapping[0].comment = "uitleg/title"
-
+* birthDate ^mapping[0].comment = "dateshift"

@@ -2,6 +2,12 @@ Profile: EpisodeOfCareSan
 Parent: EpisodeOfCare
 Id: EpisodeOfCareSan
 Title: "Santeon EpisodeOfCare (DBC)"
+Description: """
+**De-identificatie:**
+
+- identifier → hashed
+- patient → hashed
+"""
 
 // Meta overhead
 * meta 0..0
@@ -57,35 +63,29 @@ Title: "Santeon EpisodeOfCare (DBC)"
 
 * identifier.value ^mapping[0].identity = "sim"
 * identifier.value ^mapping[0].map = "DBC;SubtrajectNr"
-* identifier.value ^mapping[0].comment = "uitleg/title"
+* identifier.value ^mapping[0].comment = "hashed"
 
 * patient ^mapping[0].identity = "sim"
 * patient ^mapping[0].map = "DBC;Identificatienummer"
-* patient ^mapping[0].comment = "uitleg/title"
+* patient ^mapping[0].comment = "hashed"
 
 * status ^mapping[0].identity = "sim"
 * status ^mapping[0].map = "DBC;DBCGeldig"
-* status ^mapping[0].comment = "uitleg/title"
 
 * period.start ^mapping[0].identity = "sim"
 * period.start ^mapping[0].map = "DBC;DBCOpeningsDatum"
-* period.start ^mapping[0].comment = "uitleg/title"
 
 * type.coding.code ^mapping[0].identity = "sim"
 * type.coding.code ^mapping[0].map = "DBC;ZorgTypeCode"
-* type.coding.code ^mapping[0].comment = "uitleg/title"
 
 * type.coding.system ^mapping[0].identity = "sim"
 * type.coding.system ^mapping[0].map = "DBC;ZorgTypeCodeSysteem"
-* type.coding.system ^mapping[0].comment = "uitleg/title"
 
 * type.coding.display ^mapping[0].identity = "sim"
 * type.coding.display ^mapping[0].map = "DBC;ZorgTypeOmschrijving"
-* type.coding.display ^mapping[0].comment = "uitleg/title"
 
 * diagnosis.condition ^mapping[0].identity = "sim"
 * diagnosis.condition ^mapping[0].map = "DBC;SpecialismeDiagnoseCode"
-* diagnosis.condition ^mapping[0].comment = "uitleg/title"
 
 * diagnosis.extension.valueCodeableConcept.coding.code ^mapping[0].identity = "sim"
 * diagnosis.extension.valueCodeableConcept.coding.code ^mapping[0].map = "DBC;SpecialismeDiagnoseCode"

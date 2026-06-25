@@ -20,13 +20,9 @@ Description: "(Tijdelijke) Extensie voor SpecialismeDiagnoseCode. Deze informati
 
 * valueCodeableConcept.coding.code ^mapping[0].identity = "sim"
 * valueCodeableConcept.coding.code ^mapping[0].map = "DBC;SpecialismeDiagnoseCode"
-* valueCodeableConcept.coding.code ^mapping[0].comment = "uitleg/title"
-
 
 * valueCodeableConcept.coding.system ^mapping[0].identity = "sim"
 * valueCodeableConcept.coding.system ^mapping[0].map = "DBC;SpecialismeDiagnoseCodeSysteem"
-* valueCodeableConcept.coding.system ^mapping[0].comment = "uitleg/title"
 
 * valueCodeableConcept.coding.display ^mapping[0].identity = "sim"
 * valueCodeableConcept.coding.display ^mapping[0].map = "DBC;SpecialismeDiagnoseOmschrijving"
-* valueCodeableConcept.coding.display ^mapping[0].comment = "uitleg/title"
