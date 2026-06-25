@@ -1,4 +1,12 @@
 # Profiles
+## Condition Santeon (Probleem)
+
+See the [ConditionSan](StructureDefinition-ConditionSan.html) profile for details.
+
+| SIM-veld | FHIR path | Deident |
+|----------|-----------|----------|
+| ProbleemID | `Condition.identifier` | hash |
+| etc. | |
 
 ## EpisodeOfCare Santeon (DBC)
 
@@ -27,12 +35,12 @@ See the [ProcedureSan](StructureDefinition-ProcedureSan.html) profile for detail
 | VerrichtingTypeCode | `Procedure.code.coding.code` | — |
 | etc. | |
 
----
+<!-- 
 # Archief
 - See the [SanteonObservation](StructureDefinition-santeon-observation.html) profile for details.
 - See the [SanteonProcedure](StructureDefinition-santeon-procedure.html) profile for details.
 
-<!-- voorbeeld:
+voorbeeld Procedure:
 
 | ZIB-veld | FHIR path | Deident |
 |----------|-----------|----------|

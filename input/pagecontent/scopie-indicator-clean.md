@@ -1,3 +1,22 @@
+```
+Cohort
+│
+├── Patient
+│     └── birthDate ≥ 18 jaar
+│
+└── EpisodeOfCare
+      ├── period.start ≥ 2018-01-01
+      ├── status = active
+      ├── type ∈ ValueSet: LocalZorgtypeCodes
+      └── diagnosis → ConditionSan (code ∈ ValueSet: LocalSpecialismeDiagnoseCodes)
+
+Numerator
+|
+└── Procedure
+      ├── subject → PatientSan (IBD cohort)
+      └── code ∈ ValueSet: LocalVerrichtingCodesNZa
+```
+
 ## IBD Cohort
 Een DBC geopend op of na 01-01-2018 met zorgtype `11` of `21`, die niet is vervallen, vallend onder de volgende codes:
    * **MDL (0318)**: Diagnosecode `601`, `602`
@@ -13,15 +32,15 @@ Patient.birthdate=>18y 20200101 -->
 
 | Conceptueel | FHIR profiel & element | Waarde of Terminologie |
 | :--- | :--- | :--- |
-| Geboortedatum | [PatientSan](StructureDefinition-PatientSan.html)`.birthDate` | >= 18 jaar | |
-| SpecialismeDiagnoseCode | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.diagnosis` | [ValueSet: LocalSpecialismeDiagnoseCodes](ValueSet-local-specialisme-diagnose-codes.html) |
-| SpecialismeDiagnoseSysteem | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.diagnosis.coding.system` | Systeem behorend bij de SpecialismeDiagnoseCode |
-| SpecialismeDiagnoseOmschrijving | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.diagnosis.coding.display` | Omschrijving behorend bij de SpecialismeDiagnoseCode |
+| Geboortedatum | [PatientSan](StructureDefinition-PatientSan.html)`.birthDate` | ≥ 18 jaar | |
+| SpecialismeDiagnoseCode | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.diagnosis.condition`→ [ConditionSan](StructureDefinition-ConditionSan.html)`.code.coding.code` | [ValueSet: LocalSpecialismeDiagnoseCodes](ValueSet-local-specialisme-diagnose-codes.html) |
+| SpecialismeDiagnoseSysteem | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.diagnosis.condition`→ [ConditionSan](StructureDefinition-ConditionSan.html)`.code.coding.system` | Systeem behorend bij de SpecialismeDiagnoseCode |
+| SpecialismeDiagnoseOmschrijving | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.diagnosis.condition`→ [ConditionSan](StructureDefinition-ConditionSan.html)`.code.coding.display` | Omschrijving behorend bij de SpecialismeDiagnoseCode 
 | ZorgTypeCode | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.type.coding.code` | [ValueSet: LocalZorgtypeCodes](ValueSet-local-zorgtype-codes.html) |
 | ZorgTypeCodeSysteem | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.type.coding.system` | Systeem behorend bij de ZorgTypeCode |
 | ZorgTypeCodeOmschrijving | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.type.coding.display` | Omschrijving behorend bij de ZorgTypeCode |
 | DBC Geldig | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.status` | Active |
-| DBC OpeningsDatum | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.period.start` | >= 2018-01-01 |
+| DBC OpeningsDatum | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.period.start` | ≥ 2018-01-01 |
 
 
 ## Measure
@@ -48,12 +67,16 @@ GET [base]/Patient?
   // Profile: PatientSan
 
 GET [base]/EpisodeOfCare?
-  diagnosis-code:in=ValueSet/LocalSpecialismeDiagnoseCodes&
   type:in=ValueSet/LocalZorgtypeCodes&
   status=active&
-  period-start=ge2018-01-01
+  period-start=ge2018-01-01&
 
-  //Profile: EpisodeOfCareSan
+  // Profile: EpisodeOfCareSan
+
+GET [base]/Condition?
+  code:in=ValueSet/LocalSpecialismeDiagnoseCodes
+
+  // Profile: ConditionSan
 ```
 **Numerator**
 ```text

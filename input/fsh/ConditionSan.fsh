@@ -1,7 +1,7 @@
-Profile: ProcedureSan
-Parent: Procedure
-Id: ProcedureSan
-Title: "Santeon Procedure (Verrichting)"
+Profile: ConditionSan
+Parent: Condition
+Id: ConditionSan
+Title: "Santeon Condition (Probleem)"
 
 // Meta overhead
 * meta 0..0
@@ -17,64 +17,55 @@ Title: "Santeon Procedure (Verrichting)"
 * identifier.use 0..0
 * identifier.value 1..1
 
-// status verplicht in base
-
 // code
 * code 1..1
 * code.coding 1..*
 * code.coding.system 1..1
 * code.coding.code 1..1
 * code.coding.display 0..1
+// * code from LocalSpecialismeDiagnoseCodes
 
-// subject
+// subject (in base verplicht)
 * subject 1..1
 * subject only Reference(PatientSan)
 
 // Laat alle andere elementen weg
-* instantiatesCanonical 0..0
-* instantiatesUri 0..0
-* partOf 0..0
-* statusReason 0..0
+* clinicalStatus 0..0
+* verificationStatus 0..0
 * category 0..0
+* severity 0..0
+* bodySite 0..0
 * encounter 0..0
+* onset[x] 0..0
+* abatement[x] 0..0
+* recordedDate 0..0
 * recorder 0..0
 * asserter 0..0
-* location 0..0
-* reasonCode 0..0
-* reasonReference 0..0
-* bodySite 0..0
-* outcome 0..0
-* report 0..0
-* complication 0..0
-* complicationDetail 0..0
-* followUp 0..0
+* stage 0..0
+* evidence 0..0
 * note 0..0
-* focalDevice 0..0
-* usedReference 0..0
-* usedCode 0..0
-
 
 // mappings SIM -> FHIR
 * ^mapping[+].identity = "sim"
 * ^mapping[=].name = "Santeon Informatie Model"
-* ^mapping[=].comment = "Mapping van Procedure elementen naar SIM"
+* ^mapping[=].comment = "Mapping van Condition elementen naar SIM"
 
 * identifier.value ^mapping[0].identity = "sim"
-* identifier.value ^mapping[0].map = "Verrichting;VerrichtingID"
+* identifier.value ^mapping[0].map = "Probleem;ProbleemID"
 * identifier.value ^mapping[0].comment = "uitleg/title"
 
-* subject ^mapping[0].identity = "sim"
-* subject ^mapping[0].map = "Verrichting;Identificatienummer"
-* subject ^mapping[0].comment = "uitleg/title"
-
 * code.coding.code ^mapping[0].identity = "sim"
-* code.coding.code ^mapping[0].map = "Verrichting;VerrichtingTypeCode"
+* code.coding.code ^mapping[0].map = "DBC;SpecialismeDiagnoseCode"
 * code.coding.code ^mapping[0].comment = "uitleg/title"
 
 * code.coding.system ^mapping[0].identity = "sim"
-* code.coding.system ^mapping[0].map = "Verrichting;VerrichtingTypeCodeSysteem"
+* code.coding.system ^mapping[0].map = "DBC;SpecialismeDiagnoseCodeSysteem"
 * code.coding.system ^mapping[0].comment = "uitleg/title"
 
 * code.coding.display ^mapping[0].identity = "sim"
-* code.coding.display ^mapping[0].map = "Verrichting;VerrichtingTypeOmschrijving"
+* code.coding.display ^mapping[0].map = "DBC;SpecialismeDiagnoseOmschrijving"
 * code.coding.display ^mapping[0].comment = "uitleg/title"
+
+* subject ^mapping[0].identity = "sim"
+* subject ^mapping[0].map = "Probleem;Identificatienummer"
+* subject ^mapping[0].comment = "uitleg/title"
