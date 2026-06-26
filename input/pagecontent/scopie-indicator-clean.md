@@ -57,6 +57,8 @@ Definitie: Kwaliteitsindicator die het aantal volwassen IBD-patiënten telt met 
 | :--- | :--- | :--- |
 | IBD cohort | zie [IBD Cohort](scopie-indicator-clean.html#ibd-cohort) | |
 | VerrichtingTypeCode | [ProcedureSan](StructureDefinition-ProcedureSan.html)`.code.coding.code` | [ValueSet: LocalVerrichtingCodesNZa](ValueSet-local-verrichting-codes-nza.html) |
+| VerrichtingTypeCodeSysteem | [ProcedureSan](StructureDefinition-ProcedureSan.html)`.code.coding.system` | Systeem behorend bij de VerrichtingTypeCode |
+| VerrichtingTypeCodeOmschrijving | [ProcedureSan](StructureDefinition-ProcedureSan.html)`.code.coding.display` | Omschrijving behorend bij de VerrichtingTypeCode |
 
 ## FHIR query
 **Cohort**
