@@ -4,7 +4,6 @@ Id: ProcedureSan
 Title: "Santeon Procedure (Verrichting)"
 Description: """
 **De-identificatie:**
-
 - identifier → hashed
 - subject → hashed
 """

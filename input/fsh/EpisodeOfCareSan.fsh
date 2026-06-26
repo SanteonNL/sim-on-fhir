@@ -4,7 +4,6 @@ Id: EpisodeOfCareSan
 Title: "Santeon EpisodeOfCare (DBC)"
 Description: """
 **De-identificatie:**
-
 - identifier → hashed
 - patient → hashed
 """

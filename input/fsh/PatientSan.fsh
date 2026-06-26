@@ -4,7 +4,6 @@ Id: PatientSan
 Title: "Santeon Patient"
 Description: """
 **De-identificatie:**
-
 - identifier → hashed
 - birthDate →  dateshift
 """

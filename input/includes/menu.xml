@@ -11,8 +11,7 @@
     </a>
 
     <ul class="dropdown-menu">
-      <li>  #Toevoegen? \n
-            #DSD - IBD (Bundle + mappings)
+      <li>
 <!--        <a href="-">Logical Model - Scopie Indicator</a> -->
       </li>
     </ul>
@@ -34,10 +33,11 @@
       </li> 
 -->
       <li>
-        <a href="scopie-indicator.html">IG - Scopie Indicator (oud)</a>
+        #DSDs
+        <a href="scopie-indicator.html">Scopie Indicator (oud)</a>
       </li>
       <li>
-        <a href="scopie-indicator-clean.html">IG - Scopie Indicator (clean)</a>
+        <a href="scopie-indicator-clean.html">Scopie Indicator (clean)</a>
       </li>
     </ul>
   </li>

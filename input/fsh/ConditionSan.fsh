@@ -4,7 +4,6 @@ Id: ConditionSan
 Title: "Santeon Condition (Probleem)"
 Description: """
 **De-identificatie:**
-
 - identifier → hashed
 - subject → hashed
 """
