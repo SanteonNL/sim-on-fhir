@@ -35,6 +35,11 @@ Description: """
 * subject 1..1
 * subject only Reference(PatientSan)
 
+// performed[x]
+* performed[x] only Period
+* performedPeriod.start 1..1
+* performedPeriod.end 0..1
+
 // Laat alle andere elementen weg
 * instantiatesCanonical 0..0
 * instantiatesUri 0..0
@@ -80,3 +85,11 @@ Description: """
 
 * code.coding.display ^mapping[0].identity = "sim"
 * code.coding.display ^mapping[0].map = "Verrichting;VerrichtingTypeOmschrijving"
+
+* performedPeriod.start ^mapping[0].identity = "sim"
+* performedPeriod.start ^mapping[0].map = "Verrichting;VerrichtingStartDatum"
+* performedPeriod.start ^mapping[0].comment = "dateshift"
+
+* performedPeriod.end ^mapping[0].identity = "sim"
+* performedPeriod.end ^mapping[0].map = "Verrichting;VerrichtingEindDatum"
+* performedPeriod.end ^mapping[0].comment = "dateshift"

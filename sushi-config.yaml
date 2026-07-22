@@ -16,14 +16,22 @@ jurisdiction: urn:iso:std:iso:3166#NL "Netherlands"
 pages:
   index.md:
     title: Home
+
   profiles.md:
     title: Profiles
-#  indicatoren.md:
-#    title: Indicatoren
-  scopie-indicator.md:
-    title: Scopie-Indicatoren (oud)
+
+  IBD.md:
+    title: IBD Datasetdefinitie
+
   scopie-indicator-clean.md:
-    title: Scopie-Indicatoren (clean)
+    title: K3.1.2 Scopie
+
+  K363.md:
+    title: K3.6.3 Calprotectine voor scopie
+
+  scopie-indicator.md:
+    title: Scopie-Indicator (oud)
+
 parameters:
   show-inherited-invariants: false
   path-binary: input/static
