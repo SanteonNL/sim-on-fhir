@@ -1,7 +1,19 @@
 IBD Dataset
 
-Beschrijving
+Beschrijving ...
+
+Cohort ...
+
+```text
+GET [base]/Patient?
 ...
+
+GET [base]/EpisodeOfCare?
+...
+
+GET [base]/Condition?
+...
+```
 
 Gebruikte profielen
 - PatientSan

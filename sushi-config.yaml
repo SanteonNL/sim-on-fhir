@@ -29,9 +29,6 @@ pages:
   K363.md:
     title: K3.6.3 Calprotectine voor scopie
 
-  scopie-indicator.md:
-    title: Scopie-Indicator (oud)
-
 parameters:
   show-inherited-invariants: false
   path-binary: input/static

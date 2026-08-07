@@ -18,4 +18,3 @@ See the [PatientSan](StructureDefinition-PatientSan.html) profile for details.
 ## Procedure Santeon (Verrichting)
 
 See the [ProcedureSan](StructureDefinition-ProcedureSan.html) profile for details.
-

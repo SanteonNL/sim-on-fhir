@@ -1,16 +1,20 @@
 ```
-Cohort
-│
-├── Patient
-│     └── birthDate ≥ 18 jaar
-│
-└── EpisodeOfCare
-      ├── period.start ≥ 2018-01-01
-      ├── status = active
-      ├── type ∈ ValueSet: LocalZorgtypeCodes
-      └── diagnosis → ConditionSan (code ∈ ValueSet: LocalSpecialismeDiagnoseCodes)
+Denominator
+|
+└──Cohort IBD
+    │
+    ├── Patient
+    │     └── birthDate ≥ 18 jaar
+    │
+    └── EpisodeOfCare
+          ├── period.start ≥ 2018-01-01
+          ├── status = active
+          ├── type ∈ ValueSet: LocalZorgtypeCodes
+          └── diagnosis → ConditionSan (code ∈ ValueSet: LocalSpecialismeDiagnoseCodes)
 
 Numerator
+|
+├── Denominator
 |
 └── Procedure
       ├── subject → PatientSan (IBD cohort)
@@ -61,32 +65,29 @@ Definitie: Kwaliteitsindicator die het aantal volwassen IBD-patiënten telt met 
 | VerrichtingTypeCodeOmschrijving | [ProcedureSan](StructureDefinition-ProcedureSan.html)`.code.coding.display` | Omschrijving behorend bij de VerrichtingTypeCode |
 
 ## FHIR query
-**Cohort**
+**Denominator**
 ```text
+//Cohort:
+
 GET [base]/Patient?
   birthdate=le[Peildatum-18J]
-
-  // Profile: PatientSan
 
 GET [base]/EpisodeOfCare?
   type:in=ValueSet/LocalZorgtypeCodes&
   status=active&
   period-start=ge2018-01-01&
 
-  // Profile: EpisodeOfCareSan
-
 GET [base]/Condition?
   code:in=ValueSet/LocalSpecialismeDiagnoseCodes
-
-  // Profile: ConditionSan
 ```
 **Numerator**
 ```text
+GET [Denominator]
+
 GET [base]/Procedure?
   code:in=ValueSet/LocalVerrichtingCodesNZa
-
-  // Profile: ProcedureSan
 ```
+_Tenzij anders vermeld, voldoen alle FHIR-resources in de queries aan de bijbehorende [Santeon-profielen](profiles.html)._
 
 
 
