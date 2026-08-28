@@ -41,13 +41,9 @@ GET [base]/Condition?
   code:in=ValueSet/LocalSpecialismeDiagnoseCodes
 ```
 
-## IBD Profielen
-- [Patient](StructureDefinition-PatientSan.html)
-- etc.
-
 ## IBD Indicatoren
-- [K311](K311.html)
-- [K312](K312.html)
-- [K363](K363.html)
+- [K311 WIP](K311.html)
+- [K312 Scopie](K312.html)
+- [K363 Calprotectine voor scopie](K363.html)
 
 Voorbeeld Bundle:

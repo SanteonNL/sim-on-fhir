@@ -2,14 +2,11 @@
   <li>
     <a href="index.html">Home</a>
   </li>
-  <!-- <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-      (SIM) Logical Model
-      <b class="caret"></b>
-    </a>
-  </li> -->
   <li>
-    <a href="profiles.html">Profiles</a>
+    <a href="LogicalModelSIM.html">(SIM) Logical Model</a>
+  </li>
+  <li>
+    <a href="profiles.html">FHIR Profiles</a>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">

@@ -17,6 +17,9 @@ pages:
   index.md:
     title: Home
 
+  LogicalModelSIM.md:
+    title: Logical Model SIM
+
   profiles.md:
     title: Profiles
 
