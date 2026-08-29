@@ -1,5 +1,44 @@
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="profiles.html">Profiles</a></li>
-  <li><a href="artifacts.html">Artifacts</a></li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="LogicalModelSIM.html">(SIM) Logical Model</a>
+  </li>
+  <li>
+    <a href="profiles.html">FHIR Profiles</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+      Datasetdefinities
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="IBD.html">IBD</a>
+      </li>
+    </ul>
+  </li>
+  
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+      Indicatoren
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+<!--      <li>
+        <a href="indicatoren.html">Indicatoren I</a>
+      </li> 
+-->
+      <li>
+        <a href="K312.html">K3.1.2 Scopie</a>
+      </li>
+      <li>
+        <a href="K363.html">K3.6.3 Calprotectine voor scopie</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
 </ul>
