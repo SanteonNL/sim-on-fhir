@@ -26,6 +26,9 @@ pages:
   IBD.md:
     title: IBD Datasetdefinitie
 
+  IBDtestLM.md:
+    title: IBD Datasetdefinitie Pilot Logical Model
+
   K312.md:
     title: K3.1.2 Scopie
 

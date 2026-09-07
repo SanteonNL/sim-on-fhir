@@ -9,21 +9,24 @@ Description: "Logisch model voor een verrichting binnen het Santeon Informatiemo
 * VerrichtingType 0..1 CodeableConcept "Type verrichting"
 * StartDatum 0..1 dateTime "Startdatum en -tijd van de verrichting"
 * EindDatum 0..1 dateTime "Einddatum en -tijd van de verrichting"
-* UitvoerderSpecialisme 0..1 CodeableConcept "Specialisme van de uitvoerder"
-
+// * UitvoerderSpecialisme 0..1 CodeableConcept "Specialisme van de uitvoerder"
 
 // Mappings van SIM CSV
 Mapping: SIMVerrichtingFromSIMCSV
 Id: SIMVerrichtingFromSIMCSV
-Title: "Santeon Informatie Model (CSV)"
+Title: "SIM CSVs"
 Source: SIMVerrichting
-Target: "Santeon SIM CSV"
+Target: "SIM CSVs"
 
+* VerrichtingID -> "VerrichtingID"
+* Patient -> "Identificatienummer"
 // * VerrichtingType -> "VerrichtingTypeCodeNZaSysteem + VerrichtingTypeCodeNZa + VerrichtingTypeOmschrijvingNZa"
-* VerrichtingType.coding.system -> "VerrichtingTypeCode(NZa)Systeem"
-* VerrichtingType.coding.code -> "VerrichtingTypeCode(NZa)"
-* VerrichtingType.coding.display -> "VerrichtingTypeOmschrijving(NZa)"
-
+* VerrichtingType.coding.system -> "VerrichtingTypeCodeSysteem"
+* VerrichtingType.coding.code -> "VerrichtingTypeCode"
+* VerrichtingType.coding.display -> "VerrichtingTypeOmschrijving"
+* StartDatum -> "VerrichtingStartDatum"
+* EindDatum -> "VerrichtingEindDatum"
+// * UitvoerderSpecialisme -> "UitvoerderSpecialisme"
 
 // Mappings naar SIM FHIR
 Mapping: SIMVerrichtingToFHIR
@@ -32,4 +35,8 @@ Title: "SIMVerrichting naar FHIR"
 Source: SIMVerrichting
 Target: "https://ig.santeon.nl/ibd/StructureDefinition/ProcedureSan"
 
+* VerrichtingID -> "Procedure.identifier"
+* Patient -> "Procedure.subject"
 * VerrichtingType -> "Procedure.code"
+* StartDatum -> "Procedure.performedPeriod.start"
+* EindDatum -> "Procedure.performedPeriod.end"

@@ -13,7 +13,7 @@ Een DBC geopend op of na 01-01-2018 met zorgtype `11` of `21`, die niet is verva
 <!-- EpisodeOfCare.code=dbc...
 Patient.birthdate=>18y 20200101 -->
 
-| Conceptueel | FHIR profiel & element | Waarde of Terminologie |
+| Conceptueel | FHIR profiel & element | Selectie |
 | :--- | :--- | :--- |
 | Geboortedatum | [PatientSan](StructureDefinition-PatientSan.html)`.birthDate` | ≥ 18 jaar | |
 | SpecialismeDiagnoseCode | [EpisodeOfCareSan](StructureDefinition-EpisodeOfCareSan.html)`.diagnosis.condition`→ [ConditionSan](StructureDefinition-ConditionSan.html)`.code.coding.code` | [ValueSet: LocalSpecialismeDiagnoseCodes](ValueSet-local-specialisme-diagnose-codes.html) |
@@ -41,9 +41,9 @@ GET [base]/Condition?
   code:in=ValueSet/LocalSpecialismeDiagnoseCodes
 ```
 
-## IBD Indicatoren
+### IBD Indicatoren (FHIR)
 - [K311 WIP](K311.html)
 - [K312 Scopie](K312.html)
 - [K363 Calprotectine voor scopie](K363.html)
 
-Voorbeeld Bundle:
+
