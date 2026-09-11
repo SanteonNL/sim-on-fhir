@@ -3,7 +3,7 @@
     <a href="index.html">Home</a>
   </li>
   <li>
-    <a href="LogicalModelSIM.html">(SIM) Logical Model</a>
+    <a href="LogicalModelSIM.html">(SIM) Common Logical Models</a>
   </li>
   <li>
     <a href="profiles.html">FHIR Profiles</a>
@@ -18,7 +18,7 @@
         <a href="IBD.html">IBD</a>
       </li>
       <li>
-        <a href="IBDtestLM.html">IBD Datasetdefinitie Logical Model Pilot</a>
+        <a href="IBDtestLM.html">IBD Logical Model Pilot</a>
       </li>
     </ul>
   </li>

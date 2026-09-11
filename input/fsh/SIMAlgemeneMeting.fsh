@@ -1,57 +1,26 @@
 Logical: SIMAlgemeneMeting
 Id: SIMAlgemeneMeting
-Title: "SIM AlgemeneMeting"
+Title: "CLM SIMAlgemeneMeting"
 Description: "Logisch model voor een algemeneMeting binnen het Santeon Informatiemodel."
 
 * MetingNaam 1..1 CodeableConcept "Type of naam van de meting"
 * MetingNaam from Santeon_MetingNaamCodelijst (required)
+* MetingNaam obeys validatie-metingnaam-uitslagcode
 * MetingDatumTijd 0..1 dateTime "Datum en eventueel tijd die het dichtst ligt bij het daadwerkelijke meetmoment of de observatie"
+* UitslagWaarde 0..1 Quantity "Numerieke uitslag van de meting"
+* UitslagWaarde obeys validatie-metingnaam-uitslagcode
 * UitslagCode 0..1 CodeableConcept "Gecodeerde uitslag van de meting"
-* UitslagCode from AlcoholGebruikStatusCodelijst (example)
+* UitslagCode ^definition = "Welke ValueSet van toepassing is op UitslagCode wordt bepaald door MetingNaam, zie invariants."
+* UitslagCode obeys validatie-metingnaam-uitslagcode
+
+
+// Validatieregel of Invariants
+Invariant: validatie-metingnaam-uitslagcode
+Description: "Valideert de relatie tussen MetingNaam en het bijbehorende type uitslag. Voor metingen met een gecodeerde uitslag moet UitslagCode afkomstig zijn uit de ValueSet die aan de betreffende MetingNaam is gekoppeld. Bijvoorbeeld: wanneer MetingNaam alcoholgebruik is (SNOMED CT 228273003), moet UitslagCode afkomstig zijn uit AlcoholGebruikStatusCodelijst. Dit geldt voor alle vastgelegde [MetingNaam-UitslagCode](<a href='https://dev.azure.com/SanteonNL/Santeon/_git/HipsETL?path=/SIM/informatiemodel%20Santeon%20valueSets%20relation.csv</a>)-combinaties. Metingen die niet in deze combinaties zijn vastgelegd, maar wel voorkomen in Santeon_MetingNaamCodelijst, hebben een UitslagWaarde als uitkomst."
+Severity: #error
+Expression: "(MetingNaam.coding.where(system = 'http://snomed.info/sct' and code = '228273003').exists() implies UitslagCode.memberOf('https://ig.santeon.nl/ibd/ValueSet/AlcoholGebruikStatusCodelijst')) or (MetingNaam.coding.where(system = 'http://loinc.org' and code = '38445-3').exists() implies UitslagWaarde.exists())"
 
 // Mappings
-// * ^mapping[+].identity = "sim-csv"
-// * ^mapping[=].name = "SIM CSVs"
-
-// * ^mapping[+].identity = "santeon-fhir"
-// * ^mapping[=].name = "SIMAlgemeneMeting naar FHIR"
-
-// MetingNaam -> FHIR
-// * MetingNaam ^mapping[1].identity = "santeon-fhir"
-// * MetingNaam ^mapping[1].map = "Observation.code"
-
-// MetingNaam -> CSV
-// * MetingNaam.coding.system ^mapping[0].identity = "sim-csv"
-// * MetingNaam.coding.system ^mapping[0].map = "MetingNaamCodeSysteem"
-
-// * MetingNaam.coding.code ^mapping[0].identity = "sim-csv"
-// * MetingNaam.coding.code ^mapping[0].map = "MetingNaamCode"
-
-// * MetingNaam.coding.display ^mapping[0].identity = "sim-csv"
-// * MetingNaam.coding.display ^mapping[0].map = "MetingNaamOmschrijving"
-
-// MetingDatumTijd -> CSV + FHIR
-// * MetingDatumTijd ^mapping[0].identity = "sim-csv"
-// * MetingDatumTijd ^mapping[0].map = "MetingDatumTijd"
-
-// * MetingDatumTijd ^mapping[1].identity = "santeon-fhir"
-// * MetingDatumTijd ^mapping[1].map = "Observation.effectiveDateTime"
-
-// UitslagCode -> FHIR
-// * UitslagCode ^mapping[1].identity = "santeon-fhir"
-// * UitslagCode ^mapping[1].map = "Observation.valueCodeableConcept"
-
-// UitslagCode -> CSV
-// * UitslagCode.coding.system ^mapping[0].identity = "sim-csv"
-// * UitslagCode.coding.system ^mapping[0].map = "UitslagCodeSysteem"
-
-// * UitslagCode.coding.code ^mapping[0].identity = "sim-csv"
-// * UitslagCode.coding.code ^mapping[0].map = "UitslagCode"
-
-// * UitslagCode.coding.display ^mapping[0].identity = "sim-csv"
-// * UitslagCode.coding.display ^mapping[0].map = "UitslagCodeOmschrijving"
-
-// Mappings van SIM CSV
 Mapping: SIMAlgemeneMetingFromSIMCSV
 Id: SIMAlgemeneMetingFromSIMCSV
 Title: "SIM CSVs"
@@ -66,12 +35,12 @@ Target: "SIM CSVs"
 * UitslagCode.coding.code -> "UitslagCode"
 * UitslagCode.coding.display -> "UitslagCodeOmschrijving"
 
-// Mappings naar SIM FHIR
 Mapping: SIMAlgemeneMetingToFHIR
 Id: SIMAlgemeneMetingToFHIR
-Title: "SIMAlgemeneMeting naar FHIR"
+Title: "FHIR"
 Source: SIMAlgemeneMeting
 Target: "https://ig.santeon.nl/ibd/StructureDefinition/ObservationSan"
+// "http://hl7.org/fhir/StructureDefinition/ObservationSan"
 
 * MetingNaam -> "Observation.code"
 * MetingDatumTijd -> "Observation.effectiveDateTime"

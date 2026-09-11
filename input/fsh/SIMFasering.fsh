@@ -1,6 +1,6 @@
 Logical: SIMFasering
 Id: SIMFasering
-Title: "SIM Fasering"
+Title: "CLM SIMFasering"
 Description: "Logisch model voor een procesfasering binnen het Santeon Informatiemodel, bijvoorbeeld faseringen rondom een operatie."
 
 * FaseringID 1..1 Identifier "Unieke identificatie van de fasering"
@@ -42,7 +42,7 @@ Target: "SIM CSVs"
 
 Mapping: SIMFaseringToFHIR
 Id: SIMFaseringToFHIR
-Title: "SIM Fasering naar FHIR"
+Title: "FHIR"
 Source: SIMFasering
 Target: "http://hl7.org/fhir/StructureDefinition/EncounterSan"
 

@@ -1,10 +1,11 @@
 Logical: SIMDBC
 Id: SIMDBC
-Title: "SIM DBC"
+Title: "CLM SIMDBC/Zorgtraject"
 Description: "Logisch model voor een DBC binnen het Santeon Informatiemodel."
 
 * OpeningsDatum 0..1 dateTime "Openingsdatum van de DBC"
 * SpecialismeDiagnose 0..1 CodeableConcept "Specialisme en diagnose behorend bij de DBC"
+* SpecialismeDiagnose from https://ig.santeon.nl/ibd/ValueSet/Specialisme_DiagnoseCodelijstDummy (required)
 
 Mapping: SIMDBCFromSIMCSV
 Id: SIMDBCFromSIMCSV

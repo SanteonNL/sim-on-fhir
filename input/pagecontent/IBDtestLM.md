@@ -1,6 +1,16 @@
 Onderstaande structuur beschrijft de selectie van informatie voor de IBD-dataset.
 
-[IBD Dataset](StructureDefinition-IBDDataset.html) 
+### Cohort selectie
+- [(WIP) IBD Cohort Patient](StructureDefinition-IBDCohortPatient.html)
+- [(WIP) IBD Cohort DBC](StructureDefinition-IBDCohortDBC.html)
+
+### DSD selectie
+- [IBD Dataset AlgemeneMeting](StructureDefinition-IBDAlgemeneMeting.html)
+- [IBD Dataset Verrichting](StructureDefinition-IBDVerrichting.html)
+- [IBD Dataset DBC](StructureDefinition-IBDZorgtrajectDBC.html)
+
+
+<!--
 
 | Element | Selectie | Validatie |
 | :--- | :--- | :--- | :--- |
@@ -20,4 +30,4 @@ GET [base]/Observation?
   effectiveDateTime=ge2018-01-01
 
 Etc.
-```
+``` -->
