@@ -1,7 +1,7 @@
 {
   "resourceType" : "Requirements",
   "id" : "fromNarrative",
-  "url" : "https://ig.santeon.nl/careplan/Requirements/fromNarrative",
+  "url" : "https://ig.santeon.nl/ibd/Requirements/fromNarrative",
   "name" : "FromNarrative",
   "title" : "Narrative Conformance Statements",
   "status" : "active",
