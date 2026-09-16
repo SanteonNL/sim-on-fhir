@@ -6,6 +6,10 @@ See the [SIMAlgemenMeting](StructureDefinition-SIMAlgemeneMeting.html) Common Lo
 
 See the [SIMVerrichting](StructureDefinition-SIMVerrichting.html) Common Logical Model for details and [Mappings](StructureDefinition-SIMVerrichting-mappings.html) for mappingsdetails.
 
+### SIMPatient Common Logical Model
+
+See the [SIMPatient](StructureDefinition-SIMPatient.html) Common Logical Model for details and [Mappings](StructureDefinition-SIMPatient-mappings.html) for mappingsdetails.
+
 ### SIMZorgtraject Common Logical Model (DBC)
 
 See the [SIMDBC](StructureDefinition-SIMDBC.html) Common Logical Model for details and [Mappings](StructureDefinition-SIMDBC-mappings.html) for mappingsdetails.

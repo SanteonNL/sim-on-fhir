@@ -32,6 +32,7 @@ Description: """
 // period
 * period 1..1
 * period.start 1..1
+* period.end 0..1
 
 // type
 * type 1..1
@@ -56,41 +57,43 @@ Description: """
 * account 0..0
 
 // mappings SIM -> FHIR
-* ^mapping[+].identity = "sim"
-* ^mapping[=].name = "Santeon Informatie Model"
-* ^mapping[=].comment = "Mapping van EpisodeOfCare elementen naar SIM"
+//* ^mapping[+].identity = "sim"
+//* ^mapping[=].name = "Santeon Informatie Model"
+//* ^mapping[=].comment = "Mapping van EpisodeOfCare elementen naar SIM"
 
-* identifier.value ^mapping[0].identity = "sim"
-* identifier.value ^mapping[0].map = "DBC;SubtrajectNr"
-* identifier.value ^mapping[0].comment = "hashed"
+//* identifier.value ^mapping[0].identity = "sim"
+//* identifier.value ^mapping[0].map = "DBC;SubtrajectNr"
+//* identifier.value ^mapping[0].comment = "hashed"
 
-* patient ^mapping[0].identity = "sim"
-* patient ^mapping[0].map = "DBC;Identificatienummer"
-* patient ^mapping[0].comment = "hashed"
+//* patient ^mapping[0].identity = "sim"
+//* patient ^mapping[0].map = "DBC;Identificatienummer"
+//* patient ^mapping[0].comment = "hashed"
 
-* status ^mapping[0].identity = "sim"
-* status ^mapping[0].map = "DBC;DBCGeldig"
+//* status ^mapping[0].identity = "sim"
+//* status ^mapping[0].map = "DBC;DBCGeldig"
 
-* period.start ^mapping[0].identity = "sim"
-* period.start ^mapping[0].map = "DBC;DBCOpeningsDatum"
+//* period.start ^mapping[0].identity = "sim"
+//* period.start ^mapping[0].map = "DBC;DBCOpeningsDatum"
 
-* type.coding.code ^mapping[0].identity = "sim"
-* type.coding.code ^mapping[0].map = "DBC;ZorgTypeCode"
+//* type.coding.code ^mapping[0].identity = "sim"
+//* type.coding.code ^mapping[0].map = "DBC;ZorgTypeCode"
 
-* type.coding.system ^mapping[0].identity = "sim"
-* type.coding.system ^mapping[0].map = "DBC;ZorgTypeCodeSysteem"
+//* type.coding.system ^mapping[0].identity = "sim"
+//* type.coding.system ^mapping[0].map = "DBC;ZorgTypeCodeSysteem"
 
-* type.coding.display ^mapping[0].identity = "sim"
-* type.coding.display ^mapping[0].map = "DBC;ZorgTypeOmschrijving"
+//* type.coding.display ^mapping[0].identity = "sim"
+//* type.coding.display ^mapping[0].map = "DBC;ZorgTypeOmschrijving"
 
-* diagnosis.condition ^mapping[0].identity = "sim"
-* diagnosis.condition ^mapping[0].map = "DBC;SpecialismeDiagnoseCode"
+//* diagnosis.condition ^mapping[0].identity = "sim"
+//* diagnosis.condition ^mapping[0].map = "DBC;SpecialismeDiagnoseCode"
+//* diagnosis.condition ^mapping[0].comment =
+//    "Reference naar ConditionSan; de specialismediagnose wordt gerepresenteerd in ConditionSan.code"
 
-* diagnosis.extension.valueCodeableConcept.coding.code ^mapping[0].identity = "sim"
-* diagnosis.extension.valueCodeableConcept.coding.code ^mapping[0].map = "DBC;SpecialismeDiagnoseCode"
+//* diagnosis.extension.valueCodeableConcept.coding.code ^mapping[0].identity = "sim"
+//* diagnosis.extension.valueCodeableConcept.coding.code ^mapping[0].map = "DBC;SpecialismeDiagnoseCode"
 
-* diagnosis.extension.valueCodeableConcept.coding.system ^mapping[0].identity = "sim"
-* diagnosis.extension.valueCodeableConcept.coding.system ^mapping[0].map = "DBC;SpecialismeDiagnoseCodeSysteem"
+//* diagnosis.extension.valueCodeableConcept.coding.system ^mapping[0].identity = "sim"
+//* diagnosis.extension.valueCodeableConcept.coding.system ^mapping[0].map = "DBC;SpecialismeDiagnoseCodeSysteem"
 
-* diagnosis.extension.valueCodeableConcept.coding.display ^mapping[0].identity = "sim"
-* diagnosis.extension.valueCodeableConcept.coding.display ^mapping[0].map = "DBC;SpecialismeDiagnoseOmschrijving"
+//* diagnosis.extension.valueCodeableConcept.coding.display ^mapping[0].identity = "sim"
+//* diagnosis.extension.valueCodeableConcept.coding.display ^mapping[0].map = "DBC;SpecialismeDiagnoseOmschrijving"

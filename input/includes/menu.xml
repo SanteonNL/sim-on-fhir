@@ -14,11 +14,11 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
+      <!-- <li>
+        <a href="IBD.html">IBD - FHIR</a>
+      </li> -->
       <li>
-        <a href="IBD.html">IBD</a>
-      </li>
-      <li>
-        <a href="IBDtestLM.html">IBD Logical Model Pilot</a>
+        <a href="IBDtestLM.html">IBD</a>
       </li>
     </ul>
   </li>
@@ -34,10 +34,10 @@
       </li> 
 -->
       <li>
-        <a href="K312.html">K3.1.2 Scopie</a>
+        <a href="K312.html">K3.1.2 Scopie (nog in FHIR)</a>
       </li>
       <li>
-        <a href="K363.html">K3.6.3 Calprotectine voor scopie</a>
+        <a href="K363.html">K3.6.3 Calprotectine voor scopie (nog in FHIR)</a>
       </li>
     </ul>
   </li>
