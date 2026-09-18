@@ -17,7 +17,8 @@ Description: """Selectie van informatie voor de IBD cohort van Patient.
 - **FHIR Query**: GET [base]/Patient?
   birthdate=le[Peildatum-18J]
 - **Dataselectie**:
-  Patiënten die op de peildatum (moment van aanlevering) 18 jaar of ouder zijn"""
+  Patiënten die op de peildatum (moment van aanlevering) 18 jaar of ouder zijn.
+- **Zie ook [mappings](StructureDefinition-IBDCohortPatient-mappings.html) voor mappingsdetails.**"""
 
 * Geboortedatum 1..1
 * Geboortedatum ^short = "Leeftijd op peildatum ≥ 18 jaar"
@@ -35,7 +36,8 @@ Description: """Selectie van informatie voor de IBD dataset van DBC/Zorgtraject.
 - **Dataselectie**:
   Een DBC/zorgtraject geopend op of na 01-01-2018, met zorgtype 11 of 21, die niet is vervallen en waarvan de gekoppelde specialismediagnose voorkomt in:
   - [LocalSpecialismeDiagnoseCodes](ValueSet-LocalSpecialismeDiagnoseCodes.html)
-  - _evt. [LocalZorgtypeCodes](ValueSet-LocalZorgtypeCodes.html) voor zorgtype 11 of 21_"""
+  - _evt. [LocalZorgtypeCodes](ValueSet-LocalZorgtypeCodes.html) voor zorgtype 11 of 21_
+- **Zie ook [mappings](StructureDefinition-IBDCohortDBC-mappings.html) voor mappingsdetails.**"""
 
 * OpeningsDatum 1..1
 * OpeningsDatum ^short = "≥ 2018-01-01"
@@ -71,7 +73,8 @@ Description: """Selectie van informatie voor de IBD dataset van AlgemeneMeting.
   code:in=ValueSet/IBDAlgemeneMetingen&
   date=ge2018-01-01
 - **Dataselectie**:
-  [IBDAlgemeneMetingen](ValueSet-IBDAlgemeneMetingen.html)"""
+  [IBDAlgemeneMetingen](ValueSet-IBDAlgemeneMetingen.html)
+- **Zie ook [mappings](StructureDefinition-IBDAlgemeneMeting-mappings.html) voor mappingsdetails.**"""
 
 // Selectie
 * MetingNaam 1..1 
@@ -93,7 +96,8 @@ Description: """Selectie van informatie voor de IBD dataset van Verrichting.
   code:in=ValueSet/IBDVerrichtingenNZa&
   date=ge2018-01-01
 - **Dataselectie**:
-  [IBDVerrichtingenNZa](ValueSet-IBDVerrichtingenNZa.html)"""
+  [IBDVerrichtingenNZa](ValueSet-IBDVerrichtingenNZa.html)
+- **Zie ook [mappings](StructureDefinition-IBDVerrichting-mappings.html) voor mappingsdetails.**"""
 
 // Selectie
 * VerrichtingType 1..1
@@ -112,7 +116,8 @@ Description: """Selectie van informatie voor de IBD dataset van DBC/Zorgtraject.
   diagnosis:Condition.code:in=ValueSet/IBDSpecialismeDiagnoses&
   start?-date=ge2017-01-01
 - **Dataselectie**:
-  [IBDSpecialismeDiagnoses](ValueSet-IBDSpecialismeDiagnoses.html)"""
+  [IBDSpecialismeDiagnoses](ValueSet-IBDSpecialismeDiagnoses.html)
+- **Zie ook [mappings](StructureDefinition-IBDZorgtrajectDBC-mappings.html) voor mappingsdetails.**"""
 
 // Selectie
 * OpeningsDatum 1..1
