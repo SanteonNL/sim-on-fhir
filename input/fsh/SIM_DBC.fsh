@@ -1,9 +1,10 @@
 Logical: SIMDBC
+Parent: Base
 Id: SIMDBC
 Title: "CLM SIMDBC/Zorgtraject"
 Description: "Logisch model voor een DBC binnen het Santeon Informatiemodel."
 
-* Patient 0..1 Reference "Patiënt waarop de DBC betrekking heeft"
+* Patient 0..1 SIMPatient "Patiënt waarop de DBC betrekking heeft"
 * SubtrajectNummer 0..1 Identifier "Uniek identificatienummer van het DBC-subtraject"
 * ZorgtrajectNummer 0..1 Identifier "Identificatienummer van het zorgtraject"
 * Diagnose 0..1 string "Diagnosecode en omschrijving"

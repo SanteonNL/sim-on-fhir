@@ -1,4 +1,5 @@
 Logical: SIMPatient
+Parent: Base
 Id: SIMPatient
 Title: "CLM SIMPatient"
 Description: "Logisch model voor patiëntgegevens binnen het Santeon Informatiemodel."

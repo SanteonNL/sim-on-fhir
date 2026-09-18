@@ -3,22 +3,19 @@
     <a href="index.html">Home</a>
   </li>
   <li>
-    <a href="LogicalModelSIM.html">(SIM) Common Logical Models</a>
+    <a href="CLMs.html">Common Logical Models</a>
   </li>
   <li>
     <a href="profiles.html">FHIR Profiles</a>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-      Datasetdefinities
+      Datasets
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <!-- <li>
-        <a href="IBD.html">IBD - FHIR</a>
-      </li> -->
       <li>
-        <a href="IBDtestLM.html">IBD</a>
+        <a href="datasetIBD.html">IBD</a>
       </li>
     </ul>
   </li>

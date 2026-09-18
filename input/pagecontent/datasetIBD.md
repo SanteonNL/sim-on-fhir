@@ -1,18 +1,24 @@
 Onderstaande structuur beschrijft de selectie van informatie voor de IBD-dataset vanuit Logical Models.
 
 ### Cohortselectie
-- [IBD Cohort Patient](StructureDefinition-IBDCohortPatient.html)
-- [IBD Cohort DBC](StructureDefinition-IBDCohortDBC.html)
+- [IBD Cohort](StructureDefinition-IBDCohort.html)
+
+
+<!-- - [IBD Cohort Patient](StructureDefinition-IBDCohortPatient.html)
+- [IBD Cohort DBC](StructureDefinition-IBDCohortDBC.html) -->
 
 ### DSD selectie per data-element (optie I)
-- [IBD Dataset AlgemeneMeting](StructureDefinition-IBDAlgemeneMeting.html)
+- [IBD Dataset](StructureDefinition-IBDDataset.html)
+
+
+<!-- - [IBD Dataset AlgemeneMeting](StructureDefinition-IBDAlgemeneMeting.html)
 - [IBD Dataset Verrichting](StructureDefinition-IBDVerrichting.html)
-- [IBD Dataset DBC](StructureDefinition-IBDZorgtrajectDBC.html)
+- [IBD Dataset DBC](StructureDefinition-IBDZorgtrajectDBC.html) -->
 
 ### DSD selectie per indicator (optie II)
-- [K311 WIP]()
-- [K312 WIP]()
-- [K363 WIP]()
+- [K311 WIP]() <!-- bundelen? en kijk naar archief/volgordeindicatoren_test -->
+- [K312 WIP]() <!-- bundelen? en kijk naar archief/volgordeindicatoren_test -->
+- [K363 WIP]() <!-- bundelen? en kijk naar archief/volgordeindicatoren_test -->
 
 ### Bundles?
 - Batch

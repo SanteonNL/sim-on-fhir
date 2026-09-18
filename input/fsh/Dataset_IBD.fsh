@@ -1,3 +1,14 @@
+// Gehele Cohort
+Logical: IBDCohort
+Parent: Base
+Id: IBDCohort
+Title: "IBD Cohort"
+Description: "De cohortselectie beschrijft de criteria voor het selecteren van patiënten en bijbehorende DBC's/zorgtrajecten voor het IBD-cohort."
+
+* Patienten 1..* IBDCohortPatient "Patiënten die voldoen aan de cohortcriteria"
+* DBCs 1..* IBDCohortDBC "DBC's/zorgtrajecten die voldoen aan de cohortcriteria"
+
+// Onderliggende modellen 
 Logical: IBDCohortPatient
 Parent: SIMPatient
 Id: IBDCohortPatient
@@ -6,7 +17,7 @@ Description: """Selectie van informatie voor de IBD cohort van Patient.
 - **FHIR Query**: GET [base]/Patient?
   birthdate=le[Peildatum-18J]
 - **Dataselectie**:
-  Patiënten die op de peildatum (moment van aanlevering) jonger zijn dan 18 jaar"""
+  Patiënten die op de peildatum (moment van aanlevering) 18 jaar of ouder zijn"""
 
 * Geboortedatum 1..1
 * Geboortedatum ^short = "Leeftijd op peildatum ≥ 18 jaar"
@@ -19,12 +30,10 @@ Description: """Selectie van informatie voor de IBD dataset van DBC/Zorgtraject.
 - **FHIR Query**: 
   - GET [base]/EpisodeOfCare?
   type:in=ValueSet/LocalZorgtypeCodes&
-  // status=active&
-  period-start=ge2018-01-01
-  - GET [base]/Condition?
-  code:in=ValueSet/LocalSpecialismeDiagnoseCodes
+  diagnosis:Condition.code:in=ValueSet/LocalSpecialismeDiagnoseCodes&
+  date=ge2018-01-01
 - **Dataselectie**:
-  Een DBC geopend op of na 01-01-2018 met zorgtype 11 of 21, die niet is vervallen, vallend onder de volgende codes in de valueset:
+  Een DBC/zorgtraject geopend op of na 01-01-2018, met zorgtype 11 of 21, die niet is vervallen en waarvan de gekoppelde specialismediagnose voorkomt in:
   - [LocalSpecialismeDiagnoseCodes](ValueSet-LocalSpecialismeDiagnoseCodes.html)
   - _evt. [LocalZorgtypeCodes](ValueSet-LocalZorgtypeCodes.html) voor zorgtype 11 of 21_"""
 
@@ -40,6 +49,19 @@ Description: """Selectie van informatie voor de IBD dataset van DBC/Zorgtraject.
 * SpecialismeDiagnose 1..1
 * SpecialismeDiagnose ^short = "Alle waarden uit dataselectie ValueSet LocalSpecialismeDiagnoseCodes (zie beschrijving)"
 
+
+// Gehele Dataset
+Logical: IBDDataset
+Parent: Base
+Id: IBDDataset
+Title: "IBD Dataset"
+Description: "De datasetselectie beschrijft de criteria voor het selecteren van informatie uit onderliggende modellen voor de IBD-dataset."
+
+* Metingen 0..* IBDAlgemeneMeting "Metingen die voldoen aan de datasetcriteria"
+* Verrichtingen 0..* IBDVerrichting "Verrichtingen die voldoen aan de datasetcriteria"
+* DBCs 0..* IBDZorgtrajectDBC "DBC's/zorgtrajecten die voldoen aan de datasetcriteria"
+
+// Onderliggende modellen
 Logical: IBDAlgemeneMeting
 Parent: SIMAlgemeneMeting
 Id: IBDAlgemeneMeting
@@ -76,7 +98,7 @@ Description: """Selectie van informatie voor de IBD dataset van Verrichting.
 // Selectie
 * VerrichtingType 1..1
 * VerrichtingType ^short = "Alle waarden uit dataselectie ValueSet IBDVerrichtingenNZa (zie beschrijving)"
-* VerrichtingType ^definition = "uitleg validatie"
+* VerrichtingType ^definition = "De bijbehorende validatieregels zijn gedefinieerd in SIMVerrichting."
 * StartDatum 1..1
 * StartDatum ^short = ">= 2018-01-01"
 

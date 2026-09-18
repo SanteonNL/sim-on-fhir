@@ -1,11 +1,12 @@
 Logical: SIMVerrichting
+Parent: Base
 Id: SIMVerrichting
 Title: "CLM SIMVerrichting"
 Description: "Logisch model voor een verrichting binnen het Santeon Informatiemodel."
 
 // nodig voor K312, later uitbouwen voor andere use cases
 * VerrichtingID 0..1 Identifier "Identificatie van de verrichting"
-* Patient 1..1 Reference "Patiënt waarop de verrichting betrekking heeft"
+* Patient 1..1 SIMPatient "Patiënt waarop de verrichting betrekking heeft"
 * VerrichtingType 0..1 CodeableConcept "Type verrichting"
 * StartDatum 0..1 dateTime "Startdatum en -tijd van de verrichting"
 * EindDatum 0..1 dateTime "Einddatum en -tijd van de verrichting"

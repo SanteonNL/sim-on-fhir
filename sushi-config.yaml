@@ -1,8 +1,8 @@
 id: santeon.ibd.ig
 canonical: https://ig.santeon.nl/ibd
 name: SanteonIBDIG
-title: "Santeon IBD Implementation Guide"
-description: "Santeon FHIR Implementation Guide for IBD quality indicators"
+title: "Santeon Implementation Guide"
+description: "Santeon FHIR Implementation Guide"
 status: draft
 version: 0.1.0
 fhirVersion: 4.0.1
@@ -17,17 +17,14 @@ pages:
   index.md:
     title: Home
 
-  LogicalModelSIM.md:
-    title: Common Logical Models SIM
+  CLMs.md:
+    title: Common Logical Models (SIM)
 
   profiles.md:
-    title: Profiles
+    title: FHIR Profiles
 
-  IBD.md:
-    title: IBD Datasetdefinitie
-
-  IBDtestLM.md:
-    title: IBD Datasetdefinitie Pilot Logical Model
+  datasetIBD.md:
+    title: IBD Dataset
 
   K312.md:
     title: K3.1.2 Scopie

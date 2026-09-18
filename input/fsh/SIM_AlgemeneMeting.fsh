@@ -1,4 +1,5 @@
 Logical: SIMAlgemeneMeting
+Parent: Base
 Id: SIMAlgemeneMeting
 Title: "CLM SIMAlgemeneMeting"
 Description: "Logisch model voor een algemeneMeting binnen het Santeon Informatiemodel."

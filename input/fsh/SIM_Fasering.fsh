@@ -1,4 +1,5 @@
 Logical: SIMFasering
+Parent: Base
 Id: SIMFasering
 Title: "CLM SIMFasering"
 Description: "Logisch model voor een procesfasering binnen het Santeon Informatiemodel, bijvoorbeeld faseringen rondom een operatie."
@@ -6,7 +7,7 @@ Description: "Logisch model voor een procesfasering binnen het Santeon Informati
 * FaseringID 1..1 Identifier "Unieke identificatie van de fasering"
 * ContactID 0..1 Identifier "Identificatie van het contact waarbinnen de fasering plaatsvindt"
 * OperatieID 0..1 Identifier "Identificatie van de operatie waarop de fasering betrekking heeft"
-* Patient 1..1 Identifier "Identificatie van de patiënt"
+* Patient 1..1 SIMPatient "Identificatie van de patiënt"
 
 * FaseringType 1..1 CodeableConcept "Type procesfasering"
 // * FaseringType from Santeon_FaseringCodelijst (required)
@@ -30,8 +31,8 @@ Target: "SIM CSVs"
 * OperatieID.system -> "OperatieID_system"
 * OperatieID.value -> "OperatieID_value"
 
-* Patient.system -> "Identificatienummer_system"
-* Patient.value -> "Identificatienummer_value"
+* Patient.Identificatienummer.system -> "Identificatienummer_system"
+* Patient.Identificatienummer.value -> "Identificatienummer_value"
 
 * FaseringType.coding.system -> "FaseringCodeSysteem"
 * FaseringType.coding.code -> "FaseringCode"
