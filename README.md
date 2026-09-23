@@ -148,6 +148,23 @@ Then open `http://localhost:8080`.
 
 ---
 
+## GitHub Pages branch previews
+
+Every push and every pull request into `main` is built and published automatically by [.github/workflows/publish-ig.yml](.github/workflows/publish-ig.yml) — no local build needed to see how a branch looks.
+
+The build result lands on the `gh-pages` branch, under a path that identifies where it came from:
+
+| Trigger | Published at |
+| --- | --- |
+| Push to `main` | `https://santeonnl.github.io/sim-on-fhir/` |
+| Push to another branch | `https://santeonnl.github.io/sim-on-fhir/<branch-name>/` |
+| Pull request into `main` | `https://santeonnl.github.io/sim-on-fhir/pr-<number>/` |
+| Manual run ([Actions tab](https://github.com/SanteonNL/sim-on-fhir/actions/workflows/publish-ig.yml) → *Run workflow*) | `https://santeonnl.github.io/sim-on-fhir/<keyword>/`, using the `keyword` input |
+
+Progress and logs for any run are visible under the repo's [Actions tab](https://github.com/SanteonNL/sim-on-fhir/actions). Each branch/PR keeps its own folder on `gh-pages`, so multiple previews can exist side by side.
+
+---
+
 ## Updating the IG Publisher
 
 To download the latest version of `publisher.jar`:
