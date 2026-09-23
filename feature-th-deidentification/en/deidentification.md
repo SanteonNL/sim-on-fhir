@@ -299,7 +299,7 @@ To keep the model implementable on any FHIR server, the following are **out of s
 
 * how the `_elements` and `_typeFilter` selections and the effective ruleset are authored or assembled (layering, defaults, overrides, templating);
 * the file formats, repositories, or review processes a producer uses;
-* the orchestration of an export run (how it is triggered, polled, transported);
+* the orchestration of an export run ja (how it is triggered, polled, transported);
 * whether coverage is enforced ahead of time or by construction.
 
 A server conforms by exchanging a valid `Parameters` and a valid effective `DeidentificationRuleset`, and by releasing data that satisfies coverage — regardless of how it reaches that result.
@@ -408,25 +408,37 @@ re-identification of a specific patient — inside the hospital only
 
 ```
 
-A privacy officer with access to all three can, for a named run, reconstruct the seed and reverse a specific hash or date shift back to the source patient. A party outside the hospital holds at most the run identifier and the de-identified output — never the key — and so can never reverse anything. The run identifier makes reversal **auditable and addressable** ("reverse patient X in run f3a1c8") without making it **possible** for anyone lacking the key.
+A privacy officer with access to all three can, for a named run, reconstruct the seed and reverse a specific hash back to the source patient — and, once the patient is identified, read any other field (a shifted date, a clamped age) directly from the source data, the same way any un-exported field would be read. A party outside the hospital holds at most the run identifier and the de-identified output — never the key — and so can never reverse anything. The run identifier makes reversal **auditable and addressable** ("reverse patient X in run f3a1c8") without making it **possible** for anyone lacking the key.
 
 > The run identifier is a non-secret handle, not key material. Exchanging it does not weaken pseudonymisation. The seed itself is derived from the key and the run inside the hospital and is never stored in or alongside an exchanged resource.
 
-### Reversing a hash vs. reversing a shift
+### Reversing a hash
 
-Neither reversal works by decrypting a stored value — an HMAC cannot be decrypted, and no offset is ever written down anywhere. Both are recomputed from the key, not looked up:
+Reversal does not work by decrypting a stored value — an HMAC cannot be decrypted. It is recomputed from the key, not looked up: to re-identify a hashed `Patient.id`, the privacy officer takes a candidate source identifier from the EPD, recomputes `HMAC(key, candidate)` under the reconstructed seed, and compares the result to the hash in the exported data. A match confirms the candidate is the source patient. This is the same forward computation performed at export time — reversal is recomputation and comparison, not inversion.
 
-**Reversing a hash.** To re-identify a hashed `Patient.id`, the privacy officer takes a candidate source identifier from the EPD, recomputes `HMAC(key, candidate)` under the reconstructed seed, and compares the result to the hash in the exported data. A match confirms the candidate is the source patient. This is the same forward computation performed at export time — reversal is recomputation and comparison, not inversion.
+`hash` is the only action this IG requires to be reversible. It is the anchor: once a record's patient is identified this way, every other field on that record — however it was transformed on export — is available in the source system, without needing to be inverted at all. See below.
 
-**Reversing a shift.** The per-patient offset is never itself exported or stored — only its effect, the shifted date, leaves the hospital. Like the hash, the offset is derived deterministically from the seed and a linking identifier — the patient's own source identifier, or, for related patients who must share an offset (see below), a common link identifier — so it is recomputed rather than looked up: the privacy officer reconstructs the seed from the run identifier and the key, recomputes the same deterministic function against that identifier to obtain the exact offset applied during that run, and subtracts it from the shifted date to recover the original date. Because the offset is a function of **(seed, linking identifier)** rather than of the date value itself, it must not be stored alongside the shifted date, or carried in the export in any form — it is regenerated on demand, from material the hospital alone holds, exactly like the hash.
+### shift, clamp-age, and first-of-month: recovered via identity, not inversion
 
-This IG does not standardise the derivation function itself — that is implementation detail, held alongside the key and never exchanged. It requires only that the function be deterministic per **(seed, linking identifier)** pair, so the offset is reproducible inside the hospital and unrecoverable outside it.
+Only `hash` carries a reversal requirement. For every other transformed field, the path back to the original value is always the same: reverse the `hash` on `Patient.id` to identify the patient, then read the field from the EPD. None of these actions need their own inversion procedure.
 
-### Illustrative construction (non-normative)
+**`shift`.** The per-patient offset is derived deterministically from the seed and a linking identifier (see the construction below) so that, within one export, all of one patient's dates move by the same amount — preserving intervals — while varying across patients and across runs. That determinism exists to make the **forward** shift consistent, not to make the shift invertible; the offset is never exported, stored, or looked up, and this IG does not standardise or require a way to recompute it. Unlike `clamp-age` and `first-of-month`, a shifted date is not inherently lossy — in principle, whoever holds the key and can reconstruct `(seed, linkId)` could recompute the offset and subtract it back out — but the IG places no weight on that possibility: the normative path to a patient's true date is the EPD lookup above, exactly as for every other field.
 
-**This shows one way to build a function with the required properties. It is not a normative algorithm — any deterministic, keyed construction with the same properties conforms.**
+**`clamp-age` and `first-of-month`.** These are lossy generalisations, not transformations, and here inversion genuinely is impossible, key or no key. `first-of-month` discards the day of the month entirely — `2024-03-22` and `2024-03-09` both become `2024-03-01`, and nothing in the output distinguishes them. `clamp-age` discards precision only for birth dates **outside** the configured range, replacing them with the boundary — every source birth date implying an age above `maxAge` (or below `minAge`) collapses to the same boundary value. No amount of computation recovers a value that was discarded rather than transformed. This is not a gap: the export was never meant to carry enough information to reconstruct itself, only what the stated analytical purpose requires (an age band, a cohort month), while the EPD remains the source of truth for anything more precise.
 
-The offset can be derived with the same primitive already used for `hash`, applied to a number instead of an identifier:
+`none` needs no reversal at all — the exported value already is the source value.
+
+| | | |
+| :--- | :--- | :--- |
+| `hash` | Yes, with the key | Recompute`HMAC(key, candidate)`and compare |
+| `shift` | Not required (technically possible with the key, but unused) | Re-identify the patient (via`hash`), then read the date from the EPD |
+| `clamp-age` | No — the information is gone, key or not | Re-identify the patient (via`hash`), then read`birthDate`from the EPD |
+| `first-of-month` | No — the information is gone, key or not | Re-identify the patient (via`hash`), then read the date from the EPD |
+| `none` | N/A | Value was never altered |
+
+### Illustrative construction of the shift offset (non-normative)
+
+**This shows one way to derive a per-patient offset with the required forward properties. It is not a normative algorithm — any deterministic, keyed construction with the same properties conforms.**
 
 ```
 digest  = HMAC-SHA256(seed, linkId)              // 32 bytes
@@ -439,27 +451,6 @@ offset  = k < maxDays ? (k − maxDays) : (k − maxDays + 1)
 The final step maps the `2·maxDays` possible values of `k` onto `[−maxDays, −1] ∪ [1, maxDays]` — skipping zero, exactly as the `shift` action requires. `shiftedDate = originalDate + offset` days.
 
 **`linkId` is what makes the mother/child case work.** For a standalone patient, `linkId` is that patient's own source identifier — each patient gets an independent offset. For related patients who must move together, the source data already expresses the link explicitly through FHIR itself: a `RelatedPerson` resource connects the two `Patient` records, with `RelatedPerson.relationship` carrying the role — mother, child (e.g. `MTH`/`CHILD` from the [relatedperson-relationshiptype](https://hl7.org/fhir/R4/valueset-relatedperson-relationshiptype.html) value set). `linkId` is resolved from that relationship rather than from either patient's own identifier — for example, the identifier of whichever patient is treated as the anchor of the pair (say, the mother) — so both the mother's and the child's `Patient` resources feed the **same** `linkId` into the same `HMAC(seed, linkId)`, and both get the **same** `offset`. This is exactly the "consistent within a run" / "shared between related patients" property described [above](#the-per-export-seed). Where a patient has no `RelatedPerson` link, `linkId` collapses to that patient's own identifier and the construction is unchanged.
-
-Reversal for either case is the same recomputation: reconstruct `seed` from the run identifier and the key, resolve the right `linkId` from the source data (the patient's own identifier, or — by following the same `RelatedPerson` relationship — the anchor patient's identifier for a linked pair), recompute `offset`, and subtract it back out. Because `linkId` — not the date itself — drives the offset, this works identically whether the record being reversed is the mother's or the child's.
-
-### clamp-age and first-of-month: generalisation, not reversal
-
-`hash` and `shift` are reversible because they are keyed transformations: the same input, run through the same function with the same secret, reproduces the exact output, so recomputing it back is always possible for whoever holds the key. `clamp-age` and `first-of-month` are a different kind of action — they are lossy generalisations, deliberately not one-to-one:
-
-* `first-of-month` discards the day of the month entirely. `2024-03-22` and `2024-03-09` both become `2024-03-01`; nothing in the output distinguishes them.
-* `clamp-age` discards precision only for birth dates **outside** the configured range, replacing them with the boundary. Every source birth date that implied an age above `maxAge` (or below `minAge`) collapses to the same boundary value.
-
-No key, no seed, and no amount of computation recovers a value that was discarded rather than transformed — that is true inside the hospital exactly as it is outside it. This is not a gap in the model: reversal was never required at the level of these individual fields. What the model guarantees is reversal of **identity** — which source patient a record belongs to — not independent reversibility of every generalised field. Once the privacy officer re-identifies the patient by reversing the `hash` on `Patient.id` (as above), the exact `Patient.birthDate` is available the ordinary way: by looking it up in the EPD, not by inverting the exported value. The export was never meant to carry enough information to reconstruct itself; it only needs to carry what the stated analytical purpose requires (an age band, a cohort month), while the hospital's own systems remain the source of truth for anything more precise.
-
-`none` needs no reversal at all — the exported value already is the source value.
-
-| | | |
-| :--- | :--- | :--- |
-| `hash` | Yes, with the key | Recompute`HMAC(key, candidate)`and compare |
-| `shift` | Yes, with the key | Recompute`offset`from`(seed, linkId)`and subtract it back out |
-| `clamp-age` | No, by design | Re-identify the patient (via`hash`), then read`birthDate`from the EPD |
-| `first-of-month` | No, by design | Re-identify the patient (via`hash`), then read the date from the EPD |
-| `none` | N/A | Value was never altered |
 
 -------
 
