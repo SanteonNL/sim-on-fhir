@@ -263,7 +263,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="hash"><code class="language-plaintext highlighter-rouge">hash</code></h3>
 
-<p>The element value is replaced by an HMAC hash. Used for identifiers and for the references that point to them. A hash rule on a resource <code class="language-plaintext highlighter-rouge">id</code> also declares, through <code class="language-plaintext highlighter-rouge">propagateTo</code>, which reference elements must be rewritten with the same hash so that referential integrity is preserved across the export.</p>
+<p>The element value is replaced by an HMAC hash. Used for identifiers and for the references that point to them. A hash rule on a resource's <code class="language-plaintext highlighter-rouge">id</code> also rewrites every reference to that resource type, anywhere in the export, to the same hash — automatically, not through a declared list of reference paths. There is no legitimate case for hashing a resource's <code class="language-plaintext highlighter-rouge">id</code> but leaving some references to it unrewritten: that would either leak the original id or break referential integrity, so the rewrite applies uniformly to <code class="language-plaintext highlighter-rouge">Observation.subject</code>, <code class="language-plaintext highlighter-rouge">RelatedPerson.patient</code>, <code class="language-plaintext highlighter-rouge">CarePlan.author</code>, or any other element referencing that resource type, whatever it happens to be called.</p>
 
 <table>
   <thead>
@@ -279,11 +279,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td><code class="language-plaintext highlighter-rouge">1..1</code></td>
       <td>Hash algorithm, e.g. <code class="language-plaintext highlighter-rouge">hmac-sha256</code></td>
     </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">propagateTo</code></td>
-      <td><code class="language-plaintext highlighter-rouge">0..*</code></td>
-      <td>Reference paths to rewrite with the same hash (for <code class="language-plaintext highlighter-rouge">id</code> elements)</td>
-    </tr>
   </tbody>
 </table>
 
@@ -292,12 +287,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient.id"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hash"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hmac-sha256"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"propagateTo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*.subject"</span><span class="p">,</span><span class="w"> </span><span class="s2">"*.patient"</span><span class="p">]</span><span class="w">
+  </span><span class="nl">"algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hmac-sha256"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">propagateTo</code> lists the reference elements that carry the patient reference across resource types. <code class="language-plaintext highlighter-rouge">*.subject</code> matches the <code class="language-plaintext highlighter-rouge">subject</code> element on any resource (Observation, Condition, Encounter, …); <code class="language-plaintext highlighter-rouge">*.patient</code> matches the <code class="language-plaintext highlighter-rouge">patient</code> element where that naming is used instead (for example on some CarePlan and Coverage references). Only these named reference paths are rewritten — references to other resource types (Organization, Practitioner) are left untouched.</p>
 
 <h3 id="shift"><code class="language-plaintext highlighter-rouge">shift</code></h3>
 
@@ -666,7 +658,7 @@ Applied:
 
 <p>Each export derives its HMAC seed freshly, per export run. The seed governs both the identifier hashing and the per-patient date-shift offset. Two properties follow, and a conforming export <strong>must</strong> exhibit both:</p>
 
-<p><strong>Consistent within a run.</strong> Within a single export, the same source identifier always hashes to the same value, and all of one patient's dates shift by the same offset. Referential integrity is preserved — a hashed <code class="language-plaintext highlighter-rouge">Patient.id</code> and every reference propagated to it (<code class="language-plaintext highlighter-rouge">*.subject</code>, <code class="language-plaintext highlighter-rouge">*.patient</code>) resolve to the same value — and temporal relationships between a patient's events are kept intact. Related patients (for example mother and child) share the offset, so cross-record intervals also survive.</p>
+<p><strong>Consistent within a run.</strong> Within a single export, the same source identifier always hashes to the same value, and all of one patient's dates shift by the same offset. Referential integrity is preserved — a hashed <code class="language-plaintext highlighter-rouge">Patient.id</code> and every reference to that patient anywhere in the export resolve to the same value — and temporal relationships between a patient's events are kept intact. Related patients (for example mother and child) share the offset, so cross-record intervals also survive.</p>
 
 <p><strong>Unlinkable across runs.</strong> Because the seed changes per export, the <em>same</em> patient exported in two separate runs hashes to two <em>different</em> values, and their dates shift by different offsets. A party holding two deliveries cannot tell that a record in one corresponds to a record in the other by comparing hashes or dates. Deliveries are not linkable to each other from their contents alone.</p>
 
@@ -827,7 +819,7 @@ offset  = k &lt; maxDays ? (k − maxDays) : (k − maxDays + 1)
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.careplan.ig#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-09-23 12:32:00 +0000">
+  <span title="2026-09-23 18:28:00 +0000">
     2026-09-23
   </span>
 

@@ -13,11 +13,7 @@
     {
       "path": "Patient.id",
       "action": "hash",
-      "algorithm": "hmac-sha256",
-      "propagateTo": [
-        "*.subject",
-        "*.patient"
-      ]
+      "algorithm": "hmac-sha256"
     },
     {
       "path": "Patient.identifier",

@@ -32,7 +32,7 @@ Other representations of profile: [CSV](../StructureDefinition-deidentification-
   "name" : "DeidentificationRuleset",
   "title" : "De-identification Ruleset",
   "status" : "draft",
-  "date" : "2026-09-23T12:32:00+00:00",
+  "date" : "2026-09-23T18:28:14+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -180,17 +180,6 @@ Other representations of profile: [CSV](../StructureDefinition-deidentification-
       "max" : "1",
       "type" : [{
         "code" : "code"
-      }]
-    },
-    {
-      "id" : "deidentification-ruleset.rule.propagateTo",
-      "path" : "deidentification-ruleset.rule.propagateTo",
-      "short" : "Reference paths rewritten with the same hash (hash on an id element),\n     e.g. '*.subject', '*.patient'.",
-      "definition" : "Reference paths rewritten with the same hash (hash on an id element),\n     e.g. '*.subject', '*.patient'.",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "string"
       }]
     },
     {

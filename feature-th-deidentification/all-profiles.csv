@@ -39,10 +39,6 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
      shift, then first-of-month, then clamp-age; priority is for finer control.","","","","","","","","","",,,,,"",,,,"deidentification-ruleset.rule.priority",0,1,"",""
 "deidentification-ruleset","deidentification-ruleset.rule.algorithm","deidentification-ruleset.rule.algorithm","","","",0,1,"","","","code {[]} {[]}
 ","Hash algorithm (hash only), e.g. 'hmac-sha256'.","Hash algorithm (hash only), e.g. 'hmac-sha256'.","","","","","","","","","",,,,,"",,,,"deidentification-ruleset.rule.algorithm",0,1,"",""
-"deidentification-ruleset","deidentification-ruleset.rule.propagateTo","deidentification-ruleset.rule.propagateTo","","","",0,*,"","","","string {[]} {[]}
-","Reference paths rewritten with the same hash (hash on an id element),
-     e.g. '*.subject', '*.patient'.","Reference paths rewritten with the same hash (hash on an id element),
-     e.g. '*.subject', '*.patient'.","","","","","","","","","",,,,,"",,,,"deidentification-ruleset.rule.propagateTo",0,*,"",""
 "deidentification-ruleset","deidentification-ruleset.rule.maxDays","deidentification-ruleset.rule.maxDays","","","",0,1,"","","","integer {[]} {[]}
 ","Maximum absolute date shift in days (shift only). Offset drawn from
      +/- maxDays, never zero.","Maximum absolute date shift in days (shift only). Offset drawn from
