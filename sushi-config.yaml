@@ -17,6 +17,8 @@ pages:
     title: Home
   profiles.md:
     title: Profiles
+  deidentification.md:
+    title: De-identification
 parameters:
   show-inherited-invariants: false
   path-binary: input/static
