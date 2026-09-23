@@ -1,0 +1,42 @@
+[{
+  "id" : "SanteonCarePlanCapabilityStatement",
+  "type" : "CapabilityStatement",
+  "url" : "https://ig.santeon.nl/careplan/CapabilityStatement/SanteonCarePlanCapabilityStatement",
+  "version" : "0.1.0",
+  "name" : "SanteonCarePlanCapabilityStatement"
+},
+{
+  "id" : "deidentification-action-cs",
+  "type" : "CodeSystem",
+  "url" : "https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs",
+  "version" : "0.1.0",
+  "name" : "DeidentificationActionCS"
+},
+{
+  "id" : "santeon.careplan.ig",
+  "type" : "ImplementationGuide",
+  "url" : "https://ig.santeon.nl/careplan/ImplementationGuide/santeon.careplan.ig",
+  "version" : "0.1.0",
+  "name" : "SanteonCarePlanIG"
+},
+{
+  "id" : "deidentification-ruleset",
+  "type" : "StructureDefinition",
+  "url" : "https://ig.santeon.nl/careplan/StructureDefinition/deidentification-ruleset",
+  "version" : "0.1.0",
+  "name" : "DeidentificationRuleset"
+},
+{
+  "id" : "santeon-careplan",
+  "type" : "StructureDefinition",
+  "url" : "https://ig.santeon.nl/careplan/StructureDefinition/santeon-careplan",
+  "version" : "0.1.0",
+  "name" : "SanteonCarePlan"
+},
+{
+  "id" : "deidentification-action-vs",
+  "type" : "ValueSet",
+  "url" : "https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs",
+  "version" : "0.1.0",
+  "name" : "DeidentificationActionVS"
+}]

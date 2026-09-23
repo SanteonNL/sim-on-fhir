@@ -1,0 +1,56 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "deidentification-action-vs"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet deidentification-action-vs</b></p><a name=\"deidentification-action-vs\"> </a><a name=\"hcdeidentification-action-vs\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-deidentification-action-cs.html\"><code>https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?0.1.0</span></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs"] ;
+  fhir:ValueSet.version [ fhir:value "0.1.0"] ;
+  fhir:ValueSet.name [ fhir:value "DeidentificationActionVS"] ;
+  fhir:ValueSet.title [ fhir:value "De-identification Action Value Set"] ;
+  fhir:ValueSet.status [ fhir:value "active"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-09-23T11:47:11+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "Santeon"] ;
+  fhir:ValueSet.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "Santeon" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.santeon.nl" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Allowed values for a de-identification rule's action."] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "NL" ] ;
+       fhir:Coding.display [ fhir:value "Netherlands" ]
+     ]
+  ] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

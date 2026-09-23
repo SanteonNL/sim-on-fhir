@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CarePlan xmlns="http://hl7.org/fhir">
+  <id value="SanteonCarePlanExample"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CarePlan SanteonCarePlanExample</b></p><a name="SanteonCarePlanExample"> </a><a name="hcSanteonCarePlanExample"> </a><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>category</b>: <span title="Codes:{https://ig.santeon.nl/careplan/CodeSystem/santeon-careplan-category-cs ckd}">Chronische Nierschade</span></p><p><b>subject</b>: <a href="Patient-ExamplePatient.html">Anonymous Patient (no stated gender), DoB Unknown ( https://ig.santeon.nl/fhir/NamingSystem/patient-id#HASH-7F2A91C4)</a></p><p><b>period</b>: 2025-01-15 --&gt; 2025-12-31</p></div>
+  </text>
+  <status value="draft"/>
+  <intent value="proposal"/>
+  <category>
+    <coding>
+      <system value="https://ig.santeon.nl/careplan/CodeSystem/santeon-careplan-category-cs"/>
+      <code value="ckd"/>
+      <display value="Chronische Nierschade"/>
+    </coding>
+  </category>
+  <subject>
+    <reference value="Patient/ExamplePatient"/>
+  </subject>
+  <period>
+    <start value="2025-01-15"/>
+    <end value="2025-12-31"/>
+  </period>
+</CarePlan>

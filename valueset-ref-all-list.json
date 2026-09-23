@@ -1,0 +1,140 @@
+{
+  "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/ValueSet/care-plan-activity-kind",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CarePlanActivityKind",
+    "title" : "Care Plan Activity Kind",
+    "description" : "Resource types defined as part of FHIR that can be represented as in-line definitions of a care plan activity.",
+    "systems" : ["http://hl7.org/fhir/resource-types"],
+    "oids" : ["2.16.840.1.113883.4.642.3.145"],
+    "sources" : ["2.16.840.1.113883.4.642.3.145"],
+    "uses" : {
+    },
+    "StructureDefinition-santeon-careplan.html" : "Santeon CarePlan"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/care-plan-activity-outcome",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CarePlanActivityOutcome",
+    "title" : "Care Plan Activity Outcome",
+    "description" : "Example codes indicating the outcome of a care plan activity. Note that these are in no way complete and might not even be appropriate for some uses.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.149"],
+    "sources" : ["2.16.840.1.113883.4.642.3.149"],
+    "uses" : {
+    },
+    "StructureDefinition-santeon-careplan.html" : "Santeon CarePlan"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/care-plan-activity-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CarePlanActivityStatus",
+    "title" : "CarePlanActivityStatus",
+    "description" : "Codes that reflect the current state of a care plan activity within its overall life cycle.",
+    "systems" : ["http://hl7.org/fhir/care-plan-activity-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.146"],
+    "sources" : ["2.16.840.1.113883.4.642.3.146"],
+    "uses" : {
+    },
+    "StructureDefinition-santeon-careplan.html" : "Santeon CarePlan"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/care-plan-intent",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CarePlanIntent",
+    "title" : "Care Plan Intent",
+    "description" : "Codes indicating the degree of authority/intentionality associated with a care plan.",
+    "systems" : ["http://hl7.org/fhir/request-intent"],
+    "oids" : ["2.16.840.1.113883.4.642.3.150"],
+    "sources" : ["2.16.840.1.113883.4.642.3.150"],
+    "uses" : {
+    },
+    "StructureDefinition-santeon-careplan.html" : "Santeon CarePlan"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/clinical-findings",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTClinicalFindings",
+    "title" : "SNOMED CT Clinical Findings",
+    "description" : "This value set includes all the \"Clinical finding\" [SNOMED CT](http://snomed.info/sct) codes - concepts where concept is-a 404684003 (Clinical finding (finding)).",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.232"],
+    "sources" : ["2.16.840.1.113883.4.642.3.232"],
+    "uses" : {
+    },
+    "StructureDefinition-santeon-careplan.html" : "Santeon CarePlan"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/languages",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CommonLanguages",
+    "title" : "Common Languages",
+    "description" : "This value set includes common codes from BCP-47 (http://tools.ietf.org/html/bcp47)",
+    "systems" : ["urn:ietf:bcp:47"],
+    "oids" : ["2.16.840.1.113883.4.642.3.20"],
+    "sources" : ["2.16.840.1.113883.4.642.3.20"],
+    "uses" : {
+    },
+    "StructureDefinition-santeon-careplan.html" : "Santeon CarePlan"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medication-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTMedicationCodes",
+    "title" : "SNOMED CT Medication Codes",
+    "description" : "This value set includes all drug or medicament substance codes and all pharmaceutical/biologic products from SNOMED CT - provided as an exemplar value set.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.375"],
+    "sources" : ["2.16.840.1.113883.4.642.3.375"],
+    "uses" : {
+    },
+    "StructureDefinition-santeon-careplan.html" : "Santeon CarePlan"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/procedure-code",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ProcedureCodes(SNOMEDCT)",
+    "title" : "Procedure Codes (SNOMED CT)",
+    "description" : "Procedure Code: All SNOMED CT procedure codes.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.427"],
+    "sources" : ["2.16.840.1.113883.4.642.3.427"],
+    "uses" : {
+    },
+    "StructureDefinition-santeon-careplan.html" : "Santeon CarePlan"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/request-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "RequestStatus",
+    "title" : "RequestStatus",
+    "description" : "Codes identifying the lifecycle stage of a request.",
+    "systems" : ["http://hl7.org/fhir/request-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.111"],
+    "sources" : ["2.16.840.1.113883.4.642.3.111"],
+    "uses" : {
+    },
+    "StructureDefinition-santeon-careplan.html" : "Santeon CarePlan"
+  },
+  {
+    "url" : "https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "DeidentificationActionVS",
+    "title" : "De-identification Action Value Set",
+    "description" : "Allowed values for a de-identification rule's action.",
+    "systems" : ["https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs"],
+    "uses" : {
+    },
+    "StructureDefinition-deidentification-ruleset.html" : "De-identification Ruleset"
+  }]
+}

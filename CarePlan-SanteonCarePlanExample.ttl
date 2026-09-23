@@ -1,0 +1,41 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://ig.santeon.nl/careplan/CarePlan/SanteonCarePlanExample> a fhir:CarePlan ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "SanteonCarePlanExample"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CarePlan SanteonCarePlanExample</b></p><a name=\"SanteonCarePlanExample\"> </a><a name=\"hcSanteonCarePlanExample\"> </a><p><b>status</b>: Draft</p><p><b>intent</b>: Proposal</p><p><b>category</b>: <span title=\"Codes:{https://ig.santeon.nl/careplan/CodeSystem/santeon-careplan-category-cs ckd}\">Chronische Nierschade</span></p><p><b>subject</b>: <a href=\"Patient-ExamplePatient.html\">Anonymous Patient (no stated gender), DoB Unknown ( https://ig.santeon.nl/fhir/NamingSystem/patient-id#HASH-7F2A91C4)</a></p><p><b>period</b>: 2025-01-15 --&gt; 2025-12-31</p></div>"
+  ] ;
+  fhir:CarePlan.status [ fhir:value "draft"] ;
+  fhir:CarePlan.intent [ fhir:value "proposal"] ;
+  fhir:CarePlan.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://ig.santeon.nl/careplan/CodeSystem/santeon-careplan-category-cs" ] ;
+       fhir:Coding.code [ fhir:value "ckd" ] ;
+       fhir:Coding.display [ fhir:value "Chronische Nierschade" ]
+     ]
+  ] ;
+  fhir:CarePlan.subject [
+     fhir:link <https://ig.santeon.nl/careplan/Patient/ExamplePatient> ;
+     fhir:Reference.reference [ fhir:value "Patient/ExamplePatient" ]
+  ] ;
+  fhir:CarePlan.period [
+     fhir:Period.start [ fhir:value "2025-01-15"^^xsd:date ] ;
+     fhir:Period.end [ fhir:value "2025-12-31"^^xsd:date ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://ig.santeon.nl/careplan/CarePlan/SanteonCarePlanExample.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

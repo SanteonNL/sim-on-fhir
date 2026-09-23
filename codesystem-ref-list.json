@@ -1,0 +1,13 @@
+{
+  "codeSystems" : [{
+    "url" : "https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "DeidentificationActionCS",
+    "title" : "De-identification Action Code System",
+    "description" : "The transformations a de-identification rule may apply to an element.",
+    "uses" : {
+    },
+    "ValueSet-deidentification-action-vs.html" : "De-identification Action Value Set"
+  }]
+}
