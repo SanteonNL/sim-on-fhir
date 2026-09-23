@@ -394,6 +394,35 @@ A privacy officer with access to all three can, for a named run, reconstruct the
 
 > The run identifier is a non-secret handle, not key material. Exchanging it does not weaken pseudonymisation. The seed itself is derived from the key and the run inside the hospital and is never stored in or alongside an exchanged resource.
 
+### Reversing a hash vs. reversing a shift
+
+Neither reversal works by decrypting a stored value — an HMAC cannot be decrypted, and no offset is ever written down anywhere. Both are recomputed from the key, not looked up:
+
+**Reversing a hash.** To re-identify a hashed `Patient.id`, the privacy officer takes a candidate source identifier from the EPD, recomputes `HMAC(key, candidate)` under the reconstructed seed, and compares the result to the hash in the exported data. A match confirms the candidate is the source patient. This is the same forward computation performed at export time — reversal is recomputation and comparison, not inversion.
+
+**Reversing a shift.** The per-patient offset is never itself exported or stored — only its effect, the shifted date, leaves the hospital. Like the hash, the offset is derived deterministically from the seed and a linking identifier — the patient's own source identifier, or, for related patients who must share an offset (see below), a common link identifier — so it is recomputed rather than looked up: the privacy officer reconstructs the seed from the run identifier and the key, recomputes the same deterministic function against that identifier to obtain the exact offset applied during that run, and subtracts it from the shifted date to recover the original date. Because the offset is a function of *(seed, linking identifier)* rather than of the date value itself, it must not be stored alongside the shifted date, or carried in the export in any form — it is regenerated on demand, from material the hospital alone holds, exactly like the hash.
+
+This IG does not standardise the derivation function itself — that is implementation detail, held alongside the key and never exchanged. It requires only that the function be deterministic per *(seed, linking identifier)* pair, so the offset is reproducible inside the hospital and unrecoverable outside it.
+
+### Illustrative construction (non-normative)
+
+*This shows one way to build a function with the required properties. It is not a normative algorithm — any deterministic, keyed construction with the same properties conforms.*
+
+The offset can be derived with the same primitive already used for `hash`, applied to a number instead of an identifier:
+
+```
+digest  = HMAC-SHA256(seed, linkId)              // 32 bytes
+N       = first 4 bytes of digest, as an unsigned integer
+k       = N mod (2 · maxDays)                    // k ∈ [0, 2·maxDays − 1]
+offset  = k < maxDays ? (k − maxDays) : (k − maxDays + 1)
+```
+
+The final step maps the `2·maxDays` possible values of `k` onto `[−maxDays, −1] ∪ [1, maxDays]` — skipping zero, exactly as the `shift` action requires. `shiftedDate = originalDate + offset` days.
+
+**`linkId` is what makes the mother/child case work.** For a standalone patient, `linkId` is that patient's own source identifier — each patient gets an independent offset. For related patients who must move together, the source data already expresses the link explicitly through FHIR itself: a `RelatedPerson` resource connects the two `Patient` records, with `RelatedPerson.relationship` carrying the role — mother, child (e.g. `MTH`/`CHILD` from the [relatedperson-relationshiptype](https://hl7.org/fhir/R4/valueset-relatedperson-relationshiptype.html) value set). `linkId` is resolved from that relationship rather than from either patient's own identifier — for example, the identifier of whichever patient is treated as the anchor of the pair (say, the mother) — so both the mother's and the child's `Patient` resources feed the *same* `linkId` into the same `HMAC(seed, linkId)`, and both get the *same* `offset`. This is exactly the "consistent within a run" / "shared between related patients" property described [above](#the-per-export-seed). Where a patient has no `RelatedPerson` link, `linkId` collapses to that patient's own identifier and the construction is unchanged.
+
+Reversal for either case is the same recomputation: reconstruct `seed` from the run identifier and the key, resolve the right `linkId` from the source data (the patient's own identifier, or — by following the same `RelatedPerson` relationship — the anchor patient's identifier for a linked pair), recompute `offset`, and subtract it back out. Because `linkId` — not the date itself — drives the offset, this works identically whether the record being reversed is the mother's or the child's.
+
 ---
 
 ## Normative artifacts
