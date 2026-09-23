@@ -1,0 +1,110 @@
+name: Build and publish IG preview
+
+# Builds the FHIR IG (SUSHI + HL7 IG Publisher) and publishes the result to
+# GitHub Pages under a path that identifies where it came from:
+#   - push to main            -> https://<org>.github.io/<repo>/
+#   - push to another branch  -> https://<org>.github.io/<repo>/<branch-name>/
+#   - pull_request into main  -> https://<org>.github.io/<repo>/pr-<number>/
+#   - manual run              -> https://<org>.github.io/<repo>/<keyword>/  (via the "keyword" input)
+
+on:
+  push:
+    branches-ignore:
+      - gh-pages
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      keyword:
+        description: "Folder to publish under (defaults to the branch/PR name)"
+        required: false
+        type: string
+
+concurrency:
+  group: ig-publish-${{ github.event.pull_request.head.ref || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    # Skip PRs from forks: the default GITHUB_TOKEN can't push to gh-pages for those.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      - name: Install Jekyll
+        run: gem install jekyll bundler
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi
+
+      - name: Run SUSHI
+        run: sushi .
+
+      - name: Download IG Publisher
+        run: |
+          mkdir -p input-cache
+          curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o input-cache/publisher.jar
+
+      - name: Check terminology server reachability
+        id: txcheck
+        run: |
+          if curl -sSf https://tx.fhir.org > /dev/null; then
+            echo "txoption=" >> "$GITHUB_OUTPUT"
+          else
+            echo "txoption=-tx n/a" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run IG Publisher
+        run: |
+          export JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8"
+          java -jar input-cache/publisher.jar -ig . ${{ steps.txcheck.outputs.txoption }}
+
+      - name: Determine publish folder
+        id: slug
+        run: |
+          if [ -n "${{ inputs.keyword }}" ]; then
+            RAW="${{ inputs.keyword }}"
+          elif [ "${{ github.event_name }}" = "pull_request" ]; then
+            RAW="pr-${{ github.event.pull_request.number }}"
+          elif [ "${{ github.ref_name }}" = "main" ]; then
+            RAW=""
+          else
+            RAW="${{ github.ref_name }}"
+          fi
+          if [ -z "$RAW" ]; then
+            SLUG="."
+          else
+            SLUG=$(echo "$RAW" | tr '[:upper:]' '[:lower:]' | sed -E 's#[^a-z0-9]+#-#g; s#^-+|-+$##g')
+          fi
+          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
+          echo "Publishing to destination_dir: '$SLUG'"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          destination_dir: ${{ steps.slug.outputs.slug }}
+          keep_files: true
