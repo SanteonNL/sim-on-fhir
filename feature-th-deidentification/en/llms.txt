@@ -3,9 +3,9 @@
 ## Pages
 
 * [Home](index.md)
+* [Artifacts Summary](artifacts.md)
 * [Profiles](profiles.md)
 * [De-identification](deidentification.md)
-* [Artifacts Summary](artifacts.md)
 
 ## Resources
 

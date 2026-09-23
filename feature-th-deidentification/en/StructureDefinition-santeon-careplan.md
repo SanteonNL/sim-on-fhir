@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-santeon-careplan.
   "name" : "SanteonCarePlan",
   "title" : "Santeon CarePlan",
   "status" : "draft",
-  "date" : "2026-09-23T11:39:33+00:00",
+  "date" : "2026-09-23T11:46:09+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
