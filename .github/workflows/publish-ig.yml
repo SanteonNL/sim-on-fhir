@@ -6,11 +6,19 @@ name: Build and publish IG preview
 #   - push to another branch  -> https://<org>.github.io/<repo>/<branch-name>/
 #   - pull_request into main  -> https://<org>.github.io/<repo>/pr-<number>/
 #   - manual run              -> https://<org>.github.io/<repo>/<keyword>/  (via the "keyword" input)
+#
+# Pushing a tag (v*) additionally creates a GitHub Release with the built IG
+# packaged as a zip asset, instead of publishing a preview folder.
+#   - v0.2.0-rc.1, v0.2.0-rc.2, ... -> GitHub pre-release
+#   - v0.2.0                        -> GitHub release
+# See "Release process" in README.md for the full branch/tag workflow.
 
 on:
   push:
     branches-ignore:
       - gh-pages
+    tags:
+      - 'v*'
   pull_request:
     branches:
       - main
@@ -36,6 +44,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Verify tag matches IG version
+        if: github.ref_type == 'tag'
+        run: |
+          IG_VERSION=$(grep -m1 '^version:' sushi-config.yaml | sed -E 's/^version:[[:space:]]*//')
+          # Strip the leading 'v' and any '-rc.N' pre-release suffix, e.g. v0.2.0-rc.1 -> 0.2.0
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          TAG_VERSION="${TAG_VERSION%%-rc.*}"
+          if [ "$IG_VERSION" != "$TAG_VERSION" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME (version $TAG_VERSION) does not match sushi-config.yaml version $IG_VERSION"
+            exit 1
+          fi
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -102,9 +122,43 @@ jobs:
           echo "Publishing to destination_dir: '$SLUG'"
 
       - name: Deploy to GitHub Pages
+        if: github.ref_type != 'tag'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./output
           destination_dir: ${{ steps.slug.outputs.slug }}
           keep_files: true
+
+      - name: Upload IG output artifact
+        if: github.ref_type == 'tag'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ig-output
+          path: output
+          retention-days: 1
+
+  release:
+    needs: build-and-publish
+    if: github.ref_type == 'tag'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download IG output artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ig-output
+          path: output
+
+      - name: Zip IG output
+        run: |
+          cd output
+          zip -r "../santeon-careplan-ig-${{ github.ref_name }}.zip" .
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: santeon-careplan-ig-${{ github.ref_name }}.zip
+          generate_release_notes: true
+          prerelease: ${{ contains(github.ref_name, '-rc.') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
