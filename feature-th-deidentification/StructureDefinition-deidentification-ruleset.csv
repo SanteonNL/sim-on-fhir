@@ -1,0 +1,57 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"deidentification-ruleset","deidentification-ruleset","","","",0,*,"","","","null {[]} {[]}
+","De-identification Ruleset","A fully-resolved (effective) set of de-identification rules for one export.
+It carries the actual rules in force, with no reference to a base ruleset
+plus differences. Together with the export Parameters (which declare the
+released elements via _elements), it fully describes how an export is
+de-identified.","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"deidentification-ruleset.id","deidentification-ruleset.id","","","",1,1,"","","","string {[]} {[]}
+","Ruleset identifier, e.g. 'santeon-default'.","Ruleset identifier, e.g. 'santeon-default'.","","","","","","","","","",,,,,"",,,,"deidentification-ruleset.id",1,1,"",""
+"deidentification-ruleset.version","deidentification-ruleset.version","","","",1,1,"","","","string {[]} {[]}
+","Semantic version of this ruleset.","Semantic version of this ruleset.","","","","","","","","","",,,,,"",,,,"deidentification-ruleset.version",1,1,"",""
+"deidentification-ruleset.url","deidentification-ruleset.url","","","",0,1,"","","","uri {[]} {[]}
+","Canonical URL, when this ruleset is a published resource.","Canonical URL, when this ruleset is a published resource.","","","","","","","","","",,,,,"",,,,"deidentification-ruleset.url",0,1,"",""
+"deidentification-ruleset.rule","deidentification-ruleset.rule","","","",1,*,"","","","BackboneElement {[]} {[]}
+","The de-identification rules in force for this export.","The de-identification rules in force for this export.","","","","","","","","","",,,,,"",,,,"deidentification-ruleset.rule",1,*,"","none-requires-reason:Action 'none' must carry an exceptionReason and no transform parameters. {action = 'none' implies (exceptionReason.exists() and algorithm.empty() and maxDays.empty() and minAge.empty() and maxAge.empty())}
+hash-requires-algorithm:Action 'hash' must specify algorithm and carry no date/age parameters. {action = 'hash' implies (algorithm.exists() and maxDays.empty() and minAge.empty() and maxAge.empty())}shift-requires-maxdays:Action 'shift' must specify maxDays and carry no hash/age parameters. {action = 'shift' implies (maxDays.exists() and algorithm.empty() and minAge.empty() and maxAge.empty())}clampage-requires-bounds:Action 'clamp-age' must specify both minAge and maxAge. {action = 'clamp-age' implies (minAge.exists() and maxAge.exists() and algorithm.empty() and maxDays.empty())}ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}"
+"deidentification-ruleset.rule.id","deidentification-ruleset.rule.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"deidentification-ruleset.rule.extension","deidentification-ruleset.rule.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"deidentification-ruleset.rule.modifierExtension","deidentification-ruleset.rule.modifierExtension","","extensions
+user contentmodifiers","",0,*,"","Y","Y","Extension {[]} {[]}
+","Extensions that cannot be ignored even if unrecognized","May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+
+Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"BackboneElement.modifierExtension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"deidentification-ruleset.rule.path","deidentification-ruleset.rule.path","","","",1,1,"","","","string {[]} {[]}
+","FHIRPath expression selecting the element(s) this rule applies to. A rule
+     covers the named element and every element beneath it.","FHIRPath expression selecting the element(s) this rule applies to. A rule
+     covers the named element and every element beneath it.","","","","","","","","","",,,,,"",,,,"deidentification-ruleset.rule.path",1,1,"",""
+"deidentification-ruleset.rule.action","deidentification-ruleset.rule.action","","","",1,1,"","","","code {[]} {[]}
+","The transformation to apply.","The transformation to apply.","","","","","","","","","",,"required","","https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs","",,,,"deidentification-ruleset.rule.action",1,1,"",""
+"deidentification-ruleset.rule.priority","deidentification-ruleset.rule.priority","","","",0,1,"","","","integer {[]} {[]}
+","Optional explicit ordering. For date elements the canonical order is
+     shift, then first-of-month, then clamp-age; priority is for finer control.","Optional explicit ordering. For date elements the canonical order is
+     shift, then first-of-month, then clamp-age; priority is for finer control.","","","","","","","","","",,,,,"",,,,"deidentification-ruleset.rule.priority",0,1,"",""
+"deidentification-ruleset.rule.algorithm","deidentification-ruleset.rule.algorithm","","","",0,1,"","","","code {[]} {[]}
+","Hash algorithm (hash only), e.g. 'hmac-sha256'.","Hash algorithm (hash only), e.g. 'hmac-sha256'.","","","","","","","","","",,,,,"",,,,"deidentification-ruleset.rule.algorithm",0,1,"",""
+"deidentification-ruleset.rule.propagateTo","deidentification-ruleset.rule.propagateTo","","","",0,*,"","","","string {[]} {[]}
+","Reference paths rewritten with the same hash (hash on an id element),
+     e.g. '*.subject', '*.patient'.","Reference paths rewritten with the same hash (hash on an id element),
+     e.g. '*.subject', '*.patient'.","","","","","","","","","",,,,,"",,,,"deidentification-ruleset.rule.propagateTo",0,*,"",""
+"deidentification-ruleset.rule.maxDays","deidentification-ruleset.rule.maxDays","","","",0,1,"","","","integer {[]} {[]}
+","Maximum absolute date shift in days (shift only). Offset drawn from
+     +/- maxDays, never zero.","Maximum absolute date shift in days (shift only). Offset drawn from
+     +/- maxDays, never zero.","","","","","","","","","",,,,,"",,,,"deidentification-ruleset.rule.maxDays",0,1,"",""
+"deidentification-ruleset.rule.minAge","deidentification-ruleset.rule.minAge","","","",0,1,"","","","integer {[]} {[]}
+","Lower age bound in years (clamp-age only).","Lower age bound in years (clamp-age only).","","","","","","","","","",,,,,"",,,,"deidentification-ruleset.rule.minAge",0,1,"",""
+"deidentification-ruleset.rule.maxAge","deidentification-ruleset.rule.maxAge","","","",0,1,"","","","integer {[]} {[]}
+","Upper age bound in years (clamp-age only).","Upper age bound in years (clamp-age only).","","","","","","","","","",,,,,"",,,,"deidentification-ruleset.rule.maxAge",0,1,"",""
+"deidentification-ruleset.rule.exceptionReason","deidentification-ruleset.rule.exceptionReason","","","",0,1,"","","","string {[]} {[]}
+","Justification. Required for action 'none'; required when 'clamp-age'
+     overrides the standard age range.","Justification. Required for action 'none'; required when 'clamp-age'
+     overrides the standard age range.","","","","","","","","","",,,,,"",,,,"deidentification-ruleset.rule.exceptionReason",0,1,"",""

@@ -1,0 +1,60 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "deidentification-action-cs",
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem deidentification-action-cs</b></p><a name=\"deidentification-action-cs\"> </a><a name=\"hcdeidentification-action-cs\"> </a><p>This case-sensitive code system <code>https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">none<a name=\"deidentification-action-cs-none\"> </a></td><td>None</td><td>Export the element unchanged. Requires an exceptionReason.</td></tr><tr><td style=\"white-space:nowrap\">hash<a name=\"deidentification-action-cs-hash\"> </a></td><td>Hash</td><td>Replace the value with an HMAC hash.</td></tr><tr><td style=\"white-space:nowrap\">shift<a name=\"deidentification-action-cs-shift\"> </a></td><td>Shift</td><td>Move a date/dateTime by a per-patient offset.</td></tr><tr><td style=\"white-space:nowrap\">clamp-age<a name=\"deidentification-action-cs-clamp-age\"> </a></td><td>Clamp age</td><td>Bound the age implied by a birth date to a range.</td></tr><tr><td style=\"white-space:nowrap\">first-of-month<a name=\"deidentification-action-cs-first-of-month\"> </a></td><td>First of month</td><td>Floor a date to the first day of its month.</td></tr></table></div>"
+  },
+  "url" : "https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs",
+  "version" : "0.1.0",
+  "name" : "DeidentificationActionCS",
+  "title" : "De-identification Action Code System",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-09-23T11:39:33+00:00",
+  "publisher" : "Santeon",
+  "contact" : [{
+    "name" : "Santeon",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.santeon.nl"
+    }]
+  }],
+  "description" : "The transformations a de-identification rule may apply to an element.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "NL",
+      "display" : "Netherlands"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 5,
+  "concept" : [{
+    "code" : "none",
+    "display" : "None",
+    "definition" : "Export the element unchanged. Requires an exceptionReason."
+  },
+  {
+    "code" : "hash",
+    "display" : "Hash",
+    "definition" : "Replace the value with an HMAC hash."
+  },
+  {
+    "code" : "shift",
+    "display" : "Shift",
+    "definition" : "Move a date/dateTime by a per-patient offset."
+  },
+  {
+    "code" : "clamp-age",
+    "display" : "Clamp age",
+    "definition" : "Bound the age implied by a birth date to a range."
+  },
+  {
+    "code" : "first-of-month",
+    "display" : "First of month",
+    "definition" : "Floor a date to the first day of its month."
+  }]
+}

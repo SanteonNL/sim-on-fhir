@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="9256c772-d75d-40f6-a049-adbac4ed590d"/>
+  <meta>
+    <lastUpdated value="2026-09-23T11:39:33.531+00:00"/>
+  </meta>
+  <type value="collection"/>
+  <entry>
+    <fullUrl value="https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion performed internally based on 
+              <a href="CodeSystem-deidentification-action-cs.html">codesystem De-identification Action Code System v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs|0.1.0" title="Click to Copy URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>This value set contains 5 concepts</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>Display (en)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs-none"> </a>
+                  <code>https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-deidentification-action-cs.html#deidentification-action-cs-none">none</a>
+                </td>
+                <td>None</td>
+                <td>Export the element unchanged. Requires an exceptionReason.</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;none&quot;, &quot;display&quot;: &quot;None&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;none&quot;&gt;&lt;display value=&quot;None&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs-hash"> </a>
+                  <code>https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-deidentification-action-cs.html#deidentification-action-cs-hash">hash</a>
+                </td>
+                <td>Hash</td>
+                <td>Replace the value with an HMAC hash.</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;hash&quot;, &quot;display&quot;: &quot;Hash&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;hash&quot;&gt;&lt;display value=&quot;Hash&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs-shift"> </a>
+                  <code>https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-deidentification-action-cs.html#deidentification-action-cs-shift">shift</a>
+                </td>
+                <td>Shift</td>
+                <td>Move a date/dateTime by a per-patient offset.</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;shift&quot;, &quot;display&quot;: &quot;Shift&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;shift&quot;&gt;&lt;display value=&quot;Shift&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs-clamp-age"> </a>
+                  <code>https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-deidentification-action-cs.html#deidentification-action-cs-clamp-age">clamp-age</a>
+                </td>
+                <td>Clamp age</td>
+                <td>Bound the age implied by a birth date to a range.</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;clamp-age&quot;, &quot;display&quot;: &quot;Clamp age&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;clamp-age&quot;&gt;&lt;display value=&quot;Clamp age&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs-first-of-month"> </a>
+                  <code>https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-deidentification-action-cs.html#deidentification-action-cs-first-of-month">first-of-month</a>
+                </td>
+                <td>First of month</td>
+                <td>Floor a date to the first day of its month.</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;first-of-month&quot;, &quot;display&quot;: &quot;First of month&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;first-of-month&quot;&gt;&lt;display value=&quot;First of month&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs"/>
+        <version value="0.1.0"/>
+        <name value="DeidentificationActionVS"/>
+        <title value="De-identification Action Value Set"/>
+        <status value="active"/>
+        <experimental value="false"/>
+        <date value="2026-09-23T11:39:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="NL"/>
+            <display value="Netherlands"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:85123b7f-0f25-437f-b057-1b61c52bee61"/>
+          <timestamp value="2026-09-23T11:40:28+00:00"/>
+          <total value="5"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="en"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs"/>
+            <code value="none"/>
+            <display value="None"/>
+          </contains>
+          <contains>
+            <system value="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs"/>
+            <code value="hash"/>
+            <display value="Hash"/>
+          </contains>
+          <contains>
+            <system value="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs"/>
+            <code value="shift"/>
+            <display value="Shift"/>
+          </contains>
+          <contains>
+            <system value="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs"/>
+            <code value="clamp-age"/>
+            <display value="Clamp age"/>
+          </contains>
+          <contains>
+            <system value="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs"/>
+            <code value="first-of-month"/>
+            <display value="First of month"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion performed internally based on 
+              <a href="CodeSystem-deidentification-action-cs.html">codesystem De-identification Action Code System v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs|0.1.0" title="Click to Copy URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>This value set contains 5 concepts</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>Display (en)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs-none"> </a>
+                  <code>https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-deidentification-action-cs.html#deidentification-action-cs-none">none</a>
+                </td>
+                <td>None</td>
+                <td>Export the element unchanged. Requires an exceptionReason.</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;none&quot;, &quot;display&quot;: &quot;None&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;none&quot;&gt;&lt;display value=&quot;None&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs-hash"> </a>
+                  <code>https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-deidentification-action-cs.html#deidentification-action-cs-hash">hash</a>
+                </td>
+                <td>Hash</td>
+                <td>Replace the value with an HMAC hash.</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;hash&quot;, &quot;display&quot;: &quot;Hash&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;hash&quot;&gt;&lt;display value=&quot;Hash&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs-shift"> </a>
+                  <code>https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-deidentification-action-cs.html#deidentification-action-cs-shift">shift</a>
+                </td>
+                <td>Shift</td>
+                <td>Move a date/dateTime by a per-patient offset.</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;shift&quot;, &quot;display&quot;: &quot;Shift&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;shift&quot;&gt;&lt;display value=&quot;Shift&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs-clamp-age"> </a>
+                  <code>https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-deidentification-action-cs.html#deidentification-action-cs-clamp-age">clamp-age</a>
+                </td>
+                <td>Clamp age</td>
+                <td>Bound the age implied by a birth date to a range.</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;clamp-age&quot;, &quot;display&quot;: &quot;Clamp age&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;clamp-age&quot;&gt;&lt;display value=&quot;Clamp age&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs-first-of-month"> </a>
+                  <code>https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-deidentification-action-cs.html#deidentification-action-cs-first-of-month">first-of-month</a>
+                </td>
+                <td>First of month</td>
+                <td>Floor a date to the first day of its month.</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;first-of-month&quot;, &quot;display&quot;: &quot;First of month&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;first-of-month&quot;&gt;&lt;display value=&quot;First of month&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs"/>
+        <version value="0.1.0"/>
+        <name value="DeidentificationActionVS"/>
+        <title value="De-identification Action Value Set"/>
+        <status value="active"/>
+        <experimental value="false"/>
+        <date value="2026-09-23T11:39:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="NL"/>
+            <display value="Netherlands"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:2f5830a8-5bba-4a68-8088-c9b6f02794d6"/>
+          <timestamp value="2026-09-23T11:40:28+00:00"/>
+          <total value="5"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="en"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs"/>
+            <code value="none"/>
+            <display value="None"/>
+          </contains>
+          <contains>
+            <system value="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs"/>
+            <code value="hash"/>
+            <display value="Hash"/>
+          </contains>
+          <contains>
+            <system value="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs"/>
+            <code value="shift"/>
+            <display value="Shift"/>
+          </contains>
+          <contains>
+            <system value="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs"/>
+            <code value="clamp-age"/>
+            <display value="Clamp age"/>
+          </contains>
+          <contains>
+            <system value="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs"/>
+            <code value="first-of-month"/>
+            <display value="First of month"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+</Bundle>
