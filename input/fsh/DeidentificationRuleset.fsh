@@ -69,9 +69,6 @@ de-identified.
 // --- action parameters (constrained per action by the invariants below) ---
 * rule.algorithm 0..1 code
     "Hash algorithm (hash only), e.g. 'hmac-sha256'."
-* rule.propagateTo 0..* string
-    "Reference paths rewritten with the same hash (hash on an id element),
-     e.g. '*.subject', '*.patient'."
 * rule.maxDays 0..1 integer
     "Maximum absolute date shift in days (shift only). Offset drawn from
      +/- maxDays, never zero."
@@ -127,8 +124,6 @@ Description: "The default ruleset every Santeon export inherits unless overridde
 * rule[+].path = "Patient.id"
 * rule[=].action = #hash
 * rule[=].algorithm = #hmac-sha256
-* rule[=].propagateTo[+] = "*.subject"
-* rule[=].propagateTo[+] = "*.patient"
 
 * rule[+].path = "Patient.identifier"
 * rule[=].action = #hash

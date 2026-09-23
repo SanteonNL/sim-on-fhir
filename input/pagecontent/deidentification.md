@@ -54,12 +54,11 @@ Use `none` for elements that carry no identifying risk and whose clinical value 
 
 ### `hash`
 
-The element value is replaced by an HMAC hash. Used for identifiers and for the references that point to them. A hash rule on a resource `id` also declares, through `propagateTo`, which reference elements must be rewritten with the same hash so that referential integrity is preserved across the export.
+The element value is replaced by an HMAC hash. Used for identifiers and for the references that point to them. A hash rule on a resource's `id` also rewrites every reference to that resource type, anywhere in the export, to the same hash — automatically, not through a declared list of reference paths. There is no legitimate case for hashing a resource's `id` but leaving some references to it unrewritten: that would either leak the original id or break referential integrity, so the rewrite applies uniformly to `Observation.subject`, `RelatedPerson.patient`, `CarePlan.author`, or any other element referencing that resource type, whatever it happens to be called.
 
 | Parameter | Cardinality | Meaning |
 |---|---|---|
 | `algorithm` | `1..1` | Hash algorithm, e.g. `hmac-sha256` |
-| `propagateTo` | `0..*` | Reference paths to rewrite with the same hash (for `id` elements) |
 
 The seed for the HMAC changes per delivery, so the same patient hashes to different values across separate exports — deliveries cannot be linked to one another. See [Pseudonymisation and the per-export seed](#pseudonymisation-and-the-per-export-seed).
 
@@ -67,12 +66,9 @@ The seed for the HMAC changes per delivery, so the same patient hashes to differ
 {
   "path": "Patient.id",
   "action": "hash",
-  "algorithm": "hmac-sha256",
-  "propagateTo": ["*.subject", "*.patient"]
+  "algorithm": "hmac-sha256"
 }
 ```
-
-`propagateTo` lists the reference elements that carry the patient reference across resource types. `*.subject` matches the `subject` element on any resource (Observation, Condition, Encounter, …); `*.patient` matches the `patient` element where that naming is used instead (for example on some CarePlan and Coverage references). Only these named reference paths are rewritten — references to other resource types (Organization, Practitioner) are left untouched.
 
 ### `shift`
 
@@ -348,7 +344,7 @@ The result is **pseudonymisation** under the GDPR, not anonymisation. The data c
 
 Each export derives its HMAC seed freshly, per export run. The seed governs both the identifier hashing and the per-patient date-shift offset. Two properties follow, and a conforming export **must** exhibit both:
 
-**Consistent within a run.** Within a single export, the same source identifier always hashes to the same value, and all of one patient's dates shift by the same offset. Referential integrity is preserved — a hashed `Patient.id` and every reference propagated to it (`*.subject`, `*.patient`) resolve to the same value — and temporal relationships between a patient's events are kept intact. Related patients (for example mother and child) share the offset, so cross-record intervals also survive.
+**Consistent within a run.** Within a single export, the same source identifier always hashes to the same value, and all of one patient's dates shift by the same offset. Referential integrity is preserved — a hashed `Patient.id` and every reference to that patient anywhere in the export resolve to the same value — and temporal relationships between a patient's events are kept intact. Related patients (for example mother and child) share the offset, so cross-record intervals also survive.
 
 **Unlinkable across runs.** Because the seed changes per export, the *same* patient exported in two separate runs hashes to two *different* values, and their dates shift by different offsets. A party holding two deliveries cannot tell that a record in one corresponds to a record in the other by comparing hashes or dates. Deliveries are not linkable to each other from their contents alone.
 
