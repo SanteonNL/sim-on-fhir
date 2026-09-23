@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="deidentification-action-vs"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet deidentification-action-vs</b></p><a name="deidentification-action-vs"> </a><a name="hcdeidentification-action-vs"> </a><ul><li>Include all codes defined in <a href="CodeSystem-deidentification-action-cs.html"><code>https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;0.1.0</span></li></ul></div>
+  </text>
+  <url value="https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs"/>
+  <version value="0.1.0"/>
+  <name value="DeidentificationActionVS"/>
+  <title value="De-identification Action Value Set"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-09-23T11:45:21+00:00"/>
+  <publisher value="Santeon"/>
+  <contact>
+    <name value="Santeon"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.santeon.nl"/>
+    </telecom>
+  </contact>
+  <description value="Allowed values for a de-identification rule's action."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="NL"/>
+      <display value="Netherlands"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs"/>
+    </include>
+  </compose>
+</ValueSet>

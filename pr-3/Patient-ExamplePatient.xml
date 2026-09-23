@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="ExamplePatient"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Patient ExamplePatient</b></p><a name="ExamplePatient"> </a><a name="hcExamplePatient"> </a><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;">Anonymous Patient (no stated gender), DoB Unknown ( https://ig.santeon.nl/fhir/NamingSystem/patient-id#HASH-7F2A91C4)</p><hr/></div>
+  </text>
+  <identifier>
+    <system value="https://ig.santeon.nl/fhir/NamingSystem/patient-id"/>
+    <value value="HASH-7F2A91C4"/>
+  </identifier>
+</Patient>

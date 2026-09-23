@@ -1,0 +1,20 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://ig.santeon.nl/careplan/Binary/santeon-default> a fhir:Binary ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "santeon-default"] ;
+  fhir:Binary.contentType [ fhir:value "application/fhir+json"] ;
+  fhir:Binary.data [ fhir:value "ewogICJyZXNvdXJjZVR5cGUiOiAiaHR0cHM6Ly9pZy5zYW50ZW9uLm5sL2NhcmVwbGFuL1N0cnVjdHVyZURlZmluaXRpb24vZGVpZGVudGlmaWNhdGlvbi1ydWxlc2V0IiwKICAiaWQiOiAic2FudGVvbi1kZWZhdWx0IiwKICAidXJsIjogImh0dHBzOi8vaWcuc2FudGVvbi5ubC9zaW0tb24tZmhpci9EZWlkZW50aWZpY2F0aW9uUnVsZXNldC9zYW50ZW9uLWRlZmF1bHQiLAogICJ2ZXJzaW9uIjogIjAuMS4wIiwKICAicnVsZSI6IFsKICAgIHsKICAgICAgInBhdGgiOiAiUGF0aWVudC5pZCIsCiAgICAgICJhY3Rpb24iOiAiaGFzaCIsCiAgICAgICJhbGdvcml0aG0iOiAiaG1hYy1zaGEyNTYiLAogICAgICAicHJvcGFnYXRlVG8iOiBbCiAgICAgICAgIiouc3ViamVjdCIsCiAgICAgICAgIioucGF0aWVudCIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiUGF0aWVudC5pZGVudGlmaWVyIiwKICAgICAgImFjdGlvbiI6ICJoYXNoIiwKICAgICAgImFsZ29yaXRobSI6ICJobWFjLXNoYTI1NiIKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIioqLm9mVHlwZShkYXRlKSIsCiAgICAgICJhY3Rpb24iOiAic2hpZnQiLAogICAgICAibWF4RGF5cyI6IDE1CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICJQYXRpZW50LmJpcnRoRGF0ZSIsCiAgICAgICJhY3Rpb24iOiAiZmlyc3Qtb2YtbW9udGgiCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICJQYXRpZW50LmJpcnRoRGF0ZSIsCiAgICAgICJhY3Rpb24iOiAiY2xhbXAtYWdlIiwKICAgICAgIm1pbkFnZSI6IDE4LAogICAgICAibWF4QWdlIjogODUKICAgIH0KICBdCn0K"^^xsd:base64Binary] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://ig.santeon.nl/careplan/Binary/santeon-default.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

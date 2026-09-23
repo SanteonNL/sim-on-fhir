@@ -1,0 +1,43 @@
+# santeon.careplan.ig#0.1.0: Santeon CarePlan Implementation Guide(en)
+
+## Pages
+
+* [Home](en/index.md)
+* [Artifacts Summary](en/artifacts.md)
+* [Profiles](en/profiles.md)
+* [De-identification](en/deidentification.md)
+
+## Resources
+
+### CodeSystems
+
+* [De-identification Action Code System](en/CodeSystem-deidentification-action-cs.md)
+
+### ValueSets
+
+* [De-identification Action Value Set](en/ValueSet-deidentification-action-vs.md)
+
+### Logicals
+
+* [De-identification Ruleset](en/StructureDefinition-deidentification-ruleset.md)
+
+### Resource Profiles
+
+* [Santeon CarePlan](en/StructureDefinition-santeon-careplan.md)
+
+### Binaries
+
+* [santeon-default](en/Binary-santeon-default.md)
+
+### CapabilityStatements
+
+* [Santeon CarePlan Server Capability Statement](en/CapabilityStatement-SanteonCarePlanCapabilityStatement.md)
+
+### ImplementationGuides
+
+* [Santeon CarePlan Implementation Guide](en/ImplementationGuide-santeon.careplan.ig.md)
+
+### Examples
+
+* [SanteonCarePlanExample (CarePlan)](en/CarePlan-SanteonCarePlanExample.md)
+* [ExamplePatient (Patient)](en/Patient-ExamplePatient.md)

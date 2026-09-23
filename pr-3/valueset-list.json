@@ -1,0 +1,11 @@
+{
+  "codeSystems" : [{
+    "url" : "https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "DeidentificationActionVS",
+    "title" : "De-identification Action Value Set",
+    "description" : "Allowed values for a de-identification rule's action.",
+    "systems" : ["https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs"]
+  }]
+}

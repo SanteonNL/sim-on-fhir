@@ -1,0 +1,2 @@
+URL,Version,Status,OIDs,Name,Title,Description,Used
+https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs,0.1.0,active,,DeidentificationActionCS,De-identification Action Code System,"The transformations a de-identification rule may apply to an element.",

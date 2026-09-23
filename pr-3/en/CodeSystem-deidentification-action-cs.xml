@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="deidentification-action-cs"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem deidentification-action-cs</b></p><a name="deidentification-action-cs"> </a><a name="hcdeidentification-action-cs"> </a><p>This case-sensitive code system <code>https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">none<a name="deidentification-action-cs-none"> </a></td><td>None</td><td>Export the element unchanged. Requires an exceptionReason.</td></tr><tr><td style="white-space:nowrap">hash<a name="deidentification-action-cs-hash"> </a></td><td>Hash</td><td>Replace the value with an HMAC hash.</td></tr><tr><td style="white-space:nowrap">shift<a name="deidentification-action-cs-shift"> </a></td><td>Shift</td><td>Move a date/dateTime by a per-patient offset.</td></tr><tr><td style="white-space:nowrap">clamp-age<a name="deidentification-action-cs-clamp-age"> </a></td><td>Clamp age</td><td>Bound the age implied by a birth date to a range.</td></tr><tr><td style="white-space:nowrap">first-of-month<a name="deidentification-action-cs-first-of-month"> </a></td><td>First of month</td><td>Floor a date to the first day of its month.</td></tr></table></div>
+  </text>
+  <url value="https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs"/>
+  <version value="0.1.0"/>
+  <name value="DeidentificationActionCS"/>
+  <title value="De-identification Action Code System"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-09-23T11:45:21+00:00"/>
+  <publisher value="Santeon"/>
+  <contact>
+    <name value="Santeon"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.santeon.nl"/>
+    </telecom>
+  </contact>
+  <description value="The transformations a de-identification rule may apply to an element."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="NL"/>
+      <display value="Netherlands"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="5"/>
+  <concept>
+    <code value="none"/>
+    <display value="None"/>
+    <definition value="Export the element unchanged. Requires an exceptionReason."/>
+  </concept>
+  <concept>
+    <code value="hash"/>
+    <display value="Hash"/>
+    <definition value="Replace the value with an HMAC hash."/>
+  </concept>
+  <concept>
+    <code value="shift"/>
+    <display value="Shift"/>
+    <definition value="Move a date/dateTime by a per-patient offset."/>
+  </concept>
+  <concept>
+    <code value="clamp-age"/>
+    <display value="Clamp age"/>
+    <definition value="Bound the age implied by a birth date to a range."/>
+  </concept>
+  <concept>
+    <code value="first-of-month"/>
+    <display value="First of month"/>
+    <definition value="Floor a date to the first day of its month."/>
+  </concept>
+</CodeSystem>
