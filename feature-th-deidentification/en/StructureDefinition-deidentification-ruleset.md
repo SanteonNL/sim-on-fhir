@@ -32,7 +32,7 @@ Other representations of profile: [CSV](../StructureDefinition-deidentification-
   "name" : "DeidentificationRuleset",
   "title" : "De-identification Ruleset",
   "status" : "draft",
-  "date" : "2026-09-23T11:46:09+00:00",
+  "date" : "2026-09-23T12:15:24+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",

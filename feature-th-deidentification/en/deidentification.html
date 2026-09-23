@@ -188,6 +188,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="#internal-reversibility--the-run-identifier" id="markdown-toc-internal-reversibility--the-run-identifier">Internal reversibility — the run identifier</a></li>
       <li><a href="#reversing-a-hash-vs-reversing-a-shift" id="markdown-toc-reversing-a-hash-vs-reversing-a-shift">Reversing a hash vs. reversing a shift</a></li>
       <li><a href="#illustrative-construction-non-normative" id="markdown-toc-illustrative-construction-non-normative">Illustrative construction (non-normative)</a></li>
+      <li><a href="#clamp-age-and-first-of-month-generalisation-not-reversal" id="markdown-toc-clamp-age-and-first-of-month-generalisation-not-reversal"><code class="language-plaintext highlighter-rouge">clamp-age</code> and <code class="language-plaintext highlighter-rouge">first-of-month</code>: generalisation, not reversal</a></li>
     </ul>
   </li>
   <li><a href="#normative-artifacts" id="markdown-toc-normative-artifacts">Normative artifacts</a></li>
@@ -206,21 +207,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p><strong>Layer 1 — Profile: what <em>can</em> be present.</strong> The FHIR profile referenced by the export defines the full set of elements that may ever appear in a resource. An element that is not part of the profile can never appear in an export. This is the outer boundary — the profile is the upper limit of what is possible.</p>
 
-<p><strong>Layer 2 — Export query: what <em>goes</em>.</strong> Within the bounds of the profile, the export query selects — per resource type, using <code class="language-plaintext highlighter-rouge">_elements</code> — which elements are actually included in this specific export. This is a subset of the profile, chosen per dataset. An element the profile allows but the query does not select simply does not appear in the output.</p>
+<p><strong>Layer 2 — Export query: what <em>goes</em>.</strong> Within the bounds of the profile, the export query selects — per resource type, using <code class="language-plaintext highlighter-rouge">_elements</code> and <code class="language-plaintext highlighter-rouge">_typeFilter</code> — which elements are included and which matching records are included in this specific export. <code class="language-plaintext highlighter-rouge">_elements</code> limits the fields; <code class="language-plaintext highlighter-rouge">_typeFilter</code> limits the records by their search criteria. Both are part of the export's selection and must be considered when determining what can leave the institution.</p>
 
 <p><strong>Layer 3 — De-identification: <em>how</em> it is transformed.</strong> For every element the query selects, a de-identification rule determines how that element is transformed on its way out: hashed, date-shifted, age-clamped, floored to the first of the month, or deliberately left intact. De-identification never removes elements — removal is the query's job, not the ruleset's.</p>
 
 <h3 id="core-principles">Core principles</h3>
 
-<p>The model rests on four rules that together guarantee no element leaves the hospital without an explicit, documented decision.</p>
+<p>The model rests on four rules that together guarantee no selected element or filter leaves the hospital without an explicit, documented decision.</p>
 
 <p><strong>Every selected element must be covered.</strong> Each element selected by the export query must be covered by a de-identification rule — either a rule that names its path specifically, or a broad rule whose path expression matches it (for example, <code class="language-plaintext highlighter-rouge">**.ofType(date)</code> covers every element of type <code class="language-plaintext highlighter-rouge">date</code>). An element with no covering rule is a validation error: the export request cannot be released.</p>
+
+<p><strong>Every filter must be covered.</strong> Each <code class="language-plaintext highlighter-rouge">_typeFilter</code> is part of the export definition and must be covered by an explicit filter rule. The rule must specify how the filter's search parameters and values are handled, including whether identifying values are transformed consistently with the corresponding released data. A filter with no covering rule is a validation error; filters are not exempt merely because they select records rather than elements.</p>
 
 <p><strong><code class="language-plaintext highlighter-rouge">none</code> is allowed, but must be justified.</strong> An element may be exported unchanged, but only through an explicit <code class="language-plaintext highlighter-rouge">none</code> action carrying an <code class="language-plaintext highlighter-rouge">exceptionReason</code> that documents why the element is safe to release intact. There is no silent pass-through — leaving an element unchanged is always a deliberate, recorded choice.</p>
 
 <p><strong>Rules that match nothing are ignored.</strong> A de-identification rule whose path matches no element selected by the query has no effect and produces no error. This keeps a shared standard ruleset usable across exports that select different subsets of elements.</p>
 
-<p><strong>Coverage is made visible.</strong> For every export, coverage can be shown element by element: each selected element, the rule that covers it, and the resulting action. This lets a privacy officer confirm, at review time, that every element is accounted for.</p>
+<p><strong>Coverage is made visible.</strong> For every export, coverage can be shown element by element and filter by filter: each selected element or filter, the rule that covers it, and the resulting action. This lets a privacy officer confirm, at review time, that every part of the export is accounted for.</p>
 
 <hr />
 
@@ -509,7 +512,7 @@ santeon-default v0.1.0             geboortezorg-2024
 
 <ol>
   <li>
-    <p><strong>The export <code class="language-plaintext highlighter-rouge">Parameters</code></strong> — a standard <a href="https://hl7.org/fhir/uv/bulkdata/">FHIR Bulk Data</a> <code class="language-plaintext highlighter-rouge">Parameters</code> resource that defines <em>what is requested</em>: <code class="language-plaintext highlighter-rouge">_type</code> (which resource types), <code class="language-plaintext highlighter-rouge">_typeFilter</code> (which records within a type), and <strong><code class="language-plaintext highlighter-rouge">_elements</code></strong> (which elements of each type are released). <code class="language-plaintext highlighter-rouge">_elements</code> is core FHIR and needs no extension by this IG.</p>
+    <p><strong>The export <code class="language-plaintext highlighter-rouge">Parameters</code></strong> — a standard <a href="https://hl7.org/fhir/uv/bulkdata/">FHIR Bulk Data</a> <code class="language-plaintext highlighter-rouge">Parameters</code> resource that defines <em>what is requested</em>: <code class="language-plaintext highlighter-rouge">_type</code> (which resource types), <code class="language-plaintext highlighter-rouge">_typeFilter</code> (which records within a type and the filters applied to them), and <strong><code class="language-plaintext highlighter-rouge">_elements</code></strong> (which elements of each type are released). <code class="language-plaintext highlighter-rouge">_elements</code> and <code class="language-plaintext highlighter-rouge">_typeFilter</code> are core Bulk Data parameters and need no extension by this IG.</p>
   </li>
   <li>
     <p><strong>The effective <code class="language-plaintext highlighter-rouge">DeidentificationRuleset</code></strong> — a fully-resolved instance of the <a href="StructureDefinition-deidentification-ruleset.html"><code class="language-plaintext highlighter-rouge">DeidentificationRuleset</code></a> Logical Model that defines <em>how each released element is transformed</em>.</p>
@@ -538,7 +541,7 @@ DeidentificationRuleset (effective)          →  HOW each element is transforme
 
 <h3 id="coverage--binding-the-two-resources">Coverage — binding the two resources</h3>
 
-<p><strong>Coverage is the requirement that binds <code class="language-plaintext highlighter-rouge">Parameters</code> to the ruleset.</strong> For every element released by the export — every element named or implied by <code class="language-plaintext highlighter-rouge">_elements</code>, for every type in <code class="language-plaintext highlighter-rouge">_type</code> — the effective <code class="language-plaintext highlighter-rouge">DeidentificationRuleset</code> must contain at least one rule that covers it.</p>
+<p><strong>Coverage is the requirement that binds <code class="language-plaintext highlighter-rouge">Parameters</code> to the ruleset.</strong> For every element released by the export — every element named or implied by <code class="language-plaintext highlighter-rouge">_elements</code>, for every type in <code class="language-plaintext highlighter-rouge">_type</code> — and for every <code class="language-plaintext highlighter-rouge">_typeFilter</code> used by the export, the effective <code class="language-plaintext highlighter-rouge">DeidentificationRuleset</code> must contain at least one rule that covers it. Filter coverage includes the filter parameter and its value or expression; a filter must not expose an identifying value or create a selection that cannot be justified by the ruleset.</p>
 
 <p><strong>Coverage is hierarchical.</strong> A rule covers the element its <code class="language-plaintext highlighter-rouge">path</code> names <em>and every element beneath it</em>. A rule on a composite element therefore covers its whole subtree: a <code class="language-plaintext highlighter-rouge">none</code> rule on <code class="language-plaintext highlighter-rouge">Observation.code</code> covers <code class="language-plaintext highlighter-rouge">Observation.code.coding</code>, <code class="language-plaintext highlighter-rouge">Observation.code.coding.system</code>, <code class="language-plaintext highlighter-rouge">Observation.code.coding.code</code>, and any other descendant, without a separate rule for each. A released element is covered when a rule exists on that element <strong>or on any of its ancestors</strong>. A rule may also cover by a path expression that matches across the tree — for example <code class="language-plaintext highlighter-rouge">**.ofType(date)</code> covers every <code class="language-plaintext highlighter-rouge">date</code> element wherever it occurs.</p>
 
@@ -574,7 +577,7 @@ Applied:
 <p>To keep the model implementable on any FHIR server, the following are <strong>out of scope</strong> of the normative content:</p>
 
 <ul>
-  <li>how the <code class="language-plaintext highlighter-rouge">_elements</code> selection and the effective ruleset are authored or assembled (layering, defaults, overrides, templating);</li>
+  <li>how the <code class="language-plaintext highlighter-rouge">_elements</code> and <code class="language-plaintext highlighter-rouge">_typeFilter</code> selections and the effective ruleset are authored or assembled (layering, defaults, overrides, templating);</li>
   <li>the file formats, repositories, or review processes a producer uses;</li>
   <li>the orchestration of an export run (how it is triggered, polled, transported);</li>
   <li>whether coverage is enforced ahead of time or by construction.</li>
@@ -741,6 +744,56 @@ offset  = k &lt; maxDays ? (k − maxDays) : (k − maxDays + 1)
 
 <p>Reversal for either case is the same recomputation: reconstruct <code class="language-plaintext highlighter-rouge">seed</code> from the run identifier and the key, resolve the right <code class="language-plaintext highlighter-rouge">linkId</code> from the source data (the patient's own identifier, or — by following the same <code class="language-plaintext highlighter-rouge">RelatedPerson</code> relationship — the anchor patient's identifier for a linked pair), recompute <code class="language-plaintext highlighter-rouge">offset</code>, and subtract it back out. Because <code class="language-plaintext highlighter-rouge">linkId</code> — not the date itself — drives the offset, this works identically whether the record being reversed is the mother's or the child's.</p>
 
+<h3 id="clamp-age-and-first-of-month-generalisation-not-reversal"><code class="language-plaintext highlighter-rouge">clamp-age</code> and <code class="language-plaintext highlighter-rouge">first-of-month</code>: generalisation, not reversal</h3>
+
+<p><code class="language-plaintext highlighter-rouge">hash</code> and <code class="language-plaintext highlighter-rouge">shift</code> are reversible because they are keyed transformations: the same input, run through the same function with the same secret, reproduces the exact output, so recomputing it back is always possible for whoever holds the key. <code class="language-plaintext highlighter-rouge">clamp-age</code> and <code class="language-plaintext highlighter-rouge">first-of-month</code> are a different kind of action — they are lossy generalisations, deliberately not one-to-one:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">first-of-month</code> discards the day of the month entirely. <code class="language-plaintext highlighter-rouge">2024-03-22</code> and <code class="language-plaintext highlighter-rouge">2024-03-09</code> both become <code class="language-plaintext highlighter-rouge">2024-03-01</code>; nothing in the output distinguishes them.</li>
+  <li><code class="language-plaintext highlighter-rouge">clamp-age</code> discards precision only for birth dates <em>outside</em> the configured range, replacing them with the boundary. Every source birth date that implied an age above <code class="language-plaintext highlighter-rouge">maxAge</code> (or below <code class="language-plaintext highlighter-rouge">minAge</code>) collapses to the same boundary value.</li>
+</ul>
+
+<p>No key, no seed, and no amount of computation recovers a value that was discarded rather than transformed — that is true inside the hospital exactly as it is outside it. This is not a gap in the model: reversal was never required at the level of these individual fields. What the model guarantees is reversal of <em>identity</em> — which source patient a record belongs to — not independent reversibility of every generalised field. Once the privacy officer re-identifies the patient by reversing the <code class="language-plaintext highlighter-rouge">hash</code> on <code class="language-plaintext highlighter-rouge">Patient.id</code> (as above), the exact <code class="language-plaintext highlighter-rouge">Patient.birthDate</code> is available the ordinary way: by looking it up in the EPD, not by inverting the exported value. The export was never meant to carry enough information to reconstruct itself; it only needs to carry what the stated analytical purpose requires (an age band, a cohort month), while the hospital's own systems remain the source of truth for anything more precise.</p>
+
+<p><code class="language-plaintext highlighter-rouge">none</code> needs no reversal at all — the exported value already is the source value.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Reversible from the exported value?</th>
+      <th>How the original is obtained</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hash</code></td>
+      <td>Yes, with the key</td>
+      <td>Recompute <code class="language-plaintext highlighter-rouge">HMAC(key, candidate)</code> and compare</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">shift</code></td>
+      <td>Yes, with the key</td>
+      <td>Recompute <code class="language-plaintext highlighter-rouge">offset</code> from <code class="language-plaintext highlighter-rouge">(seed, linkId)</code> and subtract it back out</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">clamp-age</code></td>
+      <td>No, by design</td>
+      <td>Re-identify the patient (via <code class="language-plaintext highlighter-rouge">hash</code>), then read <code class="language-plaintext highlighter-rouge">birthDate</code> from the EPD</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">first-of-month</code></td>
+      <td>No, by design</td>
+      <td>Re-identify the patient (via <code class="language-plaintext highlighter-rouge">hash</code>), then read the date from the EPD</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">none</code></td>
+      <td>N/A</td>
+      <td>Value was never altered</td>
+    </tr>
+  </tbody>
+</table>
+
 <hr />
 
 <h2 id="normative-artifacts">Normative artifacts</h2>
@@ -784,7 +837,7 @@ offset  = k &lt; maxDays ? (k − maxDays) : (k − maxDays + 1)
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.careplan.ig#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-09-23 11:46:00 +0000">
+  <span title="2026-09-23 12:15:00 +0000">
     2026-09-23
   </span>
 
