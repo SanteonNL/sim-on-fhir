@@ -1,8 +1,7 @@
 # Santeon
 
 ## Scope
-- **SIM Logical Model**; incl. mappings 
-- **SIM Profiles**: Condition, EpisodeOfCare, Patient, Procedure, Observation, 
-- **Use cases**: IBD,
-- **Indicatoren**: K312 (Scopie), K363 (Calprotectine voor scopie),
+- **SIM Common Logical Model**: incl. mappings
+- **Datasets incl. indicatoren**: IBD,
+- **Santeon FHIR Profiles**: Condition, EpisodeOfCare, Patient, Procedure, Observation, 
 - **Source**: Santeon Informatie model

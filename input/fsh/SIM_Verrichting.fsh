@@ -8,10 +8,10 @@ Description: "Logisch model voor een verrichting binnen het Santeon Informatiemo
 * VerrichtingID 0..1 Identifier "Identificatie van de verrichting"
 * Patient 1..1 SIMPatient "Patiënt waarop de verrichting betrekking heeft"
 * VerrichtingType 0..1 CodeableConcept "Type verrichting"
+* VerrichtingType obeys validatie-verrichtingtype
 * StartDatum 0..1 dateTime "Startdatum en -tijd van de verrichting"
 * EindDatum 0..1 dateTime "Einddatum en -tijd van de verrichting"
 // * UitvoerderSpecialisme 0..1 CodeableConcept "Specialisme van de uitvoerder"
-* obeys validatie-verrichtingtype
 
 // Optie?:
 Invariant: validatie-verrichtingtype
