@@ -8,11 +8,16 @@ Description: "Logisch model voor een algemeneMeting binnen het Santeon Informati
 * MetingNaam from Santeon_MetingNaamCodelijst (required)
 * MetingNaam obeys validatie-metingnaam-uitslagcode
 * MetingDatumTijd 0..1 dateTime "Datum en eventueel tijd die het dichtst ligt bij het daadwerkelijke meetmoment of de observatie"
-* UitslagWaarde 0..1 Quantity "Numerieke uitslag van de meting"
+* UitslagWaarde 0..1 Quantity "Numerieke uitslag van de meting, met eenheid (UCUM) en eventueel een vergelijkingsoperator (<, <=, >=, >)"
 * UitslagWaarde obeys validatie-metingnaam-uitslagcode
+* UitslagBereik 0..1 Range "Uitslag als bereik: een ondergrens en/of een bovengrens, beide inclusief"
 * UitslagCode 0..1 CodeableConcept "Gecodeerde uitslag van de meting"
 * UitslagCode ^definition = "Welke ValueSet van toepassing is op UitslagCode wordt bepaald door MetingNaam, zie invariants."
 * UitslagCode obeys validatie-metingnaam-uitslagcode
+* UitslagDatumTijd 0..1 dateTime "Datum en eventueel tijd als antwoord op een vraag, bijvoorbeeld: sinds wanneer rookt u? Een vage datumtijd (alleen jaar of datum) is niet wenselijk maar wel toegestaan."
+
+// Een meting heeft één uitslag: in FHIR is dat Observation.value[x] met één van deze typen
+// (Quantity, Range, CodeableConcept, dateTime).
 
 
 // Validatieregel of Invariants
@@ -32,9 +37,22 @@ Target: "SIM CSVs"
 * MetingNaam.coding.code -> "MetingNaamCode"
 * MetingNaam.coding.display -> "MetingNaamOmschrijving"
 * MetingDatumTijd -> "MetingDatumTijd"
+* UitslagWaarde.value -> "UitslagWaarde"
+* UitslagWaarde.system -> "UitslagWaardeEenheidSysteem"
+* UitslagWaarde.code -> "UitslagWaardeEenheid"
+* UitslagWaarde.comparator -> "UitslagWaardeOperator"
+* UitslagBereik.low.value -> "ObservationValueRangeLow"
+* UitslagBereik.low.unit -> "ObservationValueRangeLowUnit"
+* UitslagBereik.low.system -> "ObservationValueRangeLowSystem"
+* UitslagBereik.low.code -> "ObservationValueRangeLowCode"
+* UitslagBereik.high.value -> "ObservationValueRangeHigh"
+* UitslagBereik.high.unit -> "ObservationValueRangeHighUnit"
+* UitslagBereik.high.system -> "ObservationValueRangeHighSystem"
+* UitslagBereik.high.code -> "ObservationValueRangeHighCode"
 * UitslagCode.coding.system -> "UitslagCodeSysteem"
 * UitslagCode.coding.code -> "UitslagCode"
 * UitslagCode.coding.display -> "UitslagCodeOmschrijving"
+* UitslagDatumTijd -> "UitslagDatumTijd"
 
 Mapping: SIMAlgemeneMetingToFHIR
 Id: SIMAlgemeneMetingToFHIR
@@ -45,4 +63,7 @@ Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san"
 
 * MetingNaam -> "Observation.code"
 * MetingDatumTijd -> "Observation.effectiveDateTime"
+* UitslagWaarde -> "Observation.valueQuantity"
+* UitslagBereik -> "Observation.valueRange"
 * UitslagCode -> "Observation.valueCodeableConcept"
+* UitslagDatumTijd -> "Observation.valueDateTime"

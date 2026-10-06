@@ -64,8 +64,10 @@ Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/episodeOfCare-san
 
 * Patient -> "EpisodeOfCare.patient"
 * SubtrajectNummer -> "EpisodeOfCare.identifier"
-* Geldig -> "EpisodeOfCare.status vereist transformatielogica"
+// let op: vereist transformatielogica
+* Geldig -> "EpisodeOfCare.status"
 * OpeningsDatum -> "EpisodeOfCare.period.start"
 * SluitingsDatum -> "EpisodeOfCare.period.end"
 * ZorgType -> "EpisodeOfCare.type"
-* SpecialismeDiagnose -> "Condition.code; referenced by EpisodeOfCare.diagnosis.condition"
+// de diagnose wordt gerepresenteerd in Condition.code (via EpisodeOfCare.diagnosis.condition)
+* SpecialismeDiagnose -> "EpisodeOfCare.diagnosis.condition"

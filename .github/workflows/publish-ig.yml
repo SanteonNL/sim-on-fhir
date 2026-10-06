@@ -108,9 +108,17 @@ jobs:
           fi
 
       - name: Run IG Publisher
-        run: |
-          export JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8"
-          java -jar input-cache/publisher.jar -ig . ${{ steps.txcheck.outputs.txoption }}
+        # _buildIG.py stops at the first resource the publisher cannot render and at a stalled
+        # Jekyll step, and prints the cause; a bare publisher call would hang silently.
+        run: python3 _buildIG.py --no-sushi ${{ steps.txcheck.outputs.txoption && '--no-tx' || '' }}
+
+      - name: Upload build log on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ig-build-log
+          path: ig-build.log
+          retention-days: 7
 
       - name: Determine publish folder
         id: slug

@@ -51,6 +51,7 @@ Description: "The one Observation profile of the model, generated from the KPI a
 * hasMember 0..0
 * derivedFrom 0..0
 * component 0..0
+* value[x] only CodeableConcept or Quantity
 * obeys observation-san-kpi-od-alcohol-use
 * obeys observation-san-kpi-od-calprotectin
 

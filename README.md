@@ -102,6 +102,19 @@ Key SQL source tables (LUSCII):
 
 ---
 
+## Building the IG
+
+Use the guarded build rather than calling the publisher directly:
+
+```powershell
+py -3 _buildIG.py            # with terminology server
+py -3 _buildIG.py --no-tx    # without (faster, fewer checks)
+```
+
+The publisher does not report a failed Jekyll step: when it cannot render one resource it logs `Exception generating resource` and then waits for hours. `_buildIG.py` removes stale `temp/` and `output/`, reads the publisher log while it is written, stops at the first rendering exception, stops when Jekyll shows no progress, runs Jekyll itself to print the real error, and checks that `output/index.html` exists. The log is `ig-build.log`. CI uses the same script.
+
+Run `sushi .` first and build straight after a merge, before making other changes: SUSHI does not find what the publisher finds.
+
 ## Folder layout and naming
 
 Naming follows the HL7 Europe / EHDS conventions: logical models are `<Family><Name>` with the title "Name (model)"; FHIR profiles have the id `<resource>-san` (camelCase resource, family suffix) and the title "Resource (SAN)"; a use-case suffix is added after the family (`-san-kpi` for profiles generated from the KPI definitions).

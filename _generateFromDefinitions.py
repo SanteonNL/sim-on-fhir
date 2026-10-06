@@ -484,6 +484,15 @@ def gen_model_fsh(defs, res, model):
         if cfg.get("subject", True):
             L += ["* subject 1..1", "* subject only Reference(Patient)"]
         L += [f"* {e} 0..0" for e in closed]
+        if rt == "Observation" and "value[x]" in m["elements"]:
+            # the value types the measurements in use permit (Quantity, CodeableConcept, dateTime, ...)
+            types = []
+            for o in m["ods"]:
+                for t in res.od(o).get("permittedDataType", []):
+                    if t not in types:
+                        types.append(t)
+            if types:
+                L.append("* value[x] only " + " or ".join(types))
         L += [f"* obeys {name}" for name, *_ in invs]
         L.append("")
     return "\n".join(L)

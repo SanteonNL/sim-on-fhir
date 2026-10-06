@@ -40,6 +40,11 @@ Description: """
 // effective[x]
 * effective[x] only dateTime
 
+// value[x]: één uitslag, in één van de vier vormen die het SIM kent
+// (UitslagWaarde, UitslagBereik, UitslagCode, UitslagDatumTijd)
+* value[x] 0..1
+* value[x] only Quantity or Range or CodeableConcept or dateTime
+
 // Laat alle andere elementen weg
 * basedOn 0..0
 * partOf 0..0
@@ -47,7 +52,6 @@ Description: """
 * encounter 0..0
 * issued 0..0
 * performer 0..0
-* value[x] 0..0
 * dataAbsentReason 0..0
 * interpretation 0..0
 * note 0..0
@@ -86,3 +90,36 @@ Description: """
 * effectiveDateTime ^mapping[0].identity = "sim"
 * effectiveDateTime ^mapping[0].map = "AlgemeneMeting;MetingDatumTijd"
 * effectiveDateTime ^mapping[0].comment = "dateshift"
+
+// uitslag (value[x])
+* valueQuantity.value ^mapping[0].identity = "sim"
+* valueQuantity.value ^mapping[0].map = "AlgemeneMeting;UitslagWaarde"
+
+* valueQuantity.system ^mapping[0].identity = "sim"
+* valueQuantity.system ^mapping[0].map = "AlgemeneMeting;UitslagWaardeEenheidSysteem"
+
+* valueQuantity.code ^mapping[0].identity = "sim"
+* valueQuantity.code ^mapping[0].map = "AlgemeneMeting;UitslagWaardeEenheid"
+* valueQuantity.code ^mapping[0].comment = "UCUM-code van de eenheid"
+
+* valueQuantity.comparator ^mapping[0].identity = "sim"
+* valueQuantity.comparator ^mapping[0].map = "AlgemeneMeting;UitslagWaardeOperator"
+
+* valueRange.low.value ^mapping[0].identity = "sim"
+* valueRange.low.value ^mapping[0].map = "AlgemeneMeting;ObservationValueRangeLow"
+
+* valueRange.high.value ^mapping[0].identity = "sim"
+* valueRange.high.value ^mapping[0].map = "AlgemeneMeting;ObservationValueRangeHigh"
+
+* valueCodeableConcept.coding.system ^mapping[0].identity = "sim"
+* valueCodeableConcept.coding.system ^mapping[0].map = "AlgemeneMeting;UitslagCodeSysteem"
+
+* valueCodeableConcept.coding.code ^mapping[0].identity = "sim"
+* valueCodeableConcept.coding.code ^mapping[0].map = "AlgemeneMeting;UitslagCode"
+
+* valueCodeableConcept.coding.display ^mapping[0].identity = "sim"
+* valueCodeableConcept.coding.display ^mapping[0].map = "AlgemeneMeting;UitslagCodeOmschrijving"
+
+* valueDateTime ^mapping[0].identity = "sim"
+* valueDateTime ^mapping[0].map = "AlgemeneMeting;UitslagDatumTijd"
+* valueDateTime ^mapping[0].comment = "dateshift"
