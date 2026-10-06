@@ -1,3 +1,7 @@
-# Santeon CarePlan Implementation Guide
+# Santeon
 
-This implementation guide describes the Santeon CarePlan FHIR profile for internal use within the Santeon hospital network.
+## Scope
+- **SIM Common Logical Model**: incl. mappings
+- **Datasets incl. indicatoren**: IBD,
+- **Santeon FHIR Profiles**: Condition, EpisodeOfCare, Patient, Procedure, Observation, 
+- **Source**: Santeon Informatie model

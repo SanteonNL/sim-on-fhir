@@ -8,6 +8,7 @@
 /output
 /temp
 /template
+/.publish-output
 
 # Downloaded publisher and dependencies
 /input-cache
