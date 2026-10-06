@@ -1,7 +1,7 @@
 Profile: PatientSan
 Parent: Patient
-Id: PatientSan
-Title: "Santeon Patient"
+Id: patient-san
+Title: "Patient (SAN)"
 Description: """
 **De-identificatie:**
 - identifier → hashed

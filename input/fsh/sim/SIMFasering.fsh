@@ -1,7 +1,7 @@
 Logical: SIMFasering
 Parent: Base
 Id: SIMFasering
-Title: "CLM SIMFasering"
+Title: "Fasering (model)"
 Description: "Logisch model voor een procesfasering binnen het Santeon Informatiemodel, bijvoorbeeld faseringen rondom een operatie."
 
 * FaseringID 1..1 Identifier "Unieke identificatie van de fasering"

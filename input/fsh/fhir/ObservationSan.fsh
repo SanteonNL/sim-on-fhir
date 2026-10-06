@@ -1,7 +1,7 @@
 Profile: ObservationSan
 Parent: Observation
-Id: ObservationSan
-Title: "Santeon Observation (AlgemeneMeting)"
+Id: observation-san
+Title: "Observation (SAN)"
 Description: """
 **De-identificatie:**
 - identifier → hashed

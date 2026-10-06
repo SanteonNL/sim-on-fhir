@@ -79,6 +79,17 @@ jobs:
       - name: Install SUSHI
         run: npm install -g fsh-sushi
 
+      - name: Download pinned external ValueSets
+        run: python3 _syncValueSets.py fetch
+
+      - name: Check generated definitions are up to date
+        run: |
+          python3 _generateFromDefinitions.py
+          git diff --exit-code -- input/fsh/generated input/pagecontent || {
+            echo "::error::Generated files are out of date. Run '_generateFromDefinitions.py' and commit the result."
+            exit 1
+          }
+
       - name: Run SUSHI
         run: sushi .
 
@@ -152,12 +163,12 @@ jobs:
       - name: Zip IG output
         run: |
           cd output
-          zip -r "../santeon-careplan-ig-${{ github.ref_name }}.zip" .
+          zip -r "../sim-on-fhir-ig-${{ github.ref_name }}.zip" .
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: santeon-careplan-ig-${{ github.ref_name }}.zip
+          files: sim-on-fhir-ig-${{ github.ref_name }}.zip
           generate_release_notes: true
           prerelease: ${{ contains(github.ref_name, '-rc.') }}
         env:

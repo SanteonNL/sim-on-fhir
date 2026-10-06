@@ -40,7 +40,7 @@ Description: "Allowed values for a de-identification rule's action."
 Logical: DeidentificationRuleset
 Parent: Base
 Id: deidentification-ruleset
-Title: "De-identification Ruleset"
+Title: "De-identification ruleset (model)"
 Description: """
 A fully-resolved (effective) set of de-identification rules for one export.
 It carries the actual rules in force, with no reference to a base ruleset

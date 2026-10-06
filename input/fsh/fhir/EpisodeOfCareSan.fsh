@@ -1,7 +1,7 @@
 Profile: EpisodeOfCareSan
 Parent: EpisodeOfCare
-Id: EpisodeOfCareSan
-Title: "Santeon EpisodeOfCare (DBC)"
+Id: episodeOfCare-san
+Title: "EpisodeOfCare (SAN)"
 Description: """
 **De-identificatie:**
 - identifier → hashed

@@ -1,7 +1,7 @@
 Logical: SIMAlgemeneMeting
 Parent: Base
 Id: SIMAlgemeneMeting
-Title: "CLM SIMAlgemeneMeting"
+Title: "Algemene meting (model)"
 Description: "Logisch model voor een algemeneMeting binnen het Santeon Informatiemodel."
 
 * MetingNaam 1..1 CodeableConcept "Type of naam van de meting"
@@ -19,7 +19,7 @@ Description: "Logisch model voor een algemeneMeting binnen het Santeon Informati
 Invariant: validatie-metingnaam-uitslagcode
 Description: "Valideert de relatie tussen MetingNaam en het bijbehorende type uitslag. Voor metingen met een gecodeerde uitslag moet UitslagCode afkomstig zijn uit de ValueSet die aan de betreffende MetingNaam is gekoppeld. Bijvoorbeeld: wanneer MetingNaam alcoholgebruik is (SNOMED CT 228273003), moet UitslagCode afkomstig zijn uit AlcoholGebruikStatusCodelijst. Dit geldt voor alle vastgelegde [MetingNaam-UitslagCode](<a href='https://dev.azure.com/SanteonNL/Santeon/_git/HipsETL?path=/SIM/informatiemodel%20Santeon%20valueSets%20relation.csv</a>)-combinaties. Metingen die niet in deze combinaties zijn vastgelegd, maar wel voorkomen in Santeon_MetingNaamCodelijst, hebben een UitslagWaarde als uitkomst."
 Severity: #error
-Expression: "(MetingNaam.coding.where(system = 'http://snomed.info/sct' and code = '228273003').exists() implies UitslagCode.memberOf('https://ig.santeon.nl/ibd/ValueSet/AlcoholGebruikStatusCodelijst')) or (MetingNaam.coding.where(system = 'http://loinc.org' and code = '38445-3').exists() implies UitslagWaarde.exists())"
+Expression: "(MetingNaam.coding.where(system = 'http://snomed.info/sct' and code = '228273003').exists() implies UitslagCode.memberOf('https://ig.santeon.nl/sim-on-fhir/ValueSet/AlcoholGebruikStatusCodelijst')) or (MetingNaam.coding.where(system = 'http://loinc.org' and code = '38445-3').exists() implies UitslagWaarde.exists())"
 
 // Mappings
 Mapping: SIMAlgemeneMetingFromSIMCSV
@@ -40,8 +40,8 @@ Mapping: SIMAlgemeneMetingToFHIR
 Id: SIMAlgemeneMetingToFHIR
 Title: "FHIR"
 Source: SIMAlgemeneMeting
-Target: "https://ig.santeon.nl/ibd/StructureDefinition/ObservationSan"
-// "http://hl7.org/fhir/StructureDefinition/ObservationSan"
+Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san"
+// "http://hl7.org/fhir/StructureDefinition/observation-san"
 
 * MetingNaam -> "Observation.code"
 * MetingDatumTijd -> "Observation.effectiveDateTime"

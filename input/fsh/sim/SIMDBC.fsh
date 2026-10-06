@@ -1,7 +1,7 @@
 Logical: SIMDBC
 Parent: Base
 Id: SIMDBC
-Title: "CLM SIMDBC/Zorgtraject"
+Title: "DBC/Zorgtraject (model)"
 Description: "Logisch model voor een DBC binnen het Santeon Informatiemodel."
 
 * Patient 0..1 SIMPatient "Patiënt waarop de DBC betrekking heeft"
@@ -9,7 +9,7 @@ Description: "Logisch model voor een DBC binnen het Santeon Informatiemodel."
 * ZorgtrajectNummer 0..1 Identifier "Identificatienummer van het zorgtraject"
 * Diagnose 0..1 string "Diagnosecode en omschrijving"
 * SpecialismeDiagnose 0..1 CodeableConcept "Specialisme en diagnose behorend bij de DBC"
-* SpecialismeDiagnose from https://ig.santeon.nl/ibd/ValueSet/Specialisme_DiagnoseCodelijstDummy (required)
+* SpecialismeDiagnose from https://ig.santeon.nl/sim-on-fhir/ValueSet/Specialisme_DiagnoseCodelijstDummy (required)
 * ZorgType 0..1 CodeableConcept "Zorgtype van de DBC"
 * ZorgProduct 0..1 CodeableConcept "Zorgproduct van de DBC"
 * Gevuld 0..1 boolean "Geeft aan of de DBC verrichtingen bevat"
@@ -59,8 +59,8 @@ Mapping: SIMDBCToFHIR
 Id: SIMDBCToFHIR
 Title: "SIM DBC naar FHIR"
 Source: SIMDBC
-Target: "https://ig.santeon.nl/ibd/StructureDefinition/EpisodeOfCareSan"
-//http://hl7.org/fhir/StructureDefinition/EpisodeOfCareSan"
+Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/episodeOfCare-san"
+//http://hl7.org/fhir/StructureDefinition/episodeOfCare-san"
 
 * Patient -> "EpisodeOfCare.patient"
 * SubtrajectNummer -> "EpisodeOfCare.identifier"

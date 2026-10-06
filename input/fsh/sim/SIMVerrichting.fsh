@@ -1,7 +1,7 @@
 Logical: SIMVerrichting
 Parent: Base
 Id: SIMVerrichting
-Title: "CLM SIMVerrichting"
+Title: "Verrichting (model)"
 Description: "Logisch model voor een verrichting binnen het Santeon Informatiemodel."
 
 // nodig voor K312, later uitbouwen voor andere use cases
@@ -41,7 +41,7 @@ Mapping: SIMVerrichtingToFHIR
 Id: SIMVerrichtingToFHIR
 Title: "SIMVerrichting naar FHIR"
 Source: SIMVerrichting
-Target: "https://ig.santeon.nl/ibd/StructureDefinition/ProcedureSan"
+Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/procedure-san"
 
 * VerrichtingID -> "Procedure.identifier"
 * Patient -> "Procedure.subject"

@@ -1,7 +1,7 @@
 Logical: SIMPatient
 Parent: Base
 Id: SIMPatient
-Title: "CLM SIMPatient"
+Title: "Patiënt (model)"
 Description: "Logisch model voor patiëntgegevens binnen het Santeon Informatiemodel."
 
 * Identificatienummer 1..1 Identifier "Identificatienummer van de patiënt"
@@ -20,7 +20,7 @@ Mapping: SIMPatientToFHIR
 Id: SIMPatientToFHIR
 Title: "SIM Patient naar FHIR"
 Source: SIMPatient
-Target: "https://ig.santeon.nl/ibd/StructureDefinition/PatientSan"
+Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"
 
 * Identificatienummer -> "Patient.identifier"
 * Geboortedatum -> "Patient.birthDate"

@@ -1,7 +1,7 @@
 Profile: ProcedureSan
 Parent: Procedure
-Id: ProcedureSan
-Title: "Santeon Procedure (Verrichting)"
+Id: procedure-san
+Title: "Procedure (SAN)"
 Description: """
 **De-identificatie:**
 - identifier → hashed

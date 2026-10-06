@@ -1,7 +1,7 @@
 Profile: ConditionSan
 Parent: Condition
-Id: ConditionSan
-Title: "Santeon Condition (Probleem)"
+Id: condition-san
+Title: "Condition (SAN)"
 Description: """
 **De-identificatie:**
 - identifier → hashed

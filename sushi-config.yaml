@@ -1,8 +1,8 @@
-id: santeon.ibd.ig
-canonical: https://ig.santeon.nl/ibd
-name: SanteonIBDIG
-title: "Santeon Implementation Guide"
-description: "Santeon FHIR Implementation Guide"
+id: santeon.sim-on-fhir
+canonical: https://ig.santeon.nl/sim-on-fhir
+name: SanteonSimOnFhir
+title: "SIM on FHIR"
+description: "How the Santeon Informatie Model (SIM) maps to FHIR: common logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports."
 status: draft
 version: 0.1.0
 fhirVersion: 4.0.1
@@ -23,13 +23,10 @@ pages:
   profiles.md:
     title: FHIR Profiles
 
-  datasetIBD.md:
-    title: IBD Dataset
-
   datasets.md:
-    title: Datasets and derived model
-    dataset-ibd.md:
-      title: IBD (generated from definitions)
+    title: Datasets
+    ibd-dataset.md:
+      title: IBD
 
   kpi-definitions.md:
     title: KPI definitions
