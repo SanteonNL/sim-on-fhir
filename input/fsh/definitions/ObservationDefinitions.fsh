@@ -54,17 +54,3 @@ Description: "Tobacco smoking status (illustrative); the answers come from the N
 // descendants). Such a set cannot be downloaded, so it is registered in external-valuesets.yaml
 // (key smoking-status-nts) as reference only; the terminology server resolves it.
 * validCodedValueSet.reference = "http://snomed.info/sct?fhir_vs=ecl/%3C%3C%2077176002%20OR%20%3C%3C%208392000%20OR%20%3C%3C%208517006"
-
-Instance: od-smoking-status
-InstanceOf: ObservationDefinition
-Usage: #definition
-Title: "Rookstatus"
-Description: "Tobacco smoking status (illustrative); the answers come from the Nationale Terminologieserver. No KPI uses this measurement yet, so it is not part of the generated model."
-* category = $ObsCategory#social-history
-* code = $LOINC#72166-2 "Tobacco smoking status"
-* preferredReportName = "Rookstatus"
-* permittedDataType = #CodeableConcept
-// The answers are a SNOMED ECL query on the NTS (smoker, non-smoker, ex-smoker and their
-// descendants). Such a set cannot be downloaded, so it is registered in external-valuesets.yaml
-// (key smoking-status-nts) as reference only; the terminology server resolves it.
-* validCodedValueSet.reference = "http://snomed.info/sct?fhir_vs=ecl/%3C%3C%2077176002%20OR%20%3C%3C%208392000%20OR%20%3C%3C%208517006"
