@@ -1,9 +1,6 @@
-# De-identification Action Code System - Santeon CarePlan Implementation Guide v0.1.0
+# De-identification Action Code System - SIM on FHIR v0.1.0
 
 ## CodeSystem: De-identification Action Code System 
-
- 
-The transformations a de-identification rule may apply to an element. 
 
 This Code system is referenced in the definition of the following value sets:
 
@@ -21,13 +18,13 @@ This Code system is referenced in the definition of the following value sets:
 {
   "resourceType" : "CodeSystem",
   "id" : "deidentification-action-cs",
-  "url" : "https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs",
+  "url" : "https://ig.santeon.nl/sim-on-fhir/CodeSystem/deidentification-action-cs",
   "version" : "0.1.0",
   "name" : "DeidentificationActionCS",
   "title" : "De-identification Action Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-23T18:28:14+00:00",
+  "date" : "2026-10-16T14:43:24+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",

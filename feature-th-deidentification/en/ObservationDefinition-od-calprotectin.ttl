@@ -1,0 +1,56 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/ObservationDefinition/od-calprotectin> a fhir:ObservationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "od-calprotectin"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ObservationDefinition od-calprotectin</b></p><a name=\"od-calprotectin\"> </a><a name=\"hcod-calprotectin\"> </a><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 38445-3}\">Calprotectin [Mass/volume] in Stool</span></p><p><b>permittedDataType</b>: Quantity</p><p><b>preferredReportName</b>: Calprotectine (feces)</p><h3>QuantitativeDetails</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Unit</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://unitsofmeasure.org ug/g}\">microgram per gram</span></td></tr></table></div>"
+  ] ;
+  fhir:ObservationDefinition.category [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "laboratory" ]
+     ]
+  ] ;
+  fhir:ObservationDefinition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a loinc:38445-3 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "38445-3" ] ;
+       fhir:Coding.display [ fhir:value "Calprotectin [Mass/volume] in Stool" ]
+     ]
+  ] ;
+  fhir:ObservationDefinition.permittedDataType [
+     fhir:value "Quantity" ;
+     fhir:index -1
+  ] ;
+  fhir:ObservationDefinition.preferredReportName [ fhir:value "Calprotectine (feces)"] ;
+  fhir:ObservationDefinition.quantitativeDetails [
+     fhir:ObservationDefinition.quantitativeDetails.unit [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "http://unitsofmeasure.org" ] ;
+         fhir:Coding.code [ fhir:value "ug/g" ] ;
+         fhir:Coding.display [ fhir:value "microgram per gram" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/ObservationDefinition/od-calprotectin.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

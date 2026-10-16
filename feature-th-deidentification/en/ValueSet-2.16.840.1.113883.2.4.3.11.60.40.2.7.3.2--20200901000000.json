@@ -1,0 +1,221 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablevalueset"],
+    "tag" : [{
+      "system" : "http://hl7.org/fhir/FHIR-version",
+      "code" : "4.0.1"
+    }]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet 2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000</b></p><a name=\"2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000\"> </a><a name=\"hc2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/R4/shareablevalueset.html\">Shareable ValueSet</a></p><p style=\"margin-bottom: 0px\">Tag: <a href=\"http://hl7.org/fhir/R4/codesystem-FHIR-version.html\">4.0.1 (Details: FHIRVersion code 4.0.1)</a></p></div><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/7.4.0/CodeSystem-v3-NullFlavor.html\"><code>http://terminology.hl7.org/CodeSystem/v3-NullFlavor</code></a><span title=\"Version is not explicitly stated, which means it is fixed to 4.0.0, the version found through the package references\"> version &#x1F4E6;4.0.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Synonym</b></td><td><b>English (United States) (English (United States), en)</b></td><td><b>Nederlands (Nederland) (Dutch (Netherlands), nl)</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/7.4.0/CodeSystem-v3-NullFlavor.html#v3-NullFlavor-OTH\">OTH</a></td><td>Other</td><td>**Description:**The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g., concept not provided by required code system).<br/><br/>**Usage Notes**: This flavor and its specializations are most commonly used with the CD datatype and its flavors. However, it may apply to \\*any\\* datatype where the constraints of the type are tighter than can be conveyed. For example, a PQ that is for a true measured amount whose units are not supported in UCUM, a need to convey a REAL when the type has been constrained to INT, etc.<br/><br/>With coded datatypes, this null flavor may only be used if the vocabulary binding has a coding strength of CNE. By definition, all local codes and original text are part of the value set if the coding strength is CWE.</td><td>Anders</td><td>Other</td><td>Anders</td></tr></table></li><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Comments</b></td><td><b>Synonym</b></td><td><b>English (United States) (English (United States), en)</b></td><td><b>Nederlands (Nederland) (Dutch (Netherlands), nl)</b></td></tr><tr><td><a href=\"http://snomed.info/id/219006\">219006</a></td><td>drinkt alcohol</td><td>Note: Drinkt alcohol </td><td>drinkt alcohol</td><td>Current drinker</td><td>drinkt alcohol</td></tr><tr><td><a href=\"http://snomed.info/id/105542008\">105542008</a></td><td>drinkt momenteel geen alcohol</td><td>Note: Niet-drinker </td><td>drinkt momenteel geen alcohol</td><td>Non - drinker</td><td>drinkt momenteel geen alcohol</td></tr><tr><td><a href=\"http://snomed.info/id/82581004\">82581004</a></td><td>dronk vroeger alcohol</td><td>Note: Dronk vroeger alcohol </td><td>dronk vroeger alcohol</td><td>Ex-drinker</td><td>dronk vroeger alcohol</td></tr><tr><td><a href=\"http://snomed.info/id/228274009\">228274009</a></td><td>levenslang niet-drinker</td><td>Note: Levenslang niet drinker </td><td>levenslang niet-drinker</td><td>Lifetime non-drinker</td><td>levenslang niet-drinker</td></tr><tr><td><a href=\"http://snomed.info/id/783261004\">783261004</a></td><td>levenslange niet-drinker van alcohol</td><td>Note: Levenslang niet drinker </td><td>levenslange niet-drinker van alcohol</td><td>Lifetime non-drinker of alcohol</td><td>levenslange niet-drinker van alcohol</td></tr></table></li></ul></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
+    "valuePeriod" : {
+      "start" : "2020-09-01T00:00:00Z"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/web-source",
+    "valueUrl" : "http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=zib2020bbr-&version=&id=2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2&effectiveDate=2020-09-01T00:00:00"
+  }],
+  "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000",
+  "identifier" : [{
+    "use" : "official",
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2"
+  }],
+  "version" : "0.1.0",
+  "name" : "AlcoholGebruikStatusCodelijst",
+  "title" : "AlcoholGebruikStatusCodelijst",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-10-16T14:43:24+00:00",
+  "publisher" : "Santeon",
+  "contact" : [{
+    "name" : "Santeon",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.santeon.nl"
+    }]
+  }],
+  "description" : "AlcoholGebruikStatusCodelijst",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "NL",
+      "display" : "Netherlands"
+    }]
+  }],
+  "immutable" : false,
+  "copyright" : "This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyright of the International Health Terminology Standards Development Organisation (IHTSDO). Implementers of these artefacts must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/getsnomed-ct or info@snomed.org.",
+  "compose" : {
+    "inactive" : true,
+    "include" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+      "concept" : [{
+        "code" : "OTH",
+        "display" : "Other",
+        "designation" : [{
+          "language" : "en-US",
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "900000000000013009",
+            "display" : "Synonym"
+          },
+          "value" : "Other"
+        },
+        {
+          "language" : "nl-NL",
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "900000000000013009",
+            "display" : "Synonym"
+          },
+          "value" : "Anders"
+        }]
+      }]
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/valueset-concept-comments",
+          "valueString" : "Drinkt alcohol"
+        }],
+        "code" : "219006",
+        "display" : "drinkt alcohol",
+        "designation" : [{
+          "language" : "en-US",
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "900000000000013009",
+            "display" : "Synonym"
+          },
+          "value" : "Current drinker"
+        },
+        {
+          "language" : "nl-NL",
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "900000000000013009",
+            "display" : "Synonym"
+          },
+          "value" : "drinkt alcohol"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/valueset-concept-comments",
+          "valueString" : "Niet-drinker"
+        }],
+        "code" : "105542008",
+        "display" : "drinkt momenteel geen alcohol",
+        "designation" : [{
+          "language" : "en-US",
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "900000000000013009",
+            "display" : "Synonym"
+          },
+          "value" : "Non - drinker"
+        },
+        {
+          "language" : "nl-NL",
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "900000000000013009",
+            "display" : "Synonym"
+          },
+          "value" : "drinkt momenteel geen alcohol"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/valueset-concept-comments",
+          "valueString" : "Dronk vroeger alcohol"
+        }],
+        "code" : "82581004",
+        "display" : "dronk vroeger alcohol",
+        "designation" : [{
+          "language" : "en-US",
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "900000000000013009",
+            "display" : "Synonym"
+          },
+          "value" : "Ex-drinker"
+        },
+        {
+          "language" : "nl-NL",
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "900000000000013009",
+            "display" : "Synonym"
+          },
+          "value" : "dronk vroeger alcohol"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/valueset-deprecated",
+          "valueBoolean" : true
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/valueset-concept-comments",
+          "valueString" : "Levenslang niet drinker"
+        }],
+        "code" : "228274009",
+        "display" : "levenslang niet-drinker",
+        "designation" : [{
+          "language" : "en-US",
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "900000000000013009",
+            "display" : "Synonym"
+          },
+          "value" : "Lifetime non-drinker"
+        },
+        {
+          "language" : "nl-NL",
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "900000000000013009",
+            "display" : "Synonym"
+          },
+          "value" : "levenslang niet-drinker"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/valueset-concept-comments",
+          "valueString" : "Levenslang niet drinker"
+        }],
+        "code" : "783261004",
+        "display" : "levenslange niet-drinker van alcohol",
+        "designation" : [{
+          "language" : "en-US",
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "900000000000013009",
+            "display" : "Synonym"
+          },
+          "value" : "Lifetime non-drinker of alcohol"
+        },
+        {
+          "language" : "nl-NL",
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "900000000000013009",
+            "display" : "Synonym"
+          },
+          "value" : "levenslange niet-drinker van alcohol"
+        }]
+      }]
+    }]
+  }
+}

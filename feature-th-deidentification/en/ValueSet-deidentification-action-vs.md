@@ -1,13 +1,10 @@
-# De-identification Action Value Set - Santeon CarePlan Implementation Guide v0.1.0
+# De-identification Action Value Set - SIM on FHIR v0.1.0
 
 ## ValueSet: De-identification Action Value Set 
 
- 
-Allowed values for a de-identification rule's action. 
-
  **References** 
 
-* [De-identification Ruleset](StructureDefinition-deidentification-ruleset.md)
+* [De-identification ruleset (model)](StructureDefinition-deidentification-ruleset.md)
 
 ### Logical Definition (CLD)
 
@@ -27,13 +24,13 @@ Allowed values for a de-identification rule's action.
 {
   "resourceType" : "ValueSet",
   "id" : "deidentification-action-vs",
-  "url" : "https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs",
+  "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/deidentification-action-vs",
   "version" : "0.1.0",
   "name" : "DeidentificationActionVS",
   "title" : "De-identification Action Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-23T18:28:14+00:00",
+  "date" : "2026-10-16T14:43:24+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -52,7 +49,7 @@ Allowed values for a de-identification rule's action.
   }],
   "compose" : {
     "include" : [{
-      "system" : "https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs"
+      "system" : "https://ig.santeon.nl/sim-on-fhir/CodeSystem/deidentification-action-cs"
     }]
   }
 }

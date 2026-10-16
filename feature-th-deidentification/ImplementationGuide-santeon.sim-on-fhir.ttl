@@ -1,0 +1,1227 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/ImplementationGuide/santeon.sim-on-fhir> a fhir:ImplementationGuide ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "santeon.sim-on-fhir"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xml:lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide santeon.sim-on-fhir</b></p><a name=\"santeon.sim-on-fhir\"> </a><a name=\"hcsanteon.sim-on-fhir\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p></div><h2>SanteonSimOnFhir</h2><p>The official URL for this implementation guide is: </p><pre>https://ig.santeon.nl/sim-on-fhir/ImplementationGuide/santeon.sim-on-fhir</pre><div><p>How the Santeon Informatie Model (SIM) maps to FHIR: common logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports.</p>\n</div></div>"
+  ] ;
+  fhir:ImplementationGuide.url [ fhir:value "https://ig.santeon.nl/sim-on-fhir/ImplementationGuide/santeon.sim-on-fhir"] ;
+  fhir:ImplementationGuide.version [ fhir:value "0.1.0"] ;
+  fhir:ImplementationGuide.name [ fhir:value "SanteonSimOnFhir"] ;
+  fhir:ImplementationGuide.title [ fhir:value "SIM on FHIR"] ;
+  fhir:ImplementationGuide.status [ fhir:value "draft"] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-10-16T14:43:24+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.publisher [ fhir:value "Santeon"] ;
+  fhir:ImplementationGuide.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Santeon" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.santeon.nl" ]
+     ]
+  ] ;
+  fhir:ImplementationGuide.description [ fhir:value "How the Santeon Informatie Model (SIM) maps to FHIR: common logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports."] ;
+  fhir:ImplementationGuide.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "NL" ] ;
+       fhir:Coding.display [ fhir:value "Netherlands" ]
+     ]
+  ] ;
+  fhir:ImplementationGuide.packageId [ fhir:value "santeon.sim-on-fhir"] ;
+  fhir:ImplementationGuide.license [ fhir:value "CC0-1.0"] ;
+  fhir:ImplementationGuide.fhirVersion [
+     fhir:value "4.0.1" ;
+     fhir:index 0
+  ] ;
+  fhir:ImplementationGuide.dependsOn [
+     fhir:index 0 ;
+     fhir:Element.id [ fhir:value "hl7tx" ] ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment" ] ;
+       fhir:Extension.valueMarkdown [ fhir:value "Automatically added as a dependency - all IGs depend on HL7 Terminology" ]
+     ] ;
+     fhir:ImplementationGuide.dependsOn.uri [
+       fhir:value "http://terminology.hl7.org/ImplementationGuide/hl7.terminology" ;
+       fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
+     ] ;
+     fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.terminology.r4" ] ;
+     fhir:ImplementationGuide.dependsOn.version [ fhir:value "7.4.0" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Element.id [ fhir:value "hl7ext" ] ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment" ] ;
+       fhir:Extension.valueMarkdown [ fhir:value "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack" ]
+     ] ;
+     fhir:ImplementationGuide.dependsOn.uri [
+       fhir:value "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions" ;
+       fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
+     ] ;
+     fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.fhir.uv.extensions.r4" ] ;
+     fhir:ImplementationGuide.dependsOn.version [ fhir:value "5.3.0" ]
+  ] ;
+  fhir:ImplementationGuide.definition [
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency" ] ;
+       fhir:Extension.valueCode [ fhir:value "hl7.fhir.uv.tools.r4#1.3.0" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "copyrightyear" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "2025+" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "releaselabel" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "ci-build" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "show-inherited-invariants" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "false" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 4 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "path-binary" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "input/static" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 5 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "tx" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "http://decor.nictiz.nl/fhir/4.0/san-gen-" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 6 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "generate-expansion" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "true" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 7 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "autoload-resources" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "true" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 8 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "path-liquid-template" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "template/liquid" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 9 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "path-liquid-template" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "input/liquid" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 10 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "path-qa" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "temp/qa" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 11 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "path-temp" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "temp/pages" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 12 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "path-output" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "output" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 13 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "path-suppressed-warnings" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "input/ignoreWarnings.txt" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 14 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "path-history" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "https://ig.santeon.nl/sim-on-fhir/history.html" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 15 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "template-html" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "template-page.html" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 16 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "template-md" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "template-page-md.html" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 17 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "apply-contact" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "true" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 18 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "apply-context" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "true" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 19 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "apply-copyright" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "true" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 20 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "apply-jurisdiction" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "true" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 21 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "apply-license" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "true" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 22 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "apply-publisher" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "true" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 23 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "apply-version" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "true" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 24 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "apply-wg" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "true" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 25 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "active-tables" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "true" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 26 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "fmm-definition" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "http://hl7.org/fhir/versions.html#maturity" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 27 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "propagate-status" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "true" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 28 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "excludelogbinaryformat" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "true" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 29 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "tabbed-snapshots" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "true" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 30 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "code" ] ;
+         fhir:Extension.valueCode [ fhir:value "i18n-default-lang" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "value" ] ;
+         fhir:Extension.valueString [ fhir:value "en" ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ] ;
+     fhir:ImplementationGuide.definition.resource [
+       fhir:index 0 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ObservationDefinition" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ObservationDefinition/od-alcohol-use> ;
+         fhir:Reference.reference [ fhir:value "ObservationDefinition/od-alcohol-use" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Alcoholgebruik" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Alcohol use status; the answer is a code from the valid coded value set." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format" ] ;
+         fhir:Extension.valueCode [ fhir:value "application/fhir+json" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Binary" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/Binary/alcohol-status-recorded> ;
+         fhir:Reference.reference [ fhir:value "Binary/alcohol-status-recorded" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Alcoholgebruik vastgelegd" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Alcohol use status recorded, with a coded answer." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/AlcoholGebruikStatusCodelijst> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/AlcoholGebruikStatusCodelijst" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AlcoholGebruikStatusCodelijst" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Codelijst voor de gecodeerde uitslag van alcoholgebruik." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 3 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AlcoholGebruikStatusCodelijst" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "AlcoholGebruikStatusCodelijst" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 4 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMAlgemeneMeting> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/SIMAlgemeneMeting" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Algemene meting (model)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Logisch model voor een algemeneMeting binnen het Santeon Informatiemodel." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 5 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ObservationDefinition" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ObservationDefinition/od-calprotectin> ;
+         fhir:Reference.reference [ fhir:value "ObservationDefinition/od-calprotectin" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Calprotectine (feces)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Faecal calprotectin, numeric result in microgram per gram." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 6 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CareplanCategoryCodelijst" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "CareplanCategoryCodelijst" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 7 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/condition-san> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/condition-san" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Condition (SAN)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "**De-identificatie:**\n- identifier → hashed\n- subject → hashed" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 8 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/dataset-definition> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/dataset-definition" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Dataset definition (model)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "One dataset (for example IBD or COPD): the cohort that forms the Group, and the\nKPI definitions whose data the export releases. The generator resolves a dataset\ninto a `Group` (cohort as bulk-data `member-filter`s) and a `Parameters`\n(`_type`, `_typeFilter`, `_elements`), and renders the whole definition as a\nreadable page." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 9 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMDBC> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/SIMDBC" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "DBC/Zorgtraject (model)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Logisch model voor een DBC binnen het Santeon Informatiemodel." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 10 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "CodeSystem" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/CodeSystem/deidentification-action-cs> ;
+         fhir:Reference.reference [ fhir:value "CodeSystem/deidentification-action-cs" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "De-identification Action Code System" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The transformations a de-identification rule may apply to an element." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 11 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/deidentification-action-vs> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/deidentification-action-vs" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "De-identification Action Value Set" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Allowed values for a de-identification rule's action." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 12 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/deidentification-ruleset> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/deidentification-ruleset" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "De-identification ruleset (model)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A fully-resolved (effective) set of de-identification rules for one export.\nIt carries the actual rules in force, with no reference to a base ruleset\nplus differences. Together with the export Parameters (which declare the\nreleased elements via _elements), it fully describes how an export is\nde-identified." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 13 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/episodeOfCare-san> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/episodeOfCare-san" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "EpisodeOfCare (SAN)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "**De-identificatie:**\n- identifier → hashed\n- patient → hashed" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 14 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMFasering> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/SIMFasering" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Fasering (model)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Logisch model voor een procesfasering binnen het Santeon Informatiemodel, bijvoorbeeld faseringen rondom een operatie." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 15 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Group" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/Group/ibd-dataset-cohort> ;
+         fhir:Reference.reference [ fhir:value "Group/ibd-dataset-cohort" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "IBD cohort (generated)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Cohort of the IBD dataset as bulk-data member-filters." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 16 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format" ] ;
+         fhir:Extension.valueCode [ fhir:value "application/fhir+json" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Binary" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/Binary/ibd-dataset> ;
+         fhir:Reference.reference [ fhir:value "Binary/ibd-dataset" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "IBD dataset" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Dataset for adult IBD patients." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 17 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Parameters" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/Parameters/ibd-dataset-export> ;
+         fhir:Reference.reference [ fhir:value "Parameters/ibd-dataset-export" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "IBD export parameters (generated)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "_type, _typeFilter and _elements of the IBD export." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 18 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDSpecialismeDiagnoses> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/IBDSpecialismeDiagnoses" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "IBD Specialisme Diagnoses" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Specialisme-diagnosecombinaties die worden geselecteerd voor de IBD-dataset." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 19 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/local-specialisme-diagnose-codes> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/local-specialisme-diagnose-codes" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "IBD Specialisme-Diagnose Combinaties" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Specialisme-diagnose combinaties die behoren tot het IBD-cohort." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 20 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDVerrichtingenNZa> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/IBDVerrichtingenNZa" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "IBD Verrichtingen NZa" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "NZa-verrichtingen die worden geselecteerd voor de IBD-dataset." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 21 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/local-zorgtype-codes> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/local-zorgtype-codes" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "IBD Zorgtype Codes (11 en 21)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bevat de toegestane landelijke zorgtypes 11 en 21." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 22 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDAlgemeneMetingen> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/IBDAlgemeneMetingen" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "IBDAlgemeneMetingen" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Metingen die worden geselecteerd voor de IBD-dataset." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 23 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format" ] ;
+         fhir:Extension.valueCode [ fhir:value "application/fhir+json" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Binary" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/Binary/k312-scopie> ;
+         fhir:Reference.reference [ fhir:value "Binary/k312-scopie" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "K3.1.2 Scopie" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Number of adult IBD patients with a scopie since 2018." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 24 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format" ] ;
+         fhir:Extension.valueCode [ fhir:value "application/fhir+json" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Binary" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/Binary/k363-calprotectin-before-scopie> ;
+         fhir:Reference.reference [ fhir:value "Binary/k363-calprotectin-before-scopie" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "K3.6.3 Calprotectine voor scopie" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Share of scopies preceded by a faecal calprotectin measurement." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 25 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/kpi-definition> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/kpi-definition" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "KPI definition (model)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The data a KPI needs, expressed as a list of FHIR search criteria. The union of\nall KPI definitions determines the model: the generated profiles accept exactly\nthe codes and elements the KPIs ask for, and the generated export request\nselects exactly the records they filter on.\n\n**Parameter values** are FHIR search values and may contain references that the\ngenerator resolves:\n\n| Reference | Resolves to |\n|---|---|\n| `{vs:<id>}` | canonical URL of the ValueSet with that id |\n| `{od:<id>.code}` | `system|code` token(s) of the ObservationDefinition's code |\n| `{od:<id>.unit}` | `system|code` of the ObservationDefinition's quantitative unit |\n| `{od:<id>.valid}` | canonical URL of the ObservationDefinition's valid coded value set |\n| `{vs:<canonical URL>}` | a ValueSet maintained elsewhere (for example ART-DECOR), referenced by canonical |\n\nA value may also be a literal: `code:in=<canonical URL>` names an external value set, and\n`type=system|code,system|code` lists codes inline. Literal codes on a `code` parameter of a\nKPI criterion are added to the generated code value set.\n\nAnything else in curly braces, such as `{period.start}`, is a placeholder that\nthe exporter fills in at run time." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 26 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san-kpi> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/observation-san-kpi" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Observation (SAN KPI)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The one Observation profile of the model, generated from the KPI and dataset definitions. Allowed codes: ObservationCodeSanKpi. Elements nothing asks for are closed." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 27 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/observation-san" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Observation (SAN)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "**De-identificatie:**\n- identifier → hashed\n- subject → hashed\n- effectiveDateTime → dateshift" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 28 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/observationCode-san-kpi> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/observationCode-san-kpi" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Observation code (SAN KPI)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Every code a KPI definition asks for on Observation. The union of the ObservationDefinition codes and the value sets referenced by the Observation criteria of all KPI definitions." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 29 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/od-component> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/od-component" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "ObservationDefinition Component" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Points from a panel ObservationDefinition (e.g. blood pressure) to the ObservationDefinition of one of its components (e.g. systolic). The component's own code and unit become a constraint on Observation.component in the generated profile." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 30 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san-kpi> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/patient-san-kpi" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Patient (SAN KPI)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The one Patient profile of the model, generated from the KPI and dataset definitions. Elements nothing asks for are closed." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 31 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/patient-san" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Patient (SAN)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "**De-identificatie:**\n- identifier → hashed\n- birthDate →  dateshift" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 32 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMPatient> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/SIMPatient" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Patiënt (model)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Logisch model voor patiëntgegevens binnen het Santeon Informatiemodel." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 33 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/procedure-san-kpi> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/procedure-san-kpi" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Procedure (SAN KPI)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The one Procedure profile of the model, generated from the KPI and dataset definitions. Allowed codes: ProcedureCodeSanKpi. Elements nothing asks for are closed." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 34 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/procedure-san> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/procedure-san" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Procedure (SAN)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "**De-identificatie:**\n- identifier → hashed\n- subject → hashed" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 35 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/procedureCode-san-kpi> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/procedureCode-san-kpi" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Procedure code (SAN KPI)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Every code a KPI definition asks for on Procedure. The union of the ObservationDefinition codes and the value sets referenced by the Procedure criteria of all KPI definitions." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 36 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ObservationDefinition" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ObservationDefinition/od-smoking-status> ;
+         fhir:Reference.reference [ fhir:value "ObservationDefinition/od-smoking-status" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Rookstatus" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Tobacco smoking status (illustrative); the answers come from the Nationale Terminologieserver. No KPI uses this measurement yet, so it is not part of the generated model." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 37 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format" ] ;
+         fhir:Extension.valueCode [ fhir:value "application/fhir+json" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Binary" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/Binary/santeon-default> ;
+         fhir:Reference.reference [ fhir:value "Binary/santeon-default" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Santeon Standard De-identification Ruleset" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The default ruleset every Santeon export inherits unless overridden." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 38 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/Santeon-MetingNaamCodelijst" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Santeon_MetingNaamCodelijst" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet met metingnamen die binnen het Santeon Informatiemodel worden gebruikt." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 39 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/specialisme-diagnose-code> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/specialisme-diagnose-code" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "SpecialismeDiagnoseCode" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "(Tijdelijke) Extensie voor SpecialismeDiagnoseCode. Deze informatie dient in een toekomstige FHIR-conforme modellering te worden ondergebracht in Condition.code." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 40 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMVerrichting> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/SIMVerrichting" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Verrichting (model)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Logisch model voor een verrichting binnen het Santeon Informatiemodel." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 41 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/local-verrichting-codes-nza> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/local-verrichting-codes-nza" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Verrichting Type Codes NZa (Scopie)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "De specifieke NZa-verrichtingencodes voor de scopie-indicator." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ] ;
+     fhir:ImplementationGuide.definition.page [
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+         fhir:Extension.valueUrl [ fhir:value "toc.html" ]
+       ] ;
+       fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "toc.html" ] ;
+       fhir:ImplementationGuide.definition.page.title [ fhir:value "Table of Contents" ] ;
+       fhir:ImplementationGuide.definition.page.generation [ fhir:value "html" ] ;
+       fhir:ImplementationGuide.definition.page.page [
+         fhir:index 0 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "index.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "index.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Home" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "CLMs.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "CLMs.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Common Logical Models (SIM)" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "profiles.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "profiles.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "FHIR Profiles" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "datasets.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "datasets.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Datasets" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ] ;
+         fhir:ImplementationGuide.definition.page.page [
+           fhir:index 0 ;
+           fhir:Element.extension [
+             fhir:index 0 ;
+             fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+             fhir:Extension.valueUrl [ fhir:value "ibd-dataset.html" ]
+           ] ;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "ibd-dataset.html" ] ;
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "IBD" ] ;
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ]
+       ], [
+         fhir:index 4 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "kpi-definitions.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "kpi-definitions.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "KPI definitions" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index 5 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "K312.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "K312.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "K3.1.2 Scopie" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index 6 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "K363.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "K363.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "K3.6.3 Calprotectine voor scopie" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index 7 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "deidentification.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "deidentification.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "De-identification" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ]
+     ] ;
+     fhir:ImplementationGuide.definition.parameter [
+       fhir:index 0 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/capabilities" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/examples" ]
+     ], [
+       fhir:index 2 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/extensions" ]
+     ], [
+       fhir:index 3 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/models" ]
+     ], [
+       fhir:index 4 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/operations" ]
+     ], [
+       fhir:index 5 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/profiles" ]
+     ], [
+       fhir:index 6 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/resources" ]
+     ], [
+       fhir:index 7 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/vocabulary" ]
+     ], [
+       fhir:index 8 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/maps" ]
+     ], [
+       fhir:index 9 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/testing" ]
+     ], [
+       fhir:index 10 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/history" ]
+     ], [
+       fhir:index 11 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "fsh-generated/resources" ]
+     ], [
+       fhir:index 12 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-pages" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "template/config" ]
+     ], [
+       fhir:index 13 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-pages" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/assets" ]
+     ], [
+       fhir:index 14 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-pages" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/images" ]
+     ], [
+       fhir:index 15 ;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-tx-cache" ] ;
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input-cache/txcache" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/ImplementationGuide/santeon.sim-on-fhir.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,15 +1,12 @@
-# De-identification Ruleset - Santeon CarePlan Implementation Guide v0.1.0
+# De-identification ruleset (model) - SIM on FHIR v0.1.0
 
-## Logical Model: De-identification Ruleset 
-
- 
-A fully-resolved (effective) set of de-identification rules for one export. It carries the actual rules in force, with no reference to a base ruleset plus differences. Together with the export Parameters (which declare the released elements via _elements), it fully describes how an export is de-identified. 
+## Logical Model: De-identification ruleset (model) 
 
 **Usages:**
 
 * This Logical Model is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/santeon.careplan.ig|current/StructureDefinition/StructureDefinition-deidentification-ruleset.json)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/santeon.sim-on-fhir|current/StructureDefinition/StructureDefinition-deidentification-ruleset.json)
 
 ### Formal Views of Profile Content
 
@@ -27,12 +24,12 @@ Other representations of profile: [CSV](../StructureDefinition-deidentification-
 {
   "resourceType" : "StructureDefinition",
   "id" : "deidentification-ruleset",
-  "url" : "https://ig.santeon.nl/careplan/StructureDefinition/deidentification-ruleset",
+  "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/deidentification-ruleset",
   "version" : "0.1.0",
   "name" : "DeidentificationRuleset",
-  "title" : "De-identification Ruleset",
+  "title" : "De-identification ruleset (model)",
   "status" : "draft",
-  "date" : "2026-09-23T18:28:14+00:00",
+  "date" : "2026-10-16T14:43:24+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -52,14 +49,14 @@ Other representations of profile: [CSV](../StructureDefinition-deidentification-
   "fhirVersion" : "4.0.1",
   "kind" : "logical",
   "abstract" : false,
-  "type" : "https://ig.santeon.nl/careplan/StructureDefinition/deidentification-ruleset",
+  "type" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/deidentification-ruleset",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",
   "derivation" : "specialization",
   "differential" : {
     "element" : [{
       "id" : "deidentification-ruleset",
       "path" : "deidentification-ruleset",
-      "short" : "De-identification Ruleset",
+      "short" : "De-identification ruleset (model)",
       "definition" : "A fully-resolved (effective) set of de-identification rules for one export.\nIt carries the actual rules in force, with no reference to a base ruleset\nplus differences. Together with the export Parameters (which declare the\nreleased elements via _elements), it fully describes how an export is\nde-identified."
     },
     {
@@ -110,28 +107,28 @@ Other representations of profile: [CSV](../StructureDefinition-deidentification-
         "severity" : "error",
         "human" : "Action 'none' must carry an exceptionReason and no transform parameters.",
         "expression" : "action = 'none' implies (exceptionReason.exists() and algorithm.empty() and maxDays.empty() and minAge.empty() and maxAge.empty())",
-        "source" : "https://ig.santeon.nl/careplan/StructureDefinition/deidentification-ruleset"
+        "source" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/deidentification-ruleset"
       },
       {
         "key" : "hash-requires-algorithm",
         "severity" : "error",
         "human" : "Action 'hash' must specify algorithm and carry no date/age parameters.",
         "expression" : "action = 'hash' implies (algorithm.exists() and maxDays.empty() and minAge.empty() and maxAge.empty())",
-        "source" : "https://ig.santeon.nl/careplan/StructureDefinition/deidentification-ruleset"
+        "source" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/deidentification-ruleset"
       },
       {
         "key" : "shift-requires-maxdays",
         "severity" : "error",
         "human" : "Action 'shift' must specify maxDays and carry no hash/age parameters.",
         "expression" : "action = 'shift' implies (maxDays.exists() and algorithm.empty() and minAge.empty() and maxAge.empty())",
-        "source" : "https://ig.santeon.nl/careplan/StructureDefinition/deidentification-ruleset"
+        "source" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/deidentification-ruleset"
       },
       {
         "key" : "clampage-requires-bounds",
         "severity" : "error",
         "human" : "Action 'clamp-age' must specify both minAge and maxAge.",
         "expression" : "action = 'clamp-age' implies (minAge.exists() and maxAge.exists() and algorithm.empty() and maxDays.empty())",
-        "source" : "https://ig.santeon.nl/careplan/StructureDefinition/deidentification-ruleset"
+        "source" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/deidentification-ruleset"
       }]
     },
     {
@@ -157,7 +154,7 @@ Other representations of profile: [CSV](../StructureDefinition-deidentification-
       }],
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs"
+        "valueSet" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/deidentification-action-vs"
       }
     },
     {

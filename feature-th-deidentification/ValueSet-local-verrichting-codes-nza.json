@@ -1,0 +1,51 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "local-verrichting-codes-nza",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet local-verrichting-codes-nza</b></p><a name=\"local-verrichting-codes-nza\"> </a><a name=\"hclocal-verrichting-codes-nza\"> </a><ul><li>Include these codes as defined in <code>https://declaratie.nza.nl/zorgactiviteit</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>034620</td><td>Verrichting 034620</td></tr><tr><td>034686</td><td>Verrichting 034686</td></tr><tr><td>034690</td><td>Verrichting 034690</td></tr><tr><td>035582</td><td>Verrichting 035582</td></tr></table></li></ul></div>"
+  },
+  "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/local-verrichting-codes-nza",
+  "version" : "0.1.0",
+  "name" : "LocalVerrichtingCodesNZa",
+  "title" : "Verrichting Type Codes NZa (Scopie)",
+  "status" : "active",
+  "date" : "2026-10-16T14:43:24+00:00",
+  "publisher" : "Santeon",
+  "contact" : [{
+    "name" : "Santeon",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.santeon.nl"
+    }]
+  }],
+  "description" : "De specifieke NZa-verrichtingencodes voor de scopie-indicator.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "NL",
+      "display" : "Netherlands"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "https://declaratie.nza.nl/zorgactiviteit",
+      "concept" : [{
+        "code" : "034620",
+        "display" : "Verrichting 034620"
+      },
+      {
+        "code" : "034686",
+        "display" : "Verrichting 034686"
+      },
+      {
+        "code" : "034690",
+        "display" : "Verrichting 034690"
+      },
+      {
+        "code" : "035582",
+        "display" : "Verrichting 035582"
+      }]
+    }]
+  }
+}

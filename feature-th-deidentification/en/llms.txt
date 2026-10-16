@@ -1,11 +1,17 @@
-# santeon.careplan.ig#0.1.0: Santeon CarePlan Implementation Guide(en)
+# santeon.sim-on-fhir#0.1.0: SIM on FHIR(en)
 
 ## Pages
 
 * [Home](index.md)
-* [Profiles](profiles.md)
+* [KPI definitions](kpi-definitions.md)
+* [FHIR Profiles](profiles.md)
 * [De-identification](deidentification.md)
 * [Artifacts Summary](artifacts.md)
+* [Datasets](datasets.md)
+* [K3.1.2 Scopie](K312.md)
+* [IBD](ibd-dataset.md)
+* [K3.6.3 Calprotectine voor scopie](K363.md)
+* [Common Logical Models (SIM)](CLMs.md)
 
 ## Resources
 
@@ -15,29 +21,69 @@
 
 ### ValueSets
 
+* [CareplanCategoryCodelijst](ValueSet-2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229.md)
+* [AlcoholGebruikStatusCodelijst](ValueSet-2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000.md)
+* [AlcoholGebruikStatusCodelijst](ValueSet-AlcoholGebruikStatusCodelijst.md)
+* [IBDAlgemeneMetingen](ValueSet-IBDAlgemeneMetingen.md)
+* [IBD Specialisme Diagnoses](ValueSet-IBDSpecialismeDiagnoses.md)
+* [IBD Verrichtingen NZa](ValueSet-IBDVerrichtingenNZa.md)
+* [Santeon_MetingNaamCodelijst](ValueSet-Santeon-MetingNaamCodelijst.md)
 * [De-identification Action Value Set](ValueSet-deidentification-action-vs.md)
+* [IBD Specialisme-Diagnose Combinaties](ValueSet-local-specialisme-diagnose-codes.md)
+* [Verrichting Type Codes NZa (Scopie)](ValueSet-local-verrichting-codes-nza.md)
+* [IBD Zorgtype Codes (11 en 21)](ValueSet-local-zorgtype-codes.md)
+* [Observation code (SAN KPI)](ValueSet-observationCode-san-kpi.md)
+* [Procedure code (SAN KPI)](ValueSet-procedureCode-san-kpi.md)
 
 ### Logicals
 
-* [De-identification Ruleset](StructureDefinition-deidentification-ruleset.md)
+* [Algemene meting (model)](StructureDefinition-SIMAlgemeneMeting.md)
+* [DBC/Zorgtraject (model)](StructureDefinition-SIMDBC.md)
+* [Fasering (model)](StructureDefinition-SIMFasering.md)
+* [Patiënt (model)](StructureDefinition-SIMPatient.md)
+* [Verrichting (model)](StructureDefinition-SIMVerrichting.md)
+* [Dataset definition (model)](StructureDefinition-dataset-definition.md)
+* [De-identification ruleset (model)](StructureDefinition-deidentification-ruleset.md)
+* [KPI definition (model)](StructureDefinition-kpi-definition.md)
 
 ### Resource Profiles
 
-* [Santeon CarePlan](StructureDefinition-santeon-careplan.md)
+* [Condition (SAN)](StructureDefinition-condition-san.md)
+* [EpisodeOfCare (SAN)](StructureDefinition-episodeOfCare-san.md)
+* [Observation (SAN KPI)](StructureDefinition-observation-san-kpi.md)
+* [Observation (SAN)](StructureDefinition-observation-san.md)
+* [Patient (SAN KPI)](StructureDefinition-patient-san-kpi.md)
+* [Patient (SAN)](StructureDefinition-patient-san.md)
+* [Procedure (SAN KPI)](StructureDefinition-procedure-san-kpi.md)
+* [Procedure (SAN)](StructureDefinition-procedure-san.md)
+
+### Extensions
+
+* [ObservationDefinition Component](StructureDefinition-od-component.md)
+* [SpecialismeDiagnoseCode](StructureDefinition-specialisme-diagnose-code.md)
 
 ### Binaries
 
+* [alcohol-status-recorded](Binary-alcohol-status-recorded.md)
+* [ibd-dataset](Binary-ibd-dataset.md)
+* [k312-scopie](Binary-k312-scopie.md)
+* [k363-calprotectin-before-scopie](Binary-k363-calprotectin-before-scopie.md)
 * [santeon-default](Binary-santeon-default.md)
 
-### CapabilityStatements
+### Groups
 
-* [Santeon CarePlan Server Capability Statement](CapabilityStatement-SanteonCarePlanCapabilityStatement.md)
+* [IBD cohort](Group-ibd-dataset-cohort.md)
 
 ### ImplementationGuides
 
-* [Santeon CarePlan Implementation Guide](ImplementationGuide-santeon.careplan.ig.md)
+* [SIM on FHIR](ImplementationGuide-santeon.sim-on-fhir.md)
 
-### Examples
+### ObservationDefinitions
 
-* [SanteonCarePlanExample (CarePlan)](CarePlan-SanteonCarePlanExample.md)
-* [ExamplePatient (Patient)](Patient-ExamplePatient.md)
+* [od-alcohol-use](ObservationDefinition-od-alcohol-use.md)
+* [od-calprotectin](ObservationDefinition-od-calprotectin.md)
+* [od-smoking-status](ObservationDefinition-od-smoking-status.md)
+
+### Parameters
+
+* [ibd-dataset-export](Parameters-ibd-dataset-export.md)

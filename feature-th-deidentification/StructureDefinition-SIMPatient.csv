@@ -1,0 +1,7 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: SIM CSV","Mapping: SIM Patient naar FHIR"
+"SIMPatient","SIMPatient","","","",0,*,"","","","null {[]} {[]}
+","Patiënt (model)","Logisch model voor patiëntgegevens binnen het Santeon Informatiemodel.","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"SIMPatient.Identificatienummer","SIMPatient.Identificatienummer","","","",1,1,"","","","Identifier {[]} {[]}
+","Identificatienummer van de patiënt","Identificatienummer van de patiënt","","","","","","","","","",,,,,"",,,,"SIMPatient.Identificatienummer",1,1,"","","Identificatienummer","Patient.identifier"
+"SIMPatient.Geboortedatum","SIMPatient.Geboortedatum","","","",1,1,"","","","date {[]} {[]}
+","Geboortedatum van de patiënt","Geboortedatum van de patiënt","","","","","","","","","",,,,,"",,,,"SIMPatient.Geboortedatum",1,1,"","","Geboortedatum","Patient.birthDate"

@@ -1,11 +1,11 @@
-# Santeon Standard De-identification Ruleset - Santeon CarePlan Implementation Guide v0.1.0
+# Santeon Standard De-identification Ruleset - SIM on FHIR v0.1.0
 
 ## Binary: Santeon Standard De-identification Ruleset
 
 ```
 
 {
-  "resourceType": "https://ig.santeon.nl/careplan/StructureDefinition/deidentification-ruleset",
+  "resourceType": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/deidentification-ruleset",
   "id": "santeon-default",
   "url": "https://ig.santeon.nl/sim-on-fhir/DeidentificationRuleset/santeon-default",
   "version": "0.1.0",

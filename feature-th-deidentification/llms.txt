@@ -1,11 +1,17 @@
-# santeon.careplan.ig#0.1.0: Santeon CarePlan Implementation Guide(en)
+# santeon.sim-on-fhir#0.1.0: SIM on FHIR(en)
 
 ## Pages
 
 * [Home](en/index.md)
-* [Profiles](en/profiles.md)
+* [KPI definitions](en/kpi-definitions.md)
+* [FHIR Profiles](en/profiles.md)
 * [De-identification](en/deidentification.md)
 * [Artifacts Summary](en/artifacts.md)
+* [Datasets](en/datasets.md)
+* [K3.1.2 Scopie](en/K312.md)
+* [IBD](en/ibd-dataset.md)
+* [K3.6.3 Calprotectine voor scopie](en/K363.md)
+* [Common Logical Models (SIM)](en/CLMs.md)
 
 ## Resources
 
@@ -15,29 +21,69 @@
 
 ### ValueSets
 
+* [CareplanCategoryCodelijst](en/ValueSet-2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229.md)
+* [AlcoholGebruikStatusCodelijst](en/ValueSet-2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000.md)
+* [AlcoholGebruikStatusCodelijst](en/ValueSet-AlcoholGebruikStatusCodelijst.md)
+* [IBDAlgemeneMetingen](en/ValueSet-IBDAlgemeneMetingen.md)
+* [IBD Specialisme Diagnoses](en/ValueSet-IBDSpecialismeDiagnoses.md)
+* [IBD Verrichtingen NZa](en/ValueSet-IBDVerrichtingenNZa.md)
+* [Santeon_MetingNaamCodelijst](en/ValueSet-Santeon-MetingNaamCodelijst.md)
 * [De-identification Action Value Set](en/ValueSet-deidentification-action-vs.md)
+* [IBD Specialisme-Diagnose Combinaties](en/ValueSet-local-specialisme-diagnose-codes.md)
+* [Verrichting Type Codes NZa (Scopie)](en/ValueSet-local-verrichting-codes-nza.md)
+* [IBD Zorgtype Codes (11 en 21)](en/ValueSet-local-zorgtype-codes.md)
+* [Observation code (SAN KPI)](en/ValueSet-observationCode-san-kpi.md)
+* [Procedure code (SAN KPI)](en/ValueSet-procedureCode-san-kpi.md)
 
 ### Logicals
 
-* [De-identification Ruleset](en/StructureDefinition-deidentification-ruleset.md)
+* [Algemene meting (model)](en/StructureDefinition-SIMAlgemeneMeting.md)
+* [DBC/Zorgtraject (model)](en/StructureDefinition-SIMDBC.md)
+* [Fasering (model)](en/StructureDefinition-SIMFasering.md)
+* [Patiënt (model)](en/StructureDefinition-SIMPatient.md)
+* [Verrichting (model)](en/StructureDefinition-SIMVerrichting.md)
+* [Dataset definition (model)](en/StructureDefinition-dataset-definition.md)
+* [De-identification ruleset (model)](en/StructureDefinition-deidentification-ruleset.md)
+* [KPI definition (model)](en/StructureDefinition-kpi-definition.md)
 
 ### Resource Profiles
 
-* [Santeon CarePlan](en/StructureDefinition-santeon-careplan.md)
+* [Condition (SAN)](en/StructureDefinition-condition-san.md)
+* [EpisodeOfCare (SAN)](en/StructureDefinition-episodeOfCare-san.md)
+* [Observation (SAN KPI)](en/StructureDefinition-observation-san-kpi.md)
+* [Observation (SAN)](en/StructureDefinition-observation-san.md)
+* [Patient (SAN KPI)](en/StructureDefinition-patient-san-kpi.md)
+* [Patient (SAN)](en/StructureDefinition-patient-san.md)
+* [Procedure (SAN KPI)](en/StructureDefinition-procedure-san-kpi.md)
+* [Procedure (SAN)](en/StructureDefinition-procedure-san.md)
+
+### Extensions
+
+* [ObservationDefinition Component](en/StructureDefinition-od-component.md)
+* [SpecialismeDiagnoseCode](en/StructureDefinition-specialisme-diagnose-code.md)
 
 ### Binaries
 
+* [alcohol-status-recorded](en/Binary-alcohol-status-recorded.md)
+* [ibd-dataset](en/Binary-ibd-dataset.md)
+* [k312-scopie](en/Binary-k312-scopie.md)
+* [k363-calprotectin-before-scopie](en/Binary-k363-calprotectin-before-scopie.md)
 * [santeon-default](en/Binary-santeon-default.md)
 
-### CapabilityStatements
+### Groups
 
-* [Santeon CarePlan Server Capability Statement](en/CapabilityStatement-SanteonCarePlanCapabilityStatement.md)
+* [IBD cohort](en/Group-ibd-dataset-cohort.md)
 
 ### ImplementationGuides
 
-* [Santeon CarePlan Implementation Guide](en/ImplementationGuide-santeon.careplan.ig.md)
+* [SIM on FHIR](en/ImplementationGuide-santeon.sim-on-fhir.md)
 
-### Examples
+### ObservationDefinitions
 
-* [SanteonCarePlanExample (CarePlan)](en/CarePlan-SanteonCarePlanExample.md)
-* [ExamplePatient (Patient)](en/Patient-ExamplePatient.md)
+* [od-alcohol-use](en/ObservationDefinition-od-alcohol-use.md)
+* [od-calprotectin](en/ObservationDefinition-od-calprotectin.md)
+* [od-smoking-status](en/ObservationDefinition-od-smoking-status.md)
+
+### Parameters
+
+* [ibd-dataset-export](en/Parameters-ibd-dataset-export.md)

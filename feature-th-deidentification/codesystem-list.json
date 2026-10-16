@@ -1,6 +1,6 @@
 {
   "codeSystems" : [{
-    "url" : "https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs",
+    "url" : "https://ig.santeon.nl/sim-on-fhir/CodeSystem/deidentification-action-cs",
     "version" : "0.1.0",
     "status" : "active",
     "name" : "DeidentificationActionCS",

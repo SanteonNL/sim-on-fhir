@@ -1,0 +1,21 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/Binary/alcohol-status-recorded> a fhir:Binary ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "alcohol-status-recorded"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:Binary.contentType [ fhir:value "application/fhir+json"] ;
+  fhir:Binary.data [ fhir:value "ewogICJyZXNvdXJjZVR5cGUiOiAiaHR0cHM6Ly9pZy5zYW50ZW9uLm5sL3NpbS1vbi1maGlyL1N0cnVjdHVyZURlZmluaXRpb24va3BpLWRlZmluaXRpb24iLAogICJpZCI6ICJhbGNvaG9sLXN0YXR1cy1yZWNvcmRlZCIsCiAgInRpdGxlIjogIkFsY29ob2xnZWJydWlrIHZhc3RnZWxlZ2QiLAogICJkZXNjcmlwdGlvbiI6ICJJcyBkZSBhbGNvaG9sZ2VicnVpa3N0YXR1cyB2YXN0Z2VsZWdkIG1ldCBlZW4gZ2Vjb2RlZXJkZSB1aXRzbGFnPyIsCiAgInZlcnNpb24iOiAiMC4xLjAiLAogICJjcml0ZXJpYSI6IFsKICAgIHsKICAgICAgInJlc291cmNlIjogIk9ic2VydmF0aW9uIiwKICAgICAgInBhcmFtIjogWwogICAgICAgIHsKICAgICAgICAgICJuYW1lIjogImNvZGUiLAogICAgICAgICAgInZhbHVlIjogIntvZDpvZC1hbGNvaG9sLXVzZS5jb2RlfSIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJuYW1lIjogImRhdGUiLAogICAgICAgICAgInZhbHVlIjogImdlMjAxOC0wMS0wMSIKICAgICAgICB9CiAgICAgIF0sCiAgICAgICJlbGVtZW50IjogWwogICAgICAgICJjb2RlIiwKICAgICAgICAidmFsdWVbeF0iLAogICAgICAgICJlZmZlY3RpdmVbeF0iLAogICAgICAgICJzdWJqZWN0IgogICAgICBdCiAgICB9CiAgXQp9Cg=="^^xsd:base64Binary] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/Binary/alcohol-status-recorded.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

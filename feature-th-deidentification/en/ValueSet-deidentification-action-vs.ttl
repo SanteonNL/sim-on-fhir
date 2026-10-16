@@ -5,21 +5,21 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs> a fhir:ValueSet ;
+<https://ig.santeon.nl/sim-on-fhir/ValueSet/deidentification-action-vs> a fhir:ValueSet ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:Resource.id [ fhir:value "deidentification-action-vs"] ;
   fhir:Resource.language [ fhir:value "en"] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet deidentification-action-vs</b></p><a name=\"deidentification-action-vs\"> </a><a name=\"hcdeidentification-action-vs\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-deidentification-action-cs.html\"><code>https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?0.1.0</span></li></ul></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet deidentification-action-vs</b></p><a name=\"deidentification-action-vs\"> </a><a name=\"hcdeidentification-action-vs\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-deidentification-action-cs.html\"><code>https://ig.santeon.nl/sim-on-fhir/CodeSystem/deidentification-action-cs</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?0.1.0</span></li></ul></div>"
   ] ;
-  fhir:ValueSet.url [ fhir:value "https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs"] ;
+  fhir:ValueSet.url [ fhir:value "https://ig.santeon.nl/sim-on-fhir/ValueSet/deidentification-action-vs"] ;
   fhir:ValueSet.version [ fhir:value "0.1.0"] ;
   fhir:ValueSet.name [ fhir:value "DeidentificationActionVS"] ;
   fhir:ValueSet.title [ fhir:value "De-identification Action Value Set"] ;
   fhir:ValueSet.status [ fhir:value "active"] ;
   fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
-  fhir:ValueSet.date [ fhir:value "2026-09-23T18:28:14+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.date [ fhir:value "2026-10-16T14:43:24+00:00"^^xsd:dateTime] ;
   fhir:ValueSet.publisher [ fhir:value "Santeon"] ;
   fhir:ValueSet.contact [
      fhir:index -1 ;
@@ -43,13 +43,13 @@
   fhir:ValueSet.compose [
      fhir:ValueSet.compose.include [
        fhir:index -1 ;
-       fhir:ValueSet.compose.include.system [ fhir:value "https://ig.santeon.nl/careplan/CodeSystem/deidentification-action-cs" ]
+       fhir:ValueSet.compose.include.system [ fhir:value "https://ig.santeon.nl/sim-on-fhir/CodeSystem/deidentification-action-cs" ]
      ]
   ] .
 
 # - ontology header ------------------------------------------------------------
 
-<https://ig.santeon.nl/careplan/ValueSet/deidentification-action-vs.ttl> a owl:Ontology ;
+<https://ig.santeon.nl/sim-on-fhir/ValueSet/deidentification-action-vs.ttl> a owl:Ontology ;
   owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------

@@ -1,0 +1,201 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "IBDAlgemeneMetingen",
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet IBDAlgemeneMetingen</b></p><a name=\"IBDAlgemeneMetingen\"> </a><a name=\"hcIBDAlgemeneMetingen\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/228273003\">228273003</a></td><td style=\"color: #cccccc\">Finding relating to alcohol drinking behavior</td></tr></table></li><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/39156-5/\">39156-5</a></td><td style=\"color: #cccccc\">Body mass index (BMI) [Ratio]</td></tr><tr><td><a href=\"https://loinc.org/8302-2/\">8302-2</a></td><td style=\"color: #cccccc\">Body height</td></tr><tr><td><a href=\"https://loinc.org/29463-7/\">29463-7</a></td><td style=\"color: #cccccc\">Body weight</td></tr><tr><td><a href=\"https://loinc.org/38445-3/\">38445-3</a></td><td style=\"color: #cccccc\">Calprotectin [Mass/mass] in Stool</td></tr><tr><td><a href=\"https://loinc.org/59260-0/\">59260-0</a></td><td style=\"color: #cccccc\">Hemoglobin [Moles/volume] in Blood</td></tr><tr><td><a href=\"https://loinc.org/787-2/\">787-2</a></td><td style=\"color: #cccccc\">MCV [Entitic mean volume] in Red Blood Cells by Automated count</td></tr><tr><td><a href=\"https://loinc.org/6690-2/\">6690-2</a></td><td style=\"color: #cccccc\">Leukocytes [#/volume] in Blood by Automated count</td></tr><tr><td><a href=\"https://loinc.org/26464-8/\">26464-8</a></td><td style=\"color: #cccccc\">Leukocytes [#/volume] in Blood</td></tr><tr><td><a href=\"https://loinc.org/777-3/\">777-3</a></td><td style=\"color: #cccccc\">Platelets [#/volume] in Blood by Automated count</td></tr><tr><td><a href=\"https://loinc.org/26515-7/\">26515-7</a></td><td style=\"color: #cccccc\">Platelets [#/volume] in Blood</td></tr><tr><td><a href=\"https://loinc.org/1743-4/\">1743-4</a></td><td style=\"color: #cccccc\">Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma by With P-5'-P</td></tr><tr><td><a href=\"https://loinc.org/1742-6/\">1742-6</a></td><td style=\"color: #cccccc\">Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/77144-4/\">77144-4</a></td><td style=\"color: #cccccc\">Alanine aminotransferase [Enzymatic activity/volume] in Serum, Plasma or Blood</td></tr><tr><td><a href=\"https://loinc.org/30239-8/\">30239-8</a></td><td style=\"color: #cccccc\">Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma by With P-5'-P</td></tr><tr><td><a href=\"https://loinc.org/1920-8/\">1920-8</a></td><td style=\"color: #cccccc\">Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/6768-6/\">6768-6</a></td><td style=\"color: #cccccc\">Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/77141-0/\">77141-0</a></td><td style=\"color: #cccccc\">Alkaline phosphatase [Enzymatic activity/volume] in Serum, Plasma or Blood</td></tr><tr><td><a href=\"https://loinc.org/2324-2/\">2324-2</a></td><td style=\"color: #cccccc\">Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/1798-8/\">1798-8</a></td><td style=\"color: #cccccc\">Amylase [Enzymatic activity/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/3040-3/\">3040-3</a></td><td style=\"color: #cccccc\">Lipase [Enzymatic activity/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/14804-9/\">14804-9</a></td><td style=\"color: #cccccc\">Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma by Lactate to pyruvate reaction</td></tr><tr><td><a href=\"https://loinc.org/14682-9/\">14682-9</a></td><td style=\"color: #cccccc\">Creatinine [Moles/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/77140-2/\">77140-2</a></td><td style=\"color: #cccccc\">Creatinine [Moles/volume] in Serum, Plasma or Blood</td></tr><tr><td><a href=\"https://loinc.org/14631-6/\">14631-6</a></td><td style=\"color: #cccccc\">Bilirubin.total [Moles/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/62238-1/\">62238-1</a></td><td style=\"color: #cccccc\">Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)/1.73 sq M</td></tr><tr><td><a href=\"https://loinc.org/77147-7/\">77147-7</a></td><td style=\"color: #cccccc\">Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (MDRD)/1.73 sq M</td></tr><tr><td><a href=\"https://loinc.org/1988-5/\">1988-5</a></td><td style=\"color: #cccccc\">C reactive protein [Mass/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/79713-4/\">79713-4</a></td><td style=\"color: #cccccc\">TPMT gene product metabolic activity interpretation in Blood or Tissue Qualitative by Molecular genetics method</td></tr><tr><td><a href=\"https://loinc.org/93195-6/\">93195-6</a></td><td style=\"color: #cccccc\">NUDT15 gene product metabolic activity interpretation in Blood or Tissue Qualitative by Molecular genetics method</td></tr><tr><td><a href=\"https://loinc.org/32660-3/\">32660-3</a></td><td style=\"color: #cccccc\">6-Thioguanine [Entitic substance] in Red Blood Cells</td></tr><tr><td><a href=\"https://loinc.org/32654-6/\">32654-6</a></td><td style=\"color: #cccccc\">6-Methylmercaptopurine [Entitic substance] in Red Blood Cells</td></tr><tr><td><a href=\"https://loinc.org/86897-6/\">86897-6</a></td><td style=\"color: #cccccc\">inFLIXimab Ab [Mass/volume] in Serum or Plasma by Immunoassay</td></tr><tr><td><a href=\"https://loinc.org/72623-2/\">72623-2</a></td><td style=\"color: #cccccc\">inFLIXimab Ab [Mass/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/90779-0/\">90779-0</a></td><td style=\"color: #cccccc\">Adalimumab Ab [Units/volume] in Serum by Immunoassay</td></tr><tr><td><a href=\"https://loinc.org/74116-5/\">74116-5</a></td><td style=\"color: #cccccc\">Adalimumab Ab [Mass/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/39803-2/\">39803-2</a></td><td style=\"color: #cccccc\">inFLIXimab [Mass/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/74117-3/\">74117-3</a></td><td style=\"color: #cccccc\">Adalimumab [Mass/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/16419-4/\">16419-4</a></td><td style=\"color: #cccccc\">azaTHIOprine [Mass/volume] in Serum or Plasma</td></tr></table></li><li>Include these codes as defined in <code>https://santeon.nl/sct</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>MCU_E</td><td/></tr><tr><td>MCU_S</td><td/></tr><tr><td>MCD_A</td><td/></tr><tr><td>MCD_L</td><td/></tr><tr><td>MCD_B</td><td/></tr><tr><td>IC_000323</td><td/></tr><tr><td>IC_000324</td><td/></tr><tr><td>IC_000325</td><td/></tr><tr><td>IC_000326</td><td/></tr><tr><td>IC_000327</td><td/></tr><tr><td>IC_000328</td><td/></tr><tr><td>MayoEndoscopicScore</td><td/></tr><tr><td>IC_000321</td><td/></tr><tr><td>IC_000322</td><td/></tr></table></li></ul></div>"
+  },
+  "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDAlgemeneMetingen",
+  "version" : "0.1.0",
+  "name" : "IBDAlgemeneMetingen",
+  "title" : "IBDAlgemeneMetingen",
+  "status" : "draft",
+  "date" : "2026-10-16T14:43:24+00:00",
+  "publisher" : "Santeon",
+  "contact" : [{
+    "name" : "Santeon",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.santeon.nl"
+    }]
+  }],
+  "description" : "Metingen die worden geselecteerd voor de IBD-dataset.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "NL",
+      "display" : "Netherlands"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "228273003"
+      }]
+    },
+    {
+      "system" : "http://loinc.org",
+      "concept" : [{
+        "code" : "39156-5"
+      },
+      {
+        "code" : "8302-2"
+      },
+      {
+        "code" : "29463-7"
+      },
+      {
+        "code" : "38445-3"
+      },
+      {
+        "code" : "59260-0"
+      },
+      {
+        "code" : "787-2"
+      },
+      {
+        "code" : "6690-2"
+      },
+      {
+        "code" : "26464-8"
+      },
+      {
+        "code" : "777-3"
+      },
+      {
+        "code" : "26515-7"
+      },
+      {
+        "code" : "1743-4"
+      },
+      {
+        "code" : "1742-6"
+      },
+      {
+        "code" : "77144-4"
+      },
+      {
+        "code" : "30239-8"
+      },
+      {
+        "code" : "1920-8"
+      },
+      {
+        "code" : "6768-6"
+      },
+      {
+        "code" : "77141-0"
+      },
+      {
+        "code" : "2324-2"
+      },
+      {
+        "code" : "1798-8"
+      },
+      {
+        "code" : "3040-3"
+      },
+      {
+        "code" : "14804-9"
+      },
+      {
+        "code" : "14682-9"
+      },
+      {
+        "code" : "77140-2"
+      },
+      {
+        "code" : "14631-6"
+      },
+      {
+        "code" : "62238-1"
+      },
+      {
+        "code" : "77147-7"
+      },
+      {
+        "code" : "1988-5"
+      },
+      {
+        "code" : "79713-4"
+      },
+      {
+        "code" : "93195-6"
+      },
+      {
+        "code" : "32660-3"
+      },
+      {
+        "code" : "32654-6"
+      },
+      {
+        "code" : "86897-6"
+      },
+      {
+        "code" : "72623-2"
+      },
+      {
+        "code" : "90779-0"
+      },
+      {
+        "code" : "74116-5"
+      },
+      {
+        "code" : "39803-2"
+      },
+      {
+        "code" : "74117-3"
+      },
+      {
+        "code" : "16419-4"
+      }]
+    },
+    {
+      "system" : "https://santeon.nl/sct",
+      "concept" : [{
+        "code" : "MCU_E"
+      },
+      {
+        "code" : "MCU_S"
+      },
+      {
+        "code" : "MCD_A"
+      },
+      {
+        "code" : "MCD_L"
+      },
+      {
+        "code" : "MCD_B"
+      },
+      {
+        "code" : "IC_000323"
+      },
+      {
+        "code" : "IC_000324"
+      },
+      {
+        "code" : "IC_000325"
+      },
+      {
+        "code" : "IC_000326"
+      },
+      {
+        "code" : "IC_000327"
+      },
+      {
+        "code" : "IC_000328"
+      },
+      {
+        "code" : "MayoEndoscopicScore"
+      },
+      {
+        "code" : "IC_000321"
+      },
+      {
+        "code" : "IC_000322"
+      }]
+    }]
+  }
+}

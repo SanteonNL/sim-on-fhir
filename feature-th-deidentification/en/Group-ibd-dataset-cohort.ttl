@@ -1,0 +1,41 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/Group/ibd-dataset-cohort> a fhir:Group ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ibd-dataset-cohort"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n  <table class=\"narrative-table\">\n    <tbody>\n<tr>\n\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\"><a name=\"metadata\"> </a>Metadata</th>\n\n\n</tr>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<tr>\n\n\n<th scope=\"row\" class=\"row-header\">Type</th>\n\n\n\n<td class=\"content-container\">Person</td>\n\n\n</tr>\n\n\n<tr>\n\n\n<th scope=\"row\" class=\"row-header\">Actual</th>\n\n\n\n<td class=\"content-container\">true</td>\n\n\n</tr>\n\n\n\n\n\n\n\n\n\n\n<tr>\n  <th colspan=\"2\" scope=\"row\" class=\"row-header\">Generated using version 0.5.6 of the sample-content-ig Liquid templates</th>\n</tr>\n\n    </tbody>\n  </table>\n</div>"
+  ] ;
+  fhir:DomainResource.modifierExtension [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/bulkdata/StructureDefinition/member-filter" ] ;
+     fhir:Extension.valueExpression [
+       fhir:Expression.language [ fhir:value "application/x-fhir-query" ] ;
+       fhir:Expression.expression [ fhir:value "Patient?birthdate=le{today-18y}" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/bulkdata/StructureDefinition/member-filter" ] ;
+     fhir:Extension.valueExpression [
+       fhir:Expression.language [ fhir:value "application/x-fhir-query" ] ;
+       fhir:Expression.expression [ fhir:value "EpisodeOfCare?type:in=https://ig.santeon.nl/sim-on-fhir/ValueSet/local-zorgtype-codes&status=active&date=ge2018-01-01&diagnosis:Condition.code:in=https://ig.santeon.nl/sim-on-fhir/ValueSet/local-specialisme-diagnose-codes" ]
+     ]
+  ] ;
+  fhir:Group.type [ fhir:value "person"] ;
+  fhir:Group.actual [ fhir:value "true"^^xsd:boolean] ;
+  fhir:Group.name [ fhir:value "IBD cohort"] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/Group/ibd-dataset-cohort.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

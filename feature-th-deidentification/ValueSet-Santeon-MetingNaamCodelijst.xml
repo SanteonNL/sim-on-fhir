@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="Santeon-MetingNaamCodelijst"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet Santeon-MetingNaamCodelijst</b></p><a name="Santeon-MetingNaamCodelijst"> </a><a name="hcSanteon-MetingNaamCodelijst"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href="http://loinc.org"><code>http://loinc.org</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="https://loinc.org/38445-3/">38445-3</a></td><td>Calprotectin [Mass/volume] in Stool</td></tr></table></li><li>Include these codes as defined in <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="http://snomed.info/id/228273003">228273003</a></td><td style="color: #cccccc">Finding relating to alcohol drinking behavior</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst"/>
+  <version value="0.1.0"/>
+  <name value="Santeon_MetingNaamCodelijst"/>
+  <title value="Santeon_MetingNaamCodelijst"/>
+  <status value="draft"/>
+  <date value="2026-10-16T14:43:24+00:00"/>
+  <publisher value="Santeon"/>
+  <contact>
+    <name value="Santeon"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.santeon.nl"/>
+    </telecom>
+  </contact>
+  <description value="ValueSet met metingnamen die binnen het Santeon Informatiemodel worden gebruikt."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="NL"/>
+      <display value="Netherlands"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://loinc.org"/>
+      <concept>
+        <code value="38445-3"/>
+        <display value="Calprotectin [Mass/volume] in Stool"/>
+      </concept>
+    </include>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <concept>
+        <code value="228273003"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

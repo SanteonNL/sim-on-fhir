@@ -1,0 +1,1488 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "SIMAlgemeneMeting",
+  "language" : "en",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureDefinition SIMAlgemeneMeting</b></p><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"xhtTableBorder0\"><tr class=\"xhtRowBorder1\"><th scope=\"col\" style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"The logical name of the element\">Name</a></th><th scope=\"col\" style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Information about the use of the element\">Flags</a></th><th scope=\"col\" style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Minimum and Maximum # of times the element can appear in the instance\">Card.</a></th><th scope=\"col\" style=\"; width: 100px\" class=\"hierarchy xhtCellBorder0\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Reference to the type of the element\">Type</a></th><th scope=\"col\" style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Additional information about the element\">Description &amp; Constraints</a><span style=\"float: right\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck1.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting\" title=\"Logisch model voor een algemeneMeting binnen het Santeon Informatiemodel.\">SIMAlgemeneMeting</a><a name=\"SIMAlgemeneMeting\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">*</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://build.fhir.org/types.html#Base\">Base</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\">Algemene meting (model)</td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck11.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.MetingNaam\" title=\"Type of naam van de meting\">MetingNaam</a><a name=\"SIMAlgemeneMeting.MetingNaam\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/conformance-rules.html#constraints\" title=\"This element has or is affected by constraints ( validatie-metingnaam-uitslagcode )\" class=\"xhtConstraintStyle\">C</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\">1..1</td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\">Type of naam van de meting<br class=\"binding\"/><span class=\"xhtPieceBold binding\">Binding: </span><a href=\"ValueSet-Santeon-MetingNaamCodelijst.html\" title=\"https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst\" class=\"binding\">Santeon_MetingNaamCodelijst</a><span class=\"binding\"> (</span><a href=\"http://hl7.org/fhir/R4/terminologies.html#required\" title=\"To be conformant, the concept in this element SHALL be from the specified value set.\" class=\"binding\">required</a><span class=\"binding\">)</span><br class=\"constraint\"/><span class=\"constraint\">Constraints: </span><span title=\"Valideert de relatie tussen MetingNaam en het bijbehorende type uitslag. Voor metingen met een gecodeerde uitslag moet UitslagCode afkomstig zijn uit de ValueSet die aan de betreffende MetingNaam is gekoppeld. Bijvoorbeeld: wanneer MetingNaam alcoholgebruik is (SNOMED CT 228273003), moet UitslagCode afkomstig zijn uit AlcoholGebruikStatusCodelijst. Dit geldt voor alle vastgelegde [MetingNaam-UitslagCode](&lt;a href='https://dev.azure.com/SanteonNL/Santeon/_git/HipsETL?path=/SIM/informatiemodel%20Santeon%20valueSets%20relation.csv&lt;/a&gt;)-combinaties. Metingen die niet in deze combinaties zijn vastgelegd, maar wel voorkomen in Santeon_MetingNaamCodelijst, hebben een UitslagWaarde als uitkomst.\" class=\"xhtPieceBold constraint\">validatie-metingnaam-uitslagcode</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck101.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.MetingNaam.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.MetingNaam.coding\">coding</a><a name=\"SIMAlgemeneMeting.MetingNaam.coding\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck1010.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.MetingNaam.coding.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.MetingNaam.coding.system\">system</a><a name=\"SIMAlgemeneMeting.MetingNaam.coding.system\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck1010.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.MetingNaam.coding.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.MetingNaam.coding.code\">code</a><a name=\"SIMAlgemeneMeting.MetingNaam.coding.code\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck1000.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.MetingNaam.coding.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.MetingNaam.coding.display\">display</a><a name=\"SIMAlgemeneMeting.MetingNaam.coding.display\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck10.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.MetingDatumTijd\" title=\"Datum en eventueel tijd die het dichtst ligt bij het daadwerkelijke meetmoment of de observatie\">MetingDatumTijd</a><a name=\"SIMAlgemeneMeting.MetingDatumTijd\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\">0..1</td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\">Datum en eventueel tijd die het dichtst ligt bij het daadwerkelijke meetmoment of de observatie</td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck11.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagWaarde\" title=\"Numerieke uitslag van de meting, met eenheid (UCUM) en eventueel een vergelijkingsoperator (&lt;, &lt;=, &gt;=, &gt;)\">UitslagWaarde</a><a name=\"SIMAlgemeneMeting.UitslagWaarde\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/conformance-rules.html#constraints\" title=\"This element has or is affected by constraints ( validatie-metingnaam-uitslagcode )\" class=\"xhtConstraintStyle\">C</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\">0..1</td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Quantity\">Quantity</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\">Numerieke uitslag van de meting, met eenheid (UCUM) en eventueel een vergelijkingsoperator (&lt;, &lt;=, &gt;=, &gt;)<br class=\"constraint\"/><span class=\"constraint\">Constraints: </span><span title=\"Valideert de relatie tussen MetingNaam en het bijbehorende type uitslag. Voor metingen met een gecodeerde uitslag moet UitslagCode afkomstig zijn uit de ValueSet die aan de betreffende MetingNaam is gekoppeld. Bijvoorbeeld: wanneer MetingNaam alcoholgebruik is (SNOMED CT 228273003), moet UitslagCode afkomstig zijn uit AlcoholGebruikStatusCodelijst. Dit geldt voor alle vastgelegde [MetingNaam-UitslagCode](&lt;a href='https://dev.azure.com/SanteonNL/Santeon/_git/HipsETL?path=/SIM/informatiemodel%20Santeon%20valueSets%20relation.csv&lt;/a&gt;)-combinaties. Metingen die niet in deze combinaties zijn vastgelegd, maar wel voorkomen in Santeon_MetingNaamCodelijst, hebben een UitslagWaarde als uitkomst.\" class=\"xhtPieceBold constraint\">validatie-metingnaam-uitslagcode</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck110.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagWaarde.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagWaarde.value\">value</a><a name=\"SIMAlgemeneMeting.UitslagWaarde.value\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#decimal\" class=\"xhtPieceDeEmphasized\">decimal</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Numerical value (with implicit precision)</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck110.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagWaarde.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagWaarde.comparator\">comparator</a><a name=\"SIMAlgemeneMeting.UitslagWaarde.comparator\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\" class=\"xhtPieceDeEmphasized\">code</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">&lt; | &lt;= | &gt;= | &gt; - how to understand the value</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck110.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagWaarde.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagWaarde.system\">system</a><a name=\"SIMAlgemeneMeting.UitslagWaarde.system\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#uri\" class=\"xhtPieceDeEmphasized\">uri</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">System that defines coded unit form</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck100.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagWaarde.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagWaarde.code\">code</a><a name=\"SIMAlgemeneMeting.UitslagWaarde.code\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\" class=\"xhtPieceDeEmphasized\">code</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Coded form of the unit</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck11.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagBereik\" title=\"Uitslag als bereik: een ondergrens en/of een bovengrens, beide inclusief\">UitslagBereik</a><a name=\"SIMAlgemeneMeting.UitslagBereik\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\">0..1</td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Range\">Range</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\">Uitslag als bereik: een ondergrens en/of een bovengrens, beide inclusief</td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck111.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagBereik.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagBereik.low\">low</a><a name=\"SIMAlgemeneMeting.UitslagBereik.low\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck1110.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagBereik.low.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagBereik.low.value\">value</a><a name=\"SIMAlgemeneMeting.UitslagBereik.low.value\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck1110.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagBereik.low.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagBereik.low.unit\">unit</a><a name=\"SIMAlgemeneMeting.UitslagBereik.low.unit\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck1110.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagBereik.low.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagBereik.low.system\">system</a><a name=\"SIMAlgemeneMeting.UitslagBereik.low.system\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck1100.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagBereik.low.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagBereik.low.code\">code</a><a name=\"SIMAlgemeneMeting.UitslagBereik.low.code\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck101.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagBereik.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagBereik.high\">high</a><a name=\"SIMAlgemeneMeting.UitslagBereik.high\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck1010.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagBereik.high.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagBereik.high.value\">value</a><a name=\"SIMAlgemeneMeting.UitslagBereik.high.value\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck1010.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagBereik.high.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagBereik.high.unit\">unit</a><a name=\"SIMAlgemeneMeting.UitslagBereik.high.unit\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck1010.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagBereik.high.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagBereik.high.system\">system</a><a name=\"SIMAlgemeneMeting.UitslagBereik.high.system\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck1000.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagBereik.high.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagBereik.high.code\">code</a><a name=\"SIMAlgemeneMeting.UitslagBereik.high.code\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck11.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagCode\" title=\"Welke ValueSet van toepassing is op UitslagCode wordt bepaald door MetingNaam, zie invariants.\">UitslagCode</a><a name=\"SIMAlgemeneMeting.UitslagCode\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/conformance-rules.html#constraints\" title=\"This element has or is affected by constraints ( validatie-metingnaam-uitslagcode )\" class=\"xhtConstraintStyle\">C</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\">0..1</td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\">Gecodeerde uitslag van de meting<br class=\"constraint\"/><span class=\"constraint\">Constraints: </span><span title=\"Valideert de relatie tussen MetingNaam en het bijbehorende type uitslag. Voor metingen met een gecodeerde uitslag moet UitslagCode afkomstig zijn uit de ValueSet die aan de betreffende MetingNaam is gekoppeld. Bijvoorbeeld: wanneer MetingNaam alcoholgebruik is (SNOMED CT 228273003), moet UitslagCode afkomstig zijn uit AlcoholGebruikStatusCodelijst. Dit geldt voor alle vastgelegde [MetingNaam-UitslagCode](&lt;a href='https://dev.azure.com/SanteonNL/Santeon/_git/HipsETL?path=/SIM/informatiemodel%20Santeon%20valueSets%20relation.csv&lt;/a&gt;)-combinaties. Metingen die niet in deze combinaties zijn vastgelegd, maar wel voorkomen in Santeon_MetingNaamCodelijst, hebben een UitslagWaarde als uitkomst.\" class=\"xhtPieceBold constraint\">validatie-metingnaam-uitslagcode</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck101.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagCode.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagCode.coding\">coding</a><a name=\"SIMAlgemeneMeting.UitslagCode.coding\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck1010.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagCode.coding.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagCode.coding.system\">system</a><a name=\"SIMAlgemeneMeting.UitslagCode.coding.system\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck1010.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagCode.coding.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagCode.coding.code\">code</a><a name=\"SIMAlgemeneMeting.UitslagCode.coding.code\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck1000.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.UitslagCode.coding.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagCode.coding.display\">display</a><a name=\"SIMAlgemeneMeting.UitslagCode.coding.display\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck00.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">SIMAlgemeneMeting.</span><a href=\"StructureDefinition-SIMAlgemeneMeting-definitions.html#SIMAlgemeneMeting.UitslagDatumTijd\" title=\"Datum en eventueel tijd als antwoord op een vraag, bijvoorbeeld: sinds wanneer rookt u? Een vage datumtijd (alleen jaar of datum) is niet wenselijk maar wel toegestaan.\">UitslagDatumTijd</a><a name=\"SIMAlgemeneMeting.UitslagDatumTijd\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\">0..1</td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\">Datum en eventueel tijd als antwoord op een vraag, bijvoorbeeld: sinds wanneer rookt u? Een vage datumtijd (alleen jaar of datum) is niet wenselijk maar wel toegestaan.</td></tr>\r\n<tr><td colspan=\"5\" class=\"hierarchy\"><br/><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table></div>"
+  },
+  "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMAlgemeneMeting",
+  "version" : "0.1.0",
+  "name" : "SIMAlgemeneMeting",
+  "title" : "Algemene meting (model)",
+  "status" : "draft",
+  "date" : "2026-10-16T14:43:24+00:00",
+  "publisher" : "Santeon",
+  "contact" : [{
+    "name" : "Santeon",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.santeon.nl"
+    }]
+  }],
+  "description" : "Logisch model voor een algemeneMeting binnen het Santeon Informatiemodel.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "NL",
+      "display" : "Netherlands"
+    }]
+  }],
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "SIMAlgemeneMetingFromSIMCSV",
+    "uri" : "SIM CSVs",
+    "name" : "SIM CSVs"
+  },
+  {
+    "identity" : "SIMAlgemeneMetingToFHIR",
+    "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san",
+    "name" : "FHIR"
+  }],
+  "kind" : "logical",
+  "abstract" : false,
+  "type" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMAlgemeneMeting",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",
+  "derivation" : "specialization",
+  "snapshot" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version",
+      "valueString" : "4.0.1"
+    }],
+    "element" : [{
+      "id" : "SIMAlgemeneMeting",
+      "path" : "SIMAlgemeneMeting",
+      "short" : "Algemene meting (model)",
+      "definition" : "Logisch model voor een algemeneMeting binnen het Santeon Informatiemodel.",
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "Base",
+        "min" : 0,
+        "max" : "*"
+      },
+      "isModifier" : false
+    },
+    {
+      "id" : "SIMAlgemeneMeting.MetingNaam",
+      "path" : "SIMAlgemeneMeting.MetingNaam",
+      "short" : "Type of naam van de meting",
+      "definition" : "Type of naam van de meting",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.MetingNaam",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "constraint" : [{
+        "key" : "validatie-metingnaam-uitslagcode",
+        "severity" : "error",
+        "human" : "Valideert de relatie tussen MetingNaam en het bijbehorende type uitslag. Voor metingen met een gecodeerde uitslag moet UitslagCode afkomstig zijn uit de ValueSet die aan de betreffende MetingNaam is gekoppeld. Bijvoorbeeld: wanneer MetingNaam alcoholgebruik is (SNOMED CT 228273003), moet UitslagCode afkomstig zijn uit AlcoholGebruikStatusCodelijst. Dit geldt voor alle vastgelegde [MetingNaam-UitslagCode](<a href='https://dev.azure.com/SanteonNL/Santeon/_git/HipsETL?path=/SIM/informatiemodel%20Santeon%20valueSets%20relation.csv</a>)-combinaties. Metingen die niet in deze combinaties zijn vastgelegd, maar wel voorkomen in Santeon_MetingNaamCodelijst, hebben een UitslagWaarde als uitkomst.",
+        "expression" : "(MetingNaam.coding.where(system = 'http://snomed.info/sct' and code = '228273003').exists() implies UitslagCode.memberOf('https://ig.santeon.nl/sim-on-fhir/ValueSet/AlcoholGebruikStatusCodelijst')) or (MetingNaam.coding.where(system = 'http://loinc.org' and code = '38445-3').exists() implies UitslagWaarde.exists())",
+        "source" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMAlgemeneMeting"
+      },
+      {
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst"
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingToFHIR",
+        "map" : "Observation.code"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.MetingNaam.id",
+      "path" : "SIMAlgemeneMeting.MetingNaam.id",
+      "representation" : ["xmlAttr"],
+      "short" : "Unique id for inter-element referencing",
+      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.id",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "string"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.MetingNaam.extension",
+      "path" : "SIMAlgemeneMeting.MetingNaam.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "description" : "Extensions are always sliced by (at least) url",
+        "rules" : "open"
+      },
+      "short" : "Additional content defined by implementations",
+      "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.MetingNaam.coding",
+      "path" : "SIMAlgemeneMeting.MetingNaam.coding",
+      "short" : "Code defined by a terminology system",
+      "definition" : "A reference to a code defined by a terminology system.",
+      "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
+      "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "CodeableConcept.coding",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Coding"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
+      "isSummary" : true,
+      "mapping" : [{
+        "identity" : "v2",
+        "map" : "C*E.1-8, C*E.10-22"
+      },
+      {
+        "identity" : "rim",
+        "map" : "union(., ./translation)"
+      },
+      {
+        "identity" : "orim",
+        "map" : "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.MetingNaam.coding.system",
+      "path" : "SIMAlgemeneMeting.MetingNaam.coding.system",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.MetingNaam.coding.system",
+        "min" : 0
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "MetingNaamCodeSysteem"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.MetingNaam.coding.code",
+      "path" : "SIMAlgemeneMeting.MetingNaam.coding.code",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.MetingNaam.coding.code",
+        "min" : 0
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "MetingNaamCode"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.MetingNaam.coding.display",
+      "path" : "SIMAlgemeneMeting.MetingNaam.coding.display",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.MetingNaam.coding.display",
+        "min" : 0
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "MetingNaamOmschrijving"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.MetingNaam.text",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+        "valueBoolean" : true
+      }],
+      "path" : "SIMAlgemeneMeting.MetingNaam.text",
+      "short" : "Plain text representation of the concept",
+      "definition" : "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
+      "comment" : "Very often the text is the same as a displayName of one of the codings.",
+      "requirements" : "The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "CodeableConcept.text",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "string"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
+      "isSummary" : true,
+      "mapping" : [{
+        "identity" : "v2",
+        "map" : "C*E.9. But note many systems use C*E.2 for this"
+      },
+      {
+        "identity" : "rim",
+        "map" : "./originalText[mediaType/code=\"text/plain\"]/data"
+      },
+      {
+        "identity" : "orim",
+        "map" : "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.MetingDatumTijd",
+      "path" : "SIMAlgemeneMeting.MetingDatumTijd",
+      "short" : "Datum en eventueel tijd die het dichtst ligt bij het daadwerkelijke meetmoment of de observatie",
+      "definition" : "Datum en eventueel tijd die het dichtst ligt bij het daadwerkelijke meetmoment of de observatie",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.MetingDatumTijd",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "MetingDatumTijd"
+      },
+      {
+        "identity" : "SIMAlgemeneMetingToFHIR",
+        "map" : "Observation.effectiveDateTime"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagWaarde",
+      "path" : "SIMAlgemeneMeting.UitslagWaarde",
+      "short" : "Numerieke uitslag van de meting, met eenheid (UCUM) en eventueel een vergelijkingsoperator (<, <=, >=, >)",
+      "definition" : "Numerieke uitslag van de meting, met eenheid (UCUM) en eventueel een vergelijkingsoperator (<, <=, >=, >)",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.UitslagWaarde",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Quantity"
+      }],
+      "constraint" : [{
+        "key" : "validatie-metingnaam-uitslagcode",
+        "severity" : "error",
+        "human" : "Valideert de relatie tussen MetingNaam en het bijbehorende type uitslag. Voor metingen met een gecodeerde uitslag moet UitslagCode afkomstig zijn uit de ValueSet die aan de betreffende MetingNaam is gekoppeld. Bijvoorbeeld: wanneer MetingNaam alcoholgebruik is (SNOMED CT 228273003), moet UitslagCode afkomstig zijn uit AlcoholGebruikStatusCodelijst. Dit geldt voor alle vastgelegde [MetingNaam-UitslagCode](<a href='https://dev.azure.com/SanteonNL/Santeon/_git/HipsETL?path=/SIM/informatiemodel%20Santeon%20valueSets%20relation.csv</a>)-combinaties. Metingen die niet in deze combinaties zijn vastgelegd, maar wel voorkomen in Santeon_MetingNaamCodelijst, hebben een UitslagWaarde als uitkomst.",
+        "expression" : "(MetingNaam.coding.where(system = 'http://snomed.info/sct' and code = '228273003').exists() implies UitslagCode.memberOf('https://ig.santeon.nl/sim-on-fhir/ValueSet/AlcoholGebruikStatusCodelijst')) or (MetingNaam.coding.where(system = 'http://loinc.org' and code = '38445-3').exists() implies UitslagWaarde.exists())",
+        "source" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMAlgemeneMeting"
+      },
+      {
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "qty-3",
+        "severity" : "error",
+        "human" : "If a code for the unit is present, the system SHALL also be present",
+        "expression" : "code.empty() or system.exists()",
+        "xpath" : "not(exists(f:code)) or exists(f:system)"
+      }],
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingToFHIR",
+        "map" : "Observation.valueQuantity"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagWaarde.id",
+      "path" : "SIMAlgemeneMeting.UitslagWaarde.id",
+      "representation" : ["xmlAttr"],
+      "short" : "Unique id for inter-element referencing",
+      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.id",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "string"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagWaarde.extension",
+      "path" : "SIMAlgemeneMeting.UitslagWaarde.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "description" : "Extensions are always sliced by (at least) url",
+        "rules" : "open"
+      },
+      "short" : "Additional content defined by implementations",
+      "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagWaarde.value",
+      "path" : "SIMAlgemeneMeting.UitslagWaarde.value",
+      "short" : "Numerical value (with implicit precision)",
+      "definition" : "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+      "comment" : "The implicit precision in the value should always be honored. Monetary values have their own rules for handling precision (refer to standard accounting text books).",
+      "requirements" : "Precision is handled implicitly in almost all cases of measurement.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Quantity.value",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "decimal"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
+      "isSummary" : true,
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagWaarde"
+      },
+      {
+        "identity" : "v2",
+        "map" : "SN.2  / CQ - N/A"
+      },
+      {
+        "identity" : "rim",
+        "map" : "PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagWaarde.comparator",
+      "path" : "SIMAlgemeneMeting.UitslagWaarde.comparator",
+      "short" : "< | <= | >= | > - how to understand the value",
+      "definition" : "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is \"<\" , then the real value is < stated value.",
+      "requirements" : "Need a framework for handling measures where the value is <5ug/L or >400mg/L due to the limitations of measuring methodology.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Quantity.comparator",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "code"
+      }],
+      "meaningWhenMissing" : "If there is no comparator, then there is no modification of the value",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : true,
+      "isModifierReason" : "This is labeled as \"Is Modifier\" because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no modification of the value",
+      "isSummary" : true,
+      "binding" : {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString" : "QuantityComparator"
+        }],
+        "strength" : "required",
+        "description" : "How the Quantity should be understood and represented.",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/quantity-comparator|4.0.1"
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagWaardeOperator"
+      },
+      {
+        "identity" : "v2",
+        "map" : "SN.1  / CQ.1"
+      },
+      {
+        "identity" : "rim",
+        "map" : "IVL properties"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagWaarde.unit",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+        "valueBoolean" : true
+      }],
+      "path" : "SIMAlgemeneMeting.UitslagWaarde.unit",
+      "short" : "Unit representation",
+      "definition" : "A human-readable form of the unit.",
+      "requirements" : "There are many representations for units of measure and in many contexts, particular representations are fixed and required. I.e. mcg for micrograms.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Quantity.unit",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "string"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
+      "isSummary" : true,
+      "mapping" : [{
+        "identity" : "v2",
+        "map" : "(see OBX.6 etc.) / CQ.2"
+      },
+      {
+        "identity" : "rim",
+        "map" : "PQ.unit"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagWaarde.system",
+      "path" : "SIMAlgemeneMeting.UitslagWaarde.system",
+      "short" : "System that defines coded unit form",
+      "definition" : "The identification of the system that provides the coded form of the unit.",
+      "requirements" : "Need to know the system that defines the coded form of the unit.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Quantity.system",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "uri"
+      }],
+      "condition" : ["qty-3"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
+      "isSummary" : true,
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagWaardeEenheidSysteem"
+      },
+      {
+        "identity" : "v2",
+        "map" : "(see OBX.6 etc.) / CQ.2"
+      },
+      {
+        "identity" : "rim",
+        "map" : "CO.codeSystem, PQ.translation.codeSystem"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagWaarde.code",
+      "path" : "SIMAlgemeneMeting.UitslagWaarde.code",
+      "short" : "Coded form of the unit",
+      "definition" : "A computer processable form of the unit in some unit representation system.",
+      "comment" : "The preferred system is UCUM, but SNOMED CT can also be used (for customary units) or ISO 4217 for currency.  The context of use may additionally require a code from a particular system.",
+      "requirements" : "Need a computable form of the unit that is fixed across all forms. UCUM provides this for quantities, but SNOMED CT provides many units of interest.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Quantity.code",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "code"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
+      "isSummary" : true,
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagWaardeEenheid"
+      },
+      {
+        "identity" : "v2",
+        "map" : "(see OBX.6 etc.) / CQ.2"
+      },
+      {
+        "identity" : "rim",
+        "map" : "PQ.code, MO.currency, PQ.translation.code"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik",
+      "path" : "SIMAlgemeneMeting.UitslagBereik",
+      "short" : "Uitslag als bereik: een ondergrens en/of een bovengrens, beide inclusief",
+      "definition" : "Uitslag als bereik: een ondergrens en/of een bovengrens, beide inclusief",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.UitslagBereik",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Range"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "rng-2",
+        "severity" : "error",
+        "human" : "If present, low SHALL have a lower value than high",
+        "expression" : "low.empty() or high.empty() or (low <= high)",
+        "xpath" : "not(exists(f:low/f:value/@value)) or not(exists(f:high/f:value/@value)) or (number(f:low/f:value/@value) <= number(f:high/f:value/@value))"
+      }],
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingToFHIR",
+        "map" : "Observation.valueRange"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.id",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.id",
+      "representation" : ["xmlAttr"],
+      "short" : "Unique id for inter-element referencing",
+      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.id",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "string"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.extension",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "description" : "Extensions are always sliced by (at least) url",
+        "rules" : "open"
+      },
+      "short" : "Additional content defined by implementations",
+      "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.low",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.low",
+      "short" : "Low limit",
+      "definition" : "The low limit. The boundary is inclusive.",
+      "comment" : "If the low element is missing, the low boundary is not known.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Range.low",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Quantity",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/SimpleQuantity|4.0.1"],
+        "_profile" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-profile-constraints",
+            "valueCode" : "full"
+          }]
+        }]
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "sqty-1",
+        "severity" : "error",
+        "human" : "The comparator is not used on a SimpleQuantity",
+        "expression" : "comparator.empty()",
+        "source" : "http://hl7.org/fhir/StructureDefinition/SimpleQuantity"
+      }],
+      "isModifier" : false,
+      "isSummary" : true,
+      "mapping" : [{
+        "identity" : "v2",
+        "map" : "NR.1"
+      },
+      {
+        "identity" : "rim",
+        "map" : "./low"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.low.value",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.low.value",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.UitslagBereik.low.value",
+        "min" : 0
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeLow"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.low.unit",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.low.unit",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.UitslagBereik.low.unit",
+        "min" : 0
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeLowUnit"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.low.system",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.low.system",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.UitslagBereik.low.system",
+        "min" : 0
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeLowSystem"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.low.code",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.low.code",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.UitslagBereik.low.code",
+        "min" : 0
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeLowCode"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.high",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.high",
+      "short" : "High limit",
+      "definition" : "The high limit. The boundary is inclusive.",
+      "comment" : "If the high element is missing, the high boundary is not known.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Range.high",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Quantity",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/SimpleQuantity|4.0.1"],
+        "_profile" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-profile-constraints",
+            "valueCode" : "full"
+          }]
+        }]
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "sqty-1",
+        "severity" : "error",
+        "human" : "The comparator is not used on a SimpleQuantity",
+        "expression" : "comparator.empty()",
+        "source" : "http://hl7.org/fhir/StructureDefinition/SimpleQuantity"
+      }],
+      "isModifier" : false,
+      "isSummary" : true,
+      "mapping" : [{
+        "identity" : "v2",
+        "map" : "NR.2"
+      },
+      {
+        "identity" : "rim",
+        "map" : "./high"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.high.value",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.high.value",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.UitslagBereik.high.value",
+        "min" : 0
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeHigh"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.high.unit",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.high.unit",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.UitslagBereik.high.unit",
+        "min" : 0
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeHighUnit"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.high.system",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.high.system",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.UitslagBereik.high.system",
+        "min" : 0
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeHighSystem"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.high.code",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.high.code",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.UitslagBereik.high.code",
+        "min" : 0
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeHighCode"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagCode",
+      "path" : "SIMAlgemeneMeting.UitslagCode",
+      "short" : "Gecodeerde uitslag van de meting",
+      "definition" : "Welke ValueSet van toepassing is op UitslagCode wordt bepaald door MetingNaam, zie invariants.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.UitslagCode",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "constraint" : [{
+        "key" : "validatie-metingnaam-uitslagcode",
+        "severity" : "error",
+        "human" : "Valideert de relatie tussen MetingNaam en het bijbehorende type uitslag. Voor metingen met een gecodeerde uitslag moet UitslagCode afkomstig zijn uit de ValueSet die aan de betreffende MetingNaam is gekoppeld. Bijvoorbeeld: wanneer MetingNaam alcoholgebruik is (SNOMED CT 228273003), moet UitslagCode afkomstig zijn uit AlcoholGebruikStatusCodelijst. Dit geldt voor alle vastgelegde [MetingNaam-UitslagCode](<a href='https://dev.azure.com/SanteonNL/Santeon/_git/HipsETL?path=/SIM/informatiemodel%20Santeon%20valueSets%20relation.csv</a>)-combinaties. Metingen die niet in deze combinaties zijn vastgelegd, maar wel voorkomen in Santeon_MetingNaamCodelijst, hebben een UitslagWaarde als uitkomst.",
+        "expression" : "(MetingNaam.coding.where(system = 'http://snomed.info/sct' and code = '228273003').exists() implies UitslagCode.memberOf('https://ig.santeon.nl/sim-on-fhir/ValueSet/AlcoholGebruikStatusCodelijst')) or (MetingNaam.coding.where(system = 'http://loinc.org' and code = '38445-3').exists() implies UitslagWaarde.exists())",
+        "source" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMAlgemeneMeting"
+      },
+      {
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingToFHIR",
+        "map" : "Observation.valueCodeableConcept"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagCode.id",
+      "path" : "SIMAlgemeneMeting.UitslagCode.id",
+      "representation" : ["xmlAttr"],
+      "short" : "Unique id for inter-element referencing",
+      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.id",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "string"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagCode.extension",
+      "path" : "SIMAlgemeneMeting.UitslagCode.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "description" : "Extensions are always sliced by (at least) url",
+        "rules" : "open"
+      },
+      "short" : "Additional content defined by implementations",
+      "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+      "alias" : ["extensions",
+      "user content"],
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagCode.coding",
+      "path" : "SIMAlgemeneMeting.UitslagCode.coding",
+      "short" : "Code defined by a terminology system",
+      "definition" : "A reference to a code defined by a terminology system.",
+      "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
+      "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "CodeableConcept.coding",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Coding"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
+      "isSummary" : true,
+      "mapping" : [{
+        "identity" : "v2",
+        "map" : "C*E.1-8, C*E.10-22"
+      },
+      {
+        "identity" : "rim",
+        "map" : "union(., ./translation)"
+      },
+      {
+        "identity" : "orim",
+        "map" : "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagCode.coding.system",
+      "path" : "SIMAlgemeneMeting.UitslagCode.coding.system",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.UitslagCode.coding.system",
+        "min" : 0
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagCodeSysteem"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagCode.coding.code",
+      "path" : "SIMAlgemeneMeting.UitslagCode.coding.code",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.UitslagCode.coding.code",
+        "min" : 0
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagCode"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagCode.coding.display",
+      "path" : "SIMAlgemeneMeting.UitslagCode.coding.display",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.UitslagCode.coding.display",
+        "min" : 0
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagCodeOmschrijving"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagCode.text",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+        "valueBoolean" : true
+      }],
+      "path" : "SIMAlgemeneMeting.UitslagCode.text",
+      "short" : "Plain text representation of the concept",
+      "definition" : "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
+      "comment" : "Very often the text is the same as a displayName of one of the codings.",
+      "requirements" : "The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "CodeableConcept.text",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "string"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
+      "isSummary" : true,
+      "mapping" : [{
+        "identity" : "v2",
+        "map" : "C*E.9. But note many systems use C*E.2 for this"
+      },
+      {
+        "identity" : "rim",
+        "map" : "./originalText[mediaType/code=\"text/plain\"]/data"
+      },
+      {
+        "identity" : "orim",
+        "map" : "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagDatumTijd",
+      "path" : "SIMAlgemeneMeting.UitslagDatumTijd",
+      "short" : "Datum en eventueel tijd als antwoord op een vraag, bijvoorbeeld: sinds wanneer rookt u? Een vage datumtijd (alleen jaar of datum) is niet wenselijk maar wel toegestaan.",
+      "definition" : "Datum en eventueel tijd als antwoord op een vraag, bijvoorbeeld: sinds wanneer rookt u? Een vage datumtijd (alleen jaar of datum) is niet wenselijk maar wel toegestaan.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "SIMAlgemeneMeting.UitslagDatumTijd",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagDatumTijd"
+      },
+      {
+        "identity" : "SIMAlgemeneMetingToFHIR",
+        "map" : "Observation.valueDateTime"
+      }]
+    }]
+  },
+  "differential" : {
+    "element" : [{
+      "id" : "SIMAlgemeneMeting",
+      "path" : "SIMAlgemeneMeting",
+      "short" : "Algemene meting (model)",
+      "definition" : "Logisch model voor een algemeneMeting binnen het Santeon Informatiemodel."
+    },
+    {
+      "id" : "SIMAlgemeneMeting.MetingNaam",
+      "path" : "SIMAlgemeneMeting.MetingNaam",
+      "short" : "Type of naam van de meting",
+      "definition" : "Type of naam van de meting",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "constraint" : [{
+        "key" : "validatie-metingnaam-uitslagcode",
+        "severity" : "error",
+        "human" : "Valideert de relatie tussen MetingNaam en het bijbehorende type uitslag. Voor metingen met een gecodeerde uitslag moet UitslagCode afkomstig zijn uit de ValueSet die aan de betreffende MetingNaam is gekoppeld. Bijvoorbeeld: wanneer MetingNaam alcoholgebruik is (SNOMED CT 228273003), moet UitslagCode afkomstig zijn uit AlcoholGebruikStatusCodelijst. Dit geldt voor alle vastgelegde [MetingNaam-UitslagCode](<a href='https://dev.azure.com/SanteonNL/Santeon/_git/HipsETL?path=/SIM/informatiemodel%20Santeon%20valueSets%20relation.csv</a>)-combinaties. Metingen die niet in deze combinaties zijn vastgelegd, maar wel voorkomen in Santeon_MetingNaamCodelijst, hebben een UitslagWaarde als uitkomst.",
+        "expression" : "(MetingNaam.coding.where(system = 'http://snomed.info/sct' and code = '228273003').exists() implies UitslagCode.memberOf('https://ig.santeon.nl/sim-on-fhir/ValueSet/AlcoholGebruikStatusCodelijst')) or (MetingNaam.coding.where(system = 'http://loinc.org' and code = '38445-3').exists() implies UitslagWaarde.exists())",
+        "source" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMAlgemeneMeting"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst"
+      },
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingToFHIR",
+        "map" : "Observation.code"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.MetingNaam.coding.system",
+      "path" : "SIMAlgemeneMeting.MetingNaam.coding.system",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "MetingNaamCodeSysteem"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.MetingNaam.coding.code",
+      "path" : "SIMAlgemeneMeting.MetingNaam.coding.code",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "MetingNaamCode"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.MetingNaam.coding.display",
+      "path" : "SIMAlgemeneMeting.MetingNaam.coding.display",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "MetingNaamOmschrijving"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.MetingDatumTijd",
+      "path" : "SIMAlgemeneMeting.MetingDatumTijd",
+      "short" : "Datum en eventueel tijd die het dichtst ligt bij het daadwerkelijke meetmoment of de observatie",
+      "definition" : "Datum en eventueel tijd die het dichtst ligt bij het daadwerkelijke meetmoment of de observatie",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "MetingDatumTijd"
+      },
+      {
+        "identity" : "SIMAlgemeneMetingToFHIR",
+        "map" : "Observation.effectiveDateTime"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagWaarde",
+      "path" : "SIMAlgemeneMeting.UitslagWaarde",
+      "short" : "Numerieke uitslag van de meting, met eenheid (UCUM) en eventueel een vergelijkingsoperator (<, <=, >=, >)",
+      "definition" : "Numerieke uitslag van de meting, met eenheid (UCUM) en eventueel een vergelijkingsoperator (<, <=, >=, >)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Quantity"
+      }],
+      "constraint" : [{
+        "key" : "validatie-metingnaam-uitslagcode",
+        "severity" : "error",
+        "human" : "Valideert de relatie tussen MetingNaam en het bijbehorende type uitslag. Voor metingen met een gecodeerde uitslag moet UitslagCode afkomstig zijn uit de ValueSet die aan de betreffende MetingNaam is gekoppeld. Bijvoorbeeld: wanneer MetingNaam alcoholgebruik is (SNOMED CT 228273003), moet UitslagCode afkomstig zijn uit AlcoholGebruikStatusCodelijst. Dit geldt voor alle vastgelegde [MetingNaam-UitslagCode](<a href='https://dev.azure.com/SanteonNL/Santeon/_git/HipsETL?path=/SIM/informatiemodel%20Santeon%20valueSets%20relation.csv</a>)-combinaties. Metingen die niet in deze combinaties zijn vastgelegd, maar wel voorkomen in Santeon_MetingNaamCodelijst, hebben een UitslagWaarde als uitkomst.",
+        "expression" : "(MetingNaam.coding.where(system = 'http://snomed.info/sct' and code = '228273003').exists() implies UitslagCode.memberOf('https://ig.santeon.nl/sim-on-fhir/ValueSet/AlcoholGebruikStatusCodelijst')) or (MetingNaam.coding.where(system = 'http://loinc.org' and code = '38445-3').exists() implies UitslagWaarde.exists())",
+        "source" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMAlgemeneMeting"
+      }],
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingToFHIR",
+        "map" : "Observation.valueQuantity"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagWaarde.value",
+      "path" : "SIMAlgemeneMeting.UitslagWaarde.value",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagWaarde"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagWaarde.comparator",
+      "path" : "SIMAlgemeneMeting.UitslagWaarde.comparator",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagWaardeOperator"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagWaarde.system",
+      "path" : "SIMAlgemeneMeting.UitslagWaarde.system",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagWaardeEenheidSysteem"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagWaarde.code",
+      "path" : "SIMAlgemeneMeting.UitslagWaarde.code",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagWaardeEenheid"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik",
+      "path" : "SIMAlgemeneMeting.UitslagBereik",
+      "short" : "Uitslag als bereik: een ondergrens en/of een bovengrens, beide inclusief",
+      "definition" : "Uitslag als bereik: een ondergrens en/of een bovengrens, beide inclusief",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Range"
+      }],
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingToFHIR",
+        "map" : "Observation.valueRange"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.low.value",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.low.value",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeLow"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.low.unit",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.low.unit",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeLowUnit"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.low.system",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.low.system",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeLowSystem"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.low.code",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.low.code",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeLowCode"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.high.value",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.high.value",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeHigh"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.high.unit",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.high.unit",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeHighUnit"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.high.system",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.high.system",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeHighSystem"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagBereik.high.code",
+      "path" : "SIMAlgemeneMeting.UitslagBereik.high.code",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "ObservationValueRangeHighCode"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagCode",
+      "path" : "SIMAlgemeneMeting.UitslagCode",
+      "short" : "Gecodeerde uitslag van de meting",
+      "definition" : "Welke ValueSet van toepassing is op UitslagCode wordt bepaald door MetingNaam, zie invariants.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "constraint" : [{
+        "key" : "validatie-metingnaam-uitslagcode",
+        "severity" : "error",
+        "human" : "Valideert de relatie tussen MetingNaam en het bijbehorende type uitslag. Voor metingen met een gecodeerde uitslag moet UitslagCode afkomstig zijn uit de ValueSet die aan de betreffende MetingNaam is gekoppeld. Bijvoorbeeld: wanneer MetingNaam alcoholgebruik is (SNOMED CT 228273003), moet UitslagCode afkomstig zijn uit AlcoholGebruikStatusCodelijst. Dit geldt voor alle vastgelegde [MetingNaam-UitslagCode](<a href='https://dev.azure.com/SanteonNL/Santeon/_git/HipsETL?path=/SIM/informatiemodel%20Santeon%20valueSets%20relation.csv</a>)-combinaties. Metingen die niet in deze combinaties zijn vastgelegd, maar wel voorkomen in Santeon_MetingNaamCodelijst, hebben een UitslagWaarde als uitkomst.",
+        "expression" : "(MetingNaam.coding.where(system = 'http://snomed.info/sct' and code = '228273003').exists() implies UitslagCode.memberOf('https://ig.santeon.nl/sim-on-fhir/ValueSet/AlcoholGebruikStatusCodelijst')) or (MetingNaam.coding.where(system = 'http://loinc.org' and code = '38445-3').exists() implies UitslagWaarde.exists())",
+        "source" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMAlgemeneMeting"
+      }],
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingToFHIR",
+        "map" : "Observation.valueCodeableConcept"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagCode.coding.system",
+      "path" : "SIMAlgemeneMeting.UitslagCode.coding.system",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagCodeSysteem"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagCode.coding.code",
+      "path" : "SIMAlgemeneMeting.UitslagCode.coding.code",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagCode"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagCode.coding.display",
+      "path" : "SIMAlgemeneMeting.UitslagCode.coding.display",
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagCodeOmschrijving"
+      }]
+    },
+    {
+      "id" : "SIMAlgemeneMeting.UitslagDatumTijd",
+      "path" : "SIMAlgemeneMeting.UitslagDatumTijd",
+      "short" : "Datum en eventueel tijd als antwoord op een vraag, bijvoorbeeld: sinds wanneer rookt u? Een vage datumtijd (alleen jaar of datum) is niet wenselijk maar wel toegestaan.",
+      "definition" : "Datum en eventueel tijd als antwoord op een vraag, bijvoorbeeld: sinds wanneer rookt u? Een vage datumtijd (alleen jaar of datum) is niet wenselijk maar wel toegestaan.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "identity" : "SIMAlgemeneMetingFromSIMCSV",
+        "map" : "UitslagDatumTijd"
+      },
+      {
+        "identity" : "SIMAlgemeneMetingToFHIR",
+        "map" : "Observation.valueDateTime"
+      }]
+    }]
+  }
+}

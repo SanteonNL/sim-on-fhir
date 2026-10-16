@@ -1,4 +1,4 @@
-# De-identification - Santeon CarePlan Implementation Guide v0.1.0
+# De-identification - SIM on FHIR v0.1.0
 
 ## De-identification
 
