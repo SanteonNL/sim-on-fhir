@@ -1,0 +1,1357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="dataset-definition"/>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureDefinition dataset-definition</b></p><table border="0" cellpadding="0" cellspacing="0" class="xhtTableBorder0"><tr class="xhtRowBorder1"><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Information about the use of the element">Flags</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Minimum and Maximum # of times the element can appear in the instance">Card.</a></th><th scope="col" style="; width: 100px" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Reference to the type of the element">Type</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck1.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition" title="One dataset (for example IBD or COPD): the cohort that forms the Group, and the
+KPI definitions whose data the export releases. The generator resolves a dataset
+into a `Group` (cohort as bulk-data `member-filter`s) and a `Parameters`
+(`_type`, `_typeFilter`, `_elements`), and renders the whole definition as a
+readable page.">dataset-definition</a><a name="dataset-definition"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">*</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://build.fhir.org/types.html#Base">Base</a></td><td style="" class="hierarchy xhtCellBorder0">Dataset definition (model)</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.id" title="Dataset identifier, e.g. 'ibd'.">id</a><a name="dataset-definition.id"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="" class="hierarchy xhtCellBorder0">Dataset identifier, e.g. 'ibd'.</td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.version" title="Semantic version of this dataset definition.">version</a><a name="dataset-definition.version"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="" class="hierarchy xhtCellBorder0">Semantic version of this dataset definition.</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.title" title="Human-readable name.">title</a><a name="dataset-definition.title"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="" class="hierarchy xhtCellBorder0">Human-readable name.</td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.description" title="What the dataset is for.">description</a><a name="dataset-definition.description"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#markdown">markdown</a></td><td style="" class="hierarchy xhtCellBorder0">What the dataset is for.</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck11.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.cohort" title="Who is in the Group.">cohort</a><a name="dataset-definition.cohort"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement">BackboneElement</a></td><td style="" class="hierarchy xhtCellBorder0">Who is in the Group.</td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.cohort.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.cohort.description" title="The cohort in words, including anything the criteria cannot express.">description</a><a name="dataset-definition.cohort.description"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#markdown">markdown</a></td><td style="" class="hierarchy xhtCellBorder0">The cohort in words, including anything the criteria cannot express.</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck111.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.cohort.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.cohort.criteria" title="A member filter. A patient must satisfy every criterion.">criteria</a><a name="dataset-definition.cohort.criteria"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..*</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement">BackboneElement</a></td><td style="" class="hierarchy xhtCellBorder0">A member filter. A patient must satisfy every criterion.<br/></td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck1110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.cohort.criteria.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.cohort.criteria.resource" title="FHIR resource type the criterion searches.">resource</a><a name="dataset-definition.cohort.criteria.resource"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td><td style="" class="hierarchy xhtCellBorder0">FHIR resource type the criterion searches.</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck1101.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.cohort.criteria.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.cohort.criteria.param" title="A FHIR search parameter.">param</a><a name="dataset-definition.cohort.criteria.param"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..*</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement">BackboneElement</a></td><td style="" class="hierarchy xhtCellBorder0">A FHIR search parameter.<br/></td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck11010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.cohort.criteria.param.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.cohort.criteria.param.name" title="Search parameter name including modifier.">name</a><a name="dataset-definition.cohort.criteria.param.name"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="" class="hierarchy xhtCellBorder0">Search parameter name including modifier.</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck11000.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.cohort.criteria.param.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.cohort.criteria.param.value" title="Search value; same reference syntax as in a KPI definition.">value</a><a name="dataset-definition.cohort.criteria.param.value"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="" class="hierarchy xhtCellBorder0">Search value; same reference syntax as in a KPI definition.</td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck101.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.cohort.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.cohort.postFilter" title="Cohort logic that cannot be expressed as a FHIR search.">postFilter</a><a name="dataset-definition.cohort.postFilter"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..*</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement">BackboneElement</a></td><td style="" class="hierarchy xhtCellBorder0">Cohort logic that cannot be expressed as a FHIR search.<br/></td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck1010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.cohort.postFilter.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.cohort.postFilter.description" title="What is filtered, in words.">description</a><a name="dataset-definition.cohort.postFilter.description"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#markdown">markdown</a></td><td style="" class="hierarchy xhtCellBorder0">What is filtered, in words.</td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck1000.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.cohort.postFilter.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.cohort.postFilter.expression" title="Optional formalisation.">expression</a><a name="dataset-definition.cohort.postFilter.expression"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="" class="hierarchy xhtCellBorder0">Optional formalisation.</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.kpi" title="Id of a KpiDefinition whose data the export releases.">kpi</a><a name="dataset-definition.kpi"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..*</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="" class="hierarchy xhtCellBorder0">Id of a KpiDefinition whose data the export releases.<br/></td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck01.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.include" title="Data the dataset releases that does not belong to any KPI, for example the Patient model with a filter on gender. Same shape as a KPI criterion.">include</a><a name="dataset-definition.include"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..*</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement">BackboneElement</a></td><td style="" class="hierarchy xhtCellBorder0">Data the dataset releases that does not belong to any KPI, for example the Patient model with a filter on gender. Same shape as a KPI criterion.<br/></td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.include.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.include.resource" title="FHIR resource type.">resource</a><a name="dataset-definition.include.resource"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td><td style="" class="hierarchy xhtCellBorder0">FHIR resource type.</td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck011.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.include.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.include.param" title="A FHIR search parameter.">param</a><a name="dataset-definition.include.param"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..*</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement">BackboneElement</a></td><td style="" class="hierarchy xhtCellBorder0">A FHIR search parameter.<br/></td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck0110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.include.param.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.include.param.name" title="Search parameter name including modifier.">name</a><a name="dataset-definition.include.param.name"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="" class="hierarchy xhtCellBorder0">Search parameter name including modifier.</td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck0100.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.include.param.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.include.param.value" title="Search value; same reference syntax as in a KPI definition.">value</a><a name="dataset-definition.include.param.value"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="" class="hierarchy xhtCellBorder0">Search value; same reference syntax as in a KPI definition.</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck000.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">dataset-definition.include.</span><a href="StructureDefinition-dataset-definition-definitions.html#dataset-definition.include.element" title="Elements of the resource that must be released, as ElementName. Drives _elements and bounds the generated profile.">element</a><a name="dataset-definition.include.element"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..*</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="" class="hierarchy xhtCellBorder0">Elements of the resource that must be released, as ElementName. Drives _elements and bounds the generated profile.<br/></td></tr>
+<tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
+  </text>
+  <url value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/dataset-definition"/>
+  <version value="0.1.0"/>
+  <name value="DatasetDefinition"/>
+  <title value="Dataset definition (model)"/>
+  <status value="draft"/>
+  <date value="2026-10-16T14:27:57+00:00"/>
+  <publisher value="Santeon"/>
+  <contact>
+    <name value="Santeon"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.santeon.nl"/>
+    </telecom>
+  </contact>
+  <description value="One dataset (for example IBD or COPD): the cohort that forms the Group, and the&#xA;KPI definitions whose data the export releases. The generator resolves a dataset&#xA;into a `Group` (cohort as bulk-data `member-filter`s) and a `Parameters`&#xA;(`_type`, `_typeFilter`, `_elements`), and renders the whole definition as a&#xA;readable page."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="NL"/>
+      <display value="Netherlands"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="4.0.1"/>
+  <kind value="logical"/>
+  <abstract value="false"/>
+  <type value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/dataset-definition"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Base"/>
+  <derivation value="specialization"/>
+  <snapshot>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version">
+      <valueString value="4.0.1"/>
+    </extension>
+    <element id="dataset-definition">
+      <path value="dataset-definition"/>
+      <short value="Dataset definition (model)"/>
+      <definition value="One dataset (for example IBD or COPD): the cohort that forms the Group, and the&#xA;KPI definitions whose data the export releases. The generator resolves a dataset&#xA;into a `Group` (cohort as bulk-data `member-filter`s) and a `Parameters`&#xA;(`_type`, `_typeFilter`, `_elements`), and renders the whole definition as a&#xA;readable page."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Base"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <isModifier value="false"/>
+    </element>
+    <element id="dataset-definition.id">
+      <path value="dataset-definition.id"/>
+      <short value="Dataset identifier, e.g. 'ibd'."/>
+      <definition value="Dataset identifier, e.g. 'ibd'."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="dataset-definition.id"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.version">
+      <path value="dataset-definition.version"/>
+      <short value="Semantic version of this dataset definition."/>
+      <definition value="Semantic version of this dataset definition."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="dataset-definition.version"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.title">
+      <path value="dataset-definition.title"/>
+      <short value="Human-readable name."/>
+      <definition value="Human-readable name."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="dataset-definition.title"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.description">
+      <path value="dataset-definition.description"/>
+      <short value="What the dataset is for."/>
+      <definition value="What the dataset is for."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="dataset-definition.description"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="markdown"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort">
+      <path value="dataset-definition.cohort"/>
+      <short value="Who is in the Group."/>
+      <definition value="Who is in the Group."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="dataset-definition.cohort"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+    </element>
+    <element id="dataset-definition.cohort.id">
+      <path value="dataset-definition.cohort.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.cohort.extension">
+      <path value="dataset-definition.cohort.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.cohort.modifierExtension">
+      <path value="dataset-definition.cohort.modifierExtension"/>
+      <short value="Extensions that cannot be ignored even if unrecognized"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension)."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <alias value="modifiers"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BackboneElement.modifierExtension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="true"/>
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.cohort.description">
+      <path value="dataset-definition.cohort.description"/>
+      <short value="The cohort in words, including anything the criteria cannot express."/>
+      <definition value="The cohort in words, including anything the criteria cannot express."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="dataset-definition.cohort.description"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="markdown"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort.criteria">
+      <path value="dataset-definition.cohort.criteria"/>
+      <short value="A member filter. A patient must satisfy every criterion."/>
+      <definition value="A member filter. A patient must satisfy every criterion."/>
+      <min value="1"/>
+      <max value="*"/>
+      <base>
+        <path value="dataset-definition.cohort.criteria"/>
+        <min value="1"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+    </element>
+    <element id="dataset-definition.cohort.criteria.id">
+      <path value="dataset-definition.cohort.criteria.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.cohort.criteria.extension">
+      <path value="dataset-definition.cohort.criteria.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.cohort.criteria.modifierExtension">
+      <path value="dataset-definition.cohort.criteria.modifierExtension"/>
+      <short value="Extensions that cannot be ignored even if unrecognized"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension)."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <alias value="modifiers"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BackboneElement.modifierExtension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="true"/>
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.cohort.criteria.resource">
+      <path value="dataset-definition.cohort.criteria.resource"/>
+      <short value="FHIR resource type the criterion searches."/>
+      <definition value="FHIR resource type the criterion searches."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="dataset-definition.cohort.criteria.resource"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort.criteria.param">
+      <path value="dataset-definition.cohort.criteria.param"/>
+      <short value="A FHIR search parameter."/>
+      <definition value="A FHIR search parameter."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="dataset-definition.cohort.criteria.param"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+    </element>
+    <element id="dataset-definition.cohort.criteria.param.id">
+      <path value="dataset-definition.cohort.criteria.param.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.cohort.criteria.param.extension">
+      <path value="dataset-definition.cohort.criteria.param.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.cohort.criteria.param.modifierExtension">
+      <path value="dataset-definition.cohort.criteria.param.modifierExtension"/>
+      <short value="Extensions that cannot be ignored even if unrecognized"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension)."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <alias value="modifiers"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BackboneElement.modifierExtension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="true"/>
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.cohort.criteria.param.name">
+      <path value="dataset-definition.cohort.criteria.param.name"/>
+      <short value="Search parameter name including modifier."/>
+      <definition value="Search parameter name including modifier."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="dataset-definition.cohort.criteria.param.name"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort.criteria.param.value">
+      <path value="dataset-definition.cohort.criteria.param.value"/>
+      <short value="Search value; same reference syntax as in a KPI definition."/>
+      <definition value="Search value; same reference syntax as in a KPI definition."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="dataset-definition.cohort.criteria.param.value"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort.postFilter">
+      <path value="dataset-definition.cohort.postFilter"/>
+      <short value="Cohort logic that cannot be expressed as a FHIR search."/>
+      <definition value="Cohort logic that cannot be expressed as a FHIR search."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="dataset-definition.cohort.postFilter"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+    </element>
+    <element id="dataset-definition.cohort.postFilter.id">
+      <path value="dataset-definition.cohort.postFilter.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.cohort.postFilter.extension">
+      <path value="dataset-definition.cohort.postFilter.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.cohort.postFilter.modifierExtension">
+      <path value="dataset-definition.cohort.postFilter.modifierExtension"/>
+      <short value="Extensions that cannot be ignored even if unrecognized"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension)."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <alias value="modifiers"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BackboneElement.modifierExtension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="true"/>
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.cohort.postFilter.description">
+      <path value="dataset-definition.cohort.postFilter.description"/>
+      <short value="What is filtered, in words."/>
+      <definition value="What is filtered, in words."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="dataset-definition.cohort.postFilter.description"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="markdown"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort.postFilter.expression">
+      <path value="dataset-definition.cohort.postFilter.expression"/>
+      <short value="Optional formalisation."/>
+      <definition value="Optional formalisation."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="dataset-definition.cohort.postFilter.expression"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.kpi">
+      <path value="dataset-definition.kpi"/>
+      <short value="Id of a KpiDefinition whose data the export releases."/>
+      <definition value="Id of a KpiDefinition whose data the export releases."/>
+      <min value="1"/>
+      <max value="*"/>
+      <base>
+        <path value="dataset-definition.kpi"/>
+        <min value="1"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.include">
+      <path value="dataset-definition.include"/>
+      <short value="Data the dataset releases that does not belong to any KPI, for example the Patient model with a filter on gender. Same shape as a KPI criterion."/>
+      <definition value="Data the dataset releases that does not belong to any KPI, for example the Patient model with a filter on gender. Same shape as a KPI criterion."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="dataset-definition.include"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+    </element>
+    <element id="dataset-definition.include.id">
+      <path value="dataset-definition.include.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.include.extension">
+      <path value="dataset-definition.include.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.include.modifierExtension">
+      <path value="dataset-definition.include.modifierExtension"/>
+      <short value="Extensions that cannot be ignored even if unrecognized"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension)."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <alias value="modifiers"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BackboneElement.modifierExtension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="true"/>
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.include.resource">
+      <path value="dataset-definition.include.resource"/>
+      <short value="FHIR resource type."/>
+      <definition value="FHIR resource type."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="dataset-definition.include.resource"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+    </element>
+    <element id="dataset-definition.include.param">
+      <path value="dataset-definition.include.param"/>
+      <short value="A FHIR search parameter."/>
+      <definition value="A FHIR search parameter."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="dataset-definition.include.param"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+    </element>
+    <element id="dataset-definition.include.param.id">
+      <path value="dataset-definition.include.param.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.include.param.extension">
+      <path value="dataset-definition.include.param.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.include.param.modifierExtension">
+      <path value="dataset-definition.include.param.modifierExtension"/>
+      <short value="Extensions that cannot be ignored even if unrecognized"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension)."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <alias value="modifiers"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BackboneElement.modifierExtension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="true"/>
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="dataset-definition.include.param.name">
+      <path value="dataset-definition.include.param.name"/>
+      <short value="Search parameter name including modifier."/>
+      <definition value="Search parameter name including modifier."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="dataset-definition.include.param.name"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.include.param.value">
+      <path value="dataset-definition.include.param.value"/>
+      <short value="Search value; same reference syntax as in a KPI definition."/>
+      <definition value="Search value; same reference syntax as in a KPI definition."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="dataset-definition.include.param.value"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.include.element">
+      <path value="dataset-definition.include.element"/>
+      <short value="Elements of the resource that must be released, as ElementName. Drives _elements and bounds the generated profile."/>
+      <definition value="Elements of the resource that must be released, as ElementName. Drives _elements and bounds the generated profile."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="dataset-definition.include.element"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+  </snapshot>
+  <differential>
+    <element id="dataset-definition">
+      <path value="dataset-definition"/>
+      <short value="Dataset definition (model)"/>
+      <definition value="One dataset (for example IBD or COPD): the cohort that forms the Group, and the&#xA;KPI definitions whose data the export releases. The generator resolves a dataset&#xA;into a `Group` (cohort as bulk-data `member-filter`s) and a `Parameters`&#xA;(`_type`, `_typeFilter`, `_elements`), and renders the whole definition as a&#xA;readable page."/>
+    </element>
+    <element id="dataset-definition.id">
+      <path value="dataset-definition.id"/>
+      <short value="Dataset identifier, e.g. 'ibd'."/>
+      <definition value="Dataset identifier, e.g. 'ibd'."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.version">
+      <path value="dataset-definition.version"/>
+      <short value="Semantic version of this dataset definition."/>
+      <definition value="Semantic version of this dataset definition."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.title">
+      <path value="dataset-definition.title"/>
+      <short value="Human-readable name."/>
+      <definition value="Human-readable name."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.description">
+      <path value="dataset-definition.description"/>
+      <short value="What the dataset is for."/>
+      <definition value="What the dataset is for."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="markdown"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort">
+      <path value="dataset-definition.cohort"/>
+      <short value="Who is in the Group."/>
+      <definition value="Who is in the Group."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort.description">
+      <path value="dataset-definition.cohort.description"/>
+      <short value="The cohort in words, including anything the criteria cannot express."/>
+      <definition value="The cohort in words, including anything the criteria cannot express."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="markdown"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort.criteria">
+      <path value="dataset-definition.cohort.criteria"/>
+      <short value="A member filter. A patient must satisfy every criterion."/>
+      <definition value="A member filter. A patient must satisfy every criterion."/>
+      <min value="1"/>
+      <max value="*"/>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort.criteria.resource">
+      <path value="dataset-definition.cohort.criteria.resource"/>
+      <short value="FHIR resource type the criterion searches."/>
+      <definition value="FHIR resource type the criterion searches."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort.criteria.param">
+      <path value="dataset-definition.cohort.criteria.param"/>
+      <short value="A FHIR search parameter."/>
+      <definition value="A FHIR search parameter."/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort.criteria.param.name">
+      <path value="dataset-definition.cohort.criteria.param.name"/>
+      <short value="Search parameter name including modifier."/>
+      <definition value="Search parameter name including modifier."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort.criteria.param.value">
+      <path value="dataset-definition.cohort.criteria.param.value"/>
+      <short value="Search value; same reference syntax as in a KPI definition."/>
+      <definition value="Search value; same reference syntax as in a KPI definition."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort.postFilter">
+      <path value="dataset-definition.cohort.postFilter"/>
+      <short value="Cohort logic that cannot be expressed as a FHIR search."/>
+      <definition value="Cohort logic that cannot be expressed as a FHIR search."/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort.postFilter.description">
+      <path value="dataset-definition.cohort.postFilter.description"/>
+      <short value="What is filtered, in words."/>
+      <definition value="What is filtered, in words."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="markdown"/>
+      </type>
+    </element>
+    <element id="dataset-definition.cohort.postFilter.expression">
+      <path value="dataset-definition.cohort.postFilter.expression"/>
+      <short value="Optional formalisation."/>
+      <definition value="Optional formalisation."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.kpi">
+      <path value="dataset-definition.kpi"/>
+      <short value="Id of a KpiDefinition whose data the export releases."/>
+      <definition value="Id of a KpiDefinition whose data the export releases."/>
+      <min value="1"/>
+      <max value="*"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.include">
+      <path value="dataset-definition.include"/>
+      <short value="Data the dataset releases that does not belong to any KPI, for example the Patient model with a filter on gender. Same shape as a KPI criterion."/>
+      <definition value="Data the dataset releases that does not belong to any KPI, for example the Patient model with a filter on gender. Same shape as a KPI criterion."/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+    </element>
+    <element id="dataset-definition.include.resource">
+      <path value="dataset-definition.include.resource"/>
+      <short value="FHIR resource type."/>
+      <definition value="FHIR resource type."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+    </element>
+    <element id="dataset-definition.include.param">
+      <path value="dataset-definition.include.param"/>
+      <short value="A FHIR search parameter."/>
+      <definition value="A FHIR search parameter."/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+    </element>
+    <element id="dataset-definition.include.param.name">
+      <path value="dataset-definition.include.param.name"/>
+      <short value="Search parameter name including modifier."/>
+      <definition value="Search parameter name including modifier."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.include.param.value">
+      <path value="dataset-definition.include.param.value"/>
+      <short value="Search value; same reference syntax as in a KPI definition."/>
+      <definition value="Search value; same reference syntax as in a KPI definition."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="dataset-definition.include.element">
+      <path value="dataset-definition.include.element"/>
+      <short value="Elements of the resource that must be released, as ElementName. Drives _elements and bounds the generated profile."/>
+      <definition value="Elements of the resource that must be released, as ElementName. Drives _elements and bounds the generated profile."/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

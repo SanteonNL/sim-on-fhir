@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObservationDefinition xmlns="http://hl7.org/fhir">
+  <id value="od-alcohol-use"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ObservationDefinition od-alcohol-use</b></p><a name="od-alcohol-use"> </a><a name="hcod-alcohol-use"> </a><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category social-history}">Social History</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 228273003}">Finding relating to alcohol drinking behavior (finding)</span></p><p><b>permittedDataType</b>: CodeableConcept</p><p><b>preferredReportName</b>: Alcoholgebruik</p><p><b>validCodedValueSet</b>: <a href="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2">http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2</a></p></div>
+  </text>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="social-history"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="228273003"/>
+      <display value="Finding relating to alcohol drinking behavior (finding)"/>
+    </coding>
+  </code>
+  <permittedDataType value="CodeableConcept"/>
+  <preferredReportName value="Alcoholgebruik"/>
+  <validCodedValueSet>
+    <reference value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2"/>
+  </validCodedValueSet>
+</ObservationDefinition>

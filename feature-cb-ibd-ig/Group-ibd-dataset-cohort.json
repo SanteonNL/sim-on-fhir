@@ -1,0 +1,25 @@
+{
+  "resourceType" : "Group",
+  "id" : "ibd-dataset-cohort",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n  <table class=\"narrative-table\">\n    <tbody>\n<tr>\n\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\"><a name=\"metadata\"> </a>Metadata</th>\n\n\n</tr>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<tr>\n\n\n<th scope=\"row\" class=\"row-header\">Type</th>\n\n\n\n<td class=\"content-container\">Person</td>\n\n\n</tr>\n\n\n<tr>\n\n\n<th scope=\"row\" class=\"row-header\">Actual</th>\n\n\n\n<td class=\"content-container\">true</td>\n\n\n</tr>\n\n\n\n\n\n\n\n\n\n\n<tr>\n  <th colspan=\"2\" scope=\"row\" class=\"row-header\">Generated using version 0.5.6 of the sample-content-ig Liquid templates</th>\n</tr>\n\n    </tbody>\n  </table>\n</div>"
+  },
+  "modifierExtension" : [{
+    "url" : "http://hl7.org/fhir/uv/bulkdata/StructureDefinition/member-filter",
+    "valueExpression" : {
+      "language" : "application/x-fhir-query",
+      "expression" : "Patient?birthdate=le{today-18y}"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/uv/bulkdata/StructureDefinition/member-filter",
+    "valueExpression" : {
+      "language" : "application/x-fhir-query",
+      "expression" : "EpisodeOfCare?type:in=https://ig.santeon.nl/sim-on-fhir/ValueSet/local-zorgtype-codes&status=active&date=ge2018-01-01&diagnosis:Condition.code:in=https://ig.santeon.nl/sim-on-fhir/ValueSet/local-specialisme-diagnose-codes"
+    }
+  }],
+  "type" : "person",
+  "actual" : true,
+  "name" : "IBD cohort"
+}

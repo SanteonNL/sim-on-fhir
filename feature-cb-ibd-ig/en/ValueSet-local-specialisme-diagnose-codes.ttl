@@ -1,0 +1,92 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/ValueSet/local-specialisme-diagnose-codes> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "local-specialisme-diagnose-codes"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet local-specialisme-diagnose-codes</b></p><a name=\"local-specialisme-diagnose-codes\"> </a><a name=\"hclocal-specialisme-diagnose-codes\"> </a><ul><li>Include these codes as defined in <code>https://ig.santeon.nl/CodeSystem/specialisme-diagnose</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>0313|922</td><td>Interne Geneeskunde - Diagnose 922</td></tr><tr><td>0313|923</td><td>Interne Geneeskunde - Diagnose 923</td></tr><tr><td>0318|601</td><td>Maag-Darm-Leverziekten - Diagnose 601</td></tr><tr><td>0318|602</td><td>Maag-Darm-Leverziekten - Diagnose 602</td></tr><tr><td>0303|115</td><td>Chirurgie - Diagnose 115</td></tr><tr><td>0303|116</td><td>Chirurgie - Diagnose 116</td></tr><tr><td>0303|163</td><td>Chirurgie - Diagnose 163</td></tr><tr><td>0303|325</td><td>Chirurgie - Diagnose 325</td></tr><tr><td>0303|326</td><td>Chirurgie - Diagnose 326</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://ig.santeon.nl/sim-on-fhir/ValueSet/local-specialisme-diagnose-codes"] ;
+  fhir:ValueSet.version [ fhir:value "0.1.0"] ;
+  fhir:ValueSet.name [ fhir:value "LocalSpecialismeDiagnoseCodes"] ;
+  fhir:ValueSet.title [ fhir:value "IBD Specialisme-Diagnose Combinaties"] ;
+  fhir:ValueSet.status [ fhir:value "active"] ;
+  fhir:ValueSet.date [ fhir:value "2026-10-16T14:27:57+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "Santeon"] ;
+  fhir:ValueSet.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "Santeon" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.santeon.nl" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Specialisme-diagnose combinaties die behoren tot het IBD-cohort."] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "NL" ] ;
+       fhir:Coding.display [ fhir:value "Netherlands" ]
+     ]
+  ] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://ig.santeon.nl/CodeSystem/specialisme-diagnose" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0313|922" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Interne Geneeskunde - Diagnose 922" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0313|923" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Interne Geneeskunde - Diagnose 923" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0318|601" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Maag-Darm-Leverziekten - Diagnose 601" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0318|602" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Maag-Darm-Leverziekten - Diagnose 602" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0303|115" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Chirurgie - Diagnose 115" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0303|116" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Chirurgie - Diagnose 116" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0303|163" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Chirurgie - Diagnose 163" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0303|325" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Chirurgie - Diagnose 325" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0303|326" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Chirurgie - Diagnose 326" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/ValueSet/local-specialisme-diagnose-codes.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

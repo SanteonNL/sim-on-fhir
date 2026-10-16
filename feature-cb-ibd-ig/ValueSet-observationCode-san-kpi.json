@@ -1,0 +1,47 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "observationCode-san-kpi",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet observationCode-san-kpi</b></p><a name=\"observationCode-san-kpi\"> </a><a name=\"hcobservationCode-san-kpi\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/228273003\">228273003</a></td><td>Finding relating to alcohol drinking behavior (finding)</td></tr></table></li><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/38445-3/\">38445-3</a></td><td>Calprotectin [Mass/volume] in Stool</td></tr></table></li></ul></div>"
+  },
+  "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/observationCode-san-kpi",
+  "version" : "0.1.0",
+  "name" : "ObservationCodeSanKpi",
+  "title" : "Observation code (SAN KPI)",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2026-10-16T14:27:57+00:00",
+  "publisher" : "Santeon",
+  "contact" : [{
+    "name" : "Santeon",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.santeon.nl"
+    }]
+  }],
+  "description" : "Every code a KPI definition asks for on Observation. The union of the ObservationDefinition codes and the value sets referenced by the Observation criteria of all KPI definitions.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "NL",
+      "display" : "Netherlands"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "228273003",
+        "display" : "Finding relating to alcohol drinking behavior (finding)"
+      }]
+    },
+    {
+      "system" : "http://loinc.org",
+      "concept" : [{
+        "code" : "38445-3",
+        "display" : "Calprotectin [Mass/volume] in Stool"
+      }]
+    }]
+  }
+}

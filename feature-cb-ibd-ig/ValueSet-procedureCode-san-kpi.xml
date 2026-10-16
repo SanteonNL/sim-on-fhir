@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="procedureCode-san-kpi"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet procedureCode-san-kpi</b></p><a name="procedureCode-san-kpi"> </a><a name="hcprocedureCode-san-kpi"> </a><ul><li>Import all the codes that are contained in <a href="ValueSet-local-verrichting-codes-nza.html">Verrichting Type Codes NZa (Scopie)</a></li></ul></div>
+  </text>
+  <url value="https://ig.santeon.nl/sim-on-fhir/ValueSet/procedureCode-san-kpi"/>
+  <version value="0.1.0"/>
+  <name value="ProcedureCodeSanKpi"/>
+  <title value="Procedure code (SAN KPI)"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-10-16T14:27:57+00:00"/>
+  <publisher value="Santeon"/>
+  <contact>
+    <name value="Santeon"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.santeon.nl"/>
+    </telecom>
+  </contact>
+  <description value="Every code a KPI definition asks for on Procedure. The union of the ObservationDefinition codes and the value sets referenced by the Procedure criteria of all KPI definitions."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="NL"/>
+      <display value="Netherlands"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <valueSet value="https://ig.santeon.nl/sim-on-fhir/ValueSet/local-verrichting-codes-nza"/>
+    </include>
+  </compose>
+</ValueSet>

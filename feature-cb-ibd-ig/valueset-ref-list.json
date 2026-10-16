@@ -1,0 +1,145 @@
+{
+  "codeSystems" : [{
+    "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229",
+    "version" : "0.1.0",
+    "status" : "retired",
+    "name" : "CareplanCategoryCodelijst",
+    "title" : "CareplanCategoryCodelijst",
+    "description" : "CareplanCategoryCodelijst",
+    "systems" : ["https://santeon.nl/sct"],
+    "oids" : ["2.16.840.1.113883.2.4.3.11.60.124.11.140"],
+    "sources" : ["2.16.840.1.113883.2.4.3.11.60.124.11.140"]
+  },
+  {
+    "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "AlcoholGebruikStatusCodelijst",
+    "title" : "AlcoholGebruikStatusCodelijst",
+    "description" : "AlcoholGebruikStatusCodelijst",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+    "http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2"],
+    "sources" : ["2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2"]
+  },
+  {
+    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/AlcoholGebruikStatusCodelijst",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "AlcoholGebruikStatusCodelijst",
+    "title" : "AlcoholGebruikStatusCodelijst",
+    "description" : "Codelijst voor de gecodeerde uitslag van alcoholgebruik.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+    "http://snomed.info/sct"]
+  },
+  {
+    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDAlgemeneMetingen",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "IBDAlgemeneMetingen",
+    "title" : "IBDAlgemeneMetingen",
+    "description" : "Metingen die worden geselecteerd voor de IBD-dataset.",
+    "systems" : ["https://santeon.nl/sct",
+    "http://loinc.org",
+    "http://snomed.info/sct"]
+  },
+  {
+    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDSpecialismeDiagnoses",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "IBDSpecialismeDiagnoses",
+    "title" : "IBD Specialisme Diagnoses",
+    "description" : "Specialisme-diagnosecombinaties die worden geselecteerd voor de IBD-dataset.",
+    "systems" : ["http://fhir.nl/fhir/NamingSystem/nza"]
+  },
+  {
+    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDVerrichtingenNZa",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "IBDVerrichtingenNZa",
+    "title" : "IBD Verrichtingen NZa",
+    "description" : "NZa-verrichtingen die worden geselecteerd voor de IBD-dataset.",
+    "systems" : ["http://fhir.nl/fhir/NamingSystem/nza"]
+  },
+  {
+    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "Santeon_MetingNaamCodelijst",
+    "title" : "Santeon_MetingNaamCodelijst",
+    "description" : "ValueSet met metingnamen die binnen het Santeon Informatiemodel worden gebruikt.",
+    "systems" : ["http://loinc.org", "http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-SIMAlgemeneMeting.html" : "Algemene meting (model)"
+  },
+  {
+    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/deidentification-action-vs",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "DeidentificationActionVS",
+    "title" : "De-identification Action Value Set",
+    "description" : "Allowed values for a de-identification rule's action.",
+    "systems" : ["https://ig.santeon.nl/sim-on-fhir/CodeSystem/deidentification-action-cs"],
+    "uses" : {
+    },
+    "StructureDefinition-deidentification-ruleset.html" : "De-identification ruleset (model)"
+  },
+  {
+    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/local-specialisme-diagnose-codes",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "LocalSpecialismeDiagnoseCodes",
+    "title" : "IBD Specialisme-Diagnose Combinaties",
+    "description" : "Specialisme-diagnose combinaties die behoren tot het IBD-cohort.",
+    "systems" : ["https://ig.santeon.nl/CodeSystem/specialisme-diagnose"],
+    "uses" : {
+    },
+    "StructureDefinition-specialisme-diagnose-code.html" : "SpecialismeDiagnoseCode"
+  },
+  {
+    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/local-verrichting-codes-nza",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "LocalVerrichtingCodesNZa",
+    "title" : "Verrichting Type Codes NZa (Scopie)",
+    "description" : "De specifieke NZa-verrichtingencodes voor de scopie-indicator.",
+    "systems" : ["https://declaratie.nza.nl/zorgactiviteit"],
+    "uses" : {
+    },
+    "ValueSet-procedureCode-san-kpi.html" : "Procedure code (SAN KPI)"
+  },
+  {
+    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/local-zorgtype-codes",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "LocalZorgtypeCodes",
+    "title" : "IBD Zorgtype Codes (11 en 21)",
+    "description" : "Bevat de toegestane landelijke zorgtypes 11 en 21.",
+    "systems" : ["https://declaratie.nza.nl/zorgtype"]
+  },
+  {
+    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/observationCode-san-kpi",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "ObservationCodeSanKpi",
+    "title" : "Observation code (SAN KPI)",
+    "description" : "Every code a KPI definition asks for on Observation. The union of the ObservationDefinition codes and the value sets referenced by the Observation criteria of all KPI definitions.",
+    "systems" : ["http://loinc.org", "http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
+  },
+  {
+    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/procedureCode-san-kpi",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "ProcedureCodeSanKpi",
+    "title" : "Procedure code (SAN KPI)",
+    "description" : "Every code a KPI definition asks for on Procedure. The union of the ObservationDefinition codes and the value sets referenced by the Procedure criteria of all KPI definitions.",
+    "systems" : ["https://declaratie.nza.nl/zorgactiviteit"],
+    "uses" : {
+    },
+    "StructureDefinition-procedure-san-kpi.html" : "Procedure (SAN KPI)"
+  }]
+}

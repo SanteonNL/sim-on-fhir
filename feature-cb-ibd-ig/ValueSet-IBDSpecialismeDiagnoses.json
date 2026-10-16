@@ -1,0 +1,131 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "IBDSpecialismeDiagnoses",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet IBDSpecialismeDiagnoses</b></p><a name=\"IBDSpecialismeDiagnoses\"> </a><a name=\"hcIBDSpecialismeDiagnoses\"> </a><ul><li>Include these codes as defined in <code>http://fhir.nl/fhir/NamingSystem/nza</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>0324|101</td><td/></tr><tr><td>0324|102</td><td/></tr><tr><td>0324|105</td><td/></tr><tr><td>0324|107</td><td/></tr><tr><td>0324|115</td><td/></tr><tr><td>0324|116</td><td/></tr><tr><td>0324|117</td><td/></tr><tr><td>0324|201</td><td/></tr><tr><td>0324|203</td><td/></tr><tr><td>0303|115</td><td/></tr><tr><td>0303|116</td><td/></tr><tr><td>0303|129</td><td/></tr><tr><td>0303|163</td><td/></tr><tr><td>0303|325</td><td/></tr><tr><td>0303|326</td><td/></tr><tr><td>0303|333</td><td/></tr><tr><td>0303|334</td><td/></tr><tr><td>0318|601</td><td/></tr><tr><td>0318|602</td><td/></tr><tr><td>0318|610</td><td/></tr><tr><td>0313|922</td><td/></tr><tr><td>0313|923</td><td/></tr><tr><td>0313|927</td><td/></tr><tr><td>0316|3303</td><td/></tr><tr><td>0316|3308</td><td/></tr><tr><td>0316|3311</td><td/></tr><tr><td>0316|3314</td><td/></tr><tr><td>0316|3315</td><td/></tr><tr><td>0316|3399</td><td/></tr><tr><td>*|00</td><td/></tr><tr><td>*|000</td><td/></tr><tr><td>*|0000</td><td/></tr></table></li></ul></div>"
+  },
+  "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDSpecialismeDiagnoses",
+  "version" : "0.1.0",
+  "name" : "IBDSpecialismeDiagnoses",
+  "title" : "IBD Specialisme Diagnoses",
+  "status" : "draft",
+  "date" : "2026-10-16T14:27:57+00:00",
+  "publisher" : "Santeon",
+  "contact" : [{
+    "name" : "Santeon",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.santeon.nl"
+    }]
+  }],
+  "description" : "Specialisme-diagnosecombinaties die worden geselecteerd voor de IBD-dataset.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "NL",
+      "display" : "Netherlands"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://fhir.nl/fhir/NamingSystem/nza",
+      "concept" : [{
+        "code" : "0324|101"
+      },
+      {
+        "code" : "0324|102"
+      },
+      {
+        "code" : "0324|105"
+      },
+      {
+        "code" : "0324|107"
+      },
+      {
+        "code" : "0324|115"
+      },
+      {
+        "code" : "0324|116"
+      },
+      {
+        "code" : "0324|117"
+      },
+      {
+        "code" : "0324|201"
+      },
+      {
+        "code" : "0324|203"
+      },
+      {
+        "code" : "0303|115"
+      },
+      {
+        "code" : "0303|116"
+      },
+      {
+        "code" : "0303|129"
+      },
+      {
+        "code" : "0303|163"
+      },
+      {
+        "code" : "0303|325"
+      },
+      {
+        "code" : "0303|326"
+      },
+      {
+        "code" : "0303|333"
+      },
+      {
+        "code" : "0303|334"
+      },
+      {
+        "code" : "0318|601"
+      },
+      {
+        "code" : "0318|602"
+      },
+      {
+        "code" : "0318|610"
+      },
+      {
+        "code" : "0313|922"
+      },
+      {
+        "code" : "0313|923"
+      },
+      {
+        "code" : "0313|927"
+      },
+      {
+        "code" : "0316|3303"
+      },
+      {
+        "code" : "0316|3308"
+      },
+      {
+        "code" : "0316|3311"
+      },
+      {
+        "code" : "0316|3314"
+      },
+      {
+        "code" : "0316|3315"
+      },
+      {
+        "code" : "0316|3399"
+      },
+      {
+        "code" : "*|00"
+      },
+      {
+        "code" : "*|000"
+      },
+      {
+        "code" : "*|0000"
+      }]
+    }]
+  }
+}

@@ -1,0 +1,21 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/Binary/k312-scopie> a fhir:Binary ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "k312-scopie"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:Binary.contentType [ fhir:value "application/fhir+json"] ;
+  fhir:Binary.data [ fhir:value "ewogICJyZXNvdXJjZVR5cGUiOiAiaHR0cHM6Ly9pZy5zYW50ZW9uLm5sL3NpbS1vbi1maGlyL1N0cnVjdHVyZURlZmluaXRpb24va3BpLWRlZmluaXRpb24iLAogICJpZCI6ICJrMzEyLXNjb3BpZSIsCiAgInRpdGxlIjogIkszLjEuMiBTY29waWUiLAogICJkZXNjcmlwdGlvbiI6ICJBYW50YWwgdm9sd2Fzc2VuIElCRC1wYXRpw6tudGVuIG1ldCBlZW4gc2NvcGllLXZlcnJpY2h0aW5nIHZhbmFmIDIwMTguIiwKICAidmVyc2lvbiI6ICIwLjEuMCIsCiAgImNyaXRlcmlhIjogWwogICAgewogICAgICAicmVzb3VyY2UiOiAiUHJvY2VkdXJlIiwKICAgICAgInBhcmFtIjogWwogICAgICAgIHsKICAgICAgICAgICJuYW1lIjogImNvZGU6aW4iLAogICAgICAgICAgInZhbHVlIjogInt2czpsb2NhbC12ZXJyaWNodGluZy1jb2Rlcy1uemF9IgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgIm5hbWUiOiAiZGF0ZSIsCiAgICAgICAgICAidmFsdWUiOiAiZ2UyMDE4LTAxLTAxIgogICAgICAgIH0KICAgICAgXSwKICAgICAgImVsZW1lbnQiOiBbCiAgICAgICAgImNvZGUiLAogICAgICAgICJwZXJmb3JtZWRbeF0iLAogICAgICAgICJzdWJqZWN0IgogICAgICBdCiAgICB9CiAgXQp9Cg=="^^xsd:base64Binary] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/Binary/k312-scopie.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

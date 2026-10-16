@@ -1,0 +1,152 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDSpecialismeDiagnoses> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "IBDSpecialismeDiagnoses"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet IBDSpecialismeDiagnoses</b></p><a name=\"IBDSpecialismeDiagnoses\"> </a><a name=\"hcIBDSpecialismeDiagnoses\"> </a><ul><li>Include these codes as defined in <code>http://fhir.nl/fhir/NamingSystem/nza</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>0324|101</td><td/></tr><tr><td>0324|102</td><td/></tr><tr><td>0324|105</td><td/></tr><tr><td>0324|107</td><td/></tr><tr><td>0324|115</td><td/></tr><tr><td>0324|116</td><td/></tr><tr><td>0324|117</td><td/></tr><tr><td>0324|201</td><td/></tr><tr><td>0324|203</td><td/></tr><tr><td>0303|115</td><td/></tr><tr><td>0303|116</td><td/></tr><tr><td>0303|129</td><td/></tr><tr><td>0303|163</td><td/></tr><tr><td>0303|325</td><td/></tr><tr><td>0303|326</td><td/></tr><tr><td>0303|333</td><td/></tr><tr><td>0303|334</td><td/></tr><tr><td>0318|601</td><td/></tr><tr><td>0318|602</td><td/></tr><tr><td>0318|610</td><td/></tr><tr><td>0313|922</td><td/></tr><tr><td>0313|923</td><td/></tr><tr><td>0313|927</td><td/></tr><tr><td>0316|3303</td><td/></tr><tr><td>0316|3308</td><td/></tr><tr><td>0316|3311</td><td/></tr><tr><td>0316|3314</td><td/></tr><tr><td>0316|3315</td><td/></tr><tr><td>0316|3399</td><td/></tr><tr><td>*|00</td><td/></tr><tr><td>*|000</td><td/></tr><tr><td>*|0000</td><td/></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDSpecialismeDiagnoses"] ;
+  fhir:ValueSet.version [ fhir:value "0.1.0"] ;
+  fhir:ValueSet.name [ fhir:value "IBDSpecialismeDiagnoses"] ;
+  fhir:ValueSet.title [ fhir:value "IBD Specialisme Diagnoses"] ;
+  fhir:ValueSet.status [ fhir:value "draft"] ;
+  fhir:ValueSet.date [ fhir:value "2026-10-16T14:27:57+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "Santeon"] ;
+  fhir:ValueSet.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "Santeon" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.santeon.nl" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Specialisme-diagnosecombinaties die worden geselecteerd voor de IBD-dataset."] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "NL" ] ;
+       fhir:Coding.display [ fhir:value "Netherlands" ]
+     ]
+  ] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://fhir.nl/fhir/NamingSystem/nza" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0324|101" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0324|102" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0324|105" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0324|107" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0324|115" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0324|116" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0324|117" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0324|201" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0324|203" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0303|115" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0303|116" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0303|129" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0303|163" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0303|325" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0303|326" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0303|333" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0303|334" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0318|601" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0318|602" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0318|610" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0313|922" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0313|923" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0313|927" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0316|3303" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0316|3308" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0316|3311" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0316|3314" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0316|3315" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "0316|3399" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "*|00" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "*|000" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "*|0000" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDSpecialismeDiagnoses.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

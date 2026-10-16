@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="IBDVerrichtingenNZa"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet IBDVerrichtingenNZa</b></p><a name="IBDVerrichtingenNZa"> </a><a name="hcIBDVerrichtingenNZa"> </a><ul><li>Include these codes as defined in <code>http://fhir.nl/fhir/NamingSystem/nza</code><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>038853</td><td/></tr><tr><td>035121</td><td/></tr><tr><td>035122</td><td/></tr><tr><td>034732</td><td/></tr><tr><td>034733</td><td/></tr><tr><td>034734</td><td/></tr><tr><td>034735</td><td/></tr><tr><td>034752</td><td/></tr><tr><td>034753</td><td/></tr><tr><td>034638</td><td/></tr><tr><td>034639</td><td/></tr><tr><td>034738</td><td/></tr><tr><td>034739</td><td/></tr><tr><td>034792</td><td/></tr><tr><td>034793</td><td/></tr><tr><td>034796</td><td/></tr><tr><td>034797</td><td/></tr><tr><td>034798</td><td/></tr><tr><td>034799</td><td/></tr><tr><td>034808</td><td/></tr><tr><td>034809</td><td/></tr><tr><td>034810</td><td/></tr><tr><td>034811</td><td/></tr><tr><td>035023</td><td/></tr><tr><td>035026</td><td/></tr><tr><td>035027</td><td/></tr><tr><td>190204</td><td/></tr><tr><td>190205</td><td/></tr><tr><td>190218</td><td/></tr><tr><td>190031</td><td/></tr><tr><td>190038</td><td/></tr><tr><td>190034</td><td/></tr><tr><td>190035</td><td/></tr><tr><td>190055</td><td/></tr><tr><td>190090</td><td/></tr><tr><td>190091</td><td/></tr><tr><td>190092</td><td/></tr><tr><td>190093</td><td/></tr><tr><td>190015</td><td/></tr><tr><td>190016</td><td/></tr><tr><td>190066</td><td/></tr><tr><td>190153</td><td/></tr><tr><td>190154</td><td/></tr><tr><td>190155</td><td/></tr><tr><td>190157</td><td/></tr><tr><td>190158</td><td/></tr><tr><td>190012</td><td/></tr><tr><td>190013</td><td/></tr><tr><td>190060</td><td/></tr><tr><td>190063</td><td/></tr><tr><td>190019</td><td/></tr><tr><td>190025</td><td/></tr><tr><td>190161</td><td/></tr><tr><td>190162</td><td/></tr><tr><td>190163</td><td/></tr><tr><td>190164</td><td/></tr><tr><td>190165</td><td/></tr><tr><td>190166</td><td/></tr><tr><td>190167</td><td/></tr><tr><td>039133</td><td/></tr><tr><td>034620</td><td/></tr><tr><td>034686</td><td/></tr><tr><td>034690</td><td/></tr><tr><td>035582</td><td/></tr><tr><td>087090</td><td/></tr><tr><td>087091</td><td/></tr><tr><td>087096</td><td/></tr><tr><td>087097</td><td/></tr><tr><td>039492</td><td/></tr><tr><td>087070</td><td/></tr><tr><td>034388</td><td/></tr><tr><td>035280</td><td/></tr><tr><td>080043</td><td/></tr><tr><td>089142</td><td/></tr><tr><td>089042</td><td/></tr><tr><td>087043</td><td/></tr><tr><td>087042</td><td/></tr></table></li></ul></div>
+  </text>
+  <url value="https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDVerrichtingenNZa"/>
+  <version value="0.1.0"/>
+  <name value="IBDVerrichtingenNZa"/>
+  <title value="IBD Verrichtingen NZa"/>
+  <status value="draft"/>
+  <date value="2026-10-16T14:27:57+00:00"/>
+  <publisher value="Santeon"/>
+  <contact>
+    <name value="Santeon"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.santeon.nl"/>
+    </telecom>
+  </contact>
+  <description value="NZa-verrichtingen die worden geselecteerd voor de IBD-dataset."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="NL"/>
+      <display value="Netherlands"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://fhir.nl/fhir/NamingSystem/nza"/>
+      <concept>
+        <code value="038853"/>
+      </concept>
+      <concept>
+        <code value="035121"/>
+      </concept>
+      <concept>
+        <code value="035122"/>
+      </concept>
+      <concept>
+        <code value="034732"/>
+      </concept>
+      <concept>
+        <code value="034733"/>
+      </concept>
+      <concept>
+        <code value="034734"/>
+      </concept>
+      <concept>
+        <code value="034735"/>
+      </concept>
+      <concept>
+        <code value="034752"/>
+      </concept>
+      <concept>
+        <code value="034753"/>
+      </concept>
+      <concept>
+        <code value="034638"/>
+      </concept>
+      <concept>
+        <code value="034639"/>
+      </concept>
+      <concept>
+        <code value="034738"/>
+      </concept>
+      <concept>
+        <code value="034739"/>
+      </concept>
+      <concept>
+        <code value="034792"/>
+      </concept>
+      <concept>
+        <code value="034793"/>
+      </concept>
+      <concept>
+        <code value="034796"/>
+      </concept>
+      <concept>
+        <code value="034797"/>
+      </concept>
+      <concept>
+        <code value="034798"/>
+      </concept>
+      <concept>
+        <code value="034799"/>
+      </concept>
+      <concept>
+        <code value="034808"/>
+      </concept>
+      <concept>
+        <code value="034809"/>
+      </concept>
+      <concept>
+        <code value="034810"/>
+      </concept>
+      <concept>
+        <code value="034811"/>
+      </concept>
+      <concept>
+        <code value="035023"/>
+      </concept>
+      <concept>
+        <code value="035026"/>
+      </concept>
+      <concept>
+        <code value="035027"/>
+      </concept>
+      <concept>
+        <code value="190204"/>
+      </concept>
+      <concept>
+        <code value="190205"/>
+      </concept>
+      <concept>
+        <code value="190218"/>
+      </concept>
+      <concept>
+        <code value="190031"/>
+      </concept>
+      <concept>
+        <code value="190038"/>
+      </concept>
+      <concept>
+        <code value="190034"/>
+      </concept>
+      <concept>
+        <code value="190035"/>
+      </concept>
+      <concept>
+        <code value="190055"/>
+      </concept>
+      <concept>
+        <code value="190090"/>
+      </concept>
+      <concept>
+        <code value="190091"/>
+      </concept>
+      <concept>
+        <code value="190092"/>
+      </concept>
+      <concept>
+        <code value="190093"/>
+      </concept>
+      <concept>
+        <code value="190015"/>
+      </concept>
+      <concept>
+        <code value="190016"/>
+      </concept>
+      <concept>
+        <code value="190066"/>
+      </concept>
+      <concept>
+        <code value="190153"/>
+      </concept>
+      <concept>
+        <code value="190154"/>
+      </concept>
+      <concept>
+        <code value="190155"/>
+      </concept>
+      <concept>
+        <code value="190157"/>
+      </concept>
+      <concept>
+        <code value="190158"/>
+      </concept>
+      <concept>
+        <code value="190012"/>
+      </concept>
+      <concept>
+        <code value="190013"/>
+      </concept>
+      <concept>
+        <code value="190060"/>
+      </concept>
+      <concept>
+        <code value="190063"/>
+      </concept>
+      <concept>
+        <code value="190019"/>
+      </concept>
+      <concept>
+        <code value="190025"/>
+      </concept>
+      <concept>
+        <code value="190161"/>
+      </concept>
+      <concept>
+        <code value="190162"/>
+      </concept>
+      <concept>
+        <code value="190163"/>
+      </concept>
+      <concept>
+        <code value="190164"/>
+      </concept>
+      <concept>
+        <code value="190165"/>
+      </concept>
+      <concept>
+        <code value="190166"/>
+      </concept>
+      <concept>
+        <code value="190167"/>
+      </concept>
+      <concept>
+        <code value="039133"/>
+      </concept>
+      <concept>
+        <code value="034620"/>
+      </concept>
+      <concept>
+        <code value="034686"/>
+      </concept>
+      <concept>
+        <code value="034690"/>
+      </concept>
+      <concept>
+        <code value="035582"/>
+      </concept>
+      <concept>
+        <code value="087090"/>
+      </concept>
+      <concept>
+        <code value="087091"/>
+      </concept>
+      <concept>
+        <code value="087096"/>
+      </concept>
+      <concept>
+        <code value="087097"/>
+      </concept>
+      <concept>
+        <code value="039492"/>
+      </concept>
+      <concept>
+        <code value="087070"/>
+      </concept>
+      <concept>
+        <code value="034388"/>
+      </concept>
+      <concept>
+        <code value="035280"/>
+      </concept>
+      <concept>
+        <code value="080043"/>
+      </concept>
+      <concept>
+        <code value="089142"/>
+      </concept>
+      <concept>
+        <code value="089042"/>
+      </concept>
+      <concept>
+        <code value="087043"/>
+      </concept>
+      <concept>
+        <code value="087042"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

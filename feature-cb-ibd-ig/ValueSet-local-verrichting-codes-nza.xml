@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="local-verrichting-codes-nza"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet local-verrichting-codes-nza</b></p><a name="local-verrichting-codes-nza"> </a><a name="hclocal-verrichting-codes-nza"> </a><ul><li>Include these codes as defined in <code>https://declaratie.nza.nl/zorgactiviteit</code><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>034620</td><td>Verrichting 034620</td></tr><tr><td>034686</td><td>Verrichting 034686</td></tr><tr><td>034690</td><td>Verrichting 034690</td></tr><tr><td>035582</td><td>Verrichting 035582</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://ig.santeon.nl/sim-on-fhir/ValueSet/local-verrichting-codes-nza"/>
+  <version value="0.1.0"/>
+  <name value="LocalVerrichtingCodesNZa"/>
+  <title value="Verrichting Type Codes NZa (Scopie)"/>
+  <status value="active"/>
+  <date value="2026-10-16T14:27:57+00:00"/>
+  <publisher value="Santeon"/>
+  <contact>
+    <name value="Santeon"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.santeon.nl"/>
+    </telecom>
+  </contact>
+  <description value="De specifieke NZa-verrichtingencodes voor de scopie-indicator."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="NL"/>
+      <display value="Netherlands"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="https://declaratie.nza.nl/zorgactiviteit"/>
+      <concept>
+        <code value="034620"/>
+        <display value="Verrichting 034620"/>
+      </concept>
+      <concept>
+        <code value="034686"/>
+        <display value="Verrichting 034686"/>
+      </concept>
+      <concept>
+        <code value="034690"/>
+        <display value="Verrichting 034690"/>
+      </concept>
+      <concept>
+        <code value="035582"/>
+        <display value="Verrichting 035582"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

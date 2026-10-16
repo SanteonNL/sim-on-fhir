@@ -1,0 +1,44 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "local-zorgtype-codes",
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet local-zorgtype-codes</b></p><a name=\"local-zorgtype-codes\"> </a><a name=\"hclocal-zorgtype-codes\"> </a><ul><li>Include these codes as defined in <code>https://declaratie.nza.nl/zorgtype</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>11</td><td>Regulier DBC-zorgtraject</td></tr><tr><td>21</td><td>Regulier vervolg-DBC-zorgtraject</td></tr></table></li></ul></div>"
+  },
+  "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/local-zorgtype-codes",
+  "version" : "0.1.0",
+  "name" : "LocalZorgtypeCodes",
+  "title" : "IBD Zorgtype Codes (11 en 21)",
+  "status" : "active",
+  "date" : "2026-10-16T14:27:57+00:00",
+  "publisher" : "Santeon",
+  "contact" : [{
+    "name" : "Santeon",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.santeon.nl"
+    }]
+  }],
+  "description" : "Bevat de toegestane landelijke zorgtypes 11 en 21.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "NL",
+      "display" : "Netherlands"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "https://declaratie.nza.nl/zorgtype",
+      "concept" : [{
+        "code" : "11",
+        "display" : "Regulier DBC-zorgtraject"
+      },
+      {
+        "code" : "21",
+        "display" : "Regulier vervolg-DBC-zorgtraject"
+      }]
+    }]
+  }
+}

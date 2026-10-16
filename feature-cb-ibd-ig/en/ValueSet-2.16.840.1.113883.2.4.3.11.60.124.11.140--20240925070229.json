@@ -1,0 +1,133 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229",
+  "meta" : {
+    "lastUpdated" : "2026-06-09T06:47:02Z",
+    "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablevalueset"],
+    "tag" : [{
+      "system" : "http://hl7.org/fhir/FHIR-version",
+      "code" : "4.0.1"
+    }]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet 2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229</b></p><a name=\"2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229\"> </a><a name=\"hc2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Last updated: 2026-06-09 06:47:02+0000</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/R4/shareablevalueset.html\">Shareable ValueSet</a></p><p style=\"margin-bottom: 0px\">Tag: <a href=\"http://hl7.org/fhir/R4/codesystem-FHIR-version.html\">4.0.1 (Details: FHIRVersion code 4.0.1)</a></p></div><ul><li>Include these codes as defined in <code>https://santeon.nl/sct</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>ZBJ_COPD</td><td>ZBJ COPD</td></tr><tr><td>ZBJ_Covid</td><td>ZBJ Covid</td></tr><tr><td>ZBJ_Zwangerschapsdiabetes</td><td>ZBJ Zwangerschapsdiabetes</td></tr><tr><td>ZBJ_Hartfalen</td><td>ZBJ Hartfalen</td></tr><tr><td>ZBJ_Astma</td><td>ZBJ Astma</td></tr><tr><td>ZBJ_Diabetes_type_1</td><td>ZBJ Diabetes type 1</td></tr><tr><td>ZBJ_Post-darm_operatie</td><td>ZBJ Post-darm operatie</td></tr><tr><td>ZBJ_Virtual_Fracture_Care</td><td>ZBJ Virtual Fracture Care</td></tr><tr><td>ZBJ_AtriumFibrilleren</td><td>ZBJ AtriumFibrilleren</td></tr><tr><td>ZBJ_Post-CVA</td><td>ZBJ Post-CVA</td></tr><tr><td>ZBJ_Perioperatief</td><td>ZBJ Perioperatief</td></tr><tr><td>ZBJ_IBD</td><td>ZBJ IBD</td></tr><tr><td>ZBJ_Diabetes</td><td>ZBJ Diabetes</td></tr><tr><td>ZBJ_Hypertensie</td><td>ZBJ Hypertensie</td></tr><tr><td>ZBJ_Geboortezorg</td><td>ZBJ Geboortezorg</td></tr><tr><td>CNS_conservatief</td><td>CNS conservatief</td></tr><tr><td>ZBJ_KnieEnHeupArtrose</td><td>ZBJ Knie en Heup Artrose</td></tr><tr><td>ZBJ_Nierschade</td><td>ZBJ Nierschade</td></tr></table></li></ul></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod",
+    "valuePeriod" : {
+      "start" : "2024-09-25T07:02:29Z"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/web-source",
+    "valueUrl" : "http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=san-gen-&version=&id=2.16.840.1.113883.2.4.3.11.60.124.11.140&effectiveDate=2024-09-25T07:02:29"
+  }],
+  "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229",
+  "identifier" : [{
+    "use" : "official",
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.2.4.3.11.60.124.11.140"
+  }],
+  "version" : "0.1.0",
+  "name" : "CareplanCategoryCodelijst",
+  "title" : "CareplanCategoryCodelijst",
+  "status" : "retired",
+  "experimental" : false,
+  "date" : "2026-06-09T06:47:02Z",
+  "publisher" : "Santeon",
+  "contact" : [{
+    "name" : "Santeon",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.santeon.nl"
+    }]
+  }],
+  "description" : "CareplanCategoryCodelijst",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "NL",
+      "display" : "Netherlands"
+    }]
+  }],
+  "immutable" : false,
+  "compose" : {
+    "include" : [{
+      "system" : "https://santeon.nl/sct",
+      "concept" : [{
+        "code" : "ZBJ_COPD",
+        "display" : "ZBJ COPD"
+      },
+      {
+        "code" : "ZBJ_Covid",
+        "display" : "ZBJ Covid"
+      },
+      {
+        "code" : "ZBJ_Zwangerschapsdiabetes",
+        "display" : "ZBJ Zwangerschapsdiabetes"
+      },
+      {
+        "code" : "ZBJ_Hartfalen",
+        "display" : "ZBJ Hartfalen"
+      },
+      {
+        "code" : "ZBJ_Astma",
+        "display" : "ZBJ Astma"
+      },
+      {
+        "code" : "ZBJ_Diabetes_type_1",
+        "display" : "ZBJ Diabetes type 1"
+      },
+      {
+        "code" : "ZBJ_Post-darm_operatie",
+        "display" : "ZBJ Post-darm operatie"
+      },
+      {
+        "code" : "ZBJ_Virtual_Fracture_Care",
+        "display" : "ZBJ Virtual Fracture Care"
+      },
+      {
+        "code" : "ZBJ_AtriumFibrilleren",
+        "display" : "ZBJ AtriumFibrilleren"
+      },
+      {
+        "code" : "ZBJ_Post-CVA",
+        "display" : "ZBJ Post-CVA"
+      },
+      {
+        "code" : "ZBJ_Perioperatief",
+        "display" : "ZBJ Perioperatief"
+      },
+      {
+        "code" : "ZBJ_IBD",
+        "display" : "ZBJ IBD"
+      },
+      {
+        "code" : "ZBJ_Diabetes",
+        "display" : "ZBJ Diabetes"
+      },
+      {
+        "code" : "ZBJ_Hypertensie",
+        "display" : "ZBJ Hypertensie"
+      },
+      {
+        "code" : "ZBJ_Geboortezorg",
+        "display" : "ZBJ Geboortezorg"
+      },
+      {
+        "code" : "CNS_conservatief",
+        "display" : "CNS conservatief"
+      },
+      {
+        "code" : "ZBJ_KnieEnHeupArtrose",
+        "display" : "ZBJ Knie en Heup Artrose"
+      },
+      {
+        "code" : "ZBJ_Nierschade",
+        "display" : "ZBJ Nierschade"
+      }]
+    }]
+  }
+}

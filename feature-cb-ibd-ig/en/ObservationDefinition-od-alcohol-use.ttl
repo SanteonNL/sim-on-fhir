@@ -1,0 +1,50 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/ObservationDefinition/od-alcohol-use> a fhir:ObservationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "od-alcohol-use"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ObservationDefinition od-alcohol-use</b></p><a name=\"od-alcohol-use\"> </a><a name=\"hcod-alcohol-use\"> </a><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category social-history}\">Social History</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 228273003}\">Finding relating to alcohol drinking behavior (finding)</span></p><p><b>permittedDataType</b>: CodeableConcept</p><p><b>preferredReportName</b>: Alcoholgebruik</p><p><b>validCodedValueSet</b>: <a href=\"http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2\">http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2</a></p></div>"
+  ] ;
+  fhir:ObservationDefinition.category [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ] ;
+       fhir:Coding.code [ fhir:value "social-history" ]
+     ]
+  ] ;
+  fhir:ObservationDefinition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a sct:228273003 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "228273003" ] ;
+       fhir:Coding.display [ fhir:value "Finding relating to alcohol drinking behavior (finding)" ]
+     ]
+  ] ;
+  fhir:ObservationDefinition.permittedDataType [
+     fhir:value "CodeableConcept" ;
+     fhir:index -1
+  ] ;
+  fhir:ObservationDefinition.preferredReportName [ fhir:value "Alcoholgebruik"] ;
+  fhir:ObservationDefinition.validCodedValueSet [
+     fhir:link <http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2> ;
+     fhir:Reference.reference [ fhir:value "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/ObservationDefinition/od-alcohol-use.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
