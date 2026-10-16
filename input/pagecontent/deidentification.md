@@ -10,21 +10,23 @@ Field-level control over an export is governed by three distinct layers. Each la
 
 **Layer 1 — Profile: what *can* be present.** The FHIR profile referenced by the export defines the full set of elements that may ever appear in a resource. An element that is not part of the profile can never appear in an export. This is the outer boundary — the profile is the upper limit of what is possible.
 
-**Layer 2 — Export query: what *goes*.** Within the bounds of the profile, the export query selects — per resource type, using `_elements` — which elements are actually included in this specific export. This is a subset of the profile, chosen per dataset. An element the profile allows but the query does not select simply does not appear in the output.
+**Layer 2 — Export query: what *goes*.** Within the bounds of the profile, the export query selects — per resource type, using `_elements` and `_typeFilter` — which elements are included and which matching records are included in this specific export. `_elements` limits the fields; `_typeFilter` limits the records by their search criteria. Both are part of the export's selection and must be considered when determining what can leave the institution.
 
 **Layer 3 — De-identification: *how* it is transformed.** For every element the query selects, a de-identification rule determines how that element is transformed on its way out: hashed, date-shifted, age-clamped, floored to the first of the month, or deliberately left intact. De-identification never removes elements — removal is the query's job, not the ruleset's.
 
 ### Core principles
 
-The model rests on four rules that together guarantee no element leaves the hospital without an explicit, documented decision.
+The model rests on four rules that together guarantee no selected element or filter leaves the hospital without an explicit, documented decision.
 
 **Every selected element must be covered.** Each element selected by the export query must be covered by a de-identification rule — either a rule that names its path specifically, or a broad rule whose path expression matches it (for example, `**.ofType(date)` covers every element of type `date`). An element with no covering rule is a validation error: the export request cannot be released.
+
+**Every filter must be covered.** Each `_typeFilter` is part of the export definition and must be covered by an explicit filter rule. The rule must specify how the filter's search parameters and values are handled, including whether identifying values are transformed consistently with the corresponding released data. A filter with no covering rule is a validation error; filters are not exempt merely because they select records rather than elements.
 
 **`none` is allowed, but must be justified.** An element may be exported unchanged, but only through an explicit `none` action carrying an `exceptionReason` that documents why the element is safe to release intact. There is no silent pass-through — leaving an element unchanged is always a deliberate, recorded choice.
 
 **Rules that match nothing are ignored.** A de-identification rule whose path matches no element selected by the query has no effect and produces no error. This keeps a shared standard ruleset usable across exports that select different subsets of elements.
 
-**Coverage is made visible.** For every export, coverage can be shown element by element: each selected element, the rule that covers it, and the resulting action. This lets a privacy officer confirm, at review time, that every element is accounted for.
+**Coverage is made visible.** For every export, coverage can be shown element by element and filter by filter: each selected element or filter, the rule that covers it, and the resulting action. This lets a privacy officer confirm, at review time, that every part of the export is accounted for.
 
 ---
 
@@ -52,12 +54,11 @@ Use `none` for elements that carry no identifying risk and whose clinical value 
 
 ### `hash`
 
-The element value is replaced by an HMAC hash. Used for identifiers and for the references that point to them. A hash rule on a resource `id` also declares, through `propagateTo`, which reference elements must be rewritten with the same hash so that referential integrity is preserved across the export.
+The element value is replaced by an HMAC hash. Used for identifiers and for the references that point to them. A hash rule on a resource's `id` also rewrites every reference to that resource type, anywhere in the export, to the same hash — automatically, not through a declared list of reference paths. There is no legitimate case for hashing a resource's `id` but leaving some references to it unrewritten: that would either leak the original id or break referential integrity, so the rewrite applies uniformly to `Observation.subject`, `RelatedPerson.patient`, `CarePlan.author`, or any other element referencing that resource type, whatever it happens to be called.
 
 | Parameter | Cardinality | Meaning |
 |---|---|---|
 | `algorithm` | `1..1` | Hash algorithm, e.g. `hmac-sha256` |
-| `propagateTo` | `0..*` | Reference paths to rewrite with the same hash (for `id` elements) |
 
 The seed for the HMAC changes per delivery, so the same patient hashes to different values across separate exports — deliveries cannot be linked to one another. See [Pseudonymisation and the per-export seed](#pseudonymisation-and-the-per-export-seed).
 
@@ -65,12 +66,9 @@ The seed for the HMAC changes per delivery, so the same patient hashes to differ
 {
   "path": "Patient.id",
   "action": "hash",
-  "algorithm": "hmac-sha256",
-  "propagateTo": ["*.subject", "*.patient"]
+  "algorithm": "hmac-sha256"
 }
 ```
-
-`propagateTo` lists the reference elements that carry the patient reference across resource types. `*.subject` matches the `subject` element on any resource (Observation, Condition, Encounter, …); `*.patient` matches the `patient` element where that naming is used instead (for example on some CarePlan and Coverage references). Only these named reference paths are rewritten — references to other resource types (Organization, Practitioner) are left untouched.
 
 ### `shift`
 
@@ -223,7 +221,7 @@ santeon-default v0.1.0             geboortezorg-2024
 
 A conforming export is fully described by two FHIR resources, exchanged together:
 
-1. **The export `Parameters`** — a standard [FHIR Bulk Data](https://hl7.org/fhir/uv/bulkdata/) `Parameters` resource that defines *what is requested*: `_type` (which resource types), `_typeFilter` (which records within a type), and **`_elements`** (which elements of each type are released). `_elements` is core FHIR and needs no extension by this IG.
+1. **The export `Parameters`** — a standard [FHIR Bulk Data](https://hl7.org/fhir/uv/bulkdata/) `Parameters` resource that defines *what is requested*: `_type` (which resource types), `_typeFilter` (which records within a type and the filters applied to them), and **`_elements`** (which elements of each type are released). `_elements` and `_typeFilter` are core Bulk Data parameters and need no extension by this IG.
 
 2. **The effective `DeidentificationRuleset`** — a fully-resolved instance of the [`DeidentificationRuleset`](StructureDefinition-deidentification-ruleset.html) Logical Model that defines *how each released element is transformed*.
 
@@ -248,7 +246,7 @@ A conforming effective `DeidentificationRuleset`:
 
 ### Coverage — binding the two resources
 
-**Coverage is the requirement that binds `Parameters` to the ruleset.** For every element released by the export — every element named or implied by `_elements`, for every type in `_type` — the effective `DeidentificationRuleset` must contain at least one rule that covers it.
+**Coverage is the requirement that binds `Parameters` to the ruleset.** For every element released by the export — every element named or implied by `_elements`, for every type in `_type` — and for every `_typeFilter` used by the export, the effective `DeidentificationRuleset` must contain at least one rule that covers it. Filter coverage includes the filter parameter and its value or expression; a filter must not expose an identifying value or create a selection that cannot be justified by the ruleset.
 
 **Coverage is hierarchical.** A rule covers the element its `path` names *and every element beneath it*. A rule on a composite element therefore covers its whole subtree: a `none` rule on `Observation.code` covers `Observation.code.coding`, `Observation.code.coding.system`, `Observation.code.coding.code`, and any other descendant, without a separate rule for each. A released element is covered when a rule exists on that element **or on any of its ancestors**. A rule may also cover by a path expression that matches across the tree — for example `**.ofType(date)` covers every `date` element wherever it occurs.
 
@@ -282,9 +280,10 @@ Note that when the deepest covering rule is a `none`, all descendants inherit th
 
 To keep the model implementable on any FHIR server, the following are **out of scope** of the normative content:
 
-- how the `_elements` selection and the effective ruleset are authored or assembled (layering, defaults, overrides, templating);
+- how the `_elements` and `_typeFilter` selections and the effective ruleset are authored or assembled (layering, defaults, overrides, templating);
 - the file formats, repositories, or review processes a producer uses;
-- the orchestration of an export run (how it is triggered, polled, transported);
+- the orchestration of an export run ja
+(how it is triggered, polled, transported);
 - whether coverage is enforced ahead of time or by construction.
 
 A server conforms by exchanging a valid `Parameters` and a valid effective `DeidentificationRuleset`, and by releasing data that satisfies coverage — regardless of how it reaches that result.
@@ -345,7 +344,7 @@ The result is **pseudonymisation** under the GDPR, not anonymisation. The data c
 
 Each export derives its HMAC seed freshly, per export run. The seed governs both the identifier hashing and the per-patient date-shift offset. Two properties follow, and a conforming export **must** exhibit both:
 
-**Consistent within a run.** Within a single export, the same source identifier always hashes to the same value, and all of one patient's dates shift by the same offset. Referential integrity is preserved — a hashed `Patient.id` and every reference propagated to it (`*.subject`, `*.patient`) resolve to the same value — and temporal relationships between a patient's events are kept intact. Related patients (for example mother and child) share the offset, so cross-record intervals also survive.
+**Consistent within a run.** Within a single export, the same source identifier always hashes to the same value, and all of one patient's dates shift by the same offset. Referential integrity is preserved — a hashed `Patient.id` and every reference to that patient anywhere in the export resolve to the same value — and temporal relationships between a patient's events are kept intact. Related patients (for example mother and child) share the offset, so cross-record intervals also survive.
 
 **Unlinkable across runs.** Because the seed changes per export, the *same* patient exported in two separate runs hashes to two *different* values, and their dates shift by different offsets. A party holding two deliveries cannot tell that a record in one corresponds to a record in the other by comparing hashes or dates. Deliveries are not linkable to each other from their contents alone.
 
@@ -390,25 +389,37 @@ source data      (the original identifiers, held in the EPD)
 re-identification of a specific patient — inside the hospital only
 ```
 
-A privacy officer with access to all three can, for a named run, reconstruct the seed and reverse a specific hash or date shift back to the source patient. A party outside the hospital holds at most the run identifier and the de-identified output — never the key — and so can never reverse anything. The run identifier makes reversal *auditable and addressable* ("reverse patient X in run f3a1c8") without making it *possible* for anyone lacking the key.
+A privacy officer with access to all three can, for a named run, reconstruct the seed and reverse a specific hash back to the source patient — and, once the patient is identified, read any other field (a shifted date, a clamped age) directly from the source data, the same way any un-exported field would be read. A party outside the hospital holds at most the run identifier and the de-identified output — never the key — and so can never reverse anything. The run identifier makes reversal *auditable and addressable* ("reverse patient X in run f3a1c8") without making it *possible* for anyone lacking the key.
 
 > The run identifier is a non-secret handle, not key material. Exchanging it does not weaken pseudonymisation. The seed itself is derived from the key and the run inside the hospital and is never stored in or alongside an exchanged resource.
 
-### Reversing a hash vs. reversing a shift
+### Reversing a hash
 
-Neither reversal works by decrypting a stored value — an HMAC cannot be decrypted, and no offset is ever written down anywhere. Both are recomputed from the key, not looked up:
+Reversal does not work by decrypting a stored value — an HMAC cannot be decrypted. It is recomputed from the key, not looked up: to re-identify a hashed `Patient.id`, the privacy officer takes a candidate source identifier from the EPD, recomputes `HMAC(key, candidate)` under the reconstructed seed, and compares the result to the hash in the exported data. A match confirms the candidate is the source patient. This is the same forward computation performed at export time — reversal is recomputation and comparison, not inversion.
 
-**Reversing a hash.** To re-identify a hashed `Patient.id`, the privacy officer takes a candidate source identifier from the EPD, recomputes `HMAC(key, candidate)` under the reconstructed seed, and compares the result to the hash in the exported data. A match confirms the candidate is the source patient. This is the same forward computation performed at export time — reversal is recomputation and comparison, not inversion.
+`hash` is the only action this IG requires to be reversible. It is the anchor: once a record's patient is identified this way, every other field on that record — however it was transformed on export — is available in the source system, without needing to be inverted at all. See below.
 
-**Reversing a shift.** The per-patient offset is never itself exported or stored — only its effect, the shifted date, leaves the hospital. Like the hash, the offset is derived deterministically from the seed and a linking identifier — the patient's own source identifier, or, for related patients who must share an offset (see below), a common link identifier — so it is recomputed rather than looked up: the privacy officer reconstructs the seed from the run identifier and the key, recomputes the same deterministic function against that identifier to obtain the exact offset applied during that run, and subtracts it from the shifted date to recover the original date. Because the offset is a function of *(seed, linking identifier)* rather than of the date value itself, it must not be stored alongside the shifted date, or carried in the export in any form — it is regenerated on demand, from material the hospital alone holds, exactly like the hash.
+### `shift`, `clamp-age`, and `first-of-month`: recovered via identity, not inversion
 
-This IG does not standardise the derivation function itself — that is implementation detail, held alongside the key and never exchanged. It requires only that the function be deterministic per *(seed, linking identifier)* pair, so the offset is reproducible inside the hospital and unrecoverable outside it.
+Only `hash` carries a reversal requirement. For every other transformed field, the path back to the original value is always the same: reverse the `hash` on `Patient.id` to identify the patient, then read the field from the EPD. None of these actions need their own inversion procedure.
 
-### Illustrative construction (non-normative)
+**`shift`.** The per-patient offset is derived deterministically from the seed and a linking identifier (see the construction below) so that, within one export, all of one patient's dates move by the same amount — preserving intervals — while varying across patients and across runs. That determinism exists to make the *forward* shift consistent, not to make the shift invertible; the offset is never exported, stored, or looked up, and this IG does not standardise or require a way to recompute it. Unlike `clamp-age` and `first-of-month`, a shifted date is not inherently lossy — in principle, whoever holds the key and can reconstruct `(seed, linkId)` could recompute the offset and subtract it back out — but the IG places no weight on that possibility: the normative path to a patient's true date is the EPD lookup above, exactly as for every other field.
 
-*This shows one way to build a function with the required properties. It is not a normative algorithm — any deterministic, keyed construction with the same properties conforms.*
+**`clamp-age` and `first-of-month`.** These are lossy generalisations, not transformations, and here inversion genuinely is impossible, key or no key. `first-of-month` discards the day of the month entirely — `2024-03-22` and `2024-03-09` both become `2024-03-01`, and nothing in the output distinguishes them. `clamp-age` discards precision only for birth dates *outside* the configured range, replacing them with the boundary — every source birth date implying an age above `maxAge` (or below `minAge`) collapses to the same boundary value. No amount of computation recovers a value that was discarded rather than transformed. This is not a gap: the export was never meant to carry enough information to reconstruct itself, only what the stated analytical purpose requires (an age band, a cohort month), while the EPD remains the source of truth for anything more precise.
 
-The offset can be derived with the same primitive already used for `hash`, applied to a number instead of an identifier:
+`none` needs no reversal at all — the exported value already is the source value.
+
+| Action | Reversible from the exported value alone? | How the original is obtained |
+| --- | --- | --- |
+| `hash` | Yes, with the key | Recompute `HMAC(key, candidate)` and compare |
+| `shift` | Not required (technically possible with the key, but unused) | Re-identify the patient (via `hash`), then read the date from the EPD |
+| `clamp-age` | No — the information is gone, key or not | Re-identify the patient (via `hash`), then read `birthDate` from the EPD |
+| `first-of-month` | No — the information is gone, key or not | Re-identify the patient (via `hash`), then read the date from the EPD |
+| `none` | N/A | Value was never altered |
+
+### Illustrative construction of the shift offset (non-normative)
+
+*This shows one way to derive a per-patient offset with the required forward properties. It is not a normative algorithm — any deterministic, keyed construction with the same properties conforms.*
 
 ```
 digest  = HMAC-SHA256(seed, linkId)              // 32 bytes
@@ -420,8 +431,6 @@ offset  = k < maxDays ? (k − maxDays) : (k − maxDays + 1)
 The final step maps the `2·maxDays` possible values of `k` onto `[−maxDays, −1] ∪ [1, maxDays]` — skipping zero, exactly as the `shift` action requires. `shiftedDate = originalDate + offset` days.
 
 **`linkId` is what makes the mother/child case work.** For a standalone patient, `linkId` is that patient's own source identifier — each patient gets an independent offset. For related patients who must move together, the source data already expresses the link explicitly through FHIR itself: a `RelatedPerson` resource connects the two `Patient` records, with `RelatedPerson.relationship` carrying the role — mother, child (e.g. `MTH`/`CHILD` from the [relatedperson-relationshiptype](https://hl7.org/fhir/R4/valueset-relatedperson-relationshiptype.html) value set). `linkId` is resolved from that relationship rather than from either patient's own identifier — for example, the identifier of whichever patient is treated as the anchor of the pair (say, the mother) — so both the mother's and the child's `Patient` resources feed the *same* `linkId` into the same `HMAC(seed, linkId)`, and both get the *same* `offset`. This is exactly the "consistent within a run" / "shared between related patients" property described [above](#the-per-export-seed). Where a patient has no `RelatedPerson` link, `linkId` collapses to that patient's own identifier and the construction is unchanged.
-
-Reversal for either case is the same recomputation: reconstruct `seed` from the run identifier and the key, resolve the right `linkId` from the source data (the patient's own identifier, or — by following the same `RelatedPerson` relationship — the anchor patient's identifier for a linked pair), recompute `offset`, and subtract it back out. Because `linkId` — not the date itself — drives the offset, this works identically whether the record being reversed is the mother's or the child's.
 
 ---
 

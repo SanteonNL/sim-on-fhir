@@ -1,6 +1,6 @@
 # SIM-on-FHIR
 
-**Santeon CarePlan Implementation Guide** — beschrijft hoe het Santeon Informatie Model (SIM) wordt omgezet naar gestandaardiseerde HL7 FHIR R4-profielen.
+**SIM on FHIR Implementation Guide** — beschrijft hoe het Santeon Informatie Model (SIM) wordt omgezet naar gestandaardiseerde HL7 FHIR R4-profielen, met datasets per ziektebeeld en de-identificatie van exports.
 
 ## Publisher
 
@@ -102,6 +102,67 @@ Key SQL source tables (LUSCII):
 
 ---
 
+## Building the IG
+
+Use the guarded build rather than calling the publisher directly:
+
+```powershell
+py -3 _buildIG.py            # with terminology server
+py -3 _buildIG.py --no-tx    # without (faster, fewer checks)
+```
+
+The publisher does not report a failed Jekyll step: when it cannot render one resource it logs `Exception generating resource` and then waits for hours. `_buildIG.py` removes stale `temp/` and `output/`, reads the publisher log while it is written, stops at the first rendering exception, stops when Jekyll shows no progress, runs Jekyll itself to print the real error, and checks that `output/index.html` exists. The log is `ig-build.log`. CI uses the same script.
+
+Run `sushi .` first and build straight after a merge, before making other changes: SUSHI does not find what the publisher finds.
+
+## Folder layout and naming
+
+Naming follows the HL7 Europe / EHDS conventions: logical models are `<Family><Name>` with the title "Name (model)"; FHIR profiles have the id `<resource>-san` (camelCase resource, family suffix) and the title "Resource (SAN)"; a use-case suffix is added after the family (`-san-kpi` for profiles generated from the KPI definitions).
+
+```
+input/fsh/
+├── sim/               SIM logical models (SIMPatient, SIMVerrichting, ...) and the IBD dataset/cohort models
+├── fhir/              FHIR profiles (ObservationSan, ProcedureSan, ...), extensions, concept maps
+├── valuesets/         value sets
+├── datasets/          one file per dataset (IBD.fsh): cohort + the KPIs it releases
+├── definitions/       ObservationDefinitions, KPI definitions, the definition models, external-valuesets.yaml
+├── deidentification/  de-identification ruleset model and standard ruleset
+└── generated/         written by _generateFromDefinitions.py, never edited
+```
+
+## When you change a KPI, dataset or measurement definition
+
+The model for datasets (IBD, COPD, ...) is derived from definitions, not written per measurement. Edit the definitions in [input/fsh/definitions/](input/fsh/definitions/):
+
+| File | Contains |
+|------|----------|
+| `ObservationDefinitions.fsh` | one ObservationDefinition per measurement (code, value type, unit, answers) |
+| `ValueSets.fsh` | terminology for cohorts and coded answers |
+| `Kpis.fsh` | KPI definitions: resource + FHIR search parameters, post-query filters |
+| `../datasets/<Name>.fsh` | one file per dataset (in `input/fsh/datasets/`): cohort + the KPIs it releases |
+| `DefinitionModels.fsh` | the `KpiDefinition` / `DatasetDefinition` logical models |
+
+ValueSets maintained in ART-DECOR or on a terminology server are not copied into the repository. They are registered in `external-valuesets.json` with a pinned version and referenced as `{vs:<key>}`:
+
+```powershell
+py -3 _syncValueSets.py add <canonical-url> --key ibd-diagnosis     # register (ART-DECOR by default)
+py -3 _syncValueSets.py fetch                                        # download the pinned versions (the build does this)
+py -3 _syncValueSets.py check                                        # is every pin still the latest? exit 1 when not
+py -3 _syncValueSets.py update                                       # move outdated pins, then regenerate
+```
+
+Content that cannot be downloaded (for example a SNOMED ECL query on the terminology server) is registered as `reference` and only resolved by the terminology server at validation time.
+
+Then regenerate (needs SUSHI on the PATH):
+
+```powershell
+py -3 _generateFromDefinitions.py
+```
+
+This rewrites `input/fsh/generated/` (profiles, code value sets, Groups, Parameters) and the dataset pages in `input/pagecontent/` (`datasets.md`, `dataset-<id>.md`). Commit the generated files; CI regenerates and fails when they are out of date. A new dataset also needs its page added under `datasets.md` in `sushi-config.yaml`. See the [KPI definitions](input/pagecontent/kpi-definitions.md) page for how it works.
+
+---
+
 ## When you change a profile
 
 ### 1. Edit the FSH profile
@@ -162,6 +223,121 @@ The build result lands on the `gh-pages` branch, under a path that identifies wh
 | Manual run ([Actions tab](https://github.com/SanteonNL/sim-on-fhir/actions/workflows/publish-ig.yml) → *Run workflow*) | `https://santeonnl.github.io/sim-on-fhir/<keyword>/`, using the `keyword` input |
 
 Progress and logs for any run are visible under the repo's [Actions tab](https://github.com/SanteonNL/sim-on-fhir/actions). Each branch/PR keeps its own folder on `gh-pages`, so multiple previews can exist side by side.
+
+---
+
+## Release process
+
+Releases follow the same release-branch + release-candidate flow used across our repos, adapted here to publish a versioned IG build instead of compiled binaries. Every tag push is picked up automatically by [.github/workflows/publish-ig.yml](.github/workflows/publish-ig.yml) — nothing else needs to be triggered manually.
+
+```text
+main
+ │
+ ├── feature/x  ──┐
+ ├── feature/y  ──┤  normal development
+ ├── feature/z  ──┘
+ │
+ │   [feature-complete for 0.2.0]
+ │
+ ├── release/0.2.0
+ │     ├─ tag v0.2.0-rc.1   → GitHub pre-release (automatic)
+ │     ├─ fix: ...
+ │     ├─ tag v0.2.0-rc.2   → GitHub pre-release (automatic)
+ │     └─ tag v0.2.0        → GitHub release (automatic)
+ │
+ └── main  ←── merge back after release
+```
+
+### Step by step
+
+**1. Create a release branch** once the features for this version are feature-complete. New work keeps going on `main` — it lands in the next version.
+
+```bash
+git checkout main
+git pull
+git checkout -b release/0.2.0
+git push origin release/0.2.0
+```
+
+**2. Bump the version** in `sushi-config.yaml` (`version:`) to the target release version — e.g. `0.2.0` — and commit it on the release branch. The workflow's "Verify tag matches IG version" step fails the build if the tag and this value ever drift apart.
+
+**3. Tag a release candidate** and push the tag:
+
+```bash
+git tag v0.2.0-rc.1
+git push origin v0.2.0-rc.1
+```
+
+The workflow recognizes the `-rc.N` suffix and marks the GitHub Release as a **pre-release**.
+
+**4. Fix bugs and tag new RCs** as needed, committing fixes on the release branch and tagging a new RC each time:
+
+```bash
+git commit -m "fix: correct age clamp boundary"
+git tag v0.2.0-rc.2
+git push origin v0.2.0-rc.2
+```
+
+**5. Tag the final release** once an RC is approved:
+
+```bash
+git tag v0.2.0
+git push origin v0.2.0
+```
+
+This produces a full (non-pre-release) GitHub Release.
+
+**6. Merge back to `main`**, then delete the release branch:
+
+```bash
+git checkout main
+git merge release/0.2.0
+git push origin main
+```
+
+### What the pipeline does on a tag push
+
+| Step | What happens |
+| --- | --- |
+| **Verify version** | Fails fast if the tag's version doesn't match `sushi-config.yaml` |
+| **Build** | Runs SUSHI + the HL7 IG Publisher, same as any other build |
+| **Archive** | Zips the built `output/` site into `sim-on-fhir-ig-<tag>.zip` |
+| **Changelog** | Generated by GitHub's native release notes (one line per merged PR, contributors, compare link) |
+| **GitHub Release** | Created with the zip attached and the correct pre-release flag |
+
+Write clear PR titles — they go straight into the release notes.
+
+### Versioning
+
+Follows [Semantic Versioning](https://semver.org/):
+
+```text
+MAJOR.MINOR.PATCH
+
+0.2.0
+│ │ └── bugfix, backwards compatible
+│ └──── new feature, backwards compatible
+└────── breaking change
+```
+
+| Tag | Meaning |
+| --- | --- |
+| `v0.2.0-rc.1` | Release candidate 1 — under validation |
+| `v0.2.0-rc.2` | Second RC after a fix |
+| `v0.2.0` | Final release |
+
+No `alpha`/`beta` tags — RC is sufficient for this workflow.
+
+### Common mistakes
+
+**Tagging the wrong branch** — the pipeline builds whatever commit the tag points to. Make sure you're on the release branch before tagging (`git log --oneline -5`, `git status`).
+
+**Version already exists** — a tag can't be pushed again. If something went wrong: delete the tag locally and remotely, fix the issue, and push again.
+
+```bash
+git tag -d v0.2.0-rc.1
+git push origin :refs/tags/v0.2.0-rc.1
+```
 
 ---
 
