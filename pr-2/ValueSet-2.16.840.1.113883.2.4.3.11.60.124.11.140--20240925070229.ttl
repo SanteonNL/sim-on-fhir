@@ -1,0 +1,159 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229"] ;
+  fhir:Resource.meta [
+     fhir:Meta.lastUpdated [ fhir:value "2026-06-09T06:47:02Z"^^xsd:dateTime ] ;
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/shareablevalueset" ;
+       fhir:index 0 ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/shareablevalueset>
+     ] ;
+     fhir:Meta.tag [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/FHIR-version" ] ;
+       fhir:Coding.code [ fhir:value "4.0.1" ]
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet 2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229</b></p><a name=\"2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229\"> </a><a name=\"hc2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Last updated: 2026-06-09 06:47:02+0000</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/R4/shareablevalueset.html\">Shareable ValueSet</a></p><p style=\"margin-bottom: 0px\">Tag: <a href=\"http://hl7.org/fhir/R4/codesystem-FHIR-version.html\">4.0.1 (Details: FHIRVersion code 4.0.1)</a></p></div><ul><li>Include these codes as defined in <code>https://santeon.nl/sct</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>ZBJ_COPD</td><td>ZBJ COPD</td></tr><tr><td>ZBJ_Covid</td><td>ZBJ Covid</td></tr><tr><td>ZBJ_Zwangerschapsdiabetes</td><td>ZBJ Zwangerschapsdiabetes</td></tr><tr><td>ZBJ_Hartfalen</td><td>ZBJ Hartfalen</td></tr><tr><td>ZBJ_Astma</td><td>ZBJ Astma</td></tr><tr><td>ZBJ_Diabetes_type_1</td><td>ZBJ Diabetes type 1</td></tr><tr><td>ZBJ_Post-darm_operatie</td><td>ZBJ Post-darm operatie</td></tr><tr><td>ZBJ_Virtual_Fracture_Care</td><td>ZBJ Virtual Fracture Care</td></tr><tr><td>ZBJ_AtriumFibrilleren</td><td>ZBJ AtriumFibrilleren</td></tr><tr><td>ZBJ_Post-CVA</td><td>ZBJ Post-CVA</td></tr><tr><td>ZBJ_Perioperatief</td><td>ZBJ Perioperatief</td></tr><tr><td>ZBJ_IBD</td><td>ZBJ IBD</td></tr><tr><td>ZBJ_Diabetes</td><td>ZBJ Diabetes</td></tr><tr><td>ZBJ_Hypertensie</td><td>ZBJ Hypertensie</td></tr><tr><td>ZBJ_Geboortezorg</td><td>ZBJ Geboortezorg</td></tr><tr><td>CNS_conservatief</td><td>CNS conservatief</td></tr><tr><td>ZBJ_KnieEnHeupArtrose</td><td>ZBJ Knie en Heup Artrose</td></tr><tr><td>ZBJ_Nierschade</td><td>ZBJ Nierschade</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod" ] ;
+     fhir:Extension.valuePeriod [
+       fhir:Period.start [ fhir:value "2024-09-25T07:02:29Z"^^xsd:dateTime ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/web-source" ] ;
+     fhir:Extension.valueUrl [ fhir:value "http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=san-gen-&version=&id=2.16.840.1.113883.2.4.3.11.60.124.11.140&effectiveDate=2024-09-25T07:02:29" ]
+  ] ;
+  fhir:ValueSet.url [ fhir:value "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229"] ;
+  fhir:ValueSet.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ] ;
+     fhir:Identifier.value [ fhir:value "urn:oid:2.16.840.1.113883.2.4.3.11.60.124.11.140" ]
+  ] ;
+  fhir:ValueSet.version [ fhir:value "0.1.0"] ;
+  fhir:ValueSet.name [ fhir:value "CareplanCategoryCodelijst"] ;
+  fhir:ValueSet.title [ fhir:value "CareplanCategoryCodelijst"] ;
+  fhir:ValueSet.status [ fhir:value "retired"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-06-09T06:47:02Z"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "Santeon"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Santeon" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.santeon.nl" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "CareplanCategoryCodelijst"] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "NL" ] ;
+       fhir:Coding.display [ fhir:value "Netherlands" ]
+     ]
+  ] ;
+  fhir:ValueSet.immutable [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://santeon.nl/sct" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_COPD" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ COPD" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_Covid" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ Covid" ]
+       ], [
+         fhir:index 2 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_Zwangerschapsdiabetes" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ Zwangerschapsdiabetes" ]
+       ], [
+         fhir:index 3 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_Hartfalen" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ Hartfalen" ]
+       ], [
+         fhir:index 4 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_Astma" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ Astma" ]
+       ], [
+         fhir:index 5 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_Diabetes_type_1" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ Diabetes type 1" ]
+       ], [
+         fhir:index 6 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_Post-darm_operatie" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ Post-darm operatie" ]
+       ], [
+         fhir:index 7 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_Virtual_Fracture_Care" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ Virtual Fracture Care" ]
+       ], [
+         fhir:index 8 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_AtriumFibrilleren" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ AtriumFibrilleren" ]
+       ], [
+         fhir:index 9 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_Post-CVA" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ Post-CVA" ]
+       ], [
+         fhir:index 10 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_Perioperatief" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ Perioperatief" ]
+       ], [
+         fhir:index 11 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_IBD" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ IBD" ]
+       ], [
+         fhir:index 12 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_Diabetes" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ Diabetes" ]
+       ], [
+         fhir:index 13 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_Hypertensie" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ Hypertensie" ]
+       ], [
+         fhir:index 14 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_Geboortezorg" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ Geboortezorg" ]
+       ], [
+         fhir:index 15 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "CNS_conservatief" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "CNS conservatief" ]
+       ], [
+         fhir:index 16 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_KnieEnHeupArtrose" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ Knie en Heup Artrose" ]
+       ], [
+         fhir:index 17 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ZBJ_Nierschade" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ZBJ Nierschade" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,71 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "local-specialisme-diagnose-codes",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet local-specialisme-diagnose-codes</b></p><a name=\"local-specialisme-diagnose-codes\"> </a><a name=\"hclocal-specialisme-diagnose-codes\"> </a><ul><li>Include these codes as defined in <code>https://ig.santeon.nl/CodeSystem/specialisme-diagnose</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>0313|922</td><td>Interne Geneeskunde - Diagnose 922</td></tr><tr><td>0313|923</td><td>Interne Geneeskunde - Diagnose 923</td></tr><tr><td>0318|601</td><td>Maag-Darm-Leverziekten - Diagnose 601</td></tr><tr><td>0318|602</td><td>Maag-Darm-Leverziekten - Diagnose 602</td></tr><tr><td>0303|115</td><td>Chirurgie - Diagnose 115</td></tr><tr><td>0303|116</td><td>Chirurgie - Diagnose 116</td></tr><tr><td>0303|163</td><td>Chirurgie - Diagnose 163</td></tr><tr><td>0303|325</td><td>Chirurgie - Diagnose 325</td></tr><tr><td>0303|326</td><td>Chirurgie - Diagnose 326</td></tr></table></li></ul></div>"
+  },
+  "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/local-specialisme-diagnose-codes",
+  "version" : "0.1.0",
+  "name" : "LocalSpecialismeDiagnoseCodes",
+  "title" : "IBD Specialisme-Diagnose Combinaties",
+  "status" : "active",
+  "date" : "2026-10-16T14:28:20+00:00",
+  "publisher" : "Santeon",
+  "contact" : [{
+    "name" : "Santeon",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.santeon.nl"
+    }]
+  }],
+  "description" : "Specialisme-diagnose combinaties die behoren tot het IBD-cohort.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "NL",
+      "display" : "Netherlands"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "https://ig.santeon.nl/CodeSystem/specialisme-diagnose",
+      "concept" : [{
+        "code" : "0313|922",
+        "display" : "Interne Geneeskunde - Diagnose 922"
+      },
+      {
+        "code" : "0313|923",
+        "display" : "Interne Geneeskunde - Diagnose 923"
+      },
+      {
+        "code" : "0318|601",
+        "display" : "Maag-Darm-Leverziekten - Diagnose 601"
+      },
+      {
+        "code" : "0318|602",
+        "display" : "Maag-Darm-Leverziekten - Diagnose 602"
+      },
+      {
+        "code" : "0303|115",
+        "display" : "Chirurgie - Diagnose 115"
+      },
+      {
+        "code" : "0303|116",
+        "display" : "Chirurgie - Diagnose 116"
+      },
+      {
+        "code" : "0303|163",
+        "display" : "Chirurgie - Diagnose 163"
+      },
+      {
+        "code" : "0303|325",
+        "display" : "Chirurgie - Diagnose 325"
+      },
+      {
+        "code" : "0303|326",
+        "display" : "Chirurgie - Diagnose 326"
+      }]
+    }]
+  }
+}

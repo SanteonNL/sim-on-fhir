@@ -1,0 +1,223 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDAlgemeneMetingen> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "IBDAlgemeneMetingen"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet IBDAlgemeneMetingen</b></p><a name=\"IBDAlgemeneMetingen\"> </a><a name=\"hcIBDAlgemeneMetingen\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/228273003\">228273003</a></td><td style=\"color: #cccccc\">Finding relating to alcohol drinking behavior</td></tr></table></li><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/39156-5/\">39156-5</a></td><td style=\"color: #cccccc\">Body mass index (BMI) [Ratio]</td></tr><tr><td><a href=\"https://loinc.org/8302-2/\">8302-2</a></td><td style=\"color: #cccccc\">Body height</td></tr><tr><td><a href=\"https://loinc.org/29463-7/\">29463-7</a></td><td style=\"color: #cccccc\">Body weight</td></tr><tr><td><a href=\"https://loinc.org/38445-3/\">38445-3</a></td><td style=\"color: #cccccc\">Calprotectin [Mass/mass] in Stool</td></tr><tr><td><a href=\"https://loinc.org/59260-0/\">59260-0</a></td><td style=\"color: #cccccc\">Hemoglobin [Moles/volume] in Blood</td></tr><tr><td><a href=\"https://loinc.org/787-2/\">787-2</a></td><td style=\"color: #cccccc\">MCV [Entitic mean volume] in Red Blood Cells by Automated count</td></tr><tr><td><a href=\"https://loinc.org/6690-2/\">6690-2</a></td><td style=\"color: #cccccc\">Leukocytes [#/volume] in Blood by Automated count</td></tr><tr><td><a href=\"https://loinc.org/26464-8/\">26464-8</a></td><td style=\"color: #cccccc\">Leukocytes [#/volume] in Blood</td></tr><tr><td><a href=\"https://loinc.org/777-3/\">777-3</a></td><td style=\"color: #cccccc\">Platelets [#/volume] in Blood by Automated count</td></tr><tr><td><a href=\"https://loinc.org/26515-7/\">26515-7</a></td><td style=\"color: #cccccc\">Platelets [#/volume] in Blood</td></tr><tr><td><a href=\"https://loinc.org/1743-4/\">1743-4</a></td><td style=\"color: #cccccc\">Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma by With P-5'-P</td></tr><tr><td><a href=\"https://loinc.org/1742-6/\">1742-6</a></td><td style=\"color: #cccccc\">Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/77144-4/\">77144-4</a></td><td style=\"color: #cccccc\">Alanine aminotransferase [Enzymatic activity/volume] in Serum, Plasma or Blood</td></tr><tr><td><a href=\"https://loinc.org/30239-8/\">30239-8</a></td><td style=\"color: #cccccc\">Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma by With P-5'-P</td></tr><tr><td><a href=\"https://loinc.org/1920-8/\">1920-8</a></td><td style=\"color: #cccccc\">Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/6768-6/\">6768-6</a></td><td style=\"color: #cccccc\">Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/77141-0/\">77141-0</a></td><td style=\"color: #cccccc\">Alkaline phosphatase [Enzymatic activity/volume] in Serum, Plasma or Blood</td></tr><tr><td><a href=\"https://loinc.org/2324-2/\">2324-2</a></td><td style=\"color: #cccccc\">Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/1798-8/\">1798-8</a></td><td style=\"color: #cccccc\">Amylase [Enzymatic activity/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/3040-3/\">3040-3</a></td><td style=\"color: #cccccc\">Lipase [Enzymatic activity/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/14804-9/\">14804-9</a></td><td style=\"color: #cccccc\">Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma by Lactate to pyruvate reaction</td></tr><tr><td><a href=\"https://loinc.org/14682-9/\">14682-9</a></td><td style=\"color: #cccccc\">Creatinine [Moles/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/77140-2/\">77140-2</a></td><td style=\"color: #cccccc\">Creatinine [Moles/volume] in Serum, Plasma or Blood</td></tr><tr><td><a href=\"https://loinc.org/14631-6/\">14631-6</a></td><td style=\"color: #cccccc\">Bilirubin.total [Moles/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/62238-1/\">62238-1</a></td><td style=\"color: #cccccc\">Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)/1.73 sq M</td></tr><tr><td><a href=\"https://loinc.org/77147-7/\">77147-7</a></td><td style=\"color: #cccccc\">Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (MDRD)/1.73 sq M</td></tr><tr><td><a href=\"https://loinc.org/1988-5/\">1988-5</a></td><td style=\"color: #cccccc\">C reactive protein [Mass/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/79713-4/\">79713-4</a></td><td style=\"color: #cccccc\">TPMT gene product metabolic activity interpretation in Blood or Tissue Qualitative by Molecular genetics method</td></tr><tr><td><a href=\"https://loinc.org/93195-6/\">93195-6</a></td><td style=\"color: #cccccc\">NUDT15 gene product metabolic activity interpretation in Blood or Tissue Qualitative by Molecular genetics method</td></tr><tr><td><a href=\"https://loinc.org/32660-3/\">32660-3</a></td><td style=\"color: #cccccc\">6-Thioguanine [Entitic substance] in Red Blood Cells</td></tr><tr><td><a href=\"https://loinc.org/32654-6/\">32654-6</a></td><td style=\"color: #cccccc\">6-Methylmercaptopurine [Entitic substance] in Red Blood Cells</td></tr><tr><td><a href=\"https://loinc.org/86897-6/\">86897-6</a></td><td style=\"color: #cccccc\">inFLIXimab Ab [Mass/volume] in Serum or Plasma by Immunoassay</td></tr><tr><td><a href=\"https://loinc.org/72623-2/\">72623-2</a></td><td style=\"color: #cccccc\">inFLIXimab Ab [Mass/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/90779-0/\">90779-0</a></td><td style=\"color: #cccccc\">Adalimumab Ab [Units/volume] in Serum by Immunoassay</td></tr><tr><td><a href=\"https://loinc.org/74116-5/\">74116-5</a></td><td style=\"color: #cccccc\">Adalimumab Ab [Mass/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/39803-2/\">39803-2</a></td><td style=\"color: #cccccc\">inFLIXimab [Mass/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/74117-3/\">74117-3</a></td><td style=\"color: #cccccc\">Adalimumab [Mass/volume] in Serum or Plasma</td></tr><tr><td><a href=\"https://loinc.org/16419-4/\">16419-4</a></td><td style=\"color: #cccccc\">azaTHIOprine [Mass/volume] in Serum or Plasma</td></tr></table></li><li>Include these codes as defined in <code>https://santeon.nl/sct</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>MCU_E</td><td/></tr><tr><td>MCU_S</td><td/></tr><tr><td>MCD_A</td><td/></tr><tr><td>MCD_L</td><td/></tr><tr><td>MCD_B</td><td/></tr><tr><td>IC_000323</td><td/></tr><tr><td>IC_000324</td><td/></tr><tr><td>IC_000325</td><td/></tr><tr><td>IC_000326</td><td/></tr><tr><td>IC_000327</td><td/></tr><tr><td>IC_000328</td><td/></tr><tr><td>MayoEndoscopicScore</td><td/></tr><tr><td>IC_000321</td><td/></tr><tr><td>IC_000322</td><td/></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDAlgemeneMetingen"] ;
+  fhir:ValueSet.version [ fhir:value "0.1.0"] ;
+  fhir:ValueSet.name [ fhir:value "IBDAlgemeneMetingen"] ;
+  fhir:ValueSet.title [ fhir:value "IBDAlgemeneMetingen"] ;
+  fhir:ValueSet.status [ fhir:value "draft"] ;
+  fhir:ValueSet.date [ fhir:value "2026-10-16T14:28:20+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "Santeon"] ;
+  fhir:ValueSet.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "Santeon" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.santeon.nl" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Metingen die worden geselecteerd voor de IBD-dataset."] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "NL" ] ;
+       fhir:Coding.display [ fhir:value "Netherlands" ]
+     ]
+  ] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "228273003" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://loinc.org" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "39156-5" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "8302-2" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "29463-7" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "38445-3" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "59260-0" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "787-2" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "6690-2" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "26464-8" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "777-3" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "26515-7" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "1743-4" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "1742-6" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "77144-4" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "30239-8" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "1920-8" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "6768-6" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "77141-0" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "2324-2" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "1798-8" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "3040-3" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "14804-9" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "14682-9" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "77140-2" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "14631-6" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "62238-1" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "77147-7" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "1988-5" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "79713-4" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "93195-6" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "32660-3" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "32654-6" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "86897-6" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "72623-2" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "90779-0" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "74116-5" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "39803-2" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "74117-3" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "16419-4" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://santeon.nl/sct" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "MCU_E" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "MCU_S" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "MCD_A" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "MCD_L" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "MCD_B" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "IC_000323" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "IC_000324" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "IC_000325" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "IC_000326" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "IC_000327" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "IC_000328" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "MayoEndoscopicScore" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "IC_000321" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "IC_000322" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDAlgemeneMetingen.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

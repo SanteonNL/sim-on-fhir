@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Group xmlns="http://hl7.org/fhir">
+  <id value="ibd-dataset-cohort"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+  <table class="narrative-table">
+    <tbody>
+<tr>
+
+
+<th colspan="2" scope="row" class="row-header"><a name="metadata"> </a>Metadata</th>
+
+
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+
+
+<th scope="row" class="row-header">Type</th>
+
+
+
+<td class="content-container">Person</td>
+
+
+</tr>
+
+
+<tr>
+
+
+<th scope="row" class="row-header">Actual</th>
+
+
+
+<td class="content-container">true</td>
+
+
+</tr>
+
+
+
+
+
+
+
+
+
+
+<tr>
+  <th colspan="2" scope="row" class="row-header">Generated using version 0.5.6 of the sample-content-ig Liquid templates</th>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+  </text>
+  <modifierExtension url="http://hl7.org/fhir/uv/bulkdata/StructureDefinition/member-filter">
+    <valueExpression>
+      <language value="application/x-fhir-query"/>
+      <expression value="Patient?birthdate=le{today-18y}"/>
+    </valueExpression>
+  </modifierExtension>
+  <modifierExtension url="http://hl7.org/fhir/uv/bulkdata/StructureDefinition/member-filter">
+    <valueExpression>
+      <language value="application/x-fhir-query"/>
+      <expression value="EpisodeOfCare?type:in=https://ig.santeon.nl/sim-on-fhir/ValueSet/local-zorgtype-codes&amp;status=active&amp;date=ge2018-01-01&amp;diagnosis:Condition.code:in=https://ig.santeon.nl/sim-on-fhir/ValueSet/local-specialisme-diagnose-codes"/>
+    </valueExpression>
+  </modifierExtension>
+  <type value="person"/>
+  <actual value="true"/>
+  <name value="IBD cohort"/>
+</Group>

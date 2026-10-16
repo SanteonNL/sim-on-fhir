@@ -1,0 +1,21 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/Binary/ibd-dataset> a fhir:Binary ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ibd-dataset"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:Binary.contentType [ fhir:value "application/fhir+json"] ;
+  fhir:Binary.data [ fhir:value "ewogICJyZXNvdXJjZVR5cGUiOiAiaHR0cHM6Ly9pZy5zYW50ZW9uLm5sL3NpbS1vbi1maGlyL1N0cnVjdHVyZURlZmluaXRpb24vZGF0YXNldC1kZWZpbml0aW9uIiwKICAiaWQiOiAiaWJkLWRhdGFzZXQiLAogICJ0aXRsZSI6ICJJQkQiLAogICJkZXNjcmlwdGlvbiI6ICJHZWdldmVuc3NldCB2b29yIHZvbHdhc3NlbiBwYXRpw6tudGVuIG1ldCBpbmZsYW1tYXRvaXJlIGRhcm16aWVrdGVuIChJQkQpOiBzY29waWXDq24gZW4gY2FscHJvdGVjdGluZW1ldGluZ2VuLCBwbHVzIGFsY29ob2xnZWJydWlrLiIsCiAgInZlcnNpb24iOiAiMC4xLjAiLAogICJjb2hvcnQiOiB7CiAgICAiZGVzY3JpcHRpb24iOiAiQWxsZSBwYXRpw6tudGVuIHZhbiAxOCBqYWFyIG9mIG91ZGVyIG9wIGhldCBtb21lbnQgdmFuIGFhbmxldmVyZW4gbWV0IGVlbiBhY3RpZWYsIHJlZ3VsaWVyIERCQy16b3JndHJhamVjdFxuKHpvcmd0eXBlIDExIG9mIDIxKSBkYXQgb3Agb2YgbmEgMDEtMDEtMjAxOCBpcyBnZW9wZW5kIGVuIHdhYXJ2YW4gZGUgc3BlY2lhbGlzbWUtZGlhZ25vc2UgYmlqIElCRCBob29ydC5cbkRlIHN0YXJ0ZGF0dW0gMDEtMDEtMjAxOCBpcyBiZXd1c3QgbmlldCBkeW5hbWlzY2guIiwKICAgICJjcml0ZXJpYSI6IFsKICAgICAgewogICAgICAgICJyZXNvdXJjZSI6ICJQYXRpZW50IiwKICAgICAgICAicGFyYW0iOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJuYW1lIjogImJpcnRoZGF0ZSIsCiAgICAgICAgICAgICJ2YWx1ZSI6ICJsZXt0b2RheS0xOHl9IgogICAgICAgICAgfQogICAgICAgIF0KICAgICAgfSwKICAgICAgewogICAgICAgICJyZXNvdXJjZSI6ICJFcGlzb2RlT2ZDYXJlIiwKICAgICAgICAicGFyYW0iOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJuYW1lIjogInR5cGU6aW4iLAogICAgICAgICAgICAidmFsdWUiOiAie3ZzOmxvY2FsLXpvcmd0eXBlLWNvZGVzfSIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJuYW1lIjogInN0YXR1cyIsCiAgICAgICAgICAgICJ2YWx1ZSI6ICJhY3RpdmUiCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAibmFtZSI6ICJkYXRlIiwKICAgICAgICAgICAgInZhbHVlIjogImdlMjAxOC0wMS0wMSIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJuYW1lIjogImRpYWdub3NpczpDb25kaXRpb24uY29kZTppbiIsCiAgICAgICAgICAgICJ2YWx1ZSI6ICJ7dnM6bG9jYWwtc3BlY2lhbGlzbWUtZGlhZ25vc2UtY29kZXN9IgogICAgICAgICAgfQogICAgICAgIF0KICAgICAgfQogICAgXQogIH0sCiAgImluY2x1ZGUiOiBbCiAgICB7CiAgICAgICJyZXNvdXJjZSI6ICJQYXRpZW50IiwKICAgICAgInBhcmFtIjogWwogICAgICAgIHsKICAgICAgICAgICJuYW1lIjogImdlbmRlciIsCiAgICAgICAgICAidmFsdWUiOiAibWFsZSxmZW1hbGUiCiAgICAgICAgfQogICAgICBdLAogICAgICAiZWxlbWVudCI6IFsKICAgICAgICAiZ2VuZGVyIiwKICAgICAgICAiYmlydGhEYXRlIgogICAgICBdCiAgICB9CiAgXSwKICAia3BpIjogWwogICAgImszMTItc2NvcGllIiwKICAgICJrMzYzLWNhbHByb3RlY3Rpbi1iZWZvcmUtc2NvcGllIiwKICAgICJhbGNvaG9sLXN0YXR1cy1yZWNvcmRlZCIKICBdCn0K"^^xsd:base64Binary] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/Binary/ibd-dataset.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,21 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/Binary/k363-calprotectin-before-scopie> a fhir:Binary ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "k363-calprotectin-before-scopie"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:Binary.contentType [ fhir:value "application/fhir+json"] ;
+  fhir:Binary.data [ fhir:value "ewogICJyZXNvdXJjZVR5cGUiOiAiaHR0cHM6Ly9pZy5zYW50ZW9uLm5sL3NpbS1vbi1maGlyL1N0cnVjdHVyZURlZmluaXRpb24va3BpLWRlZmluaXRpb24iLAogICJpZCI6ICJrMzYzLWNhbHByb3RlY3Rpbi1iZWZvcmUtc2NvcGllIiwKICAidGl0bGUiOiAiSzMuNi4zIENhbHByb3RlY3RpbmUgdm9vciBzY29waWUiLAogICJkZXNjcmlwdGlvbiI6ICJQZXJjZW50YWdlIHNjb3BpZcOrbiB3YWFyYmlqIGluIGRlIDkwIGRhZ2VuIHZvb3JhZmdhYW5kIGFhbiBkZSBzY29waWUgdGVuIG1pbnN0ZSDDqcOpbiBmZWNhYWwgY2FscHJvdGVjdGluZW1ldGluZyBpcyB1aXRnZXZvZXJkLiIsCiAgInZlcnNpb24iOiAiMC4xLjAiLAogICJjcml0ZXJpYSI6IFsKICAgIHsKICAgICAgInJlc291cmNlIjogIlByb2NlZHVyZSIsCiAgICAgICJwYXJhbSI6IFsKICAgICAgICB7CiAgICAgICAgICAibmFtZSI6ICJjb2RlOmluIiwKICAgICAgICAgICJ2YWx1ZSI6ICJ7dnM6bG9jYWwtdmVycmljaHRpbmctY29kZXMtbnphfSIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJuYW1lIjogImRhdGUiLAogICAgICAgICAgInZhbHVlIjogImdlMjAxOC0wMS0wMSIKICAgICAgICB9CiAgICAgIF0sCiAgICAgICJlbGVtZW50IjogWwogICAgICAgICJjb2RlIiwKICAgICAgICAicGVyZm9ybWVkW3hdIiwKICAgICAgICAic3ViamVjdCIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInJlc291cmNlIjogIk9ic2VydmF0aW9uIiwKICAgICAgInBhcmFtIjogWwogICAgICAgIHsKICAgICAgICAgICJuYW1lIjogImNvZGUiLAogICAgICAgICAgInZhbHVlIjogIntvZDpvZC1jYWxwcm90ZWN0aW4uY29kZX0iCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAibmFtZSI6ICJkYXRlIiwKICAgICAgICAgICJ2YWx1ZSI6ICJnZTIwMTgtMDEtMDEiCiAgICAgICAgfQogICAgICBdLAogICAgICAiZWxlbWVudCI6IFsKICAgICAgICAiY29kZSIsCiAgICAgICAgInZhbHVlW3hdIiwKICAgICAgICAiZWZmZWN0aXZlW3hdIiwKICAgICAgICAic3ViamVjdCIKICAgICAgXQogICAgfQogIF0sCiAgInBvc3RGaWx0ZXIiOiBbCiAgICB7CiAgICAgICJkZXNjcmlwdGlvbiI6ICJBIGNhbHByb3RlY3RpbiBtZWFzdXJlbWVudCBjb3VudHMgb25seSB3aGVuIGl0IGZhbGxzIHdpdGhpbiB0aGUgOTAgZGF5cyB1cCB0byBhbmQgaW5jbHVkaW5nIHRoZSBzdGFydCBvZiBhIHNjb3BpZSBvZiB0aGUgc2FtZSBwYXRpZW50LiBBIGRhdGUgcmVsYXRpb24gYmV0d2VlbiB0d28gcmVzb3VyY2VzIGNhbm5vdCBiZSBleHByZXNzZWQgaW4gYSBGSElSIHNlYXJjaC4iLAogICAgICAiZXhwcmVzc2lvbiI6ICJPYnNlcnZhdGlvbi5lZmZlY3RpdmUgPj0gUHJvY2VkdXJlLnBlcmZvcm1lZC5zdGFydCAtIDkwIGRheXMgYW5kIE9ic2VydmF0aW9uLmVmZmVjdGl2ZSA8PSBQcm9jZWR1cmUucGVyZm9ybWVkLnN0YXJ0IGFuZCBPYnNlcnZhdGlvbi5zdWJqZWN0ID0gUHJvY2VkdXJlLnN1YmplY3QiCiAgICB9CiAgXQp9Cg=="^^xsd:base64Binary] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://ig.santeon.nl/sim-on-fhir/Binary/k363-calprotectin-before-scopie.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

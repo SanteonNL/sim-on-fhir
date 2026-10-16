@@ -1,0 +1,267 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "IBDVerrichtingenNZa",
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet IBDVerrichtingenNZa</b></p><a name=\"IBDVerrichtingenNZa\"> </a><a name=\"hcIBDVerrichtingenNZa\"> </a><ul><li>Include these codes as defined in <code>http://fhir.nl/fhir/NamingSystem/nza</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>038853</td><td/></tr><tr><td>035121</td><td/></tr><tr><td>035122</td><td/></tr><tr><td>034732</td><td/></tr><tr><td>034733</td><td/></tr><tr><td>034734</td><td/></tr><tr><td>034735</td><td/></tr><tr><td>034752</td><td/></tr><tr><td>034753</td><td/></tr><tr><td>034638</td><td/></tr><tr><td>034639</td><td/></tr><tr><td>034738</td><td/></tr><tr><td>034739</td><td/></tr><tr><td>034792</td><td/></tr><tr><td>034793</td><td/></tr><tr><td>034796</td><td/></tr><tr><td>034797</td><td/></tr><tr><td>034798</td><td/></tr><tr><td>034799</td><td/></tr><tr><td>034808</td><td/></tr><tr><td>034809</td><td/></tr><tr><td>034810</td><td/></tr><tr><td>034811</td><td/></tr><tr><td>035023</td><td/></tr><tr><td>035026</td><td/></tr><tr><td>035027</td><td/></tr><tr><td>190204</td><td/></tr><tr><td>190205</td><td/></tr><tr><td>190218</td><td/></tr><tr><td>190031</td><td/></tr><tr><td>190038</td><td/></tr><tr><td>190034</td><td/></tr><tr><td>190035</td><td/></tr><tr><td>190055</td><td/></tr><tr><td>190090</td><td/></tr><tr><td>190091</td><td/></tr><tr><td>190092</td><td/></tr><tr><td>190093</td><td/></tr><tr><td>190015</td><td/></tr><tr><td>190016</td><td/></tr><tr><td>190066</td><td/></tr><tr><td>190153</td><td/></tr><tr><td>190154</td><td/></tr><tr><td>190155</td><td/></tr><tr><td>190157</td><td/></tr><tr><td>190158</td><td/></tr><tr><td>190012</td><td/></tr><tr><td>190013</td><td/></tr><tr><td>190060</td><td/></tr><tr><td>190063</td><td/></tr><tr><td>190019</td><td/></tr><tr><td>190025</td><td/></tr><tr><td>190161</td><td/></tr><tr><td>190162</td><td/></tr><tr><td>190163</td><td/></tr><tr><td>190164</td><td/></tr><tr><td>190165</td><td/></tr><tr><td>190166</td><td/></tr><tr><td>190167</td><td/></tr><tr><td>039133</td><td/></tr><tr><td>034620</td><td/></tr><tr><td>034686</td><td/></tr><tr><td>034690</td><td/></tr><tr><td>035582</td><td/></tr><tr><td>087090</td><td/></tr><tr><td>087091</td><td/></tr><tr><td>087096</td><td/></tr><tr><td>087097</td><td/></tr><tr><td>039492</td><td/></tr><tr><td>087070</td><td/></tr><tr><td>034388</td><td/></tr><tr><td>035280</td><td/></tr><tr><td>080043</td><td/></tr><tr><td>089142</td><td/></tr><tr><td>089042</td><td/></tr><tr><td>087043</td><td/></tr><tr><td>087042</td><td/></tr></table></li></ul></div>"
+  },
+  "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDVerrichtingenNZa",
+  "version" : "0.1.0",
+  "name" : "IBDVerrichtingenNZa",
+  "title" : "IBD Verrichtingen NZa",
+  "status" : "draft",
+  "date" : "2026-10-16T14:28:20+00:00",
+  "publisher" : "Santeon",
+  "contact" : [{
+    "name" : "Santeon",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.santeon.nl"
+    }]
+  }],
+  "description" : "NZa-verrichtingen die worden geselecteerd voor de IBD-dataset.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "NL",
+      "display" : "Netherlands"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://fhir.nl/fhir/NamingSystem/nza",
+      "concept" : [{
+        "code" : "038853"
+      },
+      {
+        "code" : "035121"
+      },
+      {
+        "code" : "035122"
+      },
+      {
+        "code" : "034732"
+      },
+      {
+        "code" : "034733"
+      },
+      {
+        "code" : "034734"
+      },
+      {
+        "code" : "034735"
+      },
+      {
+        "code" : "034752"
+      },
+      {
+        "code" : "034753"
+      },
+      {
+        "code" : "034638"
+      },
+      {
+        "code" : "034639"
+      },
+      {
+        "code" : "034738"
+      },
+      {
+        "code" : "034739"
+      },
+      {
+        "code" : "034792"
+      },
+      {
+        "code" : "034793"
+      },
+      {
+        "code" : "034796"
+      },
+      {
+        "code" : "034797"
+      },
+      {
+        "code" : "034798"
+      },
+      {
+        "code" : "034799"
+      },
+      {
+        "code" : "034808"
+      },
+      {
+        "code" : "034809"
+      },
+      {
+        "code" : "034810"
+      },
+      {
+        "code" : "034811"
+      },
+      {
+        "code" : "035023"
+      },
+      {
+        "code" : "035026"
+      },
+      {
+        "code" : "035027"
+      },
+      {
+        "code" : "190204"
+      },
+      {
+        "code" : "190205"
+      },
+      {
+        "code" : "190218"
+      },
+      {
+        "code" : "190031"
+      },
+      {
+        "code" : "190038"
+      },
+      {
+        "code" : "190034"
+      },
+      {
+        "code" : "190035"
+      },
+      {
+        "code" : "190055"
+      },
+      {
+        "code" : "190090"
+      },
+      {
+        "code" : "190091"
+      },
+      {
+        "code" : "190092"
+      },
+      {
+        "code" : "190093"
+      },
+      {
+        "code" : "190015"
+      },
+      {
+        "code" : "190016"
+      },
+      {
+        "code" : "190066"
+      },
+      {
+        "code" : "190153"
+      },
+      {
+        "code" : "190154"
+      },
+      {
+        "code" : "190155"
+      },
+      {
+        "code" : "190157"
+      },
+      {
+        "code" : "190158"
+      },
+      {
+        "code" : "190012"
+      },
+      {
+        "code" : "190013"
+      },
+      {
+        "code" : "190060"
+      },
+      {
+        "code" : "190063"
+      },
+      {
+        "code" : "190019"
+      },
+      {
+        "code" : "190025"
+      },
+      {
+        "code" : "190161"
+      },
+      {
+        "code" : "190162"
+      },
+      {
+        "code" : "190163"
+      },
+      {
+        "code" : "190164"
+      },
+      {
+        "code" : "190165"
+      },
+      {
+        "code" : "190166"
+      },
+      {
+        "code" : "190167"
+      },
+      {
+        "code" : "039133"
+      },
+      {
+        "code" : "034620"
+      },
+      {
+        "code" : "034686"
+      },
+      {
+        "code" : "034690"
+      },
+      {
+        "code" : "035582"
+      },
+      {
+        "code" : "087090"
+      },
+      {
+        "code" : "087091"
+      },
+      {
+        "code" : "087096"
+      },
+      {
+        "code" : "087097"
+      },
+      {
+        "code" : "039492"
+      },
+      {
+        "code" : "087070"
+      },
+      {
+        "code" : "034388"
+      },
+      {
+        "code" : "035280"
+      },
+      {
+        "code" : "080043"
+      },
+      {
+        "code" : "089142"
+      },
+      {
+        "code" : "089042"
+      },
+      {
+        "code" : "087043"
+      },
+      {
+        "code" : "087042"
+      }]
+    }]
+  }
+}

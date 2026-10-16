@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229"/>
+  <meta>
+    <lastUpdated value="2026-06-09T06:47:02Z"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+    <tag>
+      <system value="http://hl7.org/fhir/FHIR-version"/>
+      <code value="4.0.1"/>
+    </tag>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet 2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229</b></p><a name="2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229"> </a><a name="hc2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Last updated: 2026-06-09 06:47:02+0000</p><p style="margin-bottom: 0px">Profile: <a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a></p><p style="margin-bottom: 0px">Tag: <a href="http://hl7.org/fhir/R4/codesystem-FHIR-version.html">4.0.1 (Details: FHIRVersion code 4.0.1)</a></p></div><ul><li>Include these codes as defined in <code>https://santeon.nl/sct</code><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>ZBJ_COPD</td><td>ZBJ COPD</td></tr><tr><td>ZBJ_Covid</td><td>ZBJ Covid</td></tr><tr><td>ZBJ_Zwangerschapsdiabetes</td><td>ZBJ Zwangerschapsdiabetes</td></tr><tr><td>ZBJ_Hartfalen</td><td>ZBJ Hartfalen</td></tr><tr><td>ZBJ_Astma</td><td>ZBJ Astma</td></tr><tr><td>ZBJ_Diabetes_type_1</td><td>ZBJ Diabetes type 1</td></tr><tr><td>ZBJ_Post-darm_operatie</td><td>ZBJ Post-darm operatie</td></tr><tr><td>ZBJ_Virtual_Fracture_Care</td><td>ZBJ Virtual Fracture Care</td></tr><tr><td>ZBJ_AtriumFibrilleren</td><td>ZBJ AtriumFibrilleren</td></tr><tr><td>ZBJ_Post-CVA</td><td>ZBJ Post-CVA</td></tr><tr><td>ZBJ_Perioperatief</td><td>ZBJ Perioperatief</td></tr><tr><td>ZBJ_IBD</td><td>ZBJ IBD</td></tr><tr><td>ZBJ_Diabetes</td><td>ZBJ Diabetes</td></tr><tr><td>ZBJ_Hypertensie</td><td>ZBJ Hypertensie</td></tr><tr><td>ZBJ_Geboortezorg</td><td>ZBJ Geboortezorg</td></tr><tr><td>CNS_conservatief</td><td>CNS conservatief</td></tr><tr><td>ZBJ_KnieEnHeupArtrose</td><td>ZBJ Knie en Heup Artrose</td></tr><tr><td>ZBJ_Nierschade</td><td>ZBJ Nierschade</td></tr></table></li></ul></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod">
+    <valuePeriod>
+      <start value="2024-09-25T07:02:29Z"/>
+    </valuePeriod>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/web-source">
+    <valueUrl value="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=san-gen-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.124.11.140&amp;effectiveDate=2024-09-25T07:02:29"/>
+  </extension>
+  <url value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229"/>
+  <identifier>
+    <use value="official"/>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="urn:oid:2.16.840.1.113883.2.4.3.11.60.124.11.140"/>
+  </identifier>
+  <version value="0.1.0"/>
+  <name value="CareplanCategoryCodelijst"/>
+  <title value="CareplanCategoryCodelijst"/>
+  <status value="retired"/>
+  <experimental value="false"/>
+  <date value="2026-06-09T06:47:02Z"/>
+  <publisher value="Santeon"/>
+  <contact>
+    <name value="Santeon"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.santeon.nl"/>
+    </telecom>
+  </contact>
+  <description value="CareplanCategoryCodelijst"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="NL"/>
+      <display value="Netherlands"/>
+    </coding>
+  </jurisdiction>
+  <immutable value="false"/>
+  <compose>
+    <include>
+      <system value="https://santeon.nl/sct"/>
+      <concept>
+        <code value="ZBJ_COPD"/>
+        <display value="ZBJ COPD"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_Covid"/>
+        <display value="ZBJ Covid"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_Zwangerschapsdiabetes"/>
+        <display value="ZBJ Zwangerschapsdiabetes"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_Hartfalen"/>
+        <display value="ZBJ Hartfalen"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_Astma"/>
+        <display value="ZBJ Astma"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_Diabetes_type_1"/>
+        <display value="ZBJ Diabetes type 1"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_Post-darm_operatie"/>
+        <display value="ZBJ Post-darm operatie"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_Virtual_Fracture_Care"/>
+        <display value="ZBJ Virtual Fracture Care"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_AtriumFibrilleren"/>
+        <display value="ZBJ AtriumFibrilleren"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_Post-CVA"/>
+        <display value="ZBJ Post-CVA"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_Perioperatief"/>
+        <display value="ZBJ Perioperatief"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_IBD"/>
+        <display value="ZBJ IBD"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_Diabetes"/>
+        <display value="ZBJ Diabetes"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_Hypertensie"/>
+        <display value="ZBJ Hypertensie"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_Geboortezorg"/>
+        <display value="ZBJ Geboortezorg"/>
+      </concept>
+      <concept>
+        <code value="CNS_conservatief"/>
+        <display value="CNS conservatief"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_KnieEnHeupArtrose"/>
+        <display value="ZBJ Knie en Heup Artrose"/>
+      </concept>
+      <concept>
+        <code value="ZBJ_Nierschade"/>
+        <display value="ZBJ Nierschade"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

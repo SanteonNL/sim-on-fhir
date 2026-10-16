@@ -1,0 +1,32 @@
+{
+  "resourceType" : "ObservationDefinition",
+  "id" : "od-calprotectin",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ObservationDefinition od-calprotectin</b></p><a name=\"od-calprotectin\"> </a><a name=\"hcod-calprotectin\"> </a><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 38445-3}\">Calprotectin [Mass/volume] in Stool</span></p><p><b>permittedDataType</b>: Quantity</p><p><b>preferredReportName</b>: Calprotectine (feces)</p><h3>QuantitativeDetails</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Unit</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://unitsofmeasure.org ug/g}\">microgram per gram</span></td></tr></table></div>"
+  },
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "laboratory"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "38445-3",
+      "display" : "Calprotectin [Mass/volume] in Stool"
+    }]
+  },
+  "permittedDataType" : ["Quantity"],
+  "preferredReportName" : "Calprotectine (feces)",
+  "quantitativeDetails" : {
+    "unit" : {
+      "coding" : [{
+        "system" : "http://unitsofmeasure.org",
+        "code" : "ug/g",
+        "display" : "microgram per gram"
+      }]
+    }
+  }
+}
