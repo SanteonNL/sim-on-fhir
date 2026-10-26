@@ -11,7 +11,7 @@
 * [K3.1.2 Scopie](K312.md)
 * [IBD](ibd-dataset.md)
 * [K3.6.3 Calprotectine voor scopie](K363.md)
-* [Common Logical Models (SIM)](CLMs.md)
+* [SIM Logical Models](CLMs.md)
 
 ## Resources
 

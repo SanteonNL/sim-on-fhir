@@ -17,7 +17,7 @@
   fhir:ValueSet.name [ fhir:value "LocalSpecialismeDiagnoseCodes"] ;
   fhir:ValueSet.title [ fhir:value "IBD Specialisme-Diagnose Combinaties"] ;
   fhir:ValueSet.status [ fhir:value "active"] ;
-  fhir:ValueSet.date [ fhir:value "2026-10-16T14:28:20+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.date [ fhir:value "2026-10-26T15:58:34+00:00"^^xsd:dateTime] ;
   fhir:ValueSet.publisher [ fhir:value "Santeon"] ;
   fhir:ValueSet.contact [
      fhir:index 0 ;

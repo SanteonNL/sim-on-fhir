@@ -10,7 +10,7 @@
 
 **preferredReportName**: Alcoholgebruik
 
-**validCodedValueSet**: [http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2](http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2)
+**validCodedValueSet**: [http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2](https://simplifier.net/resolve?scope=nictiz.nl.gbb@1.0.0-alpha.1&canonical=http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2)
 
 
 

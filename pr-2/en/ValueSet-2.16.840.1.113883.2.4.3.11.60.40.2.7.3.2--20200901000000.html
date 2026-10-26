@@ -93,7 +93,7 @@
     <a href="index.html">Home</a>
   </li>
   <li>
-    <a href="CLMs.html">Common Logical Models</a>
+    <a href="CLMs.html">SIM Logical Models</a>
   </li>
   <li>
     <a href="profiles.html">FHIR Profiles</a>
@@ -251,7 +251,7 @@
           
 
             as of 
-2026-10-16
+2026-10-26
 
           
         
@@ -289,7 +289,9 @@
     <b>References</b>
   </p>
   
-<p>This value set is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)</p>
+<ul>
+ <li><a href="https://simplifier.net/resolve?scope=nictiz.fhir.nl.r4.nl-core@0.12.1-beta.1&canonical=http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse">zib AlcoholUse</a></li>
+</ul>
 
 
   <!-- insert intro if present -->
@@ -303,7 +305,7 @@
   <h3>Logical Definition (CLD)</h3>
 <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"></p><a name="2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000"> </a><a name="hc2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000"> </a>
 <div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"></p><p style="margin-bottom: 0px">Profile: <a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a></p><p style="margin-bottom: 0px">Tag: <a href="http://hl7.org/fhir/R4/codesystem-FHIR-version.html">4.0.1 (Details: FHIRVersion code 4.0.1)</a></p></div><p>This value set includes codes based on the following rules:</p>
-<ul><li>Include these codes as defined in <a href="http://terminology.hl7.org/7.4.0/CodeSystem-v3-NullFlavor.html"><code>http://terminology.hl7.org/CodeSystem/v3-NullFlavor</code></a><span title="Version is not explicitly stated, which means it is fixed to 4.0.0, the version found through the package references"> version &#x1F4E6;4.0.0</span><table class="none" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Synonym</b></td><td><b>English (United States) (English (United States), en)</b></td><td><b>Nederlands (Nederland) (Dutch (Netherlands), nl)</b></td></tr><tr><td><a href="http://terminology.hl7.org/7.4.0/CodeSystem-v3-NullFlavor.html#v3-NullFlavor-OTH">OTH</a></td><td>Other</td><td>**Description:**The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g., concept not provided by required code system).<br/><br/>**Usage Notes**: This flavor and its specializations are most commonly used with the CD datatype and its flavors. However, it may apply to \*any\* datatype where the constraints of the type are tighter than can be conveyed. For example, a PQ that is for a true measured amount whose units are not supported in UCUM, a need to convey a REAL when the type has been constrained to INT, etc.<br/><br/>With coded datatypes, this null flavor may only be used if the vocabulary binding has a coding strength of CNE. By definition, all local codes and original text are part of the value set if the coding strength is CWE.</td><td>Anders</td><td>Other</td><td>Anders</td></tr></table></li>
+<ul><li>Include these codes as defined in <a href="http://terminology.hl7.org/7.4.0/CodeSystem-v3-NullFlavor.html"><code>http://terminology.hl7.org/CodeSystem/v3-NullFlavor</code></a><span title="Version is explicitly stated to be 4.0.0"> version &#x1F4CD;4.0.0</span><table class="none" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Synonym</b></td><td><b>English (United States) (English (United States), en)</b></td><td><b>Nederlands (Nederland) (Dutch (Netherlands), nl)</b></td></tr><tr><td><a href="http://terminology.hl7.org/7.4.0/CodeSystem-v3-NullFlavor.html#v3-NullFlavor-OTH">OTH</a></td><td>Other</td><td>**Description:**The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g., concept not provided by required code system).<br/><br/>**Usage Notes**: This flavor and its specializations are most commonly used with the CD datatype and its flavors. However, it may apply to \*any\* datatype where the constraints of the type are tighter than can be conveyed. For example, a PQ that is for a true measured amount whose units are not supported in UCUM, a need to convey a REAL when the type has been constrained to INT, etc.<br/><br/>With coded datatypes, this null flavor may only be used if the vocabulary binding has a coding strength of CNE. By definition, all local codes and original text are part of the value set if the coding strength is CWE.</td><td>Anders</td><td>Other</td><td>Anders</td></tr></table></li>
 <li>Include these codes as defined in <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span>
 <table class="none" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Comments</b></td><td><b>Synonym</b></td><td><b>English (United States) (English (United States), en)</b></td><td><b>Nederlands (Nederland) (Dutch (Netherlands), nl)</b></td></tr>
 <tr><td><a href="http://snomed.info/id/219006">219006</a></td>
@@ -385,8 +387,8 @@
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.sim-on-fhir#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-16 14:28:00 +0000">
-    2026-10-16
+  <span title="2026-10-26 15:58:00 +0000">
+    2026-10-26
   </span>
 
           <br/>

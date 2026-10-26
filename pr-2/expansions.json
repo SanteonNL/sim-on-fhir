@@ -1,8 +1,8 @@
 {
   "resourceType" : "Bundle",
-  "id" : "363547ac-361e-4b17-9066-36508e13a04f",
+  "id" : "c9e861f1-48f9-4cbb-b8f4-20bfc2c4d10c",
   "meta" : {
-    "lastUpdated" : "2026-10-16T14:28:20.113+00:00"
+    "lastUpdated" : "2026-10-26T15:58:34.258+00:00"
   },
   "type" : "collection",
   "entry" : [{
@@ -18,7 +18,7 @@
       "name" : "AlcoholGebruikStatusCodelijst",
       "title" : "AlcoholGebruikStatusCodelijst",
       "status" : "draft",
-      "date" : "2026-10-16T14:28:20+00:00",
+      "date" : "2026-10-26T15:58:34+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -27,8 +27,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:d0ea50a3-563c-4546-b118-9ad08142984a",
-        "timestamp" : "2026-10-16T14:29:57+00:00",
+        "identifier" : "urn:uuid:5aa84cfa-2c99-4dbd-bb89-2560a57d07c8",
+        "timestamp" : "2026-10-26T15:59:54+00:00",
         "total" : 5,
         "offset" : 0,
         "parameter" : [{
@@ -108,7 +108,7 @@
       "name" : "AlcoholGebruikStatusCodelijst",
       "title" : "AlcoholGebruikStatusCodelijst",
       "status" : "draft",
-      "date" : "2026-10-16T14:28:20+00:00",
+      "date" : "2026-10-26T15:58:34+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -117,8 +117,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:563220fa-d023-4606-a29a-150426fcdcf4",
-        "timestamp" : "2026-10-16T14:29:57+00:00",
+        "identifier" : "urn:uuid:b49002fa-e413-4d9e-9930-207ce999570b",
+        "timestamp" : "2026-10-26T15:59:54+00:00",
         "total" : 5,
         "offset" : 0,
         "parameter" : [{
@@ -191,14 +191,14 @@
       "resourceType" : "ValueSet",
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion from tx.fhir.org based on:</p><ul><li>Loinc v2.82<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://loinc.org|2.82\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li><li>SNOMED CT International edition 01-Feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li></ul></div><p>This value set contains 2 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://loinc.org-38445-3\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/38445-3/\">38445-3</a></td><td>Calprotectin [Mass/mass] in Stool</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.82&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-228273003\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/228273003\">228273003</a></td><td>Finding relating to alcohol drinking behavior</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;228273003&quot;, &quot;display&quot;: &quot;Finding relating to alcohol drinking behavior&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;228273003&quot;/&gt;&lt;display value=&quot;Finding relating to alcohol drinking behavior&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr></table></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion from tx.fhir.org based on:</p><ul><li>Loinc v2.83<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://loinc.org|2.83\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li><li>SNOMED CT International edition 01-Feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li></ul></div><p>This value set contains 2 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://loinc.org-38445-3\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/38445-3/\">38445-3</a></td><td>Calprotectin [Mass/mass] in Stool</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.83&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.83&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-228273003\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/228273003\">228273003</a></td><td>Finding relating to alcohol drinking behavior</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;228273003&quot;, &quot;display&quot;: &quot;Finding relating to alcohol drinking behavior&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;228273003&quot;/&gt;&lt;display value=&quot;Finding relating to alcohol drinking behavior&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr></table></div>"
       },
       "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst",
       "version" : "0.1.0",
       "name" : "Santeon_MetingNaamCodelijst",
       "title" : "Santeon_MetingNaamCodelijst",
       "status" : "draft",
-      "date" : "2026-10-16T14:28:20+00:00",
+      "date" : "2026-10-26T15:58:34+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -207,8 +207,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:12e3cf41-5fb9-4ef2-9b0a-a3916a86e8c2",
-        "timestamp" : "2026-10-16T14:29:57+00:00",
+        "identifier" : "urn:uuid:4201966c-8a1c-4327-bda7-79cacf32ebb7",
+        "timestamp" : "2026-10-26T15:59:55+00:00",
         "total" : 2,
         "offset" : 0,
         "parameter" : [{
@@ -237,7 +237,7 @@
         },
         {
           "name" : "used-codesystem",
-          "valueUri" : "http://loinc.org|2.82"
+          "valueUri" : "http://loinc.org|2.83"
         },
         {
           "name" : "excludeNested",
@@ -266,14 +266,14 @@
       "resourceType" : "ValueSet",
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion from tx.fhir.org based on:</p><ul><li>Loinc v2.82<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://loinc.org|2.82\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li><li>SNOMED CT International edition 01-Feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li></ul></div><p>This value set contains 2 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://loinc.org-38445-3\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/38445-3/\">38445-3</a></td><td>Calprotectin [Mass/mass] in Stool</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.82&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-228273003\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/228273003\">228273003</a></td><td>Finding relating to alcohol drinking behavior</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;228273003&quot;, &quot;display&quot;: &quot;Finding relating to alcohol drinking behavior&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;228273003&quot;/&gt;&lt;display value=&quot;Finding relating to alcohol drinking behavior&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr></table></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion from tx.fhir.org based on:</p><ul><li>Loinc v2.83<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://loinc.org|2.83\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li><li>SNOMED CT International edition 01-Feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li></ul></div><p>This value set contains 2 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://loinc.org-38445-3\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/38445-3/\">38445-3</a></td><td>Calprotectin [Mass/mass] in Stool</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.83&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.83&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-228273003\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/228273003\">228273003</a></td><td>Finding relating to alcohol drinking behavior</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;228273003&quot;, &quot;display&quot;: &quot;Finding relating to alcohol drinking behavior&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;228273003&quot;/&gt;&lt;display value=&quot;Finding relating to alcohol drinking behavior&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr></table></div>"
       },
       "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst",
       "version" : "0.1.0",
       "name" : "Santeon_MetingNaamCodelijst",
       "title" : "Santeon_MetingNaamCodelijst",
       "status" : "draft",
-      "date" : "2026-10-16T14:28:20+00:00",
+      "date" : "2026-10-26T15:58:34+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -282,8 +282,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:9cb3a85b-640a-42f9-b051-dbf3d9271c5e",
-        "timestamp" : "2026-10-16T14:29:58+00:00",
+        "identifier" : "urn:uuid:9ab65b8a-10e4-402e-9009-4cede431ea01",
+        "timestamp" : "2026-10-26T15:59:55+00:00",
         "total" : 2,
         "offset" : 0,
         "parameter" : [{
@@ -312,7 +312,7 @@
         },
         {
           "name" : "used-codesystem",
-          "valueUri" : "http://loinc.org|2.82"
+          "valueUri" : "http://loinc.org|2.83"
         },
         {
           "name" : "excludeNested",
@@ -349,7 +349,7 @@
       "title" : "De-identification Action Value Set",
       "status" : "active",
       "experimental" : false,
-      "date" : "2026-10-16T14:28:20+00:00",
+      "date" : "2026-10-26T15:58:34+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -358,8 +358,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:82248409-0fe0-4f4b-a8b5-2e25a70856b3",
-        "timestamp" : "2026-10-16T14:29:58+00:00",
+        "identifier" : "urn:uuid:3ecd0a1f-eb87-4f07-b0f2-ff885107d96b",
+        "timestamp" : "2026-10-26T15:59:55+00:00",
         "total" : 5,
         "offset" : 0,
         "parameter" : [{
@@ -424,7 +424,7 @@
       "title" : "De-identification Action Value Set",
       "status" : "active",
       "experimental" : false,
-      "date" : "2026-10-16T14:28:20+00:00",
+      "date" : "2026-10-26T15:58:34+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -433,8 +433,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:9a93ff51-2357-43b0-8f85-73f5bf65aaff",
-        "timestamp" : "2026-10-16T14:29:58+00:00",
+        "identifier" : "urn:uuid:8c6fc350-f08d-4477-afc3-0d968a70163f",
+        "timestamp" : "2026-10-26T15:59:55+00:00",
         "total" : 5,
         "offset" : 0,
         "parameter" : [{
@@ -491,7 +491,7 @@
       "resourceType" : "ValueSet",
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion from tx.fhir.org based on:</p><ul><li>Loinc v2.82<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://loinc.org|2.82\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li><li>SNOMED CT International edition 01-Feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li></ul></div><p>This value set contains 2 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://snomed.info/sct-228273003\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/228273003\">228273003</a></td><td>Finding relating to alcohol drinking behavior</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;228273003&quot;, &quot;display&quot;: &quot;Finding relating to alcohol drinking behavior&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;228273003&quot;/&gt;&lt;display value=&quot;Finding relating to alcohol drinking behavior&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://loinc.org-38445-3\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/38445-3/\">38445-3</a></td><td>Calprotectin [Mass/mass] in Stool</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.82&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr></table></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion from tx.fhir.org based on:</p><ul><li>Loinc v2.83<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://loinc.org|2.83\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li><li>SNOMED CT International edition 01-Feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li></ul></div><p>This value set contains 2 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://snomed.info/sct-228273003\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/228273003\">228273003</a></td><td>Finding relating to alcohol drinking behavior</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;228273003&quot;, &quot;display&quot;: &quot;Finding relating to alcohol drinking behavior&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;228273003&quot;/&gt;&lt;display value=&quot;Finding relating to alcohol drinking behavior&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://loinc.org-38445-3\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/38445-3/\">38445-3</a></td><td>Calprotectin [Mass/mass] in Stool</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.83&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.83&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr></table></div>"
       },
       "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/observationCode-san-kpi",
       "version" : "0.1.0",
@@ -499,7 +499,7 @@
       "title" : "Observation code (SAN KPI)",
       "status" : "draft",
       "experimental" : false,
-      "date" : "2026-10-16T14:28:20+00:00",
+      "date" : "2026-10-26T15:58:34+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -508,8 +508,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:fc067e6e-081c-45f2-a220-46196f40f1e9",
-        "timestamp" : "2026-10-16T14:29:58+00:00",
+        "identifier" : "urn:uuid:0307223a-d3ca-4e77-aeac-5dac2aae4458",
+        "timestamp" : "2026-10-26T15:59:55+00:00",
         "total" : 2,
         "offset" : 0,
         "parameter" : [{
@@ -546,7 +546,7 @@
         },
         {
           "name" : "used-codesystem",
-          "valueUri" : "http://loinc.org|2.82"
+          "valueUri" : "http://loinc.org|2.83"
         }],
         "contains" : [{
           "system" : "http://snomed.info/sct",
@@ -567,7 +567,7 @@
       "resourceType" : "ValueSet",
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion from tx.fhir.org based on:</p><ul><li>Loinc v2.82<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://loinc.org|2.82\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li><li>SNOMED CT International edition 01-Feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li></ul></div><p>This value set contains 2 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://snomed.info/sct-228273003\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/228273003\">228273003</a></td><td>Finding relating to alcohol drinking behavior</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;228273003&quot;, &quot;display&quot;: &quot;Finding relating to alcohol drinking behavior&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;228273003&quot;/&gt;&lt;display value=&quot;Finding relating to alcohol drinking behavior&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://loinc.org-38445-3\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/38445-3/\">38445-3</a></td><td>Calprotectin [Mass/mass] in Stool</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.82&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr></table></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion from tx.fhir.org based on:</p><ul><li>Loinc v2.83<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://loinc.org|2.83\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li><li>SNOMED CT International edition 01-Feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li></ul></div><p>This value set contains 2 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://snomed.info/sct-228273003\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/228273003\">228273003</a></td><td>Finding relating to alcohol drinking behavior</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;228273003&quot;, &quot;display&quot;: &quot;Finding relating to alcohol drinking behavior&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;228273003&quot;/&gt;&lt;display value=&quot;Finding relating to alcohol drinking behavior&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://loinc.org-38445-3\"> </a><code>http://loinc.org</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"https://loinc.org/38445-3/\">38445-3</a></td><td>Calprotectin [Mass/mass] in Stool</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.83&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.83&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr></table></div>"
       },
       "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/observationCode-san-kpi",
       "version" : "0.1.0",
@@ -575,7 +575,7 @@
       "title" : "Observation code (SAN KPI)",
       "status" : "draft",
       "experimental" : false,
-      "date" : "2026-10-16T14:28:20+00:00",
+      "date" : "2026-10-26T15:58:34+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -584,8 +584,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:1d130282-e0cf-4ba6-9fb8-15827a527d64",
-        "timestamp" : "2026-10-16T14:29:58+00:00",
+        "identifier" : "urn:uuid:6209ab31-ab99-434b-a23d-c447385fc88d",
+        "timestamp" : "2026-10-26T15:59:55+00:00",
         "total" : 2,
         "offset" : 0,
         "parameter" : [{
@@ -622,7 +622,7 @@
         },
         {
           "name" : "used-codesystem",
-          "valueUri" : "http://loinc.org|2.82"
+          "valueUri" : "http://loinc.org|2.83"
         }],
         "contains" : [{
           "system" : "http://snomed.info/sct",
@@ -663,7 +663,7 @@
       "title" : "AlcoholGebruikStatusCodelijst",
       "status" : "active",
       "experimental" : false,
-      "date" : "2026-10-16T14:28:20+00:00",
+      "date" : "2026-10-26T15:58:34+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -673,8 +673,8 @@
       }],
       "immutable" : false,
       "expansion" : {
-        "identifier" : "urn:uuid:d5276d09-692c-4195-922e-2a5054f40402",
-        "timestamp" : "2026-10-16T14:29:58+00:00",
+        "identifier" : "urn:uuid:2a9d205a-7632-4fbf-ba4c-27b1243c7bbc",
+        "timestamp" : "2026-10-26T15:59:55+00:00",
         "total" : 6,
         "offset" : 0,
         "parameter" : [{
@@ -785,7 +785,7 @@
       "title" : "AlcoholGebruikStatusCodelijst",
       "status" : "active",
       "experimental" : false,
-      "date" : "2026-10-16T14:28:20+00:00",
+      "date" : "2026-10-26T15:58:34+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -795,8 +795,8 @@
       }],
       "immutable" : false,
       "expansion" : {
-        "identifier" : "urn:uuid:a4b6682a-252f-4066-b26b-86349185381f",
-        "timestamp" : "2026-10-16T14:29:58+00:00",
+        "identifier" : "urn:uuid:a5eb78f4-76be-461a-b69f-3e2bfff9beb9",
+        "timestamp" : "2026-10-26T15:59:55+00:00",
         "total" : 6,
         "offset" : 0,
         "parameter" : [{

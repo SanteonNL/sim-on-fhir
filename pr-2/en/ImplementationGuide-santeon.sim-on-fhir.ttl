@@ -11,14 +11,14 @@
   fhir:Resource.language [ fhir:value "en"] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xml:lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide santeon.sim-on-fhir</b></p><a name=\"santeon.sim-on-fhir\"> </a><a name=\"hcsanteon.sim-on-fhir\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p></div><h2>SanteonSimOnFhir</h2><p>The official URL for this implementation guide is: </p><pre>https://ig.santeon.nl/sim-on-fhir/ImplementationGuide/santeon.sim-on-fhir</pre><div><p>How the Santeon Informatie Model (SIM) maps to FHIR: common logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports.</p>\n</div></div>"
+     fhir:Narrative.div "<div xml:lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide santeon.sim-on-fhir</b></p><a name=\"santeon.sim-on-fhir\"> </a><a name=\"hcsanteon.sim-on-fhir\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p></div><h2>SanteonSimOnFhir</h2><p>The official URL for this implementation guide is: </p><pre>https://ig.santeon.nl/sim-on-fhir/ImplementationGuide/santeon.sim-on-fhir</pre><div><p>How the Santeon Informatie Model (SIM) maps to FHIR: SIM logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports.</p>\n</div></div>"
   ] ;
   fhir:ImplementationGuide.url [ fhir:value "https://ig.santeon.nl/sim-on-fhir/ImplementationGuide/santeon.sim-on-fhir"] ;
   fhir:ImplementationGuide.version [ fhir:value "0.1.0"] ;
   fhir:ImplementationGuide.name [ fhir:value "SanteonSimOnFhir"] ;
   fhir:ImplementationGuide.title [ fhir:value "SIM on FHIR"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-10-16T14:28:20+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-10-26T15:58:34+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "Santeon"] ;
   fhir:ImplementationGuide.contact [
      fhir:index -1 ;
@@ -29,7 +29,7 @@
        fhir:ContactPoint.value [ fhir:value "https://www.santeon.nl" ]
      ]
   ] ;
-  fhir:ImplementationGuide.description [ fhir:value "How the Santeon Informatie Model (SIM) maps to FHIR: common logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports."] ;
+  fhir:ImplementationGuide.description [ fhir:value "How the Santeon Informatie Model (SIM) maps to FHIR: SIM logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports."] ;
   fhir:ImplementationGuide.jurisdiction [
      fhir:index -1 ;
      fhir:CodeableConcept.coding [
@@ -73,6 +73,15 @@
      ] ;
      fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.fhir.uv.extensions.r4" ] ;
      fhir:ImplementationGuide.dependsOn.version [ fhir:value "5.3.0" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Element.id [ fhir:value "nictiz_nl_gbb" ] ;
+     fhir:ImplementationGuide.dependsOn.uri [
+       fhir:value "http://ig.nictiz.nl/gbb/ImplementationGuide/nictiz.nl.gbb" ;
+       fhir:link <http://ig.nictiz.nl/gbb/ImplementationGuide/nictiz.nl.gbb>
+     ] ;
+     fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "nictiz.nl.gbb" ] ;
+     fhir:ImplementationGuide.dependsOn.version [ fhir:value "1.0.0-alpha.1" ]
   ] ;
   fhir:ImplementationGuide.definition [
      fhir:Element.extension [
@@ -902,7 +911,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/patient-san" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Patient (SAN)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "**De-identificatie:**\n- identifier → hashed\n- birthDate →  dateshift" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek Santeon FHIR R4-profiel voor patiëntgegevens.\n\nGebaseerd op het Santeon Informatiemodel (SIMPatient).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -916,7 +925,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/SIMPatient" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Patiënt (model)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Logisch model voor patiëntgegevens binnen het Santeon Informatiemodel." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek logisch model voor patiëntgegevens binnen het Santeon Informatiemodel." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -1076,7 +1085,7 @@
            fhir:Extension.valueUrl [ fhir:value "CLMs.html" ]
          ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "CLMs.html" ] ;
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "Common Logical Models (SIM)" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "SIM Logical Models" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index -1 ;

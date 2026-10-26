@@ -33,7 +33,7 @@ Other representations of profile: [CSV](../StructureDefinition-specialisme-diagn
   "name" : "SpecialismeDiagnoseCode",
   "title" : "SpecialismeDiagnoseCode",
   "status" : "draft",
-  "date" : "2026-10-16T14:28:20+00:00",
+  "date" : "2026-10-26T15:58:34+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",

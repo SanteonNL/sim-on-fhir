@@ -14,7 +14,7 @@
   "name" : "SanteonSimOnFhir",
   "title" : "SIM on FHIR",
   "status" : "draft",
-  "date" : "2026-10-16T14:28:20+00:00",
+  "date" : "2026-10-26T15:58:34+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -23,7 +23,7 @@
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "How the Santeon Informatie Model (SIM) maps to FHIR: common logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports.",
+  "description" : "How the Santeon Informatie Model (SIM) maps to FHIR: SIM logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -53,6 +53,12 @@
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
     "version" : "5.3.0"
+  },
+  {
+    "id" : "nictiz_nl_gbb",
+    "uri" : "http://ig.nictiz.nl/gbb/ImplementationGuide/nictiz.nl.gbb",
+    "packageId" : "nictiz.nl.gbb",
+    "version" : "1.0.0-alpha.1"
   }],
   "definition" : {
     "extension" : [{
@@ -914,7 +920,7 @@
         "reference" : "StructureDefinition/patient-san"
       },
       "name" : "Patient (SAN)",
-      "description" : "**De-identificatie:**\n- identifier → hashed\n- birthDate →  dateshift",
+      "description" : "Generiek Santeon FHIR R4-profiel voor patiëntgegevens.\n\nGebaseerd op het Santeon Informatiemodel (SIMPatient).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
       "exampleBoolean" : false
     },
     {
@@ -930,7 +936,7 @@
         "reference" : "StructureDefinition/SIMPatient"
       },
       "name" : "Patiënt (model)",
-      "description" : "Logisch model voor patiëntgegevens binnen het Santeon Informatiemodel.",
+      "description" : "Generiek logisch model voor patiëntgegevens binnen het Santeon Informatiemodel.",
       "exampleBoolean" : false
     },
     {
@@ -1104,7 +1110,7 @@
           "valueUrl" : "CLMs.html"
         }],
         "nameUrl" : "CLMs.html",
-        "title" : "Common Logical Models (SIM)",
+        "title" : "SIM Logical Models",
         "generation" : "markdown"
       },
       {
