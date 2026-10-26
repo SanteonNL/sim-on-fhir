@@ -1,28 +1,28 @@
-# Common Logical Models (SIM) - SIM on FHIR v0.1.0
+# SIM Logical Models - SIM on FHIR v0.1.0
 
-## Common Logical Models (SIM)
+## SIM Logical Models
 
-### Common Logical Model SIMAlgemenMeting
+### Logical Model SIMAlgemenMeting
 
-See the [SIMAlgemenMeting](StructureDefinition-SIMAlgemeneMeting.md) Common Logical Model for details and [Mappings](StructureDefinition-SIMAlgemeneMeting-mappings.md) for mappingsdetails.
+See the [SIMAlgemenMeting](StructureDefinition-SIMAlgemeneMeting.md) Logical Model for details and [Mappings](StructureDefinition-SIMAlgemeneMeting-mappings.md) for mappingsdetails.
 
-### Common Logical Model SIMVerrichting
+### Logical Model SIMVerrichting
 
-See the [SIMVerrichting](StructureDefinition-SIMVerrichting.md) Common Logical Model for details and [Mappings](StructureDefinition-SIMVerrichting-mappings.md) for mappingsdetails.
+See the [SIMVerrichting](StructureDefinition-SIMVerrichting.md) Logical Model for details and [Mappings](StructureDefinition-SIMVerrichting-mappings.md) for mappingsdetails.
 
-### Common Logical Model SIMPatient
+### Logical Model SIMPatient
 
-See the [SIMPatient](StructureDefinition-SIMPatient.md) Common Logical Model for details and [Mappings](StructureDefinition-SIMPatient-mappings.md) for mappingsdetails.
+See the [SIMPatient](StructureDefinition-SIMPatient.md) Logical Model for details and [Mappings](StructureDefinition-SIMPatient-mappings.md) for mappingsdetails.
 
-### Common Logical Model SIMZorgtraject (DBC)
+### Logical Model SIMZorgtraject (DBC)
 
-See the [SIMDBC](StructureDefinition-SIMDBC.md) Common Logical Model for details and [Mappings](StructureDefinition-SIMDBC-mappings.md) for mappingsdetails.
+See the [SIMDBC](StructureDefinition-SIMDBC.md) Logical Model for details and [Mappings](StructureDefinition-SIMDBC-mappings.md) for mappingsdetails.
 
-### Common Logical Model SIMFasering
+### Logical Model SIMFasering
 
-WIP: **See the [SIMFasering](StructureDefinition-SIMFasering.md) Common Logical Model for details and [Mappings](StructureDefinition-SIMFasering-mappings.md) for mappingsdetails.**
+WIP: **See the [SIMFasering](StructureDefinition-SIMFasering.md) Logical Model for details and [Mappings](StructureDefinition-SIMFasering-mappings.md) for mappingsdetails.**
 
-### Common Logical Model SIMetc.
+### Logical Model SIMetc.
 
 Etc.
 

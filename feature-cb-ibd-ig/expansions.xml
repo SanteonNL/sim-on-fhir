@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="b57a677c-2916-433e-b368-c70bec6f78cc"/>
+  <id value="90273981-bd77-4ecc-b751-1b0afa8348a0"/>
   <meta>
-    <lastUpdated value="2026-10-16T14:27:57.990+00:00"/>
+    <lastUpdated value="2026-10-26T15:58:19.211+00:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -176,7 +176,7 @@
         <name value="AlcoholGebruikStatusCodelijst"/>
         <title value="AlcoholGebruikStatusCodelijst"/>
         <status value="draft"/>
-        <date value="2026-10-16T14:27:57+00:00"/>
+        <date value="2026-10-26T15:58:19+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -185,8 +185,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:cd85ac80-f5ff-4693-9ef7-7fb34072f0f1"/>
-          <timestamp value="2026-10-16T14:29:01+00:00"/>
+          <identifier value="urn:uuid:9bfefaef-f26e-4819-b071-e89db3e8ffac"/>
+          <timestamp value="2026-10-26T15:59:42+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -424,7 +424,7 @@
         <name value="AlcoholGebruikStatusCodelijst"/>
         <title value="AlcoholGebruikStatusCodelijst"/>
         <status value="draft"/>
-        <date value="2026-10-16T14:27:57+00:00"/>
+        <date value="2026-10-26T15:58:19+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -433,8 +433,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:dad6b2c4-34d8-48a6-bc06-59a52e578db0"/>
-          <timestamp value="2026-10-16T14:29:01+00:00"/>
+          <identifier value="urn:uuid:28eedb71-bc15-4bb0-8be8-32763d6bbe83"/>
+          <timestamp value="2026-10-26T15:59:42+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -513,9 +513,9 @@
             <div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">
               <p>Expansion from tx.fhir.org based on:</p>
               <ul>
-                <li>Loinc v2.82
+                <li>Loinc v2.83
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="http://loinc.org|2.82" title="Click to Copy URL" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="http://loinc.org|2.83" title="Click to Copy URL" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </li>
                 <li>SNOMED CT International edition 01-Feb 2025
@@ -555,12 +555,12 @@
                 <td>Calprotectin [Mass/mass] in Stool</td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.83&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.82&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.83&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
               </tr>
@@ -592,7 +592,7 @@
         <name value="Santeon_MetingNaamCodelijst"/>
         <title value="Santeon_MetingNaamCodelijst"/>
         <status value="draft"/>
-        <date value="2026-10-16T14:27:57+00:00"/>
+        <date value="2026-10-26T15:58:19+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -601,8 +601,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:c6513c29-23f2-41de-bbab-ce14931bc1da"/>
-          <timestamp value="2026-10-16T14:29:02+00:00"/>
+          <identifier value="urn:uuid:00cdd1c0-409d-4b3b-b6ea-c259809ca431"/>
+          <timestamp value="2026-10-26T15:59:43+00:00"/>
           <total value="2"/>
           <offset value="0"/>
           <parameter>
@@ -631,7 +631,7 @@
           </parameter>
           <parameter>
             <name value="used-codesystem"/>
-            <valueUri value="http://loinc.org|2.82"/>
+            <valueUri value="http://loinc.org|2.83"/>
           </parameter>
           <parameter>
             <name value="excludeNested"/>
@@ -666,9 +666,9 @@
             <div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">
               <p>Expansion from tx.fhir.org based on:</p>
               <ul>
-                <li>Loinc v2.82
+                <li>Loinc v2.83
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="http://loinc.org|2.82" title="Click to Copy URL" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="http://loinc.org|2.83" title="Click to Copy URL" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </li>
                 <li>SNOMED CT International edition 01-Feb 2025
@@ -708,12 +708,12 @@
                 <td>Calprotectin [Mass/mass] in Stool</td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.83&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.82&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.83&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
               </tr>
@@ -745,7 +745,7 @@
         <name value="Santeon_MetingNaamCodelijst"/>
         <title value="Santeon_MetingNaamCodelijst"/>
         <status value="draft"/>
-        <date value="2026-10-16T14:27:57+00:00"/>
+        <date value="2026-10-26T15:58:19+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -754,8 +754,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:2214672c-12b5-4895-ba1e-a2dac4b088d0"/>
-          <timestamp value="2026-10-16T14:29:02+00:00"/>
+          <identifier value="urn:uuid:038e0651-8cf2-40f7-b1a7-ec5bba351fe7"/>
+          <timestamp value="2026-10-26T15:59:43+00:00"/>
           <total value="2"/>
           <offset value="0"/>
           <parameter>
@@ -784,7 +784,7 @@
           </parameter>
           <parameter>
             <name value="used-codesystem"/>
-            <valueUri value="http://loinc.org|2.82"/>
+            <valueUri value="http://loinc.org|2.83"/>
           </parameter>
           <parameter>
             <name value="excludeNested"/>
@@ -958,7 +958,7 @@
         <title value="De-identification Action Value Set"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2026-10-16T14:27:57+00:00"/>
+        <date value="2026-10-26T15:58:19+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -967,8 +967,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:0623a566-620f-49d2-a664-78abb6a2048b"/>
-          <timestamp value="2026-10-16T14:29:02+00:00"/>
+          <identifier value="urn:uuid:649504c0-caef-4c8e-91cd-1e7d8e1962f8"/>
+          <timestamp value="2026-10-26T15:59:43+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -1170,7 +1170,7 @@
         <title value="De-identification Action Value Set"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2026-10-16T14:27:57+00:00"/>
+        <date value="2026-10-26T15:58:19+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -1179,8 +1179,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:c6018d28-965d-435f-b403-f87552c374a4"/>
-          <timestamp value="2026-10-16T14:29:02+00:00"/>
+          <identifier value="urn:uuid:db22b4e4-1fe2-460c-9bda-954151f2c1eb"/>
+          <timestamp value="2026-10-26T15:59:43+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -1243,9 +1243,9 @@
             <div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">
               <p>Expansion from tx.fhir.org based on:</p>
               <ul>
-                <li>Loinc v2.82
+                <li>Loinc v2.83
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="http://loinc.org|2.82" title="Click to Copy URL" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="http://loinc.org|2.83" title="Click to Copy URL" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </li>
                 <li>SNOMED CT International edition 01-Feb 2025
@@ -1305,12 +1305,12 @@
                 <td>Calprotectin [Mass/mass] in Stool</td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.83&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.82&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.83&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
               </tr>
@@ -1323,7 +1323,7 @@
         <title value="Observation code (SAN KPI)"/>
         <status value="draft"/>
         <experimental value="false"/>
-        <date value="2026-10-16T14:27:57+00:00"/>
+        <date value="2026-10-26T15:58:19+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -1332,8 +1332,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:fae81125-7637-4583-81a5-d363596bf511"/>
-          <timestamp value="2026-10-16T14:29:03+00:00"/>
+          <identifier value="urn:uuid:477d3350-e401-4224-b59e-421661cb4ced"/>
+          <timestamp value="2026-10-26T15:59:43+00:00"/>
           <total value="2"/>
           <offset value="0"/>
           <parameter>
@@ -1370,7 +1370,7 @@
           </parameter>
           <parameter>
             <name value="used-codesystem"/>
-            <valueUri value="http://loinc.org|2.82"/>
+            <valueUri value="http://loinc.org|2.83"/>
           </parameter>
           <contains>
             <system value="http://snomed.info/sct"/>
@@ -1397,9 +1397,9 @@
             <div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">
               <p>Expansion from tx.fhir.org based on:</p>
               <ul>
-                <li>Loinc v2.82
+                <li>Loinc v2.83
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="http://loinc.org|2.82" title="Click to Copy URL" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="http://loinc.org|2.83" title="Click to Copy URL" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </li>
                 <li>SNOMED CT International edition 01-Feb 2025
@@ -1459,12 +1459,12 @@
                 <td>Calprotectin [Mass/mass] in Stool</td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.82&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.83&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.82&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.83&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
               </tr>
@@ -1477,7 +1477,7 @@
         <title value="Observation code (SAN KPI)"/>
         <status value="draft"/>
         <experimental value="false"/>
-        <date value="2026-10-16T14:27:57+00:00"/>
+        <date value="2026-10-26T15:58:19+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -1486,8 +1486,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:4c733b6d-6c0f-4c7a-b873-ef440b3ff06b"/>
-          <timestamp value="2026-10-16T14:29:03+00:00"/>
+          <identifier value="urn:uuid:b8e61380-8996-4608-922d-41a361e3662b"/>
+          <timestamp value="2026-10-26T15:59:43+00:00"/>
           <total value="2"/>
           <offset value="0"/>
           <parameter>
@@ -1524,7 +1524,7 @@
           </parameter>
           <parameter>
             <name value="used-codesystem"/>
-            <valueUri value="http://loinc.org|2.82"/>
+            <valueUri value="http://loinc.org|2.83"/>
           </parameter>
           <contains>
             <system value="http://snomed.info/sct"/>
@@ -1764,7 +1764,7 @@
         <title value="AlcoholGebruikStatusCodelijst"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2026-10-16T14:27:57+00:00"/>
+        <date value="2026-10-26T15:58:19+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -1774,8 +1774,8 @@
         </jurisdiction>
         <immutable value="false"/>
         <expansion>
-          <identifier value="urn:uuid:b70da226-d2bc-4d62-a2ba-c42b0e27adc2"/>
-          <timestamp value="2026-10-16T14:29:03+00:00"/>
+          <identifier value="urn:uuid:ce652961-823c-46c0-842e-3544987f9617"/>
+          <timestamp value="2026-10-26T15:59:44+00:00"/>
           <total value="6"/>
           <offset value="0"/>
           <parameter>
@@ -2084,7 +2084,7 @@
         <title value="AlcoholGebruikStatusCodelijst"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2026-10-16T14:27:57+00:00"/>
+        <date value="2026-10-26T15:58:19+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -2094,8 +2094,8 @@
         </jurisdiction>
         <immutable value="false"/>
         <expansion>
-          <identifier value="urn:uuid:9825869d-139e-47d8-a642-0aa15c7444ea"/>
-          <timestamp value="2026-10-16T14:29:04+00:00"/>
+          <identifier value="urn:uuid:4d506238-7f16-4fdb-9e30-e39a0e9143e6"/>
+          <timestamp value="2026-10-26T15:59:44+00:00"/>
           <total value="6"/>
           <offset value="0"/>
           <parameter>

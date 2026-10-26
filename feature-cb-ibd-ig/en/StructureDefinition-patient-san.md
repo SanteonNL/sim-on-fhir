@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-patient-san.csv),
   "name" : "PatientSan",
   "title" : "Patient (SAN)",
   "status" : "draft",
-  "date" : "2026-10-16T14:27:57+00:00",
+  "date" : "2026-10-26T15:58:19+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-patient-san.csv),
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "**De-identificatie:**\n- identifier → hashed\n- birthDate →  dateshift",
+  "description" : "Generiek Santeon FHIR R4-profiel voor patiëntgegevens.\n\nGebaseerd op het Santeon Informatiemodel (SIMPatient).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -48,10 +48,9 @@ Other representations of profile: [CSV](../StructureDefinition-patient-san.csv),
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "sim",
+    "identity" : "rim",
     "uri" : "http://hl7.org/v3",
-    "name" : "Santeon Informatie Model",
-    "comment" : "Mapping van Patient elementen naar SIM"
+    "name" : "RIM Mapping"
   },
   {
     "identity" : "cda",
@@ -84,140 +83,25 @@ Other representations of profile: [CSV](../StructureDefinition-patient-san.csv),
       "path" : "Patient"
     },
     {
-      "id" : "Patient.meta",
-      "path" : "Patient.meta",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.implicitRules",
-      "path" : "Patient.implicitRules",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.language",
-      "path" : "Patient.language",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.text",
-      "path" : "Patient.text",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.contained",
-      "path" : "Patient.contained",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.extension",
-      "path" : "Patient.extension",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.modifierExtension",
-      "path" : "Patient.modifierExtension",
-      "max" : "0"
-    },
-    {
       "id" : "Patient.identifier",
       "path" : "Patient.identifier",
       "min" : 1,
       "max" : "1"
     },
     {
-      "id" : "Patient.identifier.use",
-      "path" : "Patient.identifier.use",
-      "max" : "0"
-    },
-    {
       "id" : "Patient.identifier.value",
       "path" : "Patient.identifier.value",
-      "min" : 1,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "Patient;Identificatienummer",
-        "comment" : "hashed"
-      }]
-    },
-    {
-      "id" : "Patient.active",
-      "path" : "Patient.active",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.name",
-      "path" : "Patient.name",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.telecom",
-      "path" : "Patient.telecom",
-      "max" : "0"
+      "min" : 1
     },
     {
       "id" : "Patient.gender",
       "path" : "Patient.gender",
-      "max" : "0"
+      "short" : "Administratief geslacht van de patiënt"
     },
     {
       "id" : "Patient.birthDate",
       "path" : "Patient.birthDate",
-      "min" : 1,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "Patient;Geboortedatum",
-        "comment" : "dateshift"
-      }]
-    },
-    {
-      "id" : "Patient.deceased[x]",
-      "path" : "Patient.deceased[x]",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.address",
-      "path" : "Patient.address",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.maritalStatus",
-      "path" : "Patient.maritalStatus",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.multipleBirth[x]",
-      "path" : "Patient.multipleBirth[x]",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.photo",
-      "path" : "Patient.photo",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.contact",
-      "path" : "Patient.contact",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.communication",
-      "path" : "Patient.communication",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.generalPractitioner",
-      "path" : "Patient.generalPractitioner",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.managingOrganization",
-      "path" : "Patient.managingOrganization",
-      "max" : "0"
-    },
-    {
-      "id" : "Patient.link",
-      "path" : "Patient.link",
-      "max" : "0"
+      "min" : 1
     }]
   }
 }

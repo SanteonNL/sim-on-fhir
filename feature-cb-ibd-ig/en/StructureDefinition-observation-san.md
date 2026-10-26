@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
   "name" : "ObservationSan",
   "title" : "Observation (SAN)",
   "status" : "draft",
-  "date" : "2026-10-16T14:27:57+00:00",
+  "date" : "2026-10-26T15:58:19+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",

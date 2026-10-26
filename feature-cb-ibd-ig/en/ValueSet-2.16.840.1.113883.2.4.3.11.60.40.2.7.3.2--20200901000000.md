@@ -4,7 +4,7 @@
 
  **References** 
 
-This value set is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)
+* [zib AlcoholUse](https://simplifier.net/resolve?scope=nictiz.fhir.nl.r4.nl-core@0.12.1-beta.1&canonical=http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse)
 
 ### Logical Definition (CLD)
 
@@ -52,7 +52,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "AlcoholGebruikStatusCodelijst",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-10-16T14:27:57+00:00",
+  "date" : "2026-10-26T15:58:19+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -75,6 +75,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
     "inactive" : true,
     "include" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+      "version" : "4.0.0",
       "concept" : [{
         "code" : "OTH",
         "display" : "Other",

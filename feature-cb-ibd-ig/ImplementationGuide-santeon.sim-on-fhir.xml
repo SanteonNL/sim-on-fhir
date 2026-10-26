@@ -4,7 +4,7 @@
   <id value="santeon.sim-on-fhir"/>
   <language value="en"/>
   <text>
-    <status value="generated"/><div xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide santeon.sim-on-fhir</b></p><a name="santeon.sim-on-fhir"> </a><a name="hcsanteon.sim-on-fhir"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p></div><h2>SanteonSimOnFhir</h2><p>The official URL for this implementation guide is: </p><pre>https://ig.santeon.nl/sim-on-fhir/ImplementationGuide/santeon.sim-on-fhir</pre><div><p>How the Santeon Informatie Model (SIM) maps to FHIR: common logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports.</p>
+    <status value="generated"/><div xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide santeon.sim-on-fhir</b></p><a name="santeon.sim-on-fhir"> </a><a name="hcsanteon.sim-on-fhir"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p></div><h2>SanteonSimOnFhir</h2><p>The official URL for this implementation guide is: </p><pre>https://ig.santeon.nl/sim-on-fhir/ImplementationGuide/santeon.sim-on-fhir</pre><div><p>How the Santeon Informatie Model (SIM) maps to FHIR: SIM logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports.</p>
 </div></div>
   </text>
   <url value="https://ig.santeon.nl/sim-on-fhir/ImplementationGuide/santeon.sim-on-fhir"/>
@@ -12,7 +12,7 @@
   <name value="SanteonSimOnFhir"/>
   <title value="SIM on FHIR"/>
   <status value="draft"/>
-  <date value="2026-10-16T14:27:57+00:00"/>
+  <date value="2026-10-26T15:58:19+00:00"/>
   <publisher value="Santeon"/>
   <contact>
     <name value="Santeon"/>
@@ -21,7 +21,7 @@
       <value value="https://www.santeon.nl"/>
     </telecom>
   </contact>
-  <description value="How the Santeon Informatie Model (SIM) maps to FHIR: common logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports."/>
+  <description value="How the Santeon Informatie Model (SIM) maps to FHIR: SIM logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports."/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -47,6 +47,11 @@
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r4"/>
     <version value="5.3.0"/>
+  </dependsOn>
+  <dependsOn id="nictiz_nl_gbb">
+    <uri value="http://ig.nictiz.nl/gbb/ImplementationGuide/nictiz.nl.gbb"/>
+    <packageId value="nictiz.nl.gbb"/>
+    <version value="1.0.0-alpha.1"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
@@ -653,7 +658,7 @@
         <reference value="StructureDefinition/patient-san"/>
       </reference>
       <name value="Patient (SAN)"/>
-      <description value="**De-identificatie:**&#xA;- identifier → hashed&#xA;- birthDate →  dateshift"/>
+      <description value="Generiek Santeon FHIR R4-profiel voor patiëntgegevens.&#xA;&#xA;Gebaseerd op het Santeon Informatiemodel (SIMPatient).&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -664,7 +669,7 @@
         <reference value="StructureDefinition/SIMPatient"/>
       </reference>
       <name value="Patiënt (model)"/>
-      <description value="Logisch model voor patiëntgegevens binnen het Santeon Informatiemodel."/>
+      <description value="Generiek logisch model voor patiëntgegevens binnen het Santeon Informatiemodel."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -789,7 +794,7 @@
           <valueUrl value="CLMs.html"/>
         </extension>
         <nameUrl value="CLMs.html"/>
-        <title value="Common Logical Models (SIM)"/>
+        <title value="SIM Logical Models"/>
         <generation value="markdown"/>
       </page>
       <page>

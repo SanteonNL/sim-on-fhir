@@ -18,7 +18,7 @@
   fhir:StructureDefinition.name [ fhir:value "DeidentificationRuleset"] ;
   fhir:StructureDefinition.title [ fhir:value "De-identification ruleset (model)"] ;
   fhir:StructureDefinition.status [ fhir:value "draft"] ;
-  fhir:StructureDefinition.date [ fhir:value "2026-10-16T14:27:57+00:00"^^xsd:dateTime] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-10-26T15:58:19+00:00"^^xsd:dateTime] ;
   fhir:StructureDefinition.publisher [ fhir:value "Santeon"] ;
   fhir:StructureDefinition.contact [
      fhir:index -1 ;

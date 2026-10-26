@@ -10,7 +10,7 @@
 
 **preferredReportName**: Rookstatus
 
-**validCodedValueSet**: [http://snomed.info/sct?fhir_vs=ecl/%3C%3C%2077176002%20OR%20%3C%3C%208392000%20OR%20%3C%3C%208517006](http://snomed.info/sct?fhir_vs=ecl/%3C%3C%2077176002%20OR%20%3C%3C%208392000%20OR%20%3C%3C%208517006)
+**validCodedValueSet**: [http://snomed.info/sct?fhir_vs=ecl/%3C%3C%2077176002%20OR%20%3C%3C%208392000%20OR%20%3C%3C%208517006](https://simplifier.net/resolve?scope=nictiz.nl.gbb@1.0.0-alpha.1&canonical=http://snomed.info/sct?fhir_vs=ecl/%3C%3C%2077176002%20OR%20%3C%3C%208392000%20OR%20%3C%3C%208517006)
 
 
 

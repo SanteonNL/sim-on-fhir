@@ -29,7 +29,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "name" : "AlcoholGebruikStatusCodelijst",
   "title" : "AlcoholGebruikStatusCodelijst",
   "status" : "draft",
-  "date" : "2026-10-16T14:27:57+00:00",
+  "date" : "2026-10-26T15:58:19+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -49,6 +49,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "compose" : {
     "include" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+      "version" : "4.0.0",
       "concept" : [{
         "code" : "OTH",
         "display" : "Anders"
