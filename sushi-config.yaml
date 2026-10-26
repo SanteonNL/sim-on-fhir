@@ -2,10 +2,12 @@ id: santeon.sim-on-fhir
 canonical: https://ig.santeon.nl/sim-on-fhir
 name: SanteonSimOnFhir
 title: "SIM on FHIR"
-description: "How the Santeon Informatie Model (SIM) maps to FHIR: common logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports."
+description: "How the Santeon Informatie Model (SIM) maps to FHIR: SIM logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports."
 status: draft
 version: 0.1.0
 fhirVersion: 4.0.1
+dependencies:
+  nictiz.nl.gbb: 1.0.0-alpha.1
 copyrightYear: 2025+
 releaseLabel: ci-build
 publisher:
@@ -18,7 +20,7 @@ pages:
     title: Home
 
   CLMs.md:
-    title: Common Logical Models (SIM)
+    title: SIM Logical Models
 
   profiles.md:
     title: FHIR Profiles

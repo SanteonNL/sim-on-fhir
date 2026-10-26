@@ -1,26 +1,25 @@
-### Common Logical Model SIMAlgemenMeting
+### Logical Model SIMAlgemenMeting
 
-See the [SIMAlgemenMeting](StructureDefinition-SIMAlgemeneMeting.html) Common Logical Model for details and [Mappings](StructureDefinition-SIMAlgemeneMeting-mappings.html) for mappingsdetails.
+See the [SIMAlgemenMeting](StructureDefinition-SIMAlgemeneMeting.html) Logical Model for details and [Mappings](StructureDefinition-SIMAlgemeneMeting-mappings.html) for mappingsdetails.
 
-### Common Logical Model SIMVerrichting
+### Logical Model SIMVerrichting
 
-See the [SIMVerrichting](StructureDefinition-SIMVerrichting.html) Common Logical Model for details and [Mappings](StructureDefinition-SIMVerrichting-mappings.html) for mappingsdetails.
+See the [SIMVerrichting](StructureDefinition-SIMVerrichting.html) Logical Model for details and [Mappings](StructureDefinition-SIMVerrichting-mappings.html) for mappingsdetails.
 
-### Common Logical Model SIMPatient
+### Logical Model SIMPatient
 
-See the [SIMPatient](StructureDefinition-SIMPatient.html) Common Logical Model for details and [Mappings](StructureDefinition-SIMPatient-mappings.html) for mappingsdetails.
+See the [SIMPatient](StructureDefinition-SIMPatient.html) Logical Model for details and [Mappings](StructureDefinition-SIMPatient-mappings.html) for mappingsdetails.
 
-### Common Logical Model SIMZorgtraject (DBC)
+### Logical Model SIMZorgtraject (DBC)
 
-See the [SIMDBC](StructureDefinition-SIMDBC.html) Common Logical Model for details and [Mappings](StructureDefinition-SIMDBC-mappings.html) for mappingsdetails.
+See the [SIMDBC](StructureDefinition-SIMDBC.html) Logical Model for details and [Mappings](StructureDefinition-SIMDBC-mappings.html) for mappingsdetails.
 
-### Common Logical Model SIMFasering
+### Logical Model SIMFasering
 
-WIP: _See the [SIMFasering](StructureDefinition-SIMFasering.html) Common Logical Model for details and [Mappings](StructureDefinition-SIMFasering-mappings.html) for mappingsdetails._
+WIP: _See the [SIMFasering](StructureDefinition-SIMFasering.html) Logical Model for details and [Mappings](StructureDefinition-SIMFasering-mappings.html) for mappingsdetails._
 
-### Common Logical Model SIMetc.
+### Logical Model SIMetc.
 
 Etc.
-
 
 
