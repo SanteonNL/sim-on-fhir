@@ -1,69 +1,117 @@
 Logical: SIMAlgemeneMeting
 Parent: Base
+// Parent: GBB - nog te beoordelen
 Id: SIMAlgemeneMeting
 Title: "Algemene meting (model)"
-Description: "Logisch model voor een algemeneMeting binnen het Santeon Informatiemodel."
+Description: "Generiek logisch model voor een algemene meting binnen het Santeon Informatiemodel."
+
+// IBD
+* MetingID 1..1 Identifier "Uniek ID (key) binnen patiënt per meting"
+* PatientIdentificatienummer 1..1 Identifier "Identificatienummer van de patiënt"
 
 * MetingNaam 1..1 CodeableConcept "Type of naam van de meting"
 * MetingNaam from Santeon_MetingNaamCodelijst (required)
-* MetingNaam obeys validatie-metingnaam-uitslagcode
+
 * MetingDatumTijd 0..1 dateTime "Datum en eventueel tijd die het dichtst ligt bij het daadwerkelijke meetmoment of de observatie"
-* UitslagWaarde 0..1 Quantity "Numerieke uitslag van de meting, met eenheid (UCUM) en eventueel een vergelijkingsoperator (<, <=, >=, >)"
-* UitslagWaarde obeys validatie-metingnaam-uitslagcode
+
+* UitslagWaarde 0..1 Quantity "Numerieke uitslag van de meting, met eenheid (UCUM) en eventueel een vergelijkingsoperator"
+
 * UitslagBereik 0..1 Range "Uitslag als bereik: een ondergrens en/of een bovengrens, beide inclusief"
+
 * UitslagCode 0..1 CodeableConcept "Gecodeerde uitslag van de meting"
-* UitslagCode ^definition = "Welke ValueSet van toepassing is op UitslagCode wordt bepaald door MetingNaam, zie invariants."
-* UitslagCode obeys validatie-metingnaam-uitslagcode
+* UitslagCode ^definition = "Welke ValueSet van toepassing is op UitslagCode wordt bepaald door MetingNaam. De bijbehorende terminologierelaties worden afzonderlijk beheerd."
+
 * UitslagDatumTijd 0..1 dateTime "Datum en eventueel tijd als antwoord op een vraag, bijvoorbeeld: sinds wanneer rookt u? Een vage datumtijd (alleen jaar of datum) is niet wenselijk maar wel toegestaan."
 
-// Een meting heeft één uitslag: in FHIR is dat Observation.value[x] met één van deze typen
-// (Quantity, Range, CodeableConcept, dateTime).
+* Meetmethode 0..1 CodeableConcept "Methode waarmee de meting is uitgevoerd"
+
+// Een meting heeft maximaal één uitslagtype.
+// FHIR: Observation.value[x] met Quantity, Range,
+// CodeableConcept of dateTime.
+//
+// Validatie van toegestane uitslagtypen en ValueSets
+// per MetingNaam wordt later uitgewerkt met
+// ObservationDefinition en de SIM-terminologierelaties.
 
 
-// Validatieregel of Invariants
-Invariant: validatie-metingnaam-uitslagcode
-Description: "Valideert de relatie tussen MetingNaam en het bijbehorende type uitslag. Voor metingen met een gecodeerde uitslag moet UitslagCode afkomstig zijn uit de ValueSet die aan de betreffende MetingNaam is gekoppeld. Bijvoorbeeld: wanneer MetingNaam alcoholgebruik is (SNOMED CT 228273003), moet UitslagCode afkomstig zijn uit AlcoholGebruikStatusCodelijst. Dit geldt voor alle vastgelegde [MetingNaam-UitslagCode](<a href='https://dev.azure.com/SanteonNL/Santeon/_git/HipsETL?path=/SIM/informatiemodel%20Santeon%20valueSets%20relation.csv</a>)-combinaties. Metingen die niet in deze combinaties zijn vastgelegd, maar wel voorkomen in Santeon_MetingNaamCodelijst, hebben een UitslagWaarde als uitkomst."
-Severity: #error
-Expression: "(MetingNaam.coding.where(system = 'http://snomed.info/sct' and code = '228273003').exists() implies UitslagCode.memberOf('https://ig.santeon.nl/sim-on-fhir/ValueSet/AlcoholGebruikStatusCodelijst')) or (MetingNaam.coding.where(system = 'http://loinc.org' and code = '38445-3').exists() implies UitslagWaarde.exists())"
-
-// Mappings
+// Mapping vanuit SIM CSV
 Mapping: SIMAlgemeneMetingFromSIMCSV
 Id: SIMAlgemeneMetingFromSIMCSV
-Title: "SIM CSVs"
+Title: "SIM CSV"
 Source: SIMAlgemeneMeting
-Target: "SIM CSVs"
+Target: "urn:santeon:sim:csv"
 
-* MetingNaam.coding.system -> "MetingNaamCodeSysteem"
-* MetingNaam.coding.code -> "MetingNaamCode"
-* MetingNaam.coding.display -> "MetingNaamOmschrijving"
-* MetingDatumTijd -> "MetingDatumTijd"
-* UitslagWaarde.value -> "UitslagWaarde"
-* UitslagWaarde.system -> "UitslagWaardeEenheidSysteem"
-* UitslagWaarde.code -> "UitslagWaardeEenheid"
-* UitslagWaarde.comparator -> "UitslagWaardeOperator"
-* UitslagBereik.low.value -> "ObservationValueRangeLow"
-* UitslagBereik.low.unit -> "ObservationValueRangeLowUnit"
-* UitslagBereik.low.system -> "ObservationValueRangeLowSystem"
-* UitslagBereik.low.code -> "ObservationValueRangeLowCode"
-* UitslagBereik.high.value -> "ObservationValueRangeHigh"
-* UitslagBereik.high.unit -> "ObservationValueRangeHighUnit"
-* UitslagBereik.high.system -> "ObservationValueRangeHighSystem"
-* UitslagBereik.high.code -> "ObservationValueRangeHighCode"
-* UitslagCode.coding.system -> "UitslagCodeSysteem"
-* UitslagCode.coding.code -> "UitslagCode"
-* UitslagCode.coding.display -> "UitslagCodeOmschrijving"
-* UitslagDatumTijd -> "UitslagDatumTijd"
+// Identificatie
+* MetingID -> "AlgemeneMeting;MetingID"
+* PatientIdentificatienummer -> "AlgemeneMeting;Identificatienummer"
 
+// Meting
+* MetingNaam.coding.system -> "AlgemeneMeting;MetingNaamCodeSysteem"
+* MetingNaam.coding.code -> "AlgemeneMeting;MetingNaamCode"
+* MetingNaam.coding.display -> "AlgemeneMeting;MetingNaamOmschrijving"
+* MetingDatumTijd -> "AlgemeneMeting;MetingDatumTijd"
+
+// Numerieke uitslag
+* UitslagWaarde.value -> "AlgemeneMeting;UitslagWaarde"
+* UitslagWaarde.system -> "AlgemeneMeting;UitslagWaardeEenheidSysteem"
+* UitslagWaarde.code -> "AlgemeneMeting;UitslagWaardeEenheid"
+* UitslagWaarde.comparator -> "AlgemeneMeting;UitslagWaardeOperator"
+
+// Uitslag als bereik
+* UitslagBereik.low.value -> "AlgemeneMeting;ObservationValueRangeLow"
+* UitslagBereik.low.unit -> "AlgemeneMeting;ObservationValueRangeLowUnit"
+* UitslagBereik.low.system -> "AlgemeneMeting;ObservationValueRangeLowSystem"
+* UitslagBereik.low.code -> "AlgemeneMeting;ObservationValueRangeLowCode"
+* UitslagBereik.high.value -> "AlgemeneMeting;ObservationValueRangeHigh"
+* UitslagBereik.high.unit -> "AlgemeneMeting;ObservationValueRangeHighUnit"
+* UitslagBereik.high.system -> "AlgemeneMeting;ObservationValueRangeHighSystem"
+* UitslagBereik.high.code -> "AlgemeneMeting;ObservationValueRangeHighCode"
+
+// Gecodeerde uitslag
+* UitslagCode.coding.system -> "AlgemeneMeting;UitslagCodeSysteem"
+* UitslagCode.coding.code -> "AlgemeneMeting;UitslagCode"
+* UitslagCode.coding.display -> "AlgemeneMeting;UitslagCodeOmschrijving"
+
+// Datum/tijd als uitslag
+* UitslagDatumTijd -> "AlgemeneMeting;UitslagDatumTijd"
+
+// Meetmethode
+* Meetmethode.coding.system -> "AlgemeneMeting;MeetmethodeCodeSysteem"
+* Meetmethode.coding.code -> "AlgemeneMeting;MeetmethodeCode"
+* Meetmethode.coding.display -> "AlgemeneMeting;MeetmethodeOmschrijving"
+
+
+// Mapping naar FHIR
 Mapping: SIMAlgemeneMetingToFHIR
 Id: SIMAlgemeneMetingToFHIR
-Title: "FHIR"
+Title: "SIMAlgemeneMeting naar FHIR"
 Source: SIMAlgemeneMeting
 Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san"
-// "http://hl7.org/fhir/StructureDefinition/observation-san"
 
+// Identificatie
+* MetingID -> "Observation.identifier"
+* PatientIdentificatienummer -> "Observation.subject" "Patient-reference op basis van identificatienummer."
+
+// Meting
 * MetingNaam -> "Observation.code"
 * MetingDatumTijd -> "Observation.effectiveDateTime"
+
+// Uitslag
 * UitslagWaarde -> "Observation.valueQuantity"
 * UitslagBereik -> "Observation.valueRange"
 * UitslagCode -> "Observation.valueCodeableConcept"
 * UitslagDatumTijd -> "Observation.valueDateTime"
+
+// Meetmethode
+* Meetmethode -> "Observation.method"
+
+// Nog uit te werken:
+// Observation.status (FHIR verplicht)
+// Selectie van maximaal één Observation.value[x]
+// Conditionele terminologie via ObservationDefinition
+// Meetmethode: codeersysteem en ValueSet controleren
+
+// GBB: geen overeenkomstig Logical Model beschikbaar
+// in Nictiz GBB 1.0.0-alpha.1.
+// GBB-mapping toevoegen zodra een passend generiek
+// Observation/Measurement-model is gepubliceerd.

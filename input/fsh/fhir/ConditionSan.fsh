@@ -3,9 +3,15 @@ Parent: Condition
 Id: condition-san
 Title: "Condition (SAN)"
 Description: """
-**De-identificatie:**
-- identifier → hashed
-- subject → hashed
+Generiek Santeon FHIR R4-profiel voor aandoeningen en diagnoses.
+
+De aansluiting op het Santeon Informatiemodel wordt
+vastgelegd via afzonderlijke mappings naar de
+relevante bronmodellen.
+
+De-identificatie wordt uitgevoerd volgens afzonderlijke
+transformatiespecificaties en is geen inherente
+eigenschap van dit profiel.
 """
 
 // Meta overhead
@@ -17,10 +23,15 @@ Description: """
 * extension 0..0
 * modifierExtension 0..0
 
-// identifier
-* identifier 1..1
+// Identificatie
+* identifier 0..*
 * identifier.use 0..0
 * identifier.value 1..1
+
+// Condition.identifier wordt gevuld wanneer een
+// betrouwbare bronidentifier beschikbaar is.
+// ProbleemID mag niet zonder onderbouwing worden
+// gebruikt als identificatie van een DBC-diagnose.
 
 // code
 * code 1..1
@@ -35,9 +46,6 @@ Description: """
 * subject only Reference(PatientSan)
 
 // Laat alle andere elementen weg
-* clinicalStatus 0..0
-* verificationStatus 0..0
-* category 0..0
 * severity 0..0
 * bodySite 0..0
 * encounter 0..0
@@ -50,24 +58,26 @@ Description: """
 * evidence 0..0
 * note 0..0
 
-// mappings SIM -> FHIR
-* ^mapping[+].identity = "sim"
-* ^mapping[=].name = "Santeon Informatie Model"
-* ^mapping[=].comment = "Mapping van Condition elementen naar SIM"
+Mapping: ConditionSanFromDBC
+Id: ConditionSanFromDBC
+Title: "ConditionSan vanuit SIM DBC"
+Source: ConditionSan
+Target: "urn:santeon:sim:csv"
 
-* identifier.value ^mapping[0].identity = "sim"
-* identifier.value ^mapping[0].map = "Probleem;ProbleemID"
-* identifier.value ^mapping[0].comment = "hashed"
+// Patient
+* subject -> "DBC;Identificatienummer" "Patient-reference op basis van identificatienummer."
 
-* code.coding.code ^mapping[0].identity = "sim"
-* code.coding.code ^mapping[0].map = "DBC;SpecialismeDiagnoseCode"
+// Diagnose
+// Alleen wanneer SpecialismeDiagnose daadwerkelijk
+// een klinische diagnose vertegenwoordigt.
+* code.coding.system -> "DBC;SpecialismeDiagnoseSysteem"
+* code.coding.code -> "DBC;SpecialismeDiagnoseCode"
+* code.coding.display -> "DBC;SpecialismeDiagnoseOmschrijving"
 
-* code.coding.system ^mapping[0].identity = "sim"
-* code.coding.system ^mapping[0].map = "DBC;SpecialismeDiagnoseCodeSysteem"
-
-* code.coding.display ^mapping[0].identity = "sim"
-* code.coding.display ^mapping[0].map = "DBC;SpecialismeDiagnoseOmschrijving"
-
-* subject ^mapping[0].identity = "sim"
-* subject ^mapping[0].map = "Probleem;Identificatienummer"
-* subject ^mapping[0].comment = "hashed"
+// TODO:
+// Verifiëren of SpecialismeDiagnose naar Condition.code
+// mag worden gemapt, of dat DBC.Diagnose passender is.
+//
+// Geen identifier-mapping:
+// DBC.SubtrajectNr identificeert het subtraject,
+// niet automatisch de Condition.

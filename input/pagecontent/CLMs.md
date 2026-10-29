@@ -1,25 +1,27 @@
-### Logical Model SIMAlgemenMeting
+<!-- manual-sim:start -->
 
-See the [SIMAlgemenMeting](StructureDefinition-SIMAlgemeneMeting.html) Logical Model for details and [Mappings](StructureDefinition-SIMAlgemeneMeting-mappings.html) for mappingsdetails.
+### Logical Model Algemene meting (model)
 
-### Logical Model SIMVerrichting
+See the [SIMAlgemeneMeting](StructureDefinition-SIMAlgemeneMeting.html) Logical Model for details and [Mappings](StructureDefinition-SIMAlgemeneMeting-mappings.html) for mapping details.
 
-See the [SIMVerrichting](StructureDefinition-SIMVerrichting.html) Logical Model for details and [Mappings](StructureDefinition-SIMVerrichting-mappings.html) for mappingsdetails.
+### Logical Model Contact (model)
 
-### Logical Model SIMPatient
+See the [SIMContact](StructureDefinition-SIMContact.html) Logical Model for details and [Mappings](StructureDefinition-SIMContact-mappings.html) for mapping details.
 
-See the [SIMPatient](StructureDefinition-SIMPatient.html) Logical Model for details and [Mappings](StructureDefinition-SIMPatient-mappings.html) for mappingsdetails.
+### Logical Model DBC/Zorgtraject (model)
 
-### Logical Model SIMZorgtraject (DBC)
+See the [SIMDBC](StructureDefinition-SIMDBC.html) Logical Model for details and [Mappings](StructureDefinition-SIMDBC-mappings.html) for mapping details.
 
-See the [SIMDBC](StructureDefinition-SIMDBC.html) Logical Model for details and [Mappings](StructureDefinition-SIMDBC-mappings.html) for mappingsdetails.
+### Logical Model Fasering (model)
 
-### Logical Model SIMFasering
+See the [SIMFasering](StructureDefinition-SIMFasering.html) Logical Model for details and [Mappings](StructureDefinition-SIMFasering-mappings.html) for mapping details.
 
-WIP: _See the [SIMFasering](StructureDefinition-SIMFasering.html) Logical Model for details and [Mappings](StructureDefinition-SIMFasering-mappings.html) for mappingsdetails._
+### Logical Model Patiënt (model)
 
-### Logical Model SIMetc.
+See the [SIMPatient](StructureDefinition-SIMPatient.html) Logical Model for details and [Mappings](StructureDefinition-SIMPatient-mappings.html) for mapping details.
 
-Etc.
+### Logical Model Verrichting (model)
 
+See the [SIMVerrichting](StructureDefinition-SIMVerrichting.html) Logical Model for details and [Mappings](StructureDefinition-SIMVerrichting-mappings.html) for mapping details.
 
+<!-- manual-sim:end -->

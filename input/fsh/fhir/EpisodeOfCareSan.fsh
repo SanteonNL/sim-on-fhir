@@ -1,99 +1,88 @@
+
 Profile: EpisodeOfCareSan
 Parent: EpisodeOfCare
 Id: episodeOfCare-san
 Title: "EpisodeOfCare (SAN)"
 Description: """
-**De-identificatie:**
-- identifier → hashed
-- patient → hashed
+Generiek Santeon FHIR R4-profiel voor zorgepisodes.
+
+Gebaseerd op het Santeon Informatiemodel (SIMDBC), waarbij
+nog moet worden vastgesteld hoe een DBC-subtraject zich
+verhoudt tot een FHIR EpisodeOfCare.
+
+De-identificatie wordt uitgevoerd volgens afzonderlijke
+transformatiespecificaties en is geen inherente
+eigenschap van dit profiel.
 """
 
-// Meta overhead
-* meta 0..0
-* implicitRules 0..0
-* language 0..0
-* text 0..0
-* contained 0..0
-* extension 0..0
-* modifierExtension 0..0
-
-// identifier
-* identifier 1..1
-* identifier.use 0..0
+// Identificatie: SIMDBC.SubtrajectNummer is optioneel.
+// FHIR staat meerdere identifiers toe; niet verplicht stellen.
+* identifier 0..*
 * identifier.value 1..1
 
-// status verplicht in base
-* status 1..1
+// EpisodeOfCare.status is verplicht vanuit FHIR R4 (1..1).
+// TODO: herkomst of gevalideerde ETL2-afleidingsregel bepalen.
+// DBCgeldig is administratieve geldigheid en geen EpisodeOfCare.status.
 
-// patient
+// PatientIdentificatienummer
 * patient 1..1
 * patient only Reference(PatientSan)
 
-// period
-* period 1..1
-* period.start 1..1
+// ZorgType: optioneel en alleen gebruiken wanneer het
+// zorgtype de zorgepisode inhoudelijk correct classificeert.
+* type 0..*
+
+// Diagnose
+// Een zorgepisode kan verwijzen naar een of meer
+// ConditionSan-resources met relevante diagnoses.
+* diagnosis 0..*
+* diagnosis.condition only Reference(ConditionSan)
+// TODO:
+// Vaststellen welke SIM-diagnose wordt gerepresenteerd
+// in ConditionSan.code en hoe de bijbehorende
+// Condition-resource wordt geïdentificeerd.
+
+// OpeningsDatum / SluitingsDatum zijn optioneel in SIMDBC.
+// Alleen mappen wanneer de administratieve DBC-periode
+// overeenkomt met de betekenis van EpisodeOfCare.period.
+* period 0..1
+* period.start 0..1
 * period.end 0..1
 
-// type
-* type 1..1
-* type.coding 1..*
-* type.coding.system 1..1
-* type.coding.code 1..1
-* type.coding.display 0..1
+// Overige FHIR-elementen blijven beschikbaar.
+// Toepassingsspecifieke 0..0-beperkingen kunnen later in
+// een afgeleid profiel worden opgenomen.
 
-// diagnose (diagnosis.codition verplicht in base) extensie gebasseerd op het SIM, dit moet naar condition gemodelleerd worden volgens FHIR
-* diagnosis 1..*
-// * diagnosis.extension contains SpecialismeDiagnoseCode named SpecialismeDiagnoseCode 1..1
-* diagnosis.condition 1..1
-* diagnosis.condition only Reference(ConditionSan)
-* diagnosis.modifierExtension 0..0
 
-// Laat alle andere elementen weg
-* statusHistory 0..0
-* managingOrganization 0..0
-* referralRequest 0..0
-* careManager 0..0
-* team 0..0
-* account 0..0
+Mapping: EpisodeOfCareSanFromSIMCSV
+Id: sim-dbc
+Title: "Santeon Informatiemodel (SIM CSV)"
+Description: "Informatieve mapping van FHIR EpisodeOfCare naar SIM DBC-bronvelden."
+Source: EpisodeOfCareSan
+Target: "urn:santeon:sim:csv"
 
-// mappings SIM -> FHIR
-* ^mapping[+].identity = "sim"
-* ^mapping[=].name = "Santeon Informatie Model"
-* ^mapping[=].comment = "Mapping van EpisodeOfCare elementen naar SIM"
+// SubtrajectNummer: alleen bij één EpisodeOfCare per DBC-subtraject.
+// De bron gebruikt identifier_system|identifier_value.
+* identifier.system -> "DBC;SubtrajectNr" "Systeemdeel van de samengestelde identifier."
+* identifier.value -> "DBC;SubtrajectNr" "Waardedeel van de samengestelde identifier; hash volgens ETL-specificatie."
 
-* identifier.value ^mapping[0].identity = "sim"
-* identifier.value ^mapping[0].map = "DBC;SubtrajectNr"
-* identifier.value ^mapping[0].comment = "hashed"
+// PatientIdentificatienummer: eerst een PatientSan-reference bepalen.
+* patient -> "DBC;Identificatienummer" "Reference naar PatientSan op basis van patiëntidentifier."
 
-* patient ^mapping[0].identity = "sim"
-* patient ^mapping[0].map = "DBC;Identificatienummer"
-* patient ^mapping[0].comment = "hashed"
+// ZorgType: inhoudelijke overeenkomst met EpisodeOfCare.type verifiëren.
+* type.coding.system -> "DBC;ZorgTypeCodeSysteem"
+* type.coding.code -> "DBC;ZorgTypeCode"
+* type.coding.display -> "DBC;ZorgTypeOmschrijving"
 
-* status ^mapping[0].identity = "sim"
-* status ^mapping[0].map = "DBC;DBCGeldig"
+// Periode: datumprecisie behouden; geen tijdstip verzinnen.
+* period.start -> "DBC;DBCOpeningsDatum" "Alleen indien gelijk aan begin van de zorgepisode."
+* period.end -> "DBC;DBCSluitingsDatum" "Alleen indien gelijk aan einde van de zorgepisode."
 
-* period.start ^mapping[0].identity = "sim"
-* period.start ^mapping[0].map = "DBC;DBCOpeningsDatum"
-
-* type.coding.code ^mapping[0].identity = "sim"
-* type.coding.code ^mapping[0].map = "DBC;ZorgTypeCode"
-
-* type.coding.system ^mapping[0].identity = "sim"
-* type.coding.system ^mapping[0].map = "DBC;ZorgTypeCodeSysteem"
-
-* type.coding.display ^mapping[0].identity = "sim"
-* type.coding.display ^mapping[0].map = "DBC;ZorgTypeOmschrijving"
-
-* diagnosis.condition ^mapping[0].identity = "sim"
-* diagnosis.condition ^mapping[0].map = "DBC;SpecialismeDiagnoseCode"
-* diagnosis.condition ^mapping[0].comment =
-    "Reference naar ConditionSan; de specialismediagnose wordt gerepresenteerd in ConditionSan.code"
-
-* diagnosis.extension.valueCodeableConcept.coding.code ^mapping[0].identity = "sim"
-* diagnosis.extension.valueCodeableConcept.coding.code ^mapping[0].map = "DBC;SpecialismeDiagnoseCode"
-
-* diagnosis.extension.valueCodeableConcept.coding.system ^mapping[0].identity = "sim"
-* diagnosis.extension.valueCodeableConcept.coding.system ^mapping[0].map = "DBC;SpecialismeDiagnoseCodeSysteem"
-
-* diagnosis.extension.valueCodeableConcept.coding.display ^mapping[0].identity = "sim"
-* diagnosis.extension.valueCodeableConcept.coding.display ^mapping[0].map = "DBC;SpecialismeDiagnoseOmschrijving"
+// Nog uit te werken:
+// EpisodeOfCare.status: verplicht, geen directe bronmapping.
+// Diagnose en SpecialismeDiagnose: eventueel Condition.code,
+// via EpisodeOfCare.diagnosis.condition (Reference(Condition)).
+// Geen directe mapping zonder passende Condition-resource.
+// ZorgProduct, Gevuld, Geldig en UitvoerderSpecialisme:
+// geen semantisch bevestigde EpisodeOfCare-mapping.
+// ZorgtrajectNummer en Verwijzer: momenteel uitgeschakeld in LM.

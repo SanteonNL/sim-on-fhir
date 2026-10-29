@@ -1,73 +1,138 @@
 Logical: SIMDBC
 Parent: Base
+// Parent: GBB - nog te beoordelen
 Id: SIMDBC
 Title: "DBC/Zorgtraject (model)"
-Description: "Logisch model voor een DBC binnen het Santeon Informatiemodel."
+Description: "Generiek logisch model voor een DBC binnen het Santeon Informatiemodel."
 
-* Patient 0..1 SIMPatient "Patiënt waarop de DBC betrekking heeft"
+// IBD
+* PatientIdentificatienummer 1..1 Identifier "Identificatienummer van de patiënt"
 * SubtrajectNummer 0..1 Identifier "Uniek identificatienummer van het DBC-subtraject"
-* ZorgtrajectNummer 0..1 Identifier "Identificatienummer van het zorgtraject"
-* Diagnose 0..1 string "Diagnosecode en omschrijving"
+
+* Diagnose 0..1 CodeableConcept "Diagnose behorend bij de DBC"
 * SpecialismeDiagnose 0..1 CodeableConcept "Specialisme en diagnose behorend bij de DBC"
-* SpecialismeDiagnose from https://ig.santeon.nl/sim-on-fhir/ValueSet/Specialisme_DiagnoseCodelijstDummy (required)
+
 * ZorgType 0..1 CodeableConcept "Zorgtype van de DBC"
 * ZorgProduct 0..1 CodeableConcept "Zorgproduct van de DBC"
+
 * Gevuld 0..1 boolean "Geeft aan of de DBC verrichtingen bevat"
-* Geldig 0..1 boolean "Geeft aan of de DBC geldig is"
+* Geldig 0..1 boolean "Geeft aan of de DBC administratief geldig is"
+
 * OpeningsDatum 0..1 date "Openingsdatum van de DBC"
 * SluitingsDatum 0..1 date "Sluitingsdatum van de DBC"
-* UitvoerderSpecialisme 0..1 Coding "Specialisme van de uitvoerder"
-* Verwijzer 0..1 CodeableConcept "Oorsprong van de verwijzing"
 
+* UitvoerderSpecialisme 0..1 Coding "Specialisme van de uitvoerder"
+
+// Overig van model DBC
+// * ZorgtrajectNummer 0..1 Identifier "Identificatienummer van het zorgtraject"
+// * Verwijzer 0..1 CodeableConcept "Oorsprong van de verwijzing"
+
+// Terminologie nog te beoordelen:
+// Diagnose: coderingssysteem uit SIM bron vaststellen
+// SpecialismeDiagnose: Specialisme_DiagnoseCodelijst
+// ZorgType: ZorgTypeCode
+// ZorgProduct: ZorgProductCode
+// UitvoerderSpecialisme: SpecialismeAGBCodelijst
+// Verwijzer: bijbehorende ValueSet controleren
+
+// De bestaande Dummy ValueSet-binding voor
+// SpecialismeDiagnose wordt pas toegevoegd
+// wanneer de definitieve ValueSet is gevalideerd.
+
+
+// Mapping vanuit SIM CSV
 Mapping: SIMDBCFromSIMCSV
 Id: SIMDBCFromSIMCSV
-Title: "SIM CSVs"
+Title: "SIM CSV"
 Source: SIMDBC
-Target: "SIM CSVs"
+Target: "urn:santeon:sim:csv"
 
-* Patient -> "Identificatienummer"
+// Identificatie
+* PatientIdentificatienummer -> "DBC;Identificatienummer"
+* SubtrajectNummer -> "DBC;SubtrajectNr"
 
-* SubtrajectNummer -> "SubtrajectNr"
-* ZorgtrajectNummer -> "ZorgtrajectNr"
+// Diagnose
+* Diagnose.coding.code -> "DBC;DiagnoseCode"
+* Diagnose.coding.display -> "DBC;DiagnoseOmschrijving"
 
-* SpecialismeDiagnose.coding.system -> "SpecialismeDiagnoseSysteem"
-* SpecialismeDiagnose.coding.code -> "SpecialismeDiagnoseCode"
-* SpecialismeDiagnose.coding.display -> "SpecialismeDiagnoseOmschrijving"
+* SpecialismeDiagnose.coding.system -> "DBC;SpecialismeDiagnoseSysteem"
+* SpecialismeDiagnose.coding.code -> "DBC;SpecialismeDiagnoseCode"
+* SpecialismeDiagnose.coding.display -> "DBC;SpecialismeDiagnoseOmschrijving"
 
-* ZorgType.coding.system -> "ZorgTypeCodeSysteem"
-* ZorgType.coding.code -> "ZorgTypeCode"
-* ZorgType.coding.display -> "ZorgTypeOmschrijving"
+// Zorgtype
+* ZorgType.coding.system -> "DBC;ZorgTypeCodeSysteem"
+* ZorgType.coding.code -> "DBC;ZorgTypeCode"
+* ZorgType.coding.display -> "DBC;ZorgTypeOmschrijving"
 
-* ZorgProduct.coding.system -> "ZorgProductCodeSysteem"
-* ZorgProduct.coding.code -> "ZorgProductCode"
-* ZorgProduct.coding.display -> "ZorgProductOmschrijving"
+// Zorgproduct
+* ZorgProduct.coding.system -> "DBC;ZorgProductCodeSysteem"
+* ZorgProduct.coding.code -> "DBC;ZorgProductCode"
+* ZorgProduct.coding.display -> "DBC;ZorgProductOmschrijving"
 
-* Gevuld -> "DBCgevuld"
-* Geldig -> "DBCgeldig"
+// DBC kenmerken
+* Gevuld -> "DBC;DBCgevuld"
+* Geldig -> "DBC;DBCgeldig"
 
-* OpeningsDatum -> "DBCOpeningsDatum"
-* SluitingsDatum -> "DBCSluitingsDatum"
+* OpeningsDatum -> "DBC;DBCOpeningsDatum"
+* SluitingsDatum -> "DBC;DBCSluitingsDatum"
 
-* UitvoerderSpecialisme.system -> "Uitvoerder_SpecialismeSysteem"
-* UitvoerderSpecialisme.code -> "Uitvoerder_Specialisme"
+// Uitvoerend specialisme
+* UitvoerderSpecialisme.system -> "DBC;Uitvoerder_SpecialismeSysteem"
+* UitvoerderSpecialisme.code -> "DBC;Uitvoerder_Specialisme"
 
-* Verwijzer.coding.system -> "DBCverwijzerCodeSysteem"
-* Verwijzer.coding.code -> "DBCverwijzerCode"
-* Verwijzer.coding.display -> "DBCverwijzerCodeOmschrijving"
+// Overig van model DBC
+// * ZorgtrajectNummer -> "DBC;ZorgtrajectNr"
 
+// * Verwijzer.coding.system -> "DBC;DBCverwijzerCodeSysteem"
+// * Verwijzer.coding.code -> "DBC;DBCverwijzerCode"
+// * Verwijzer.coding.display -> "DBC;DBCverwijzerCodeOmschrijving"
+
+
+// Mapping naar FHIR
 Mapping: SIMDBCToFHIR
 Id: SIMDBCToFHIR
-Title: "SIM DBC naar FHIR"
+Title: "SIMDBC naar FHIR"
 Source: SIMDBC
 Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/episodeOfCare-san"
-//http://hl7.org/fhir/StructureDefinition/episodeOfCare-san"
 
-* Patient -> "EpisodeOfCare.patient"
-* SubtrajectNummer -> "EpisodeOfCare.identifier"
-// let op: vereist transformatielogica
-* Geldig -> "EpisodeOfCare.status"
-* OpeningsDatum -> "EpisodeOfCare.period.start"
-* SluitingsDatum -> "EpisodeOfCare.period.end"
-* ZorgType -> "EpisodeOfCare.type"
-// de diagnose wordt gerepresenteerd in Condition.code (via EpisodeOfCare.diagnosis.condition)
-* SpecialismeDiagnose -> "EpisodeOfCare.diagnosis.condition"
+// Identificatie
+* PatientIdentificatienummer -> "EpisodeOfCare.patient" "Patient-reference op basis van identificatienummer."
+* SubtrajectNummer -> "EpisodeOfCare.identifier" "Indien één EpisodeOfCare één DBC-subtraject representeert."
+
+// DBC kenmerken
+* ZorgType -> "EpisodeOfCare.type" "Mits het zorgtype de zorgepisode correct classificeert."
+
+// Periode
+* OpeningsDatum -> "EpisodeOfCare.period.start" "Alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."
+* SluitingsDatum -> "EpisodeOfCare.period.end" "Alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."
+// Nog uit te werken:
+
+// EpisodeOfCare.status:
+// Verplicht in FHIR R4; niet rechtstreeks afleiden uit DBCgeldig.
+
+// Diagnose en SpecialismeDiagnose:
+// Kunnen via ConditionSan.code worden gerepresenteerd
+// wanneer de codering daadwerkelijk een klinische diagnose beschrijft.
+// EpisodeOfCare.diagnosis.condition verwijst naar deze ConditionSan.
+//
+// TODO:
+// - Bepalen of Diagnose of SpecialismeDiagnose de klinische diagnose representeert.
+// - Vaststellen hoe de ConditionSan wordt geïdentificeerd of aangemaakt.
+// - Vaststellen hoe de specialismecontext behouden blijft.
+// - Controleren dat Condition.subject en EpisodeOfCare.patient
+//   naar dezelfde patiënt verwijzen.
+
+// ZorgtrajectNummer:
+// Relatie tussen zorgtraject en DBC-subtraject uitwerken
+// voordat een FHIR-mapping wordt gekozen.
+
+// ZorgProduct, Gevuld, Geldig, UitvoerderSpecialisme en Verwijzer:
+// Nog geen directe FHIR-mapping vastgesteld.
+
+
+// GBB: geen overeenkomstig Logical Model beschikbaar
+// in Nictiz GBB 1.0.0-alpha.1.
+// GBB-mapping toevoegen zodra een passend generiek
+// DBC/EpisodeOfCare-model is gepubliceerd.
+
+

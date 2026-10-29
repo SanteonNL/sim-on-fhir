@@ -3,12 +3,17 @@ Parent: Procedure
 Id: procedure-san
 Title: "Procedure (SAN)"
 Description: """
-**De-identificatie:**
-- identifier → hashed
-- subject → hashed
+Generiek Santeon FHIR R4-profiel voor verrichtingen.
+
+Gebaseerd op het Santeon Informatiemodel (SIMVerrichting).
+
+De-identificatie wordt uitgevoerd volgens afzonderlijke
+transformatiespecificaties en is geen inherente
+eigenschap van dit profiel.
 """
 
-// Meta overhead
+// Meta overhead: bestaande profielkeuze; opnieuw beoordelen
+// zodra meta.profile of meta.security vereist is.
 * meta 0..0
 * implicitRules 0..0
 * language 0..0
@@ -17,36 +22,52 @@ Description: """
 * extension 0..0
 * modifierExtension 0..0
 
-// identifier
+// SIMVerrichting.VerrichtingID
 * identifier 1..1
 * identifier.use 0..0
 * identifier.value 1..1
+// identifier.system blijft toegestaan, omdat het SIM
+// identifier_system|identifier_value ondersteunt.
 
-// status verplicht in base
+// Procedure.status is verplicht vanuit FHIR R4 (1..1).
+// De huidige SIMVerrichting bevat geen statusveld.
+// TODO: herkomst of gevalideerde ETL2-afleidingsregel vaststellen.
 
-// code
-* code 1..1
+// SIMVerrichting.VerrichtingType
+// Optioneel conform SIM; afzonderlijke NZa-, SNOMED CT-
+// en DHD-coderingen alleen combineren bij semantische overeenkomst.
+* code 0..1
 * code.coding 1..*
 * code.coding.system 1..1
 * code.coding.code 1..1
 * code.coding.display 0..1
 
-// subject
+// SIMVerrichting.VerrichtingCategorie
+* category 0..1
+
+// SIMVerrichting.PatientIdentificatienummer
 * subject 1..1
 * subject only Reference(PatientSan)
 
-// performed[x]
-* performed[x] only Period
-* performedPeriod.start 1..1
-* performedPeriod.end 0..1
+// SIMVerrichting.ContactID
+* encounter 0..1
+* encounter only Reference(EncounterSan)
 
-// Laat alle andere elementen weg
+// SIMVerrichting.VerrichtingStartDatum
+// Een afzonderlijk tijdstip -> performedDateTime.
+// Een verrichting met tijdsduur -> performedPeriod.
+// Startdatum is nullable in het SIM; dus niet verplicht stellen.
+* performed[x] only dateTime or Period
+* performedPeriod.start 0..1
+* performedPeriod.end 0..1
+// SIMVerrichting.VerrichtingEindDatum staat momenteel uit.
+
+// Overige elementen: bestaande, beperkte scope van ProcedureSan.
+// Voor een breder generiek profiel heroverwegen of 0..0 nodig is.
 * instantiatesCanonical 0..0
 * instantiatesUri 0..0
 * partOf 0..0
 * statusReason 0..0
-* category 0..0
-* encounter 0..0
 * recorder 0..0
 * asserter 0..0
 * location 0..0
@@ -62,34 +83,51 @@ Description: """
 * focalDevice 0..0
 * usedReference 0..0
 * usedCode 0..0
+// performer blijft beschikbaar voor eventuele latere mapping
+// van UitvoerderSpecialisme, mits PractitionerRole bekend is.
 
 
-// mappings SIM -> FHIR
-* ^mapping[+].identity = "sim"
-* ^mapping[=].name = "Santeon Informatie Model"
-* ^mapping[=].comment = "Mapping van Procedure elementen naar SIM"
+Mapping: ProcedureSanFromSIMCSV
+Id: sim
+Title: "Santeon Informatiemodel (SIM CSV)"
+Description: "Informatieve mapping van het FHIR-profiel naar SIM CSV-bronvelden."
+Source: ProcedureSan
+Target: "urn:santeon:sim:csv"
 
-* identifier.value ^mapping[0].identity = "sim"
-* identifier.value ^mapping[0].map = "Verrichting;VerrichtingID"
-* identifier.value ^mapping[0].comment = "hashed"
+// VerrichtingID: samengestelde bronidentifier
+* identifier.system -> "Verrichting;VerrichtingID" "Systeemdeel van identifier_system|identifier_value."
+* identifier.value -> "Verrichting;VerrichtingID" "Waardedeel; hashed."
 
-* subject ^mapping[0].identity = "sim"
-* subject ^mapping[0].map = "Verrichting;Identificatienummer"
-* subject ^mapping[0].comment = "hashed"
+// PatientIdentificatienummer: eerst een PatientSan-reference bepalen
+* subject -> "Verrichting;Identificatienummer" "Reference naar gepseudonimiseerde PatientSan op basis van patiëntidentifier."
 
-* code.coding.code ^mapping[0].identity = "sim"
-* code.coding.code ^mapping[0].map = "Verrichting;VerrichtingTypeCode"
+// ContactID: alleen een Encounter-reference als contact te identificeren is
+* encounter -> "Verrichting;ContactID" "Reference naar Encounter op basis van ContactID."
 
-* code.coding.system ^mapping[0].identity = "sim"
-* code.coding.system ^mapping[0].map = "Verrichting;VerrichtingTypeCodeSysteem"
+// VerrichtingType: NZa
+* code.coding.system -> "Verrichting;VerrichtingTypeCodeNZaSysteem" "NZa-codering."
+* code.coding.code -> "Verrichting;VerrichtingTypeCodeNZa" "NZa-codering."
+* code.coding.display -> "Verrichting;VerrichtingTypeOmschrijvingNZa" "NZa-codering."
 
-* code.coding.display ^mapping[0].identity = "sim"
-* code.coding.display ^mapping[0].map = "Verrichting;VerrichtingTypeOmschrijving"
+// VerrichtingType: SNOMED CT
+* code.coding.system -> "Verrichting;VerrichtingTypeCodeSnomedCTSysteem" "SNOMED CT-codering."
+* code.coding.code -> "Verrichting;VerrichtingTypeCodeSnomedCT" "SNOMED CT-codering."
+* code.coding.display -> "Verrichting;VerrichtingTypeOmschrijvingSnomedCT" "SNOMED CT-codering."
 
-* performedPeriod.start ^mapping[0].identity = "sim"
-* performedPeriod.start ^mapping[0].map = "Verrichting;VerrichtingStartDatum"
-* performedPeriod.start ^mapping[0].comment = "dateshift"
+// VerrichtingType: DHD
+* code.coding.system -> "Verrichting;VerrichtingTypeCodeDHDSysteem" "DHD-codering."
+* code.coding.code -> "Verrichting;VerrichtingTypeCodeDHD" "DHD-codering."
+* code.coding.display -> "Verrichting;VerrichtingTypeOmschrijvingDHD" "DHD-codering."
 
-* performedPeriod.end ^mapping[0].identity = "sim"
-* performedPeriod.end ^mapping[0].map = "Verrichting;VerrichtingEindDatum"
-* performedPeriod.end ^mapping[0].comment = "dateshift"
+// VerrichtingCategorie: bron bevestigt alleen de codekolom
+* category.coding.code -> "Verrichting;VerrichtingCategorieCode" "CodeSystem afzonderlijk verifiëren."
+
+// Datum/tijd van de verrichting: alternatieve FHIR-representaties
+* performedDateTime -> "Verrichting;VerrichtingStartDatum" "Momentane verrichting; dateshift."
+* performedPeriod.start -> "Verrichting;VerrichtingStartDatum" "Verrichting met tijdsduur; dateshift."
+// * performedPeriod.end -> "Verrichting;VerrichtingEindDatum" "Nog niet actief in het SIM LM."
+
+// Nog zonder directe FHIR-mapping:
+// VerrichtingAantal, OperatieID, SubtrajectNummer,
+// AanvragerSpecialisme, UitvoerderSpecialisme.
+// Procedure.status: verplicht, maar geen expliciete SIM-bronkolom.

@@ -17,3 +17,7 @@ See the [PatientSan](StructureDefinition-patient-san.html) profile for details.
 ### Procedure Santeon (Verrichting)
 
 See the [ProcedureSan](StructureDefinition-procedure-san.html) profile for details.
+
+### Encounter Santeon (Contact)
+
+See the [EncounterSan](StructureDefinition-encounter-san.html) profile for details.
