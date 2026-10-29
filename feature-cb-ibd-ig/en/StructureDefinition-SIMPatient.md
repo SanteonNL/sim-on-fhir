@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Use this Logical Model: [DBC/Zorgtraject (model)](StructureDefinition-SIMDBC.md), [Fasering (model)](StructureDefinition-SIMFasering.md) and [Verrichting (model)](StructureDefinition-SIMVerrichting.md)
+* This Logical Model is not used by any profiles in this Specification
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/santeon.sim-on-fhir|current/StructureDefinition/StructureDefinition-SIMPatient.json)
 
@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
   "name" : "SIMPatient",
   "title" : "Patiënt (model)",
   "status" : "draft",
-  "date" : "2026-10-26T15:58:19+00:00",
+  "date" : "2026-10-29T22:11:52+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -49,18 +49,23 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "SIMPatientFromSIMCSV",
-    "uri" : "SIM CSV",
-    "name" : "SIM CSV naar SIM Patient"
+    "uri" : "urn:santeon:sim:csv",
+    "name" : "SIM CSV"
   },
   {
     "identity" : "SIMPatientToFHIR",
     "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san",
-    "name" : "SIM Patient naar FHIR"
+    "name" : "SIMPatient naar FHIR"
   },
   {
     "identity" : "SIMPatientRelatedPersonToFHIR",
     "uri" : "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
-    "name" : "SIM Patient gerelateerde persoon naar FHIR"
+    "name" : "SIMPatient gerelateerde persoon naar FHIR"
+  },
+  {
+    "identity" : "SIMPatientToGBB",
+    "uri" : "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelPatient",
+    "name" : "SIMPatient naar Nictiz GBB Patient"
   }],
   "kind" : "logical",
   "abstract" : false,
@@ -91,6 +96,15 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
       {
         "identity" : "SIMPatientToFHIR",
         "map" : "Patient.identifier"
+      },
+      {
+        "identity" : "SIMPatientRelatedPersonToFHIR",
+        "map" : "RelatedPerson.patient",
+        "comment" : "Reference naar de patiënt waarop de relatie betrekking heeft."
+      },
+      {
+        "identity" : "SIMPatientToGBB",
+        "map" : "patientIdentificationNumber"
       }]
     },
     {
@@ -108,36 +122,37 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
         "valueSet" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000"
       },
       "mapping" : [{
-        "identity" : "SIMPatientFromSIMCSV",
-        "map" : "Patient;GeslachtCodeSysteem, Patient;GeslachtCode, Patient;GeslachtOmschrijving"
+        "identity" : "SIMPatientToFHIR",
+        "map" : "Patient.gender",
+        "comment" : "Terminologiemapping naar FHIR AdministrativeGender"
       },
       {
-        "identity" : "SIMPatientToFHIR",
-        "map" : "Patient.gender"
+        "identity" : "SIMPatientToGBB",
+        "map" : "gender"
       }]
     },
     {
-      "id" : "SIMPatient.Land",
-      "path" : "SIMPatient.Land",
-      "short" : "Land waar het adres zich bevindt",
-      "definition" : "Land waar het adres zich bevindt",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Coding"
-      }],
-      "binding" : {
-        "strength" : "extensible",
-        "valueSet" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.20.5.2--20200901000000"
-      },
+      "id" : "SIMPatient.Geslacht.coding.system",
+      "path" : "SIMPatient.Geslacht.coding.system",
       "mapping" : [{
         "identity" : "SIMPatientFromSIMCSV",
-        "map" : "Patient;LandSysteem, Patient;Land"
-      },
-      {
-        "identity" : "SIMPatientToFHIR",
-        "map" : "Patient.address.country",
-        "comment" : "ISO 3166-code naar string"
+        "map" : "Patient;GeslachtCodeSysteem"
+      }]
+    },
+    {
+      "id" : "SIMPatient.Geslacht.coding.code",
+      "path" : "SIMPatient.Geslacht.coding.code",
+      "mapping" : [{
+        "identity" : "SIMPatientFromSIMCSV",
+        "map" : "Patient;GeslachtCode"
+      }]
+    },
+    {
+      "id" : "SIMPatient.Geslacht.coding.display",
+      "path" : "SIMPatient.Geslacht.coding.display",
+      "mapping" : [{
+        "identity" : "SIMPatientFromSIMCSV",
+        "map" : "Patient;GeslachtOmschrijving"
       }]
     },
     {
@@ -145,7 +160,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
       "path" : "SIMPatient.Geboortedatum",
       "short" : "Geboortedatum van de patiënt",
       "definition" : "Geboortedatum van de patiënt",
-      "min" : 1,
+      "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "date"
@@ -157,6 +172,11 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
       {
         "identity" : "SIMPatientToFHIR",
         "map" : "Patient.birthDate"
+      },
+      {
+        "identity" : "SIMPatientToGBB",
+        "map" : "dateOfBirth",
+        "comment" : "Conversie van date naar dateTime zonder tijdstip te verzinnen."
       }]
     },
     {
@@ -167,7 +187,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
       "min" : 0,
       "max" : "1",
       "type" : [{
-        "code" : "dateTime"
+        "code" : "date"
       }],
       "mapping" : [{
         "identity" : "SIMPatientFromSIMCSV",
@@ -175,124 +195,12 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
       },
       {
         "identity" : "SIMPatientToFHIR",
-        "map" : "Patient.deceasedDateTime"
-      }]
-    },
-    {
-      "id" : "SIMPatient.DatumCheckStatusOverlijden",
-      "path" : "SIMPatient.DatumCheckStatusOverlijden",
-      "short" : "Datum waarop de overlijdensstatus is gecontroleerd",
-      "definition" : "Datum waarop de overlijdensstatus is gecontroleerd",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "dateTime"
-      }],
-      "mapping" : [{
-        "identity" : "SIMPatientFromSIMCSV",
-        "map" : "Patient;DatumCheckStatusOverlijden"
-      }]
-    },
-    {
-      "id" : "SIMPatient.GerelateerdePersoon",
-      "path" : "SIMPatient.GerelateerdePersoon",
-      "short" : "Gerelateerde persoon",
-      "definition" : "Gerelateerde persoon",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "BackboneElement"
-      }]
-    },
-    {
-      "id" : "SIMPatient.GerelateerdePersoon.Identificatienummer",
-      "path" : "SIMPatient.GerelateerdePersoon.Identificatienummer",
-      "short" : "Identificatienummer van de gerelateerde persoon",
-      "definition" : "Identificatienummer van de gerelateerde persoon",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Identifier"
-      }],
-      "mapping" : [{
-        "identity" : "SIMPatientFromSIMCSV",
-        "map" : "Patient;GerelateerdPersoonID"
+        "map" : "Patient.deceasedDateTime",
+        "comment" : "Datum uit SIM omzetten naar FHIR dateTime, met behoud van de oorspronkelijke datumprecisie."
       },
       {
-        "identity" : "SIMPatientRelatedPersonToFHIR",
-        "map" : "RelatedPerson.identifier"
-      }]
-    },
-    {
-      "id" : "SIMPatient.GerelateerdePersoon.Relatie",
-      "path" : "SIMPatient.GerelateerdePersoon.Relatie",
-      "short" : "Relatie tot de patiënt",
-      "definition" : "Relatie tot de patiënt",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "CodeableConcept"
-      }],
-      "binding" : {
-        "strength" : "extensible",
-        "valueSet" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.3.1.1--20200901000000"
-      },
-      "mapping" : [{
-        "identity" : "SIMPatientFromSIMCSV",
-        "map" : "Patient;GerelateerdeRelatieSysteem, Patient;GerelateerdeRelatie"
-      },
-      {
-        "identity" : "SIMPatientRelatedPersonToFHIR",
-        "map" : "RelatedPerson.relationship"
-      }]
-    },
-    {
-      "id" : "SIMPatient.Naam",
-      "path" : "SIMPatient.Naam",
-      "short" : "Naam van de patiënt",
-      "definition" : "Naam van de patiënt",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "BackboneElement"
-      }]
-    },
-    {
-      "id" : "SIMPatient.Naam.Initialen",
-      "path" : "SIMPatient.Naam.Initialen",
-      "short" : "Initialen van de patiënt",
-      "definition" : "Initialen van de patiënt",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "string"
-      }],
-      "mapping" : [{
-        "identity" : "SIMPatientFromSIMCSV",
-        "map" : "Patient;PatientNameInitials"
-      },
-      {
-        "identity" : "SIMPatientToFHIR",
-        "map" : "Patient.name.given"
-      }]
-    },
-    {
-      "id" : "SIMPatient.Naam.Achternaam",
-      "path" : "SIMPatient.Naam.Achternaam",
-      "short" : "Achternaam van de patiënt",
-      "definition" : "Achternaam van de patiënt",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "string"
-      }],
-      "mapping" : [{
-        "identity" : "SIMPatientFromSIMCSV",
-        "map" : "Patient;PatientNameFamilyName"
-      },
-      {
-        "identity" : "SIMPatientToFHIR",
-        "map" : "Patient.name.family"
+        "identity" : "SIMPatientToGBB",
+        "map" : "deceasedDateTime"
       }]
     }]
   }

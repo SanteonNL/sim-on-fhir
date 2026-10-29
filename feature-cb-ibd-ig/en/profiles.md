@@ -22,3 +22,7 @@ See the [PatientSan](StructureDefinition-patient-san.md) profile for details.
 
 See the [ProcedureSan](StructureDefinition-procedure-san.md) profile for details.
 
+### Encounter Santeon (Contact)
+
+See the [EncounterSan](StructureDefinition-encounter-san.md) profile for details.
+

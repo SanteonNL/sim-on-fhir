@@ -1,28 +1,5 @@
 {
   "codeSystems" : [{
-    "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229",
-    "version" : "0.1.0",
-    "status" : "retired",
-    "name" : "CareplanCategoryCodelijst",
-    "title" : "CareplanCategoryCodelijst",
-    "description" : "CareplanCategoryCodelijst",
-    "systems" : ["https://santeon.nl/sct"],
-    "oids" : ["2.16.840.1.113883.2.4.3.11.60.124.11.140"],
-    "sources" : ["2.16.840.1.113883.2.4.3.11.60.124.11.140"]
-  },
-  {
-    "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000",
-    "version" : "0.1.0",
-    "status" : "active",
-    "name" : "AlcoholGebruikStatusCodelijst",
-    "title" : "AlcoholGebruikStatusCodelijst",
-    "description" : "AlcoholGebruikStatusCodelijst",
-    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-    "http://snomed.info/sct"],
-    "oids" : ["2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2"],
-    "sources" : ["2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2"]
-  },
-  {
     "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/AlcoholGebruikStatusCodelijst",
     "version" : "0.1.0",
     "status" : "draft",

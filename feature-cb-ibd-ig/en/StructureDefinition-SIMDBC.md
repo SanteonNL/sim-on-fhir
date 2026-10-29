@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
   "name" : "SIMDBC",
   "title" : "DBC/Zorgtraject (model)",
   "status" : "draft",
-  "date" : "2026-10-26T15:58:19+00:00",
+  "date" : "2026-10-29T22:11:52+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "Logisch model voor een DBC binnen het Santeon Informatiemodel.",
+  "description" : "Generiek logisch model voor een DBC binnen het Santeon Informatiemodel.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -49,13 +49,13 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "SIMDBCFromSIMCSV",
-    "uri" : "SIM CSVs",
-    "name" : "SIM CSVs"
+    "uri" : "urn:santeon:sim:csv",
+    "name" : "SIM CSV"
   },
   {
     "identity" : "SIMDBCToFHIR",
     "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/episodeOfCare-san",
-    "name" : "SIM DBC naar FHIR"
+    "name" : "SIMDBC naar FHIR"
   }],
   "kind" : "logical",
   "abstract" : false,
@@ -67,25 +67,26 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       "id" : "SIMDBC",
       "path" : "SIMDBC",
       "short" : "DBC/Zorgtraject (model)",
-      "definition" : "Logisch model voor een DBC binnen het Santeon Informatiemodel."
+      "definition" : "Generiek logisch model voor een DBC binnen het Santeon Informatiemodel."
     },
     {
-      "id" : "SIMDBC.Patient",
-      "path" : "SIMDBC.Patient",
-      "short" : "Patiënt waarop de DBC betrekking heeft",
-      "definition" : "Patiënt waarop de DBC betrekking heeft",
-      "min" : 0,
+      "id" : "SIMDBC.PatientIdentificatienummer",
+      "path" : "SIMDBC.PatientIdentificatienummer",
+      "short" : "Identificatienummer van de patiënt",
+      "definition" : "Identificatienummer van de patiënt",
+      "min" : 1,
       "max" : "1",
       "type" : [{
-        "code" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMPatient"
+        "code" : "Identifier"
       }],
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "Identificatienummer"
+        "map" : "DBC;Identificatienummer"
       },
       {
         "identity" : "SIMDBCToFHIR",
-        "map" : "EpisodeOfCare.patient"
+        "map" : "EpisodeOfCare.patient",
+        "comment" : "Patient-reference op basis van identificatienummer."
       }]
     },
     {
@@ -100,37 +101,39 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       }],
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "SubtrajectNr"
+        "map" : "DBC;SubtrajectNr"
       },
       {
         "identity" : "SIMDBCToFHIR",
-        "map" : "EpisodeOfCare.identifier"
-      }]
-    },
-    {
-      "id" : "SIMDBC.ZorgtrajectNummer",
-      "path" : "SIMDBC.ZorgtrajectNummer",
-      "short" : "Identificatienummer van het zorgtraject",
-      "definition" : "Identificatienummer van het zorgtraject",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Identifier"
-      }],
-      "mapping" : [{
-        "identity" : "SIMDBCFromSIMCSV",
-        "map" : "ZorgtrajectNr"
+        "map" : "EpisodeOfCare.identifier",
+        "comment" : "Indien één EpisodeOfCare één DBC-subtraject representeert."
       }]
     },
     {
       "id" : "SIMDBC.Diagnose",
       "path" : "SIMDBC.Diagnose",
-      "short" : "Diagnosecode en omschrijving",
-      "definition" : "Diagnosecode en omschrijving",
+      "short" : "Diagnose behorend bij de DBC",
+      "definition" : "Diagnose behorend bij de DBC",
       "min" : 0,
       "max" : "1",
       "type" : [{
-        "code" : "string"
+        "code" : "CodeableConcept"
+      }]
+    },
+    {
+      "id" : "SIMDBC.Diagnose.coding.code",
+      "path" : "SIMDBC.Diagnose.coding.code",
+      "mapping" : [{
+        "identity" : "SIMDBCFromSIMCSV",
+        "map" : "DBC;DiagnoseCode"
+      }]
+    },
+    {
+      "id" : "SIMDBC.Diagnose.coding.display",
+      "path" : "SIMDBC.Diagnose.coding.display",
+      "mapping" : [{
+        "identity" : "SIMDBCFromSIMCSV",
+        "map" : "DBC;DiagnoseOmschrijving"
       }]
     },
     {
@@ -142,14 +145,6 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       "max" : "1",
       "type" : [{
         "code" : "CodeableConcept"
-      }],
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/Specialisme_DiagnoseCodelijstDummy"
-      },
-      "mapping" : [{
-        "identity" : "SIMDBCToFHIR",
-        "map" : "EpisodeOfCare.diagnosis.condition"
       }]
     },
     {
@@ -157,7 +152,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       "path" : "SIMDBC.SpecialismeDiagnose.coding.system",
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "SpecialismeDiagnoseSysteem"
+        "map" : "DBC;SpecialismeDiagnoseSysteem"
       }]
     },
     {
@@ -165,7 +160,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       "path" : "SIMDBC.SpecialismeDiagnose.coding.code",
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "SpecialismeDiagnoseCode"
+        "map" : "DBC;SpecialismeDiagnoseCode"
       }]
     },
     {
@@ -173,7 +168,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       "path" : "SIMDBC.SpecialismeDiagnose.coding.display",
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "SpecialismeDiagnoseOmschrijving"
+        "map" : "DBC;SpecialismeDiagnoseOmschrijving"
       }]
     },
     {
@@ -188,7 +183,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       }],
       "mapping" : [{
         "identity" : "SIMDBCToFHIR",
-        "map" : "EpisodeOfCare.type"
+        "map" : "EpisodeOfCare.type",
+        "comment" : "Mits het zorgtype de zorgepisode correct classificeert."
       }]
     },
     {
@@ -196,7 +192,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       "path" : "SIMDBC.ZorgType.coding.system",
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "ZorgTypeCodeSysteem"
+        "map" : "DBC;ZorgTypeCodeSysteem"
       }]
     },
     {
@@ -204,7 +200,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       "path" : "SIMDBC.ZorgType.coding.code",
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "ZorgTypeCode"
+        "map" : "DBC;ZorgTypeCode"
       }]
     },
     {
@@ -212,7 +208,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       "path" : "SIMDBC.ZorgType.coding.display",
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "ZorgTypeOmschrijving"
+        "map" : "DBC;ZorgTypeOmschrijving"
       }]
     },
     {
@@ -231,7 +227,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       "path" : "SIMDBC.ZorgProduct.coding.system",
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "ZorgProductCodeSysteem"
+        "map" : "DBC;ZorgProductCodeSysteem"
       }]
     },
     {
@@ -239,7 +235,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       "path" : "SIMDBC.ZorgProduct.coding.code",
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "ZorgProductCode"
+        "map" : "DBC;ZorgProductCode"
       }]
     },
     {
@@ -247,7 +243,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       "path" : "SIMDBC.ZorgProduct.coding.display",
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "ZorgProductOmschrijving"
+        "map" : "DBC;ZorgProductOmschrijving"
       }]
     },
     {
@@ -262,14 +258,14 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       }],
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "DBCgevuld"
+        "map" : "DBC;DBCgevuld"
       }]
     },
     {
       "id" : "SIMDBC.Geldig",
       "path" : "SIMDBC.Geldig",
-      "short" : "Geeft aan of de DBC geldig is",
-      "definition" : "Geeft aan of de DBC geldig is",
+      "short" : "Geeft aan of de DBC administratief geldig is",
+      "definition" : "Geeft aan of de DBC administratief geldig is",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -277,11 +273,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       }],
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "DBCgeldig"
-      },
-      {
-        "identity" : "SIMDBCToFHIR",
-        "map" : "EpisodeOfCare.status"
+        "map" : "DBC;DBCgeldig"
       }]
     },
     {
@@ -296,11 +288,12 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       }],
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "DBCOpeningsDatum"
+        "map" : "DBC;DBCOpeningsDatum"
       },
       {
         "identity" : "SIMDBCToFHIR",
-        "map" : "EpisodeOfCare.period.start"
+        "map" : "EpisodeOfCare.period.start",
+        "comment" : "Alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."
       }]
     },
     {
@@ -315,11 +308,12 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       }],
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "DBCSluitingsDatum"
+        "map" : "DBC;DBCSluitingsDatum"
       },
       {
         "identity" : "SIMDBCToFHIR",
-        "map" : "EpisodeOfCare.period.end"
+        "map" : "EpisodeOfCare.period.end",
+        "comment" : "Alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."
       }]
     },
     {
@@ -338,7 +332,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       "path" : "SIMDBC.UitvoerderSpecialisme.system",
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "Uitvoerder_SpecialismeSysteem"
+        "map" : "DBC;Uitvoerder_SpecialismeSysteem"
       }]
     },
     {
@@ -346,42 +340,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       "path" : "SIMDBC.UitvoerderSpecialisme.code",
       "mapping" : [{
         "identity" : "SIMDBCFromSIMCSV",
-        "map" : "Uitvoerder_Specialisme"
-      }]
-    },
-    {
-      "id" : "SIMDBC.Verwijzer",
-      "path" : "SIMDBC.Verwijzer",
-      "short" : "Oorsprong van de verwijzing",
-      "definition" : "Oorsprong van de verwijzing",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "CodeableConcept"
-      }]
-    },
-    {
-      "id" : "SIMDBC.Verwijzer.coding.system",
-      "path" : "SIMDBC.Verwijzer.coding.system",
-      "mapping" : [{
-        "identity" : "SIMDBCFromSIMCSV",
-        "map" : "DBCverwijzerCodeSysteem"
-      }]
-    },
-    {
-      "id" : "SIMDBC.Verwijzer.coding.code",
-      "path" : "SIMDBC.Verwijzer.coding.code",
-      "mapping" : [{
-        "identity" : "SIMDBCFromSIMCSV",
-        "map" : "DBCverwijzerCode"
-      }]
-    },
-    {
-      "id" : "SIMDBC.Verwijzer.coding.display",
-      "path" : "SIMDBC.Verwijzer.coding.display",
-      "mapping" : [{
-        "identity" : "SIMDBCFromSIMCSV",
-        "map" : "DBCverwijzerCodeOmschrijving"
+        "map" : "DBC;Uitvoerder_Specialisme"
       }]
     }]
   }

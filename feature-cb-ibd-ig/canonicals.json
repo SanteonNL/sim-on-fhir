@@ -4,22 +4,6 @@
   "name" : "IBD cohort"
 },
 {
-  "id" : "2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229",
-  "type" : "ValueSet",
-  "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229",
-  "version" : "0.1.0",
-  "name" : "CareplanCategoryCodelijst",
-  "oids" : ["2.16.840.1.113883.2.4.3.11.60.124.11.140"]
-},
-{
-  "id" : "2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000",
-  "type" : "ValueSet",
-  "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000",
-  "version" : "0.1.0",
-  "name" : "AlcoholGebruikStatusCodelijst",
-  "oids" : ["2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2"]
-},
-{
   "id" : "deidentification-action-cs",
   "type" : "CodeSystem",
   "url" : "https://ig.santeon.nl/sim-on-fhir/CodeSystem/deidentification-action-cs",
@@ -39,6 +23,13 @@
   "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMAlgemeneMeting",
   "version" : "0.1.0",
   "name" : "SIMAlgemeneMeting"
+},
+{
+  "id" : "SIMContact",
+  "type" : "StructureDefinition",
+  "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMContact",
+  "version" : "0.1.0",
+  "name" : "SIMContact"
 },
 {
   "id" : "SIMDBC",
@@ -88,6 +79,13 @@
   "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/deidentification-ruleset",
   "version" : "0.1.0",
   "name" : "DeidentificationRuleset"
+},
+{
+  "id" : "encounter-san",
+  "type" : "StructureDefinition",
+  "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/encounter-san",
+  "version" : "0.1.0",
+  "name" : "EncounterSan"
 },
 {
   "id" : "episodeOfCare-san",
@@ -151,13 +149,6 @@
   "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/procedure-san-kpi",
   "version" : "0.1.0",
   "name" : "ProcedureSanKpi"
-},
-{
-  "id" : "specialisme-diagnose-code",
-  "type" : "StructureDefinition",
-  "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/specialisme-diagnose-code",
-  "version" : "0.1.0",
-  "name" : "SpecialismeDiagnoseCode"
 },
 {
   "id" : "AlcoholGebruikStatusCodelijst",

@@ -3,15 +3,15 @@
 ## Pages
 
 * [Home](index.md)
-* [KPI definitions](kpi-definitions.md)
-* [FHIR Profiles](profiles.md)
 * [De-identification](deidentification.md)
+* [KPI definitions](kpi-definitions.md)
 * [Artifacts Summary](artifacts.md)
-* [Datasets](datasets.md)
-* [K3.1.2 Scopie](K312.md)
-* [IBD](ibd-dataset.md)
 * [K3.6.3 Calprotectine voor scopie](K363.md)
 * [SIM Logical Models](CLMs.md)
+* [K3.1.2 Scopie](K312.md)
+* [IBD](ibd-dataset.md)
+* [FHIR Profiles](profiles.md)
+* [Datasets](datasets.md)
 
 ## Resources
 
@@ -21,8 +21,6 @@
 
 ### ValueSets
 
-* [CareplanCategoryCodelijst](ValueSet-2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229.md)
-* [AlcoholGebruikStatusCodelijst](ValueSet-2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000.md)
 * [AlcoholGebruikStatusCodelijst](ValueSet-AlcoholGebruikStatusCodelijst.md)
 * [IBDAlgemeneMetingen](ValueSet-IBDAlgemeneMetingen.md)
 * [IBD Specialisme Diagnoses](ValueSet-IBDSpecialismeDiagnoses.md)
@@ -38,6 +36,7 @@
 ### Logicals
 
 * [Algemene meting (model)](StructureDefinition-SIMAlgemeneMeting.md)
+* [Contact (model)](StructureDefinition-SIMContact.md)
 * [DBC/Zorgtraject (model)](StructureDefinition-SIMDBC.md)
 * [Fasering (model)](StructureDefinition-SIMFasering.md)
 * [Patiënt (model)](StructureDefinition-SIMPatient.md)
@@ -49,6 +48,7 @@
 ### Resource Profiles
 
 * [Condition (SAN)](StructureDefinition-condition-san.md)
+* [Encounter (SAN)](StructureDefinition-encounter-san.md)
 * [EpisodeOfCare (SAN)](StructureDefinition-episodeOfCare-san.md)
 * [Observation (SAN KPI)](StructureDefinition-observation-san-kpi.md)
 * [Observation (SAN)](StructureDefinition-observation-san.md)
@@ -60,7 +60,6 @@
 ### Extensions
 
 * [ObservationDefinition Component](StructureDefinition-od-component.md)
-* [SpecialismeDiagnoseCode](StructureDefinition-specialisme-diagnose-code.md)
 
 ### Binaries
 

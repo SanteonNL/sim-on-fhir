@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
   "name" : "ObservationSan",
   "title" : "Observation (SAN)",
   "status" : "draft",
-  "date" : "2026-10-26T15:58:19+00:00",
+  "date" : "2026-10-29T22:11:52+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "**De-identificatie:**\n- identifier → hashed\n- subject → hashed\n- effectiveDateTime → dateshift",
+  "description" : "Generiek Santeon FHIR R4-profiel voor algemene metingen.\n\nGebaseerd op het Santeon Informatiemodel (SIMAlgemeneMeting).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -49,9 +49,14 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "sim",
+    "uri" : "urn:santeon:sim:csv",
+    "name" : "Santeon Informatiemodel (SIM CSV)",
+    "comment" : "Informatieve mapping van FHIR Observation naar SIM CSV-bronvelden."
+  },
+  {
+    "identity" : "workflow",
     "uri" : "http://hl7.org/fhir/workflow",
-    "name" : "Santeon Informatie Model",
-    "comment" : "Mapping van Observation elementen naar SIM"
+    "name" : "Workflow Pattern"
   },
   {
     "identity" : "sct-concept",
@@ -89,41 +94,6 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
       "path" : "Observation"
     },
     {
-      "id" : "Observation.meta",
-      "path" : "Observation.meta",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.implicitRules",
-      "path" : "Observation.implicitRules",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.language",
-      "path" : "Observation.language",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.text",
-      "path" : "Observation.text",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.contained",
-      "path" : "Observation.contained",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.extension",
-      "path" : "Observation.extension",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.modifierExtension",
-      "path" : "Observation.modifierExtension",
-      "max" : "0"
-    },
-    {
       "id" : "Observation.identifier",
       "path" : "Observation.identifier",
       "min" : 1,
@@ -135,24 +105,32 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
       "max" : "0"
     },
     {
+      "id" : "Observation.identifier.system",
+      "path" : "Observation.identifier.system",
+      "max" : "0",
+      "mapping" : [{
+        "identity" : "sim",
+        "map" : "AlgemeneMeting;MetingID",
+        "comment" : "Systeemdeel van de samengestelde identifier."
+      }]
+    },
+    {
       "id" : "Observation.identifier.value",
       "path" : "Observation.identifier.value",
       "min" : 1,
       "mapping" : [{
         "identity" : "sim",
         "map" : "AlgemeneMeting;MetingID",
-        "comment" : "hashed"
+        "comment" : "Waardedeel van de samengestelde identifier; hash."
       }]
     },
     {
-      "id" : "Observation.basedOn",
-      "path" : "Observation.basedOn",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.partOf",
-      "path" : "Observation.partOf",
-      "max" : "0"
+      "id" : "Observation.code",
+      "path" : "Observation.code",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst"
+      }
     },
     {
       "id" : "Observation.code.coding",
@@ -196,18 +174,8 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
       "mapping" : [{
         "identity" : "sim",
         "map" : "AlgemeneMeting;Identificatienummer",
-        "comment" : "hashed"
+        "comment" : "Patient-reference op basis van patiëntidentifier."
       }]
-    },
-    {
-      "id" : "Observation.focus",
-      "path" : "Observation.focus",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.encounter",
-      "path" : "Observation.encounter",
-      "max" : "0"
     },
     {
       "id" : "Observation.effective[x]",
@@ -217,19 +185,8 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
       }],
       "mapping" : [{
         "identity" : "sim",
-        "map" : "AlgemeneMeting;MetingDatumTijd",
-        "comment" : "dateshift"
+        "map" : "AlgemeneMeting;MetingDatumTijd"
       }]
-    },
-    {
-      "id" : "Observation.issued",
-      "path" : "Observation.issued",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.performer",
-      "path" : "Observation.performer",
-      "max" : "0"
     },
     {
       "id" : "Observation.value[x]",
@@ -294,8 +251,7 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
       "path" : "Observation.value[x].code",
       "mapping" : [{
         "identity" : "sim",
-        "map" : "AlgemeneMeting;UitslagWaardeEenheid",
-        "comment" : "UCUM-code van de eenheid"
+        "map" : "AlgemeneMeting;UitslagWaardeEenheid"
       }]
     },
     {
@@ -317,11 +273,59 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
       }]
     },
     {
+      "id" : "Observation.value[x]:valueRange.low.unit",
+      "path" : "Observation.value[x].low.unit",
+      "mapping" : [{
+        "identity" : "sim",
+        "map" : "AlgemeneMeting;ObservationValueRangeLowUnit"
+      }]
+    },
+    {
+      "id" : "Observation.value[x]:valueRange.low.system",
+      "path" : "Observation.value[x].low.system",
+      "mapping" : [{
+        "identity" : "sim",
+        "map" : "AlgemeneMeting;ObservationValueRangeLowSystem"
+      }]
+    },
+    {
+      "id" : "Observation.value[x]:valueRange.low.code",
+      "path" : "Observation.value[x].low.code",
+      "mapping" : [{
+        "identity" : "sim",
+        "map" : "AlgemeneMeting;ObservationValueRangeLowCode"
+      }]
+    },
+    {
       "id" : "Observation.value[x]:valueRange.high.value",
       "path" : "Observation.value[x].high.value",
       "mapping" : [{
         "identity" : "sim",
         "map" : "AlgemeneMeting;ObservationValueRangeHigh"
+      }]
+    },
+    {
+      "id" : "Observation.value[x]:valueRange.high.unit",
+      "path" : "Observation.value[x].high.unit",
+      "mapping" : [{
+        "identity" : "sim",
+        "map" : "AlgemeneMeting;ObservationValueRangeHighUnit"
+      }]
+    },
+    {
+      "id" : "Observation.value[x]:valueRange.high.system",
+      "path" : "Observation.value[x].high.system",
+      "mapping" : [{
+        "identity" : "sim",
+        "map" : "AlgemeneMeting;ObservationValueRangeHighSystem"
+      }]
+    },
+    {
+      "id" : "Observation.value[x]:valueRange.high.code",
+      "path" : "Observation.value[x].high.code",
+      "mapping" : [{
+        "identity" : "sim",
+        "map" : "AlgemeneMeting;ObservationValueRangeHighCode"
       }]
     },
     {
@@ -369,64 +373,32 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
       }],
       "mapping" : [{
         "identity" : "sim",
-        "map" : "AlgemeneMeting;UitslagDatumTijd",
-        "comment" : "dateshift"
+        "map" : "AlgemeneMeting;UitslagDatumTijd"
       }]
     },
     {
-      "id" : "Observation.dataAbsentReason",
-      "path" : "Observation.dataAbsentReason",
-      "max" : "0"
+      "id" : "Observation.method.coding.system",
+      "path" : "Observation.method.coding.system",
+      "mapping" : [{
+        "identity" : "sim",
+        "map" : "AlgemeneMeting;MeetmethodeCodeSysteem"
+      }]
     },
     {
-      "id" : "Observation.interpretation",
-      "path" : "Observation.interpretation",
-      "max" : "0"
+      "id" : "Observation.method.coding.code",
+      "path" : "Observation.method.coding.code",
+      "mapping" : [{
+        "identity" : "sim",
+        "map" : "AlgemeneMeting;MeetmethodeCode"
+      }]
     },
     {
-      "id" : "Observation.note",
-      "path" : "Observation.note",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.bodySite",
-      "path" : "Observation.bodySite",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.method",
-      "path" : "Observation.method",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.specimen",
-      "path" : "Observation.specimen",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.device",
-      "path" : "Observation.device",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.referenceRange",
-      "path" : "Observation.referenceRange",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.hasMember",
-      "path" : "Observation.hasMember",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.derivedFrom",
-      "path" : "Observation.derivedFrom",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.component",
-      "path" : "Observation.component",
-      "max" : "0"
+      "id" : "Observation.method.coding.display",
+      "path" : "Observation.method.coding.display",
+      "mapping" : [{
+        "identity" : "sim",
+        "map" : "AlgemeneMeting;MeetmethodeOmschrijving"
+      }]
     }]
   }
 }

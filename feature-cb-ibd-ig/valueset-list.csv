@@ -1,6 +1,4 @@
 URL,Version,Status,OIDs,Name,Title,Description,Uses,Used,Sources
-http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229,0.1.0,retired,"2.16.840.1.113883.2.4.3.11.60.124.11.140",CareplanCategoryCodelijst,CareplanCategoryCodelijst,"CareplanCategoryCodelijst",,"Other"
-http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000,0.1.0,active,"2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2",AlcoholGebruikStatusCodelijst,AlcoholGebruikStatusCodelijst,"AlcoholGebruikStatusCodelijst",,"THO (V3),SCT"
 https://ig.santeon.nl/sim-on-fhir/ValueSet/AlcoholGebruikStatusCodelijst,0.1.0,draft,,AlcoholGebruikStatusCodelijst,AlcoholGebruikStatusCodelijst,"Codelijst voor de gecodeerde uitslag van alcoholgebruik.",,"THO (V3),SCT"
 https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDAlgemeneMetingen,0.1.0,draft,,IBDAlgemeneMetingen,IBDAlgemeneMetingen,"Metingen die worden geselecteerd voor de IBD-dataset.",,"SCT,LOINC,Other"
 https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDSpecialismeDiagnoses,0.1.0,draft,,IBDSpecialismeDiagnoses,IBD Specialisme Diagnoses,"Specialisme-diagnosecombinaties die worden geselecteerd voor de IBD-dataset.",,"Other"

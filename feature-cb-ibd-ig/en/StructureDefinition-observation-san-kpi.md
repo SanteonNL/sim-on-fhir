@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san-k
   "name" : "ObservationSanKpi",
   "title" : "Observation (SAN KPI)",
   "status" : "draft",
-  "date" : "2026-10-26T15:58:19+00:00",
+  "date" : "2026-10-29T22:11:52+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",

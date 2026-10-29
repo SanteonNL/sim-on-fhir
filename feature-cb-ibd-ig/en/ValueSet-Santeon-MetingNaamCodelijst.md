@@ -5,6 +5,7 @@
  **References** 
 
 * [Algemene meting (model)](StructureDefinition-SIMAlgemeneMeting.md)
+* [Observation (SAN)](StructureDefinition-observation-san.md)
 
 ### Logical Definition (CLD)
 
@@ -29,7 +30,7 @@
   "name" : "Santeon_MetingNaamCodelijst",
   "title" : "Santeon_MetingNaamCodelijst",
   "status" : "draft",
-  "date" : "2026-10-26T15:58:19+00:00",
+  "date" : "2026-10-29T22:11:52+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",

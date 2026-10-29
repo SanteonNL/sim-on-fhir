@@ -3,16 +3,26 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="SIMVerrichting"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureDefinition SIMVerrichting</b></p><table border="0" cellpadding="0" cellspacing="0" class="xhtTableBorder0"><tr class="xhtRowBorder1"><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Information about the use of the element">Flags</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Minimum and Maximum # of times the element can appear in the instance">Card.</a></th><th scope="col" style="; width: 100px" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Reference to the type of the element">Type</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck1.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting" title="Logisch model voor een verrichting binnen het Santeon Informatiemodel.">SIMVerrichting</a><a name="SIMVerrichting"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">*</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://build.fhir.org/types.html#Base">Base</a></td><td style="" class="hierarchy xhtCellBorder0">Verrichting (model)</td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingID" title="Identificatie van de verrichting">VerrichtingID</a><a name="SIMVerrichting.VerrichtingID"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td style="" class="hierarchy xhtCellBorder0">Identificatie van de verrichting</td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_resource.png" alt="" style="background-color: white; background-color: inherit" title="Resource" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.Patient" title="Patiënt waarop de verrichting betrekking heeft">Patient</a><a name="SIMVerrichting.Patient"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="StructureDefinition-SIMPatient.html">SIMPatient</a></td><td style="" class="hierarchy xhtCellBorder0">Patiënt waarop de verrichting betrekking heeft</td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck11.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingType" title="Type verrichting">VerrichtingType</a><a name="SIMVerrichting.VerrichtingType"> </a></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/conformance-rules.html#constraints" title="This element has or is affected by constraints ( validatie-verrichtingtype )" class="xhtConstraintStyle">C</a></td><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="" class="hierarchy xhtCellBorder0">Type verrichting<br class="constraint"/><span class="constraint">Constraints: </span><span title="Valideert VerrichtingType tegen de bij het gebruikte codesysteem behorende ValueSet." class="xhtPieceBold constraint">validatie-verrichtingtype</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck101.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.VerrichtingType.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingType.coding">coding</a><a name="SIMVerrichting.VerrichtingType.coding"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck1010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.VerrichtingType.coding.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingType.coding.system">system</a><a name="SIMVerrichting.VerrichtingType.coding.system"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck1010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.VerrichtingType.coding.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingType.coding.code">code</a><a name="SIMVerrichting.VerrichtingType.coding.code"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck1000.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.VerrichtingType.coding.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingType.coding.display">display</a><a name="SIMVerrichting.VerrichtingType.coding.display"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.StartDatum" title="Startdatum en -tijd van de verrichting">StartDatum</a><a name="SIMVerrichting.StartDatum"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td><td style="" class="hierarchy xhtCellBorder0">Startdatum en -tijd van de verrichting</td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck00.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.EindDatum" title="Einddatum en -tijd van de verrichting">EindDatum</a><a name="SIMVerrichting.EindDatum"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td><td style="" class="hierarchy xhtCellBorder0">Einddatum en -tijd van de verrichting</td></tr>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureDefinition SIMVerrichting</b></p><table border="0" cellpadding="0" cellspacing="0" class="xhtTableBorder0"><tr class="xhtRowBorder1"><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Information about the use of the element">Flags</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Minimum and Maximum # of times the element can appear in the instance">Card.</a></th><th scope="col" style="; width: 100px" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Reference to the type of the element">Type</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck1.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting" title="Generiek logisch model voor een verrichting binnen het Santeon Informatiemodel.">SIMVerrichting</a><a name="SIMVerrichting"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">*</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://build.fhir.org/types.html#Base">Base</a></td><td style="" class="hierarchy xhtCellBorder0">Verrichting (model)</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingID" title="Uniek ID (key) binnen patiënt per verrichting">VerrichtingID</a><a name="SIMVerrichting.VerrichtingID"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td style="" class="hierarchy xhtCellBorder0">Uniek ID (key) binnen patiënt per verrichting</td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.ContactID" title="Uniek ID (key) binnen patiënt per contact">ContactID</a><a name="SIMVerrichting.ContactID"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td style="" class="hierarchy xhtCellBorder0">Uniek ID (key) binnen patiënt per contact</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.OperatieID" title="Uniek ID (key) binnen patiënt per OK">OperatieID</a><a name="SIMVerrichting.OperatieID"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td style="" class="hierarchy xhtCellBorder0">Uniek ID (key) binnen patiënt per OK</td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.SubtrajectNummer" title="Identificatienummer van het DBC-subtraject">SubtrajectNummer</a><a name="SIMVerrichting.SubtrajectNummer"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td style="" class="hierarchy xhtCellBorder0">Identificatienummer van het DBC-subtraject</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.PatientIdentificatienummer" title="Identificatienummer van de patiënt">PatientIdentificatienummer</a><a name="SIMVerrichting.PatientIdentificatienummer"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td style="" class="hierarchy xhtCellBorder0">Identificatienummer van de patiënt</td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck11.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingType" title="Type verrichting, gecodeerd met NZa, SNOMED CT en/of DHD. Meerdere coderingen worden alleen gecombineerd wanneer zij hetzelfde verrichtingsconcept vertegenwoordigen.">VerrichtingType</a><a name="SIMVerrichting.VerrichtingType"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="" class="hierarchy xhtCellBorder0">Type verrichting</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck101.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.VerrichtingType.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingType.coding">coding</a><a name="SIMVerrichting.VerrichtingType.coding"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck1010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.VerrichtingType.coding.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingType.coding.system">system</a><a name="SIMVerrichting.VerrichtingType.coding.system"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck1010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.VerrichtingType.coding.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingType.coding.code">code</a><a name="SIMVerrichting.VerrichtingType.coding.code"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck1000.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.VerrichtingType.coding.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingType.coding.display">display</a><a name="SIMVerrichting.VerrichtingType.coding.display"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingAantal" title="Aantal verrichtingen">VerrichtingAantal</a><a name="SIMVerrichting.VerrichtingAantal"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#integer">integer</a></td><td style="" class="hierarchy xhtCellBorder0">Aantal verrichtingen</td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingStartDatum" title="Datum en eventueel tijd waarop de verrichting is gestart">VerrichtingStartDatum</a><a name="SIMVerrichting.VerrichtingStartDatum"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td><td style="" class="hierarchy xhtCellBorder0">Datum en eventueel tijd waarop de verrichting is gestart</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck11.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.AanvragerSpecialisme" title="Medisch specialisme dat de verrichting heeft aangevraagd">AanvragerSpecialisme</a><a name="SIMVerrichting.AanvragerSpecialisme"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td style="" class="hierarchy xhtCellBorder0">Medisch specialisme dat de verrichting heeft aangevraagd</td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck100.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.AanvragerSpecialisme.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.AanvragerSpecialisme.code">code</a><a name="SIMVerrichting.AanvragerSpecialisme.code"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code" class="xhtPieceDeEmphasized">code</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Symbol in syntax defined by the system</span></td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck11.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.UitvoerderSpecialisme" title="Medisch specialisme dat de verrichting heeft uitgevoerd">UitvoerderSpecialisme</a><a name="SIMVerrichting.UitvoerderSpecialisme"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td style="" class="hierarchy xhtCellBorder0">Medisch specialisme dat de verrichting heeft uitgevoerd</td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck100.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.UitvoerderSpecialisme.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.UitvoerderSpecialisme.code">code</a><a name="SIMVerrichting.UitvoerderSpecialisme.code"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code" class="xhtPieceDeEmphasized">code</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Symbol in syntax defined by the system</span></td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck01.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingCategorie" title="Duiding tot welke zorgprofielklasse een verrichting behoort">VerrichtingCategorie</a><a name="SIMVerrichting.VerrichtingCategorie"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="" class="hierarchy xhtCellBorder0">Duiding tot welke zorgprofielklasse een verrichting behoort</td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck001.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.VerrichtingCategorie.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingCategorie.coding">coding</a><a name="SIMVerrichting.VerrichtingCategorie.coding"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck0000.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMVerrichting.VerrichtingCategorie.coding.</span><a href="StructureDefinition-SIMVerrichting-definitions.html#SIMVerrichting.VerrichtingCategorie.coding.code">code</a><a name="SIMVerrichting.VerrichtingCategorie.coding.code"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMVerrichting"/>
@@ -20,7 +30,7 @@
   <name value="SIMVerrichting"/>
   <title value="Verrichting (model)"/>
   <status value="draft"/>
-  <date value="2026-10-26T15:58:19+00:00"/>
+  <date value="2026-10-29T22:11:52+00:00"/>
   <publisher value="Santeon"/>
   <contact>
     <name value="Santeon"/>
@@ -29,7 +39,7 @@
       <value value="https://www.santeon.nl"/>
     </telecom>
   </contact>
-  <description value="Logisch model voor een verrichting binnen het Santeon Informatiemodel."/>
+  <description value="Generiek logisch model voor een verrichting binnen het Santeon Informatiemodel."/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -40,13 +50,18 @@
   <fhirVersion value="4.0.1"/>
   <mapping>
     <identity value="SIMVerrichtingFromSIMCSV"/>
-    <uri value="SIM CSVs"/>
-    <name value="SIM CSVs"/>
+    <uri value="urn:santeon:sim:csv"/>
+    <name value="SIM CSV"/>
   </mapping>
   <mapping>
     <identity value="SIMVerrichtingToFHIR"/>
     <uri value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/procedure-san"/>
     <name value="SIMVerrichting naar FHIR"/>
+  </mapping>
+  <mapping>
+    <identity value="SIMVerrichtingToGBB"/>
+    <uri value="http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelProcedure"/>
+    <name value="SIMVerrichting naar Nictiz GBB Procedure"/>
   </mapping>
   <kind value="logical"/>
   <abstract value="false"/>
@@ -60,7 +75,7 @@
     <element id="SIMVerrichting">
       <path value="SIMVerrichting"/>
       <short value="Verrichting (model)"/>
-      <definition value="Logisch model voor een verrichting binnen het Santeon Informatiemodel."/>
+      <definition value="Generiek logisch model voor een verrichting binnen het Santeon Informatiemodel."/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -72,12 +87,39 @@
     </element>
     <element id="SIMVerrichting.VerrichtingID">
       <path value="SIMVerrichting.VerrichtingID"/>
-      <short value="Identificatie van de verrichting"/>
-      <definition value="Identificatie van de verrichting"/>
-      <min value="0"/>
+      <short value="Uniek ID (key) binnen patiënt per verrichting"/>
+      <definition value="Uniek ID (key) binnen patiënt per verrichting"/>
+      <min value="1"/>
       <max value="1"/>
       <base>
         <path value="SIMVerrichting.VerrichtingID"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <identity value="SIMVerrichtingFromSIMCSV"/>
+        <map value="Verrichting;VerrichtingID"/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToFHIR"/>
+        <map value="Procedure.identifier"/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.feederAuditOriginatingSystemItemIds"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.ContactID">
+      <path value="SIMVerrichting.ContactID"/>
+      <short value="Uniek ID (key) binnen patiënt per contact"/>
+      <definition value="Uniek ID (key) binnen patiënt per contact"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="SIMVerrichting.ContactID"/>
         <min value="0"/>
         <max value="1"/>
       </base>
@@ -86,40 +128,85 @@
       </type>
       <mapping>
         <identity value="SIMVerrichtingFromSIMCSV"/>
-        <map value="VerrichtingID"/>
+        <map value="Verrichting;ContactID"/>
       </mapping>
       <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
-        <map value="Procedure.identifier"/>
+        <map value="Procedure.encounter"/>
+        <comment value="Encounter-reference op basis van ContactID."/>
       </mapping>
     </element>
-    <element id="SIMVerrichting.Patient">
-      <path value="SIMVerrichting.Patient"/>
-      <short value="Patiënt waarop de verrichting betrekking heeft"/>
-      <definition value="Patiënt waarop de verrichting betrekking heeft"/>
+    <element id="SIMVerrichting.OperatieID">
+      <path value="SIMVerrichting.OperatieID"/>
+      <short value="Uniek ID (key) binnen patiënt per OK"/>
+      <definition value="Uniek ID (key) binnen patiënt per OK"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="SIMVerrichting.OperatieID"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <identity value="SIMVerrichtingFromSIMCSV"/>
+        <map value="Verrichting;OperatieID"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.SubtrajectNummer">
+      <path value="SIMVerrichting.SubtrajectNummer"/>
+      <short value="Identificatienummer van het DBC-subtraject"/>
+      <definition value="Identificatienummer van het DBC-subtraject"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="SIMVerrichting.SubtrajectNummer"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <identity value="SIMVerrichtingFromSIMCSV"/>
+        <map value="Verrichting;SubtrajectNr"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.PatientIdentificatienummer">
+      <path value="SIMVerrichting.PatientIdentificatienummer"/>
+      <short value="Identificatienummer van de patiënt"/>
+      <definition value="Identificatienummer van de patiënt"/>
       <min value="1"/>
       <max value="1"/>
       <base>
-        <path value="SIMVerrichting.Patient"/>
+        <path value="SIMVerrichting.PatientIdentificatienummer"/>
         <min value="1"/>
         <max value="1"/>
       </base>
       <type>
-        <code value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMPatient"/>
+        <code value="Identifier"/>
       </type>
       <mapping>
         <identity value="SIMVerrichtingFromSIMCSV"/>
-        <map value="Identificatienummer"/>
+        <map value="Verrichting;Identificatienummer"/>
       </mapping>
       <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
         <map value="Procedure.subject"/>
+        <comment value="Patient-reference op basis van identificatienummer."/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.subject.patient.patientIdentificationNumber"/>
+        <comment value="Koppeling naar de patiëntidentificatie binnen GBB Patient."/>
       </mapping>
     </element>
     <element id="SIMVerrichting.VerrichtingType">
       <path value="SIMVerrichting.VerrichtingType"/>
       <short value="Type verrichting"/>
-      <definition value="Type verrichting"/>
+      <definition value="Type verrichting, gecodeerd met NZa, SNOMED CT en/of DHD. Meerdere coderingen worden alleen gecombineerd wanneer zij hetzelfde verrichtingsconcept vertegenwoordigen."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -131,13 +218,6 @@
         <code value="CodeableConcept"/>
       </type>
       <constraint>
-        <key value="validatie-verrichtingtype"/>
-        <severity value="error"/>
-        <human value="Valideert VerrichtingType tegen de bij het gebruikte codesysteem behorende ValueSet."/>
-        <expression value="(VerrichtingType.coding.where(system = 'NZa-URI').exists() implies VerrichtingType.memberOf('canonical-URL-NZa-ValueSet')) and (VerrichtingType.coding.where(system = 'DHD-URI').exists() implies VerrichtingType.memberOf('canonical-URL-DHD-ValueSet')) and (VerrichtingType.coding.where(system = 'http://snomed.info/sct').exists() implies VerrichtingType.memberOf('canonical-URL-SNOMED-ValueSet'))"/>
-        <source value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMVerrichting"/>
-      </constraint>
-      <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
         <human value="All FHIR elements must have a @value or children"/>
@@ -148,6 +228,12 @@
       <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
         <map value="Procedure.code"/>
+        <comment value="Coderingen combineren wanneer zij hetzelfde concept vertegenwoordigen."/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.procedureName"/>
+        <comment value="Alleen passende coderingen; GBB gebruikt een verplichte SNOMED-ValueSet."/>
       </mapping>
     </element>
     <element id="SIMVerrichting.VerrichtingType.id">
@@ -270,7 +356,7 @@
       </base>
       <mapping>
         <identity value="SIMVerrichtingFromSIMCSV"/>
-        <map value="VerrichtingTypeCodeSysteem"/>
+        <map value="Verrichting;VerrichtingTypeCodeNZaSysteem, Verrichting;VerrichtingTypeCodeSnomedCTSysteem, Verrichting;VerrichtingTypeCodeDHDSysteem"/>
       </mapping>
     </element>
     <element id="SIMVerrichting.VerrichtingType.coding.code">
@@ -281,7 +367,7 @@
       </base>
       <mapping>
         <identity value="SIMVerrichtingFromSIMCSV"/>
-        <map value="VerrichtingTypeCode"/>
+        <map value="Verrichting;VerrichtingTypeCodeNZa, Verrichting;VerrichtingTypeCodeSnomedCT, Verrichting;VerrichtingTypeCodeDHD"/>
       </mapping>
     </element>
     <element id="SIMVerrichting.VerrichtingType.coding.display">
@@ -292,7 +378,7 @@
       </base>
       <mapping>
         <identity value="SIMVerrichtingFromSIMCSV"/>
-        <map value="VerrichtingTypeOmschrijving"/>
+        <map value="Verrichting;VerrichtingTypeOmschrijvingNZa, Verrichting;VerrichtingTypeOmschrijvingSnomedCT, Verrichting;VerrichtingTypeOmschrijvingDHD"/>
       </mapping>
     </element>
     <element id="SIMVerrichting.VerrichtingType.text">
@@ -337,14 +423,33 @@
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
       </mapping>
     </element>
-    <element id="SIMVerrichting.StartDatum">
-      <path value="SIMVerrichting.StartDatum"/>
-      <short value="Startdatum en -tijd van de verrichting"/>
-      <definition value="Startdatum en -tijd van de verrichting"/>
+    <element id="SIMVerrichting.VerrichtingAantal">
+      <path value="SIMVerrichting.VerrichtingAantal"/>
+      <short value="Aantal verrichtingen"/>
+      <definition value="Aantal verrichtingen"/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="SIMVerrichting.StartDatum"/>
+        <path value="SIMVerrichting.VerrichtingAantal"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="integer"/>
+      </type>
+      <mapping>
+        <identity value="SIMVerrichtingFromSIMCSV"/>
+        <map value="Verrichting;VerrichtingAantal"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.VerrichtingStartDatum">
+      <path value="SIMVerrichting.VerrichtingStartDatum"/>
+      <short value="Datum en eventueel tijd waarop de verrichting is gestart"/>
+      <definition value="Datum en eventueel tijd waarop de verrichting is gestart"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="SIMVerrichting.VerrichtingStartDatum"/>
         <min value="0"/>
         <max value="1"/>
       </base>
@@ -353,34 +458,803 @@
       </type>
       <mapping>
         <identity value="SIMVerrichtingFromSIMCSV"/>
-        <map value="VerrichtingStartDatum"/>
+        <map value="Verrichting;VerrichtingStartDatum"/>
       </mapping>
       <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
         <map value="Procedure.performedPeriod.start"/>
+        <comment value="Bij een verrichting met tijdsduur; anders performedDateTime."/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.startDateTime"/>
       </mapping>
     </element>
-    <element id="SIMVerrichting.EindDatum">
-      <path value="SIMVerrichting.EindDatum"/>
-      <short value="Einddatum en -tijd van de verrichting"/>
-      <definition value="Einddatum en -tijd van de verrichting"/>
+    <element id="SIMVerrichting.AanvragerSpecialisme">
+      <path value="SIMVerrichting.AanvragerSpecialisme"/>
+      <short value="Medisch specialisme dat de verrichting heeft aangevraagd"/>
+      <definition value="Medisch specialisme dat de verrichting heeft aangevraagd"/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="SIMVerrichting.EindDatum"/>
+        <path value="SIMVerrichting.AanvragerSpecialisme"/>
         <min value="0"/>
         <max value="1"/>
       </base>
       <type>
-        <code value="dateTime"/>
+        <code value="Coding"/>
       </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+    </element>
+    <element id="SIMVerrichting.AanvragerSpecialisme.id">
+      <path value="SIMVerrichting.AanvragerSpecialisme.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
-        <identity value="SIMVerrichtingFromSIMCSV"/>
-        <map value="VerrichtingEindDatum"/>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.AanvragerSpecialisme.extension">
+      <path value="SIMVerrichting.AanvragerSpecialisme.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.AanvragerSpecialisme.system">
+      <path value="SIMVerrichting.AanvragerSpecialisme.system"/>
+      <short value="Identity of the terminology system"/>
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
+      <comment value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should reference to some definition that establishes the system clearly and unambiguously."/>
+      <requirements value="Need to be unambiguous about the source of the definition of the symbol."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Coding.system"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="uri"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="v2"/>
+        <map value="C*E.3"/>
       </mapping>
       <mapping>
+        <identity value="rim"/>
+        <map value="./codeSystem"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.AanvragerSpecialisme.version">
+      <path value="SIMVerrichting.AanvragerSpecialisme.version"/>
+      <short value="Version of the system - if relevant"/>
+      <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
+      <comment value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Coding.version"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="v2"/>
+        <map value="C*E.7"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="./codeSystemVersion"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.AanvragerSpecialisme.code">
+      <path value="SIMVerrichting.AanvragerSpecialisme.code"/>
+      <short value="Symbol in syntax defined by the system"/>
+      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
+      <requirements value="Need to refer to a particular code in the system."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Coding.code"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="SIMVerrichtingFromSIMCSV"/>
+        <map value="Verrichting;Aanvrager_Specialisme"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="C*E.1"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="./code"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.AanvragerSpecialisme.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="SIMVerrichting.AanvragerSpecialisme.display"/>
+      <short value="Representation defined by the system"/>
+      <definition value="A representation of the meaning of the code in the system, following the rules of the system."/>
+      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Coding.display"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="v2"/>
+        <map value="C*E.2 - but note this is not well followed"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CV.displayName"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.AanvragerSpecialisme.userSelected">
+      <path value="SIMVerrichting.AanvragerSpecialisme.userSelected"/>
+      <short value="If this coding was chosen directly by the user"/>
+      <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
+      <comment value="Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely."/>
+      <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Coding.userSelected"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="boolean"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="v2"/>
+        <map value="Sometimes implied by being first"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD.codingRationale"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.UitvoerderSpecialisme">
+      <path value="SIMVerrichting.UitvoerderSpecialisme"/>
+      <short value="Medisch specialisme dat de verrichting heeft uitgevoerd"/>
+      <definition value="Medisch specialisme dat de verrichting heeft uitgevoerd"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="SIMVerrichting.UitvoerderSpecialisme"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Coding"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+    </element>
+    <element id="SIMVerrichting.UitvoerderSpecialisme.id">
+      <path value="SIMVerrichting.UitvoerderSpecialisme.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.UitvoerderSpecialisme.extension">
+      <path value="SIMVerrichting.UitvoerderSpecialisme.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.UitvoerderSpecialisme.system">
+      <path value="SIMVerrichting.UitvoerderSpecialisme.system"/>
+      <short value="Identity of the terminology system"/>
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
+      <comment value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should reference to some definition that establishes the system clearly and unambiguously."/>
+      <requirements value="Need to be unambiguous about the source of the definition of the symbol."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Coding.system"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="uri"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="v2"/>
+        <map value="C*E.3"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="./codeSystem"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.UitvoerderSpecialisme.version">
+      <path value="SIMVerrichting.UitvoerderSpecialisme.version"/>
+      <short value="Version of the system - if relevant"/>
+      <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
+      <comment value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Coding.version"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="v2"/>
+        <map value="C*E.7"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="./codeSystemVersion"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.UitvoerderSpecialisme.code">
+      <path value="SIMVerrichting.UitvoerderSpecialisme.code"/>
+      <short value="Symbol in syntax defined by the system"/>
+      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
+      <requirements value="Need to refer to a particular code in the system."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Coding.code"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="SIMVerrichtingFromSIMCSV"/>
+        <map value="Verrichting;Uitvoerder_Specialisme"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="C*E.1"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="./code"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.UitvoerderSpecialisme.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="SIMVerrichting.UitvoerderSpecialisme.display"/>
+      <short value="Representation defined by the system"/>
+      <definition value="A representation of the meaning of the code in the system, following the rules of the system."/>
+      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Coding.display"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="v2"/>
+        <map value="C*E.2 - but note this is not well followed"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CV.displayName"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.UitvoerderSpecialisme.userSelected">
+      <path value="SIMVerrichting.UitvoerderSpecialisme.userSelected"/>
+      <short value="If this coding was chosen directly by the user"/>
+      <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
+      <comment value="Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely."/>
+      <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Coding.userSelected"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="boolean"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="v2"/>
+        <map value="Sometimes implied by being first"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD.codingRationale"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.VerrichtingCategorie">
+      <path value="SIMVerrichting.VerrichtingCategorie"/>
+      <short value="Duiding tot welke zorgprofielklasse een verrichting behoort"/>
+      <definition value="Duiding tot welke zorgprofielklasse een verrichting behoort"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="SIMVerrichting.VerrichtingCategorie"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
-        <map value="Procedure.performedPeriod.end"/>
+        <map value="Procedure.category"/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.procedureType"/>
+        <comment value="Semantische en terminologische overeenstemming controleren."/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.VerrichtingCategorie.id">
+      <path value="SIMVerrichting.VerrichtingCategorie.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.VerrichtingCategorie.extension">
+      <path value="SIMVerrichting.VerrichtingCategorie.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.VerrichtingCategorie.coding">
+      <path value="SIMVerrichting.VerrichtingCategorie.coding"/>
+      <short value="Code defined by a terminology system"/>
+      <definition value="A reference to a code defined by a terminology system."/>
+      <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
+      <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="CodeableConcept.coding"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Coding"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="v2"/>
+        <map value="C*E.1-8, C*E.10-22"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="union(., ./translation)"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.VerrichtingCategorie.coding.code">
+      <path value="SIMVerrichting.VerrichtingCategorie.coding.code"/>
+      <base>
+        <path value="SIMVerrichting.VerrichtingCategorie.coding.code"/>
+        <min value="0"/>
+      </base>
+      <mapping>
+        <identity value="SIMVerrichtingFromSIMCSV"/>
+        <map value="Verrichting;VerrichtingCategorieCode"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.VerrichtingCategorie.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="SIMVerrichting.VerrichtingCategorie.text"/>
+      <short value="Plain text representation of the concept"/>
+      <definition value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user."/>
+      <comment value="Very often the text is the same as a displayName of one of the codings."/>
+      <requirements value="The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="CodeableConcept.text"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="v2"/>
+        <map value="C*E.9. But note many systems use C*E.2 for this"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="./originalText[mediaType/code=&quot;text/plain&quot;]/data"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
       </mapping>
     </element>
   </snapshot>
@@ -388,12 +1262,34 @@
     <element id="SIMVerrichting">
       <path value="SIMVerrichting"/>
       <short value="Verrichting (model)"/>
-      <definition value="Logisch model voor een verrichting binnen het Santeon Informatiemodel."/>
+      <definition value="Generiek logisch model voor een verrichting binnen het Santeon Informatiemodel."/>
     </element>
     <element id="SIMVerrichting.VerrichtingID">
       <path value="SIMVerrichting.VerrichtingID"/>
-      <short value="Identificatie van de verrichting"/>
-      <definition value="Identificatie van de verrichting"/>
+      <short value="Uniek ID (key) binnen patiënt per verrichting"/>
+      <definition value="Uniek ID (key) binnen patiënt per verrichting"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <identity value="SIMVerrichtingFromSIMCSV"/>
+        <map value="Verrichting;VerrichtingID"/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToFHIR"/>
+        <map value="Procedure.identifier"/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.feederAuditOriginatingSystemItemIds"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.ContactID">
+      <path value="SIMVerrichting.ContactID"/>
+      <short value="Uniek ID (key) binnen patiënt per contact"/>
+      <definition value="Uniek ID (key) binnen patiënt per contact"/>
       <min value="0"/>
       <max value="1"/>
       <type>
@@ -401,77 +1297,125 @@
       </type>
       <mapping>
         <identity value="SIMVerrichtingFromSIMCSV"/>
-        <map value="VerrichtingID"/>
+        <map value="Verrichting;ContactID"/>
       </mapping>
       <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
-        <map value="Procedure.identifier"/>
+        <map value="Procedure.encounter"/>
+        <comment value="Encounter-reference op basis van ContactID."/>
       </mapping>
     </element>
-    <element id="SIMVerrichting.Patient">
-      <path value="SIMVerrichting.Patient"/>
-      <short value="Patiënt waarop de verrichting betrekking heeft"/>
-      <definition value="Patiënt waarop de verrichting betrekking heeft"/>
-      <min value="1"/>
+    <element id="SIMVerrichting.OperatieID">
+      <path value="SIMVerrichting.OperatieID"/>
+      <short value="Uniek ID (key) binnen patiënt per OK"/>
+      <definition value="Uniek ID (key) binnen patiënt per OK"/>
+      <min value="0"/>
       <max value="1"/>
       <type>
-        <code value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMPatient"/>
+        <code value="Identifier"/>
       </type>
       <mapping>
         <identity value="SIMVerrichtingFromSIMCSV"/>
-        <map value="Identificatienummer"/>
+        <map value="Verrichting;OperatieID"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.SubtrajectNummer">
+      <path value="SIMVerrichting.SubtrajectNummer"/>
+      <short value="Identificatienummer van het DBC-subtraject"/>
+      <definition value="Identificatienummer van het DBC-subtraject"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <identity value="SIMVerrichtingFromSIMCSV"/>
+        <map value="Verrichting;SubtrajectNr"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.PatientIdentificatienummer">
+      <path value="SIMVerrichting.PatientIdentificatienummer"/>
+      <short value="Identificatienummer van de patiënt"/>
+      <definition value="Identificatienummer van de patiënt"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <identity value="SIMVerrichtingFromSIMCSV"/>
+        <map value="Verrichting;Identificatienummer"/>
       </mapping>
       <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
         <map value="Procedure.subject"/>
+        <comment value="Patient-reference op basis van identificatienummer."/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.subject.patient.patientIdentificationNumber"/>
+        <comment value="Koppeling naar de patiëntidentificatie binnen GBB Patient."/>
       </mapping>
     </element>
     <element id="SIMVerrichting.VerrichtingType">
       <path value="SIMVerrichting.VerrichtingType"/>
       <short value="Type verrichting"/>
-      <definition value="Type verrichting"/>
+      <definition value="Type verrichting, gecodeerd met NZa, SNOMED CT en/of DHD. Meerdere coderingen worden alleen gecombineerd wanneer zij hetzelfde verrichtingsconcept vertegenwoordigen."/>
       <min value="0"/>
       <max value="1"/>
       <type>
         <code value="CodeableConcept"/>
       </type>
-      <constraint>
-        <key value="validatie-verrichtingtype"/>
-        <severity value="error"/>
-        <human value="Valideert VerrichtingType tegen de bij het gebruikte codesysteem behorende ValueSet."/>
-        <expression value="(VerrichtingType.coding.where(system = 'NZa-URI').exists() implies VerrichtingType.memberOf('canonical-URL-NZa-ValueSet')) and (VerrichtingType.coding.where(system = 'DHD-URI').exists() implies VerrichtingType.memberOf('canonical-URL-DHD-ValueSet')) and (VerrichtingType.coding.where(system = 'http://snomed.info/sct').exists() implies VerrichtingType.memberOf('canonical-URL-SNOMED-ValueSet'))"/>
-        <source value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMVerrichting"/>
-      </constraint>
       <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
         <map value="Procedure.code"/>
+        <comment value="Coderingen combineren wanneer zij hetzelfde concept vertegenwoordigen."/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.procedureName"/>
+        <comment value="Alleen passende coderingen; GBB gebruikt een verplichte SNOMED-ValueSet."/>
       </mapping>
     </element>
     <element id="SIMVerrichting.VerrichtingType.coding.system">
       <path value="SIMVerrichting.VerrichtingType.coding.system"/>
       <mapping>
         <identity value="SIMVerrichtingFromSIMCSV"/>
-        <map value="VerrichtingTypeCodeSysteem"/>
+        <map value="Verrichting;VerrichtingTypeCodeNZaSysteem, Verrichting;VerrichtingTypeCodeSnomedCTSysteem, Verrichting;VerrichtingTypeCodeDHDSysteem"/>
       </mapping>
     </element>
     <element id="SIMVerrichting.VerrichtingType.coding.code">
       <path value="SIMVerrichting.VerrichtingType.coding.code"/>
       <mapping>
         <identity value="SIMVerrichtingFromSIMCSV"/>
-        <map value="VerrichtingTypeCode"/>
+        <map value="Verrichting;VerrichtingTypeCodeNZa, Verrichting;VerrichtingTypeCodeSnomedCT, Verrichting;VerrichtingTypeCodeDHD"/>
       </mapping>
     </element>
     <element id="SIMVerrichting.VerrichtingType.coding.display">
       <path value="SIMVerrichting.VerrichtingType.coding.display"/>
       <mapping>
         <identity value="SIMVerrichtingFromSIMCSV"/>
-        <map value="VerrichtingTypeOmschrijving"/>
+        <map value="Verrichting;VerrichtingTypeOmschrijvingNZa, Verrichting;VerrichtingTypeOmschrijvingSnomedCT, Verrichting;VerrichtingTypeOmschrijvingDHD"/>
       </mapping>
     </element>
-    <element id="SIMVerrichting.StartDatum">
-      <path value="SIMVerrichting.StartDatum"/>
-      <short value="Startdatum en -tijd van de verrichting"/>
-      <definition value="Startdatum en -tijd van de verrichting"/>
+    <element id="SIMVerrichting.VerrichtingAantal">
+      <path value="SIMVerrichting.VerrichtingAantal"/>
+      <short value="Aantal verrichtingen"/>
+      <definition value="Aantal verrichtingen"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="integer"/>
+      </type>
+      <mapping>
+        <identity value="SIMVerrichtingFromSIMCSV"/>
+        <map value="Verrichting;VerrichtingAantal"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.VerrichtingStartDatum">
+      <path value="SIMVerrichting.VerrichtingStartDatum"/>
+      <short value="Datum en eventueel tijd waarop de verrichting is gestart"/>
+      <definition value="Datum en eventueel tijd waarop de verrichting is gestart"/>
       <min value="0"/>
       <max value="1"/>
       <type>
@@ -479,29 +1423,76 @@
       </type>
       <mapping>
         <identity value="SIMVerrichtingFromSIMCSV"/>
-        <map value="VerrichtingStartDatum"/>
+        <map value="Verrichting;VerrichtingStartDatum"/>
       </mapping>
       <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
         <map value="Procedure.performedPeriod.start"/>
+        <comment value="Bij een verrichting met tijdsduur; anders performedDateTime."/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.startDateTime"/>
       </mapping>
     </element>
-    <element id="SIMVerrichting.EindDatum">
-      <path value="SIMVerrichting.EindDatum"/>
-      <short value="Einddatum en -tijd van de verrichting"/>
-      <definition value="Einddatum en -tijd van de verrichting"/>
+    <element id="SIMVerrichting.AanvragerSpecialisme">
+      <path value="SIMVerrichting.AanvragerSpecialisme"/>
+      <short value="Medisch specialisme dat de verrichting heeft aangevraagd"/>
+      <definition value="Medisch specialisme dat de verrichting heeft aangevraagd"/>
       <min value="0"/>
       <max value="1"/>
       <type>
-        <code value="dateTime"/>
+        <code value="Coding"/>
       </type>
+    </element>
+    <element id="SIMVerrichting.AanvragerSpecialisme.code">
+      <path value="SIMVerrichting.AanvragerSpecialisme.code"/>
       <mapping>
         <identity value="SIMVerrichtingFromSIMCSV"/>
-        <map value="VerrichtingEindDatum"/>
+        <map value="Verrichting;Aanvrager_Specialisme"/>
       </mapping>
+    </element>
+    <element id="SIMVerrichting.UitvoerderSpecialisme">
+      <path value="SIMVerrichting.UitvoerderSpecialisme"/>
+      <short value="Medisch specialisme dat de verrichting heeft uitgevoerd"/>
+      <definition value="Medisch specialisme dat de verrichting heeft uitgevoerd"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Coding"/>
+      </type>
+    </element>
+    <element id="SIMVerrichting.UitvoerderSpecialisme.code">
+      <path value="SIMVerrichting.UitvoerderSpecialisme.code"/>
+      <mapping>
+        <identity value="SIMVerrichtingFromSIMCSV"/>
+        <map value="Verrichting;Uitvoerder_Specialisme"/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.VerrichtingCategorie">
+      <path value="SIMVerrichting.VerrichtingCategorie"/>
+      <short value="Duiding tot welke zorgprofielklasse een verrichting behoort"/>
+      <definition value="Duiding tot welke zorgprofielklasse een verrichting behoort"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
       <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
-        <map value="Procedure.performedPeriod.end"/>
+        <map value="Procedure.category"/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.procedureType"/>
+        <comment value="Semantische en terminologische overeenstemming controleren."/>
+      </mapping>
+    </element>
+    <element id="SIMVerrichting.VerrichtingCategorie.coding.code">
+      <path value="SIMVerrichting.VerrichtingCategorie.coding.code"/>
+      <mapping>
+        <identity value="SIMVerrichtingFromSIMCSV"/>
+        <map value="Verrichting;VerrichtingCategorieCode"/>
       </mapping>
     </element>
   </differential>

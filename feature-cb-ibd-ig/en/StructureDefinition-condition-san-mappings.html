@@ -49,8 +49,8 @@
 	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"9.9"}
-    h3,h4,h5,h6{--heading-prefix:"9.9"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.10"}
+    h3,h4,h5,h6{--heading-prefix:"9.10"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -250,7 +250,7 @@
           
 
             as of 
-2026-10-26
+2026-10-29
 
           
         
@@ -273,10 +273,12 @@
 <h3>Mappings to other Structures</h3>
 <p>No Mappings Found</p>
 <h3>Other Mappings</h3>
-<table border="0" fhir="generated-heirarchy" cellpadding="0" cellspacing="0" id="condition-sanMo" class="xhtTableBorder0" data-fhir="generated-heirarchy"><tr fhir="generated-heirarchy" class="xhtRowBorder1" data-fhir="generated-heirarchy"><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/workflow" title="Mapping van Condition elementen naar SIM">Santeon Informatie Model</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="http://snomed.info/conceptdomain" title="http://snomed.info/conceptdomain">SNOMED CT Concept Domain Binding</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/v2" title="http://hl7.org/v2">HL7 v2 Mapping</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/v3" title="http://hl7.org/v3">RIM Mapping</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/fivews" title="http://hl7.org/fhir/fivews">FiveWs Pattern Mapping</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="http://snomed.org/attributebinding" title="http://snomed.org/attributebinding">SNOMED CT Attribute Binding</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" onLoad="fhirTableInit(this)" style="background-color: inherit"/></a></span></th></tr>
+<table border="0" fhir="generated-heirarchy" cellpadding="0" cellspacing="0" id="condition-sanMo" class="xhtTableBorder0" data-fhir="generated-heirarchy"><tr fhir="generated-heirarchy" class="xhtRowBorder1" data-fhir="generated-heirarchy"><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="urn:santeon:sim:csv">ConditionSan vanuit SIM DBC</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/workflow" title="http://hl7.org/fhir/workflow">Workflow Pattern</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="http://snomed.info/conceptdomain" title="http://snomed.info/conceptdomain">SNOMED CT Concept Domain Binding</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/v2" title="http://hl7.org/v2">HL7 v2 Mapping</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/v3" title="http://hl7.org/v3">RIM Mapping</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/fivews" title="http://hl7.org/fhir/fivews">FiveWs Pattern Mapping</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="http://snomed.org/attributebinding" title="http://snomed.org/attributebinding">SNOMED CT Attribute Binding</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" onLoad="fhirTableInit(this)" style="background-color: inherit"/></a></span></th></tr>
 <tr fhir="generated-heirarchy" id="o-a" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_resource.png" alt="" style="background-color: white; background-color: inherit" title="Resource" class="hierarchy"/> <a href="StructureDefinition-condition-san-definitions.html#Condition" title="A clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern.">Condition</a><a name="o-Condition"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div>Event</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div> 246090004 |Associated finding| = ( ( &lt; 404684003 |Clinical finding| MINUS ( &lt;&lt; 420134006 |Propensity to adverse reactions| OR &lt;&lt; 473010000 |Hypersensitivity condition| OR &lt;&lt; 79899007 |Drug interaction| OR &lt;&lt; 69449002 |Drug action| OR &lt;&lt; 441742003 |Evaluation finding| OR &lt;&lt; 307824009 |Administrative status| OR &lt;&lt; 385356007 |Tumor stage finding|)) OR &lt; 272379006 |Event|)</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -288,6 +290,8 @@
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-aa" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.id" title="The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.">id</a><a name="o-Condition.id"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -312,8 +316,12 @@
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-ac" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.implicitRules" title="A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.">implicitRules</a><a name="o-Condition.implicitRules"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -338,8 +346,12 @@
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-ae" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.text" title="A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.">text</a><a name="o-Condition.text"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -353,6 +365,8 @@
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-af" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_resource.png" alt="" style="background-color: white; background-color: inherit" title="Resource" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.contained" title="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.">contained</a><a name="o-Condition.contained"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -377,8 +391,12 @@
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-ah" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_modifier_extension_simple.png" alt="" style="background-color: white; background-color: inherit" title="Simple Extension" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.modifierExtension" title="An Extension">modifierExtension</a><a name="o-Condition.modifierExtension"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -395,6 +413,8 @@
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div>Event.identifier</div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
@@ -405,6 +425,8 @@
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-aia" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / identifier / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.identifier.id" title="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.">id</a><a name="o-Condition.identifier.id"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -425,12 +447,16 @@
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div>n/a</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-aic" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / identifier / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.identifier.use" title="The purpose of this identifier.">use</a><a name="o-Condition.identifier.use"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -449,6 +475,8 @@
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div>CX.5</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div>Role.code or implied by context</div></td>
@@ -457,6 +485,8 @@
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-aie" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / identifier / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.identifier.system" title="Establishes the namespace for the value - that is, a URL that describes a set values that are unique.">system</a><a name="o-Condition.identifier.system"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -471,7 +501,9 @@
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-aif" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / identifier / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.identifier.value" title="The portion of the identifier typically relevant to the user and which is unique within the context of the system.">value</a><a name="o-Condition.identifier.value"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
-<div>Probleem;ProbleemID<br/><i>hashed</i></div></td>
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -483,6 +515,8 @@
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-aig" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / identifier / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.identifier.period" title="Time period during which identifier is/was valid for use.">period</a><a name="o-Condition.identifier.period"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -501,6 +535,8 @@
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div><ul><li>CX.4 / (CX.4</li><li>CX.9</li><li>CX.10)</li></ul></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div>II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</div></td>
@@ -511,6 +547,8 @@
 <tr fhir="generated-heirarchy" id="o-aj" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.clinicalStatus" title="The clinical status of the condition.">clinicalStatus</a><a name="o-Condition.clinicalStatus"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div>Event.status</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div>&lt; 303105007 |Disease phases|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -526,6 +564,8 @@
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div>Event.status</div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div>&lt; 410514004 |Finding context value|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div>PRB-13</div></td>
@@ -537,6 +577,8 @@
 <td style="" class="hierarchy xhtCellBorder0">
 <div>408729009</div></td></tr>
 <tr fhir="generated-heirarchy" id="o-al" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.category" title="A category assigned to the condition.">category</a><a name="o-Condition.category"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -553,6 +595,8 @@
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div>&lt; 272141005 |Severities|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div>PRB-26 / ABS-3</div></td>
@@ -565,6 +609,8 @@
 <tr fhir="generated-heirarchy" id="o-an" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck11.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin-open.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.code" title="Identification of the condition, problem or diagnosis.">code</a><a name="o-Condition.code"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div>Event.code</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div>code 246090004 |Associated finding| (&lt; 404684003 |Clinical finding| MINUS
 &lt;&lt; 420134006 |Propensity to adverse reactions| MINUS 
@@ -592,6 +638,8 @@ OR &lt; 272379006 |Event|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div>n/a</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
@@ -605,12 +653,16 @@ OR &lt; 272379006 |Event|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div>n/a</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-anc" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck111.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin-open.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / code / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.code.coding" title="A reference to a code defined by a terminology system.">coding</a><a name="o-Condition.code.coding"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -631,12 +683,16 @@ OR &lt; 272379006 |Event|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div>n/a</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-ancb" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1112.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_extension_simple.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Simple Extension" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / code / coding / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.code.coding.extension" title="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">extension</a><a name="o-Condition.code.coding.extension"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -651,7 +707,9 @@ OR &lt; 272379006 |Event|</div></td>
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-ancc" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / code / coding / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.code.coding.system" title="The identification of the code system that defines the meaning of the symbol in the code.">system</a><a name="o-Condition.code.coding.system"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
-<div>DBC;SpecialismeDiagnoseCodeSysteem</div></td>
+<div>DBC;SpecialismeDiagnoseSysteem</div></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -663,6 +721,8 @@ OR &lt; 272379006 |Event|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-ancd" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / code / coding / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.code.coding.version" title="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.">version</a><a name="o-Condition.code.coding.version"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -681,6 +741,8 @@ OR &lt; 272379006 |Event|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div>C*E.1</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div>./code</div></td>
@@ -694,6 +756,8 @@ OR &lt; 272379006 |Event|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div>C*E.2 - but note this is not well followed</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div>CV.displayName</div></td>
@@ -702,6 +766,8 @@ OR &lt; 272379006 |Event|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-ancg" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1100.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / code / coding / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.code.coding.userSelected" title="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).">userSelected</a><a name="o-Condition.code.coding.userSelected"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -720,6 +786,8 @@ OR &lt; 272379006 |Event|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div>C*E.9. But note many systems use C*E.2 for this</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div>./originalText[mediaType/code="text/plain"]/data</div></td>
@@ -728,6 +796,8 @@ OR &lt; 272379006 |Event|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-ao" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.bodySite" title="The anatomical location where this condition manifests itself.">bodySite</a><a name="o-Condition.bodySite"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -742,7 +812,9 @@ OR &lt; 272379006 |Event|</div></td>
 <div>363698007</div></td></tr>
 <tr fhir="generated-heirarchy" id="o-ap" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.subject" title="Indicates the patient or group who the condition record is associated with.">subject</a><a name="o-Condition.subject"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
-<div>Probleem;Identificatienummer<br/><i>hashed</i></div></td>
+<div>DBC;Identificatienummer<br/><i>Patient-reference op basis van identificatienummer.</i></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div>Event.subject</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -757,6 +829,8 @@ OR &lt; 272379006 |Event|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div>Event.context</div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div>PV1-19 (+PV1-54)</div></td>
@@ -769,6 +843,8 @@ OR &lt; 272379006 |Event|</div></td>
 <tr fhir="generated-heirarchy" id="o-ar" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_choice.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Choice of Types" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.onset[x]" title="Estimated or actual date or date-time  the condition began, in the opinion of the clinician.">onset[x]</a><a name="o-Condition.onset_x_"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div>Event.occurrence[x]</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -787,12 +863,16 @@ OR &lt; 272379006 |Event|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div><ul><li>.effectiveTime.high or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS</li><li> moodCode=EVN</li><li> code="age at remission"].value or .inboundRelationship[typeCode=SUBJ]source[classCode=CONC</li><li> moodCode=EVN].status=completed</li></ul></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div>FiveWs.done[x]</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-at" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.recordedDate" title="The recordedDate represents when this particular Condition record was created in the system, which is often a system-generated date.">recordedDate</a><a name="o-Condition.recordedDate"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -813,12 +893,16 @@ OR &lt; 272379006 |Event|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div>.participation[typeCode=AUT].role</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div>FiveWs.author</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-av" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.asserter" title="Individual who is making the condition statement.">asserter</a><a name="o-Condition.asserter"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -839,12 +923,16 @@ OR &lt; 272379006 |Event|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div><ul><li>./inboundRelationship[typeCode=SUBJ].source[classCode=OBS</li><li> moodCode=EVN</li><li> code="stage/grade"]</li></ul></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="o-ax" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Condition / </span><a href="StructureDefinition-condition-san-definitions.html#Condition.evidence" title="Supporting evidence / manifestations that are the basis of the Condition's verification status, such as evidence that confirmed or refuted the condition.">evidence</a><a name="o-Condition.evidence"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0">
+<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
@@ -861,6 +949,8 @@ OR &lt; 272379006 |Event|</div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
+<div>Event.note</div></td>
+<td style="" class="hierarchy xhtCellBorder0">
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div>NTE child of PRB</div></td>
@@ -870,7 +960,7 @@ OR &lt; 272379006 |Event|</div></td>
 <div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="7" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table>
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="8" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table>
 
   <!-- insert notes if present -->
   
@@ -905,8 +995,8 @@ OR &lt; 272379006 |Event|</div></td>
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.sim-on-fhir#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-26 15:58:00 +0000">
-    2026-10-26
+  <span title="2026-10-29 22:11:00 +0000">
+    2026-10-29
   </span>
 
           <br/>

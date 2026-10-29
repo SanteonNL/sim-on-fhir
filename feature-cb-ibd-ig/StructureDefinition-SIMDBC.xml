@@ -3,12 +3,14 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="SIMDBC"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureDefinition SIMDBC</b></p><table border="0" cellpadding="0" cellspacing="0" class="xhtTableBorder0"><tr class="xhtRowBorder1"><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Information about the use of the element">Flags</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Minimum and Maximum # of times the element can appear in the instance">Card.</a></th><th scope="col" style="; width: 100px" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Reference to the type of the element">Type</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck1.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC" title="Logisch model voor een DBC binnen het Santeon Informatiemodel.">SIMDBC</a><a name="SIMDBC"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">*</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://build.fhir.org/types.html#Base">Base</a></td><td style="" class="hierarchy xhtCellBorder0">DBC/Zorgtraject (model)</td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_resource.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Resource" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.Patient" title="Patiënt waarop de DBC betrekking heeft">Patient</a><a name="SIMDBC.Patient"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="StructureDefinition-SIMPatient.html">SIMPatient</a></td><td style="" class="hierarchy xhtCellBorder0">Patiënt waarop de DBC betrekking heeft</td></tr>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureDefinition SIMDBC</b></p><table border="0" cellpadding="0" cellspacing="0" class="xhtTableBorder0"><tr class="xhtRowBorder1"><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Information about the use of the element">Flags</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Minimum and Maximum # of times the element can appear in the instance">Card.</a></th><th scope="col" style="; width: 100px" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Reference to the type of the element">Type</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck1.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC" title="Generiek logisch model voor een DBC binnen het Santeon Informatiemodel.">SIMDBC</a><a name="SIMDBC"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">*</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://build.fhir.org/types.html#Base">Base</a></td><td style="" class="hierarchy xhtCellBorder0">DBC/Zorgtraject (model)</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.PatientIdentificatienummer" title="Identificatienummer van de patiënt">PatientIdentificatienummer</a><a name="SIMDBC.PatientIdentificatienummer"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td style="" class="hierarchy xhtCellBorder0">Identificatienummer van de patiënt</td></tr>
 <tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.SubtrajectNummer" title="Uniek identificatienummer van het DBC-subtraject">SubtrajectNummer</a><a name="SIMDBC.SubtrajectNummer"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td style="" class="hierarchy xhtCellBorder0">Uniek identificatienummer van het DBC-subtraject</td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.ZorgtrajectNummer" title="Identificatienummer van het zorgtraject">ZorgtrajectNummer</a><a name="SIMDBC.ZorgtrajectNummer"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td style="" class="hierarchy xhtCellBorder0">Identificatienummer van het zorgtraject</td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.Diagnose" title="Diagnosecode en omschrijving">Diagnose</a><a name="SIMDBC.Diagnose"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="" class="hierarchy xhtCellBorder0">Diagnosecode en omschrijving</td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck11.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.SpecialismeDiagnose" title="Specialisme en diagnose behorend bij de DBC">SpecialismeDiagnose</a><a name="SIMDBC.SpecialismeDiagnose"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="" class="hierarchy xhtCellBorder0">Specialisme en diagnose behorend bij de DBC<br class="binding"/><span class="xhtPieceBold binding">Binding: </span><a href="https://ig.santeon.nl/sim-on-fhir/ValueSet/Specialisme_DiagnoseCodelijstDummy" class="binding">https://ig.santeon.nl/sim-on-fhir/ValueSet/Specialisme_DiagnoseCodelijstDummy</a><span class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set." class="binding">required</a><span class="binding">)</span></td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck11.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.Diagnose" title="Diagnose behorend bij de DBC">Diagnose</a><a name="SIMDBC.Diagnose"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="" class="hierarchy xhtCellBorder0">Diagnose behorend bij de DBC</td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck101.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.Diagnose.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.Diagnose.coding">coding</a><a name="SIMDBC.Diagnose.coding"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck1010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.Diagnose.coding.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.Diagnose.coding.code">code</a><a name="SIMDBC.Diagnose.coding.code"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck1000.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.Diagnose.coding.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.Diagnose.coding.display">display</a><a name="SIMDBC.Diagnose.coding.display"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck11.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.SpecialismeDiagnose" title="Specialisme en diagnose behorend bij de DBC">SpecialismeDiagnose</a><a name="SIMDBC.SpecialismeDiagnose"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="" class="hierarchy xhtCellBorder0">Specialisme en diagnose behorend bij de DBC</td></tr>
 <tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck101.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.SpecialismeDiagnose.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.SpecialismeDiagnose.coding">coding</a><a name="SIMDBC.SpecialismeDiagnose.coding"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
 <tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck1010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.SpecialismeDiagnose.coding.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.SpecialismeDiagnose.coding.system">system</a><a name="SIMDBC.SpecialismeDiagnose.coding.system"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
 <tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck1010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.SpecialismeDiagnose.coding.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.SpecialismeDiagnose.coding.code">code</a><a name="SIMDBC.SpecialismeDiagnose.coding.code"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
@@ -24,17 +26,12 @@
 <tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck1010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.ZorgProduct.coding.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.ZorgProduct.coding.code">code</a><a name="SIMDBC.ZorgProduct.coding.code"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
 <tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck1000.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.ZorgProduct.coding.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.ZorgProduct.coding.display">display</a><a name="SIMDBC.ZorgProduct.coding.display"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
 <tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.Gevuld" title="Geeft aan of de DBC verrichtingen bevat">Gevuld</a><a name="SIMDBC.Gevuld"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a></td><td style="" class="hierarchy xhtCellBorder0">Geeft aan of de DBC verrichtingen bevat</td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.Geldig" title="Geeft aan of de DBC geldig is">Geldig</a><a name="SIMDBC.Geldig"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a></td><td style="" class="hierarchy xhtCellBorder0">Geeft aan of de DBC geldig is</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.Geldig" title="Geeft aan of de DBC administratief geldig is">Geldig</a><a name="SIMDBC.Geldig"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a></td><td style="" class="hierarchy xhtCellBorder0">Geeft aan of de DBC administratief geldig is</td></tr>
 <tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.OpeningsDatum" title="Openingsdatum van de DBC">OpeningsDatum</a><a name="SIMDBC.OpeningsDatum"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#date">date</a></td><td style="" class="hierarchy xhtCellBorder0">Openingsdatum van de DBC</td></tr>
 <tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.SluitingsDatum" title="Sluitingsdatum van de DBC">SluitingsDatum</a><a name="SIMDBC.SluitingsDatum"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#date">date</a></td><td style="" class="hierarchy xhtCellBorder0">Sluitingsdatum van de DBC</td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck11.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.UitvoerderSpecialisme" title="Specialisme van de uitvoerder">UitvoerderSpecialisme</a><a name="SIMDBC.UitvoerderSpecialisme"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td style="" class="hierarchy xhtCellBorder0">Specialisme van de uitvoerder</td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.UitvoerderSpecialisme.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.UitvoerderSpecialisme.system">system</a><a name="SIMDBC.UitvoerderSpecialisme.system"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#uri" class="xhtPieceDeEmphasized">uri</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Identity of the terminology system</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck100.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.UitvoerderSpecialisme.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.UitvoerderSpecialisme.code">code</a><a name="SIMDBC.UitvoerderSpecialisme.code"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code" class="xhtPieceDeEmphasized">code</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Symbol in syntax defined by the system</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck01.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.Verwijzer" title="Oorsprong van de verwijzing">Verwijzer</a><a name="SIMDBC.Verwijzer"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="" class="hierarchy xhtCellBorder0">Oorsprong van de verwijzing</td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck001.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.Verwijzer.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.Verwijzer.coding">coding</a><a name="SIMDBC.Verwijzer.coding"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck0010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.Verwijzer.coding.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.Verwijzer.coding.system">system</a><a name="SIMDBC.Verwijzer.coding.system"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck0010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.Verwijzer.coding.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.Verwijzer.coding.code">code</a><a name="SIMDBC.Verwijzer.coding.code"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck0000.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.Verwijzer.coding.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.Verwijzer.coding.display">display</a><a name="SIMDBC.Verwijzer.coding.display"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck01.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.UitvoerderSpecialisme" title="Specialisme van de uitvoerder">UitvoerderSpecialisme</a><a name="SIMDBC.UitvoerderSpecialisme"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td style="" class="hierarchy xhtCellBorder0">Specialisme van de uitvoerder</td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.UitvoerderSpecialisme.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.UitvoerderSpecialisme.system">system</a><a name="SIMDBC.UitvoerderSpecialisme.system"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#uri" class="xhtPieceDeEmphasized">uri</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Identity of the terminology system</span></td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck000.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMDBC.UitvoerderSpecialisme.</span><a href="StructureDefinition-SIMDBC-definitions.html#SIMDBC.UitvoerderSpecialisme.code">code</a><a name="SIMDBC.UitvoerderSpecialisme.code"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code" class="xhtPieceDeEmphasized">code</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Symbol in syntax defined by the system</span></td></tr>
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMDBC"/>
@@ -42,7 +39,7 @@
   <name value="SIMDBC"/>
   <title value="DBC/Zorgtraject (model)"/>
   <status value="draft"/>
-  <date value="2026-10-26T15:58:19+00:00"/>
+  <date value="2026-10-29T22:11:52+00:00"/>
   <publisher value="Santeon"/>
   <contact>
     <name value="Santeon"/>
@@ -51,7 +48,7 @@
       <value value="https://www.santeon.nl"/>
     </telecom>
   </contact>
-  <description value="Logisch model voor een DBC binnen het Santeon Informatiemodel."/>
+  <description value="Generiek logisch model voor een DBC binnen het Santeon Informatiemodel."/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -62,13 +59,13 @@
   <fhirVersion value="4.0.1"/>
   <mapping>
     <identity value="SIMDBCFromSIMCSV"/>
-    <uri value="SIM CSVs"/>
-    <name value="SIM CSVs"/>
+    <uri value="urn:santeon:sim:csv"/>
+    <name value="SIM CSV"/>
   </mapping>
   <mapping>
     <identity value="SIMDBCToFHIR"/>
     <uri value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/episodeOfCare-san"/>
-    <name value="SIM DBC naar FHIR"/>
+    <name value="SIMDBC naar FHIR"/>
   </mapping>
   <kind value="logical"/>
   <abstract value="false"/>
@@ -82,7 +79,7 @@
     <element id="SIMDBC">
       <path value="SIMDBC"/>
       <short value="DBC/Zorgtraject (model)"/>
-      <definition value="Logisch model voor een DBC binnen het Santeon Informatiemodel."/>
+      <definition value="Generiek logisch model voor een DBC binnen het Santeon Informatiemodel."/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -92,27 +89,28 @@
       </base>
       <isModifier value="false"/>
     </element>
-    <element id="SIMDBC.Patient">
-      <path value="SIMDBC.Patient"/>
-      <short value="Patiënt waarop de DBC betrekking heeft"/>
-      <definition value="Patiënt waarop de DBC betrekking heeft"/>
-      <min value="0"/>
+    <element id="SIMDBC.PatientIdentificatienummer">
+      <path value="SIMDBC.PatientIdentificatienummer"/>
+      <short value="Identificatienummer van de patiënt"/>
+      <definition value="Identificatienummer van de patiënt"/>
+      <min value="1"/>
       <max value="1"/>
       <base>
-        <path value="SIMDBC.Patient"/>
-        <min value="0"/>
+        <path value="SIMDBC.PatientIdentificatienummer"/>
+        <min value="1"/>
         <max value="1"/>
       </base>
       <type>
-        <code value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMPatient"/>
+        <code value="Identifier"/>
       </type>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="Identificatienummer"/>
+        <map value="DBC;Identificatienummer"/>
       </mapping>
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.patient"/>
+        <comment value="Patient-reference op basis van identificatienummer."/>
       </mapping>
     </element>
     <element id="SIMDBC.SubtrajectNummer">
@@ -131,36 +129,18 @@
       </type>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="SubtrajectNr"/>
+        <map value="DBC;SubtrajectNr"/>
       </mapping>
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.identifier"/>
-      </mapping>
-    </element>
-    <element id="SIMDBC.ZorgtrajectNummer">
-      <path value="SIMDBC.ZorgtrajectNummer"/>
-      <short value="Identificatienummer van het zorgtraject"/>
-      <definition value="Identificatienummer van het zorgtraject"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="SIMDBC.ZorgtrajectNummer"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="Identifier"/>
-      </type>
-      <mapping>
-        <identity value="SIMDBCFromSIMCSV"/>
-        <map value="ZorgtrajectNr"/>
+        <comment value="Indien één EpisodeOfCare één DBC-subtraject representeert."/>
       </mapping>
     </element>
     <element id="SIMDBC.Diagnose">
       <path value="SIMDBC.Diagnose"/>
-      <short value="Diagnosecode en omschrijving"/>
-      <definition value="Diagnosecode en omschrijving"/>
+      <short value="Diagnose behorend bij de DBC"/>
+      <definition value="Diagnose behorend bij de DBC"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -169,8 +149,192 @@
         <max value="1"/>
       </base>
       <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+    </element>
+    <element id="SIMDBC.Diagnose.id">
+      <path value="SIMDBC.Diagnose.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="SIMDBC.Diagnose.extension">
+      <path value="SIMDBC.Diagnose.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="SIMDBC.Diagnose.coding">
+      <path value="SIMDBC.Diagnose.coding"/>
+      <short value="Code defined by a terminology system"/>
+      <definition value="A reference to a code defined by a terminology system."/>
+      <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
+      <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="CodeableConcept.coding"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Coding"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="v2"/>
+        <map value="C*E.1-8, C*E.10-22"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="union(., ./translation)"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
+      </mapping>
+    </element>
+    <element id="SIMDBC.Diagnose.coding.code">
+      <path value="SIMDBC.Diagnose.coding.code"/>
+      <base>
+        <path value="SIMDBC.Diagnose.coding.code"/>
+        <min value="0"/>
+      </base>
+      <mapping>
+        <identity value="SIMDBCFromSIMCSV"/>
+        <map value="DBC;DiagnoseCode"/>
+      </mapping>
+    </element>
+    <element id="SIMDBC.Diagnose.coding.display">
+      <path value="SIMDBC.Diagnose.coding.display"/>
+      <base>
+        <path value="SIMDBC.Diagnose.coding.display"/>
+        <min value="0"/>
+      </base>
+      <mapping>
+        <identity value="SIMDBCFromSIMCSV"/>
+        <map value="DBC;DiagnoseOmschrijving"/>
+      </mapping>
+    </element>
+    <element id="SIMDBC.Diagnose.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="SIMDBC.Diagnose.text"/>
+      <short value="Plain text representation of the concept"/>
+      <definition value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user."/>
+      <comment value="Very often the text is the same as a displayName of one of the codings."/>
+      <requirements value="The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="CodeableConcept.text"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
         <code value="string"/>
       </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="v2"/>
+        <map value="C*E.9. But note many systems use C*E.2 for this"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="./originalText[mediaType/code=&quot;text/plain&quot;]/data"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
+      </mapping>
     </element>
     <element id="SIMDBC.SpecialismeDiagnose">
       <path value="SIMDBC.SpecialismeDiagnose"/>
@@ -194,14 +358,6 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <binding>
-        <strength value="required"/>
-        <valueSet value="https://ig.santeon.nl/sim-on-fhir/ValueSet/Specialisme_DiagnoseCodelijstDummy"/>
-      </binding>
-      <mapping>
-        <identity value="SIMDBCToFHIR"/>
-        <map value="EpisodeOfCare.diagnosis.condition"/>
-      </mapping>
     </element>
     <element id="SIMDBC.SpecialismeDiagnose.id">
       <path value="SIMDBC.SpecialismeDiagnose.id"/>
@@ -323,7 +479,7 @@
       </base>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="SpecialismeDiagnoseSysteem"/>
+        <map value="DBC;SpecialismeDiagnoseSysteem"/>
       </mapping>
     </element>
     <element id="SIMDBC.SpecialismeDiagnose.coding.code">
@@ -334,7 +490,7 @@
       </base>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="SpecialismeDiagnoseCode"/>
+        <map value="DBC;SpecialismeDiagnoseCode"/>
       </mapping>
     </element>
     <element id="SIMDBC.SpecialismeDiagnose.coding.display">
@@ -345,7 +501,7 @@
       </base>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="SpecialismeDiagnoseOmschrijving"/>
+        <map value="DBC;SpecialismeDiagnoseOmschrijving"/>
       </mapping>
     </element>
     <element id="SIMDBC.SpecialismeDiagnose.text">
@@ -415,6 +571,7 @@
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.type"/>
+        <comment value="Mits het zorgtype de zorgepisode correct classificeert."/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgType.id">
@@ -537,7 +694,7 @@
       </base>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="ZorgTypeCodeSysteem"/>
+        <map value="DBC;ZorgTypeCodeSysteem"/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgType.coding.code">
@@ -548,7 +705,7 @@
       </base>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="ZorgTypeCode"/>
+        <map value="DBC;ZorgTypeCode"/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgType.coding.display">
@@ -559,7 +716,7 @@
       </base>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="ZorgTypeOmschrijving"/>
+        <map value="DBC;ZorgTypeOmschrijving"/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgType.text">
@@ -747,7 +904,7 @@
       </base>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="ZorgProductCodeSysteem"/>
+        <map value="DBC;ZorgProductCodeSysteem"/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgProduct.coding.code">
@@ -758,7 +915,7 @@
       </base>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="ZorgProductCode"/>
+        <map value="DBC;ZorgProductCode"/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgProduct.coding.display">
@@ -769,7 +926,7 @@
       </base>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="ZorgProductOmschrijving"/>
+        <map value="DBC;ZorgProductOmschrijving"/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgProduct.text">
@@ -830,13 +987,13 @@
       </type>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="DBCgevuld"/>
+        <map value="DBC;DBCgevuld"/>
       </mapping>
     </element>
     <element id="SIMDBC.Geldig">
       <path value="SIMDBC.Geldig"/>
-      <short value="Geeft aan of de DBC geldig is"/>
-      <definition value="Geeft aan of de DBC geldig is"/>
+      <short value="Geeft aan of de DBC administratief geldig is"/>
+      <definition value="Geeft aan of de DBC administratief geldig is"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -849,11 +1006,7 @@
       </type>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="DBCgeldig"/>
-      </mapping>
-      <mapping>
-        <identity value="SIMDBCToFHIR"/>
-        <map value="EpisodeOfCare.status"/>
+        <map value="DBC;DBCgeldig"/>
       </mapping>
     </element>
     <element id="SIMDBC.OpeningsDatum">
@@ -872,11 +1025,12 @@
       </type>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="DBCOpeningsDatum"/>
+        <map value="DBC;DBCOpeningsDatum"/>
       </mapping>
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.period.start"/>
+        <comment value="Alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."/>
       </mapping>
     </element>
     <element id="SIMDBC.SluitingsDatum">
@@ -895,11 +1049,12 @@
       </type>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="DBCSluitingsDatum"/>
+        <map value="DBC;DBCSluitingsDatum"/>
       </mapping>
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.period.end"/>
+        <comment value="Alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."/>
       </mapping>
     </element>
     <element id="SIMDBC.UitvoerderSpecialisme">
@@ -1026,7 +1181,7 @@
       <isSummary value="true"/>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="Uitvoerder_SpecialismeSysteem"/>
+        <map value="DBC;Uitvoerder_SpecialismeSysteem"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -1106,7 +1261,7 @@
       <isSummary value="true"/>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="Uitvoerder_Specialisme"/>
+        <map value="DBC;Uitvoerder_Specialisme"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -1201,239 +1356,30 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="SIMDBC.Verwijzer">
-      <path value="SIMDBC.Verwijzer"/>
-      <short value="Oorsprong van de verwijzing"/>
-      <definition value="Oorsprong van de verwijzing"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="SIMDBC.Verwijzer"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="CodeableConcept"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-    </element>
-    <element id="SIMDBC.Verwijzer.id">
-      <path value="SIMDBC.Verwijzer.id"/>
-      <representation value="xmlAttr"/>
-      <short value="Unique id for inter-element referencing"/>
-      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Element.id"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
-          <valueUrl value="string"/>
-        </extension>
-        <code value="http://hl7.org/fhirpath/System.String"/>
-      </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-    </element>
-    <element id="SIMDBC.Verwijzer.extension">
-      <path value="SIMDBC.Verwijzer.extension"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="url"/>
-        </discriminator>
-        <description value="Extensions are always sliced by (at least) url"/>
-        <rules value="open"/>
-      </slicing>
-      <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="Element.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-    </element>
-    <element id="SIMDBC.Verwijzer.coding">
-      <path value="SIMDBC.Verwijzer.coding"/>
-      <short value="Code defined by a terminology system"/>
-      <definition value="A reference to a code defined by a terminology system."/>
-      <comment value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true."/>
-      <requirements value="Allows for alternative encodings within a code system, and translations to other code systems."/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="CodeableConcept.coding"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Coding"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="v2"/>
-        <map value="C*E.1-8, C*E.10-22"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="union(., ./translation)"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-    </element>
-    <element id="SIMDBC.Verwijzer.coding.system">
-      <path value="SIMDBC.Verwijzer.coding.system"/>
-      <base>
-        <path value="SIMDBC.Verwijzer.coding.system"/>
-        <min value="0"/>
-      </base>
-      <mapping>
-        <identity value="SIMDBCFromSIMCSV"/>
-        <map value="DBCverwijzerCodeSysteem"/>
-      </mapping>
-    </element>
-    <element id="SIMDBC.Verwijzer.coding.code">
-      <path value="SIMDBC.Verwijzer.coding.code"/>
-      <base>
-        <path value="SIMDBC.Verwijzer.coding.code"/>
-        <min value="0"/>
-      </base>
-      <mapping>
-        <identity value="SIMDBCFromSIMCSV"/>
-        <map value="DBCverwijzerCode"/>
-      </mapping>
-    </element>
-    <element id="SIMDBC.Verwijzer.coding.display">
-      <path value="SIMDBC.Verwijzer.coding.display"/>
-      <base>
-        <path value="SIMDBC.Verwijzer.coding.display"/>
-        <min value="0"/>
-      </base>
-      <mapping>
-        <identity value="SIMDBCFromSIMCSV"/>
-        <map value="DBCverwijzerCodeOmschrijving"/>
-      </mapping>
-    </element>
-    <element id="SIMDBC.Verwijzer.text">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true"/>
-      </extension>
-      <path value="SIMDBC.Verwijzer.text"/>
-      <short value="Plain text representation of the concept"/>
-      <definition value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user."/>
-      <comment value="Very often the text is the same as a displayName of one of the codings."/>
-      <requirements value="The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="CodeableConcept.text"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="string"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="v2"/>
-        <map value="C*E.9. But note many systems use C*E.2 for this"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="./originalText[mediaType/code=&quot;text/plain&quot;]/data"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-    </element>
   </snapshot>
   <differential>
     <element id="SIMDBC">
       <path value="SIMDBC"/>
       <short value="DBC/Zorgtraject (model)"/>
-      <definition value="Logisch model voor een DBC binnen het Santeon Informatiemodel."/>
+      <definition value="Generiek logisch model voor een DBC binnen het Santeon Informatiemodel."/>
     </element>
-    <element id="SIMDBC.Patient">
-      <path value="SIMDBC.Patient"/>
-      <short value="Patiënt waarop de DBC betrekking heeft"/>
-      <definition value="Patiënt waarop de DBC betrekking heeft"/>
-      <min value="0"/>
+    <element id="SIMDBC.PatientIdentificatienummer">
+      <path value="SIMDBC.PatientIdentificatienummer"/>
+      <short value="Identificatienummer van de patiënt"/>
+      <definition value="Identificatienummer van de patiënt"/>
+      <min value="1"/>
       <max value="1"/>
       <type>
-        <code value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMPatient"/>
+        <code value="Identifier"/>
       </type>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="Identificatienummer"/>
+        <map value="DBC;Identificatienummer"/>
       </mapping>
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.patient"/>
+        <comment value="Patient-reference op basis van identificatienummer."/>
       </mapping>
     </element>
     <element id="SIMDBC.SubtrajectNummer">
@@ -1447,36 +1393,37 @@
       </type>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="SubtrajectNr"/>
+        <map value="DBC;SubtrajectNr"/>
       </mapping>
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.identifier"/>
-      </mapping>
-    </element>
-    <element id="SIMDBC.ZorgtrajectNummer">
-      <path value="SIMDBC.ZorgtrajectNummer"/>
-      <short value="Identificatienummer van het zorgtraject"/>
-      <definition value="Identificatienummer van het zorgtraject"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="Identifier"/>
-      </type>
-      <mapping>
-        <identity value="SIMDBCFromSIMCSV"/>
-        <map value="ZorgtrajectNr"/>
+        <comment value="Indien één EpisodeOfCare één DBC-subtraject representeert."/>
       </mapping>
     </element>
     <element id="SIMDBC.Diagnose">
       <path value="SIMDBC.Diagnose"/>
-      <short value="Diagnosecode en omschrijving"/>
-      <definition value="Diagnosecode en omschrijving"/>
+      <short value="Diagnose behorend bij de DBC"/>
+      <definition value="Diagnose behorend bij de DBC"/>
       <min value="0"/>
       <max value="1"/>
       <type>
-        <code value="string"/>
+        <code value="CodeableConcept"/>
       </type>
+    </element>
+    <element id="SIMDBC.Diagnose.coding.code">
+      <path value="SIMDBC.Diagnose.coding.code"/>
+      <mapping>
+        <identity value="SIMDBCFromSIMCSV"/>
+        <map value="DBC;DiagnoseCode"/>
+      </mapping>
+    </element>
+    <element id="SIMDBC.Diagnose.coding.display">
+      <path value="SIMDBC.Diagnose.coding.display"/>
+      <mapping>
+        <identity value="SIMDBCFromSIMCSV"/>
+        <map value="DBC;DiagnoseOmschrijving"/>
+      </mapping>
     </element>
     <element id="SIMDBC.SpecialismeDiagnose">
       <path value="SIMDBC.SpecialismeDiagnose"/>
@@ -1487,34 +1434,26 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
-      <binding>
-        <strength value="required"/>
-        <valueSet value="https://ig.santeon.nl/sim-on-fhir/ValueSet/Specialisme_DiagnoseCodelijstDummy"/>
-      </binding>
-      <mapping>
-        <identity value="SIMDBCToFHIR"/>
-        <map value="EpisodeOfCare.diagnosis.condition"/>
-      </mapping>
     </element>
     <element id="SIMDBC.SpecialismeDiagnose.coding.system">
       <path value="SIMDBC.SpecialismeDiagnose.coding.system"/>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="SpecialismeDiagnoseSysteem"/>
+        <map value="DBC;SpecialismeDiagnoseSysteem"/>
       </mapping>
     </element>
     <element id="SIMDBC.SpecialismeDiagnose.coding.code">
       <path value="SIMDBC.SpecialismeDiagnose.coding.code"/>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="SpecialismeDiagnoseCode"/>
+        <map value="DBC;SpecialismeDiagnoseCode"/>
       </mapping>
     </element>
     <element id="SIMDBC.SpecialismeDiagnose.coding.display">
       <path value="SIMDBC.SpecialismeDiagnose.coding.display"/>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="SpecialismeDiagnoseOmschrijving"/>
+        <map value="DBC;SpecialismeDiagnoseOmschrijving"/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgType">
@@ -1529,27 +1468,28 @@
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.type"/>
+        <comment value="Mits het zorgtype de zorgepisode correct classificeert."/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgType.coding.system">
       <path value="SIMDBC.ZorgType.coding.system"/>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="ZorgTypeCodeSysteem"/>
+        <map value="DBC;ZorgTypeCodeSysteem"/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgType.coding.code">
       <path value="SIMDBC.ZorgType.coding.code"/>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="ZorgTypeCode"/>
+        <map value="DBC;ZorgTypeCode"/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgType.coding.display">
       <path value="SIMDBC.ZorgType.coding.display"/>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="ZorgTypeOmschrijving"/>
+        <map value="DBC;ZorgTypeOmschrijving"/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgProduct">
@@ -1566,21 +1506,21 @@
       <path value="SIMDBC.ZorgProduct.coding.system"/>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="ZorgProductCodeSysteem"/>
+        <map value="DBC;ZorgProductCodeSysteem"/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgProduct.coding.code">
       <path value="SIMDBC.ZorgProduct.coding.code"/>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="ZorgProductCode"/>
+        <map value="DBC;ZorgProductCode"/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgProduct.coding.display">
       <path value="SIMDBC.ZorgProduct.coding.display"/>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="ZorgProductOmschrijving"/>
+        <map value="DBC;ZorgProductOmschrijving"/>
       </mapping>
     </element>
     <element id="SIMDBC.Gevuld">
@@ -1594,13 +1534,13 @@
       </type>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="DBCgevuld"/>
+        <map value="DBC;DBCgevuld"/>
       </mapping>
     </element>
     <element id="SIMDBC.Geldig">
       <path value="SIMDBC.Geldig"/>
-      <short value="Geeft aan of de DBC geldig is"/>
-      <definition value="Geeft aan of de DBC geldig is"/>
+      <short value="Geeft aan of de DBC administratief geldig is"/>
+      <definition value="Geeft aan of de DBC administratief geldig is"/>
       <min value="0"/>
       <max value="1"/>
       <type>
@@ -1608,11 +1548,7 @@
       </type>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="DBCgeldig"/>
-      </mapping>
-      <mapping>
-        <identity value="SIMDBCToFHIR"/>
-        <map value="EpisodeOfCare.status"/>
+        <map value="DBC;DBCgeldig"/>
       </mapping>
     </element>
     <element id="SIMDBC.OpeningsDatum">
@@ -1626,11 +1562,12 @@
       </type>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="DBCOpeningsDatum"/>
+        <map value="DBC;DBCOpeningsDatum"/>
       </mapping>
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.period.start"/>
+        <comment value="Alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."/>
       </mapping>
     </element>
     <element id="SIMDBC.SluitingsDatum">
@@ -1644,11 +1581,12 @@
       </type>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="DBCSluitingsDatum"/>
+        <map value="DBC;DBCSluitingsDatum"/>
       </mapping>
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.period.end"/>
+        <comment value="Alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."/>
       </mapping>
     </element>
     <element id="SIMDBC.UitvoerderSpecialisme">
@@ -1665,45 +1603,14 @@
       <path value="SIMDBC.UitvoerderSpecialisme.system"/>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="Uitvoerder_SpecialismeSysteem"/>
+        <map value="DBC;Uitvoerder_SpecialismeSysteem"/>
       </mapping>
     </element>
     <element id="SIMDBC.UitvoerderSpecialisme.code">
       <path value="SIMDBC.UitvoerderSpecialisme.code"/>
       <mapping>
         <identity value="SIMDBCFromSIMCSV"/>
-        <map value="Uitvoerder_Specialisme"/>
-      </mapping>
-    </element>
-    <element id="SIMDBC.Verwijzer">
-      <path value="SIMDBC.Verwijzer"/>
-      <short value="Oorsprong van de verwijzing"/>
-      <definition value="Oorsprong van de verwijzing"/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="CodeableConcept"/>
-      </type>
-    </element>
-    <element id="SIMDBC.Verwijzer.coding.system">
-      <path value="SIMDBC.Verwijzer.coding.system"/>
-      <mapping>
-        <identity value="SIMDBCFromSIMCSV"/>
-        <map value="DBCverwijzerCodeSysteem"/>
-      </mapping>
-    </element>
-    <element id="SIMDBC.Verwijzer.coding.code">
-      <path value="SIMDBC.Verwijzer.coding.code"/>
-      <mapping>
-        <identity value="SIMDBCFromSIMCSV"/>
-        <map value="DBCverwijzerCode"/>
-      </mapping>
-    </element>
-    <element id="SIMDBC.Verwijzer.coding.display">
-      <path value="SIMDBC.Verwijzer.coding.display"/>
-      <mapping>
-        <identity value="SIMDBCFromSIMCSV"/>
-        <map value="DBCverwijzerCodeOmschrijving"/>
+        <map value="DBC;Uitvoerder_Specialisme"/>
       </mapping>
     </element>
   </differential>

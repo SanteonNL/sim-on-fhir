@@ -4,7 +4,7 @@
 
  **References** 
 
-* [SpecialismeDiagnoseCode](StructureDefinition-specialisme-diagnose-code.md)
+This value set is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)
 
 ### Logical Definition (CLD)
 
@@ -31,7 +31,7 @@ No Expansion for this valueset (Unknown Code System)
   "name" : "LocalSpecialismeDiagnoseCodes",
   "title" : "IBD Specialisme-Diagnose Combinaties",
   "status" : "active",
-  "date" : "2026-10-26T15:58:19+00:00",
+  "date" : "2026-10-29T22:11:52+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",

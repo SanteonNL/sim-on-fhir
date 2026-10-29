@@ -1,8 +1,8 @@
 {
   "resourceType" : "Bundle",
-  "id" : "90273981-bd77-4ecc-b751-1b0afa8348a0",
+  "id" : "567bb2c9-e97c-4400-9a23-9bb0bd1b7c35",
   "meta" : {
-    "lastUpdated" : "2026-10-26T15:58:19.211+00:00"
+    "lastUpdated" : "2026-10-29T22:11:52.838+00:00"
   },
   "type" : "collection",
   "entry" : [{
@@ -18,7 +18,7 @@
       "name" : "AlcoholGebruikStatusCodelijst",
       "title" : "AlcoholGebruikStatusCodelijst",
       "status" : "draft",
-      "date" : "2026-10-26T15:58:19+00:00",
+      "date" : "2026-10-29T22:11:52+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -27,8 +27,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:9bfefaef-f26e-4819-b071-e89db3e8ffac",
-        "timestamp" : "2026-10-26T15:59:42+00:00",
+        "identifier" : "urn:uuid:69181671-0da1-467a-86f6-01bf142313b4",
+        "timestamp" : "2026-10-29T22:13:34+00:00",
         "total" : 5,
         "offset" : 0,
         "parameter" : [{
@@ -108,7 +108,7 @@
       "name" : "AlcoholGebruikStatusCodelijst",
       "title" : "AlcoholGebruikStatusCodelijst",
       "status" : "draft",
-      "date" : "2026-10-26T15:58:19+00:00",
+      "date" : "2026-10-29T22:11:52+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -117,8 +117,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:28eedb71-bc15-4bb0-8be8-32763d6bbe83",
-        "timestamp" : "2026-10-26T15:59:42+00:00",
+        "identifier" : "urn:uuid:55d0f9cc-fca1-4e08-8d23-dee3cb19fa27",
+        "timestamp" : "2026-10-29T22:13:34+00:00",
         "total" : 5,
         "offset" : 0,
         "parameter" : [{
@@ -198,7 +198,7 @@
       "name" : "Santeon_MetingNaamCodelijst",
       "title" : "Santeon_MetingNaamCodelijst",
       "status" : "draft",
-      "date" : "2026-10-26T15:58:19+00:00",
+      "date" : "2026-10-29T22:11:52+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -207,8 +207,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:00cdd1c0-409d-4b3b-b6ea-c259809ca431",
-        "timestamp" : "2026-10-26T15:59:43+00:00",
+        "identifier" : "urn:uuid:9bf5580c-eacc-472e-99ec-921522a7dd88",
+        "timestamp" : "2026-10-29T22:13:35+00:00",
         "total" : 2,
         "offset" : 0,
         "parameter" : [{
@@ -273,7 +273,7 @@
       "name" : "Santeon_MetingNaamCodelijst",
       "title" : "Santeon_MetingNaamCodelijst",
       "status" : "draft",
-      "date" : "2026-10-26T15:58:19+00:00",
+      "date" : "2026-10-29T22:11:52+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -282,8 +282,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:038e0651-8cf2-40f7-b1a7-ec5bba351fe7",
-        "timestamp" : "2026-10-26T15:59:43+00:00",
+        "identifier" : "urn:uuid:70ba99c1-3531-4b78-96d4-b675876e11ee",
+        "timestamp" : "2026-10-29T22:13:35+00:00",
         "total" : 2,
         "offset" : 0,
         "parameter" : [{
@@ -349,7 +349,7 @@
       "title" : "De-identification Action Value Set",
       "status" : "active",
       "experimental" : false,
-      "date" : "2026-10-26T15:58:19+00:00",
+      "date" : "2026-10-29T22:11:52+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -358,8 +358,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:649504c0-caef-4c8e-91cd-1e7d8e1962f8",
-        "timestamp" : "2026-10-26T15:59:43+00:00",
+        "identifier" : "urn:uuid:abe1dd7a-886b-4b9b-b738-40dc78262c62",
+        "timestamp" : "2026-10-29T22:13:35+00:00",
         "total" : 5,
         "offset" : 0,
         "parameter" : [{
@@ -424,7 +424,7 @@
       "title" : "De-identification Action Value Set",
       "status" : "active",
       "experimental" : false,
-      "date" : "2026-10-26T15:58:19+00:00",
+      "date" : "2026-10-29T22:11:52+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -433,8 +433,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:db22b4e4-1fe2-460c-9bda-954151f2c1eb",
-        "timestamp" : "2026-10-26T15:59:43+00:00",
+        "identifier" : "urn:uuid:a8916667-6dc8-48b2-b454-53641fe2f46f",
+        "timestamp" : "2026-10-29T22:13:35+00:00",
         "total" : 5,
         "offset" : 0,
         "parameter" : [{
@@ -499,7 +499,7 @@
       "title" : "Observation code (SAN KPI)",
       "status" : "draft",
       "experimental" : false,
-      "date" : "2026-10-26T15:58:19+00:00",
+      "date" : "2026-10-29T22:11:52+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -508,8 +508,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:477d3350-e401-4224-b59e-421661cb4ced",
-        "timestamp" : "2026-10-26T15:59:43+00:00",
+        "identifier" : "urn:uuid:426d4a69-b7e3-442a-a0a5-2f69a81acc3e",
+        "timestamp" : "2026-10-29T22:13:35+00:00",
         "total" : 2,
         "offset" : 0,
         "parameter" : [{
@@ -575,7 +575,7 @@
       "title" : "Observation code (SAN KPI)",
       "status" : "draft",
       "experimental" : false,
-      "date" : "2026-10-26T15:58:19+00:00",
+      "date" : "2026-10-29T22:11:52+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -584,8 +584,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:b8e61380-8996-4608-922d-41a361e3662b",
-        "timestamp" : "2026-10-26T15:59:43+00:00",
+        "identifier" : "urn:uuid:7987cd5d-16cd-4df5-adf4-4a00e97efd9c",
+        "timestamp" : "2026-10-29T22:13:35+00:00",
         "total" : 2,
         "offset" : 0,
         "parameter" : [{
@@ -633,250 +633,6 @@
           "system" : "http://loinc.org",
           "code" : "38445-3",
           "display" : "Calprotectin [Mass/mass] in Stool"
-        }]
-      }
-    }
-  },
-  {
-    "fullUrl" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000",
-    "resource" : {
-      "resourceType" : "ValueSet",
-      "meta" : {
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablevalueset"],
-        "tag" : [{
-          "system" : "http://hl7.org/fhir/FHIR-version",
-          "code" : "4.0.1"
-        }]
-      },
-      "text" : {
-        "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion from tx.fhir.org based on:</p><ul><li>SNOMED CT International edition 01-Feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li><li><a href=\"http://terminology.hl7.org/7.4.0/CodeSystem-v3-NullFlavor.html\">codesystem NullFlavor v4.0.0 (CodeSystem)</a><span class=\"copy-text-inline\"><button data-clipboard-text=\"http://terminology.hl7.org/CodeSystem/v3-NullFlavor|4.0.0\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li></ul></div><p>This value set contains 6 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>Inactive</b></td><td><b>Definition</b></td><td><b><a href=\"http://hl7.org/fhir/concept-properties#status\">status</a></b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://terminology.hl7.org/CodeSystem/v3-NullFlavor-OTH\"> </a><code>http://terminology.hl7.org/CodeSystem/v3-NullFlavor</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://terminology.hl7.org/7.4.0/CodeSystem-v3-NullFlavor.html#v3-NullFlavor-OTH\">OTH</a></td><td>Other</td><td/><td><div><p>**Description:**The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g., concept not provided by required code system).</p>\n<p><strong>Usage Notes</strong>: This flavor and its specializations are most commonly used with the CD datatype and its flavors. However, it may apply to *any* datatype where the constraints of the type are tighter than can be conveyed. For example, a PQ that is for a true measured amount whose units are not supported in UCUM, a need to convey a REAL when the type has been constrained to INT, etc.</p>\n<p>With coded datatypes, this null flavor may only be used if the vocabulary binding has a coding strength of CNE. By definition, all local codes and original text are part of the value set if the coding strength is CWE.</p>\n</div></td><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-NullFlavor&quot;, &quot;version&quot;: &quot;4.0.0&quot;, &quot;code&quot;: &quot;OTH&quot;, &quot;display&quot;: &quot;Other&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/v3-NullFlavor&quot;/&gt;&lt;version value=&quot;4.0.0&quot;/&gt;&lt;code value=&quot;OTH&quot;/&gt;&lt;display value=&quot;Other&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-219006\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/219006\">219006</a></td><td>Current drinker</td><td/><td/><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;219006&quot;, &quot;display&quot;: &quot;Current drinker&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;219006&quot;/&gt;&lt;display value=&quot;Current drinker&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-105542008\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/105542008\">105542008</a></td><td>Non - drinker</td><td/><td/><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;105542008&quot;, &quot;display&quot;: &quot;Non - drinker&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;105542008&quot;/&gt;&lt;display value=&quot;Non - drinker&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-82581004\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/82581004\">82581004</a></td><td>Ex-drinker</td><td/><td/><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;82581004&quot;, &quot;display&quot;: &quot;Ex-drinker&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;82581004&quot;/&gt;&lt;display value=&quot;Ex-drinker&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-228274009\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/228274009\">228274009</a></td><td>Lifetime non-drinker</td><td>inactive</td><td/><td>inactive</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;228274009&quot;, &quot;display&quot;: &quot;Lifetime non-drinker&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;228274009&quot;/&gt;&lt;display value=&quot;Lifetime non-drinker&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-783261004\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/783261004\">783261004</a></td><td>Lifetime non-drinker of alcohol</td><td/><td/><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;783261004&quot;, &quot;display&quot;: &quot;Lifetime non-drinker of alcohol&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;783261004&quot;/&gt;&lt;display value=&quot;Lifetime non-drinker of alcohol&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr></table></div>"
-      },
-      "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000",
-      "identifier" : [{
-        "use" : "official",
-        "system" : "urn:ietf:rfc:3986",
-        "value" : "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2"
-      }],
-      "version" : "0.1.0",
-      "name" : "AlcoholGebruikStatusCodelijst",
-      "title" : "AlcoholGebruikStatusCodelijst",
-      "status" : "active",
-      "experimental" : false,
-      "date" : "2026-10-26T15:58:19+00:00",
-      "jurisdiction" : [{
-        "coding" : [{
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "NL",
-          "display" : "Netherlands"
-        }]
-      }],
-      "immutable" : false,
-      "expansion" : {
-        "identifier" : "urn:uuid:ce652961-823c-46c0-842e-3544987f9617",
-        "timestamp" : "2026-10-26T15:59:44+00:00",
-        "total" : 6,
-        "offset" : 0,
-        "parameter" : [{
-          "name" : "displayLanguage",
-          "valueCode" : "en"
-        },
-        {
-          "name" : "count",
-          "valueInteger" : 1000
-        },
-        {
-          "name" : "offset",
-          "valueInteger" : 0
-        },
-        {
-          "name" : "excludeNested",
-          "valueBoolean" : false
-        },
-        {
-          "name" : "used-codesystem",
-          "valueUri" : "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|4.0.0"
-        },
-        {
-          "name" : "used-valueset",
-          "valueUri" : "null"
-        },
-        {
-          "name" : "excludeNested",
-          "valueBoolean" : true
-        },
-        {
-          "name" : "includeDefinition",
-          "valueBoolean" : false
-        },
-        {
-          "name" : "used-codesystem",
-          "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201"
-        }],
-        "property" : [{
-          "code" : "status",
-          "uri" : "http://hl7.org/fhir/concept-properties#status"
-        }],
-        "contains" : [{
-          "system" : "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-          "code" : "OTH",
-          "display" : "Other"
-        },
-        {
-          "system" : "http://snomed.info/sct",
-          "code" : "219006",
-          "display" : "Current drinker"
-        },
-        {
-          "system" : "http://snomed.info/sct",
-          "code" : "105542008",
-          "display" : "Non - drinker"
-        },
-        {
-          "system" : "http://snomed.info/sct",
-          "code" : "82581004",
-          "display" : "Ex-drinker"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/StructureDefinition/valueset-deprecated",
-            "valueBoolean" : true
-          }],
-          "system" : "http://snomed.info/sct",
-          "inactive" : true,
-          "code" : "228274009",
-          "display" : "Lifetime non-drinker",
-          "property" : [{
-            "code" : "status",
-            "valueCode" : "inactive"
-          }]
-        },
-        {
-          "system" : "http://snomed.info/sct",
-          "code" : "783261004",
-          "display" : "Lifetime non-drinker of alcohol"
-        }]
-      }
-    }
-  },
-  {
-    "fullUrl" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000",
-    "resource" : {
-      "resourceType" : "ValueSet",
-      "meta" : {
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablevalueset"],
-        "tag" : [{
-          "system" : "http://hl7.org/fhir/FHIR-version",
-          "code" : "4.0.1"
-        }]
-      },
-      "text" : {
-        "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" data-fhir=\"generated\"><p class=\"res-header-id\"/><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion from tx.fhir.org based on:</p><ul><li>SNOMED CT International edition 01-Feb 2025<span class=\"copy-text-inline\"><button data-clipboard-text=\"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li><li><a href=\"http://terminology.hl7.org/7.4.0/CodeSystem-v3-NullFlavor.html\">codesystem NullFlavor v4.0.0 (CodeSystem)</a><span class=\"copy-text-inline\"><button data-clipboard-text=\"http://terminology.hl7.org/CodeSystem/v3-NullFlavor|4.0.0\" title=\"Click to Copy URL\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></li></ul></div><p>This value set contains 6 concepts</p><table class=\"codes\" data-fhir=\"generated\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display (en)</b></td><td><b>Inactive</b></td><td><b>Definition</b></td><td><b><a href=\"http://hl7.org/fhir/concept-properties#status\">status</a></b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name=\"x-http://terminology.hl7.org/CodeSystem/v3-NullFlavor-OTH\"> </a><code>http://terminology.hl7.org/CodeSystem/v3-NullFlavor</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://terminology.hl7.org/7.4.0/CodeSystem-v3-NullFlavor.html#v3-NullFlavor-OTH\">OTH</a></td><td>Other</td><td/><td><div><p>**Description:**The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g., concept not provided by required code system).</p>\n<p><strong>Usage Notes</strong>: This flavor and its specializations are most commonly used with the CD datatype and its flavors. However, it may apply to *any* datatype where the constraints of the type are tighter than can be conveyed. For example, a PQ that is for a true measured amount whose units are not supported in UCUM, a need to convey a REAL when the type has been constrained to INT, etc.</p>\n<p>With coded datatypes, this null flavor may only be used if the vocabulary binding has a coding strength of CNE. By definition, all local codes and original text are part of the value set if the coding strength is CWE.</p>\n</div></td><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-NullFlavor&quot;, &quot;version&quot;: &quot;4.0.0&quot;, &quot;code&quot;: &quot;OTH&quot;, &quot;display&quot;: &quot;Other&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/v3-NullFlavor&quot;/&gt;&lt;version value=&quot;4.0.0&quot;/&gt;&lt;code value=&quot;OTH&quot;/&gt;&lt;display value=&quot;Other&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-219006\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/219006\">219006</a></td><td>Current drinker</td><td/><td/><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;219006&quot;, &quot;display&quot;: &quot;Current drinker&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;219006&quot;/&gt;&lt;display value=&quot;Current drinker&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-105542008\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/105542008\">105542008</a></td><td>Non - drinker</td><td/><td/><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;105542008&quot;, &quot;display&quot;: &quot;Non - drinker&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;105542008&quot;/&gt;&lt;display value=&quot;Non - drinker&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-82581004\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/82581004\">82581004</a></td><td>Ex-drinker</td><td/><td/><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;82581004&quot;, &quot;display&quot;: &quot;Ex-drinker&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;82581004&quot;/&gt;&lt;display value=&quot;Ex-drinker&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-228274009\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/228274009\">228274009</a></td><td>Lifetime non-drinker</td><td>inactive</td><td/><td>inactive</td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;228274009&quot;, &quot;display&quot;: &quot;Lifetime non-drinker&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;228274009&quot;/&gt;&lt;display value=&quot;Lifetime non-drinker&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr><tr><td><a name=\"x-http://snomed.info/sct-783261004\"> </a><code>http://snomed.info/sct</code></td><td style=\"white-space:nowrap\">\u00a0\u00a0<a href=\"http://snomed.info/id/783261004\">783261004</a></td><td>Lifetime non-drinker of alcohol</td><td/><td/><td/><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;783261004&quot;, &quot;display&quot;: &quot;Lifetime non-drinker of alcohol&quot;}\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td><td><span class=\"copy-text-inline\"><button data-clipboard-text=\"&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;783261004&quot;/&gt;&lt;display value=&quot;Lifetime non-drinker of alcohol&quot;/&gt;&lt;/coding&gt;\" title=\"Click to Copy as Coding\" class=\"btn-copy\" aria-label=\"copy\"> </button></span></td></tr></table></div>"
-      },
-      "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000",
-      "identifier" : [{
-        "use" : "official",
-        "system" : "urn:ietf:rfc:3986",
-        "value" : "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2"
-      }],
-      "version" : "0.1.0",
-      "name" : "AlcoholGebruikStatusCodelijst",
-      "title" : "AlcoholGebruikStatusCodelijst",
-      "status" : "active",
-      "experimental" : false,
-      "date" : "2026-10-26T15:58:19+00:00",
-      "jurisdiction" : [{
-        "coding" : [{
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "NL",
-          "display" : "Netherlands"
-        }]
-      }],
-      "immutable" : false,
-      "expansion" : {
-        "identifier" : "urn:uuid:4d506238-7f16-4fdb-9e30-e39a0e9143e6",
-        "timestamp" : "2026-10-26T15:59:44+00:00",
-        "total" : 6,
-        "offset" : 0,
-        "parameter" : [{
-          "name" : "displayLanguage",
-          "valueCode" : "en"
-        },
-        {
-          "name" : "count",
-          "valueInteger" : 1000
-        },
-        {
-          "name" : "offset",
-          "valueInteger" : 0
-        },
-        {
-          "name" : "excludeNested",
-          "valueBoolean" : false
-        },
-        {
-          "name" : "used-codesystem",
-          "valueUri" : "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|4.0.0"
-        },
-        {
-          "name" : "used-valueset",
-          "valueUri" : "null"
-        },
-        {
-          "name" : "excludeNested",
-          "valueBoolean" : true
-        },
-        {
-          "name" : "includeDefinition",
-          "valueBoolean" : false
-        },
-        {
-          "name" : "used-codesystem",
-          "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201"
-        }],
-        "property" : [{
-          "code" : "status",
-          "uri" : "http://hl7.org/fhir/concept-properties#status"
-        }],
-        "contains" : [{
-          "system" : "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-          "code" : "OTH",
-          "display" : "Other"
-        },
-        {
-          "system" : "http://snomed.info/sct",
-          "code" : "219006",
-          "display" : "Current drinker"
-        },
-        {
-          "system" : "http://snomed.info/sct",
-          "code" : "105542008",
-          "display" : "Non - drinker"
-        },
-        {
-          "system" : "http://snomed.info/sct",
-          "code" : "82581004",
-          "display" : "Ex-drinker"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/StructureDefinition/valueset-deprecated",
-            "valueBoolean" : true
-          }],
-          "system" : "http://snomed.info/sct",
-          "inactive" : true,
-          "code" : "228274009",
-          "display" : "Lifetime non-drinker",
-          "property" : [{
-            "code" : "status",
-            "valueCode" : "inactive"
-          }]
-        },
-        {
-          "system" : "http://snomed.info/sct",
-          "code" : "783261004",
-          "display" : "Lifetime non-drinker of alcohol"
         }]
       }
     }

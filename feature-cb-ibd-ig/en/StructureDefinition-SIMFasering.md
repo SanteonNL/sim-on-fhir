@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMFasering.csv),
   "name" : "SIMFasering",
   "title" : "Fasering (model)",
   "status" : "draft",
-  "date" : "2026-10-26T15:58:19+00:00",
+  "date" : "2026-10-29T22:11:52+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMFasering.csv),
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "Logisch model voor een procesfasering binnen het Santeon Informatiemodel, bijvoorbeeld faseringen rondom een operatie.",
+  "description" : "Generiek logisch model voor een procesfasering binnen het Santeon Informatiemodel, bijvoorbeeld faseringen rondom een operatie.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -49,13 +49,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMFasering.csv),
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "SIMFaseringFromSIMCSV",
-    "uri" : "SIM CSVs",
-    "name" : "SIM CSVs"
-  },
-  {
-    "identity" : "SIMFaseringToFHIR",
-    "uri" : "http://hl7.org/fhir/StructureDefinition/EncounterSan",
-    "name" : "FHIR"
+    "uri" : "urn:santeon:sim:csv",
+    "name" : "SIM CSV"
   }],
   "kind" : "logical",
   "abstract" : false,
@@ -67,126 +62,66 @@ Other representations of profile: [CSV](../StructureDefinition-SIMFasering.csv),
       "id" : "SIMFasering",
       "path" : "SIMFasering",
       "short" : "Fasering (model)",
-      "definition" : "Logisch model voor een procesfasering binnen het Santeon Informatiemodel, bijvoorbeeld faseringen rondom een operatie."
+      "definition" : "Generiek logisch model voor een procesfasering binnen het Santeon Informatiemodel, bijvoorbeeld faseringen rondom een operatie."
     },
     {
       "id" : "SIMFasering.FaseringID",
       "path" : "SIMFasering.FaseringID",
-      "short" : "Unieke identificatie van de fasering",
-      "definition" : "Unieke identificatie van de fasering",
+      "short" : "Uniek ID (key) binnen patiënt per fasering",
+      "definition" : "Uniek ID (key) binnen patiënt per fasering",
       "min" : 1,
       "max" : "1",
       "type" : [{
         "code" : "Identifier"
       }],
       "mapping" : [{
-        "identity" : "SIMFaseringToFHIR",
-        "map" : "Encounter.identifier"
-      }]
-    },
-    {
-      "id" : "SIMFasering.FaseringID.system",
-      "path" : "SIMFasering.FaseringID.system",
-      "mapping" : [{
         "identity" : "SIMFaseringFromSIMCSV",
-        "map" : "FaseringID_system"
-      }]
-    },
-    {
-      "id" : "SIMFasering.FaseringID.value",
-      "path" : "SIMFasering.FaseringID.value",
-      "mapping" : [{
-        "identity" : "SIMFaseringFromSIMCSV",
-        "map" : "FaseringID_value"
+        "map" : "Fasering;FaseringID"
       }]
     },
     {
       "id" : "SIMFasering.ContactID",
       "path" : "SIMFasering.ContactID",
-      "short" : "Identificatie van het contact waarbinnen de fasering plaatsvindt",
-      "definition" : "Identificatie van het contact waarbinnen de fasering plaatsvindt",
+      "short" : "Uniek ID (key) binnen patiënt per contact",
+      "definition" : "Uniek ID (key) binnen patiënt per contact",
       "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "Identifier"
       }],
       "mapping" : [{
-        "identity" : "SIMFaseringToFHIR",
-        "map" : "Encounter.partOf"
-      }]
-    },
-    {
-      "id" : "SIMFasering.ContactID.system",
-      "path" : "SIMFasering.ContactID.system",
-      "mapping" : [{
         "identity" : "SIMFaseringFromSIMCSV",
-        "map" : "ContactID_system"
-      }]
-    },
-    {
-      "id" : "SIMFasering.ContactID.value",
-      "path" : "SIMFasering.ContactID.value",
-      "mapping" : [{
-        "identity" : "SIMFaseringFromSIMCSV",
-        "map" : "ContactID_value"
+        "map" : "Fasering;ContactID"
       }]
     },
     {
       "id" : "SIMFasering.OperatieID",
       "path" : "SIMFasering.OperatieID",
-      "short" : "Identificatie van de operatie waarop de fasering betrekking heeft",
-      "definition" : "Identificatie van de operatie waarop de fasering betrekking heeft",
+      "short" : "Uniek ID (key) binnen patiënt per OK",
+      "definition" : "Uniek ID (key) binnen patiënt per OK",
       "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "Identifier"
-      }]
-    },
-    {
-      "id" : "SIMFasering.OperatieID.system",
-      "path" : "SIMFasering.OperatieID.system",
+      }],
       "mapping" : [{
         "identity" : "SIMFaseringFromSIMCSV",
-        "map" : "OperatieID_system"
+        "map" : "Fasering;OperatieID"
       }]
     },
     {
-      "id" : "SIMFasering.OperatieID.value",
-      "path" : "SIMFasering.OperatieID.value",
-      "mapping" : [{
-        "identity" : "SIMFaseringFromSIMCSV",
-        "map" : "OperatieID_value"
-      }]
-    },
-    {
-      "id" : "SIMFasering.Patient",
-      "path" : "SIMFasering.Patient",
-      "short" : "Identificatie van de patiënt",
-      "definition" : "Identificatie van de patiënt",
+      "id" : "SIMFasering.PatientIdentificatienummer",
+      "path" : "SIMFasering.PatientIdentificatienummer",
+      "short" : "Identificatienummer van de patiënt",
+      "definition" : "Identificatienummer van de patiënt",
       "min" : 1,
       "max" : "1",
       "type" : [{
-        "code" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMPatient"
+        "code" : "Identifier"
       }],
       "mapping" : [{
-        "identity" : "SIMFaseringToFHIR",
-        "map" : "Encounter.subject"
-      }]
-    },
-    {
-      "id" : "SIMFasering.Patient.Identificatienummer.system",
-      "path" : "SIMFasering.Patient.Identificatienummer.system",
-      "mapping" : [{
         "identity" : "SIMFaseringFromSIMCSV",
-        "map" : "Identificatienummer_system"
-      }]
-    },
-    {
-      "id" : "SIMFasering.Patient.Identificatienummer.value",
-      "path" : "SIMFasering.Patient.Identificatienummer.value",
-      "mapping" : [{
-        "identity" : "SIMFaseringFromSIMCSV",
-        "map" : "Identificatienummer_value"
+        "map" : "Fasering;Identificatienummer"
       }]
     },
     {
@@ -194,14 +129,10 @@ Other representations of profile: [CSV](../StructureDefinition-SIMFasering.csv),
       "path" : "SIMFasering.FaseringType",
       "short" : "Type procesfasering",
       "definition" : "Type procesfasering",
-      "min" : 1,
+      "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "CodeableConcept"
-      }],
-      "mapping" : [{
-        "identity" : "SIMFaseringToFHIR",
-        "map" : "Encounter.type"
       }]
     },
     {
@@ -209,7 +140,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMFasering.csv),
       "path" : "SIMFasering.FaseringType.coding.system",
       "mapping" : [{
         "identity" : "SIMFaseringFromSIMCSV",
-        "map" : "FaseringCodeSysteem"
+        "map" : "Fasering;FaseringCodeSysteem"
       }]
     },
     {
@@ -217,7 +148,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMFasering.csv),
       "path" : "SIMFasering.FaseringType.coding.code",
       "mapping" : [{
         "identity" : "SIMFaseringFromSIMCSV",
-        "map" : "FaseringCode"
+        "map" : "Fasering;FaseringCode"
       }]
     },
     {
@@ -225,45 +156,37 @@ Other representations of profile: [CSV](../StructureDefinition-SIMFasering.csv),
       "path" : "SIMFasering.FaseringType.coding.display",
       "mapping" : [{
         "identity" : "SIMFaseringFromSIMCSV",
-        "map" : "FaseringOmschrijving"
+        "map" : "Fasering;FaseringOmschrijving"
       }]
     },
     {
       "id" : "SIMFasering.BeginDatumTijd",
       "path" : "SIMFasering.BeginDatumTijd",
-      "short" : "Datum en tijd waarop de fasering begint",
-      "definition" : "Datum en tijd waarop de fasering begint",
-      "min" : 1,
+      "short" : "Datum en eventueel tijd waarop de fasering begint",
+      "definition" : "Datum en eventueel tijd waarop de fasering begint",
+      "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "dateTime"
       }],
       "mapping" : [{
         "identity" : "SIMFaseringFromSIMCSV",
-        "map" : "FaseringBeginDatumTijd"
-      },
-      {
-        "identity" : "SIMFaseringToFHIR",
-        "map" : "Encounter.period.start"
+        "map" : "Fasering;FaseringBeginDatumTijd"
       }]
     },
     {
       "id" : "SIMFasering.EindDatumTijd",
       "path" : "SIMFasering.EindDatumTijd",
-      "short" : "Datum en tijd waarop de fasering eindigt",
-      "definition" : "Datum en tijd waarop de fasering eindigt",
-      "min" : 1,
+      "short" : "Datum en eventueel tijd waarop de fasering eindigt",
+      "definition" : "Datum en eventueel tijd waarop de fasering eindigt",
+      "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "dateTime"
       }],
       "mapping" : [{
         "identity" : "SIMFaseringFromSIMCSV",
-        "map" : "FaseringEindDatumTijd"
-      },
-      {
-        "identity" : "SIMFaseringToFHIR",
-        "map" : "Encounter.period.end"
+        "map" : "Fasering;FaseringEindDatumTijd"
       }]
     }]
   }

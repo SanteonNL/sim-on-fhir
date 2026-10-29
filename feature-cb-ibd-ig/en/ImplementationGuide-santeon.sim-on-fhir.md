@@ -14,7 +14,7 @@
   "name" : "SanteonSimOnFhir",
   "title" : "SIM on FHIR",
   "status" : "draft",
-  "date" : "2026-10-26T15:58:19+00:00",
+  "date" : "2026-10-29T22:11:52+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -35,37 +35,31 @@
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.1"],
   "dependsOn" : [{
-    "id" : "hl7tx",
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
-      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on HL7 Terminology"
-    }],
+    "id" : "nictiz_nl_gbb",
+    "uri" : "http://ig.nictiz.nl/gbb/ImplementationGuide/nictiz.nl.gbb",
+    "packageId" : "nictiz.nl.gbb",
+    "version" : "1.0.0-alpha.1"
+  },
+  {
+    "id" : "hl7_fhir_uv_tools_r4",
+    "uri" : "http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools",
+    "packageId" : "hl7.fhir.uv.tools.r4",
+    "version" : "1.3.0"
+  },
+  {
+    "id" : "hl7_terminology_r4",
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
     "version" : "7.4.0"
   },
   {
-    "id" : "hl7ext",
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
-      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
-    }],
+    "id" : "hl7_fhir_uv_extensions_r4",
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
     "version" : "5.3.0"
-  },
-  {
-    "id" : "nictiz_nl_gbb",
-    "uri" : "http://ig.nictiz.nl/gbb/ImplementationGuide/nictiz.nl.gbb",
-    "packageId" : "nictiz.nl.gbb",
-    "version" : "1.0.0-alpha.1"
   }],
   "definition" : {
     "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r4#1.3.0"
-    },
-    {
       "extension" : [{
         "url" : "code",
         "valueCode" : "copyrightyear"
@@ -450,22 +444,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000.html"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000"
-      },
-      "name" : "AlcoholGebruikStatusCodelijst",
-      "description" : "AlcoholGebruikStatusCodelijst",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:logical"
       },
       {
@@ -476,7 +454,7 @@
         "reference" : "StructureDefinition/SIMAlgemeneMeting"
       },
       "name" : "Algemene meting (model)",
-      "description" : "Logisch model voor een algemeneMeting binnen het Santeon Informatiemodel.",
+      "description" : "Generiek logisch model voor een algemene meting binnen het Santeon Informatiemodel.",
       "exampleBoolean" : false
     },
     {
@@ -498,22 +476,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229.html"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229"
-      },
-      "name" : "CareplanCategoryCodelijst",
-      "description" : "CareplanCategoryCodelijst",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       },
       {
@@ -524,7 +486,23 @@
         "reference" : "StructureDefinition/condition-san"
       },
       "name" : "Condition (SAN)",
-      "description" : "**De-identificatie:**\n- identifier → hashed\n- subject → hashed",
+      "description" : "Generiek Santeon FHIR R4-profiel voor aandoeningen en diagnoses.\n\nDe aansluiting op het Santeon Informatiemodel wordt\nvastgelegd via afzonderlijke mappings naar de\nrelevante bronmodellen.\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-SIMContact.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/SIMContact"
+      },
+      "name" : "Contact (model)",
+      "description" : "Generiek logisch model voor een zorgcontact binnen het Santeon Informatiemodel.",
       "exampleBoolean" : false
     },
     {
@@ -556,7 +534,7 @@
         "reference" : "StructureDefinition/SIMDBC"
       },
       "name" : "DBC/Zorgtraject (model)",
-      "description" : "Logisch model voor een DBC binnen het Santeon Informatiemodel.",
+      "description" : "Generiek logisch model voor een DBC binnen het Santeon Informatiemodel.",
       "exampleBoolean" : false
     },
     {
@@ -614,13 +592,29 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-encounter-san.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/encounter-san"
+      },
+      "name" : "Encounter (SAN)",
+      "description" : "Generiek Santeon FHIR R4-profiel voor zorgcontacten.\n\nGebaseerd op het Santeon Informatiemodel (SIMContact).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "StructureDefinition-episodeOfCare-san.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/episodeOfCare-san"
       },
       "name" : "EpisodeOfCare (SAN)",
-      "description" : "**De-identificatie:**\n- identifier → hashed\n- patient → hashed",
+      "description" : "Generiek Santeon FHIR R4-profiel voor zorgepisodes.\n\nGebaseerd op het Santeon Informatiemodel (SIMDBC), waarbij\nnog moet worden vastgesteld hoe een DBC-subtraject zich\nverhoudt tot een FHIR EpisodeOfCare.\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
       "exampleBoolean" : false
     },
     {
@@ -636,7 +630,7 @@
         "reference" : "StructureDefinition/SIMFasering"
       },
       "name" : "Fasering (model)",
-      "description" : "Logisch model voor een procesfasering binnen het Santeon Informatiemodel, bijvoorbeeld faseringen rondom een operatie.",
+      "description" : "Generiek logisch model voor een procesfasering binnen het Santeon Informatiemodel, bijvoorbeeld faseringen rondom een operatie.",
       "exampleBoolean" : false
     },
     {
@@ -856,7 +850,7 @@
         "reference" : "StructureDefinition/observation-san"
       },
       "name" : "Observation (SAN)",
-      "description" : "**De-identificatie:**\n- identifier → hashed\n- subject → hashed\n- effectiveDateTime → dateshift",
+      "description" : "Generiek Santeon FHIR R4-profiel voor algemene metingen.\n\nGebaseerd op het Santeon Informatiemodel (SIMAlgemeneMeting).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
       "exampleBoolean" : false
     },
     {
@@ -968,7 +962,7 @@
         "reference" : "StructureDefinition/procedure-san"
       },
       "name" : "Procedure (SAN)",
-      "description" : "**De-identificatie:**\n- identifier → hashed\n- subject → hashed",
+      "description" : "Generiek Santeon FHIR R4-profiel voor verrichtingen.\n\nGebaseerd op het Santeon Informatiemodel (SIMVerrichting).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
       "exampleBoolean" : false
     },
     {
@@ -1042,22 +1036,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-specialisme-diagnose-code.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/specialisme-diagnose-code"
-      },
-      "name" : "SpecialismeDiagnoseCode",
-      "description" : "(Tijdelijke) Extensie voor SpecialismeDiagnoseCode. Deze informatie dient in een toekomstige FHIR-conforme modellering te worden ondergebracht in Condition.code.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:logical"
       },
       {
@@ -1068,7 +1046,7 @@
         "reference" : "StructureDefinition/SIMVerrichting"
       },
       "name" : "Verrichting (model)",
-      "description" : "Logisch model voor een verrichting binnen het Santeon Informatiemodel.",
+      "description" : "Generiek logisch model voor een verrichting binnen het Santeon Informatiemodel.",
       "exampleBoolean" : false
     },
     {

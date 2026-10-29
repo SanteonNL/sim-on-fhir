@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-condition-san.csv
   "name" : "ConditionSan",
   "title" : "Condition (SAN)",
   "status" : "draft",
-  "date" : "2026-10-26T15:58:19+00:00",
+  "date" : "2026-10-29T22:11:52+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-condition-san.csv
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "**De-identificatie:**\n- identifier → hashed\n- subject → hashed",
+  "description" : "Generiek Santeon FHIR R4-profiel voor aandoeningen en diagnoses.\n\nDe aansluiting op het Santeon Informatiemodel wordt\nvastgelegd via afzonderlijke mappings naar de\nrelevante bronmodellen.\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -48,10 +48,14 @@ Other representations of profile: [CSV](../StructureDefinition-condition-san.csv
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "sim",
+    "identity" : "ConditionSanFromDBC",
+    "uri" : "urn:santeon:sim:csv",
+    "name" : "ConditionSan vanuit SIM DBC"
+  },
+  {
+    "identity" : "workflow",
     "uri" : "http://hl7.org/fhir/workflow",
-    "name" : "Santeon Informatie Model",
-    "comment" : "Mapping van Condition elementen naar SIM"
+    "name" : "Workflow Pattern"
   },
   {
     "identity" : "sct-concept",
@@ -124,12 +128,6 @@ Other representations of profile: [CSV](../StructureDefinition-condition-san.csv
       "max" : "0"
     },
     {
-      "id" : "Condition.identifier",
-      "path" : "Condition.identifier",
-      "min" : 1,
-      "max" : "1"
-    },
-    {
       "id" : "Condition.identifier.use",
       "path" : "Condition.identifier.use",
       "max" : "0"
@@ -137,27 +135,7 @@ Other representations of profile: [CSV](../StructureDefinition-condition-san.csv
     {
       "id" : "Condition.identifier.value",
       "path" : "Condition.identifier.value",
-      "min" : 1,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "Probleem;ProbleemID",
-        "comment" : "hashed"
-      }]
-    },
-    {
-      "id" : "Condition.clinicalStatus",
-      "path" : "Condition.clinicalStatus",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.verificationStatus",
-      "path" : "Condition.verificationStatus",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.category",
-      "path" : "Condition.category",
-      "max" : "0"
+      "min" : 1
     },
     {
       "id" : "Condition.severity",
@@ -179,8 +157,8 @@ Other representations of profile: [CSV](../StructureDefinition-condition-san.csv
       "path" : "Condition.code.coding.system",
       "min" : 1,
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "DBC;SpecialismeDiagnoseCodeSysteem"
+        "identity" : "ConditionSanFromDBC",
+        "map" : "DBC;SpecialismeDiagnoseSysteem"
       }]
     },
     {
@@ -188,7 +166,7 @@ Other representations of profile: [CSV](../StructureDefinition-condition-san.csv
       "path" : "Condition.code.coding.code",
       "min" : 1,
       "mapping" : [{
-        "identity" : "sim",
+        "identity" : "ConditionSanFromDBC",
         "map" : "DBC;SpecialismeDiagnoseCode"
       }]
     },
@@ -196,7 +174,7 @@ Other representations of profile: [CSV](../StructureDefinition-condition-san.csv
       "id" : "Condition.code.coding.display",
       "path" : "Condition.code.coding.display",
       "mapping" : [{
-        "identity" : "sim",
+        "identity" : "ConditionSanFromDBC",
         "map" : "DBC;SpecialismeDiagnoseOmschrijving"
       }]
     },
@@ -213,9 +191,9 @@ Other representations of profile: [CSV](../StructureDefinition-condition-san.csv
         "targetProfile" : ["https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"]
       }],
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "Probleem;Identificatienummer",
-        "comment" : "hashed"
+        "identity" : "ConditionSanFromDBC",
+        "map" : "DBC;Identificatienummer",
+        "comment" : "Patient-reference op basis van identificatienummer."
       }]
     },
     {

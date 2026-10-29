@@ -23,11 +23,22 @@
     "oids" : ["2.16.840.1.113883.6.96"],
     "uses" : {
     },
-    "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst",
-    "ValueSet-2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000.html" : "AlcoholGebruikStatusCodelijst",
     "ValueSet-observationCode-san-kpi.html" : "Observation code (SAN KPI)",
+    "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst",
     "ValueSet-IBDAlgemeneMetingen.html" : "IBDAlgemeneMetingen",
     "ValueSet-Santeon-MetingNaamCodelijst.html" : "Santeon_MetingNaamCodelijst"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+    "version" : "5.0.0",
+    "status" : "active",
+    "name" : "ActPriority",
+    "title" : "ActPriority",
+    "description" : "A set of codes (e.g., for routine, emergency), specifying the urgency under which the Act happened, can happen, is happening, is intended to happen, or is requested/demanded to happen.",
+    "oids" : ["2.16.840.1.113883.5.7"],
+    "uses" : {
+    },
+    "http://terminology.hl7.org/7.4.0/ValueSet-v3-ActPriority.html" : "ActPriority"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender",
@@ -52,21 +63,7 @@
     "uses" : {
     },
     "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst",
-    "ValueSet-2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000.html" : "AlcoholGebruikStatusCodelijst",
-    "https://simplifier.net/resolve?scope=nictiz.fhir.nl.r4.nl-core@0.12.1-beta.1&canonical=http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000" : "GeslachtCodelijst",
-    "https://simplifier.net/resolve?scope=nictiz.fhir.nl.r4.nl-core@0.12.1-beta.1&canonical=http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.3.1.1--20200901000000" : "RelatieCodelijst"
-  },
-  {
-    "url" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-    "version" : "4.0.0",
-    "status" : "active",
-    "name" : "RoleCode",
-    "title" : "RoleCode",
-    "description" : "A set of codes further specifying the kind of Role; specific classification codes for further qualifying RoleClass codes.",
-    "oids" : ["2.16.840.1.113883.5.111"],
-    "uses" : {
-    },
-    "https://simplifier.net/resolve?scope=nictiz.fhir.nl.r4.nl-core@0.12.1-beta.1&canonical=http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.3.1.1--20200901000000" : "RelatieCodelijst"
+    "https://simplifier.net/resolve?scope=nictiz.fhir.nl.r4.nl-core@0.12.1-beta.1&canonical=http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000" : "GeslachtCodelijst"
   },
   {
     "url" : "https://ig.santeon.nl/sim-on-fhir/CodeSystem/deidentification-action-cs",
@@ -78,17 +75,5 @@
     "uses" : {
     },
     "ValueSet-deidentification-action-vs.html" : "De-identification Action Value Set"
-  },
-  {
-    "url" : "urn:iso:std:iso:3166",
-    "version" : "1.0.1",
-    "status" : "active",
-    "name" : "ISO3166Part1",
-    "title" : "ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code",
-    "description" : "ISO 3166-1 establishes codes that represent the current names of countries, dependencies, and other areas of particular geopolitical interest, on the basis of country names obtained from the United Nations.",
-    "oids" : ["1.0.3166.1"],
-    "uses" : {
-    },
-    "https://simplifier.net/resolve?scope=nictiz.fhir.nl.r4.nl-core@0.12.1-beta.1&canonical=http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.20.5.2--20200901000000" : "LandISOCodelijst"
   }]
 }

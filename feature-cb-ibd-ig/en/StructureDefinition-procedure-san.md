@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
   "name" : "ProcedureSan",
   "title" : "Procedure (SAN)",
   "status" : "draft",
-  "date" : "2026-10-26T15:58:19+00:00",
+  "date" : "2026-10-29T22:11:52+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "**De-identificatie:**\n- identifier → hashed\n- subject → hashed",
+  "description" : "Generiek Santeon FHIR R4-profiel voor verrichtingen.\n\nGebaseerd op het Santeon Informatiemodel (SIMVerrichting).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -49,9 +49,14 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "sim",
+    "uri" : "urn:santeon:sim:csv",
+    "name" : "Santeon Informatiemodel (SIM CSV)",
+    "comment" : "Informatieve mapping van het FHIR-profiel naar SIM CSV-bronvelden."
+  },
+  {
+    "identity" : "workflow",
     "uri" : "http://hl7.org/fhir/workflow",
-    "name" : "Santeon Informatie Model",
-    "comment" : "Mapping van Procedure elementen naar SIM"
+    "name" : "Workflow Pattern"
   },
   {
     "identity" : "rim",
@@ -125,13 +130,22 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
       "max" : "0"
     },
     {
+      "id" : "Procedure.identifier.system",
+      "path" : "Procedure.identifier.system",
+      "mapping" : [{
+        "identity" : "sim",
+        "map" : "Verrichting;VerrichtingID",
+        "comment" : "Systeemdeel van identifier_system|identifier_value."
+      }]
+    },
+    {
       "id" : "Procedure.identifier.value",
       "path" : "Procedure.identifier.value",
       "min" : 1,
       "mapping" : [{
         "identity" : "sim",
         "map" : "Verrichting;VerrichtingID",
-        "comment" : "hashed"
+        "comment" : "Waardedeel; hashed."
       }]
     },
     {
@@ -155,14 +169,13 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
       "max" : "0"
     },
     {
-      "id" : "Procedure.category",
-      "path" : "Procedure.category",
-      "max" : "0"
-    },
-    {
-      "id" : "Procedure.code",
-      "path" : "Procedure.code",
-      "min" : 1
+      "id" : "Procedure.category.coding.code",
+      "path" : "Procedure.category.coding.code",
+      "mapping" : [{
+        "identity" : "sim",
+        "map" : "Verrichting;VerrichtingCategorieCode",
+        "comment" : "CodeSystem afzonderlijk verifiëren."
+      }]
     },
     {
       "id" : "Procedure.code.coding",
@@ -175,7 +188,18 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
       "min" : 1,
       "mapping" : [{
         "identity" : "sim",
-        "map" : "Verrichting;VerrichtingTypeCodeSysteem"
+        "map" : "Verrichting;VerrichtingTypeCodeNZaSysteem",
+        "comment" : "NZa-codering."
+      },
+      {
+        "identity" : "sim",
+        "map" : "Verrichting;VerrichtingTypeCodeSnomedCTSysteem",
+        "comment" : "SNOMED CT-codering."
+      },
+      {
+        "identity" : "sim",
+        "map" : "Verrichting;VerrichtingTypeCodeDHDSysteem",
+        "comment" : "DHD-codering."
       }]
     },
     {
@@ -184,7 +208,18 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
       "min" : 1,
       "mapping" : [{
         "identity" : "sim",
-        "map" : "Verrichting;VerrichtingTypeCode"
+        "map" : "Verrichting;VerrichtingTypeCodeNZa",
+        "comment" : "NZa-codering."
+      },
+      {
+        "identity" : "sim",
+        "map" : "Verrichting;VerrichtingTypeCodeSnomedCT",
+        "comment" : "SNOMED CT-codering."
+      },
+      {
+        "identity" : "sim",
+        "map" : "Verrichting;VerrichtingTypeCodeDHD",
+        "comment" : "DHD-codering."
       }]
     },
     {
@@ -192,7 +227,18 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
       "path" : "Procedure.code.coding.display",
       "mapping" : [{
         "identity" : "sim",
-        "map" : "Verrichting;VerrichtingTypeOmschrijving"
+        "map" : "Verrichting;VerrichtingTypeOmschrijvingNZa",
+        "comment" : "NZa-codering."
+      },
+      {
+        "identity" : "sim",
+        "map" : "Verrichting;VerrichtingTypeOmschrijvingSnomedCT",
+        "comment" : "SNOMED CT-codering."
+      },
+      {
+        "identity" : "sim",
+        "map" : "Verrichting;VerrichtingTypeOmschrijvingDHD",
+        "comment" : "DHD-codering."
       }]
     },
     {
@@ -205,38 +251,72 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
       "mapping" : [{
         "identity" : "sim",
         "map" : "Verrichting;Identificatienummer",
-        "comment" : "hashed"
+        "comment" : "Reference naar gepseudonimiseerde PatientSan op basis van patiëntidentifier."
       }]
     },
     {
       "id" : "Procedure.encounter",
       "path" : "Procedure.encounter",
-      "max" : "0"
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://ig.santeon.nl/sim-on-fhir/StructureDefinition/encounter-san"]
+      }],
+      "mapping" : [{
+        "identity" : "sim",
+        "map" : "Verrichting;ContactID",
+        "comment" : "Reference naar Encounter op basis van ContactID."
+      }]
     },
     {
       "id" : "Procedure.performed[x]",
       "path" : "Procedure.performed[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
+      "type" : [{
+        "code" : "dateTime"
+      },
+      {
+        "code" : "Period"
+      }]
+    },
+    {
+      "id" : "Procedure.performed[x]:performedPeriod",
+      "path" : "Procedure.performed[x]",
+      "sliceName" : "performedPeriod",
+      "min" : 0,
+      "max" : "1",
       "type" : [{
         "code" : "Period"
       }]
     },
     {
-      "id" : "Procedure.performed[x].start",
+      "id" : "Procedure.performed[x]:performedPeriod.start",
       "path" : "Procedure.performed[x].start",
-      "min" : 1,
       "mapping" : [{
         "identity" : "sim",
         "map" : "Verrichting;VerrichtingStartDatum",
-        "comment" : "dateshift"
+        "comment" : "Verrichting met tijdsduur; dateshift."
       }]
     },
     {
-      "id" : "Procedure.performed[x].end",
-      "path" : "Procedure.performed[x].end",
+      "id" : "Procedure.performed[x]:performedDateTime",
+      "path" : "Procedure.performed[x]",
+      "sliceName" : "performedDateTime",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "dateTime"
+      }],
       "mapping" : [{
         "identity" : "sim",
-        "map" : "Verrichting;VerrichtingEindDatum",
-        "comment" : "dateshift"
+        "map" : "Verrichting;VerrichtingStartDatum",
+        "comment" : "Momentane verrichting; dateshift."
       }]
     },
     {

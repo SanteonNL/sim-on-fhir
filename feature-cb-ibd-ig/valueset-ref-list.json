@@ -1,16 +1,5 @@
 {
   "codeSystems" : [{
-    "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229",
-    "version" : "0.1.0",
-    "status" : "retired",
-    "name" : "CareplanCategoryCodelijst",
-    "title" : "CareplanCategoryCodelijst",
-    "description" : "CareplanCategoryCodelijst",
-    "systems" : ["https://santeon.nl/sct"],
-    "oids" : ["2.16.840.1.113883.2.4.3.11.60.124.11.140"],
-    "sources" : ["2.16.840.1.113883.2.4.3.11.60.124.11.140"]
-  },
-  {
     "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000",
     "version" : "2020-09-01T00:00:00",
     "status" : "active",
@@ -26,45 +15,19 @@
     "StructureDefinition-SIMPatient.html" : "Patiënt (model)"
   },
   {
-    "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.20.5.2--20200901000000",
-    "version" : "2020-09-01T00:00:00",
+    "url" : "http://terminology.hl7.org/ValueSet/v3-ActPriority",
+    "version" : "3.0.0",
     "status" : "active",
-    "name" : "LandISOCodelijst",
-    "title" : "LandISOCodelijst",
-    "description" : "ISO 3166-1 (alpha-2) - Alle waarden",
-    "systems" : ["urn:iso:std:iso:3166"],
-    "oids" : ["2.16.840.1.113883.2.4.3.11.60.40.2.20.5.2"],
-    "sources" : ["2.16.840.1.113883.2.4.3.11.60.40.2.20.5.2"],
+    "name" : "ActPriority",
+    "title" : "ActPriority",
+    "description" : "A code or set of codes (e.g., for routine, emergency,) specifying the urgency under which the Act happened, can happen, is happening, is intended to happen, or is requested/demanded to happen.\r\n\r\n*Discussion:* This attribute is used in orders to indicate the ordered priority, and in event documentation it indicates the actual priority used to perform the act. In definition mood it indicates the available priorities.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActPriority"],
+    "oids" : ["2.16.840.1.113883.1.11.16866"],
+    "sources" : ["2.16.840.1.113883.1.11.16866"],
     "uses" : {
     },
-    "StructureDefinition-SIMPatient.html" : "Patiënt (model)"
-  },
-  {
-    "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.3.1.1--20200901000000",
-    "version" : "2020-09-01T00:00:00",
-    "status" : "active",
-    "name" : "RelatieCodelijst",
-    "title" : "RelatieCodelijst",
-    "description" : "RelatieCodelijst",
-    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-    "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"],
-    "oids" : ["2.16.840.1.113883.2.4.3.11.60.40.2.3.1.1"],
-    "sources" : ["2.16.840.1.113883.2.4.3.11.60.40.2.3.1.1"],
-    "uses" : {
-    },
-    "StructureDefinition-SIMPatient.html" : "Patiënt (model)"
-  },
-  {
-    "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000",
-    "version" : "0.1.0",
-    "status" : "active",
-    "name" : "AlcoholGebruikStatusCodelijst",
-    "title" : "AlcoholGebruikStatusCodelijst",
-    "description" : "AlcoholGebruikStatusCodelijst",
-    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-    "http://snomed.info/sct"],
-    "oids" : ["2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2"],
-    "sources" : ["2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2"]
+    "StructureDefinition-SIMContact.html" : "Contact (model)",
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
   },
   {
     "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/AlcoholGebruikStatusCodelijst",
@@ -115,6 +78,7 @@
     "systems" : ["http://loinc.org", "http://snomed.info/sct"],
     "uses" : {
     },
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
     "StructureDefinition-SIMAlgemeneMeting.html" : "Algemene meting (model)"
   },
   {
@@ -136,10 +100,7 @@
     "name" : "LocalSpecialismeDiagnoseCodes",
     "title" : "IBD Specialisme-Diagnose Combinaties",
     "description" : "Specialisme-diagnose combinaties die behoren tot het IBD-cohort.",
-    "systems" : ["https://ig.santeon.nl/CodeSystem/specialisme-diagnose"],
-    "uses" : {
-    },
-    "StructureDefinition-specialisme-diagnose-code.html" : "SpecialismeDiagnoseCode"
+    "systems" : ["https://ig.santeon.nl/CodeSystem/specialisme-diagnose"]
   },
   {
     "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/local-verrichting-codes-nza",

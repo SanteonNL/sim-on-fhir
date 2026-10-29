@@ -12,7 +12,7 @@
   <name value="SanteonSimOnFhir"/>
   <title value="SIM on FHIR"/>
   <status value="draft"/>
-  <date value="2026-10-26T15:58:19+00:00"/>
+  <date value="2026-10-29T22:11:52+00:00"/>
   <publisher value="Santeon"/>
   <contact>
     <name value="Santeon"/>
@@ -32,31 +32,27 @@
   <packageId value="santeon.sim-on-fhir"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
-  <dependsOn id="hl7tx">
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
-      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
-    </extension>
-    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
-    <packageId value="hl7.terminology.r4"/>
-    <version value="7.4.0"/>
-  </dependsOn>
-  <dependsOn id="hl7ext">
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
-      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
-    </extension>
-    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
-    <packageId value="hl7.fhir.uv.extensions.r4"/>
-    <version value="5.3.0"/>
-  </dependsOn>
   <dependsOn id="nictiz_nl_gbb">
     <uri value="http://ig.nictiz.nl/gbb/ImplementationGuide/nictiz.nl.gbb"/>
     <packageId value="nictiz.nl.gbb"/>
     <version value="1.0.0-alpha.1"/>
   </dependsOn>
+  <dependsOn id="hl7_fhir_uv_tools_r4">
+    <uri value="http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools"/>
+    <packageId value="hl7.fhir.uv.tools.r4"/>
+    <version value="1.3.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_terminology_r4">
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="7.4.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_uv_extensions_r4">
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="5.3.0"/>
+  </dependsOn>
   <definition>
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools.r4#1.3.0"/>
-    </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
         <valueCode value="copyrightyear"/>
@@ -335,24 +331,13 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000"/>
-      </reference>
-      <name value="AlcoholGebruikStatusCodelijst"/>
-      <description value="AlcoholGebruikStatusCodelijst"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:logical"/>
       </extension>
       <reference>
         <reference value="StructureDefinition/SIMAlgemeneMeting"/>
       </reference>
       <name value="Algemene meting (model)"/>
-      <description value="Logisch model voor een algemeneMeting binnen het Santeon Informatiemodel."/>
+      <description value="Generiek logisch model voor een algemene meting binnen het Santeon Informatiemodel."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -368,24 +353,24 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229"/>
-      </reference>
-      <name value="CareplanCategoryCodelijst"/>
-      <description value="CareplanCategoryCodelijst"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
         <reference value="StructureDefinition/condition-san"/>
       </reference>
       <name value="Condition (SAN)"/>
-      <description value="**De-identificatie:**&#xA;- identifier → hashed&#xA;- subject → hashed"/>
+      <description value="Generiek Santeon FHIR R4-profiel voor aandoeningen en diagnoses.&#xA;&#xA;De aansluiting op het Santeon Informatiemodel wordt&#xA;vastgelegd via afzonderlijke mappings naar de&#xA;relevante bronmodellen.&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/SIMContact"/>
+      </reference>
+      <name value="Contact (model)"/>
+      <description value="Generiek logisch model voor een zorgcontact binnen het Santeon Informatiemodel."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -407,7 +392,7 @@
         <reference value="StructureDefinition/SIMDBC"/>
       </reference>
       <name value="DBC/Zorgtraject (model)"/>
-      <description value="Logisch model voor een DBC binnen het Santeon Informatiemodel."/>
+      <description value="Generiek logisch model voor een DBC binnen het Santeon Informatiemodel."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -448,10 +433,21 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/encounter-san"/>
+      </reference>
+      <name value="Encounter (SAN)"/>
+      <description value="Generiek Santeon FHIR R4-profiel voor zorgcontacten.&#xA;&#xA;Gebaseerd op het Santeon Informatiemodel (SIMContact).&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/episodeOfCare-san"/>
       </reference>
       <name value="EpisodeOfCare (SAN)"/>
-      <description value="**De-identificatie:**&#xA;- identifier → hashed&#xA;- patient → hashed"/>
+      <description value="Generiek Santeon FHIR R4-profiel voor zorgepisodes.&#xA;&#xA;Gebaseerd op het Santeon Informatiemodel (SIMDBC), waarbij&#xA;nog moet worden vastgesteld hoe een DBC-subtraject zich&#xA;verhoudt tot een FHIR EpisodeOfCare.&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -462,7 +458,7 @@
         <reference value="StructureDefinition/SIMFasering"/>
       </reference>
       <name value="Fasering (model)"/>
-      <description value="Logisch model voor een procesfasering binnen het Santeon Informatiemodel, bijvoorbeeld faseringen rondom een operatie."/>
+      <description value="Generiek logisch model voor een procesfasering binnen het Santeon Informatiemodel, bijvoorbeeld faseringen rondom een operatie."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -614,7 +610,7 @@
         <reference value="StructureDefinition/observation-san"/>
       </reference>
       <name value="Observation (SAN)"/>
-      <description value="**De-identificatie:**&#xA;- identifier → hashed&#xA;- subject → hashed&#xA;- effectiveDateTime → dateshift"/>
+      <description value="Generiek Santeon FHIR R4-profiel voor algemene metingen.&#xA;&#xA;Gebaseerd op het Santeon Informatiemodel (SIMAlgemeneMeting).&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -691,7 +687,7 @@
         <reference value="StructureDefinition/procedure-san"/>
       </reference>
       <name value="Procedure (SAN)"/>
-      <description value="**De-identificatie:**&#xA;- identifier → hashed&#xA;- subject → hashed"/>
+      <description value="Generiek Santeon FHIR R4-profiel voor verrichtingen.&#xA;&#xA;Gebaseerd op het Santeon Informatiemodel (SIMVerrichting).&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -743,24 +739,13 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/specialisme-diagnose-code"/>
-      </reference>
-      <name value="SpecialismeDiagnoseCode"/>
-      <description value="(Tijdelijke) Extensie voor SpecialismeDiagnoseCode. Deze informatie dient in een toekomstige FHIR-conforme modellering te worden ondergebracht in Condition.code."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:logical"/>
       </extension>
       <reference>
         <reference value="StructureDefinition/SIMVerrichting"/>
       </reference>
       <name value="Verrichting (model)"/>
-      <description value="Logisch model voor een verrichting binnen het Santeon Informatiemodel."/>
+      <description value="Generiek logisch model voor een verrichting binnen het Santeon Informatiemodel."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
