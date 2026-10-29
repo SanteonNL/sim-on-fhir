@@ -1,0 +1,37 @@
+# ValueSets maintained outside this repository.
+#
+# Each entry pins one version. KPI and dataset definitions refer to it by key,
+# for example  code:in={vs:careplan-category}, and the generator resolves that
+# to the pinned canonical below.
+#
+#   source     decor (ART-DECOR, default) | fhir (a FHIR terminology server, e.g. NTS)
+#   base       server base URL; optional for decor, required for fhir
+#   canonical  the ValueSet's canonical URL
+#   version    the pinned version
+#   mode       download  = fetched in the build, so the IG renders it
+#              reference = content cannot be downloaded (e.g. a SNOMED ECL query);
+#                          only the canonical is used, the terminology server resolves it
+#   tokenEnv   optional: name of an environment variable with a bearer token
+#
+# Maintained with _syncValueSets.py (add, fetch, check, update); edit by hand when needed.
+
+careplan-category:
+  source: decor
+  canonical: http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229
+  version: "2024-09-25T07:02:29"
+  mode: download
+
+alcohol-use-status:
+  source: decor
+  base: https://decor.nictiz.nl/fhir/4.0/zib2020bbr-
+  canonical: http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000
+  version: "2020-09-01T00:00:00"
+  mode: download
+
+smoking-status-nts:
+  source: fhir
+  base: https://terminologieserver.nl/fhir
+  canonical: http://snomed.info/sct?fhir_vs=ecl/%3C%3C%2077176002%20OR%20%3C%3C%208392000%20OR%20%3C%3C%208517006
+  version: ""
+  mode: reference
+  auth: nts
