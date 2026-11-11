@@ -2,13 +2,13 @@
 
 ## De-identification
 
-## Overview
+### Overview
 
 De-identification in SIM on FHIR removes or transforms identifying information before hospital data leaves the institution for secondary use. This is **pseudonymisation** under the GDPR: the exported data cannot be traced back to an individual without additional information that the hospital retains and does not share.
 
 This page describes how de-identification is controlled through three layers, how the rules are defined, and how conformance is validated before any data is exported.
 
-### Three layers of control
+#### Three layers of control
 
 Field-level control over an export is governed by three distinct layers. Each layer has a single responsibility, and each operates on the output of the layer above it.
 
@@ -18,7 +18,7 @@ Field-level control over an export is governed by three distinct layers. Each la
 
 **Layer 3 — De-identification: **how** it is transformed.** For every element the query selects, a de-identification rule determines how that element is transformed on its way out: hashed, date-shifted, age-clamped, floored to the first of the month, or deliberately left intact. De-identification never removes elements — removal is the query's job, not the ruleset's.
 
-### Core principles
+#### Core principles
 
 The model rests on four rules that together guarantee no selected element or filter leaves the hospital without an explicit, documented decision.
 
@@ -34,11 +34,11 @@ The model rests on four rules that together guarantee no selected element or fil
 
 -------
 
-## De-identification actions
+### De-identification actions
 
 Every de-identification rule specifies an `action`. The action determines how the element is transformed, and which parameters the rule must carry. See the [DeidentificationRuleset](StructureDefinition-deidentification-ruleset.md) logical model and the [action code system](CodeSystem-deidentification-action-cs.md) for the normative definitions; the Logical Model's invariants enforce these constraints so that an invalid combination fails validation before use.
 
-### none
+#### none
 
 The element is exported unchanged. Because unchanged release of a selected element is always a deliberate decision, `none` requires an `exceptionReason`.
 
@@ -57,7 +57,7 @@ Use `none` for elements that carry no identifying risk and whose clinical value 
 
 ```
 
-### hash
+#### hash
 
 The element value is replaced by an HMAC hash. Used for identifiers and for the references that point to them. A hash rule on a resource's `id` also rewrites every reference to that resource type, anywhere in the export, to the same hash — automatically, not through a declared list of reference paths. There is no legitimate case for hashing a resource's `id` but leaving some references to it unrewritten: that would either leak the original id or break referential integrity, so the rewrite applies uniformly to `Observation.subject`, `RelatedPerson.patient`, `CarePlan.author`, or any other element referencing that resource type, whatever it happens to be called.
 
@@ -76,7 +76,7 @@ The seed for the HMAC changes per delivery, so the same patient hashes to differ
 
 ```
 
-### shift
+#### shift
 
 Date and dateTime values are moved by a random offset. The offset is derived deterministically per patient per delivery, so all dates for one patient move by the same amount within a run — preserving the intervals between events — while differing across patients and across deliveries.
 
@@ -95,7 +95,7 @@ The offset is shared between related patients — for example mother and child �
 
 ```
 
-### clamp-age
+#### clamp-age
 
 Applies to a birth date. Birth dates that imply an age outside the given range are brought to the boundary, so that outliers (very young or very old patients) cannot be singled out.
 
@@ -118,7 +118,7 @@ The standard range is 18–85. A dataset that needs a different range must state
 
 ```
 
-### first-of-month
+#### first-of-month
 
 Floors a date to the first day of its month, removing day-level precision while keeping month and year. Applies to any `date` element, not only `Patient.birthDate`; birth date is the most common target, but admission months or other coarse dates may use it too.
 
@@ -136,7 +136,7 @@ Floors a date to the first day of its month, removing day-level precision while 
 
 -------
 
-## Applying multiple rules to one element
+### Applying multiple rules to one element
 
 More than one rule may target the same element. When they do, they are applied in a fixed order regardless of the order they appear in the ruleset, so the outcome is deterministic:
 
@@ -157,11 +157,11 @@ For a plain date element (not a birth date) that has both a shift and a first-of
 
 -------
 
-## The standard ruleset and per-export overrides
+### The standard ruleset and per-export overrides
 
 **This section is non-normative. It describes one convenient way to produce a conforming effective ruleset — the approach taken by FENIX, the Santeon reference implementation.**
 
-### One standard, shipped with the IG
+#### One standard, shipped with the IG
 
 The IG publishes a single **standard de-identification ruleset** as a conformance resource: the [`santeon-default`](Binary-santeon-default.md) instance of the `DeidentificationRuleset` Logical Model, versioned alongside the IG and addressable by canonical URL (`https://ig.santeon.nl/sim-on-fhir/DeidentificationRuleset/santeon-default`). It defines the default treatment for the elements common to every Santeon export — identifiers, dates, birth date.
 
@@ -169,7 +169,7 @@ Every export inherits this ruleset by default. An export that is happy with the 
 
 Reading it: patient identifiers are hashed; every date is shifted by up to 15 days; birth date is additionally floored to the first of its month and then clamped to the 18–85 age range. This is the baseline every export starts from.
 
-### Overriding per export
+#### Overriding per export
 
 An export request references the standard set as its `base` and, where it needs to differ, lists `overrides`. The override is the human-authored source; it is resolved against the base to produce the effective ruleset.
 
@@ -197,7 +197,7 @@ de-identification:
 
 Here the maternity export keeps everything from the standard set — the hash rules, the date shift, the first-of-month flooring — and changes only the age clamp, from 18–85 to 0–45. Every other rule is inherited untouched.
 
-### Resolving base + overrides into the effective ruleset
+#### Resolving base + overrides into the effective ruleset
 
 The base and the overrides are merged, by path and action, into a single **effective ruleset** — the self-contained resource that lists every rule actually in force. This effective ruleset is the artifact the IG standardises (see [Conformance](#conformance)); the base-plus-override form is input that produces it.
 
@@ -225,11 +225,11 @@ santeon-default v0.1.0             geboortezorg-2024
 
 -------
 
-## Conformance
+### Conformance
 
 **This section is **normative**. It defines the artifacts this IG standardises and the properties a conforming export must have. It does not prescribe how a server produces the artifacts or applies the rules — only what is exchanged and what must be true of the exported data.**
 
-### The export is described by two resources
+#### The export is described by two resources
 
 A conforming export is fully described by two FHIR resources, exchanged together:
 
@@ -247,7 +247,7 @@ DeidentificationRuleset (effective)          →  HOW each element is transforme
 
 ```
 
-### The effective ruleset is self-contained
+#### The effective ruleset is self-contained
 
 "Effective" means fully resolved: the `DeidentificationRuleset` carries the actual rules that apply, with no reference to a base ruleset plus a set of differences. Any layering a producer uses to arrive at it — a shared default, per-export overrides, inheritance — is resolved before exchange. A consumer receives one `DeidentificationRuleset` and needs nothing further to know how the data was de-identified.
 
@@ -256,7 +256,7 @@ A conforming effective `DeidentificationRuleset`:
 * validates against the `DeidentificationRuleset` Logical Model, including all per-action invariants;
 * contains no rule with `action = none` that lacks an `exceptionReason`.
 
-### Coverage — binding the two resources
+#### Coverage — binding the two resources
 
 **Coverage is the requirement that binds `Parameters` to the ruleset.** For every element released by the export — every element named or implied by `_elements`, for every type in `_type` — and for every `_typeFilter` used by the export, the effective `DeidentificationRuleset` must contain at least one rule that covers it. Filter coverage includes the filter parameter and its value or expression; a filter must not expose an identifying value or create a selection that cannot be justified by the ruleset.
 
@@ -266,7 +266,7 @@ An export whose `Parameters` release an element that is covered by no rule — n
 
 Because coverage descends, a consumer does not need to expand `_elements` down to every leaf to check conformance: it is enough that each released path is covered at some level at or above it. A rule on a selected composite element discharges the requirement for everything that element contains.
 
-### Which rule applies — most specific wins
+#### Which rule applies — most specific wins
 
 Coverage says an element is **protected**; it does not by itself say **how**, because more than one rule can cover the same element — a broad ancestor rule and a narrower descendant rule at once. The transformation applied to an element is the one from **the most specific covering rule**: the rule whose `path` is deepest along that element's own path.
 
@@ -289,7 +289,7 @@ This is the same "specific over general" principle the ruleset uses to order exe
 
 Note that when the deepest covering rule is a `none`, all descendants inherit that `none` — the whole subtree is released intact, and the single `exceptionReason` on that ancestor rule accounts for the entire subtree. A `none` high in the tree therefore covers a great deal; this is intended (one reason for a whole coded concept, not one per sub-element) but worth attention at review.
 
-### What this IG does not constrain
+#### What this IG does not constrain
 
 To keep the model implementable on any FHIR server, the following are **out of scope** of the normative content:
 
@@ -302,17 +302,17 @@ A server conforms by exchanging a valid `Parameters` and a valid effective `Deid
 
 -------
 
-## Implementation notes (non-normative)
+### Implementation notes (non-normative)
 
 **This section describes how **FENIX**, the Santeon reference implementation, produces a conforming export. It is illustrative. Another server may reach the same result by entirely different means; nothing here is required for conformance.**
 
-### Authoring: base plus overrides
+#### Authoring: base plus overrides
 
 FENIX does not author the effective ruleset directly. It starts from the shared standard ruleset published with the IG (`santeon-default`) and applies per-export overrides expressed in YAML. Overrides replace, add, or disable rules by path and action. This keeps each export request short — an export states only how it differs from the default.
 
 The base-plus-override YAML is FENIX input, not an IG artifact. It is one convenient way to produce an effective ruleset; it is never exchanged and carries no normative status.
 
-### Generation: resolving to the exchanged resources
+#### Generation: resolving to the exchanged resources
 
 `fenix generate` resolves base and overrides into the effective `DeidentificationRuleset`, and writes the `Parameters.json` carrying `_type`, `_typeFilter` and `_elements`. Together these two generated resources are the normative pair; the YAML that produced them is FENIX input and is not exchanged.
 
@@ -328,7 +328,7 @@ requests/
 
 A server that already holds effective rulesets — hand-authored, templated, or produced by other tooling — needs none of this. It exchanges the `Parameters` and the `DeidentificationRuleset` and exports conforming data; the path it took is its own concern.
 
-### Coverage report
+#### Coverage report
 
 To make the coverage property auditable, FENIX emits a coverage report for each export: every released element, the rule that covers it, and the resulting action. A reviewer confirms at a glance that no element is uncovered and that every `none` carries a reason.
 
@@ -343,17 +343,17 @@ The report is a FENIX convenience, not an IG artifact — it is one way to demon
 
 -------
 
-## Pseudonymisation and the per-export seed
+### Pseudonymisation and the per-export seed
 
 **This section is **normative** for the properties an export must exhibit (the seed behaviour), and marks clearly what is **out of scope** (the key and seed material themselves).**
 
-### Why hashing is keyed
+#### Why hashing is keyed
 
 Identifiers are removed by replacing them with an HMAC (see the [`hash`](#hash) action). HMAC is a **keyed** hash: the output depends on both the input value and a secret key. This is deliberate. A plain, unkeyed hash of an identifier would be reversible by anyone who can hash candidate values — the space of BSNs or patient numbers is small enough to enumerate. Keying the hash with a secret the attacker does not hold defeats that: without the key, the output cannot be linked back to the input.
 
 The result is **pseudonymisation** under the GDPR, not anonymisation. The data cannot be re-identified from its own contents, but a party holding the key and the source data can reverse it. That key is the "additional information" the regulation requires be kept separately — and this IG requires exactly that separation.
 
-### The per-export seed
+#### The per-export seed
 
 Each export derives its HMAC seed freshly, per export run. The seed governs both the identifier hashing and the per-patient date-shift offset. Two properties follow, and a conforming export **must** exhibit both:
 
@@ -373,7 +373,7 @@ Same patient, two runs, no common value to link them on.
 
 This unlinkability is a required property, not an implementation detail: an export that reused a seed across runs — producing stable hashes that let deliveries be joined — would not conform.
 
-### Key and seed are out of scope
+#### Key and seed are out of scope
 
 The HMAC key, and any seed derived from it, are **secrets held inside the hospital**. This IG does not define, carry, or exchange them, and a conforming export **must not** include them:
 
@@ -385,7 +385,7 @@ Placing the key anywhere it travels with the data would defeat pseudonymisation 
 
 The **seed** is likewise never exchanged. Only its **effect** leaves the hospital — the hashed values and shifted dates in the output. From those, the seed cannot be recovered.
 
-### Internal reversibility — the run identifier
+#### Internal reversibility — the run identifier
 
 Pseudonymisation must be reversible by the hospital when there is a lawful basis to re-identify a patient. This IG supports that without exposing any secret, by separating the two things reversal needs: a **public label** that may travel, and the **secret key** that never does.
 
@@ -408,13 +408,13 @@ A privacy officer with access to all three can, for a named run, reconstruct the
 
 > The run identifier is a non-secret handle, not key material. Exchanging it does not weaken pseudonymisation. The seed itself is derived from the key and the run inside the hospital and is never stored in or alongside an exchanged resource.
 
-### Reversing a hash
+#### Reversing a hash
 
 Reversal does not work by decrypting a stored value — an HMAC cannot be decrypted. It is recomputed from the key, not looked up: to re-identify a hashed `Patient.id`, the privacy officer takes a candidate source identifier from the EPD, recomputes `HMAC(key, candidate)` under the reconstructed seed, and compares the result to the hash in the exported data. A match confirms the candidate is the source patient. This is the same forward computation performed at export time — reversal is recomputation and comparison, not inversion.
 
 `hash` is the only action this IG requires to be reversible. It is the anchor: once a record's patient is identified this way, every other field on that record — however it was transformed on export — is available in the source system, without needing to be inverted at all. See below.
 
-### shift, clamp-age, and first-of-month: recovered via identity, not inversion
+#### shift, clamp-age, and first-of-month: recovered via identity, not inversion
 
 Only `hash` carries a reversal requirement. For every other transformed field, the path back to the original value is always the same: reverse the `hash` on `Patient.id` to identify the patient, then read the field from the EPD. None of these actions need their own inversion procedure.
 
@@ -432,7 +432,7 @@ Only `hash` carries a reversal requirement. For every other transformed field, t
 | `first-of-month` | No — the information is gone, key or not | Re-identify the patient (via`hash`), then read the date from the EPD |
 | `none` | N/A | Value was never altered |
 
-### Illustrative construction of the shift offset (non-normative)
+#### Illustrative construction of the shift offset (non-normative)
 
 **This shows one way to derive a per-patient offset with the required forward properties. It is not a normative algorithm — any deterministic, keyed construction with the same properties conforms.**
 
@@ -450,7 +450,7 @@ The final step maps the `2·maxDays` possible values of `k` onto `[−maxDays, �
 
 -------
 
-## Normative artifacts
+### Normative artifacts
 
 The de-identification model is defined as a set of compilable FHIR Shorthand artifacts, published with this IG:
 

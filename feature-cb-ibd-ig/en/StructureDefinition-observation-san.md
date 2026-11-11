@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* This Profile is not used by any profiles in this Specification
+* Derived from this Profile: [Observation TabakGebruik (SAN)](StructureDefinition-observation-san-tabakgebruik.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/santeon.sim-on-fhir|current/StructureDefinition/StructureDefinition-observation-san.json)
 
@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
   "name" : "ObservationSan",
   "title" : "Observation (SAN)",
   "status" : "draft",
-  "date" : "2026-10-29T22:11:52+00:00",
+  "date" : "2026-11-11T17:43:54+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",

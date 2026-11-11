@@ -40,46 +40,33 @@
     "http://snomed.info/sct"]
   },
   {
-    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDAlgemeneMetingen",
-    "version" : "0.1.0",
-    "status" : "draft",
-    "name" : "IBDAlgemeneMetingen",
-    "title" : "IBDAlgemeneMetingen",
-    "description" : "Metingen die worden geselecteerd voor de IBD-dataset.",
-    "systems" : ["https://santeon.nl/sct",
-    "http://loinc.org",
-    "http://snomed.info/sct"]
-  },
-  {
-    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDSpecialismeDiagnoses",
-    "version" : "0.1.0",
-    "status" : "draft",
-    "name" : "IBDSpecialismeDiagnoses",
-    "title" : "IBD Specialisme Diagnoses",
-    "description" : "Specialisme-diagnosecombinaties die worden geselecteerd voor de IBD-dataset.",
-    "systems" : ["http://fhir.nl/fhir/NamingSystem/nza"]
-  },
-  {
-    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDVerrichtingenNZa",
-    "version" : "0.1.0",
-    "status" : "draft",
-    "name" : "IBDVerrichtingenNZa",
-    "title" : "IBD Verrichtingen NZa",
-    "description" : "NZa-verrichtingen die worden geselecteerd voor de IBD-dataset.",
-    "systems" : ["http://fhir.nl/fhir/NamingSystem/nza"]
-  },
-  {
     "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst",
     "version" : "0.1.0",
     "status" : "draft",
     "name" : "Santeon_MetingNaamCodelijst",
     "title" : "Santeon_MetingNaamCodelijst",
     "description" : "ValueSet met metingnamen die binnen het Santeon Informatiemodel worden gebruikt.",
-    "systems" : ["http://loinc.org", "http://snomed.info/sct"],
+    "systems" : ["https://santeon.nl/sct",
+    "http://loinc.org",
+    "http://snomed.info/sct"],
     "uses" : {
     },
     "StructureDefinition-observation-san.html" : "Observation (SAN)",
     "StructureDefinition-SIMAlgemeneMeting.html" : "Algemene meting (model)"
+  },
+  {
+    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/TabakGebruikStatusCodelijst",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "TabakGebruikStatusCodelijst",
+    "title" : "TabakGebruikStatusCodelijst",
+    "description" : "Codelijst voor de rookstatus van een patiënt, zoals gebruikt in het Santeon Informatiemodel (SIM-versie 2024-04-24).",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+    "http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
+    "StructureDefinition-SIMTabakGebruik.html" : "Tabakgebruik (model)"
   },
   {
     "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/deidentification-action-vs",

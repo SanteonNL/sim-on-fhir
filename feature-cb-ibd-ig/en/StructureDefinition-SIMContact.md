@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMContact.csv), 
   "name" : "SIMContact",
   "title" : "Contact (model)",
   "status" : "draft",
-  "date" : "2026-10-29T22:11:52+00:00",
+  "date" : "2026-11-11T17:43:54+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -328,26 +328,6 @@ Other representations of profile: [CSV](../StructureDefinition-SIMContact.csv), 
       "mapping" : [{
         "identity" : "SIMContactFromSIMCSV",
         "map" : "Contact;ContactMet"
-      }]
-    },
-    {
-      "id" : "SIMContact.AfspraakID",
-      "path" : "SIMContact.AfspraakID",
-      "short" : "Identificatienummer van de afspraak",
-      "definition" : "Identificatienummer van de afspraak",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Identifier"
-      }],
-      "mapping" : [{
-        "identity" : "SIMContactFromSIMCSV",
-        "map" : "Contact;AfspraakID"
-      },
-      {
-        "identity" : "SIMContactToFHIR",
-        "map" : "Encounter.appointment",
-        "comment" : "Appointment-reference op basis van AfspraakID."
       }]
     }]
   }

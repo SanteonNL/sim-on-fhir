@@ -13,6 +13,12 @@
     }
   ],
   "profiles": {
+    "CarePlan": [
+      {
+        "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/carePlan-san",
+        "title": "CarePlan (SAN)"
+      }
+    ],
     "Condition": [
       {
         "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/condition-san",
@@ -31,6 +37,12 @@
         "title": "EpisodeOfCare (SAN)"
       }
     ],
+    "MedicationRequest": [
+      {
+        "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/medicationRequest-san",
+        "title": "MedicationRequest (SAN)"
+      }
+    ],
     "Observation": [
       {
         "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san",
@@ -39,6 +51,10 @@
       {
         "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san-kpi",
         "title": "Observation (SAN KPI)"
+      },
+      {
+        "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san-tabakgebruik",
+        "title": "Observation TabakGebruik (SAN)"
       }
     ],
     "Patient": [
@@ -59,6 +75,12 @@
       {
         "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/procedure-san-kpi",
         "title": "Procedure (SAN KPI)"
+      }
+    ],
+    "QuestionnaireResponse": [
+      {
+        "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/questionnaireResponse-san",
+        "title": "QuestionnaireResponse (SAN)"
       }
     ]
   },
@@ -97,6 +119,9 @@
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format": [
       "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implied-type-slice": [
+      "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
       "ImplementationGuide.definition.resource"

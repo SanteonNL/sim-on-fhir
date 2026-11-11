@@ -2,7 +2,7 @@
 
 ## KPI definitions
 
-## Overview
+### Overview
 
 The model of this IG is not written per measurement. It is **derived from KPI definitions**. A KPI definition states which data a KPI needs; the union of all KPI definitions determines which codes, elements and records the model allows, and which records an export selects.
 
@@ -22,7 +22,7 @@ The model of this IG is not written per measurement. It is **derived from KPI de
 
 This is the same split as in [De-identification](deidentification.md): the profile is the upper bound of what **can** be present (layer 1), the generated export request is what **goes** (layer 2).
 
-## Definition source
+### Definition source
 
 ObservationDefinitions and ValueSets describe measurements and terminology. They are managed as FSH files next to each other, separate from the IG model, and referenced from KPI definitions by id. In this IG they live in `input/fsh/definitions/` as a stand-in for a separate definition package.
 
@@ -31,7 +31,7 @@ ObservationDefinitions and ValueSets describe measurements and terminology. They
 
 R4 ObservationDefinition has no canonical URL or version. It is identified by its `id` within the definition source, and versioned together with it.
 
-## KPI definitions
+### KPI definitions
 
 A [KpiDefinition](StructureDefinition-kpi-definition.md) is a list of criteria, each a resource type plus FHIR search parameters written with the normal search parameter names. It is **role-neutral**: nothing says whether a criterion is numerator, denominator or exclusion. That meaning belongs to the downstream calculation.
 
@@ -50,7 +50,7 @@ Parameter values may reference the definition source:
 
 **Codes roll up.** Criteria on the same resource that differ only in their code become one `_typeFilter` with a comma-separated list of codes, for example `Observation?code=http://loinc.org|38445-3,http://snomed.info/sct|228273003&date=ge2018-01-01`.
 
-### Terminology maintained elsewhere
+#### Terminology maintained elsewhere
 
 Not every ValueSet is authored as FSH. Some are maintained in ART-DECOR. A criterion references such a set by its canonical URL and the generator treats it like a local one:
 
@@ -61,13 +61,13 @@ Not every ValueSet is authored as FSH. Some are maintained in ART-DECOR. A crite
 
 A pinned `<oid>--<effective>` version in the URL fixes the content; an unpinned URL follows the latest.
 
-### Codes inline in a cohort or criterion
+#### Codes inline in a cohort or criterion
 
 A cohort that only needs two or three codes does not need a ValueSet. List them as literal tokens, for example `type=https://declaratie.nza.nl/zorgtype|11,https://declaratie.nza.nl/zorgtype|21`. They are passed through unchanged to the Group `member-filter` and shown on the dataset page. Literal codes on a `code` parameter of a **KPI** criterion are also added to the generated code value set, so the profile accepts them.
 
 **Post-query filters.** Some logic cannot be a FHIR search: "latest per patient", or a relation between resources such as "calprotectin within 90 days before the scopie". A KPI states these in `postFilter`, in words with an optional formal expression. They are not part of the export query; they are applied after retrieval, and shown on the dataset pages so a reviewer sees the whole definition.
 
-### Answers to a measurement
+#### Answers to a measurement
 
 The permitted answers of a coded measurement come from one of two places, and from both when both are given:
 
@@ -78,15 +78,15 @@ The permitted answers of a coded measurement come from one of two places, and fr
 
 The generator folds all answers for one measurement into a single generated ValueSet (`santeon-answers-<od-id>`) and the profile's invariant for that measurement requires membership of it. The same `value-concept` list is also part of the export filter, so the exported records are the ones with those answers.
 
-### One generated value set per resource type
+#### One generated value set per resource type
 
 Loose codes do not each need a ValueSet. All codes a KPI defines inline, all ObservationDefinition codes and all ValueSets the criteria refer to (local, ART-DECOR or NTS) are folded into one generated value set per resource type, such as `SanteonConditionCodeVS`. It is a result, not a source: it is never maintained by hand and does not belong in ART-DECOR. Changing a KPI changes it on the next generation.
 
-## Datasets
+### Datasets
 
 A [DatasetDefinition](StructureDefinition-dataset-definition.md) describes one export: the **cohort** (criteria that become the Group's `member-filter` extensions, plus cohort logic no search can express) and the **KPIs** whose data the export releases. See [Datasets](datasets.md) for the datasets and for the derived model.
 
-## What is generated
+### What is generated
 
 `_generateFromDefinitions.py` compiles the definitions with SUSHI and writes:
 
@@ -100,7 +100,7 @@ A [DatasetDefinition](StructureDefinition-dataset-definition.md) describes one e
 
 Invariants that use `memberOf` need a terminology server when the data is validated.
 
-### Data outside a KPI
+#### Data outside a KPI
 
 Not everything a dataset releases belongs to a KPI. The Patient model, for example, is released with a filter on gender or an age limit, without any KPI asking for it. A dataset lists such data under `include`, in the same shape as a KPI criterion: a resource, FHIR search parameters and the elements to release.
 
@@ -115,11 +115,11 @@ Not everything a dataset releases belongs to a KPI. The Patient model, for examp
 
 Included data joins the export request (`_type`, `_typeFilter`, `_elements`) and the derived model exactly like a KPI criterion, so the generated profile for that resource accepts the elements listed and closes the rest. The age limit that decides who is in the Group stays in the `cohort`; `include` is about what is released.
 
-## Exporting a dataset
+### Exporting a dataset
 
 A dataset is exported with a sequence of ordinary FHIR requests, not one call: create the cohort Group, wait until it exists, start `$export` on it with the generated Parameters, wait, download. A Bundle cannot carry this, because `$export` is asynchronous. Each dataset page lists the sequence for its own Group and Parameters. A server such as FENIX can run the sequence behind a single call of its own; that is an implementation choice and not part of the IG.
 
-## Relation to the other layers
+### Relation to the other layers
 
 * **Profiles** define what may appear; the generated profiles are bounded by the KPIs.
 * **De-identification** must cover every element in `_elements` and every `_typeFilter` generated here. Each dataset page lists them.

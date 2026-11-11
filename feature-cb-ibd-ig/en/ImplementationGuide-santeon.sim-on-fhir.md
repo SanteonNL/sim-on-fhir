@@ -14,7 +14,7 @@
   "name" : "SanteonSimOnFhir",
   "title" : "SIM on FHIR",
   "status" : "draft",
-  "date" : "2026-10-29T22:11:52+00:00",
+  "date" : "2026-11-11T17:43:54+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -480,6 +480,22 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-carePlan-san.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/carePlan-san"
+      },
+      "name" : "CarePlan (SAN)",
+      "description" : "Generiek Santeon FHIR R4-profiel voor zorgplannen, zoals deelname\naan een zorgpad of thuismonitoringprogramma.\n\nGebaseerd op het Santeon Informatiemodel (SIMCarePlan).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "StructureDefinition-condition-san.html"
       }],
       "reference" : {
@@ -692,22 +708,6 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-IBDSpecialismeDiagnoses.html"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/IBDSpecialismeDiagnoses"
-      },
-      "name" : "IBD Specialisme Diagnoses",
-      "description" : "Specialisme-diagnosecombinaties die worden geselecteerd voor de IBD-dataset.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "ValueSet-local-specialisme-diagnose-codes.html"
       }],
       "reference" : {
@@ -724,22 +724,6 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-IBDVerrichtingenNZa.html"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/IBDVerrichtingenNZa"
-      },
-      "name" : "IBD Verrichtingen NZa",
-      "description" : "NZa-verrichtingen die worden geselecteerd voor de IBD-dataset.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "ValueSet-local-zorgtype-codes.html"
       }],
       "reference" : {
@@ -747,22 +731,6 @@
       },
       "name" : "IBD Zorgtype Codes (11 en 21)",
       "description" : "Bevat de toegestane landelijke zorgtypes 11 en 21.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-IBDAlgemeneMetingen.html"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/IBDAlgemeneMetingen"
-      },
-      "name" : "IBDAlgemeneMetingen",
-      "description" : "Metingen die worden geselecteerd voor de IBD-dataset.",
       "exampleBoolean" : false
     },
     {
@@ -824,6 +792,38 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-SIMMedicatieAfspraak.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/SIMMedicatieAfspraak"
+      },
+      "name" : "Medicatieafspraak (model)",
+      "description" : "Generiek logisch model voor een medicatieafspraak binnen het Santeon Informatiemodel.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-medicationRequest-san.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/medicationRequest-san"
+      },
+      "name" : "MedicationRequest (SAN)",
+      "description" : "Generiek Santeon FHIR R4-profiel voor medicatieafspraken.\n\nGebaseerd op het Santeon Informatiemodel (SIMMedicatieAfspraak).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       },
       {
@@ -867,6 +867,22 @@
       },
       "name" : "Observation code (SAN KPI)",
       "description" : "Every code a KPI definition asks for on Observation. The union of the ObservationDefinition codes and the value sets referenced by the Observation criteria of all KPI definitions.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-observation-san-tabakgebruik.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/observation-san-tabakgebruik"
+      },
+      "name" : "Observation TabakGebruik (SAN)",
+      "description" : "Santeon FHIR R4-profiel voor de vastgelegde rookstatus van een patiënt.\n\nAfgeleid van ObservationSan en gebaseerd op het\nSanteon Informatiemodel (SIMTabakGebruik).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
       "exampleBoolean" : false
     },
     {
@@ -984,6 +1000,22 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-questionnaireResponse-san.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/questionnaireResponse-san"
+      },
+      "name" : "QuestionnaireResponse (SAN)",
+      "description" : "Generiek Santeon FHIR R4-profiel voor ingevulde vragenlijsten.\n\nGebaseerd op het Santeon Informatiemodel (SIMVragenlijstAntwoord).\nHet SIM levert één record per antwoord; records met hetzelfde\nVragenlijstAntwoordID vormen samen één QuestionnaireResponse.\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ObservationDefinition"
       },
       {
@@ -1040,6 +1072,38 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-SIMTabakGebruik.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/SIMTabakGebruik"
+      },
+      "name" : "Tabakgebruik (model)",
+      "description" : "Generiek logisch model voor de vastgelegde rookstatus van een patiënt binnen het Santeon Informatiemodel.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-TabakGebruikStatusCodelijst.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/TabakGebruikStatusCodelijst"
+      },
+      "name" : "TabakGebruikStatusCodelijst",
+      "description" : "Codelijst voor de rookstatus van een patiënt, zoals gebruikt in het Santeon Informatiemodel (SIM-versie 2024-04-24).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "StructureDefinition-SIMVerrichting.html"
       }],
       "reference" : {
@@ -1063,6 +1127,38 @@
       },
       "name" : "Verrichting Type Codes NZa (Scopie)",
       "description" : "De specifieke NZa-verrichtingencodes voor de scopie-indicator.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-SIMVragenlijstAntwoord.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/SIMVragenlijstAntwoord"
+      },
+      "name" : "Vragenlijstantwoord (model)",
+      "description" : "Generiek logisch model voor een antwoord op een vraag uit een ingevulde vragenlijst binnen het Santeon Informatiemodel.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-SIMCarePlan.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/SIMCarePlan"
+      },
+      "name" : "Zorgplan (model)",
+      "description" : "Generiek logisch model voor een zorgplan (deelname aan een zorgpad of thuismonitoringprogramma) binnen het Santeon Informatiemodel.",
       "exampleBoolean" : false
     }],
     "page" : {

@@ -47,10 +47,9 @@
 	  <script type="text/javascript" src="assets/js/prism.js"></script>
 	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
 	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
-    <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"9.11"}
-    h3,h4,h5,h6{--heading-prefix:"9.11"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.16"}
+    h3,h4,h5,h6{--heading-prefix:"9.16"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -280,7 +279,7 @@ Encounter (SAN)
           
 
             as of 
-2026-10-29
+2026-11-11
 
           
         
@@ -452,7 +451,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0">0..*</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/appointment.html">Appointment</a>)</td>
 <td style="" class="hierarchy xhtCellBorder0">The appointment that scheduled this encounter<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbencounter-sanK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('encounter-sanK'), 'binding', document.getElementById('cbencounter-sanK-binding').checked, document.getElementById('ppencounter-sanK'));
 document.getElementById('cbencounter-sanK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -489,10 +488,10 @@ filterDesc(document.getElementById('encounter-sanK'), 'obligation', document.get
     <td>Encounter.identifier.​use</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="Identifies the purpose for this identifier, if known .">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-identifier-use.html">IdentifierUse</a>
+      <a href="http://hl7.org/fhir/R4/valueset-identifier-use.html">IdentifierUse</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/identifier-use|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -504,10 +503,10 @@ filterDesc(document.getElementById('encounter-sanK'), 'obligation', document.get
     <td>Encounter.status</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="Current state of the encounter.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-status.html">EncounterStatus</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-status.html">EncounterStatus</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-status|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -519,10 +518,10 @@ filterDesc(document.getElementById('encounter-sanK'), 'obligation', document.get
     <td>Encounter.class</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="Classification of the encounter.">
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActEncounterCode.html">ActEncounterCode</a>
+      <a href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActEncounterCode.html">ActEncounterCode</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-ActEncounterCode" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
@@ -534,10 +533,10 @@ filterDesc(document.getElementById('encounter-sanK'), 'obligation', document.get
     <td>Encounter.priority</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td>
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActPriority.html">ActPriority</a>
+      <a href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActPriority.html">ActPriority</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-ActPriority" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
@@ -712,7 +711,7 @@ filterDesc(document.getElementById('encounter-sanK'), 'obligation', document.get
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string" class="xhtPieceDeEmphasized">string</a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Representation defined by the system</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbencounter-sanD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('encounter-sanD'), 'binding', document.getElementById('cbencounter-sanD-binding').checked, document.getElementById('ppencounter-sanD'));
 document.getElementById('cbencounter-sanD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -751,10 +750,10 @@ filterDesc(document.getElementById('encounter-sanD'), 'obligation', document.get
     <td>Encounter.priority</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td>
-      <a style="opacity: 0.50" href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActPriority.html">ActPriority</a>
+      <a href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActPriority.html" class="unchangedStyle">ActPriority</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-ActPriority" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
@@ -1363,7 +1362,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0">0..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/encounter.html">Encounter</a>)</td>
 <td style="" class="hierarchy xhtCellBorder0">Another Encounter this encounter is part of</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbencounter-sanS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('encounter-sanS'), 'binding', document.getElementById('cbencounter-sanS-binding').checked, document.getElementById('ppencounter-sanS'));
 document.getElementById('cbencounter-sanS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1401,10 +1400,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.language</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="A human language.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-languages.html">Common Languages</a>
+      <a href="http://hl7.org/fhir/R4/valueset-languages.html">Common Languages</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/languages|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1416,10 +1415,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.identifier.​use</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="Identifies the purpose for this identifier, if known .">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-identifier-use.html">IdentifierUse</a>
+      <a href="http://hl7.org/fhir/R4/valueset-identifier-use.html">IdentifierUse</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/identifier-use|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1431,10 +1430,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.identifier.​type</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-identifier-type.html">IdentifierType</a>
+      <a href="http://hl7.org/fhir/R4/valueset-identifier-type.html">IdentifierType</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/identifier-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1446,10 +1445,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.status</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="Current state of the encounter.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-status.html">EncounterStatus</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-status.html">EncounterStatus</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-status|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1461,10 +1460,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.statusHistory.​status</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="Current state of the encounter.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-status.html">EncounterStatus</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-status.html">EncounterStatus</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-status|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1476,10 +1475,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.class</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="Classification of the encounter.">
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActEncounterCode.html">ActEncounterCode</a>
+      <a href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActEncounterCode.html">ActEncounterCode</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-ActEncounterCode" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
@@ -1491,10 +1490,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.classHistory.​class</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="Classification of the encounter.">
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActEncounterCode.html">ActEncounterCode</a>
+      <a href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActEncounterCode.html">ActEncounterCode</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-ActEncounterCode" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
@@ -1506,10 +1505,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.type</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="The type of encounter.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-type.html">Encounter type</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-type.html">Encounter type</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1521,10 +1520,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.serviceType</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="Broad categorization of the service that is to be provided.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-service-type.html">Service type</a>
+      <a href="http://hl7.org/fhir/R4/valueset-service-type.html">Service type</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/service-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1536,10 +1535,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.priority</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td>
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActPriority.html">ActPriority</a>
+      <a href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActPriority.html">ActPriority</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-ActPriority" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
@@ -1551,10 +1550,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.participant.​type</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="Role of participant in encounter.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-participant-type.html">Participant type</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-participant-type.html">Participant type</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-participant-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1566,10 +1565,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.reasonCode</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="Reason why the encounter takes place.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-reason.html">Encounter Reason Codes</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-reason.html">Encounter Reason Codes</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1581,10 +1580,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.diagnosis.​use</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="The type of diagnosis this condition represents.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-diagnosis-role.html">DiagnosisRole</a>
+      <a href="http://hl7.org/fhir/R4/valueset-diagnosis-role.html">DiagnosisRole</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/diagnosis-role|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1596,10 +1595,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.hospitalization.​admitSource</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="From where the patient was admitted.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-admit-source.html">Admit source</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-admit-source.html">Admit source</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-admit-source|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1611,10 +1610,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.hospitalization.​reAdmission</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="The reason for re-admission of this hospitalization encounter.">
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v2-0092.html">hl7VS-re-admissionIndicator</a>
+      <a href="http://terminology.hl7.org/7.4.0/ValueSet-v2-0092.html">hl7VS-re-admissionIndicator</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v2-0092" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
@@ -1626,10 +1625,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.hospitalization.​dietPreference</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="Medical, cultural or ethical food preferences to help with catering requirements.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-diet.html">Diet</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-diet.html">Diet</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-diet|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1641,10 +1640,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.hospitalization.​specialCourtesy</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="Special courtesies.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-special-courtesy.html">Special courtesy</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-special-courtesy.html">Special courtesy</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-special-courtesy|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1656,10 +1655,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.hospitalization.​specialArrangement</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="Special arrangements.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-special-arrangements.html">Special arrangements</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-special-arrangements.html">Special arrangements</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-special-arrangements|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1671,10 +1670,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.hospitalization.​dischargeDisposition</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="Discharge Disposition.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-discharge-disposition.html">Discharge disposition</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-discharge-disposition.html">Discharge disposition</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-discharge-disposition|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1686,10 +1685,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.location.status</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="The status of the location.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-location-status.html">EncounterLocationStatus</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-location-status.html">EncounterLocationStatus</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-location-status|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1701,10 +1700,10 @@ filterDesc(document.getElementById('encounter-sanS'), 'obligation', document.get
     <td>Encounter.location.physicalType</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="Physical form of the location.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-location-physical-type.html">Location type</a>
+      <a href="http://hl7.org/fhir/R4/valueset-location-physical-type.html">Location type</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/location-physical-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -2019,7 +2018,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0">0..*</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/appointment.html">Appointment</a>)</td>
 <td style="" class="hierarchy xhtCellBorder0">The appointment that scheduled this encounter<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbencounter-sanKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('encounter-sanKA'), 'binding', document.getElementById('cbencounter-sanKA-binding').checked, document.getElementById('ppencounter-sanKA'));
 document.getElementById('cbencounter-sanKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2055,10 +2054,10 @@ filterDesc(document.getElementById('encounter-sanKA'), 'obligation', document.ge
     <td>Encounter.identifier.​use</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="Identifies the purpose for this identifier, if known .">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-identifier-use.html">IdentifierUse</a>
+      <a href="http://hl7.org/fhir/R4/valueset-identifier-use.html">IdentifierUse</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/identifier-use|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -2070,10 +2069,10 @@ filterDesc(document.getElementById('encounter-sanKA'), 'obligation', document.ge
     <td>Encounter.status</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="Current state of the encounter.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-status.html">EncounterStatus</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-status.html">EncounterStatus</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-status|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -2085,10 +2084,10 @@ filterDesc(document.getElementById('encounter-sanKA'), 'obligation', document.ge
     <td>Encounter.class</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="Classification of the encounter.">
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActEncounterCode.html">ActEncounterCode</a>
+      <a href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActEncounterCode.html">ActEncounterCode</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-ActEncounterCode" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
@@ -2100,10 +2099,10 @@ filterDesc(document.getElementById('encounter-sanKA'), 'obligation', document.ge
     <td>Encounter.priority</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td>
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActPriority.html">ActPriority</a>
+      <a href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActPriority.html">ActPriority</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-ActPriority" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
@@ -2278,7 +2277,7 @@ filterDesc(document.getElementById('encounter-sanKA'), 'obligation', document.ge
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string" class="xhtPieceDeEmphasized">string</a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Representation defined by the system</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbencounter-sanDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('encounter-sanDA'), 'binding', document.getElementById('cbencounter-sanDA-binding').checked, document.getElementById('ppencounter-sanDA'));
 document.getElementById('cbencounter-sanDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2314,10 +2313,10 @@ filterDesc(document.getElementById('encounter-sanDA'), 'obligation', document.ge
     <td>Encounter.priority</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td>
-      <a style="opacity: 0.50" href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActPriority.html">ActPriority</a>
+      <a href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActPriority.html" class="unchangedStyle">ActPriority</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-ActPriority" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
@@ -2926,7 +2925,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0">0..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/encounter.html">Encounter</a>)</td>
 <td style="" class="hierarchy xhtCellBorder0">Another Encounter this encounter is part of</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbencounter-sanSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('encounter-sanSA'), 'binding', document.getElementById('cbencounter-sanSA-binding').checked, document.getElementById('ppencounter-sanSA'));
 document.getElementById('cbencounter-sanSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2962,10 +2961,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.language</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="A human language.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-languages.html">Common Languages</a>
+      <a href="http://hl7.org/fhir/R4/valueset-languages.html">Common Languages</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/languages|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -2977,10 +2976,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.identifier.​use</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="Identifies the purpose for this identifier, if known .">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-identifier-use.html">IdentifierUse</a>
+      <a href="http://hl7.org/fhir/R4/valueset-identifier-use.html">IdentifierUse</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/identifier-use|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -2992,10 +2991,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.identifier.​type</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-identifier-type.html">IdentifierType</a>
+      <a href="http://hl7.org/fhir/R4/valueset-identifier-type.html">IdentifierType</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/identifier-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -3007,10 +3006,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.status</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="Current state of the encounter.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-status.html">EncounterStatus</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-status.html">EncounterStatus</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-status|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -3022,10 +3021,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.statusHistory.​status</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="Current state of the encounter.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-status.html">EncounterStatus</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-status.html">EncounterStatus</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-status|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -3037,10 +3036,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.class</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="Classification of the encounter.">
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActEncounterCode.html">ActEncounterCode</a>
+      <a href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActEncounterCode.html">ActEncounterCode</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-ActEncounterCode" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
@@ -3052,10 +3051,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.classHistory.​class</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="Classification of the encounter.">
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActEncounterCode.html">ActEncounterCode</a>
+      <a href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActEncounterCode.html">ActEncounterCode</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-ActEncounterCode" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
@@ -3067,10 +3066,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.type</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="The type of encounter.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-type.html">Encounter type</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-type.html">Encounter type</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -3082,10 +3081,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.serviceType</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="Broad categorization of the service that is to be provided.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-service-type.html">Service type</a>
+      <a href="http://hl7.org/fhir/R4/valueset-service-type.html">Service type</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/service-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -3097,10 +3096,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.priority</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td>
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActPriority.html">ActPriority</a>
+      <a href="http://terminology.hl7.org/7.4.0/ValueSet-v3-ActPriority.html">ActPriority</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-ActPriority" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
@@ -3112,10 +3111,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.participant.​type</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="Role of participant in encounter.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-participant-type.html">Participant type</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-participant-type.html">Participant type</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-participant-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -3127,10 +3126,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.reasonCode</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="Reason why the encounter takes place.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-reason.html">Encounter Reason Codes</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-reason.html">Encounter Reason Codes</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-reason|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -3142,10 +3141,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.diagnosis.​use</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="The type of diagnosis this condition represents.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-diagnosis-role.html">DiagnosisRole</a>
+      <a href="http://hl7.org/fhir/R4/valueset-diagnosis-role.html">DiagnosisRole</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/diagnosis-role|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -3157,10 +3156,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.hospitalization.​admitSource</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="From where the patient was admitted.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-admit-source.html">Admit source</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-admit-source.html">Admit source</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-admit-source|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -3172,10 +3171,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.hospitalization.​reAdmission</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="The reason for re-admission of this hospitalization encounter.">
-      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.4.0/ValueSet-v2-0092.html">hl7VS-re-admissionIndicator</a>
+      <a href="http://terminology.hl7.org/7.4.0/ValueSet-v2-0092.html">hl7VS-re-admissionIndicator</a>
       <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v2-0092" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is not explicitly stated, which means it is fixed to 3.0.0, the version found through the package references">&#x1F4E6;3.0.0</td>
@@ -3187,10 +3186,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.hospitalization.​dietPreference</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="Medical, cultural or ethical food preferences to help with catering requirements.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-diet.html">Diet</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-diet.html">Diet</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-diet|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -3202,10 +3201,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.hospitalization.​specialCourtesy</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="Special courtesies.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-special-courtesy.html">Special courtesy</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-special-courtesy.html">Special courtesy</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-special-courtesy|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -3217,10 +3216,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.hospitalization.​specialArrangement</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="Special arrangements.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-special-arrangements.html">Special arrangements</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-special-arrangements.html">Special arrangements</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-special-arrangements|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -3232,10 +3231,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.hospitalization.​dischargeDisposition</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="Discharge Disposition.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-discharge-disposition.html">Discharge disposition</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-discharge-disposition.html">Discharge disposition</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-discharge-disposition|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -3247,10 +3246,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.location.status</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="The status of the location.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-encounter-location-status.html">EncounterLocationStatus</a>
+      <a href="http://hl7.org/fhir/R4/valueset-encounter-location-status.html">EncounterLocationStatus</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/encounter-location-status|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -3262,10 +3261,10 @@ filterDesc(document.getElementById('encounter-sanSA'), 'obligation', document.ge
     <td>Encounter.location.physicalType</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="Physical form of the location.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-location-physical-type.html">Location type</a>
+      <a href="http://hl7.org/fhir/R4/valueset-location-physical-type.html">Location type</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/location-physical-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -3526,8 +3525,8 @@ Summary
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.sim-on-fhir#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-29 22:11:00 +0000">
-    2026-10-29
+  <span title="2026-11-11 17:43:00 +0000">
+    2026-11-11
   </span>
 
           <br/>

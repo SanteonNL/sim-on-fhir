@@ -11,14 +11,14 @@
   fhir:Resource.language [ fhir:value "en"] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xml:lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide santeon.sim-on-fhir</b></p><a name=\"santeon.sim-on-fhir\"> </a><a name=\"hcsanteon.sim-on-fhir\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p></div><h2>SanteonSimOnFhir</h2><p>The official URL for this implementation guide is: </p><pre>https://ig.santeon.nl/sim-on-fhir/ImplementationGuide/santeon.sim-on-fhir</pre><div><p>How the Santeon Informatie Model (SIM) maps to FHIR: SIM logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports.</p>\n</div></div>"
+     fhir:Narrative.div "<div xml:lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide santeon.sim-on-fhir</b></p><a name=\"santeon.sim-on-fhir\"> </a><a name=\"hcsanteon.sim-on-fhir\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p></div><h2>SanteonSimOnFhir</h2><p>The official URL for this implementation guide is: </p><pre>https://ig.santeon.nl/sim-on-fhir/ImplementationGuide/santeon.sim-on-fhir</pre><div><p>How the Santeon Informatie Model (SIM) maps to FHIR: SIM logical models, FHIR profiles, datasets with their KPI definitions, and de-identification of exports.</p>\n</div></div>"
   ] ;
   fhir:ImplementationGuide.url [ fhir:value "https://ig.santeon.nl/sim-on-fhir/ImplementationGuide/santeon.sim-on-fhir"] ;
   fhir:ImplementationGuide.version [ fhir:value "0.1.0"] ;
   fhir:ImplementationGuide.name [ fhir:value "SanteonSimOnFhir"] ;
   fhir:ImplementationGuide.title [ fhir:value "SIM on FHIR"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-10-29T22:11:52+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-11-11T17:43:54+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "Santeon"] ;
   fhir:ImplementationGuide.contact [
      fhir:index -1 ;
@@ -526,6 +526,20 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/carePlan-san> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/carePlan-san" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CarePlan (SAN)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek Santeon FHIR R4-profiel voor zorgplannen, zoals deelname\naan een zorgpad of thuismonitoringprogramma.\n\nGebaseerd op het Santeon Informatiemodel (SIMCarePlan).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/condition-san> ;
          fhir:Reference.reference [ fhir:value "StructureDefinition/condition-san" ]
        ] ;
@@ -712,20 +726,6 @@
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDSpecialismeDiagnoses> ;
-         fhir:Reference.reference [ fhir:value "ValueSet/IBDSpecialismeDiagnoses" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "IBD Specialisme Diagnoses" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Specialisme-diagnosecombinaties die worden geselecteerd voor de IBD-dataset." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index -1 ;
-       fhir:Element.extension [
-         fhir:index -1 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/local-specialisme-diagnose-codes> ;
          fhir:Reference.reference [ fhir:value "ValueSet/local-specialisme-diagnose-codes" ]
        ] ;
@@ -740,39 +740,11 @@
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDVerrichtingenNZa> ;
-         fhir:Reference.reference [ fhir:value "ValueSet/IBDVerrichtingenNZa" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "IBD Verrichtingen NZa" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "NZa-verrichtingen die worden geselecteerd voor de IBD-dataset." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index -1 ;
-       fhir:Element.extension [
-         fhir:index -1 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/local-zorgtype-codes> ;
          fhir:Reference.reference [ fhir:value "ValueSet/local-zorgtype-codes" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "IBD Zorgtype Codes (11 en 21)" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bevat de toegestane landelijke zorgtypes 11 en 21." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index -1 ;
-       fhir:Element.extension [
-         fhir:index -1 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDAlgemeneMetingen> ;
-         fhir:Reference.reference [ fhir:value "ValueSet/IBDAlgemeneMetingen" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "IBDAlgemeneMetingen" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Metingen die worden geselecteerd voor de IBD-dataset." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -829,6 +801,34 @@
        fhir:Element.extension [
          fhir:index -1 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMMedicatieAfspraak> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/SIMMedicatieAfspraak" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Medicatieafspraak (model)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek logisch model voor een medicatieafspraak binnen het Santeon Informatiemodel." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/medicationRequest-san> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/medicationRequest-san" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "MedicationRequest (SAN)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek Santeon FHIR R4-profiel voor medicatieafspraken.\n\nGebaseerd op het Santeon Informatiemodel (SIMMedicatieAfspraak).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
@@ -865,6 +865,20 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Observation code (SAN KPI)" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Every code a KPI definition asks for on Observation. The union of the ObservationDefinition codes and the value sets referenced by the Observation criteria of all KPI definitions." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san-tabakgebruik> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/observation-san-tabakgebruik" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Observation TabakGebruik (SAN)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Santeon FHIR R4-profiel voor de vastgelegde rookstatus van een patiënt.\n\nAfgeleid van ObservationSan en gebaseerd op het\nSanteon Informatiemodel (SIMTabakGebruik).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -969,6 +983,20 @@
        fhir:Element.extension [
          fhir:index -1 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/questionnaireResponse-san> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/questionnaireResponse-san" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "QuestionnaireResponse (SAN)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek Santeon FHIR R4-profiel voor ingevulde vragenlijsten.\n\nGebaseerd op het Santeon Informatiemodel (SIMVragenlijstAntwoord).\nHet SIM levert één record per antwoord; records met hetzelfde\nVragenlijstAntwoordID vormen samen één QuestionnaireResponse.\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
          fhir:Extension.valueString [ fhir:value "ObservationDefinition" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
@@ -1018,6 +1046,34 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMTabakGebruik> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/SIMTabakGebruik" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Tabakgebruik (model)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek logisch model voor de vastgelegde rookstatus van een patiënt binnen het Santeon Informatiemodel." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/ValueSet/TabakGebruikStatusCodelijst> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/TabakGebruikStatusCodelijst" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "TabakGebruikStatusCodelijst" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Codelijst voor de rookstatus van een patiënt, zoals gebruikt in het Santeon Informatiemodel (SIM-versie 2024-04-24)." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMVerrichting> ;
          fhir:Reference.reference [ fhir:value "StructureDefinition/SIMVerrichting" ]
        ] ;
@@ -1037,6 +1093,34 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Verrichting Type Codes NZa (Scopie)" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "De specifieke NZa-verrichtingencodes voor de scopie-indicator." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMVragenlijstAntwoord> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/SIMVragenlijstAntwoord" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Vragenlijstantwoord (model)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek logisch model voor een antwoord op een vraag uit een ingevulde vragenlijst binnen het Santeon Informatiemodel." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMCarePlan> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/SIMCarePlan" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Zorgplan (model)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek logisch model voor een zorgplan (deelname aan een zorgpad of thuismonitoringprogramma) binnen het Santeon Informatiemodel." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ] ;
      fhir:ImplementationGuide.definition.page [

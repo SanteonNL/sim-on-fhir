@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
   "name" : "SIMVerrichting",
   "title" : "Verrichting (model)",
   "status" : "draft",
-  "date" : "2026-10-29T22:11:52+00:00",
+  "date" : "2026-11-11T17:43:54+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -198,7 +198,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
       "path" : "SIMVerrichting.VerrichtingType.coding.system",
       "mapping" : [{
         "identity" : "SIMVerrichtingFromSIMCSV",
-        "map" : "Verrichting;VerrichtingTypeCodeNZaSysteem, Verrichting;VerrichtingTypeCodeSnomedCTSysteem, Verrichting;VerrichtingTypeCodeDHDSysteem"
+        "map" : "Verrichting;VerrichtingTypeCodeNZaSysteem, Verrichting;VerrichtingTypeCodeSnomedCTSyst, Verrichting;VerrichtingTypeCodeDHDSysteem"
       }]
     },
     {
@@ -264,12 +264,20 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
       "min" : 0,
       "max" : "1",
       "type" : [{
-        "code" : "Coding"
+        "code" : "CodeableConcept"
       }]
     },
     {
-      "id" : "SIMVerrichting.AanvragerSpecialisme.code",
-      "path" : "SIMVerrichting.AanvragerSpecialisme.code",
+      "id" : "SIMVerrichting.AanvragerSpecialisme.coding.system",
+      "path" : "SIMVerrichting.AanvragerSpecialisme.coding.system",
+      "mapping" : [{
+        "identity" : "SIMVerrichtingFromSIMCSV",
+        "map" : "Verrichting;Aanvrager_SpecialismeSysteem"
+      }]
+    },
+    {
+      "id" : "SIMVerrichting.AanvragerSpecialisme.coding.code",
+      "path" : "SIMVerrichting.AanvragerSpecialisme.coding.code",
       "mapping" : [{
         "identity" : "SIMVerrichtingFromSIMCSV",
         "map" : "Verrichting;Aanvrager_Specialisme"
@@ -283,12 +291,20 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
       "min" : 0,
       "max" : "1",
       "type" : [{
-        "code" : "Coding"
+        "code" : "CodeableConcept"
       }]
     },
     {
-      "id" : "SIMVerrichting.UitvoerderSpecialisme.code",
-      "path" : "SIMVerrichting.UitvoerderSpecialisme.code",
+      "id" : "SIMVerrichting.UitvoerderSpecialisme.coding.system",
+      "path" : "SIMVerrichting.UitvoerderSpecialisme.coding.system",
+      "mapping" : [{
+        "identity" : "SIMVerrichtingFromSIMCSV",
+        "map" : "Verrichting;Uitvoerder_SpecialismeSysteem"
+      }]
+    },
+    {
+      "id" : "SIMVerrichting.UitvoerderSpecialisme.coding.code",
+      "path" : "SIMVerrichting.UitvoerderSpecialisme.coding.code",
       "mapping" : [{
         "identity" : "SIMVerrichtingFromSIMCSV",
         "map" : "Verrichting;Uitvoerder_Specialisme"
@@ -315,11 +331,27 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
       }]
     },
     {
+      "id" : "SIMVerrichting.VerrichtingCategorie.coding.system",
+      "path" : "SIMVerrichting.VerrichtingCategorie.coding.system",
+      "mapping" : [{
+        "identity" : "SIMVerrichtingFromSIMCSV",
+        "map" : "Verrichting;VerrichtingCategorieSysteem"
+      }]
+    },
+    {
       "id" : "SIMVerrichting.VerrichtingCategorie.coding.code",
       "path" : "SIMVerrichting.VerrichtingCategorie.coding.code",
       "mapping" : [{
         "identity" : "SIMVerrichtingFromSIMCSV",
         "map" : "Verrichting;VerrichtingCategorieCode"
+      }]
+    },
+    {
+      "id" : "SIMVerrichting.VerrichtingCategorie.coding.display",
+      "path" : "SIMVerrichting.VerrichtingCategorie.coding.display",
+      "mapping" : [{
+        "identity" : "SIMVerrichtingFromSIMCSV",
+        "map" : "Verrichting;VerrichtingCategorieOmschrijving"
       }]
     }]
   }

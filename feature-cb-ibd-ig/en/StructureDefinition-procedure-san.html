@@ -47,10 +47,9 @@
 	  <script type="text/javascript" src="assets/js/prism.js"></script>
 	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
 	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
-    <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"9.18"}
-    h3,h4,h5,h6{--heading-prefix:"9.18"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.25"}
+    h3,h4,h5,h6{--heading-prefix:"9.25"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -280,7 +279,7 @@ Procedure (SAN)
           
 
             as of 
-2026-10-29
+2026-11-11
 
           
         
@@ -409,7 +408,7 @@ eigenschap van dit profiel.</p>
 <td style="" class="hierarchy xhtCellBorder0"><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: black; background-color: white" title="This element is included in summaries" class="xhtPieceItalic">Σ</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element is included in summaries. </span></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic"></span><span class="xhtPieceItalic">0</span><span class="xhtPieceItalic">..</span><span class="xhtPieceItalic">1</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
-<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">When the procedure was performed</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:$this</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">When the procedure was performed</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:$this</span></td></tr>
 <tr fhir="generated-heirarchy" id="k-aea" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck030.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.Slices for performed[x].</span><span title="Base StructureDefinition for dateTime Type: A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored.                 Dates SHALL be valid dates.">performedDateTime</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
@@ -435,7 +434,7 @@ eigenschap van dit profiel.</p>
 <td style="" class="hierarchy xhtCellBorder0">0..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td>
 <td style="" class="hierarchy xhtCellBorder0">When the procedure was performed</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbprocedure-sanK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('procedure-sanK'), 'binding', document.getElementById('cbprocedure-sanK-binding').checked, document.getElementById('ppprocedure-sanK'));
 document.getElementById('cbprocedure-sanK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -472,10 +471,10 @@ filterDesc(document.getElementById('procedure-sanK'), 'obligation', document.get
     <td>Procedure.status</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="A code specifying the state of the procedure.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-event-status.html">EventStatus</a>
+      <a href="http://hl7.org/fhir/R4/valueset-event-status.html">EventStatus</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/event-status|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -615,11 +614,21 @@ filterDesc(document.getElementById('procedure-sanK'), 'obligation', document.get
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td></tr>
-<tr fhir="generated-heirarchy" id="a12.aa" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1000.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.category.coding.</span><a no-external="true" href="StructureDefinition-procedure-san-definitions.html#Procedure.category.coding.code" data-no-external="true">code</a><a name="Procedure.category.coding.code"> </a></td>
+<tr fhir="generated-heirarchy" id="a12.aa" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.category.coding.</span><a no-external="true" href="StructureDefinition-procedure-san-definitions.html#Procedure.category.coding.system" data-no-external="true">system</a><a name="Procedure.category.coding.system"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0"></td>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td>
+<td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#uri" class="xhtPieceDeEmphasized">uri</a></td>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Identity of the terminology system</span></td></tr>
+<tr fhir="generated-heirarchy" id="a12.ab" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.category.coding.</span><a no-external="true" href="StructureDefinition-procedure-san-definitions.html#Procedure.category.coding.code" data-no-external="true">code</a><a name="Procedure.category.coding.code"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code" class="xhtPieceDeEmphasized">code</a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Symbol in syntax defined by the system</span></td></tr>
+<tr fhir="generated-heirarchy" id="a12.ac" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1000.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.category.coding.</span><a no-external="true" href="StructureDefinition-procedure-san-definitions.html#Procedure.category.coding.display" data-no-external="true">display</a><a name="Procedure.category.coding.display"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0"></td>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td>
+<td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string" class="xhtPieceDeEmphasized">string</a></td>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Representation defined by the system</span></td></tr>
 <tr fhir="generated-heirarchy" id="a13." class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck11.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin-open.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.</span><a no-external="true" href="StructureDefinition-procedure-san-definitions.html#Procedure.code" data-no-external="true">code</a><a name="Procedure.code"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
@@ -659,7 +668,7 @@ filterDesc(document.getElementById('procedure-sanK'), 'obligation', document.get
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic"></span><span class="xhtPieceItalic xhtPieceDeEmphasized">0</span><span class="xhtPieceItalic xhtPieceDeEmphasized">..</span><span class="xhtPieceItalic xhtPieceDeEmphasized">1</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
-<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic xhtPieceDeEmphasized">When the procedure was performed</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Open by type:$this</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic xhtPieceDeEmphasized">When the procedure was performed</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Open by type:$this</span></td></tr>
 <tr fhir="generated-heirarchy" id="a16.a" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck130.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.Slices for performed[x].</span><span title="Base StructureDefinition for dateTime Type: A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored.                 Dates SHALL be valid dates.">performedDateTime</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
@@ -760,7 +769,7 @@ filterDesc(document.getElementById('procedure-sanK'), 'obligation', document.get
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceStrikeout"></span><span class="xhtPieceStrikeout xhtPieceDeEmphasized">0</span><span class="xhtPieceStrikeout">..</span><span class="xhtPieceStrikeout">0</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic xhtPieceDeEmphasized">Coded items used during the procedure</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbprocedure-sanD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('procedure-sanD'), 'binding', document.getElementById('cbprocedure-sanD-binding').checked, document.getElementById('ppprocedure-sanD'));
 document.getElementById('cbprocedure-sanD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -980,7 +989,7 @@ filterDesc(document.getElementById('procedure-sanD'), 'obligation', document.get
 <td style="" class="hierarchy xhtCellBorder0"><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: black; background-color: white" title="This element is included in summaries" class="xhtPieceItalic">Σ</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element is included in summaries. </span></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic"></span><span class="xhtPieceItalic">0</span><span class="xhtPieceItalic">..</span><span class="xhtPieceItalic">1</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
-<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">When the procedure was performed</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:$this</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">When the procedure was performed</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:$this</span></td></tr>
 <tr fhir="generated-heirarchy" id="s-aia" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck130.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.Slices for performed[x].</span><span title="Base StructureDefinition for dateTime Type: A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored.                 Dates SHALL be valid dates.">performedDateTime</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
@@ -1058,7 +1067,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0">0..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/organization.html">Organization</a>)</td>
 <td style="" class="hierarchy xhtCellBorder0">Organization the device or practitioner was acting for</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbprocedure-sanS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('procedure-sanS'), 'binding', document.getElementById('cbprocedure-sanS-binding').checked, document.getElementById('ppprocedure-sanS'));
 document.getElementById('cbprocedure-sanS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1096,10 +1105,10 @@ filterDesc(document.getElementById('procedure-sanS'), 'obligation', document.get
     <td>Procedure.identifier.​type</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-identifier-type.html">IdentifierType</a>
+      <a href="http://hl7.org/fhir/R4/valueset-identifier-type.html">IdentifierType</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/identifier-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1111,10 +1120,10 @@ filterDesc(document.getElementById('procedure-sanS'), 'obligation', document.get
     <td>Procedure.status</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="A code specifying the state of the procedure.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-event-status.html">EventStatus</a>
+      <a href="http://hl7.org/fhir/R4/valueset-event-status.html">EventStatus</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/event-status|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1126,10 +1135,10 @@ filterDesc(document.getElementById('procedure-sanS'), 'obligation', document.get
     <td>Procedure.category</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="A code that classifies a procedure for searching, sorting and display purposes.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-procedure-category.html">Procedure Category Codes (SNOMED CT)</a>
+      <a href="http://hl7.org/fhir/R4/valueset-procedure-category.html">Procedure Category Codes (SNOMED CT)</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/procedure-category|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1141,10 +1150,10 @@ filterDesc(document.getElementById('procedure-sanS'), 'obligation', document.get
     <td>Procedure.code</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="A code to identify a specific procedure .">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-procedure-code.html">Procedure Codes (SNOMED CT)</a>
+      <a href="http://hl7.org/fhir/R4/valueset-procedure-code.html">Procedure Codes (SNOMED CT)</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/procedure-code|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1156,10 +1165,10 @@ filterDesc(document.getElementById('procedure-sanS'), 'obligation', document.get
     <td>Procedure.performer.​function</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="A code that identifies the role of a performer of the procedure.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-performer-role.html">Procedure Performer Role Codes</a>
+      <a href="http://hl7.org/fhir/R4/valueset-performer-role.html">Procedure Performer Role Codes</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/performer-role|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1171,10 +1180,10 @@ filterDesc(document.getElementById('procedure-sanS'), 'obligation', document.get
     <td>Procedure.focalDevice.​action</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="A kind of change that happened to the device during the procedure.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-device-action.html">Procedure Device Action Codes</a>
+      <a href="http://hl7.org/fhir/R4/valueset-device-action.html">Procedure Device Action Codes</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/device-action|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1393,7 +1402,7 @@ Summary
 <td style="" class="hierarchy xhtCellBorder0"><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: black; background-color: white" title="This element is included in summaries" class="xhtPieceItalic">Σ</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element is included in summaries. </span></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic"></span><span class="xhtPieceItalic">0</span><span class="xhtPieceItalic">..</span><span class="xhtPieceItalic">1</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
-<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">When the procedure was performed</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:$this</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">When the procedure was performed</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:$this</span></td></tr>
 <tr fhir="generated-heirarchy" id="ka-aea" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck030.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.Slices for performed[x].</span><span title="Base StructureDefinition for dateTime Type: A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored.                 Dates SHALL be valid dates.">performedDateTime</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
@@ -1419,7 +1428,7 @@ Summary
 <td style="" class="hierarchy xhtCellBorder0">0..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td>
 <td style="" class="hierarchy xhtCellBorder0">When the procedure was performed</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbprocedure-sanKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('procedure-sanKA'), 'binding', document.getElementById('cbprocedure-sanKA-binding').checked, document.getElementById('ppprocedure-sanKA'));
 document.getElementById('cbprocedure-sanKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1455,10 +1464,10 @@ filterDesc(document.getElementById('procedure-sanKA'), 'obligation', document.ge
     <td>Procedure.status</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="A code specifying the state of the procedure.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-event-status.html">EventStatus</a>
+      <a href="http://hl7.org/fhir/R4/valueset-event-status.html">EventStatus</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/event-status|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1598,11 +1607,21 @@ filterDesc(document.getElementById('procedure-sanKA'), 'obligation', document.ge
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td></tr>
-<tr fhir="generated-heirarchy" id="a-a12.aa" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1000.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.category.coding.</span><a no-external="true" href="StructureDefinition-procedure-san-definitions.html#Procedure.category.coding.code" data-no-external="true">code</a><a name="a-Procedure.category.coding.code"> </a></td>
+<tr fhir="generated-heirarchy" id="a-a12.aa" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.category.coding.</span><a no-external="true" href="StructureDefinition-procedure-san-definitions.html#Procedure.category.coding.system" data-no-external="true">system</a><a name="a-Procedure.category.coding.system"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0"></td>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td>
+<td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#uri" class="xhtPieceDeEmphasized">uri</a></td>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Identity of the terminology system</span></td></tr>
+<tr fhir="generated-heirarchy" id="a-a12.ab" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.category.coding.</span><a no-external="true" href="StructureDefinition-procedure-san-definitions.html#Procedure.category.coding.code" data-no-external="true">code</a><a name="a-Procedure.category.coding.code"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code" class="xhtPieceDeEmphasized">code</a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Symbol in syntax defined by the system</span></td></tr>
+<tr fhir="generated-heirarchy" id="a-a12.ac" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1000.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.category.coding.</span><a no-external="true" href="StructureDefinition-procedure-san-definitions.html#Procedure.category.coding.display" data-no-external="true">display</a><a name="a-Procedure.category.coding.display"> </a></td>
+<td style="" class="hierarchy xhtCellBorder0"></td>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td>
+<td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string" class="xhtPieceDeEmphasized">string</a></td>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Representation defined by the system</span></td></tr>
 <tr fhir="generated-heirarchy" id="a-a13." class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck11.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin-open.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.</span><a no-external="true" href="StructureDefinition-procedure-san-definitions.html#Procedure.code" data-no-external="true">code</a><a name="a-Procedure.code"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
@@ -1642,7 +1661,7 @@ filterDesc(document.getElementById('procedure-sanKA'), 'obligation', document.ge
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic"></span><span class="xhtPieceItalic xhtPieceDeEmphasized">0</span><span class="xhtPieceItalic xhtPieceDeEmphasized">..</span><span class="xhtPieceItalic xhtPieceDeEmphasized">1</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
-<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic xhtPieceDeEmphasized">When the procedure was performed</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Open by type:$this</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic xhtPieceDeEmphasized">When the procedure was performed</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Open by type:$this</span></td></tr>
 <tr fhir="generated-heirarchy" id="a-a16.a" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck130.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.Slices for performed[x].</span><span title="Base StructureDefinition for dateTime Type: A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored.                 Dates SHALL be valid dates.">performedDateTime</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
@@ -1743,7 +1762,7 @@ filterDesc(document.getElementById('procedure-sanKA'), 'obligation', document.ge
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceStrikeout"></span><span class="xhtPieceStrikeout xhtPieceDeEmphasized">0</span><span class="xhtPieceStrikeout">..</span><span class="xhtPieceStrikeout">0</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic xhtPieceDeEmphasized">Coded items used during the procedure</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbprocedure-sanDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('procedure-sanDA'), 'binding', document.getElementById('cbprocedure-sanDA-binding').checked, document.getElementById('ppprocedure-sanDA'));
 document.getElementById('cbprocedure-sanDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1960,7 +1979,7 @@ filterDesc(document.getElementById('procedure-sanDA'), 'obligation', document.ge
 <td style="" class="hierarchy xhtCellBorder0"><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: black; background-color: white" title="This element is included in summaries" class="xhtPieceItalic">Σ</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element is included in summaries. </span></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic"></span><span class="xhtPieceItalic">0</span><span class="xhtPieceItalic">..</span><span class="xhtPieceItalic">1</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
-<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">When the procedure was performed</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:$this</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">When the procedure was performed</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:$this</span></td></tr>
 <tr fhir="generated-heirarchy" id="sa-aia" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck130.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Procedure.Slices for performed[x].</span><span title="Base StructureDefinition for dateTime Type: A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored.                 Dates SHALL be valid dates.">performedDateTime</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
@@ -2038,7 +2057,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0">0..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/organization.html">Organization</a>)</td>
 <td style="" class="hierarchy xhtCellBorder0">Organization the device or practitioner was acting for</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbprocedure-sanSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('procedure-sanSA'), 'binding', document.getElementById('cbprocedure-sanSA-binding').checked, document.getElementById('ppprocedure-sanSA'));
 document.getElementById('cbprocedure-sanSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2074,10 +2093,10 @@ filterDesc(document.getElementById('procedure-sanSA'), 'obligation', document.ge
     <td>Procedure.identifier.​type</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-identifier-type.html">IdentifierType</a>
+      <a href="http://hl7.org/fhir/R4/valueset-identifier-type.html">IdentifierType</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/identifier-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -2089,10 +2108,10 @@ filterDesc(document.getElementById('procedure-sanSA'), 'obligation', document.ge
     <td>Procedure.status</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="A code specifying the state of the procedure.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-event-status.html">EventStatus</a>
+      <a href="http://hl7.org/fhir/R4/valueset-event-status.html">EventStatus</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/event-status|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -2104,10 +2123,10 @@ filterDesc(document.getElementById('procedure-sanSA'), 'obligation', document.ge
     <td>Procedure.category</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="A code that classifies a procedure for searching, sorting and display purposes.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-procedure-category.html">Procedure Category Codes (SNOMED CT)</a>
+      <a href="http://hl7.org/fhir/R4/valueset-procedure-category.html">Procedure Category Codes (SNOMED CT)</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/procedure-category|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -2119,10 +2138,10 @@ filterDesc(document.getElementById('procedure-sanSA'), 'obligation', document.ge
     <td>Procedure.code</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="A code to identify a specific procedure .">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-procedure-code.html">Procedure Codes (SNOMED CT)</a>
+      <a href="http://hl7.org/fhir/R4/valueset-procedure-code.html">Procedure Codes (SNOMED CT)</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/procedure-code|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -2134,10 +2153,10 @@ filterDesc(document.getElementById('procedure-sanSA'), 'obligation', document.ge
     <td>Procedure.performer.​function</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
     </td>
     <td title="A code that identifies the role of a performer of the procedure.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-performer-role.html">Procedure Performer Role Codes</a>
+      <a href="http://hl7.org/fhir/R4/valueset-performer-role.html">Procedure Performer Role Codes</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/performer-role|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -2149,10 +2168,10 @@ filterDesc(document.getElementById('procedure-sanSA'), 'obligation', document.ge
     <td>Procedure.focalDevice.​action</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="A kind of change that happened to the device during the procedure.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-device-action.html">Procedure Device Action Codes</a>
+      <a href="http://hl7.org/fhir/R4/valueset-device-action.html">Procedure Device Action Codes</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/device-action|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -2360,8 +2379,8 @@ Summary
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.sim-on-fhir#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-29 22:11:00 +0000">
-    2026-10-29
+  <span title="2026-11-11 17:43:00 +0000">
+    2026-11-11
   </span>
 
           <br/>

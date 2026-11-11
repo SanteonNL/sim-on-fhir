@@ -3,15 +3,15 @@
 ## Pages
 
 * [Home](en/index.md)
-* [De-identification](en/deidentification.md)
-* [KPI definitions](en/kpi-definitions.md)
-* [Artifacts Summary](en/artifacts.md)
-* [K3.6.3 Calprotectine voor scopie](en/K363.md)
-* [SIM Logical Models](en/CLMs.md)
-* [K3.1.2 Scopie](en/K312.md)
-* [IBD](en/ibd-dataset.md)
 * [FHIR Profiles](en/profiles.md)
 * [Datasets](en/datasets.md)
+* [IBD](en/ibd-dataset.md)
+* [Artifacts Summary](en/artifacts.md)
+* [KPI definitions](en/kpi-definitions.md)
+* [SIM Logical Models](en/CLMs.md)
+* [De-identification](en/deidentification.md)
+* [K3.6.3 Calprotectine voor scopie](en/K363.md)
+* [K3.1.2 Scopie](en/K312.md)
 
 ## Resources
 
@@ -22,10 +22,8 @@
 ### ValueSets
 
 * [AlcoholGebruikStatusCodelijst](en/ValueSet-AlcoholGebruikStatusCodelijst.md)
-* [IBDAlgemeneMetingen](en/ValueSet-IBDAlgemeneMetingen.md)
-* [IBD Specialisme Diagnoses](en/ValueSet-IBDSpecialismeDiagnoses.md)
-* [IBD Verrichtingen NZa](en/ValueSet-IBDVerrichtingenNZa.md)
 * [Santeon_MetingNaamCodelijst](en/ValueSet-Santeon-MetingNaamCodelijst.md)
+* [TabakGebruikStatusCodelijst](en/ValueSet-TabakGebruikStatusCodelijst.md)
 * [De-identification Action Value Set](en/ValueSet-deidentification-action-vs.md)
 * [IBD Specialisme-Diagnose Combinaties](en/ValueSet-local-specialisme-diagnose-codes.md)
 * [Verrichting Type Codes NZa (Scopie)](en/ValueSet-local-verrichting-codes-nza.md)
@@ -36,26 +34,34 @@
 ### Logicals
 
 * [Algemene meting (model)](en/StructureDefinition-SIMAlgemeneMeting.md)
+* [Zorgplan (model)](en/StructureDefinition-SIMCarePlan.md)
 * [Contact (model)](en/StructureDefinition-SIMContact.md)
 * [DBC/Zorgtraject (model)](en/StructureDefinition-SIMDBC.md)
 * [Fasering (model)](en/StructureDefinition-SIMFasering.md)
+* [Medicatieafspraak (model)](en/StructureDefinition-SIMMedicatieAfspraak.md)
 * [Patiënt (model)](en/StructureDefinition-SIMPatient.md)
+* [Tabakgebruik (model)](en/StructureDefinition-SIMTabakGebruik.md)
 * [Verrichting (model)](en/StructureDefinition-SIMVerrichting.md)
+* [Vragenlijstantwoord (model)](en/StructureDefinition-SIMVragenlijstAntwoord.md)
 * [Dataset definition (model)](en/StructureDefinition-dataset-definition.md)
 * [De-identification ruleset (model)](en/StructureDefinition-deidentification-ruleset.md)
 * [KPI definition (model)](en/StructureDefinition-kpi-definition.md)
 
 ### Resource Profiles
 
+* [CarePlan (SAN)](en/StructureDefinition-carePlan-san.md)
 * [Condition (SAN)](en/StructureDefinition-condition-san.md)
 * [Encounter (SAN)](en/StructureDefinition-encounter-san.md)
 * [EpisodeOfCare (SAN)](en/StructureDefinition-episodeOfCare-san.md)
+* [MedicationRequest (SAN)](en/StructureDefinition-medicationRequest-san.md)
 * [Observation (SAN KPI)](en/StructureDefinition-observation-san-kpi.md)
+* [Observation TabakGebruik (SAN)](en/StructureDefinition-observation-san-tabakgebruik.md)
 * [Observation (SAN)](en/StructureDefinition-observation-san.md)
 * [Patient (SAN KPI)](en/StructureDefinition-patient-san-kpi.md)
 * [Patient (SAN)](en/StructureDefinition-patient-san.md)
 * [Procedure (SAN KPI)](en/StructureDefinition-procedure-san-kpi.md)
 * [Procedure (SAN)](en/StructureDefinition-procedure-san.md)
+* [QuestionnaireResponse (SAN)](en/StructureDefinition-questionnaireResponse-san.md)
 
 ### Extensions
 

@@ -2,7 +2,7 @@
 
 ## IBD
 
-## IBD dataset
+### IBD dataset
 
 Gegevensset voor volwassen patiënten met inflammatoire darmziekten (IBD): scopieën en calprotectinemetingen, plus alcoholgebruik.
 
@@ -10,7 +10,7 @@ Version 0.1.0 · definition: [ibd-dataset](Binary-ibd-dataset.md) · generated: 
 
 -------
 
-### Cohort
+#### Cohort
 
 Alle patiënten van 18 jaar of ouder op het moment van aanleveren met een actief, regulier DBC-zorgtraject (zorgtype 11 of 21) dat op of na 01-01-2018 is geopend en waarvan de specialisme-diagnose bij IBD hoort. De startdatum 01-01-2018 is bewust niet dynamisch.
 
@@ -43,11 +43,11 @@ EpisodeOfCare?type:in=https://ig.santeon.nl/sim-on-fhir/ValueSet/local-zorgtype-
 
 -------
 
-### KPI definitions
+#### KPI definitions
 
 The data each KPI needs. Criteria are role-neutral; the same criterion in two KPIs is queried once.
 
-#### K3.1.2 Scopie
+##### K3.1.2 Scopie
 
 `k312-scopie` · version 0.1.0 · definition: [k312-scopie](Binary-k312-scopie.md)
 
@@ -69,7 +69,7 @@ Procedure?code:in=https://ig.santeon.nl/sim-on-fhir/ValueSet/local-verrichting-c
 
 Elements: `code`, `performed[x]`, `subject`
 
-#### K3.6.3 Calprotectine voor scopie
+##### K3.6.3 Calprotectine voor scopie
 
 `k363-calprotectin-before-scopie` · version 0.1.0 · definition: [k363-calprotectin-before-scopie](Binary-k363-calprotectin-before-scopie.md)
 
@@ -113,7 +113,7 @@ Elements: `code`, `value[x]`, `effective[x]`, `subject`
 * `Observation.effective >= Procedure.performed.start - 90 days and Observation.effective <= Procedure.performed.start and Observation.subject = Procedure.subject`
  
 
-#### Alcoholgebruik vastgelegd
+##### Alcoholgebruik vastgelegd
 
 `alcohol-status-recorded` · version 0.1.0 · definition: [alcohol-status-recorded](Binary-alcohol-status-recorded.md)
 
@@ -137,7 +137,7 @@ Elements: `code`, `value[x]`, `effective[x]`, `subject`
 
 -------
 
-### Included data
+#### Included data
 
 Data the dataset releases that does not belong to a KPI. It is part of the export and of the derived model like a KPI criterion.
 
@@ -158,7 +158,7 @@ Elements: `gender`, `birthDate`
 
 -------
 
-### Export request
+#### Export request
 
 Resolved from the cohort and the KPI definitions above. Criteria that differ only in their code are rolled up into one filter with a list of codes. `{today}`, `{today-18y}` and `{today-90d}` are replaced by a concrete date and other `{placeholders}` are filled in by the exporter when the request is sent.
 
@@ -186,7 +186,7 @@ Every `_typeFilter` and every element above must be covered by the de-identifica
 
 -------
 
-### Request sequence
+#### Request sequence
 
 The export is a sequence of ordinary FHIR requests, executed in this order by the client. They cannot be combined in one Bundle: `$export` is asynchronous and a transaction cannot wait for a Group that is created asynchronously. Fill in every `{placeholder}` in the Group and the Parameters first.
 

@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Refer to this Profile: [Condition (SAN)](StructureDefinition-condition-san.md), [Encounter (SAN)](StructureDefinition-encounter-san.md), [EpisodeOfCare (SAN)](StructureDefinition-episodeOfCare-san.md), [Observation (SAN)](StructureDefinition-observation-san.md) and [Procedure (SAN)](StructureDefinition-procedure-san.md)
+* Refer to this Profile: [CarePlan (SAN)](StructureDefinition-carePlan-san.md), [Condition (SAN)](StructureDefinition-condition-san.md), [Encounter (SAN)](StructureDefinition-encounter-san.md), [EpisodeOfCare (SAN)](StructureDefinition-episodeOfCare-san.md)... Show 4 more, [MedicationRequest (SAN)](StructureDefinition-medicationRequest-san.md), [Observation (SAN)](StructureDefinition-observation-san.md), [Procedure (SAN)](StructureDefinition-procedure-san.md) and [QuestionnaireResponse (SAN)](StructureDefinition-questionnaireResponse-san.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/santeon.sim-on-fhir|current/StructureDefinition/StructureDefinition-patient-san.json)
 
@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-patient-san.csv),
   "name" : "PatientSan",
   "title" : "Patient (SAN)",
   "status" : "draft",
-  "date" : "2026-10-29T22:11:52+00:00",
+  "date" : "2026-11-11T17:43:54+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",

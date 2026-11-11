@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="567bb2c9-e97c-4400-9a23-9bb0bd1b7c35"/>
+  <id value="65febdb7-adba-47c6-94e0-8ed75e738037"/>
   <meta>
-    <lastUpdated value="2026-10-29T22:11:52.838+00:00"/>
+    <lastUpdated value="2026-11-11T17:43:54.299+00:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -176,7 +176,7 @@
         <name value="AlcoholGebruikStatusCodelijst"/>
         <title value="AlcoholGebruikStatusCodelijst"/>
         <status value="draft"/>
-        <date value="2026-10-29T22:11:52+00:00"/>
+        <date value="2026-11-11T17:43:54+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -185,8 +185,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:69181671-0da1-467a-86f6-01bf142313b4"/>
-          <timestamp value="2026-10-29T22:13:34+00:00"/>
+          <identifier value="urn:uuid:33de9a47-d632-493c-be61-95da4f599b13"/>
+          <timestamp value="2026-11-11T17:45:16+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -424,7 +424,7 @@
         <name value="AlcoholGebruikStatusCodelijst"/>
         <title value="AlcoholGebruikStatusCodelijst"/>
         <status value="draft"/>
-        <date value="2026-10-29T22:11:52+00:00"/>
+        <date value="2026-11-11T17:43:54+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -433,8 +433,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:55d0f9cc-fca1-4e08-8d23-dee3cb19fa27"/>
-          <timestamp value="2026-10-29T22:13:34+00:00"/>
+          <identifier value="urn:uuid:3a6da29a-4000-4efc-838e-d37b472c8c3b"/>
+          <timestamp value="2026-11-11T17:45:16+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -503,7 +503,7 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst"/>
+    <fullUrl value="https://ig.santeon.nl/sim-on-fhir/ValueSet/TabakGebruikStatusCodelijst"/>
     <resource>
       <ValueSet>
         <text>
@@ -513,19 +513,20 @@
             <div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">
               <p>Expansion from tx.fhir.org based on:</p>
               <ul>
-                <li>Loinc v2.83
-                  <span class="copy-text-inline">
-                    <button data-clipboard-text="http://loinc.org|2.83" title="Click to Copy URL" class="btn-copy" aria-label="copy"> </button>
-                  </span>
-                </li>
                 <li>SNOMED CT International edition 01-Feb 2025
                   <span class="copy-text-inline">
                     <button data-clipboard-text="http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201" title="Click to Copy URL" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </li>
+                <li>
+                  <a href="http://terminology.hl7.org/7.4.0/CodeSystem-v3-NullFlavor.html">codesystem NullFlavor v4.0.0 (CodeSystem)</a>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="http://terminology.hl7.org/CodeSystem/v3-NullFlavor|4.0.0" title="Click to Copy URL" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </li>
               </ul>
             </div>
-            <p>This value set contains 2 concepts</p>
+            <p>This value set contains 7 concepts</p>
             <table class="codes" data-fhir="generated">
               <tr>
                 <td>
@@ -538,6 +539,9 @@
                   <b>Display (en)</b>
                 </td>
                 <td>
+                  <b>Definition</b>
+                </td>
+                <td>
                   <b>JSON</b>
                 </td>
                 <td>
@@ -546,53 +550,171 @@
               </tr>
               <tr>
                 <td>
-                  <a name="x-http://loinc.org-38445-3"> </a>
-                  <code>http://loinc.org</code>
+                  <a name="x-http://terminology.hl7.org/CodeSystem/v3-NullFlavor-OTH"> </a>
+                  <code>http://terminology.hl7.org/CodeSystem/v3-NullFlavor</code>
                 </td>
                 <td style="white-space:nowrap">  
-                  <a href="https://loinc.org/38445-3/">38445-3</a>
+                  <a href="http://terminology.hl7.org/7.4.0/CodeSystem-v3-NullFlavor.html#v3-NullFlavor-OTH">OTH</a>
                 </td>
-                <td>Calprotectin [Mass/mass] in Stool</td>
+                <td>Other</td>
+                <td>
+                  <div>
+                    <p>**Description:**The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g., concept not provided by required code system).</p>
+
+                    <p>
+                      <strong>Usage Notes</strong>: This flavor and its specializations are most commonly used with the CD datatype and its flavors. However, it may apply to *any* datatype where the constraints of the type are tighter than can be conveyed. For example, a PQ that is for a true measured amount whose units are not supported in UCUM, a need to convey a REAL when the type has been constrained to INT, etc.
+                    </p>
+
+                    <p>With coded datatypes, this null flavor may only be used if the vocabulary binding has a coding strength of CNE. By definition, all local codes and original text are part of the value set if the coding strength is CWE.</p>
+
+                  </div>
+                </td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.83&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-NullFlavor&quot;, &quot;version&quot;: &quot;4.0.0&quot;, &quot;code&quot;: &quot;OTH&quot;, &quot;display&quot;: &quot;Other&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.83&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/v3-NullFlavor&quot;/&gt;&lt;version value=&quot;4.0.0&quot;/&gt;&lt;code value=&quot;OTH&quot;/&gt;&lt;display value=&quot;Other&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <a name="x-http://snomed.info/sct-228273003"> </a>
+                  <a name="x-http://snomed.info/sct-449868002"> </a>
                   <code>http://snomed.info/sct</code>
                 </td>
                 <td style="white-space:nowrap">  
-                  <a href="http://snomed.info/id/228273003">228273003</a>
+                  <a href="http://snomed.info/id/449868002">449868002</a>
                 </td>
-                <td>Finding relating to alcohol drinking behavior</td>
+                <td>Smokes tobacco daily</td>
+                <td/>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;228273003&quot;, &quot;display&quot;: &quot;Finding relating to alcohol drinking behavior&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;449868002&quot;, &quot;display&quot;: &quot;Smokes tobacco daily&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;228273003&quot;/&gt;&lt;display value=&quot;Finding relating to alcohol drinking behavior&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;449868002&quot;/&gt;&lt;display value=&quot;Smokes tobacco daily&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-428041000124106"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/428041000124106">428041000124106</a>
+                </td>
+                <td>Occasional tobacco smoker</td>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;428041000124106&quot;, &quot;display&quot;: &quot;Occasional tobacco smoker&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;428041000124106&quot;/&gt;&lt;display value=&quot;Occasional tobacco smoker&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-43381005"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/43381005">43381005</a>
+                </td>
+                <td>Passive smoker</td>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;43381005&quot;, &quot;display&quot;: &quot;Passive smoker&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;43381005&quot;/&gt;&lt;display value=&quot;Passive smoker&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-8517006"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/8517006">8517006</a>
+                </td>
+                <td>Ex-smoker</td>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;8517006&quot;, &quot;display&quot;: &quot;Ex-smoker&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;8517006&quot;/&gt;&lt;display value=&quot;Ex-smoker&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-405746006"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/405746006">405746006</a>
+                </td>
+                <td>Current non smoker but past smoking history unknown</td>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;405746006&quot;, &quot;display&quot;: &quot;Current non smoker but past smoking history unknown&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;405746006&quot;/&gt;&lt;display value=&quot;Current non smoker but past smoking history unknown&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-266919005"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/266919005">266919005</a>
+                </td>
+                <td>Never smoked tobacco</td>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;266919005&quot;, &quot;display&quot;: &quot;Never smoked tobacco&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;266919005&quot;/&gt;&lt;display value=&quot;Never smoked tobacco&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
               </tr>
             </table>
           </div>
         </text>
-        <url value="https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst"/>
+        <url value="https://ig.santeon.nl/sim-on-fhir/ValueSet/TabakGebruikStatusCodelijst"/>
         <version value="0.1.0"/>
-        <name value="Santeon_MetingNaamCodelijst"/>
-        <title value="Santeon_MetingNaamCodelijst"/>
+        <name value="TabakGebruikStatusCodelijst"/>
+        <title value="TabakGebruikStatusCodelijst"/>
         <status value="draft"/>
-        <date value="2026-10-29T22:11:52+00:00"/>
+        <date value="2026-11-11T17:43:54+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -601,9 +723,9 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:9bf5580c-eacc-472e-99ec-921522a7dd88"/>
-          <timestamp value="2026-10-29T22:13:35+00:00"/>
-          <total value="2"/>
+          <identifier value="urn:uuid:5a924ea8-6a2d-465c-84b5-cc75cfaf7956"/>
+          <timestamp value="2026-11-11T17:45:16+00:00"/>
+          <total value="7"/>
           <offset value="0"/>
           <parameter>
             <name value="displayLanguage"/>
@@ -622,8 +744,16 @@
             <valueBoolean value="false"/>
           </parameter>
           <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor|4.0.0"/>
+          </parameter>
+          <parameter>
             <name value="used-valueset"/>
             <valueUri value="null"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="true"/>
           </parameter>
           <parameter>
             <name value="includeDefinition"/>
@@ -631,32 +761,49 @@
           </parameter>
           <parameter>
             <name value="used-codesystem"/>
-            <valueUri value="http://loinc.org|2.83"/>
-          </parameter>
-          <parameter>
-            <name value="excludeNested"/>
-            <valueBoolean value="true"/>
-          </parameter>
-          <parameter>
-            <name value="used-codesystem"/>
             <valueUri value="http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201"/>
           </parameter>
           <contains>
-            <system value="http://loinc.org"/>
-            <code value="38445-3"/>
-            <display value="Calprotectin [Mass/mass] in Stool"/>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor"/>
+            <code value="OTH"/>
+            <display value="Other"/>
           </contains>
           <contains>
             <system value="http://snomed.info/sct"/>
-            <code value="228273003"/>
-            <display value="Finding relating to alcohol drinking behavior"/>
+            <code value="449868002"/>
+            <display value="Smokes tobacco daily"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="428041000124106"/>
+            <display value="Occasional tobacco smoker"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="43381005"/>
+            <display value="Passive smoker"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="8517006"/>
+            <display value="Ex-smoker"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="405746006"/>
+            <display value="Current non smoker but past smoking history unknown"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="266919005"/>
+            <display value="Never smoked tobacco"/>
           </contains>
         </expansion>
       </ValueSet>
     </resource>
   </entry>
   <entry>
-    <fullUrl value="https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst"/>
+    <fullUrl value="https://ig.santeon.nl/sim-on-fhir/ValueSet/TabakGebruikStatusCodelijst"/>
     <resource>
       <ValueSet>
         <text>
@@ -666,19 +813,20 @@
             <div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">
               <p>Expansion from tx.fhir.org based on:</p>
               <ul>
-                <li>Loinc v2.83
-                  <span class="copy-text-inline">
-                    <button data-clipboard-text="http://loinc.org|2.83" title="Click to Copy URL" class="btn-copy" aria-label="copy"> </button>
-                  </span>
-                </li>
                 <li>SNOMED CT International edition 01-Feb 2025
                   <span class="copy-text-inline">
                     <button data-clipboard-text="http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201" title="Click to Copy URL" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </li>
+                <li>
+                  <a href="http://terminology.hl7.org/7.4.0/CodeSystem-v3-NullFlavor.html">codesystem NullFlavor v4.0.0 (CodeSystem)</a>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="http://terminology.hl7.org/CodeSystem/v3-NullFlavor|4.0.0" title="Click to Copy URL" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </li>
               </ul>
             </div>
-            <p>This value set contains 2 concepts</p>
+            <p>This value set contains 7 concepts</p>
             <table class="codes" data-fhir="generated">
               <tr>
                 <td>
@@ -691,6 +839,9 @@
                   <b>Display (en)</b>
                 </td>
                 <td>
+                  <b>Definition</b>
+                </td>
+                <td>
                   <b>JSON</b>
                 </td>
                 <td>
@@ -699,53 +850,171 @@
               </tr>
               <tr>
                 <td>
-                  <a name="x-http://loinc.org-38445-3"> </a>
-                  <code>http://loinc.org</code>
+                  <a name="x-http://terminology.hl7.org/CodeSystem/v3-NullFlavor-OTH"> </a>
+                  <code>http://terminology.hl7.org/CodeSystem/v3-NullFlavor</code>
                 </td>
                 <td style="white-space:nowrap">  
-                  <a href="https://loinc.org/38445-3/">38445-3</a>
+                  <a href="http://terminology.hl7.org/7.4.0/CodeSystem-v3-NullFlavor.html#v3-NullFlavor-OTH">OTH</a>
                 </td>
-                <td>Calprotectin [Mass/mass] in Stool</td>
+                <td>Other</td>
+                <td>
+                  <div>
+                    <p>**Description:**The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g., concept not provided by required code system).</p>
+
+                    <p>
+                      <strong>Usage Notes</strong>: This flavor and its specializations are most commonly used with the CD datatype and its flavors. However, it may apply to *any* datatype where the constraints of the type are tighter than can be conveyed. For example, a PQ that is for a true measured amount whose units are not supported in UCUM, a need to convey a REAL when the type has been constrained to INT, etc.
+                    </p>
+
+                    <p>With coded datatypes, this null flavor may only be used if the vocabulary binding has a coding strength of CNE. By definition, all local codes and original text are part of the value set if the coding strength is CWE.</p>
+
+                  </div>
+                </td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://loinc.org&quot;, &quot;version&quot;: &quot;2.83&quot;, &quot;code&quot;: &quot;38445-3&quot;, &quot;display&quot;: &quot;Calprotectin [Mass/mass] in Stool&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-NullFlavor&quot;, &quot;version&quot;: &quot;4.0.0&quot;, &quot;code&quot;: &quot;OTH&quot;, &quot;display&quot;: &quot;Other&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://loinc.org&quot;/&gt;&lt;version value=&quot;2.83&quot;/&gt;&lt;code value=&quot;38445-3&quot;/&gt;&lt;display value=&quot;Calprotectin [Mass/mass] in Stool&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/v3-NullFlavor&quot;/&gt;&lt;version value=&quot;4.0.0&quot;/&gt;&lt;code value=&quot;OTH&quot;/&gt;&lt;display value=&quot;Other&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <a name="x-http://snomed.info/sct-228273003"> </a>
+                  <a name="x-http://snomed.info/sct-449868002"> </a>
                   <code>http://snomed.info/sct</code>
                 </td>
                 <td style="white-space:nowrap">  
-                  <a href="http://snomed.info/id/228273003">228273003</a>
+                  <a href="http://snomed.info/id/449868002">449868002</a>
                 </td>
-                <td>Finding relating to alcohol drinking behavior</td>
+                <td>Smokes tobacco daily</td>
+                <td/>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;228273003&quot;, &quot;display&quot;: &quot;Finding relating to alcohol drinking behavior&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;449868002&quot;, &quot;display&quot;: &quot;Smokes tobacco daily&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
                 <td>
                   <span class="copy-text-inline">
-                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;228273003&quot;/&gt;&lt;display value=&quot;Finding relating to alcohol drinking behavior&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;449868002&quot;/&gt;&lt;display value=&quot;Smokes tobacco daily&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-428041000124106"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/428041000124106">428041000124106</a>
+                </td>
+                <td>Occasional tobacco smoker</td>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;428041000124106&quot;, &quot;display&quot;: &quot;Occasional tobacco smoker&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;428041000124106&quot;/&gt;&lt;display value=&quot;Occasional tobacco smoker&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-43381005"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/43381005">43381005</a>
+                </td>
+                <td>Passive smoker</td>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;43381005&quot;, &quot;display&quot;: &quot;Passive smoker&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;43381005&quot;/&gt;&lt;display value=&quot;Passive smoker&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-8517006"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/8517006">8517006</a>
+                </td>
+                <td>Ex-smoker</td>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;8517006&quot;, &quot;display&quot;: &quot;Ex-smoker&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;8517006&quot;/&gt;&lt;display value=&quot;Ex-smoker&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-405746006"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/405746006">405746006</a>
+                </td>
+                <td>Current non smoker but past smoking history unknown</td>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;405746006&quot;, &quot;display&quot;: &quot;Current non smoker but past smoking history unknown&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;405746006&quot;/&gt;&lt;display value=&quot;Current non smoker but past smoking history unknown&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-266919005"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/266919005">266919005</a>
+                </td>
+                <td>Never smoked tobacco</td>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;266919005&quot;, &quot;display&quot;: &quot;Never smoked tobacco&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;/&gt;&lt;code value=&quot;266919005&quot;/&gt;&lt;display value=&quot;Never smoked tobacco&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
                   </span>
                 </td>
               </tr>
             </table>
           </div>
         </text>
-        <url value="https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst"/>
+        <url value="https://ig.santeon.nl/sim-on-fhir/ValueSet/TabakGebruikStatusCodelijst"/>
         <version value="0.1.0"/>
-        <name value="Santeon_MetingNaamCodelijst"/>
-        <title value="Santeon_MetingNaamCodelijst"/>
+        <name value="TabakGebruikStatusCodelijst"/>
+        <title value="TabakGebruikStatusCodelijst"/>
         <status value="draft"/>
-        <date value="2026-10-29T22:11:52+00:00"/>
+        <date value="2026-11-11T17:43:54+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -754,9 +1023,9 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:70ba99c1-3531-4b78-96d4-b675876e11ee"/>
-          <timestamp value="2026-10-29T22:13:35+00:00"/>
-          <total value="2"/>
+          <identifier value="urn:uuid:408cc282-0c46-4427-8fab-615161430cb2"/>
+          <timestamp value="2026-11-11T17:45:16+00:00"/>
+          <total value="7"/>
           <offset value="0"/>
           <parameter>
             <name value="displayLanguage"/>
@@ -775,8 +1044,16 @@
             <valueBoolean value="false"/>
           </parameter>
           <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor|4.0.0"/>
+          </parameter>
+          <parameter>
             <name value="used-valueset"/>
             <valueUri value="null"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="true"/>
           </parameter>
           <parameter>
             <name value="includeDefinition"/>
@@ -784,25 +1061,42 @@
           </parameter>
           <parameter>
             <name value="used-codesystem"/>
-            <valueUri value="http://loinc.org|2.83"/>
-          </parameter>
-          <parameter>
-            <name value="excludeNested"/>
-            <valueBoolean value="true"/>
-          </parameter>
-          <parameter>
-            <name value="used-codesystem"/>
             <valueUri value="http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201"/>
           </parameter>
           <contains>
-            <system value="http://loinc.org"/>
-            <code value="38445-3"/>
-            <display value="Calprotectin [Mass/mass] in Stool"/>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor"/>
+            <code value="OTH"/>
+            <display value="Other"/>
           </contains>
           <contains>
             <system value="http://snomed.info/sct"/>
-            <code value="228273003"/>
-            <display value="Finding relating to alcohol drinking behavior"/>
+            <code value="449868002"/>
+            <display value="Smokes tobacco daily"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="428041000124106"/>
+            <display value="Occasional tobacco smoker"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="43381005"/>
+            <display value="Passive smoker"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="8517006"/>
+            <display value="Ex-smoker"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="405746006"/>
+            <display value="Current non smoker but past smoking history unknown"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="266919005"/>
+            <display value="Never smoked tobacco"/>
           </contains>
         </expansion>
       </ValueSet>
@@ -958,7 +1252,7 @@
         <title value="De-identification Action Value Set"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2026-10-29T22:11:52+00:00"/>
+        <date value="2026-11-11T17:43:54+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -967,8 +1261,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:abe1dd7a-886b-4b9b-b738-40dc78262c62"/>
-          <timestamp value="2026-10-29T22:13:35+00:00"/>
+          <identifier value="urn:uuid:bce6abca-0d7a-49f9-b29c-98e9c134b41c"/>
+          <timestamp value="2026-11-11T17:45:16+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -1170,7 +1464,7 @@
         <title value="De-identification Action Value Set"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2026-10-29T22:11:52+00:00"/>
+        <date value="2026-11-11T17:43:54+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -1179,8 +1473,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:a8916667-6dc8-48b2-b454-53641fe2f46f"/>
-          <timestamp value="2026-10-29T22:13:35+00:00"/>
+          <identifier value="urn:uuid:bfb6a716-6ba7-4489-b4e7-44248f7802ed"/>
+          <timestamp value="2026-11-11T17:45:16+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -1323,7 +1617,7 @@
         <title value="Observation code (SAN KPI)"/>
         <status value="draft"/>
         <experimental value="false"/>
-        <date value="2026-10-29T22:11:52+00:00"/>
+        <date value="2026-11-11T17:43:54+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -1332,8 +1626,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:426d4a69-b7e3-442a-a0a5-2f69a81acc3e"/>
-          <timestamp value="2026-10-29T22:13:35+00:00"/>
+          <identifier value="urn:uuid:e5538fb6-065e-4de7-8ddf-7ffcea12e68a"/>
+          <timestamp value="2026-11-11T17:45:16+00:00"/>
           <total value="2"/>
           <offset value="0"/>
           <parameter>
@@ -1477,7 +1771,7 @@
         <title value="Observation code (SAN KPI)"/>
         <status value="draft"/>
         <experimental value="false"/>
-        <date value="2026-10-29T22:11:52+00:00"/>
+        <date value="2026-11-11T17:43:54+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -1486,8 +1780,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:7987cd5d-16cd-4df5-adf4-4a00e97efd9c"/>
-          <timestamp value="2026-10-29T22:13:35+00:00"/>
+          <identifier value="urn:uuid:ed922198-03a4-46b2-afeb-d391f610f2d5"/>
+          <timestamp value="2026-11-11T17:45:17+00:00"/>
           <total value="2"/>
           <offset value="0"/>
           <parameter>

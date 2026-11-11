@@ -47,10 +47,9 @@
 	  <script type="text/javascript" src="assets/js/prism.js"></script>
 	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
 	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
-    <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"9.16"}
-    h3,h4,h5,h6{--heading-prefix:"9.16"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.23"}
+    h3,h4,h5,h6{--heading-prefix:"9.23"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -280,7 +279,7 @@ Patient (SAN)
           
 
             as of 
-2026-10-29
+2026-11-11
 
           
         
@@ -315,7 +314,7 @@ eigenschap van dit profiel.</p>
 
 <p><b>Usages:</b></p>
 <ul>
- <li>Refer to this Profile: <a href="StructureDefinition-condition-san.html">Condition (SAN)</a>, <a href="StructureDefinition-encounter-san.html">Encounter (SAN)</a>, <a href="StructureDefinition-episodeOfCare-san.html">EpisodeOfCare (SAN)</a>, <a href="StructureDefinition-observation-san.html">Observation (SAN)</a> and <a href="StructureDefinition-procedure-san.html">Procedure (SAN)</a></li>
+ <li>Refer to this Profile: <a href="StructureDefinition-carePlan-san.html">CarePlan (SAN)</a>, <a href="StructureDefinition-condition-san.html">Condition (SAN)</a>, <a href="StructureDefinition-encounter-san.html">Encounter (SAN)</a>, <a href="StructureDefinition-episodeOfCare-san.html">EpisodeOfCare (SAN)</a><span id="rr_tref">... <button type="button" style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding: 0 3px; margin: 0; color: black; font: inherit" onClick="var s = document.getElementById('rr_tref'); s.innerHTML = document.getElementById('rr2_tref').innerHTML; var a = s.querySelector('a'); if (a) a.focus();">Show 4 more</button></span><span id="rr2_tref" style="display: none">, <a href="StructureDefinition-medicationRequest-san.html">MedicationRequest (SAN)</a>, <a href="StructureDefinition-observation-san.html">Observation (SAN)</a>, <a href="StructureDefinition-procedure-san.html">Procedure (SAN)</a> and <a href="StructureDefinition-questionnaireResponse-san.html">QuestionnaireResponse (SAN)</a></span></li>
 </ul>
 <p>You can also check for <a href="https://packages2.fhir.org/xig/resource/santeon.sim-on-fhir|current/StructureDefinition/StructureDefinition-patient-san.json">usages in the FHIR IG Statistics</a></p>
 
@@ -405,7 +404,7 @@ eigenschap van dit profiel.</p>
 <td style="" class="hierarchy xhtCellBorder0">0..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td>
 <td style="" class="hierarchy xhtCellBorder0">Indicates if the individual is deceased or not</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbpatient-sanK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('patient-sanK'), 'binding', document.getElementById('cbpatient-sanK-binding').checked, document.getElementById('pppatient-sanK'));
 document.getElementById('cbpatient-sanK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -442,10 +441,10 @@ filterDesc(document.getElementById('patient-sanK'), 'obligation', document.getEl
     <td>Patient.gender</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="The gender of a person used for administrative purposes.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-administrative-gender.html">AdministrativeGender</a>
+      <a href="http://hl7.org/fhir/R4/valueset-administrative-gender.html">AdministrativeGender</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -457,10 +456,10 @@ filterDesc(document.getElementById('patient-sanK'), 'obligation', document.getEl
     <td>Patient.communication.​language</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="A human language.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-languages.html">Common Languages</a>
+      <a href="http://hl7.org/fhir/R4/valueset-languages.html">Common Languages</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/languages|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -472,10 +471,10 @@ filterDesc(document.getElementById('patient-sanK'), 'obligation', document.getEl
     <td>Patient.link.type</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="The type of link between this patient resource and another patient resource.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-link-type.html">LinkType</a>
+      <a href="http://hl7.org/fhir/R4/valueset-link-type.html">LinkType</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/link-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -660,7 +659,7 @@ filterDesc(document.getElementById('patient-sanK'), 'obligation', document.getEl
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceStrikeout"></span><span class="xhtPieceStrikeout xhtPieceDeEmphasized">0</span><span class="xhtPieceStrikeout">..</span><span class="xhtPieceStrikeout">0</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic xhtPieceDeEmphasized">Link to another patient resource that concerns the same actual person</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbpatient-sanD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('patient-sanD'), 'binding', document.getElementById('cbpatient-sanD-binding').checked, document.getElementById('pppatient-sanD'));
 document.getElementById('cbpatient-sanD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -751,7 +750,7 @@ filterDesc(document.getElementById('patient-sanD'), 'obligation', document.getEl
 <td style="" class="hierarchy xhtCellBorder0">0..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td>
 <td style="" class="hierarchy xhtCellBorder0">Indicates if the individual is deceased or not</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbpatient-sanS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('patient-sanS'), 'binding', document.getElementById('cbpatient-sanS-binding').checked, document.getElementById('pppatient-sanS'));
 document.getElementById('cbpatient-sanS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -789,10 +788,10 @@ filterDesc(document.getElementById('patient-sanS'), 'obligation', document.getEl
     <td>Patient.identifier.type</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-identifier-type.html">IdentifierType</a>
+      <a href="http://hl7.org/fhir/R4/valueset-identifier-type.html">IdentifierType</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/identifier-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -804,10 +803,10 @@ filterDesc(document.getElementById('patient-sanS'), 'obligation', document.getEl
     <td>Patient.gender</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="The gender of a person used for administrative purposes.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-administrative-gender.html">AdministrativeGender</a>
+      <a href="http://hl7.org/fhir/R4/valueset-administrative-gender.html">AdministrativeGender</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -819,10 +818,10 @@ filterDesc(document.getElementById('patient-sanS'), 'obligation', document.getEl
     <td>Patient.contact.relationship</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="The nature of the relationship between a patient and a contact person for that patient.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-patient-contactrelationship.html">Patient Contact Relationship </a>
+      <a href="http://hl7.org/fhir/R4/valueset-patient-contactrelationship.html">Patient Contact Relationship </a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/patient-contactrelationship|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -834,10 +833,10 @@ filterDesc(document.getElementById('patient-sanS'), 'obligation', document.getEl
     <td>Patient.contact.gender</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="The gender of a person used for administrative purposes.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-administrative-gender.html">AdministrativeGender</a>
+      <a href="http://hl7.org/fhir/R4/valueset-administrative-gender.html">AdministrativeGender</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -849,10 +848,10 @@ filterDesc(document.getElementById('patient-sanS'), 'obligation', document.getEl
     <td>Patient.communication.​language</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="A human language.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-languages.html">Common Languages</a>
+      <a href="http://hl7.org/fhir/R4/valueset-languages.html">Common Languages</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/languages|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -864,10 +863,10 @@ filterDesc(document.getElementById('patient-sanS'), 'obligation', document.getEl
     <td>Patient.link.type</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="The type of link between this patient resource and another patient resource.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-link-type.html">LinkType</a>
+      <a href="http://hl7.org/fhir/R4/valueset-link-type.html">LinkType</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/link-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1020,7 +1019,7 @@ Summary
 <td style="" class="hierarchy xhtCellBorder0">0..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td>
 <td style="" class="hierarchy xhtCellBorder0">Indicates if the individual is deceased or not</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbpatient-sanKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('patient-sanKA'), 'binding', document.getElementById('cbpatient-sanKA-binding').checked, document.getElementById('pppatient-sanKA'));
 document.getElementById('cbpatient-sanKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1056,10 +1055,10 @@ filterDesc(document.getElementById('patient-sanKA'), 'obligation', document.getE
     <td>Patient.gender</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="The gender of a person used for administrative purposes.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-administrative-gender.html">AdministrativeGender</a>
+      <a href="http://hl7.org/fhir/R4/valueset-administrative-gender.html">AdministrativeGender</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1071,10 +1070,10 @@ filterDesc(document.getElementById('patient-sanKA'), 'obligation', document.getE
     <td>Patient.communication.​language</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="A human language.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-languages.html">Common Languages</a>
+      <a href="http://hl7.org/fhir/R4/valueset-languages.html">Common Languages</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/languages|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1086,10 +1085,10 @@ filterDesc(document.getElementById('patient-sanKA'), 'obligation', document.getE
     <td>Patient.link.type</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="The type of link between this patient resource and another patient resource.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-link-type.html">LinkType</a>
+      <a href="http://hl7.org/fhir/R4/valueset-link-type.html">LinkType</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/link-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1274,7 +1273,7 @@ filterDesc(document.getElementById('patient-sanKA'), 'obligation', document.getE
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceStrikeout"></span><span class="xhtPieceStrikeout xhtPieceDeEmphasized">0</span><span class="xhtPieceStrikeout">..</span><span class="xhtPieceStrikeout">0</span></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic xhtPieceDeEmphasized">Link to another patient resource that concerns the same actual person</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbpatient-sanDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('patient-sanDA'), 'binding', document.getElementById('cbpatient-sanDA-binding').checked, document.getElementById('pppatient-sanDA'));
 document.getElementById('cbpatient-sanDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1362,7 +1361,7 @@ filterDesc(document.getElementById('patient-sanDA'), 'obligation', document.getE
 <td style="" class="hierarchy xhtCellBorder0">0..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td>
 <td style="" class="hierarchy xhtCellBorder0">Indicates if the individual is deceased or not</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 6f549e22-d73b-4d7e-b7b9-3dcbd5fa3b49
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 4fd11687-5251-48b3-98fa-362b28d64ecb
 document.getElementById('cbpatient-sanSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('patient-sanSA'), 'binding', document.getElementById('cbpatient-sanSA-binding').checked, document.getElementById('pppatient-sanSA'));
 document.getElementById('cbpatient-sanSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1398,10 +1397,10 @@ filterDesc(document.getElementById('patient-sanSA'), 'obligation', document.getE
     <td>Patient.identifier.type</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-identifier-type.html">IdentifierType</a>
+      <a href="http://hl7.org/fhir/R4/valueset-identifier-type.html">IdentifierType</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/identifier-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1413,10 +1412,10 @@ filterDesc(document.getElementById('patient-sanSA'), 'obligation', document.getE
     <td>Patient.gender</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="The gender of a person used for administrative purposes.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-administrative-gender.html">AdministrativeGender</a>
+      <a href="http://hl7.org/fhir/R4/valueset-administrative-gender.html">AdministrativeGender</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1428,10 +1427,10 @@ filterDesc(document.getElementById('patient-sanSA'), 'obligation', document.getE
     <td>Patient.contact.relationship</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
     </td>
     <td title="The nature of the relationship between a patient and a contact person for that patient.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-patient-contactrelationship.html">Patient Contact Relationship </a>
+      <a href="http://hl7.org/fhir/R4/valueset-patient-contactrelationship.html">Patient Contact Relationship </a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/patient-contactrelationship|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1443,10 +1442,10 @@ filterDesc(document.getElementById('patient-sanSA'), 'obligation', document.getE
     <td>Patient.contact.gender</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="The gender of a person used for administrative purposes.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-administrative-gender.html">AdministrativeGender</a>
+      <a href="http://hl7.org/fhir/R4/valueset-administrative-gender.html">AdministrativeGender</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1458,10 +1457,10 @@ filterDesc(document.getElementById('patient-sanSA'), 'obligation', document.getE
     <td>Patient.communication.​language</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
     <td title="A human language.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-languages.html">Common Languages</a>
+      <a href="http://hl7.org/fhir/R4/valueset-languages.html">Common Languages</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/languages|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1473,10 +1472,10 @@ filterDesc(document.getElementById('patient-sanSA'), 'obligation', document.getE
     <td>Patient.link.type</td>
     <td>Base</td>
     <td>
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
     </td>
     <td title="The type of link between this patient resource and another patient resource.">
-      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-link-type.html">LinkType</a>
+      <a href="http://hl7.org/fhir/R4/valueset-link-type.html">LinkType</a>
       <button data-clipboard-text="http://hl7.org/fhir/ValueSet/link-type|4.0.1" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
     </td>
     <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
@@ -1622,8 +1621,8 @@ Summary
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.sim-on-fhir#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-29 22:11:00 +0000">
-    2026-10-29
+  <span title="2026-11-11 17:43:00 +0000">
+    2026-11-11
   </span>
 
           <br/>

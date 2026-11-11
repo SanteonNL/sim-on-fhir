@@ -25,6 +25,13 @@
   "name" : "SIMAlgemeneMeting"
 },
 {
+  "id" : "SIMCarePlan",
+  "type" : "StructureDefinition",
+  "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMCarePlan",
+  "version" : "0.1.0",
+  "name" : "SIMCarePlan"
+},
+{
   "id" : "SIMContact",
   "type" : "StructureDefinition",
   "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMContact",
@@ -46,6 +53,13 @@
   "name" : "SIMFasering"
 },
 {
+  "id" : "SIMMedicatieAfspraak",
+  "type" : "StructureDefinition",
+  "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMMedicatieAfspraak",
+  "version" : "0.1.0",
+  "name" : "SIMMedicatieAfspraak"
+},
+{
   "id" : "SIMPatient",
   "type" : "StructureDefinition",
   "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMPatient",
@@ -53,11 +67,32 @@
   "name" : "SIMPatient"
 },
 {
+  "id" : "SIMTabakGebruik",
+  "type" : "StructureDefinition",
+  "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMTabakGebruik",
+  "version" : "0.1.0",
+  "name" : "SIMTabakGebruik"
+},
+{
   "id" : "SIMVerrichting",
   "type" : "StructureDefinition",
   "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMVerrichting",
   "version" : "0.1.0",
   "name" : "SIMVerrichting"
+},
+{
+  "id" : "SIMVragenlijstAntwoord",
+  "type" : "StructureDefinition",
+  "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMVragenlijstAntwoord",
+  "version" : "0.1.0",
+  "name" : "SIMVragenlijstAntwoord"
+},
+{
+  "id" : "carePlan-san",
+  "type" : "StructureDefinition",
+  "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/carePlan-san",
+  "version" : "0.1.0",
+  "name" : "CarePlanSan"
 },
 {
   "id" : "condition-san",
@@ -102,6 +137,13 @@
   "name" : "KpiDefinition"
 },
 {
+  "id" : "medicationRequest-san",
+  "type" : "StructureDefinition",
+  "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/medicationRequest-san",
+  "version" : "0.1.0",
+  "name" : "MedicationRequestSan"
+},
+{
   "id" : "observation-san",
   "type" : "StructureDefinition",
   "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san",
@@ -114,6 +156,13 @@
   "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san-kpi",
   "version" : "0.1.0",
   "name" : "ObservationSanKpi"
+},
+{
+  "id" : "observation-san-tabakgebruik",
+  "type" : "StructureDefinition",
+  "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san-tabakgebruik",
+  "version" : "0.1.0",
+  "name" : "ObservationSanTabakGebruik"
 },
 {
   "id" : "od-component",
@@ -151,6 +200,13 @@
   "name" : "ProcedureSanKpi"
 },
 {
+  "id" : "questionnaireResponse-san",
+  "type" : "StructureDefinition",
+  "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/questionnaireResponse-san",
+  "version" : "0.1.0",
+  "name" : "QuestionnaireResponseSan"
+},
+{
   "id" : "AlcoholGebruikStatusCodelijst",
   "type" : "ValueSet",
   "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/AlcoholGebruikStatusCodelijst",
@@ -158,32 +214,18 @@
   "name" : "AlcoholGebruikStatusCodelijst"
 },
 {
-  "id" : "IBDAlgemeneMetingen",
-  "type" : "ValueSet",
-  "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDAlgemeneMetingen",
-  "version" : "0.1.0",
-  "name" : "IBDAlgemeneMetingen"
-},
-{
-  "id" : "IBDSpecialismeDiagnoses",
-  "type" : "ValueSet",
-  "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDSpecialismeDiagnoses",
-  "version" : "0.1.0",
-  "name" : "IBDSpecialismeDiagnoses"
-},
-{
-  "id" : "IBDVerrichtingenNZa",
-  "type" : "ValueSet",
-  "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDVerrichtingenNZa",
-  "version" : "0.1.0",
-  "name" : "IBDVerrichtingenNZa"
-},
-{
   "id" : "Santeon-MetingNaamCodelijst",
   "type" : "ValueSet",
   "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst",
   "version" : "0.1.0",
   "name" : "Santeon_MetingNaamCodelijst"
+},
+{
+  "id" : "TabakGebruikStatusCodelijst",
+  "type" : "ValueSet",
+  "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/TabakGebruikStatusCodelijst",
+  "version" : "0.1.0",
+  "name" : "TabakGebruikStatusCodelijst"
 },
 {
   "id" : "deidentification-action-vs",

@@ -10,7 +10,6 @@
     "uses" : {
     },
     "ValueSet-observationCode-san-kpi.html" : "Observation code (SAN KPI)",
-    "ValueSet-IBDAlgemeneMetingen.html" : "IBDAlgemeneMetingen",
     "ValueSet-Santeon-MetingNaamCodelijst.html" : "Santeon_MetingNaamCodelijst"
   },
   {
@@ -23,10 +22,10 @@
     "oids" : ["2.16.840.1.113883.6.96"],
     "uses" : {
     },
+    "ValueSet-TabakGebruikStatusCodelijst.html" : "TabakGebruikStatusCodelijst",
     "ValueSet-observationCode-san-kpi.html" : "Observation code (SAN KPI)",
-    "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst",
-    "ValueSet-IBDAlgemeneMetingen.html" : "IBDAlgemeneMetingen",
-    "ValueSet-Santeon-MetingNaamCodelijst.html" : "Santeon_MetingNaamCodelijst"
+    "ValueSet-Santeon-MetingNaamCodelijst.html" : "Santeon_MetingNaamCodelijst",
+    "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
@@ -62,8 +61,9 @@
     "oids" : ["2.16.840.1.113883.5.1008"],
     "uses" : {
     },
-    "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst",
-    "https://simplifier.net/resolve?scope=nictiz.fhir.nl.r4.nl-core@0.12.1-beta.1&canonical=http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000" : "GeslachtCodelijst"
+    "ValueSet-TabakGebruikStatusCodelijst.html" : "TabakGebruikStatusCodelijst",
+    "https://simplifier.net/resolve?scope=nictiz.fhir.nl.r4.nl-core@0.12.1-beta.1&canonical=http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000" : "GeslachtCodelijst",
+    "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst"
   },
   {
     "url" : "https://ig.santeon.nl/sim-on-fhir/CodeSystem/deidentification-action-cs",

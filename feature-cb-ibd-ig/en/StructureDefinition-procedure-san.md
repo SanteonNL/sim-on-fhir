@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
   "name" : "ProcedureSan",
   "title" : "Procedure (SAN)",
   "status" : "draft",
-  "date" : "2026-10-29T22:11:52+00:00",
+  "date" : "2026-11-11T17:43:54+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -169,12 +169,27 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
       "max" : "0"
     },
     {
+      "id" : "Procedure.category.coding.system",
+      "path" : "Procedure.category.coding.system",
+      "mapping" : [{
+        "identity" : "sim",
+        "map" : "Verrichting;VerrichtingCategorieSysteem"
+      }]
+    },
+    {
       "id" : "Procedure.category.coding.code",
       "path" : "Procedure.category.coding.code",
       "mapping" : [{
         "identity" : "sim",
-        "map" : "Verrichting;VerrichtingCategorieCode",
-        "comment" : "CodeSystem afzonderlijk verifiëren."
+        "map" : "Verrichting;VerrichtingCategorieCode"
+      }]
+    },
+    {
+      "id" : "Procedure.category.coding.display",
+      "path" : "Procedure.category.coding.display",
+      "mapping" : [{
+        "identity" : "sim",
+        "map" : "Verrichting;VerrichtingCategorieOmschrijving"
       }]
     },
     {
@@ -193,7 +208,7 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
       },
       {
         "identity" : "sim",
-        "map" : "Verrichting;VerrichtingTypeCodeSnomedCTSysteem",
+        "map" : "Verrichting;VerrichtingTypeCodeSnomedCTSyst",
         "comment" : "SNOMED CT-codering."
       },
       {
