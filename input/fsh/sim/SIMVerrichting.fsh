@@ -19,8 +19,8 @@ Description: "Generiek logisch model voor een verrichting binnen het Santeon Inf
 * VerrichtingAantal 0..1 integer "Aantal verrichtingen"
 * VerrichtingStartDatum 0..1 dateTime "Datum en eventueel tijd waarop de verrichting is gestart"
 
-* AanvragerSpecialisme 0..1 Coding "Medisch specialisme dat de verrichting heeft aangevraagd"
-* UitvoerderSpecialisme 0..1 Coding "Medisch specialisme dat de verrichting heeft uitgevoerd"
+* AanvragerSpecialisme 0..1 CodeableConcept "Medisch specialisme dat de verrichting heeft aangevraagd"
+* UitvoerderSpecialisme 0..1 CodeableConcept "Medisch specialisme dat de verrichting heeft uitgevoerd"
 
 * VerrichtingCategorie 0..1 CodeableConcept "Duiding tot welke zorgprofielklasse een verrichting behoort"
 
@@ -56,7 +56,7 @@ Target: "urn:santeon:sim:csv"
 // Dit is een bronmapping, geen uitvoerbare
 // transformatie naar de coding-array.
 
-* VerrichtingType.coding.system -> "Verrichting;VerrichtingTypeCodeNZaSysteem, Verrichting;VerrichtingTypeCodeSnomedCTSysteem, Verrichting;VerrichtingTypeCodeDHDSysteem"
+* VerrichtingType.coding.system -> "Verrichting;VerrichtingTypeCodeNZaSysteem, Verrichting;VerrichtingTypeCodeSnomedCTSyst, Verrichting;VerrichtingTypeCodeDHDSysteem"
 * VerrichtingType.coding.code -> "Verrichting;VerrichtingTypeCodeNZa, Verrichting;VerrichtingTypeCodeSnomedCT, Verrichting;VerrichtingTypeCodeDHD"
 * VerrichtingType.coding.display -> "Verrichting;VerrichtingTypeOmschrijvingNZa, Verrichting;VerrichtingTypeOmschrijvingSnomedCT, Verrichting;VerrichtingTypeOmschrijvingDHD"
 
@@ -65,11 +65,15 @@ Target: "urn:santeon:sim:csv"
 * VerrichtingStartDatum -> "Verrichting;VerrichtingStartDatum"
 
 // Specialismen
-* AanvragerSpecialisme.code -> "Verrichting;Aanvrager_Specialisme"
-* UitvoerderSpecialisme.code -> "Verrichting;Uitvoerder_Specialisme"
+* AanvragerSpecialisme.coding.system -> "Verrichting;Aanvrager_SpecialismeSysteem"
+* AanvragerSpecialisme.coding.code -> "Verrichting;Aanvrager_Specialisme"
+* UitvoerderSpecialisme.coding.system -> "Verrichting;Uitvoerder_SpecialismeSysteem"
+* UitvoerderSpecialisme.coding.code -> "Verrichting;Uitvoerder_Specialisme"
 
 // VerrichtingCategorie
+* VerrichtingCategorie.coding.system -> "Verrichting;VerrichtingCategorieSysteem"
 * VerrichtingCategorie.coding.code -> "Verrichting;VerrichtingCategorieCode"
+* VerrichtingCategorie.coding.display -> "Verrichting;VerrichtingCategorieOmschrijving"
 
 // Overig van model Verrichting
 // * VerrichtingEindDatum -> "Verrichting;VerrichtingEindDatum"

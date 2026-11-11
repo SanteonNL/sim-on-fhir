@@ -110,7 +110,7 @@ Target: "urn:santeon:sim:csv"
 * code.coding.display -> "Verrichting;VerrichtingTypeOmschrijvingNZa" "NZa-codering."
 
 // VerrichtingType: SNOMED CT
-* code.coding.system -> "Verrichting;VerrichtingTypeCodeSnomedCTSysteem" "SNOMED CT-codering."
+* code.coding.system -> "Verrichting;VerrichtingTypeCodeSnomedCTSyst" "SNOMED CT-codering."
 * code.coding.code -> "Verrichting;VerrichtingTypeCodeSnomedCT" "SNOMED CT-codering."
 * code.coding.display -> "Verrichting;VerrichtingTypeOmschrijvingSnomedCT" "SNOMED CT-codering."
 
@@ -119,8 +119,10 @@ Target: "urn:santeon:sim:csv"
 * code.coding.code -> "Verrichting;VerrichtingTypeCodeDHD" "DHD-codering."
 * code.coding.display -> "Verrichting;VerrichtingTypeOmschrijvingDHD" "DHD-codering."
 
-// VerrichtingCategorie: bron bevestigt alleen de codekolom
-* category.coding.code -> "Verrichting;VerrichtingCategorieCode" "CodeSystem afzonderlijk verifiëren."
+// VerrichtingCategorie
+* category.coding.system -> "Verrichting;VerrichtingCategorieSysteem"
+* category.coding.code -> "Verrichting;VerrichtingCategorieCode"
+* category.coding.display -> "Verrichting;VerrichtingCategorieOmschrijving"
 
 // Datum/tijd van de verrichting: alternatieve FHIR-representaties
 * performedDateTime -> "Verrichting;VerrichtingStartDatum" "Momentane verrichting; dateshift."

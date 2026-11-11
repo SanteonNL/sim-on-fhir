@@ -1,23 +1,43 @@
-### Condition Santeon (Probleem)
+<!-- manual-profiles:start -->
 
-See the [ConditionSan](StructureDefinition-condition-san.html) profile for details.
+### CarePlan (SAN)
 
-### EpisodeOfCare Santeon (DBC)
+See the [CarePlanSan](StructureDefinition-carePlan-san.html) profile for details and [Mappings](StructureDefinition-carePlan-san-mappings.html) for the mapping to SIM.
 
-See the [EpisodeOfCareSan](StructureDefinition-episodeOfCare-san.html) profile for details.
+### Condition (SAN)
 
-### Observation Santeon (AlgemeneMeting)
+See the [ConditionSan](StructureDefinition-condition-san.html) profile for details and [Mappings](StructureDefinition-condition-san-mappings.html) for the mapping to SIM.
 
-See the [ObservationSan](StructureDefinition-observation-san.html) profile for details.
+### Encounter (SAN)
 
-### Patient Santeon
+See the [EncounterSan](StructureDefinition-encounter-san.html) profile for details and [Mappings](StructureDefinition-encounter-san-mappings.html) for the mapping to SIM.
 
-See the [PatientSan](StructureDefinition-patient-san.html) profile for details.
+### EpisodeOfCare (SAN)
 
-### Procedure Santeon (Verrichting)
+See the [EpisodeOfCareSan](StructureDefinition-episodeOfCare-san.html) profile for details and [Mappings](StructureDefinition-episodeOfCare-san-mappings.html) for the mapping to SIM.
 
-See the [ProcedureSan](StructureDefinition-procedure-san.html) profile for details.
+### MedicationRequest (SAN)
 
-### Encounter Santeon (Contact)
+See the [MedicationRequestSan](StructureDefinition-medicationRequest-san.html) profile for details and [Mappings](StructureDefinition-medicationRequest-san-mappings.html) for the mapping to SIM.
 
-See the [EncounterSan](StructureDefinition-encounter-san.html) profile for details.
+### Observation (SAN)
+
+See the [ObservationSan](StructureDefinition-observation-san.html) profile for details and [Mappings](StructureDefinition-observation-san-mappings.html) for the mapping to SIM.
+
+### Observation TabakGebruik (SAN)
+
+See the [ObservationSanTabakGebruik](StructureDefinition-observation-san-tabakgebruik.html) profile for details and [Mappings](StructureDefinition-observation-san-tabakgebruik-mappings.html) for the mapping to SIM.
+
+### Patient (SAN)
+
+See the [PatientSan](StructureDefinition-patient-san.html) profile for details and [Mappings](StructureDefinition-patient-san-mappings.html) for the mapping to SIM.
+
+### Procedure (SAN)
+
+See the [ProcedureSan](StructureDefinition-procedure-san.html) profile for details and [Mappings](StructureDefinition-procedure-san-mappings.html) for the mapping to SIM.
+
+### QuestionnaireResponse (SAN)
+
+See the [QuestionnaireResponseSan](StructureDefinition-questionnaireResponse-san.html) profile for details and [Mappings](StructureDefinition-questionnaireResponse-san-mappings.html) for the mapping to SIM.
+
+<!-- manual-profiles:end -->

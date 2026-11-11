@@ -75,7 +75,7 @@ Downloads `publisher.jar` (~100 MB) into `input-cache/`. Run this once on first 
 
 ---
 
-## Project Structure
+<!-- ## Project Structure
 
 ```
 sim-on-fhir/
@@ -98,7 +98,7 @@ Key SQL source tables (LUSCII):
 - `luscii_patients` — patient data
 - `luscii_patientsprogramshistory` — enrollment timeline
 - `luscii_programs` — program/category info
-- `luscii_usersStatusChangeReasons` — status change tracking
+- `luscii_usersStatusChangeReasons` — status change tracking -->
 
 ---
 
@@ -129,6 +129,37 @@ input/fsh/
 ├── deidentification/  de-identification ruleset model and standard ruleset
 └── generated/         written by _generateFromDefinitions.py, never edited
 ```
+
+## When you add a SIM model or a field
+
+Same steps for a new model and for a new field; for a field you stay inside the existing files.
+
+| # | Step | File | What you do |
+|---|------|------|-------------|
+| 1 | Determine scope | indicator YAMLs (outside this repo) | Which indicator asks for which model, field and filter? Only indicators with an analysis count. |
+| 2 | Look it up in the SIM | `informatiemodel Santeon.csv` (outside this repo) | Copy column name, type, key, nullable and FHIR path literally. Not in the SIM: stop and ask the SIM owner. |
+| 3 | Logical model | `input/fsh/sim/SIM<Model>.fsh` | Add the element and the `FromSIMCSV` and `ToFHIR` mappings. |
+| 4 | FHIR profile | `input/fsh/fhir/<Resource>San.fsh` | Add the same element and the mapping to the SIM columns. |
+| 5 | Terminology | `input/fsh/valuesets/<Name>.fsh` | Add the filter codes from the YAML. Measurement codes always go in `Santeon_MetingNaamCodelijst.fsh`. |
+| 6 | Update overview pages | `_generateFromDefinitions.py` | Run it; it updates `CLMs.md` and `profiles.md`. |
+| 7 | Check | `sushi .`, then `py -3 _buildIG.py` | 0 errors and 0 warnings from SUSHI before building. |
+
+```powershell
+py -3 _generateFromDefinitions.py
+sushi .
+py -3 _buildIG.py --no-tx    # fast, without terminology server
+py -3 -m http.server 8080 -d output    # preview at http://localhost:8080 (stop with Ctrl+C before the next build)
+```
+
+Rules:
+
+- **Logical model:** cardinality follows the SIM (key `1..1`, nullable `0..1`). For a code, always map system, code and display. SIM columns outside scope stay as comments under `// Overig van model`.
+- **FHIR profile:** `identifier` and the reference to `PatientSan` are required; the rest follows the SIM. A required FHIR element without a SIM column becomes a `TODO`, never an invented value.
+- **Terminology:** bind only once the SIM code list is known.
+- **Open issues** go in the file itself under `// Nog uit te werken`, not in a separate document.
+- **Sources:** the SIM decides names, types and cardinality; the indicator YAMLs decide what is in scope.
+
+If the field must also be exported, it needs a KPI definition; see the next section.
 
 ## When you change a KPI, dataset or measurement definition
 
@@ -163,7 +194,7 @@ This rewrites `input/fsh/generated/` (profiles, code value sets, Groups, Paramet
 
 ---
 
-## When you change a profile
+<!-- ## When you change a profile
 
 ### 1. Edit the FSH profile
 
@@ -206,6 +237,8 @@ py -m http.server 8080
 ```
 
 Then open `http://localhost:8080`.
+
+-->
 
 ---
 

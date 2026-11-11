@@ -22,7 +22,7 @@ Description: "Generiek logisch model voor een zorgcontact binnen het Santeon Inf
 * EindDatumTijd 0..1 dateTime "Datum en eventueel tijd waarop het contact is beëindigd"
 
 * ContactMet 0..1 Coding "Specialisme dat verantwoordelijk is voor het contact"
-* AfspraakID 0..1 Identifier "Identificatienummer van de afspraak"
+// * AfspraakID 0..1 Identifier "Identificatienummer van de afspraak"
 
 // Overig van model Contact
 // * ProbleemID 0..1 Identifier "Identificatienummer van het gerelateerde probleem"
@@ -77,7 +77,7 @@ Target: "urn:santeon:sim:csv"
 * ContactMet.code -> "Contact;ContactMet"
 
 // Afspraak
-* AfspraakID -> "Contact;AfspraakID"
+// * AfspraakID -> "Contact;AfspraakID"
 
 // Overig van model Contact
 // * ProbleemID -> "Contact;ProbleemID"
@@ -113,7 +113,7 @@ Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/encounter-san"
 * EindDatumTijd -> "Encounter.period.end"
 
 // Afspraak
-* AfspraakID -> "Encounter.appointment" "Appointment-reference op basis van AfspraakID."
+// * AfspraakID -> "Encounter.appointment" "Appointment-reference op basis van AfspraakID."
 
 // Overig van model Contact
 // * Herkomst -> "Encounter.hospitalization.admitSource" "Wanneer het gegeven de opnameherkomst beschrijft."

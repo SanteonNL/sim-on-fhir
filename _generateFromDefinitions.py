@@ -15,6 +15,8 @@ Derives the IG model from the definitions in input/fsh/definitions/:
                                      (_type, _typeFilter, _elements)
   input/pagecontent/datasets.md      overview + derived model
   input/pagecontent/dataset-<id>.md  one readable page per dataset
+  input/pagecontent/CLMs.md          manual SIM logical models from input/fsh/sim/
+  input/pagecontent/profiles.md      manual FHIR profiles from input/fsh/fhir/
 
 Run it before SUSHI. The generated files are committed, so a plain `sushi .`
 keeps working; regenerate whenever a definition changes.
@@ -152,7 +154,15 @@ def compile_definitions():
 
 
 def load(tmp):
-    out = dict(od={}, vs={}, kpi={}, dataset={})
+    out = dict(od={}, vs={}, kpi={}, dataset={}, logical={}, profile={})
+    index = json.loads((tmp / "fsh-generated" / "data" / "fsh-index.json").read_text(encoding="utf-8"))
+
+    def in_folder(e, fsh_type, folder):
+        path = Path(e["fshFile"].replace("\\", "/"))
+        return e["fshType"] == fsh_type and path.parent == Path(folder) and path.suffix == ".fsh"
+
+    manual = {e["outputFile"] for e in index if in_folder(e, "Logical", "sim")}
+    manual_profiles = {e["outputFile"] for e in index if in_folder(e, "Profile", "fhir")}
     for f in sorted((tmp / "fsh-generated" / "resources").glob("*.json")):
         r = json.loads(f.read_text(encoding="utf-8"))
         rt = r.get("resourceType", "")
@@ -164,6 +174,10 @@ def load(tmp):
             out["kpi"][r["id"]] = r
         elif rt.endswith("/dataset-definition"):
             out["dataset"][r["id"]] = r
+        elif rt == "StructureDefinition" and r.get("kind") == "logical" and f.name in manual:
+            out["logical"][r["id"]] = r
+        elif rt == "StructureDefinition" and f.name in manual_profiles:
+            out["profile"][r["id"]] = r
     return out
 
 
@@ -717,6 +731,54 @@ def write(path, text):
     print(f"  wrote {path.relative_to(ROOT)}")
 
 
+def replace_marked(page, marker, body):
+    """Replace the lines between <!-- marker:start --> and <!-- marker:end --> in a page;
+    keep all other page bytes (including line endings) unchanged."""
+    f = PAGE_DIR / page
+    text = f.read_bytes().decode("utf-8")
+    start, end = f"<!-- {marker}:start -->", f"<!-- {marker}:end -->"
+    i, j = text.find(start), text.find(end)
+    if i < 0 or j < i or text.count(start) != 1 or text.count(end) != 1:
+        raise DefinitionError(f"{page} needs one {marker}:start / {marker}:end marker pair")
+    newline = "\r\n" if "\r\n" in text else "\n"
+    updated = text[:i] + newline.join([start, ""] + body + [end]) + text[j + len(end):]
+    if updated != text:
+        f.write_bytes(updated.encode("utf-8"))
+        print(f"  wrote {f.relative_to(ROOT)}")
+
+
+def has_mappings(sd):
+    return bool(sd.get("mapping")) and any(e.get("mapping") for e in sd.get("differential", {}).get("element", []))
+
+
+def one_line(s):
+    return " ".join(s.splitlines())
+
+
+def update_clms(logicals):
+    """The manual SIM logical models from input/fsh/sim/ in CLMs.md."""
+    lines = []
+    for model_id, model in sorted(logicals.items()):
+        name = model.get("name") or model_id
+        link = f"See the [{name}](StructureDefinition-{model_id}.html) Logical Model for details"
+        if has_mappings(model):
+            link += f" and [Mappings](StructureDefinition-{model_id}-mappings.html) for mapping details"
+        lines += [f"### Logical Model {one_line(model.get('title') or name)}", "", link + ".", ""]
+    replace_marked("CLMs.md", "manual-sim", lines)
+
+
+def update_profiles(profiles):
+    """The manual FHIR profiles from input/fsh/fhir/ in profiles.md."""
+    lines = []
+    for profile_id, sd in sorted(profiles.items(), key=lambda kv: kv[1].get("name") or kv[0]):
+        name = sd.get("name") or profile_id
+        link = f"See the [{name}](StructureDefinition-{profile_id}.html) profile for details"
+        if has_mappings(sd):
+            link += f" and [Mappings](StructureDefinition-{profile_id}-mappings.html) for the mapping to SIM"
+        lines += [f"### {one_line(sd.get('title') or name)}", "", link + ".", ""]
+    replace_marked("profiles.md", "manual-profiles", lines)
+
+
 def update_menu(defs):
     """Rewrite the Datasets dropdown of the IG menu: one entry per dataset, then the overview."""
     f = ROOT / "input" / "includes" / "menu.xml"
@@ -774,6 +836,8 @@ def main():
     write(GEN_DIR / "Model.fsh", gen_model_fsh(defs, res, model))
     write(GEN_DIR / "Exports.fsh", gen_exports_fsh(defs, res))
     write(PAGE_DIR / "datasets.md", gen_overview_page(defs, res, model))
+    update_clms(defs["logical"])
+    update_profiles(defs["profile"])
     update_menu(defs)
     cfg = (ROOT / "sushi-config.yaml").read_text(encoding="utf-8")
     for ds in defs["dataset"].values():
