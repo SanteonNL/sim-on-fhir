@@ -45,7 +45,6 @@
 	  <script type="text/javascript" src="assets/js/prism.js"></script>
 	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
 	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
-    <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"3"}
     h3,h4,h5,h6{--heading-prefix:"3"}</style>
@@ -196,33 +195,62 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#condition-santeon-probleem" id="markdown-toc-condition-santeon-probleem">Condition Santeon (Probleem)</a></li>
-  <li><a href="#episodeofcare-santeon-dbc" id="markdown-toc-episodeofcare-santeon-dbc">EpisodeOfCare Santeon (DBC)</a></li>
-  <li><a href="#observation-santeon-algemenemeting" id="markdown-toc-observation-santeon-algemenemeting">Observation Santeon (AlgemeneMeting)</a></li>
-  <li><a href="#patient-santeon" id="markdown-toc-patient-santeon">Patient Santeon</a></li>
-  <li><a href="#procedure-santeon-verrichting" id="markdown-toc-procedure-santeon-verrichting">Procedure Santeon (Verrichting)</a></li>
+  <li><a href="#careplan-san" id="markdown-toc-careplan-san">CarePlan (SAN)</a></li>
+  <li><a href="#condition-san" id="markdown-toc-condition-san">Condition (SAN)</a></li>
+  <li><a href="#encounter-san" id="markdown-toc-encounter-san">Encounter (SAN)</a></li>
+  <li><a href="#episodeofcare-san" id="markdown-toc-episodeofcare-san">EpisodeOfCare (SAN)</a></li>
+  <li><a href="#medicationrequest-san" id="markdown-toc-medicationrequest-san">MedicationRequest (SAN)</a></li>
+  <li><a href="#observation-san" id="markdown-toc-observation-san">Observation (SAN)</a></li>
+  <li><a href="#observation-tabakgebruik-san" id="markdown-toc-observation-tabakgebruik-san">Observation TabakGebruik (SAN)</a></li>
+  <li><a href="#patient-san" id="markdown-toc-patient-san">Patient (SAN)</a></li>
+  <li><a href="#procedure-san" id="markdown-toc-procedure-san">Procedure (SAN)</a></li>
+  <li><a href="#questionnaireresponse-san" id="markdown-toc-questionnaireresponse-san">QuestionnaireResponse (SAN)</a></li>
 </ul>
 
 </div>
-<h3 id="condition-santeon-probleem">Condition Santeon (Probleem)</h3>
+<!-- manual-profiles:start -->
 
-<p>See the <a href="StructureDefinition-condition-san.html">ConditionSan</a> profile for details.</p>
+<h3 id="careplan-san">CarePlan (SAN)</h3>
 
-<h3 id="episodeofcare-santeon-dbc">EpisodeOfCare Santeon (DBC)</h3>
+<p>See the <a href="StructureDefinition-carePlan-san.html">CarePlanSan</a> profile for details and <a href="StructureDefinition-carePlan-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
 
-<p>See the <a href="StructureDefinition-episodeOfCare-san.html">EpisodeOfCareSan</a> profile for details.</p>
+<h3 id="condition-san">Condition (SAN)</h3>
 
-<h3 id="observation-santeon-algemenemeting">Observation Santeon (AlgemeneMeting)</h3>
+<p>See the <a href="StructureDefinition-condition-san.html">ConditionSan</a> profile for details and <a href="StructureDefinition-condition-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
 
-<p>See the <a href="StructureDefinition-observation-san.html">ObservationSan</a> profile for details.</p>
+<h3 id="encounter-san">Encounter (SAN)</h3>
 
-<h3 id="patient-santeon">Patient Santeon</h3>
+<p>See the <a href="StructureDefinition-encounter-san.html">EncounterSan</a> profile for details and <a href="StructureDefinition-encounter-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
 
-<p>See the <a href="StructureDefinition-patient-san.html">PatientSan</a> profile for details.</p>
+<h3 id="episodeofcare-san">EpisodeOfCare (SAN)</h3>
 
-<h3 id="procedure-santeon-verrichting">Procedure Santeon (Verrichting)</h3>
+<p>See the <a href="StructureDefinition-episodeOfCare-san.html">EpisodeOfCareSan</a> profile for details and <a href="StructureDefinition-episodeOfCare-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
 
-<p>See the <a href="StructureDefinition-procedure-san.html">ProcedureSan</a> profile for details.</p>
+<h3 id="medicationrequest-san">MedicationRequest (SAN)</h3>
+
+<p>See the <a href="StructureDefinition-medicationRequest-san.html">MedicationRequestSan</a> profile for details and <a href="StructureDefinition-medicationRequest-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
+
+<h3 id="observation-san">Observation (SAN)</h3>
+
+<p>See the <a href="StructureDefinition-observation-san.html">ObservationSan</a> profile for details and <a href="StructureDefinition-observation-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
+
+<h3 id="observation-tabakgebruik-san">Observation TabakGebruik (SAN)</h3>
+
+<p>See the <a href="StructureDefinition-observation-san-tabakgebruik.html">ObservationSanTabakGebruik</a> profile for details and <a href="StructureDefinition-observation-san-tabakgebruik-mappings.html">Mappings</a> for the mapping to SIM.</p>
+
+<h3 id="patient-san">Patient (SAN)</h3>
+
+<p>See the <a href="StructureDefinition-patient-san.html">PatientSan</a> profile for details and <a href="StructureDefinition-patient-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
+
+<h3 id="procedure-san">Procedure (SAN)</h3>
+
+<p>See the <a href="StructureDefinition-procedure-san.html">ProcedureSan</a> profile for details and <a href="StructureDefinition-procedure-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
+
+<h3 id="questionnaireresponse-san">QuestionnaireResponse (SAN)</h3>
+
+<p>See the <a href="StructureDefinition-questionnaireResponse-san.html">QuestionnaireResponseSan</a> profile for details and <a href="StructureDefinition-questionnaireResponse-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
+
+<!-- manual-profiles:end -->
 
 
 
@@ -252,8 +280,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.sim-on-fhir#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-26 15:58:00 +0000">
-    2026-10-26
+  <span title="2026-11-11 17:38:00 +0000">
+    2026-11-11
   </span>
 
           <br/>

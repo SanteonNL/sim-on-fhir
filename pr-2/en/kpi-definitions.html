@@ -45,7 +45,6 @@
 	  <script type="text/javascript" src="assets/js/prism.js"></script>
 	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
 	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
-    <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"5"}
     h3,h4,h5,h6{--heading-prefix:"5"}</style>
@@ -198,24 +197,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
   <li><a href="#definition-source" id="markdown-toc-definition-source">Definition source</a></li>
-  <li><a href="#kpi-definitions" id="markdown-toc-kpi-definitions">KPI definitions</a>    <ul>
-      <li><a href="#terminology-maintained-elsewhere" id="markdown-toc-terminology-maintained-elsewhere">Terminology maintained elsewhere</a></li>
-      <li><a href="#codes-inline-in-a-cohort-or-criterion" id="markdown-toc-codes-inline-in-a-cohort-or-criterion">Codes inline in a cohort or criterion</a></li>
-      <li><a href="#answers-to-a-measurement" id="markdown-toc-answers-to-a-measurement">Answers to a measurement</a></li>
-      <li><a href="#one-generated-value-set-per-resource-type" id="markdown-toc-one-generated-value-set-per-resource-type">One generated value set per resource type</a></li>
-    </ul>
-  </li>
+  <li><a href="#kpi-definitions" id="markdown-toc-kpi-definitions">KPI definitions</a></li>
   <li><a href="#datasets" id="markdown-toc-datasets">Datasets</a></li>
-  <li><a href="#what-is-generated" id="markdown-toc-what-is-generated">What is generated</a>    <ul>
-      <li><a href="#data-outside-a-kpi" id="markdown-toc-data-outside-a-kpi">Data outside a KPI</a></li>
-    </ul>
-  </li>
+  <li><a href="#what-is-generated" id="markdown-toc-what-is-generated">What is generated</a></li>
   <li><a href="#exporting-a-dataset" id="markdown-toc-exporting-a-dataset">Exporting a dataset</a></li>
   <li><a href="#relation-to-the-other-layers" id="markdown-toc-relation-to-the-other-layers">Relation to the other layers</a></li>
 </ul>
 
 </div>
-<h2 id="overview">Overview</h2>
+<h3 id="overview">Overview</h3>
 
 <p>The model of this IG is not written per measurement. It is <strong>derived from KPI definitions</strong>. A KPI definition states which data a KPI needs; the union of all KPI definitions determines which codes, elements and records the model allows, and which records an export selects.</p>
 
@@ -233,7 +223,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>This is the same split as in <a href="deidentification.html">De-identification</a>: the profile is the upper bound of what <em>can</em> be present (layer 1), the generated export request is what <em>goes</em> (layer 2).</p>
 
-<h2 id="definition-source">Definition source</h2>
+<h3 id="definition-source">Definition source</h3>
 
 <p>ObservationDefinitions and ValueSets describe measurements and terminology. They are managed as FSH files next to each other, separate from the IG model, and referenced from KPI definitions by id. In this IG they live in <code class="language-plaintext highlighter-rouge">input/fsh/definitions/</code> as a stand-in for a separate definition package.</p>
 
@@ -244,7 +234,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>R4 ObservationDefinition has no canonical URL or version. It is identified by its <code class="language-plaintext highlighter-rouge">id</code> within the definition source, and versioned together with it.</p>
 
-<h2 id="kpi-definitions">KPI definitions</h2>
+<h3 id="kpi-definitions">KPI definitions</h3>
 
 <p>A <a href="StructureDefinition-kpi-definition.html">KpiDefinition</a> is a list of criteria, each a resource type plus FHIR search parameters written with the normal search parameter names. It is <strong>role-neutral</strong>: nothing says whether a criterion is numerator, denominator or exclusion. That meaning belongs to the downstream calculation.</p>
 
@@ -283,7 +273,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p><strong>Codes roll up.</strong> Criteria on the same resource that differ only in their code become one <code class="language-plaintext highlighter-rouge">_typeFilter</code> with a comma-separated list of codes, for example <code class="language-plaintext highlighter-rouge">Observation?code=http://loinc.org|38445-3,http://snomed.info/sct|228273003&amp;date=ge2018-01-01</code>.</p>
 
-<h3 id="terminology-maintained-elsewhere">Terminology maintained elsewhere</h3>
+<h4 id="terminology-maintained-elsewhere">Terminology maintained elsewhere</h4>
 
 <p>Not every ValueSet is authored as FSH. Some are maintained in ART-DECOR. A criterion references such a set by its canonical URL and the generator treats it like a local one:</p>
 
@@ -296,13 +286,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>A pinned <code class="language-plaintext highlighter-rouge">&lt;oid&gt;--&lt;effective&gt;</code> version in the URL fixes the content; an unpinned URL follows the latest.</p>
 
-<h3 id="codes-inline-in-a-cohort-or-criterion">Codes inline in a cohort or criterion</h3>
+<h4 id="codes-inline-in-a-cohort-or-criterion">Codes inline in a cohort or criterion</h4>
 
 <p>A cohort that only needs two or three codes does not need a ValueSet. List them as literal tokens, for example <code class="language-plaintext highlighter-rouge">type=https://declaratie.nza.nl/zorgtype|11,https://declaratie.nza.nl/zorgtype|21</code>. They are passed through unchanged to the Group <code class="language-plaintext highlighter-rouge">member-filter</code> and shown on the dataset page. Literal codes on a <code class="language-plaintext highlighter-rouge">code</code> parameter of a <em>KPI</em> criterion are also added to the generated code value set, so the profile accepts them.</p>
 
 <p><strong>Post-query filters.</strong> Some logic cannot be a FHIR search: "latest per patient", or a relation between resources such as "calprotectin within 90 days before the scopie". A KPI states these in <code class="language-plaintext highlighter-rouge">postFilter</code>, in words with an optional formal expression. They are not part of the export query; they are applied after retrieval, and shown on the dataset pages so a reviewer sees the whole definition.</p>
 
-<h3 id="answers-to-a-measurement">Answers to a measurement</h3>
+<h4 id="answers-to-a-measurement">Answers to a measurement</h4>
 
 <p>The permitted answers of a coded measurement come from one of two places, and from both when both are given:</p>
 
@@ -330,15 +320,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>The generator folds all answers for one measurement into a single generated ValueSet (<code class="language-plaintext highlighter-rouge">santeon-answers-&lt;od-id&gt;</code>) and the profile's invariant for that measurement requires membership of it. The same <code class="language-plaintext highlighter-rouge">value-concept</code> list is also part of the export filter, so the exported records are the ones with those answers.</p>
 
-<h3 id="one-generated-value-set-per-resource-type">One generated value set per resource type</h3>
+<h4 id="one-generated-value-set-per-resource-type">One generated value set per resource type</h4>
 
 <p>Loose codes do not each need a ValueSet. All codes a KPI defines inline, all ObservationDefinition codes and all ValueSets the criteria refer to (local, ART-DECOR or NTS) are folded into one generated value set per resource type, such as <code class="language-plaintext highlighter-rouge">SanteonConditionCodeVS</code>. It is a result, not a source: it is never maintained by hand and does not belong in ART-DECOR. Changing a KPI changes it on the next generation.</p>
 
-<h2 id="datasets">Datasets</h2>
+<h3 id="datasets">Datasets</h3>
 
 <p>A <a href="StructureDefinition-dataset-definition.html">DatasetDefinition</a> describes one export: the <strong>cohort</strong> (criteria that become the Group's <code class="language-plaintext highlighter-rouge">member-filter</code> extensions, plus cohort logic no search can express) and the <strong>KPIs</strong> whose data the export releases. See <a href="datasets.html">Datasets</a> for the datasets and for the derived model.</p>
 
-<h2 id="what-is-generated">What is generated</h2>
+<h3 id="what-is-generated">What is generated</h3>
 
 <p><code class="language-plaintext highlighter-rouge">_generateFromDefinitions.py</code> compiles the definitions with SUSHI and writes:</p>
 
@@ -369,7 +359,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Invariants that use <code class="language-plaintext highlighter-rouge">memberOf</code> need a terminology server when the data is validated.</p>
 
-<h3 id="data-outside-a-kpi">Data outside a KPI</h3>
+<h4 id="data-outside-a-kpi">Data outside a KPI</h4>
 
 <p>Not everything a dataset releases belongs to a KPI. The Patient model, for example, is released with a filter on gender or an age limit, without any KPI asking for it. A dataset lists such data under <code class="language-plaintext highlighter-rouge">include</code>, in the same shape as a KPI criterion: a resource, FHIR search parameters and the elements to release.</p>
 
@@ -382,11 +372,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Included data joins the export request (<code class="language-plaintext highlighter-rouge">_type</code>, <code class="language-plaintext highlighter-rouge">_typeFilter</code>, <code class="language-plaintext highlighter-rouge">_elements</code>) and the derived model exactly like a KPI criterion, so the generated profile for that resource accepts the elements listed and closes the rest. The age limit that decides who is in the Group stays in the <code class="language-plaintext highlighter-rouge">cohort</code>; <code class="language-plaintext highlighter-rouge">include</code> is about what is released.</p>
 
-<h2 id="exporting-a-dataset">Exporting a dataset</h2>
+<h3 id="exporting-a-dataset">Exporting a dataset</h3>
 
 <p>A dataset is exported with a sequence of ordinary FHIR requests, not one call: create the cohort Group, wait until it exists, start <code class="language-plaintext highlighter-rouge">$export</code> on it with the generated Parameters, wait, download. A Bundle cannot carry this, because <code class="language-plaintext highlighter-rouge">$export</code> is asynchronous. Each dataset page lists the sequence for its own Group and Parameters. A server such as FENIX can run the sequence behind a single call of its own; that is an implementation choice and not part of the IG.</p>
 
-<h2 id="relation-to-the-other-layers">Relation to the other layers</h2>
+<h3 id="relation-to-the-other-layers">Relation to the other layers</h3>
 
 <ul>
   <li><strong>Profiles</strong> define what may appear; the generated profiles are bounded by the KPIs.</li>
@@ -422,8 +412,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.sim-on-fhir#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-26 15:58:00 +0000">
-    2026-10-26
+  <span title="2026-11-11 17:38:00 +0000">
+    2026-11-11
   </span>
 
           <br/>

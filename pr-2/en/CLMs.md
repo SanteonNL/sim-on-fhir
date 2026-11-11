@@ -2,27 +2,43 @@
 
 ## SIM Logical Models
 
-### Logical Model SIMAlgemenMeting
+### Logical Model Algemene meting (model)
 
-See the [SIMAlgemenMeting](StructureDefinition-SIMAlgemeneMeting.md) Logical Model for details and [Mappings](StructureDefinition-SIMAlgemeneMeting-mappings.md) for mappingsdetails.
+See the [SIMAlgemeneMeting](StructureDefinition-SIMAlgemeneMeting.md) Logical Model for details and [Mappings](StructureDefinition-SIMAlgemeneMeting-mappings.md) for mapping details.
 
-### Logical Model SIMVerrichting
+### Logical Model Zorgplan (model)
 
-See the [SIMVerrichting](StructureDefinition-SIMVerrichting.md) Logical Model for details and [Mappings](StructureDefinition-SIMVerrichting-mappings.md) for mappingsdetails.
+See the [SIMCarePlan](StructureDefinition-SIMCarePlan.md) Logical Model for details and [Mappings](StructureDefinition-SIMCarePlan-mappings.md) for mapping details.
 
-### Logical Model SIMPatient
+### Logical Model Contact (model)
 
-See the [SIMPatient](StructureDefinition-SIMPatient.md) Logical Model for details and [Mappings](StructureDefinition-SIMPatient-mappings.md) for mappingsdetails.
+See the [SIMContact](StructureDefinition-SIMContact.md) Logical Model for details and [Mappings](StructureDefinition-SIMContact-mappings.md) for mapping details.
 
-### Logical Model SIMZorgtraject (DBC)
+### Logical Model DBC/Zorgtraject (model)
 
-See the [SIMDBC](StructureDefinition-SIMDBC.md) Logical Model for details and [Mappings](StructureDefinition-SIMDBC-mappings.md) for mappingsdetails.
+See the [SIMDBC](StructureDefinition-SIMDBC.md) Logical Model for details and [Mappings](StructureDefinition-SIMDBC-mappings.md) for mapping details.
 
-### Logical Model SIMFasering
+### Logical Model Fasering (model)
 
-WIP: **See the [SIMFasering](StructureDefinition-SIMFasering.md) Logical Model for details and [Mappings](StructureDefinition-SIMFasering-mappings.md) for mappingsdetails.**
+See the [SIMFasering](StructureDefinition-SIMFasering.md) Logical Model for details and [Mappings](StructureDefinition-SIMFasering-mappings.md) for mapping details.
 
-### Logical Model SIMetc.
+### Logical Model Medicatieafspraak (model)
 
-Etc.
+See the [SIMMedicatieAfspraak](StructureDefinition-SIMMedicatieAfspraak.md) Logical Model for details and [Mappings](StructureDefinition-SIMMedicatieAfspraak-mappings.md) for mapping details.
+
+### Logical Model Patiënt (model)
+
+See the [SIMPatient](StructureDefinition-SIMPatient.md) Logical Model for details and [Mappings](StructureDefinition-SIMPatient-mappings.md) for mapping details.
+
+### Logical Model Tabakgebruik (model)
+
+See the [SIMTabakGebruik](StructureDefinition-SIMTabakGebruik.md) Logical Model for details and [Mappings](StructureDefinition-SIMTabakGebruik-mappings.md) for mapping details.
+
+### Logical Model Verrichting (model)
+
+See the [SIMVerrichting](StructureDefinition-SIMVerrichting.md) Logical Model for details and [Mappings](StructureDefinition-SIMVerrichting-mappings.md) for mapping details.
+
+### Logical Model Vragenlijstantwoord (model)
+
+See the [SIMVragenlijstAntwoord](StructureDefinition-SIMVragenlijstAntwoord.md) Logical Model for details and [Mappings](StructureDefinition-SIMVragenlijstAntwoord-mappings.md) for mapping details.
 

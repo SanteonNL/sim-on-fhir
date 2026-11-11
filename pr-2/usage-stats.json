@@ -10,37 +10,37 @@
       "types": [
         "Reference"
       ]
-    },
-    {
-      "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/specialisme-diagnose-code",
-      "title": "SpecialismeDiagnoseCode",
-      "types": [
-        "CodeableConcept",
-        "string",
-        "Extension",
-        "Coding",
-        "string",
-        "Extension",
-        "uri",
-        "string",
-        "code",
-        "string",
-        "boolean",
-        "string"
-      ]
     }
   ],
   "profiles": {
+    "CarePlan": [
+      {
+        "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/carePlan-san",
+        "title": "CarePlan (SAN)"
+      }
+    ],
     "Condition": [
       {
         "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/condition-san",
         "title": "Condition (SAN)"
       }
     ],
+    "Encounter": [
+      {
+        "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/encounter-san",
+        "title": "Encounter (SAN)"
+      }
+    ],
     "EpisodeOfCare": [
       {
         "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/episodeOfCare-san",
         "title": "EpisodeOfCare (SAN)"
+      }
+    ],
+    "MedicationRequest": [
+      {
+        "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/medicationRequest-san",
+        "title": "MedicationRequest (SAN)"
       }
     ],
     "Observation": [
@@ -51,6 +51,10 @@
       {
         "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san-kpi",
         "title": "Observation (SAN KPI)"
+      },
+      {
+        "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san-tabakgebruik",
+        "title": "Observation TabakGebruik (SAN)"
       }
     ],
     "Patient": [
@@ -72,6 +76,12 @@
         "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/procedure-san-kpi",
         "title": "Procedure (SAN KPI)"
       }
+    ],
+    "QuestionnaireResponse": [
+      {
+        "url": "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/questionnaireResponse-san",
+        "title": "QuestionnaireResponse (SAN)"
+      }
     ]
   },
   "usage": {
@@ -84,17 +94,11 @@
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
       "StructureDefinition.snapshot.element.binding"
     ],
-    "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding": [
-      "StructureDefinition.snapshot.element.binding"
-    ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
       "StructureDefinition.snapshot.element.binding"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
       "StructureDefinition.snapshot.element"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod": [
-      "ValueSet"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
       "StructureDefinition.snapshot.element"
@@ -105,18 +109,6 @@
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
       "StructureDefinition.snapshot.element.type"
     ],
-    "http://hl7.org/fhir/StructureDefinition/valueset-concept-comments": [
-      "ValueSet.compose.include.concept"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/valueset-deprecated": [
-      "ValueSet.compose.include.concept"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/web-source": [
-      "ValueSet"
-    ],
-    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
-      "ImplementationGuide.definition"
-    ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
       "ImplementationGuide.definition.page",
       "ImplementationGuide.definition.page.page",
@@ -124,9 +116,6 @@
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
       "ImplementationGuide.definition"
-    ],
-    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
-      "ImplementationGuide.dependsOn"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format": [
       "ImplementationGuide.definition.resource"

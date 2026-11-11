@@ -29,7 +29,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "name" : "AlcoholGebruikStatusCodelijst",
   "title" : "AlcoholGebruikStatusCodelijst",
   "status" : "draft",
-  "date" : "2026-10-26T15:58:34+00:00",
+  "date" : "2026-11-11T17:38:18+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",

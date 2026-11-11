@@ -2,11 +2,11 @@
 
 ## Home
 
-# SIM on FHIR
+### SIM on FHIR
 
 How the **Santeon Informatie Model (SIM)** maps to FHIR. The guide is general; it is not tied to one disease area.
 
-## Scope
+#### Scope
 
 * **SIM logical models**, including mappings to the source CSVs and to FHIR.
 * **FHIR profiles**: Condition, EpisodeOfCare, Patient, Procedure and Observation.

@@ -2,7 +2,7 @@
 
 ## Datasets
 
-## Datasets
+### Datasets
 
 One dataset per disease area. Each dataset is exported on its own Group; its definition, cohort, KPIs, post-query filters and resolved export request are on its page. How the definitions work is described under [KPI definitions](kpi-definitions.md).
 
@@ -10,7 +10,7 @@ One dataset per disease area. Each dataset is exported on its own Group; its def
 | :--- | :--- | :--- | :--- |
 | [IBD](ibd-dataset.md) | 0.1.0 | 3 | 2 |
 
-### KPI definitions in use
+#### KPI definitions in use
 
 | | | |
 | :--- | :--- | :--- |
@@ -20,11 +20,11 @@ One dataset per disease area. Each dataset is exported on its own Group; its def
 
 -------
 
-### Derived model
+#### Derived model
 
 The union of all KPI definitions determines the model. One profile per resource type is generated; it accepts exactly the codes the KPIs ask for and closes every element no KPI asks for.
 
-#### Observation
+##### Observation
 
 Profile: [Observation (SAN KPI)](StructureDefinition-observation-san-kpi.md) · code value set: [Observation code (SAN KPI)](ValueSet-observationCode-san-kpi.md) · used by `alcohol-status-recorded`, `k363-calprotectin-before-scopie`
 
@@ -37,7 +37,7 @@ Elements released: `code`, `value[x]`, `effective[x]`, `subject`
 | [Alcoholgebruik](ObservationDefinition-od-alcohol-use.md) | value[x] is a CodeableConcept from alcohol-use-status (`observation-san-kpi-od-alcohol-use`) |
 | [Calprotectine (feces)](ObservationDefinition-od-calprotectin.md) | value[x] is a Quantity in ug/g (`observation-san-kpi-od-calprotectin`) |
 
-#### Procedure
+##### Procedure
 
 Profile: [Procedure (SAN KPI)](StructureDefinition-procedure-san-kpi.md) · code value set: [Procedure code (SAN KPI)](ValueSet-procedureCode-san-kpi.md) · used by `k312-scopie`, `k363-calprotectin-before-scopie`
 
@@ -45,7 +45,7 @@ Code sources: [local-verrichting-codes-nza](ValueSet-local-verrichting-codes-nza
 
 Elements released: `code`, `performed[x]`, `subject`
 
-#### Patient
+##### Patient
 
 Profile: [Patient (SAN KPI)](StructureDefinition-patient-san-kpi.md) · used by `ibd-dataset`
 
@@ -53,7 +53,7 @@ Elements released: `gender`, `birthDate`
 
 -------
 
-### External ValueSets
+#### External ValueSets
 
 Maintained outside this repository and pinned here. `_syncValueSets.py check` compares each pin with its source.
 

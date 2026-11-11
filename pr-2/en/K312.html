@@ -45,7 +45,6 @@
 	  <script type="text/javascript" src="assets/js/prism.js"></script>
 	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
 	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
-    <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"6"}
     h3,h4,h5,h6{--heading-prefix:"6"}</style>
@@ -194,8 +193,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#ibd-cohort" id="markdown-toc-ibd-cohort">IBD Cohort</a></li>
+  <li><a href="#measure" id="markdown-toc-measure">Measure</a></li>
+  <li><a href="#fhir-query" id="markdown-toc-fhir-query">FHIR query</a></li>
+</ul>
+
 </div>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Denominator
 |
@@ -219,10 +223,10 @@ Numerator
       └── code ∈ ValueSet: LocalVerrichtingCodesNZa
 </code></pre></div></div>
 
-<h2 id="ibd-cohort">IBD Cohort</h2>
+<h3 id="ibd-cohort">IBD Cohort</h3>
 <p>Zie het <a href="ibd-dataset.html#cohort">IBD Cohort</a> voor meer details.</p>
 
-<h2 id="measure">Measure</h2>
+<h3 id="measure">Measure</h3>
 <p>Definitie: Kwaliteitsindicator die het aantal volwassen IBD-patiënten telt met een scopie-verrichting vanaf 2018.</p>
 
 <!-- **Initial Population:** IBD cohort -->
@@ -230,7 +234,7 @@ Numerator
 
 <p><strong>Numerator:</strong> IBD cohort <strong>met scopie</strong> (<a href="ValueSet-local-verrichting-codes-nza.html">LocalVerrichtingCodesNZa:</a> <code class="language-plaintext highlighter-rouge">034620</code>, <code class="language-plaintext highlighter-rouge">034686</code>, <code class="language-plaintext highlighter-rouge">034690</code>, <code class="language-plaintext highlighter-rouge">035582</code>)</p>
 
-<h3 id="gebruikte-profielen-measure">Gebruikte profielen Measure</h3>
+<h4 id="gebruikte-profielen-measure">Gebruikte profielen Measure</h4>
 
 <table>
   <thead>
@@ -264,7 +268,7 @@ Numerator
   </tbody>
 </table>
 
-<h2 id="fhir-query">FHIR query</h2>
+<h3 id="fhir-query">FHIR query</h3>
 <p><strong>Denominator</strong></p>
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//Cohort:
 
@@ -315,8 +319,8 @@ GET [base]/Procedure?
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.sim-on-fhir#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-26 15:58:00 +0000">
-    2026-10-26
+  <span title="2026-11-11 17:38:00 +0000">
+    2026-11-11
   </span>
 
           <br/>

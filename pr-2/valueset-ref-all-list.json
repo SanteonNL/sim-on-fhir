@@ -1,16 +1,5 @@
 {
   "codeSystems" : [{
-    "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229",
-    "version" : "0.1.0",
-    "status" : "retired",
-    "name" : "CareplanCategoryCodelijst",
-    "title" : "CareplanCategoryCodelijst",
-    "description" : "CareplanCategoryCodelijst",
-    "systems" : ["https://santeon.nl/sct"],
-    "oids" : ["2.16.840.1.113883.2.4.3.11.60.124.11.140"],
-    "sources" : ["2.16.840.1.113883.2.4.3.11.60.124.11.140"]
-  },
-  {
     "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000",
     "version" : "2020-09-01T00:00:00",
     "status" : "active",
@@ -23,51 +12,35 @@
     "sources" : ["2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8"],
     "uses" : {
     },
-    "StructureDefinition-SIMFasering.html" : "Fasering (model)",
     "StructureDefinition-SIMPatient.html" : "Patiënt (model)"
   },
   {
-    "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.20.5.2--20200901000000",
-    "version" : "2020-09-01T00:00:00",
-    "status" : "active",
-    "name" : "LandISOCodelijst",
-    "title" : "LandISOCodelijst",
-    "description" : "ISO 3166-1 (alpha-2) - Alle waarden",
-    "systems" : ["urn:iso:std:iso:3166"],
-    "oids" : ["2.16.840.1.113883.2.4.3.11.60.40.2.20.5.2"],
-    "sources" : ["2.16.840.1.113883.2.4.3.11.60.40.2.20.5.2"],
+    "url" : "http://hl7.org/fhir/ValueSet/additional-instruction-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTAdditionalDosageInstructions",
+    "title" : "SNOMED CT Additional Dosage Instructions",
+    "description" : "This value set includes all SNOMED CT Additional Dosage Instructions.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.95"],
+    "sources" : ["2.16.840.1.113883.4.642.3.95"],
     "uses" : {
     },
-    "StructureDefinition-SIMFasering.html" : "Fasering (model)",
-    "StructureDefinition-SIMPatient.html" : "Patiënt (model)"
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
   },
   {
-    "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.3.1.1--20200901000000",
-    "version" : "2020-09-01T00:00:00",
-    "status" : "active",
-    "name" : "RelatieCodelijst",
-    "title" : "RelatieCodelijst",
-    "description" : "RelatieCodelijst",
-    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-    "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"],
-    "oids" : ["2.16.840.1.113883.2.4.3.11.60.40.2.3.1.1"],
-    "sources" : ["2.16.840.1.113883.2.4.3.11.60.40.2.3.1.1"],
+    "url" : "http://hl7.org/fhir/ValueSet/administration-method-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTAdministrationMethodCodes",
+    "title" : "SNOMED CT Administration Method Codes",
+    "description" : "This value set includes some method codes from SNOMED CT - provided as an exemplar",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.97"],
+    "sources" : ["2.16.840.1.113883.4.642.3.97"],
     "uses" : {
     },
-    "StructureDefinition-SIMFasering.html" : "Fasering (model)",
-    "StructureDefinition-SIMPatient.html" : "Patiënt (model)"
-  },
-  {
-    "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000",
-    "version" : "0.1.0",
-    "status" : "active",
-    "name" : "AlcoholGebruikStatusCodelijst",
-    "title" : "AlcoholGebruikStatusCodelijst",
-    "description" : "AlcoholGebruikStatusCodelijst",
-    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-    "http://snomed.info/sct"],
-    "oids" : ["2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2"],
-    "sources" : ["2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2"]
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/administrative-gender",
@@ -85,6 +58,20 @@
     "StructureDefinition-patient-san-kpi.html" : "Patient (SAN KPI)"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/approach-site-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTAnatomicalStructureForAdministrationSiteCodes",
+    "title" : "SNOMED CT Anatomical Structure for Administration Site Codes",
+    "description" : "This value set includes Anatomical Structure codes from SNOMED CT - provided as an exemplar.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.346"],
+    "sources" : ["2.16.840.1.113883.4.642.3.346"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/body-site",
     "version" : "4.0.1",
     "status" : "draft",
@@ -96,11 +83,96 @@
     "sources" : ["2.16.840.1.113883.4.642.3.141"],
     "uses" : {
     },
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
-    "StructureDefinition-condition-san.html" : "Condition (SAN)",
     "StructureDefinition-procedure-san-kpi.html" : "Procedure (SAN KPI)",
-    "StructureDefinition-procedure-san.html" : "Procedure (SAN)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)"
+    "StructureDefinition-condition-san.html" : "Condition (SAN)",
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
+    "StructureDefinition-procedure-san.html" : "Procedure (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/care-plan-activity-kind",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CarePlanActivityKind",
+    "title" : "Care Plan Activity Kind",
+    "description" : "Resource types defined as part of FHIR that can be represented as in-line definitions of a care plan activity.",
+    "systems" : ["http://hl7.org/fhir/resource-types"],
+    "oids" : ["2.16.840.1.113883.4.642.3.145"],
+    "sources" : ["2.16.840.1.113883.4.642.3.145"],
+    "uses" : {
+    },
+    "StructureDefinition-carePlan-san.html" : "CarePlan (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/care-plan-activity-outcome",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CarePlanActivityOutcome",
+    "title" : "Care Plan Activity Outcome",
+    "description" : "Example codes indicating the outcome of a care plan activity. Note that these are in no way complete and might not even be appropriate for some uses.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.149"],
+    "sources" : ["2.16.840.1.113883.4.642.3.149"],
+    "uses" : {
+    },
+    "StructureDefinition-carePlan-san.html" : "CarePlan (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/care-plan-activity-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CarePlanActivityStatus",
+    "title" : "CarePlanActivityStatus",
+    "description" : "Codes that reflect the current state of a care plan activity within its overall life cycle.",
+    "systems" : ["http://hl7.org/fhir/care-plan-activity-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.146"],
+    "sources" : ["2.16.840.1.113883.4.642.3.146"],
+    "uses" : {
+    },
+    "StructureDefinition-carePlan-san.html" : "CarePlan (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/care-plan-category",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CarePlanCategory",
+    "title" : "Care Plan Category",
+    "description" : "Example codes indicating the category a care plan falls within.  Note that these are in no way complete and might not even be appropriate for some uses.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.148"],
+    "sources" : ["2.16.840.1.113883.4.642.3.148"],
+    "uses" : {
+    },
+    "StructureDefinition-carePlan-san.html" : "CarePlan (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/care-plan-intent",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CarePlanIntent",
+    "title" : "Care Plan Intent",
+    "description" : "Codes indicating the degree of authority/intentionality associated with a care plan.",
+    "systems" : ["http://hl7.org/fhir/request-intent"],
+    "oids" : ["2.16.840.1.113883.4.642.3.150"],
+    "sources" : ["2.16.840.1.113883.4.642.3.150"],
+    "uses" : {
+    },
+    "StructureDefinition-carePlan-san.html" : "CarePlan (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/clinical-findings",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTClinicalFindings",
+    "title" : "SNOMED CT Clinical Findings",
+    "description" : "This value set includes all the \"Clinical finding\" [SNOMED CT](http://snomed.info/sct) codes - concepts where concept is-a 404684003 (Clinical finding (finding)).",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.232"],
+    "sources" : ["2.16.840.1.113883.4.642.3.232"],
+    "uses" : {
+    },
+    "StructureDefinition-carePlan-san.html" : "CarePlan (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/condition-category",
@@ -142,8 +214,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.161"],
     "uses" : {
     },
-    "StructureDefinition-condition-san.html" : "Condition (SAN)",
     "StructureDefinition-procedure-san-kpi.html" : "Procedure (SAN KPI)",
+    "StructureDefinition-condition-san.html" : "Condition (SAN)",
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)",
     "StructureDefinition-procedure-san.html" : "Procedure (SAN)"
   },
   {
@@ -214,8 +287,23 @@
     "sources" : ["2.16.840.1.113883.4.642.3.5"],
     "uses" : {
     },
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)"
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/days-of-week",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "DaysOfWeek",
+    "title" : "DaysOfWeek",
+    "description" : "The days of the week.",
+    "systems" : ["http://hl7.org/fhir/days-of-week"],
+    "oids" : ["2.16.840.1.113883.4.642.3.512"],
+    "sources" : ["2.16.840.1.113883.4.642.3.512"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/device-action",
@@ -259,7 +347,164 @@
     "sources" : ["2.16.840.1.113883.4.642.3.49"],
     "uses" : {
     },
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)",
     "StructureDefinition-episodeOfCare-san.html" : "EpisodeOfCare (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/dose-rate-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "DoseAndRateType",
+    "title" : "DoseAndRateType",
+    "description" : "The kind of dose or rate specified.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/dose-rate-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.981"],
+    "sources" : ["2.16.840.1.113883.4.642.3.981"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-admit-source",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "AdmitSource",
+    "title" : "Admit source",
+    "description" : "This value set defines a set of codes that can be used to indicate from where the patient came in.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/admit-source"],
+    "oids" : ["2.16.840.1.113883.4.642.3.257"],
+    "sources" : ["2.16.840.1.113883.4.642.3.257"],
+    "uses" : {
+    },
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-diet",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "Diet",
+    "title" : "Diet",
+    "description" : "This value set defines a set of codes that can be used to indicate dietary preferences or restrictions a patient may have.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/diet"],
+    "oids" : ["2.16.840.1.113883.4.642.3.255"],
+    "sources" : ["2.16.840.1.113883.4.642.3.255"],
+    "uses" : {
+    },
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-discharge-disposition",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "DischargeDisposition",
+    "title" : "Discharge disposition",
+    "description" : "This value set defines a set of codes that can be used to where the patient left the hospital.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/discharge-disposition"],
+    "oids" : ["2.16.840.1.113883.4.642.3.259"],
+    "sources" : ["2.16.840.1.113883.4.642.3.259"],
+    "uses" : {
+    },
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-location-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "EncounterLocationStatus",
+    "title" : "EncounterLocationStatus",
+    "description" : "The status of the location.",
+    "systems" : ["http://hl7.org/fhir/encounter-location-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.262"],
+    "sources" : ["2.16.840.1.113883.4.642.3.262"],
+    "uses" : {
+    },
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-participant-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ParticipantType",
+    "title" : "Participant type",
+    "description" : "This value set defines a set of codes that can be used to indicate how an individual participates in an encounter.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/participant-type",
+    "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"],
+    "oids" : ["2.16.840.1.113883.4.642.3.250"],
+    "sources" : ["2.16.840.1.113883.4.642.3.250"],
+    "uses" : {
+    },
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-reason",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "EncounterReasonCodes",
+    "title" : "Encounter Reason Codes",
+    "description" : "This examples value set defines the set of codes that can be used to indicate reasons for an encounter.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.261"],
+    "sources" : ["2.16.840.1.113883.4.642.3.261"],
+    "uses" : {
+    },
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-special-arrangements",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SpecialArrangements",
+    "title" : "Special arrangements",
+    "description" : "This value set defines a set of codes that can be used to indicate the kinds of special arrangements in place for a patients visit.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/encounter-special-arrangements"],
+    "oids" : ["2.16.840.1.113883.4.642.3.253"],
+    "sources" : ["2.16.840.1.113883.4.642.3.253"],
+    "uses" : {
+    },
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-special-courtesy",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SpecialCourtesy",
+    "title" : "Special courtesy",
+    "description" : "This value set defines a set of codes that can be used to indicate special courtesies provided to the patient.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
+    "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"],
+    "oids" : ["2.16.840.1.113883.4.642.3.252"],
+    "sources" : ["2.16.840.1.113883.4.642.3.252"],
+    "uses" : {
+    },
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "EncounterStatus",
+    "title" : "EncounterStatus",
+    "description" : "Current state of the encounter.",
+    "systems" : ["http://hl7.org/fhir/encounter-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.246"],
+    "sources" : ["2.16.840.1.113883.4.642.3.246"],
+    "uses" : {
+    },
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/encounter-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "EncounterType",
+    "title" : "Encounter type",
+    "description" : "This example value set defines a set of codes that can be used to indicate the type of encounter: a specific code indicating type of service provided.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/encounter-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.248"],
+    "sources" : ["2.16.840.1.113883.4.642.3.248"],
+    "uses" : {
+    },
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/episode-of-care-status",
@@ -305,6 +550,21 @@
     "StructureDefinition-procedure-san.html" : "Procedure (SAN)"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/event-timing",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "EventTiming",
+    "title" : "EventTiming",
+    "description" : "Real world event relating to the schedule.",
+    "systems" : ["http://hl7.org/fhir/event-timing",
+    "http://terminology.hl7.org/CodeSystem/v3-TimingEvent"],
+    "oids" : ["2.16.840.1.113883.4.642.3.75"],
+    "sources" : ["2.16.840.1.113883.4.642.3.75"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/identifier-type",
     "version" : "4.0.1",
     "status" : "active",
@@ -316,12 +576,16 @@
     "sources" : ["2.16.840.1.113883.4.642.3.45"],
     "uses" : {
     },
-    "StructureDefinition-patient-san.html" : "Patient (SAN)",
-    "StructureDefinition-SIMFasering.html" : "Fasering (model)",
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)",
     "StructureDefinition-condition-san.html" : "Condition (SAN)",
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
+    "StructureDefinition-questionnaireResponse-san.html" : "QuestionnaireResponse (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)",
+    "StructureDefinition-patient-san.html" : "Patient (SAN)",
+    "StructureDefinition-carePlan-san.html" : "CarePlan (SAN)",
     "StructureDefinition-episodeOfCare-san.html" : "EpisodeOfCare (SAN)",
-    "StructureDefinition-procedure-san.html" : "Procedure (SAN)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)"
+    "StructureDefinition-procedure-san.html" : "Procedure (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/identifier-use",
@@ -335,12 +599,16 @@
     "sources" : ["2.16.840.1.113883.4.642.3.57"],
     "uses" : {
     },
-    "StructureDefinition-patient-san.html" : "Patient (SAN)",
-    "StructureDefinition-SIMFasering.html" : "Fasering (model)",
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)",
     "StructureDefinition-condition-san.html" : "Condition (SAN)",
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
+    "StructureDefinition-questionnaireResponse-san.html" : "QuestionnaireResponse (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)",
+    "StructureDefinition-patient-san.html" : "Patient (SAN)",
+    "StructureDefinition-carePlan-san.html" : "CarePlan (SAN)",
     "StructureDefinition-episodeOfCare-san.html" : "EpisodeOfCare (SAN)",
-    "StructureDefinition-procedure-san.html" : "Procedure (SAN)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)"
+    "StructureDefinition-procedure-san.html" : "Procedure (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/languages",
@@ -354,14 +622,19 @@
     "sources" : ["2.16.840.1.113883.4.642.3.20"],
     "uses" : {
     },
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
-    "StructureDefinition-patient-san.html" : "Patient (SAN)",
-    "StructureDefinition-condition-san.html" : "Condition (SAN)",
-    "StructureDefinition-episodeOfCare-san.html" : "EpisodeOfCare (SAN)",
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)",
     "StructureDefinition-procedure-san-kpi.html" : "Procedure (SAN KPI)",
+    "StructureDefinition-condition-san.html" : "Condition (SAN)",
+    "StructureDefinition-questionnaireResponse-san.html" : "QuestionnaireResponse (SAN)",
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)",
     "StructureDefinition-patient-san-kpi.html" : "Patient (SAN KPI)",
     "StructureDefinition-procedure-san.html" : "Procedure (SAN)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)"
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
+    "StructureDefinition-patient-san.html" : "Patient (SAN)",
+    "StructureDefinition-carePlan-san.html" : "CarePlan (SAN)",
+    "StructureDefinition-episodeOfCare-san.html" : "EpisodeOfCare (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/link-type",
@@ -377,6 +650,20 @@
     },
     "StructureDefinition-patient-san.html" : "Patient (SAN)",
     "StructureDefinition-patient-san-kpi.html" : "Patient (SAN KPI)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/location-physical-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "LocationType",
+    "title" : "Location type",
+    "description" : "This example value set defines a set of codes that can be used to indicate the physical form of the Location.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/location-physical-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.328"],
+    "sources" : ["2.16.840.1.113883.4.642.3.328"],
+    "uses" : {
+    },
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/manifestation-or-symptom",
@@ -409,6 +696,105 @@
     "StructureDefinition-patient-san-kpi.html" : "Patient (SAN KPI)"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/medication-as-needed-reason",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTMedicationAsNeededReasonCodes",
+    "title" : "SNOMED CT Medication As Needed Reason Codes",
+    "description" : "This value set includes all clinical findings from SNOMED CT - provided as an exemplar value set.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.96"],
+    "sources" : ["2.16.840.1.113883.4.642.3.96"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medication-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTMedicationCodes",
+    "title" : "SNOMED CT Medication Codes",
+    "description" : "This value set includes all drug or medicament substance codes and all pharmaceutical/biologic products from SNOMED CT - provided as an exemplar value set.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.375"],
+    "sources" : ["2.16.840.1.113883.4.642.3.375"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)",
+    "StructureDefinition-carePlan-san.html" : "CarePlan (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medicationrequest-category",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "medicationRequest Category Codes",
+    "title" : "Medication request  category  codes",
+    "description" : "MedicationRequest Category Codes",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/medicationrequest-category"],
+    "oids" : ["2.16.840.1.113883.4.642.3.1322"],
+    "sources" : ["2.16.840.1.113883.4.642.3.1322"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medicationrequest-course-of-therapy",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "medicationRequest Course of Therapy Codes",
+    "title" : "Medication request  course of  therapy  codes",
+    "description" : "MedicationRequest Course of Therapy Codes",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy"],
+    "oids" : ["2.16.840.1.113883.4.642.3.1326"],
+    "sources" : ["2.16.840.1.113883.4.642.3.1326"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medicationrequest-intent",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "medicationRequest Intent",
+    "title" : "Medication request  intent",
+    "description" : "MedicationRequest Intent Codes",
+    "systems" : ["http://hl7.org/fhir/CodeSystem/medicationrequest-intent"],
+    "oids" : ["2.16.840.1.113883.4.642.3.1321"],
+    "sources" : ["2.16.840.1.113883.4.642.3.1321"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medicationrequest-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "medicationrequest Status",
+    "title" : "Medicationrequest  status",
+    "description" : "MedicationRequest Status Codes",
+    "systems" : ["http://hl7.org/fhir/CodeSystem/medicationrequest-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.1320"],
+    "sources" : ["2.16.840.1.113883.4.642.3.1320"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medicationrequest-status-reason",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "medicationRequest Status Reason Codes",
+    "title" : "Medication request  status  reason  codes",
+    "description" : "MedicationRequest Status Reason Codes",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/medicationrequest-status-reason"],
+    "oids" : ["2.16.840.1.113883.4.642.3.1324"],
+    "sources" : ["2.16.840.1.113883.4.642.3.1324"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/observation-category",
     "version" : "4.0.1",
     "status" : "draft",
@@ -420,8 +806,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.403"],
     "uses" : {
     },
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)"
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-codes",
@@ -435,8 +822,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.396"],
     "uses" : {
     },
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)"
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-interpretation",
@@ -450,8 +838,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.399"],
     "uses" : {
     },
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)"
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-methods",
@@ -465,8 +854,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.395"],
     "uses" : {
     },
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)"
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-status",
@@ -480,8 +870,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.400"],
     "uses" : {
     },
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)"
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/patient-contactrelationship",
@@ -511,6 +902,7 @@
     "uses" : {
     },
     "StructureDefinition-procedure-san-kpi.html" : "Procedure (SAN KPI)",
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)",
     "StructureDefinition-procedure-san.html" : "Procedure (SAN)"
   },
   {
@@ -540,6 +932,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.427"],
     "uses" : {
     },
+    "StructureDefinition-carePlan-san.html" : "CarePlan (SAN)",
     "StructureDefinition-procedure-san.html" : "Procedure (SAN)"
   },
   {
@@ -614,8 +1007,40 @@
     "sources" : ["2.16.840.1.113883.4.642.3.59"],
     "uses" : {
     },
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
+    "StructureDefinition-questionnaireResponse-san.html" : "QuestionnaireResponse (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
     "StructureDefinition-SIMAlgemeneMeting.html" : "Algemene meting (model)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)"
+    "StructureDefinition-SIMMedicatieAfspraak.html" : "Medicatieafspraak (model)",
+    "StructureDefinition-SIMVragenlijstAntwoord.html" : "Vragenlijstantwoord (model)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/questionnaire-answers",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "QuestionnaireAnswerCodes",
+    "title" : "Questionnaire Answer Codes",
+    "description" : "Example list of codes for answers to questions. (Not complete or necessarily appropriate.)",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.446"],
+    "sources" : ["2.16.840.1.113883.4.642.3.446"],
+    "uses" : {
+    },
+    "StructureDefinition-questionnaireResponse-san.html" : "QuestionnaireResponse (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/questionnaire-answers-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "QuestionnaireResponseStatus",
+    "title" : "QuestionnaireResponseStatus",
+    "description" : "Lifecycle status of the questionnaire response.",
+    "systems" : ["http://hl7.org/fhir/questionnaire-answers-status"],
+    "oids" : ["required"],
+    "sources" : ["required"],
+    "uses" : {
+    },
+    "StructureDefinition-questionnaireResponse-san.html" : "QuestionnaireResponse (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
@@ -630,8 +1055,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.407"],
     "uses" : {
     },
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)"
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/referencerange-meaning",
@@ -645,8 +1071,164 @@
     "sources" : ["2.16.840.1.113883.4.642.3.397"],
     "uses" : {
     },
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)"
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/request-priority",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "RequestPriority",
+    "title" : "Request priority",
+    "description" : "The clinical priority of a diagnostic order.",
+    "systems" : ["http://hl7.org/fhir/request-priority"],
+    "oids" : ["2.16.840.1.113883.4.642.3.115"],
+    "sources" : ["2.16.840.1.113883.4.642.3.115"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/request-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "RequestStatus",
+    "title" : "RequestStatus",
+    "description" : "Codes identifying the lifecycle stage of a request.",
+    "systems" : ["http://hl7.org/fhir/request-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.111"],
+    "sources" : ["2.16.840.1.113883.4.642.3.111"],
+    "uses" : {
+    },
+    "StructureDefinition-carePlan-san.html" : "CarePlan (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/route-codes",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTRouteCodes",
+    "title" : "SNOMED CT Route Codes",
+    "description" : "This value set includes all Route codes from SNOMED CT - provided as an exemplar.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.98"],
+    "sources" : ["2.16.840.1.113883.4.642.3.98"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/service-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ServiceType",
+    "title" : "Service type",
+    "description" : "This value set defines an example set of codes of service-types.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/service-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.518"],
+    "sources" : ["2.16.840.1.113883.4.642.3.518"],
+    "uses" : {
+    },
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/timing-abbreviation",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "TimingAbbreviation",
+    "title" : "TimingAbbreviation",
+    "description" : "Code for a known / defined timing pattern.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation"],
+    "oids" : ["2.16.840.1.113883.4.642.3.78"],
+    "sources" : ["2.16.840.1.113883.4.642.3.78"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/units-of-time",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "UnitsOfTime",
+    "title" : "UnitsOfTime",
+    "description" : "A unit of time (units from UCUM).",
+    "systems" : ["http://unitsofmeasure.org"],
+    "oids" : ["2.16.840.1.113883.4.642.3.77"],
+    "sources" : ["2.16.840.1.113883.4.642.3.77"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/v2-0092",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "Hl7VSReAdmissionIndicator",
+    "title" : "hl7VS-re-admissionIndicator",
+    "description" : "Value Set of codes which are used to specify that a patient is being re-admitted to a healthcare facility from which they were discharged, and indicates the circumstances around such re-admission.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0092"],
+    "oids" : ["2.16.840.1.113883.21.40"],
+    "sources" : ["2.16.840.1.113883.21.40"],
+    "uses" : {
+    },
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "ActEncounterCode",
+    "title" : "ActEncounterCode",
+    "description" : "Domain provides codes that qualify the ActEncounterClass (ENC)",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
+    "oids" : ["2.16.840.1.113883.1.11.13955"],
+    "sources" : ["2.16.840.1.113883.1.11.13955"],
+    "uses" : {
+    },
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/v3-ActPriority",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "ActPriority",
+    "title" : "ActPriority",
+    "description" : "A code or set of codes (e.g., for routine, emergency,) specifying the urgency under which the Act happened, can happen, is happening, is intended to happen, or is requested/demanded to happen.\r\n\r\n*Discussion:* This attribute is used in orders to indicate the ordered priority, and in event documentation it indicates the actual priority used to perform the act. In definition mood it indicates the available priorities.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActPriority"],
+    "oids" : ["2.16.840.1.113883.1.11.16866"],
+    "sources" : ["2.16.840.1.113883.1.11.16866"],
+    "uses" : {
+    },
+    "StructureDefinition-SIMContact.html" : "Contact (model)",
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "ActSubstanceAdminSubstitutionCode",
+    "title" : "ActSubstanceAdminSubstitutionCode",
+    "description" : "***No description***",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution"],
+    "oids" : ["2.16.840.1.113883.1.11.16621"],
+    "sources" : ["2.16.840.1.113883.1.11.16621"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/v3-SubstanceAdminSubstitutionReason",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "SubstanceAdminSubstitutionReason",
+    "title" : "SubstanceAdminSubstitutionReason",
+    "description" : "***No description***",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActReason"],
+    "oids" : ["2.16.840.1.113883.1.11.19377"],
+    "sources" : ["2.16.840.1.113883.1.11.19377"],
+    "uses" : {
+    },
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)"
   },
   {
     "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/AlcoholGebruikStatusCodelijst",
@@ -659,45 +1241,34 @@
     "http://snomed.info/sct"]
   },
   {
-    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDAlgemeneMetingen",
-    "version" : "0.1.0",
-    "status" : "draft",
-    "name" : "IBDAlgemeneMetingen",
-    "title" : "IBDAlgemeneMetingen",
-    "description" : "Metingen die worden geselecteerd voor de IBD-dataset.",
-    "systems" : ["https://santeon.nl/sct",
-    "http://loinc.org",
-    "http://snomed.info/sct"]
-  },
-  {
-    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDSpecialismeDiagnoses",
-    "version" : "0.1.0",
-    "status" : "draft",
-    "name" : "IBDSpecialismeDiagnoses",
-    "title" : "IBD Specialisme Diagnoses",
-    "description" : "Specialisme-diagnosecombinaties die worden geselecteerd voor de IBD-dataset.",
-    "systems" : ["http://fhir.nl/fhir/NamingSystem/nza"]
-  },
-  {
-    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/IBDVerrichtingenNZa",
-    "version" : "0.1.0",
-    "status" : "draft",
-    "name" : "IBDVerrichtingenNZa",
-    "title" : "IBD Verrichtingen NZa",
-    "description" : "NZa-verrichtingen die worden geselecteerd voor de IBD-dataset.",
-    "systems" : ["http://fhir.nl/fhir/NamingSystem/nza"]
-  },
-  {
     "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst",
     "version" : "0.1.0",
     "status" : "draft",
     "name" : "Santeon_MetingNaamCodelijst",
     "title" : "Santeon_MetingNaamCodelijst",
     "description" : "ValueSet met metingnamen die binnen het Santeon Informatiemodel worden gebruikt.",
-    "systems" : ["http://loinc.org", "http://snomed.info/sct"],
+    "systems" : ["https://santeon.nl/sct",
+    "http://loinc.org",
+    "http://snomed.info/sct"],
     "uses" : {
     },
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
     "StructureDefinition-SIMAlgemeneMeting.html" : "Algemene meting (model)"
+  },
+  {
+    "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/TabakGebruikStatusCodelijst",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "TabakGebruikStatusCodelijst",
+    "title" : "TabakGebruikStatusCodelijst",
+    "description" : "Codelijst voor de rookstatus van een patiënt, zoals gebruikt in het Santeon Informatiemodel (SIM-versie 2024-04-24).",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+    "http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
+    "StructureDefinition-SIMTabakGebruik.html" : "Tabakgebruik (model)"
   },
   {
     "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/deidentification-action-vs",
@@ -718,10 +1289,7 @@
     "name" : "LocalSpecialismeDiagnoseCodes",
     "title" : "IBD Specialisme-Diagnose Combinaties",
     "description" : "Specialisme-diagnose combinaties die behoren tot het IBD-cohort.",
-    "systems" : ["https://ig.santeon.nl/CodeSystem/specialisme-diagnose"],
-    "uses" : {
-    },
-    "StructureDefinition-specialisme-diagnose-code.html" : "SpecialismeDiagnoseCode"
+    "systems" : ["https://ig.santeon.nl/CodeSystem/specialisme-diagnose"]
   },
   {
     "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/local-verrichting-codes-nza",
