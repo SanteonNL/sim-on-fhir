@@ -19,8 +19,6 @@ eigenschap van dit profiel.
 * language 0..0
 * text 0..0
 * contained 0..0
-* extension 0..0
-* modifierExtension 0..0
 
 // SIMVerrichting.VerrichtingID
 * identifier 1..1
@@ -29,9 +27,12 @@ eigenschap van dit profiel.
 // identifier.system blijft toegestaan, omdat het SIM
 // identifier_system|identifier_value ondersteunt.
 
-// Procedure.status is verplicht vanuit FHIR R4 (1..1).
-// De huidige SIMVerrichting bevat geen statusveld.
-// TODO: herkomst of gevalideerde ETL2-afleidingsregel vaststellen.
+// FHIR R4: Procedure.status is verplicht (1..1).
+// Huidige SIMVerrichting bevat geen statusveld.
+* status 1..1
+* status ^short = "Status van de verrichting"
+* status ^comment = "Verplicht vanuit FHIR R4. De huidige SIMVerrichting bevat geen statusveld 🔴. Herkomst en eventuele afleiding vanuit de verrichtingsregistratie nader te bepalen."
+
 
 // SIMVerrichting.VerrichtingType
 // Optioneel conform SIM; afzonderlijke NZa-, SNOMED CT-
@@ -44,6 +45,8 @@ eigenschap van dit profiel.
 
 // SIMVerrichting.VerrichtingCategorie
 * category 0..1
+* category ^short = "Santeon zorgprofielklasse"
+* category ^comment = "Gebaseerd op de lokale Santeon VerrichtingCategorieCodelijst. Deze classificatie is niet één-op-één equivalent aan de Nictiz GBB VerrichtingCategorieCodelijst 🟠."
 
 // SIMVerrichting.PatientIdentificatienummer
 * subject 1..1
@@ -133,3 +136,77 @@ Target: "urn:santeon:sim:csv"
 // VerrichtingAantal, OperatieID, SubtrajectNummer,
 // AanvragerSpecialisme, UitvoerderSpecialisme.
 // Procedure.status: verplicht, maar geen expliciete SIM-bronkolom.
+
+
+Mapping: ProcedureSanToNlCore
+Id: ProcedureSanToNlCore
+Title: "ProcedureSan naar Nictiz nl-core-Procedure"
+Description: "FHIR-profielvergelijking tussen ProcedureSan en Nictiz nl-core-Procedure (GBB 1.0.0-alpha.2), binnen de huidige IBD-scope."
+Source: ProcedureSan
+Target: "http://ig.nictiz.nl/gbb/StructureDefinition/nl-core-Procedure"
+
+// Documentatie:
+// https://ig.nictiz.nl/gbb/1.0.0-alpha.2/nl/StructureDefinition-nl-core-Procedure.html
+
+// IBD - Identificatie
+* identifier -> "Procedure.identifier" "Santeon 1..1; nl-core 0..*. Santeon strenger."
+* identifier.system -> "Procedure.identifier.system" "Identificatiesysteem behouden."
+* identifier.value -> "Procedure.identifier.value" "Santeon vereist een waarde (1..1)."
+* identifier.use -> "Procedure.identifier.use" "Santeon 0..0; nl-core staat dit toe."
+
+// IBD - Status
+* status -> "Procedure.status" "Beide 1..1, required FHIR EventStatus. Herkomst vanuit SIM nog te bepalen."
+
+// IBD - VerrichtingType
+* code -> "Procedure.code" "Santeon 0..1 versus nl-core 1..1. Nictiz preferred SNOMED ValueSet; Santeon NZa, DHD en/of SNOMED CT."
+
+* code.coding -> "Procedure.code.coding" "Santeon vereist minimaal een Coding wanneer code aanwezig is. Meerdere coderingen uitsluitend bij semantische equivalentie."
+
+// IBD - VerrichtingCategorie
+* category -> "Procedure.category" "Beide 0..1. Santeon lokale zorgprofielklassen; Nictiz preferred SNOMED ValueSet. Geen directe één-op-één-equivalentie."
+
+// IBD - Patient
+* subject -> "Procedure.subject" "Beide 1..1. Santeon Reference(PatientSan); nl-core ondersteunt onder andere nl-core-Patient."
+
+// IBD - Contact
+* encounter -> "Procedure.encounter" "Santeon Reference(EncounterSan). Doelprofiel en eventuele aanvullende constraints verschillen."
+
+// IBD - Verrichtingdatum
+* performed[x] -> "Procedure.performed[x]" "Santeon beperkt tot dateTime of Period; nl-core ondersteunt daarnaast andere FHIR R4-varianten."
+
+* performedDateTime -> "Procedure.performedDateTime" "Moment van verrichting; Nictiz ondersteunt deze representatie."
+
+* performedPeriod.start -> "Procedure.performedPeriod.start" "Startmoment van verrichting."
+* performedPeriod.end -> "Procedure.performedPeriod.end" "Eindmoment; nog niet actief in huidige SIM-scope."
+
+// Overige relevante delta's:
+//
+// Procedure.extension:method:
+// Nictiz ondersteunt verrichtingsmethode.
+// Geen directe SIM-mapping vastgesteld.
+//
+// Procedure.extension:extensionProcedureRecorded:
+// Nictiz ondersteunt datum van eerste registratie.
+// Niet automatisch gelijk aan VerrichtingStartDatum.
+//
+// Procedure.partOf:
+// Santeon sluit momenteel bovenliggende
+// verrichtingsrelaties uit.
+//
+// Procedure.performer:
+// Santeon laat performer beschikbaar.
+// Exacte mapping van UitvoerderSpecialisme
+// naar PractitionerRole nog te beoordelen.
+//
+// Procedure.location, reasonCode, reasonReference,
+// bodySite, outcome, complication en andere
+// standaardvelden:
+// Momenteel deels uitgesloten in ProcedureSan.
+//
+// MustSupport en obligations:
+// Nictiz specificeert aanvullende verplichtingen
+// voor uitwisselende en verwerkende systemen.
+// Nog niet overgenomen in ProcedureSan.
+//
+// Deze mapping documenteert de verschillen.
+// Er wordt geen automatische conformiteit afgedwongen.

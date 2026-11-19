@@ -1,4 +1,3 @@
-
 Logical: SIMVerrichting
 Parent: Base
 // Parent: GBB - nog te beoordelen
@@ -79,6 +78,38 @@ Target: "urn:santeon:sim:csv"
 // * VerrichtingEindDatum -> "Verrichting;VerrichtingEindDatum"
 
 
+Mapping: SIMVerrichtingToGBB
+Id: SIMVerrichtingToGBB
+Title: "SIMVerrichting naar Nictiz GBB Procedure"
+Description: "Semantische mapping tussen SIMVerrichting en Nictiz GBB Procedure (1.0.0-alpha.2), binnen de IBD-scope."
+Source: SIMVerrichting
+Target: "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelProcedure"
+
+// IBD
+* VerrichtingID -> "Procedure.feederAuditOriginatingSystemItemIds" "Cardinaliteit verschilt: SIM 1..1, GBB 0..*."
+* PatientIdentificatienummer -> "Procedure.subject.patient.patientIdentificationNumber" "Koppeling via GBB Patient."
+* VerrichtingType -> "Procedure.procedureName" "Binding verschilt: SIM NZa, SNOMED CT en/of DHD; GBB required SNOMED ValueSet."
+* VerrichtingStartDatum -> "Procedure.startDateTime" "🟢"
+* VerrichtingCategorie -> "Procedure.procedureType" "Semantische delta: SIM gebruikt lokale zorgprofielklassen (25 codes); GBB gebruikt een required SNOMED CT ValueSet (3 codes), GBB heeft required binding. Geen directe één-op-één-equivalentie.🟠"
+* AanvragerSpecialisme -> "" "SIM-specifiek 🟠"
+* UitvoerderSpecialisme -> ""
+// * VerrichtingEindDatum -> "Procedure.endDateTime"
+
+
+// Geen directe GBB-equivalent vastgesteld:
+// ContactID
+// OperatieID
+// SubtrajectNummer
+// VerrichtingAantal
+// AanvragerSpecialisme
+// UitvoerderSpecialisme
+
+// GBB-elementen zonder direct SIM-equivalent:
+// currentActionState (1..1)
+// dateAndTimeActionstepPerformed (1..1)
+
+
+
 Mapping: SIMVerrichtingToFHIR
 Id: SIMVerrichtingToFHIR
 Title: "SIMVerrichting naar FHIR"
@@ -105,43 +136,10 @@ Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/procedure-san"
 // AanvragerSpecialisme
 // UitvoerderSpecialisme
 
-Mapping: SIMVerrichtingToGBB
-Id: SIMVerrichtingToGBB
-Title: "SIMVerrichting naar Nictiz GBB Procedure"
-Source: SIMVerrichting
-Target: "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelProcedure"
-
-// Identificatie
-* VerrichtingID -> "Procedure.feederAuditOriginatingSystemItemIds"
-
-// Patient
-* PatientIdentificatienummer -> "Procedure.subject.patient.patientIdentificationNumber" "Koppeling naar de patiëntidentificatie binnen GBB Patient."
-
-// Verrichting
-* VerrichtingType -> "Procedure.procedureName" "Alleen passende coderingen; GBB gebruikt een verplichte SNOMED-ValueSet."
-
-* VerrichtingStartDatum -> "Procedure.startDateTime"
-
-* VerrichtingCategorie -> "Procedure.procedureType" "Semantische en terminologische overeenstemming controleren."
-
-// * VerrichtingEindDatum -> "Procedure.endDateTime"
 
 
-// Nog te beoordelen:
-// AanvragerSpecialisme:
-// Geen directe tegenhanger vastgesteld.
-//
-// UitvoerderSpecialisme:
-// Mogelijk via Procedure.participations.performer
-// .practitionerRole, afhankelijk van de exacte
-// representatie van het specialisme.
-//
-// ContactID, OperatieID en SubtrajectNummer:
-// Geen directe GBB-mapping vastgesteld.
-//
-// VerrichtingAantal:
-// Geen overeenkomstig element vastgesteld.
-//
-// GBB currentActionState en dateAndTimeActionstepPerformed
-// zijn verplicht, maar ontbreken als afzonderlijke
-// gegevens in de huidige SIMVerrichting-scope.
+// ============================================
+// Status en openstaande controles
+// ============================================
+
+// Status: In progress
