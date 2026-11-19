@@ -37,7 +37,7 @@
   <name value="SIMVerrichting"/>
   <title value="Verrichting (model)"/>
   <status value="draft"/>
-  <date value="2026-11-11T17:38:18+00:00"/>
+  <date value="2026-11-19T16:55:06+00:00"/>
   <publisher value="Santeon"/>
   <contact>
     <name value="Santeon"/>
@@ -61,14 +61,15 @@
     <name value="SIM CSV"/>
   </mapping>
   <mapping>
-    <identity value="SIMVerrichtingToFHIR"/>
-    <uri value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/procedure-san"/>
-    <name value="SIMVerrichting naar FHIR"/>
-  </mapping>
-  <mapping>
     <identity value="SIMVerrichtingToGBB"/>
     <uri value="http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelProcedure"/>
     <name value="SIMVerrichting naar Nictiz GBB Procedure"/>
+    <comment value="Semantische mapping tussen SIMVerrichting en Nictiz GBB Procedure (1.0.0-alpha.2), binnen de IBD-scope."/>
+  </mapping>
+  <mapping>
+    <identity value="SIMVerrichtingToFHIR"/>
+    <uri value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/procedure-san"/>
+    <name value="SIMVerrichting naar FHIR"/>
   </mapping>
   <kind value="logical"/>
   <abstract value="false"/>
@@ -111,12 +112,13 @@
         <map value="Verrichting;VerrichtingID"/>
       </mapping>
       <mapping>
-        <identity value="SIMVerrichtingToFHIR"/>
-        <map value="Procedure.identifier"/>
-      </mapping>
-      <mapping>
         <identity value="SIMVerrichtingToGBB"/>
         <map value="Procedure.feederAuditOriginatingSystemItemIds"/>
+        <comment value="Cardinaliteit verschilt: SIM 1..1, GBB 0..*."/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToFHIR"/>
+        <map value="Procedure.identifier"/>
       </mapping>
     </element>
     <element id="SIMVerrichting.ContactID">
@@ -200,14 +202,14 @@
         <map value="Verrichting;Identificatienummer"/>
       </mapping>
       <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.subject.patient.patientIdentificationNumber"/>
+        <comment value="Koppeling via GBB Patient."/>
+      </mapping>
+      <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
         <map value="Procedure.subject"/>
         <comment value="Patient-reference op basis van identificatienummer."/>
-      </mapping>
-      <mapping>
-        <identity value="SIMVerrichtingToGBB"/>
-        <map value="Procedure.subject.patient.patientIdentificationNumber"/>
-        <comment value="Koppeling naar de patiëntidentificatie binnen GBB Patient."/>
       </mapping>
     </element>
     <element id="SIMVerrichting.VerrichtingType">
@@ -233,14 +235,14 @@
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.procedureName"/>
+        <comment value="Binding verschilt: SIM NZa, SNOMED CT en/of DHD; GBB required SNOMED ValueSet."/>
+      </mapping>
+      <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
         <map value="Procedure.code"/>
         <comment value="Coderingen combineren wanneer zij hetzelfde concept vertegenwoordigen."/>
-      </mapping>
-      <mapping>
-        <identity value="SIMVerrichtingToGBB"/>
-        <map value="Procedure.procedureName"/>
-        <comment value="Alleen passende coderingen; GBB gebruikt een verplichte SNOMED-ValueSet."/>
       </mapping>
     </element>
     <element id="SIMVerrichting.VerrichtingType.id">
@@ -468,13 +470,14 @@
         <map value="Verrichting;VerrichtingStartDatum"/>
       </mapping>
       <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.startDateTime"/>
+        <comment value="🟢"/>
+      </mapping>
+      <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
         <map value="Procedure.performedPeriod.start"/>
         <comment value="Bij een verrichting met tijdsduur; anders performedDateTime."/>
-      </mapping>
-      <mapping>
-        <identity value="SIMVerrichtingToGBB"/>
-        <map value="Procedure.startDateTime"/>
       </mapping>
     </element>
     <element id="SIMVerrichting.AanvragerSpecialisme">
@@ -499,6 +502,10 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <comment value="SIM-specifiek 🟠"/>
+      </mapping>
     </element>
     <element id="SIMVerrichting.AanvragerSpecialisme.id">
       <path value="SIMVerrichting.AanvragerSpecialisme.id"/>
@@ -698,6 +705,9 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+      </mapping>
     </element>
     <element id="SIMVerrichting.UitvoerderSpecialisme.id">
       <path value="SIMVerrichting.UitvoerderSpecialisme.id"/>
@@ -898,13 +908,13 @@
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <mapping>
-        <identity value="SIMVerrichtingToFHIR"/>
-        <map value="Procedure.category"/>
-      </mapping>
-      <mapping>
         <identity value="SIMVerrichtingToGBB"/>
         <map value="Procedure.procedureType"/>
-        <comment value="Semantische en terminologische overeenstemming controleren."/>
+        <comment value="Semantische delta: SIM gebruikt lokale zorgprofielklassen (25 codes); GBB gebruikt een required SNOMED CT ValueSet (3 codes), GBB heeft required binding. Geen directe één-op-één-equivalentie.🟠"/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToFHIR"/>
+        <map value="Procedure.category"/>
       </mapping>
     </element>
     <element id="SIMVerrichting.VerrichtingCategorie.id">
@@ -1115,12 +1125,13 @@
         <map value="Verrichting;VerrichtingID"/>
       </mapping>
       <mapping>
-        <identity value="SIMVerrichtingToFHIR"/>
-        <map value="Procedure.identifier"/>
-      </mapping>
-      <mapping>
         <identity value="SIMVerrichtingToGBB"/>
         <map value="Procedure.feederAuditOriginatingSystemItemIds"/>
+        <comment value="Cardinaliteit verschilt: SIM 1..1, GBB 0..*."/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToFHIR"/>
+        <map value="Procedure.identifier"/>
       </mapping>
     </element>
     <element id="SIMVerrichting.ContactID">
@@ -1184,14 +1195,14 @@
         <map value="Verrichting;Identificatienummer"/>
       </mapping>
       <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.subject.patient.patientIdentificationNumber"/>
+        <comment value="Koppeling via GBB Patient."/>
+      </mapping>
+      <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
         <map value="Procedure.subject"/>
         <comment value="Patient-reference op basis van identificatienummer."/>
-      </mapping>
-      <mapping>
-        <identity value="SIMVerrichtingToGBB"/>
-        <map value="Procedure.subject.patient.patientIdentificationNumber"/>
-        <comment value="Koppeling naar de patiëntidentificatie binnen GBB Patient."/>
       </mapping>
     </element>
     <element id="SIMVerrichting.VerrichtingType">
@@ -1204,14 +1215,14 @@
         <code value="CodeableConcept"/>
       </type>
       <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.procedureName"/>
+        <comment value="Binding verschilt: SIM NZa, SNOMED CT en/of DHD; GBB required SNOMED ValueSet."/>
+      </mapping>
+      <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
         <map value="Procedure.code"/>
         <comment value="Coderingen combineren wanneer zij hetzelfde concept vertegenwoordigen."/>
-      </mapping>
-      <mapping>
-        <identity value="SIMVerrichtingToGBB"/>
-        <map value="Procedure.procedureName"/>
-        <comment value="Alleen passende coderingen; GBB gebruikt een verplichte SNOMED-ValueSet."/>
       </mapping>
     </element>
     <element id="SIMVerrichting.VerrichtingType.coding.system">
@@ -1263,13 +1274,14 @@
         <map value="Verrichting;VerrichtingStartDatum"/>
       </mapping>
       <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <map value="Procedure.startDateTime"/>
+        <comment value="🟢"/>
+      </mapping>
+      <mapping>
         <identity value="SIMVerrichtingToFHIR"/>
         <map value="Procedure.performedPeriod.start"/>
         <comment value="Bij een verrichting met tijdsduur; anders performedDateTime."/>
-      </mapping>
-      <mapping>
-        <identity value="SIMVerrichtingToGBB"/>
-        <map value="Procedure.startDateTime"/>
       </mapping>
     </element>
     <element id="SIMVerrichting.AanvragerSpecialisme">
@@ -1281,6 +1293,10 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+        <comment value="SIM-specifiek 🟠"/>
+      </mapping>
     </element>
     <element id="SIMVerrichting.AanvragerSpecialisme.coding.system">
       <path value="SIMVerrichting.AanvragerSpecialisme.coding.system"/>
@@ -1305,6 +1321,9 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <mapping>
+        <identity value="SIMVerrichtingToGBB"/>
+      </mapping>
     </element>
     <element id="SIMVerrichting.UitvoerderSpecialisme.coding.system">
       <path value="SIMVerrichting.UitvoerderSpecialisme.coding.system"/>
@@ -1330,13 +1349,13 @@
         <code value="CodeableConcept"/>
       </type>
       <mapping>
-        <identity value="SIMVerrichtingToFHIR"/>
-        <map value="Procedure.category"/>
-      </mapping>
-      <mapping>
         <identity value="SIMVerrichtingToGBB"/>
         <map value="Procedure.procedureType"/>
-        <comment value="Semantische en terminologische overeenstemming controleren."/>
+        <comment value="Semantische delta: SIM gebruikt lokale zorgprofielklassen (25 codes); GBB gebruikt een required SNOMED CT ValueSet (3 codes), GBB heeft required binding. Geen directe één-op-één-equivalentie.🟠"/>
+      </mapping>
+      <mapping>
+        <identity value="SIMVerrichtingToFHIR"/>
+        <map value="Procedure.category"/>
       </mapping>
     </element>
     <element id="SIMVerrichting.VerrichtingCategorie.coding.system">

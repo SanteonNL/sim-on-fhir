@@ -12,7 +12,7 @@
   <name value="SanteonSimOnFhir"/>
   <title value="SIM on FHIR"/>
   <status value="draft"/>
-  <date value="2026-11-11T17:38:18+00:00"/>
+  <date value="2026-11-19T16:55:06+00:00"/>
   <publisher value="Santeon"/>
   <contact>
     <name value="Santeon"/>
@@ -35,7 +35,7 @@
   <dependsOn id="nictiz_nl_gbb">
     <uri value="http://ig.nictiz.nl/gbb/ImplementationGuide/nictiz.nl.gbb"/>
     <packageId value="nictiz.nl.gbb"/>
-    <version value="1.0.0-alpha.1"/>
+    <version value="1.0.0-alpha.2"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_uv_tools_r4">
     <uri value="http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools"/>
@@ -665,7 +665,7 @@
         <reference value="StructureDefinition/patient-san"/>
       </reference>
       <name value="Patient (SAN)"/>
-      <description value="Generiek Santeon FHIR R4-profiel voor patiëntgegevens.&#xA;&#xA;Gebaseerd op het Santeon Informatiemodel (SIMPatient).&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
+      <description value="Santeon FHIR R4-profiel voor patiëntgegevens, gebaseerd op het Santeon Informatiemodel (SIMPatient)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -878,22 +878,6 @@
         </extension>
         <nameUrl value="kpi-definitions.html"/>
         <title value="KPI definitions"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="K312.html"/>
-        </extension>
-        <nameUrl value="K312.html"/>
-        <title value="K3.1.2 Scopie"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="K363.html"/>
-        </extension>
-        <nameUrl value="K363.html"/>
-        <title value="K3.6.3 Calprotectine voor scopie"/>
         <generation value="markdown"/>
       </page>
       <page>

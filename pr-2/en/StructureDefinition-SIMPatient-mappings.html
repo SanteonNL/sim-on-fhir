@@ -48,8 +48,8 @@
 	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
 	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"9.9"}
-    h3,h4,h5,h6{--heading-prefix:"9.9"}</style>
+    <style type="text/css">h2{--heading-prefix:"7.9"}
+    h3,h4,h5,h6{--heading-prefix:"7.9"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -114,25 +114,7 @@
       <!-- datasets:end -->
     </ul>
   </li>
-
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-      Indicatoren
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-<!--      <li>
-        <a href="indicatoren.html">Indicatoren I</a>
-      </li>
--->
-      <li>
-        <a href="K312.html">K3.1.2 Scopie (nog in FHIR)</a>
-      </li>
-      <li>
-        <a href="K363.html">K3.6.3 Calprotectine voor scopie (nog in FHIR)</a>
-      </li>
-    </ul>
-  </li>
+  
   <li>
     <a href="kpi-definitions.html">KPI definitions</a>
   </li>
@@ -249,7 +231,7 @@
           
 
             as of 
-2026-11-11
+2026-11-19
 
           
         
@@ -268,7 +250,7 @@
 
 
   <h3>Mappings to Structures in this Implementation Guide</h3>
-<table border="0" fhir="generated-heirarchy" cellpadding="0" cellspacing="0" id="SIMPatientMi" class="xhtTableBorder0" data-fhir="generated-heirarchy"><tr fhir="generated-heirarchy" class="xhtRowBorder1" data-fhir="generated-heirarchy"><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="StructureDefinition-patient-san.html" title="Patient (SAN)">SIMPatient naar FHIR</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" onLoad="fhirTableInit(this)" style="background-color: inherit"/></a></span></th></tr>
+<table border="0" fhir="generated-heirarchy" cellpadding="0" cellspacing="0" id="SIMPatientMi" class="xhtTableBorder0" data-fhir="generated-heirarchy"><tr fhir="generated-heirarchy" class="xhtRowBorder1" data-fhir="generated-heirarchy"><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="StructureDefinition-patient-san.html" title="Patient (SAN)">Santeon FHIR PatientSan</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" onLoad="fhirTableInit(this)" style="background-color: inherit"/></a></span></th></tr>
 <tr fhir="generated-heirarchy" id="i-a" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_resource.png" alt="" style="background-color: white; background-color: inherit" title="Resource" class="hierarchy"/> <a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient" title="Generiek logisch model voor patiëntgegevens binnen het Santeon Informatiemodel.">SIMPatient</a><a name="i-SIMPatient"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
@@ -277,7 +259,7 @@
 <div><a href="StructureDefinition-patient-san.html#Patient.identifier" title="Patient.identifier">Patient.identifier</a></div></td></tr>
 <tr fhir="generated-heirarchy" id="i-ab" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck11.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin-open.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMPatient / </span><a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient.Geslacht" title="Administratief geslacht van de patiënt">Geslacht</a><a name="i-SIMPatient.Geslacht"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
-<div><a href="StructureDefinition-patient-san.html#Patient.gender" title="Patient.gender">Patient.gender</a><br/><i>Terminologiemapping naar FHIR AdministrativeGender</i></div></td></tr>
+<div><a href="StructureDefinition-patient-san.html#Patient.gender" title="Patient.gender">Patient.gender</a><br/><i>Terminologiemapping van SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender vereist.</i></div></td></tr>
 <tr fhir="generated-heirarchy" id="i-aba" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMPatient / Geslacht / </span><a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient.Geslacht.id" title="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.">@id</a><a name="i-SIMPatient.Geslacht.id"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
@@ -304,71 +286,47 @@
 <div><a href="StructureDefinition-patient-san.html#Patient.birthDate" title="Patient.birthDate">Patient.birthDate</a></div></td></tr>
 <tr fhir="generated-heirarchy" id="i-ad" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck00.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMPatient / </span><a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient.DatumOverlijden" title="Datum waarop de patiënt is overleden">DatumOverlijden</a><a name="i-SIMPatient.DatumOverlijden"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
-<div>Patient.deceasedDateTime<br/><i>Datum uit SIM omzetten naar FHIR dateTime, met behoud van de oorspronkelijke datumprecisie.</i></div></td></tr>
+<div>Patient.deceased[x]<br/><i>SIM date wordt gerepresenteerd als FHIR dateTime met dagprecisie. De boolean-variant wordt niet vanuit dit SIM-element gevuld.</i></div></td></tr>
 <tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="2" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table><h3>Mappings to other Structures</h3>
-<table border="0" fhir="generated-heirarchy" cellpadding="0" cellspacing="0" id="SIMPatientMe" class="xhtTableBorder0" data-fhir="generated-heirarchy"><tr fhir="generated-heirarchy" class="xhtRowBorder1" data-fhir="generated-heirarchy"><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/relatedperson.html" title="RelatedPerson">SIMPatient gerelateerde persoon naar FHIR</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="http://ig.nictiz.nl/gbb/1.0.0-alpha.1/StructureDefinition-LogicalModelPatient.html" title="LogicalModelPatient">SIMPatient naar Nictiz GBB Patient</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" onLoad="fhirTableInit(this)" style="background-color: inherit"/></a></span></th></tr>
+<table border="0" fhir="generated-heirarchy" cellpadding="0" cellspacing="0" id="SIMPatientMe" class="xhtTableBorder0" data-fhir="generated-heirarchy"><tr fhir="generated-heirarchy" class="xhtRowBorder1" data-fhir="generated-heirarchy"><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="http://ig.nictiz.nl/gbb/1.0.0-alpha.2/StructureDefinition-LogicalModelPatient.html" title="LogicalModelPatient">Nictiz GBB-afsprakenmodel</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" onLoad="fhirTableInit(this)" style="background-color: inherit"/></a></span></th></tr>
 <tr fhir="generated-heirarchy" id="e-a" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_resource.png" alt="" style="background-color: white; background-color: inherit" title="Resource" class="hierarchy"/> <a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient" title="Generiek logisch model voor patiëntgegevens binnen het Santeon Informatiemodel.">SIMPatient</a><a name="e-SIMPatient"> </a></td>
-<td style="" class="hierarchy xhtCellBorder0">
-<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="e-aa" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMPatient / </span><a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient.Identificatienummer" title="Identificatienummer van de patiënt">Identificatienummer</a><a name="e-SIMPatient.Identificatienummer"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
-<div><a href="http://hl7.org/fhir/R4/relatedperson.html#RelatedPerson.patient" title="RelatedPerson.patient">RelatedPerson.patient</a><br/><i>Reference naar de patiënt waarop de relatie betrekking heeft.</i></div></td>
-<td style="" class="hierarchy xhtCellBorder0">
-<div>patientIdentificationNumber</div></td></tr>
+<div><a href="http://ig.nictiz.nl/gbb/1.0.0-alpha.2/StructureDefinition-LogicalModelPatient.html#Patient.patientIdentificationNumber" title="Patient.patientIdentificationNumber">Patient.patientIdentificationNumber</a><br/><i>&#x1F7E2; Equivalent: beide gebruiken Identifier met cardinaliteit 1..*.</i></div></td></tr>
 <tr fhir="generated-heirarchy" id="e-ab" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck11.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin-open.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMPatient / </span><a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient.Geslacht" title="Administratief geslacht van de patiënt">Geslacht</a><a name="e-SIMPatient.Geslacht"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
-<div></div></td>
-<td style="" class="hierarchy xhtCellBorder0">
-<div>gender</div></td></tr>
+<div><a href="http://ig.nictiz.nl/gbb/1.0.0-alpha.2/StructureDefinition-LogicalModelPatient.html#Patient.gender" title="Patient.gender">Patient.gender</a><br/><i>&#x1F7E1; Verschil in terminologiebinding: SIM gebruikt GeslachtCodelijst ZIB 2020; GBB gebruikt FHIR AdministrativeGender.</i></div></td></tr>
 <tr fhir="generated-heirarchy" id="e-aba" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMPatient / Geslacht / </span><a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient.Geslacht.id" title="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.">@id</a><a name="e-SIMPatient.Geslacht.id"> </a></td>
-<td style="" class="hierarchy xhtCellBorder0">
-<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="e-abb" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck112.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_extension_simple.png" alt="" style="background-color: white; background-color: inherit" title="Simple Extension" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMPatient / Geslacht / </span><a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient.Geslacht.extension" title="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">extension</a><a name="e-SIMPatient.Geslacht.extension"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
-<div></div></td>
-<td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="e-abc" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck111.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin-open.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMPatient / Geslacht / </span><a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient.Geslacht.coding" title="A reference to a code defined by a terminology system.">coding</a><a name="e-SIMPatient.Geslacht.coding"> </a></td>
-<td style="" class="hierarchy xhtCellBorder0">
-<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="e-abca" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMPatient / Geslacht / coding / </span><a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient.Geslacht.coding.system">system</a><a name="e-SIMPatient.Geslacht.coding.system"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
-<div></div></td>
-<td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="e-abcb" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMPatient / Geslacht / coding / </span><a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient.Geslacht.coding.code">code</a><a name="e-SIMPatient.Geslacht.coding.code"> </a></td>
-<td style="" class="hierarchy xhtCellBorder0">
-<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="e-abcc" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1100.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMPatient / Geslacht / coding / </span><a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient.Geslacht.coding.display">display</a><a name="e-SIMPatient.Geslacht.coding.display"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
-<div></div></td>
-<td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="e-abd" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck100.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMPatient / Geslacht / </span><a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient.Geslacht.text" title="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.">text</a><a name="e-SIMPatient.Geslacht.text"> </a></td>
-<td style="" class="hierarchy xhtCellBorder0">
-<div></div></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
 <tr fhir="generated-heirarchy" id="e-ac" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMPatient / </span><a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient.Geboortedatum" title="Geboortedatum van de patiënt">Geboortedatum</a><a name="e-SIMPatient.Geboortedatum"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
-<div></div></td>
-<td style="" class="hierarchy xhtCellBorder0">
-<div>dateOfBirth<br/><i>Conversie van date naar dateTime zonder tijdstip te verzinnen.</i></div></td></tr>
+<div><a href="http://ig.nictiz.nl/gbb/1.0.0-alpha.2/StructureDefinition-LogicalModelPatient.html#Patient.dateOfBirth" title="Patient.dateOfBirth">Patient.dateOfBirth</a><br/><i>&#x1F7E2; Equivalent: SIM date is compatibel met GBB dateTime op dagniveau.</i></div></td></tr>
 <tr fhir="generated-heirarchy" id="e-ad" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck00.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">SIMPatient / </span><a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient.DatumOverlijden" title="Datum waarop de patiënt is overleden">DatumOverlijden</a><a name="e-SIMPatient.DatumOverlijden"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
-<div></div></td>
-<td style="" class="hierarchy xhtCellBorder0">
-<div>deceasedDateTime</div></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="3" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table><h3>Other Mappings</h3>
-<table border="0" fhir="generated-heirarchy" cellpadding="0" cellspacing="0" id="SIMPatientMo" class="xhtTableBorder0" data-fhir="generated-heirarchy"><tr fhir="generated-heirarchy" class="xhtRowBorder1" data-fhir="generated-heirarchy"><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="urn:santeon:sim:csv">SIM CSV</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" onLoad="fhirTableInit(this)" style="background-color: inherit"/></a></span></th></tr>
+<div>Patient.deceasedDateTime<br/><i>&#x1F7E1; Verschil in representatie: SIM gebruikt date; GBB ondersteunt dateTime en boolean.</i></div></td></tr>
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="2" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table><h3>Other Mappings</h3>
+<table border="0" fhir="generated-heirarchy" cellpadding="0" cellspacing="0" id="SIMPatientMo" class="xhtTableBorder0" data-fhir="generated-heirarchy"><tr fhir="generated-heirarchy" class="xhtRowBorder1" data-fhir="generated-heirarchy"><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Herleidbaarheid van SIMPatient-elementen naar de oorspronkelijke SIM CSV-attributen.">SIM CSV</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" onLoad="fhirTableInit(this)" style="background-color: inherit"/></a></span></th></tr>
 <tr fhir="generated-heirarchy" id="o-a" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck1.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_resource.png" alt="" style="background-color: white; background-color: inherit" title="Resource" class="hierarchy"/> <a href="StructureDefinition-SIMPatient-definitions.html#SIMPatient" title="Generiek logisch model voor patiëntgegevens binnen het Santeon Informatiemodel.">SIMPatient</a><a name="o-SIMPatient"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0">
 <div></div></td></tr>
@@ -440,8 +398,8 @@
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.sim-on-fhir#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-11-11 17:38:00 +0000">
-    2026-11-11
+  <span title="2026-11-19 16:55:00 +0000">
+    2026-11-19
   </span>
 
           <br/>

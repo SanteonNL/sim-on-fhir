@@ -1,9 +1,9 @@
 SanteonSimOnFhir : Validation Results
 =========================================
 
-err = 278, warn = 643, info = 53, broken links = 0
-IG Publisher Version: 3.0.3
-Generated Wed Nov 11 17:40:11 UTC 2026. FHIR version 4.0.1 for santeon.sim-on-fhir#0.1.0 (canonical = https://ig.santeon.nl/sim-on-fhir)
+err = 282, warn = 646, info = 53, broken links = 0
+IG Publisher Version: 3.0.4
+Generated Thu Nov 19 16:57:01 UTC 2026. FHIR version 4.0.1 for santeon.sim-on-fhir#0.1.0 (canonical = https://ig.santeon.nl/sim-on-fhir)
  Build Errors : 2 / 4 / 0
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/Binary-alcohol-status-recorded : 0 / 0 / 1
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/Binary-ibd-dataset : 0 / 0 / 1
@@ -23,9 +23,9 @@ Generated Wed Nov 11 17:40:11 UTC 2026. FHIR version 4.0.1 for santeon.sim-on-fh
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-SIMDBC : 45 / 69 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-SIMFasering : 13 / 24 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-SIMMedicatieAfspraak : 33 / 62 / 2
- /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-SIMPatient : 13 / 18 / 2
+ /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-SIMPatient : 13 / 20 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-SIMTabakGebruik : 13 / 18 / 2
- /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-SIMVerrichting : 41 / 58 / 2
+ /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-SIMVerrichting : 45 / 58 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-SIMVragenlijstAntwoord : 0 / 57 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-carePlan-san : 0 / 1 / 3
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-condition-san : 0 / 1 / 2
@@ -37,7 +37,7 @@ Generated Wed Nov 11 17:40:11 UTC 2026. FHIR version 4.0.1 for santeon.sim-on-fh
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-medicationRequest-san : 0 / 1 / 3
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-observation-san : 0 / 1 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-observation-san-kpi : 0 / 1 / 2
- /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-observation-san-tabakgebruik : 0 / 1 / 2
+ /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-observation-san-tabakgebruik : 0 / 2 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-od-component : 0 / 1 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-patient-san : 0 / 1 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-patient-san-kpi : 0 / 1 / 2
@@ -657,6 +657,7 @@ INFORMATION: Resource: The resource StructureDefinition/SIMMedicatieAfspraak cou
 == fsh-generated/resources/StructureDefinition-SIMPatient.json ==
 ERROR: StructureDefinition/SIMPatient: StructureDefinition.snapshot: Constraint failed: sdf-3: 'Each element definition in a snapshot must have a formal definition and cardinalities (element.all(definition.exists() and min.exists() and max.exists()))'
 WARNING: StructureDefinition/SIMPatient: StructureDefinition.snapshot.element[1]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMPatient.Identificatienummer
+WARNING: StructureDefinition/SIMPatient: StructureDefinition.snapshot.element[2].binding.valueSet: A definition could not be found for Canonical URL 'http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000'
 WARNING: StructureDefinition/SIMPatient: StructureDefinition.snapshot.element[2]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMPatient.Geslacht
 WARNING: StructureDefinition/SIMPatient: StructureDefinition.snapshot.element[3]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMPatient.Geslacht.id
 WARNING: StructureDefinition/SIMPatient: StructureDefinition.snapshot.element[4]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMPatient.Geslacht.extension
@@ -671,6 +672,7 @@ WARNING: StructureDefinition/SIMPatient: StructureDefinition.snapshot.element[9]
 WARNING: StructureDefinition/SIMPatient: StructureDefinition.snapshot.element[10]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMPatient.Geboortedatum
 WARNING: StructureDefinition/SIMPatient: StructureDefinition.snapshot.element[11]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMPatient.DatumOverlijden
 WARNING: StructureDefinition/SIMPatient: StructureDefinition.differential.element[1]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMPatient.Identificatienummer
+WARNING: StructureDefinition/SIMPatient: StructureDefinition.differential.element[2].binding.valueSet: A definition could not be found for Canonical URL 'http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000'
 WARNING: StructureDefinition/SIMPatient: StructureDefinition.differential.element[2]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMPatient.Geslacht
 WARNING: StructureDefinition/SIMPatient: StructureDefinition.differential.element[3]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMPatient.Geslacht.coding.system
 WARNING: StructureDefinition/SIMPatient: StructureDefinition.differential.element[4]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMPatient.Geslacht.coding.code
@@ -744,6 +746,7 @@ WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.elemen
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.element[13]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.VerrichtingType.text
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.element[14]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.VerrichtingAantal
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.element[15]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.VerrichtingStartDatum
+ERROR: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.element[16].mapping[0]: ElementDefinition.mapping.map: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ElementDefinition|4.0.1)
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.element[16]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.AanvragerSpecialisme
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.element[17]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.AanvragerSpecialisme.id
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.element[18]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.AanvragerSpecialisme.extension
@@ -753,6 +756,7 @@ WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.elemen
 ERROR: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.element[21].base: ElementDefinition.base.max: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ElementDefinition|4.0.1)
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.element[21]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.AanvragerSpecialisme.coding.code
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.element[22]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.AanvragerSpecialisme.text
+ERROR: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.element[23].mapping[0]: ElementDefinition.mapping.map: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ElementDefinition|4.0.1)
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.element[23]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.UitvoerderSpecialisme
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.element[24]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.UitvoerderSpecialisme.id
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.snapshot.element[25]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.UitvoerderSpecialisme.extension
@@ -784,9 +788,11 @@ WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.differential.el
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.differential.element[9]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.VerrichtingType.coding.display
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.differential.element[10]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.VerrichtingAantal
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.differential.element[11]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.VerrichtingStartDatum
+ERROR: StructureDefinition/SIMVerrichting: StructureDefinition.differential.element[12].mapping[0]: ElementDefinition.mapping.map: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ElementDefinition|4.0.1)
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.differential.element[12]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.AanvragerSpecialisme
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.differential.element[13]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.AanvragerSpecialisme.coding.system
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.differential.element[14]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.AanvragerSpecialisme.coding.code
+ERROR: StructureDefinition/SIMVerrichting: StructureDefinition.differential.element[15].mapping[0]: ElementDefinition.mapping.map: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ElementDefinition|4.0.1)
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.differential.element[15]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.UitvoerderSpecialisme
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.differential.element[16]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.UitvoerderSpecialisme.coding.system
 WARNING: StructureDefinition/SIMVerrichting: StructureDefinition.differential.element[17]: Constraint failed: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken (path.matches('[A-Za-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*(\\[x])?)*'))' at SIMVerrichting.UitvoerderSpecialisme.coding.code
@@ -999,7 +1005,7 @@ INFORMATION: Resource: The resource StructureDefinition/deidentification-ruleset
 
 
 == fsh-generated/resources/StructureDefinition-encounter-san.json ==
-WARNING: StructureDefinition/encounter-san: StructureDefinition.snapshot.element[87].binding.valueSet: There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v2-0092'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '3.0.0', found versions: 2.0.0 (from hl7.terminology.r4#6.3.0), 3.0.0 (from hl7.terminology.r4#7.1.0). Suggested fix: change the canonical reference from 'http://terminology.hl7.org/ValueSet/v2-0092' to 'http://terminology.hl7.org/ValueSet/v2-0092|3.0.0'
+WARNING: StructureDefinition/encounter-san: StructureDefinition.snapshot.element[87].binding.valueSet: There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v2-0092'. It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html). Using version '3.0.0', found versions: 2.0.0 (from hl7.terminology.r4#6.2.0), 3.0.0 (from hl7.terminology.r4#7.3.0). Suggested fix: change the canonical reference from 'http://terminology.hl7.org/ValueSet/v2-0092' to 'http://terminology.hl7.org/ValueSet/v2-0092|3.0.0'
 INFORMATION: Resource: The resource StructureDefinition/encounter-san could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
 WARNING: StructureDefinition.where(url = 'https://ig.santeon.nl/sim-on-fhir/StructureDefinition/encounter-san'): The Implementation Guide contains no examples for this profile
 
@@ -1070,6 +1076,7 @@ WARNING: StructureDefinition.where(url = 'https://ig.santeon.nl/sim-on-fhir/Stru
 
 
 == fsh-generated/resources/StructureDefinition-observation-san-tabakgebruik.json ==
+WARNING: StructureDefinition/observation-san-tabakgebruik: StructureDefinition: The profile fixes Observation.code: The SNOMED CT code 365980008 ('Finding of tobacco use and exposure') is a finding: the code of an observation says what was observed (an observable entity, or an evaluation procedure), and a finding goes in the value, or in a Condition
 INFORMATION: Resource: The resource StructureDefinition/observation-san-tabakgebruik could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
 WARNING: StructureDefinition.where(url = 'https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san-tabakgebruik'): The Implementation Guide contains no examples for this profile
 

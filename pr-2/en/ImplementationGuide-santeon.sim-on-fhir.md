@@ -14,7 +14,7 @@
   "name" : "SanteonSimOnFhir",
   "title" : "SIM on FHIR",
   "status" : "draft",
-  "date" : "2026-11-11T17:38:18+00:00",
+  "date" : "2026-11-19T16:55:06+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -38,7 +38,7 @@
     "id" : "nictiz_nl_gbb",
     "uri" : "http://ig.nictiz.nl/gbb/ImplementationGuide/nictiz.nl.gbb",
     "packageId" : "nictiz.nl.gbb",
-    "version" : "1.0.0-alpha.1"
+    "version" : "1.0.0-alpha.2"
   },
   {
     "id" : "hl7_fhir_uv_tools_r4",
@@ -930,7 +930,7 @@
         "reference" : "StructureDefinition/patient-san"
       },
       "name" : "Patient (SAN)",
-      "description" : "Generiek Santeon FHIR R4-profiel voor patiëntgegevens.\n\nGebaseerd op het Santeon Informatiemodel (SIMPatient).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
+      "description" : "Santeon FHIR R4-profiel voor patiëntgegevens, gebaseerd op het Santeon Informatiemodel (SIMPatient).",
       "exampleBoolean" : false
     },
     {
@@ -1221,24 +1221,6 @@
         }],
         "nameUrl" : "kpi-definitions.html",
         "title" : "KPI definitions",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "K312.html"
-        }],
-        "nameUrl" : "K312.html",
-        "title" : "K3.1.2 Scopie",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "K363.html"
-        }],
-        "nameUrl" : "K363.html",
-        "title" : "K3.6.3 Calprotectine voor scopie",
         "generation" : "markdown"
       },
       {

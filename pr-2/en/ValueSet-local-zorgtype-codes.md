@@ -31,7 +31,7 @@ No Expansion for this valueset (Unknown Code System)
   "name" : "LocalZorgtypeCodes",
   "title" : "IBD Zorgtype Codes (11 en 21)",
   "status" : "active",
-  "date" : "2026-11-11T17:38:18+00:00",
+  "date" : "2026-11-19T16:55:06+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",

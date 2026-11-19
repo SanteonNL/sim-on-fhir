@@ -1,20 +1,5 @@
 {
   "codeSystems" : [{
-    "url" : "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000",
-    "version" : "2020-09-01T00:00:00",
-    "status" : "active",
-    "name" : "GeslachtCodelijst",
-    "title" : "GeslachtCodelijst",
-    "description" : "GeslachtCodelijst",
-    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender",
-    "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"],
-    "oids" : ["2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8"],
-    "sources" : ["2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8"],
-    "uses" : {
-    },
-    "StructureDefinition-SIMPatient.html" : "Patiënt (model)"
-  },
-  {
     "url" : "http://hl7.org/fhir/ValueSet/additional-instruction-codes",
     "version" : "4.0.1",
     "status" : "draft",
@@ -54,8 +39,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.1"],
     "uses" : {
     },
-    "StructureDefinition-patient-san.html" : "Patient (SAN)",
-    "StructureDefinition-patient-san-kpi.html" : "Patient (SAN KPI)"
+    "StructureDefinition-patient-san-kpi.html" : "Patient (SAN KPI)",
+    "StructureDefinition-patient-san.html" : "Patient (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/approach-site-codes",
@@ -83,12 +68,12 @@
     "sources" : ["2.16.840.1.113883.4.642.3.141"],
     "uses" : {
     },
-    "StructureDefinition-procedure-san-kpi.html" : "Procedure (SAN KPI)",
-    "StructureDefinition-condition-san.html" : "Condition (SAN)",
     "StructureDefinition-observation-san.html" : "Observation (SAN)",
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
     "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
-    "StructureDefinition-procedure-san.html" : "Procedure (SAN)"
+    "StructureDefinition-condition-san.html" : "Condition (SAN)",
+    "StructureDefinition-procedure-san-kpi.html" : "Procedure (SAN KPI)",
+    "StructureDefinition-procedure-san.html" : "Procedure (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/care-plan-activity-kind",
@@ -214,9 +199,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.161"],
     "uses" : {
     },
-    "StructureDefinition-procedure-san-kpi.html" : "Procedure (SAN KPI)",
-    "StructureDefinition-condition-san.html" : "Condition (SAN)",
     "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)",
+    "StructureDefinition-condition-san.html" : "Condition (SAN)",
+    "StructureDefinition-procedure-san-kpi.html" : "Procedure (SAN KPI)",
     "StructureDefinition-procedure-san.html" : "Procedure (SAN)"
   },
   {
@@ -288,8 +273,8 @@
     "uses" : {
     },
     "StructureDefinition-observation-san.html" : "Observation (SAN)",
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/days-of-week",
@@ -347,8 +332,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.49"],
     "uses" : {
     },
-    "StructureDefinition-encounter-san.html" : "Encounter (SAN)",
-    "StructureDefinition-episodeOfCare-san.html" : "EpisodeOfCare (SAN)"
+    "StructureDefinition-episodeOfCare-san.html" : "EpisodeOfCare (SAN)",
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/dose-rate-type",
@@ -576,16 +561,16 @@
     "sources" : ["2.16.840.1.113883.4.642.3.45"],
     "uses" : {
     },
-    "StructureDefinition-encounter-san.html" : "Encounter (SAN)",
-    "StructureDefinition-condition-san.html" : "Condition (SAN)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)",
-    "StructureDefinition-questionnaireResponse-san.html" : "QuestionnaireResponse (SAN)",
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
     "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)",
+    "StructureDefinition-questionnaireResponse-san.html" : "QuestionnaireResponse (SAN)",
     "StructureDefinition-patient-san.html" : "Patient (SAN)",
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
     "StructureDefinition-carePlan-san.html" : "CarePlan (SAN)",
     "StructureDefinition-episodeOfCare-san.html" : "EpisodeOfCare (SAN)",
-    "StructureDefinition-procedure-san.html" : "Procedure (SAN)"
+    "StructureDefinition-condition-san.html" : "Condition (SAN)",
+    "StructureDefinition-procedure-san.html" : "Procedure (SAN)",
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/identifier-use",
@@ -599,16 +584,16 @@
     "sources" : ["2.16.840.1.113883.4.642.3.57"],
     "uses" : {
     },
-    "StructureDefinition-encounter-san.html" : "Encounter (SAN)",
-    "StructureDefinition-condition-san.html" : "Condition (SAN)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)",
-    "StructureDefinition-questionnaireResponse-san.html" : "QuestionnaireResponse (SAN)",
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
     "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)",
+    "StructureDefinition-questionnaireResponse-san.html" : "QuestionnaireResponse (SAN)",
     "StructureDefinition-patient-san.html" : "Patient (SAN)",
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
     "StructureDefinition-carePlan-san.html" : "CarePlan (SAN)",
     "StructureDefinition-episodeOfCare-san.html" : "EpisodeOfCare (SAN)",
-    "StructureDefinition-procedure-san.html" : "Procedure (SAN)"
+    "StructureDefinition-condition-san.html" : "Condition (SAN)",
+    "StructureDefinition-procedure-san.html" : "Procedure (SAN)",
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/languages",
@@ -622,19 +607,19 @@
     "sources" : ["2.16.840.1.113883.4.642.3.20"],
     "uses" : {
     },
-    "StructureDefinition-encounter-san.html" : "Encounter (SAN)",
-    "StructureDefinition-procedure-san-kpi.html" : "Procedure (SAN KPI)",
-    "StructureDefinition-condition-san.html" : "Condition (SAN)",
-    "StructureDefinition-questionnaireResponse-san.html" : "QuestionnaireResponse (SAN)",
-    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)",
     "StructureDefinition-patient-san-kpi.html" : "Patient (SAN KPI)",
-    "StructureDefinition-procedure-san.html" : "Procedure (SAN)",
-    "StructureDefinition-observation-san.html" : "Observation (SAN)",
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
     "StructureDefinition-patient-san.html" : "Patient (SAN)",
+    "StructureDefinition-episodeOfCare-san.html" : "EpisodeOfCare (SAN)",
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
+    "StructureDefinition-procedure-san.html" : "Procedure (SAN)",
+    "StructureDefinition-encounter-san.html" : "Encounter (SAN)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
+    "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)",
+    "StructureDefinition-questionnaireResponse-san.html" : "QuestionnaireResponse (SAN)",
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
     "StructureDefinition-carePlan-san.html" : "CarePlan (SAN)",
-    "StructureDefinition-episodeOfCare-san.html" : "EpisodeOfCare (SAN)"
+    "StructureDefinition-condition-san.html" : "Condition (SAN)",
+    "StructureDefinition-procedure-san-kpi.html" : "Procedure (SAN KPI)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/link-type",
@@ -648,8 +633,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.423"],
     "uses" : {
     },
-    "StructureDefinition-patient-san.html" : "Patient (SAN)",
-    "StructureDefinition-patient-san-kpi.html" : "Patient (SAN KPI)"
+    "StructureDefinition-patient-san-kpi.html" : "Patient (SAN KPI)",
+    "StructureDefinition-patient-san.html" : "Patient (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/location-physical-type",
@@ -692,8 +677,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.29"],
     "uses" : {
     },
-    "StructureDefinition-patient-san.html" : "Patient (SAN)",
-    "StructureDefinition-patient-san-kpi.html" : "Patient (SAN KPI)"
+    "StructureDefinition-patient-san-kpi.html" : "Patient (SAN KPI)",
+    "StructureDefinition-patient-san.html" : "Patient (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/medication-as-needed-reason",
@@ -807,8 +792,8 @@
     "uses" : {
     },
     "StructureDefinition-observation-san.html" : "Observation (SAN)",
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-codes",
@@ -823,8 +808,8 @@
     "uses" : {
     },
     "StructureDefinition-observation-san.html" : "Observation (SAN)",
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-interpretation",
@@ -839,8 +824,8 @@
     "uses" : {
     },
     "StructureDefinition-observation-san.html" : "Observation (SAN)",
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-methods",
@@ -855,8 +840,8 @@
     "uses" : {
     },
     "StructureDefinition-observation-san.html" : "Observation (SAN)",
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-status",
@@ -871,8 +856,8 @@
     "uses" : {
     },
     "StructureDefinition-observation-san.html" : "Observation (SAN)",
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/patient-contactrelationship",
@@ -886,8 +871,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.1130"],
     "uses" : {
     },
-    "StructureDefinition-patient-san.html" : "Patient (SAN)",
-    "StructureDefinition-patient-san-kpi.html" : "Patient (SAN KPI)"
+    "StructureDefinition-patient-san-kpi.html" : "Patient (SAN KPI)",
+    "StructureDefinition-patient-san.html" : "Patient (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/performer-role",
@@ -901,8 +886,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.433"],
     "uses" : {
     },
-    "StructureDefinition-procedure-san-kpi.html" : "Procedure (SAN KPI)",
     "StructureDefinition-medicationRequest-san.html" : "MedicationRequest (SAN)",
+    "StructureDefinition-procedure-san-kpi.html" : "Procedure (SAN KPI)",
     "StructureDefinition-procedure-san.html" : "Procedure (SAN)"
   },
   {
@@ -1007,12 +992,12 @@
     "sources" : ["2.16.840.1.113883.4.642.3.59"],
     "uses" : {
     },
-    "StructureDefinition-observation-san.html" : "Observation (SAN)",
+    "StructureDefinition-SIMVragenlijstAntwoord.html" : "Vragenlijstantwoord (model)",
     "StructureDefinition-questionnaireResponse-san.html" : "QuestionnaireResponse (SAN)",
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
-    "StructureDefinition-SIMAlgemeneMeting.html" : "Algemene meting (model)",
+    "StructureDefinition-observation-san.html" : "Observation (SAN)",
     "StructureDefinition-SIMMedicatieAfspraak.html" : "Medicatieafspraak (model)",
-    "StructureDefinition-SIMVragenlijstAntwoord.html" : "Vragenlijstantwoord (model)"
+    "StructureDefinition-SIMAlgemeneMeting.html" : "Algemene meting (model)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/questionnaire-answers",
@@ -1056,8 +1041,8 @@
     "uses" : {
     },
     "StructureDefinition-observation-san.html" : "Observation (SAN)",
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/referencerange-meaning",
@@ -1072,8 +1057,8 @@
     "uses" : {
     },
     "StructureDefinition-observation-san.html" : "Observation (SAN)",
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
-    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)"
+    "StructureDefinition-observation-san-kpi.html" : "Observation (SAN KPI)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/request-priority",
@@ -1253,8 +1238,8 @@
     "uses" : {
     },
     "StructureDefinition-observation-san.html" : "Observation (SAN)",
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
-    "StructureDefinition-SIMAlgemeneMeting.html" : "Algemene meting (model)"
+    "StructureDefinition-SIMAlgemeneMeting.html" : "Algemene meting (model)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)"
   },
   {
     "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/TabakGebruikStatusCodelijst",
@@ -1267,8 +1252,8 @@
     "http://snomed.info/sct"],
     "uses" : {
     },
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
-    "StructureDefinition-SIMTabakGebruik.html" : "Tabakgebruik (model)"
+    "StructureDefinition-SIMTabakGebruik.html" : "Tabakgebruik (model)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)"
   },
   {
     "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/deidentification-action-vs",

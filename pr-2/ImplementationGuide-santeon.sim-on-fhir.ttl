@@ -18,7 +18,7 @@
   fhir:ImplementationGuide.name [ fhir:value "SanteonSimOnFhir"] ;
   fhir:ImplementationGuide.title [ fhir:value "SIM on FHIR"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-11-11T17:38:18+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-11-19T16:55:06+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "Santeon"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;
@@ -53,7 +53,7 @@
        fhir:link <http://ig.nictiz.nl/gbb/ImplementationGuide/nictiz.nl.gbb>
      ] ;
      fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "nictiz.nl.gbb" ] ;
-     fhir:ImplementationGuide.dependsOn.version [ fhir:value "1.0.0-alpha.1" ]
+     fhir:ImplementationGuide.dependsOn.version [ fhir:value "1.0.0-alpha.2" ]
   ], [
      fhir:index 1 ;
      fhir:Element.id [ fhir:value "hl7_fhir_uv_tools_r4" ] ;
@@ -920,7 +920,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/patient-san" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Patient (SAN)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek Santeon FHIR R4-profiel voor patiëntgegevens.\n\nGebaseerd op het Santeon Informatiemodel (SIMPatient).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Santeon FHIR R4-profiel voor patiëntgegevens, gebaseerd op het Santeon Informatiemodel (SIMPatient)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 33 ;
@@ -1195,26 +1195,6 @@
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index 5 ;
-         fhir:Element.extension [
-           fhir:index 0 ;
-           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-           fhir:Extension.valueUrl [ fhir:value "K312.html" ]
-         ] ;
-         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "K312.html" ] ;
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "K3.1.2 Scopie" ] ;
-         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
-       ], [
-         fhir:index 6 ;
-         fhir:Element.extension [
-           fhir:index 0 ;
-           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-           fhir:Extension.valueUrl [ fhir:value "K363.html" ]
-         ] ;
-         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "K363.html" ] ;
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "K3.6.3 Calprotectine voor scopie" ] ;
-         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
-       ], [
-         fhir:index 7 ;
          fhir:Element.extension [
            fhir:index 0 ;
            fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;

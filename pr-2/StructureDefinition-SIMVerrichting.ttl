@@ -17,7 +17,7 @@
   fhir:StructureDefinition.name [ fhir:value "SIMVerrichting"] ;
   fhir:StructureDefinition.title [ fhir:value "Verrichting (model)"] ;
   fhir:StructureDefinition.status [ fhir:value "draft"] ;
-  fhir:StructureDefinition.date [ fhir:value "2026-11-11T17:38:18+00:00"^^xsd:dateTime] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-11-19T16:55:06+00:00"^^xsd:dateTime] ;
   fhir:StructureDefinition.publisher [ fhir:value "Santeon"] ;
   fhir:StructureDefinition.contact [
      fhir:index 0 ;
@@ -46,14 +46,15 @@
      fhir:StructureDefinition.mapping.name [ fhir:value "SIM CSV" ]
   ], [
      fhir:index 1 ;
+     fhir:StructureDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
+     fhir:StructureDefinition.mapping.uri [ fhir:value "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelProcedure" ] ;
+     fhir:StructureDefinition.mapping.name [ fhir:value "SIMVerrichting naar Nictiz GBB Procedure" ] ;
+     fhir:StructureDefinition.mapping.comment [ fhir:value "Semantische mapping tussen SIMVerrichting en Nictiz GBB Procedure (1.0.0-alpha.2), binnen de IBD-scope." ]
+  ], [
+     fhir:index 2 ;
      fhir:StructureDefinition.mapping.identity [ fhir:value "SIMVerrichtingToFHIR" ] ;
      fhir:StructureDefinition.mapping.uri [ fhir:value "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/procedure-san" ] ;
      fhir:StructureDefinition.mapping.name [ fhir:value "SIMVerrichting naar FHIR" ]
-  ], [
-     fhir:index 2 ;
-     fhir:StructureDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
-     fhir:StructureDefinition.mapping.uri [ fhir:value "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelProcedure" ] ;
-     fhir:StructureDefinition.mapping.name [ fhir:value "SIMVerrichting naar Nictiz GBB Procedure" ]
   ] ;
   fhir:StructureDefinition.kind [ fhir:value "logical"] ;
   fhir:StructureDefinition.abstract [ fhir:value "false"^^xsd:boolean] ;
@@ -106,12 +107,13 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Verrichting;VerrichtingID" ]
        ], [
          fhir:index 1 ;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.identifier" ]
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.feederAuditOriginatingSystemItemIds" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Cardinaliteit verschilt: SIM 1..1, GBB 0..*." ]
        ], [
          fhir:index 2 ;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.feederAuditOriginatingSystemItemIds" ]
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToFHIR" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.identifier" ]
        ]
      ], [
        fhir:index 2 ;
@@ -207,14 +209,14 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Verrichting;Identificatienummer" ]
        ], [
          fhir:index 1 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.subject.patient.patientIdentificationNumber" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Koppeling via GBB Patient." ]
+       ], [
+         fhir:index 2 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.subject" ] ;
          fhir:ElementDefinition.mapping.comment [ fhir:value "Patient-reference op basis van identificatienummer." ]
-       ], [
-         fhir:index 2 ;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.subject.patient.patientIdentificationNumber" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Koppeling naar de patiëntidentificatie binnen GBB Patient." ]
        ]
      ], [
        fhir:index 6 ;
@@ -247,14 +249,14 @@
        ] ;
        fhir:ElementDefinition.mapping [
          fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.procedureName" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Binding verschilt: SIM NZa, SNOMED CT en/of DHD; GBB required SNOMED ValueSet." ]
+       ], [
+         fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.code" ] ;
          fhir:ElementDefinition.mapping.comment [ fhir:value "Coderingen combineren wanneer zij hetzelfde concept vertegenwoordigen." ]
-       ], [
-         fhir:index 1 ;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.procedureName" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Alleen passende coderingen; GBB gebruikt een verplichte SNOMED-ValueSet." ]
        ]
      ], [
        fhir:index 7 ;
@@ -534,13 +536,14 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Verrichting;VerrichtingStartDatum" ]
        ], [
          fhir:index 1 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.startDateTime" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "🟢" ]
+       ], [
+         fhir:index 2 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.performedPeriod.start" ] ;
          fhir:ElementDefinition.mapping.comment [ fhir:value "Bij een verrichting met tijdsduur; anders performedDateTime." ]
-       ], [
-         fhir:index 2 ;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.startDateTime" ]
        ]
      ], [
        fhir:index 16 ;
@@ -570,6 +573,11 @@
            fhir:value "http://hl7.org/fhir/StructureDefinition/Element" ;
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "SIM-specifiek 🟠" ]
        ]
      ], [
        fhir:index 17 ;
@@ -819,6 +827,10 @@
            fhir:value "http://hl7.org/fhir/StructureDefinition/Element" ;
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ]
        ]
      ], [
        fhir:index 24 ;
@@ -1071,13 +1083,13 @@
        ] ;
        fhir:ElementDefinition.mapping [
          fhir:index 0 ;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.category" ]
-       ], [
-         fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.procedureType" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Semantische en terminologische overeenstemming controleren." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Semantische delta: SIM gebruikt lokale zorgprofielklassen (25 codes); GBB gebruikt een required SNOMED CT ValueSet (3 codes), GBB heeft required binding. Geen directe één-op-één-equivalentie.🟠" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToFHIR" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.category" ]
        ]
      ], [
        fhir:index 31 ;
@@ -1339,12 +1351,13 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Verrichting;VerrichtingID" ]
        ], [
          fhir:index 1 ;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.identifier" ]
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.feederAuditOriginatingSystemItemIds" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Cardinaliteit verschilt: SIM 1..1, GBB 0..*." ]
        ], [
          fhir:index 2 ;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.feederAuditOriginatingSystemItemIds" ]
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToFHIR" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.identifier" ]
        ]
      ], [
        fhir:index 2 ;
@@ -1420,14 +1433,14 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Verrichting;Identificatienummer" ]
        ], [
          fhir:index 1 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.subject.patient.patientIdentificationNumber" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Koppeling via GBB Patient." ]
+       ], [
+         fhir:index 2 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.subject" ] ;
          fhir:ElementDefinition.mapping.comment [ fhir:value "Patient-reference op basis van identificatienummer." ]
-       ], [
-         fhir:index 2 ;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.subject.patient.patientIdentificationNumber" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Koppeling naar de patiëntidentificatie binnen GBB Patient." ]
        ]
      ], [
        fhir:index 6 ;
@@ -1443,14 +1456,14 @@
        ] ;
        fhir:ElementDefinition.mapping [
          fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.procedureName" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Binding verschilt: SIM NZa, SNOMED CT en/of DHD; GBB required SNOMED ValueSet." ]
+       ], [
+         fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.code" ] ;
          fhir:ElementDefinition.mapping.comment [ fhir:value "Coderingen combineren wanneer zij hetzelfde concept vertegenwoordigen." ]
-       ], [
-         fhir:index 1 ;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.procedureName" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Alleen passende coderingen; GBB gebruikt een verplichte SNOMED-ValueSet." ]
        ]
      ], [
        fhir:index 7 ;
@@ -1514,13 +1527,14 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Verrichting;VerrichtingStartDatum" ]
        ], [
          fhir:index 1 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.startDateTime" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "🟢" ]
+       ], [
+         fhir:index 2 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.performedPeriod.start" ] ;
          fhir:ElementDefinition.mapping.comment [ fhir:value "Bij een verrichting met tijdsduur; anders performedDateTime." ]
-       ], [
-         fhir:index 2 ;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.startDateTime" ]
        ]
      ], [
        fhir:index 12 ;
@@ -1533,6 +1547,11 @@
        fhir:ElementDefinition.type [
          fhir:index 0 ;
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "SIM-specifiek 🟠" ]
        ]
      ], [
        fhir:index 13 ;
@@ -1563,6 +1582,10 @@
        fhir:ElementDefinition.type [
          fhir:index 0 ;
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
+       ] ;
+       fhir:ElementDefinition.mapping [
+         fhir:index 0 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ]
        ]
      ], [
        fhir:index 16 ;
@@ -1596,13 +1619,13 @@
        ] ;
        fhir:ElementDefinition.mapping [
          fhir:index 0 ;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.category" ]
-       ], [
-         fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToGBB" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.procedureType" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Semantische en terminologische overeenstemming controleren." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Semantische delta: SIM gebruikt lokale zorgprofielklassen (25 codes); GBB gebruikt een required SNOMED CT ValueSet (3 codes), GBB heeft required binding. Geen directe één-op-één-equivalentie.🟠" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "SIMVerrichtingToFHIR" ] ;
+         fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.category" ]
        ]
      ], [
        fhir:index 19 ;

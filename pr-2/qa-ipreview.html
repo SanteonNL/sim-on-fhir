@@ -27,7 +27,7 @@ ISO maintains the copyright on the country codes, and controls its use carefully
             <ul>
 
               <li>
-                <a href="http://terminology.hl7.org/6.3.0/CodeSystem-ISO3166Part1.html">ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code</a>
+                <a href="http://terminology.hl7.org/6.5.0/CodeSystem-ISO3166Part1.html">ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code</a>
 :                 <a href="ValueSet-AlcoholGebruikStatusCodelijst.html">AlcoholGebruikStatusCodelijst</a>
 ,                 <a href="StructureDefinition-carePlan-san.html">CarePlanSan</a>
                 <span id="ips_1">
@@ -75,7 +75,7 @@ This material contains content from           <a href="http://loinc.org">LOINC</
             <ul>
 
               <li>
-                <a href="http://terminology.hl7.org/6.3.0/CodeSystem-v3-loinc.html">LOINC</a>
+                <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">LOINC</a>
 :                 <a href="ValueSet-observationCode-san-kpi.html">ObservationCodeSanKpi</a>
 ,                 <a href="ObservationDefinition-od-calprotectin.html">ObservationDefinition/od-calprotectin</a>
                 <span id="ips_3">
@@ -141,15 +141,9 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
               </li>
 
               <li>
-                <a href="http://terminology.hl7.org/7.4.0/CodeSystem-v3-AdministrativeGender.html">AdministrativeGender</a>
-:                 <a href="StructureDefinition-SIMPatient.html">SIMPatient</a>
-              </li>
-
-              <li>
                 <a href="http://terminology.hl7.org/7.4.0/CodeSystem-v3-NullFlavor.html">NullFlavor</a>
 :                 <a href="ValueSet-AlcoholGebruikStatusCodelijst.html">AlcoholGebruikStatusCodelijst</a>
 ,                 <a href="StructureDefinition-observation-san-tabakgebruik.html">ObservationSanTabakGebruik</a>
-,                 <a href="StructureDefinition-SIMPatient.html">SIMPatient</a>
 ,                 <a href="StructureDefinition-SIMTabakGebruik.html">SIMTabakGebruik</a>
  and                 <a href="ValueSet-TabakGebruikStatusCodelijst.html">TabakGebruikStatusCodelijst</a>
               </li>
@@ -177,7 +171,7 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
           Package santeon.sim-on-fhir#0.1.0 based on FHIR 4.0.1.
           Generated 
   
-    2026-11-11
+    2026-11-19
   
 
           
@@ -227,6 +221,46 @@ There are examples where a medication request may include the option of an oral 
         <th>
           <b>Content</b>
         </th>
+      </tr>
+      <tr>
+        <td>
+          <a href="ObservationDefinition-od-alcohol-use.html">web</a>
+        </td>
+        <td>
+          <a href="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2">decor.nictiz.nl</a>
+        </td>
+        <td>
+          <b>validCodedValueSet</b>
+:           <a href="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2">http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="ObservationDefinition-od-smoking-status.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/sct?fhir_vs=ecl/%3C%3C%2077176002%20OR%20%3C%3C%208392000%20OR%20%3C%3C%208517006">snomed.info</a>
+        </td>
+        <td>
+          <b>validCodedValueSet</b>
+:           <a href="http://snomed.info/sct?fhir_vs=ecl/%3C%3C%2077176002%20OR%20%3C%3C%208392000%20OR%20%3C%3C%208517006">http://snomed.info/sct?fhir_vs=ecl/%3C%3C%2077176002%20OR%20%3C%3C%208392000%20OR%20%3C%3C%208517006</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-SIMPatient.html">web</a>
+        </td>
+        <td>
+          <a href="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000">decor.nictiz.nl</a>
+        </td>
+        <td>
+Administratief geslacht van de patiënt          <br class="binding"/>
+          <span class="xhtPieceBold binding">Binding: </span>
+          <a href="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000" class="binding">http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000</a>
+          <span class="binding"> (</span>
+          <a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set." class="binding">required</a>
+          <span class="binding">)</span>
+        </td>
       </tr>
       <tr>
         <td>
@@ -377,8 +411,8 @@ There are examples where a medication request may include the option of an oral 
           Package santeon.sim-on-fhir#0.1.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
           Generated 
-            <span title="2026-11-11 17:38:00 +0000">
-    2026-11-11
+            <span title="2026-11-19 16:55:00 +0000">
+    2026-11-19
   </span>
 
 
@@ -394,6 +428,38 @@ There are examples where a medication request may include the option of an oral 
           </span>
 
         
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-SIMPatient-definitions.html">web</a>
+        </td>
+        <td>
+          <a href="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000">decor.nictiz.nl</a>
+        </td>
+        <td>
+The codes SHALL be taken from            <a href="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000">http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000</a>
+          <br/>
+(          <a href="http://hl7.org/fhir/R4/terminologies.html#required">required</a>
+ to           <span class="copy-text-inline">
+<code>http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000</code><button data-clipboard-text="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000" title="Click to Copy URL" class="btn-copy" aria-label="copy"></button>          </span>
+)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-SIMPatient.html">web</a>
+        </td>
+        <td>
+          <a href="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000">decor.nictiz.nl</a>
+        </td>
+        <td>
+
+                <a href="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000">http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000</a>
+
+                <button data-clipboard-text="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.8--20200901000000" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
+
+    
         </td>
       </tr>
       <tr>
