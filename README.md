@@ -130,36 +130,28 @@ input/fsh/
 └── generated/         written by _generateFromDefinitions.py, never edited
 ```
 
-## When you add a SIM model or a field
+## When you add or modify a SIM model or FHIR profile
 
-Same steps for a new model and for a new field; for a field you stay inside the existing files.
+Follow the same workflow when adding a new model or extending an existing one. For a new field, update the relevant existing files.
 
-| # | Step | File | What you do |
-|---|------|------|-------------|
-| 1 | Determine scope | indicator YAMLs (outside this repo) | Which indicator asks for which model, field and filter? Only indicators with an analysis count. |
-| 2 | Look it up in the SIM | `informatiemodel Santeon.csv` (outside this repo) | Copy column name, type, key, nullable and FHIR path literally. Not in the SIM: stop and ask the SIM owner. |
-| 3 | Logical model | `input/fsh/sim/SIM<Model>.fsh` | Add the element and the `FromSIMCSV` and `ToFHIR` mappings. |
-| 4 | FHIR profile | `input/fsh/fhir/<Resource>San.fsh` | Add the same element and the mapping to the SIM columns. |
-| 5 | Terminology | `input/fsh/valuesets/<Name>.fsh` | Add the filter codes from the YAML. Measurement codes always go in `Santeon_MetingNaamCodelijst.fsh`. |
-| 6 | Update overview pages | `_generateFromDefinitions.py` | Run it; it updates `CLMs.md` and `profiles.md`. |
-| 7 | Check | `sushi .`, then `py -3 _buildIG.py` | 0 errors and 0 warnings from SUSHI before building. |
+See [Modeling Workflow](docs/modelleerworkflow.md) for the modeling process, including SIM Logical Models, FHIR profiles, mappings, and semantic and technical delta analyses against Nictiz GBB.
 
 ```powershell
 py -3 _generateFromDefinitions.py
 sushi .
-py -3 _buildIG.py --no-tx    # fast, without terminology server
-py -3 -m http.server 8080 -d output    # preview at http://localhost:8080 (stop with Ctrl+C before the next build)
+py -3 _buildIG.py --no-tx    # Fast build without terminology server
+py -3 -m http.server 8080 -d output    # Preview at http://localhost:8080 (stop with Ctrl+C before the next build)
 ```
 
-Rules:
+### Rules
 
-- **Logical model:** cardinality follows the SIM (key `1..1`, nullable `0..1`). For a code, always map system, code and display. SIM columns outside scope stay as comments under `// Overig van model`.
-- **FHIR profile:** `identifier` and the reference to `PatientSan` are required; the rest follows the SIM. A required FHIR element without a SIM column becomes a `TODO`, never an invented value.
-- **Terminology:** bind only once the SIM code list is known.
-- **Open issues** go in the file itself under `// Nog uit te werken`, not in a separate document.
-- **Sources:** the SIM decides names, types and cardinality; the indicator YAMLs decide what is in scope.
+- **Logical Model:** The SIM is the source of truth for definitions, datatypes, and cardinalities. Elements outside the current scope remain commented under `// Buiten IBD-scope - nog niet meegenomen`.
+- **FHIR profile:** Constraints follow the SIM scope and FHIR R4 requirements. Additional restrictions must be explicitly justified.
+- **Terminology:** Reuse existing SIM and Santeon terminology where applicable; harmonize with FHIR and Nictiz where necessary.
+- **Open checks:** Document unresolved checks as `// TODO:` in the relevant FSH file.
+- **Sources:** The SIM defines the information model; indicator definitions, `sb-ibd`, and HIPS ETL inform the dataset scope. FHIR R4 defines the technical representation.
 
-If the field must also be exported, it needs a KPI definition; see the next section.
+If the field must also be exported, it requires a KPI definition; see the next section.
 
 ## When you change a KPI, dataset or measurement definition
 

@@ -15,8 +15,10 @@ Derives the IG model from the definitions in input/fsh/definitions/:
                                      (_type, _typeFilter, _elements)
   input/pagecontent/datasets.md      overview + derived model
   input/pagecontent/dataset-<id>.md  one readable page per dataset
-  input/pagecontent/CLMs.md          manual SIM logical models from input/fsh/sim/
-  input/pagecontent/profiles.md      manual FHIR profiles from input/fsh/fhir/
+  input/pagecontent/CLMs.md          catalogue of the SIM logical models (input/fsh/sim/)
+  input/pagecontent/profiles.md      catalogue of the FHIR profiles (input/fsh/fhir/)
+                                     both linked via the LM -> FHIR mappings;
+                                     own `// Status:` of each LM and profile
 
 Run it before SUSHI. The generated files are committed, so a plain `sushi .`
 keeps working; regenerate whenever a definition changes.
@@ -154,8 +156,9 @@ def compile_definitions():
 
 
 def load(tmp):
-    out = dict(od={}, vs={}, kpi={}, dataset={}, logical={}, profile={})
+    out = dict(od={}, vs={}, kpi={}, dataset={}, logical={}, profile={}, fsh_file={})
     index = json.loads((tmp / "fsh-generated" / "data" / "fsh-index.json").read_text(encoding="utf-8"))
+    by_output = {e["outputFile"]: e["fshFile"].replace("\\", "/") for e in index}
 
     def in_folder(e, fsh_type, folder):
         path = Path(e["fshFile"].replace("\\", "/"))
@@ -176,8 +179,10 @@ def load(tmp):
             out["dataset"][r["id"]] = r
         elif rt == "StructureDefinition" and r.get("kind") == "logical" and f.name in manual:
             out["logical"][r["id"]] = r
+            out["fsh_file"][r["id"]] = by_output[f.name]
         elif rt == "StructureDefinition" and f.name in manual_profiles:
             out["profile"][r["id"]] = r
+            out["fsh_file"][r["id"]] = by_output[f.name]
     return out
 
 
@@ -747,35 +752,286 @@ def replace_marked(page, marker, body):
         print(f"  wrote {f.relative_to(ROOT)}")
 
 
-def has_mappings(sd):
-    return bool(sd.get("mapping")) and any(e.get("mapping") for e in sd.get("differential", {}).get("element", []))
-
-
 def one_line(s):
     return " ".join(s.splitlines())
 
 
-def update_clms(logicals):
-    """The manual SIM logical models from input/fsh/sim/ in CLMs.md."""
-    lines = []
-    for model_id, model in sorted(logicals.items()):
-        name = model.get("name") or model_id
-        link = f"See the [{name}](StructureDefinition-{model_id}.html) Logical Model for details"
-        if has_mappings(model):
-            link += f" and [Mappings](StructureDefinition-{model_id}-mappings.html) for mapping details"
-        lines += [f"### Logical Model {one_line(model.get('title') or name)}", "", link + ".", ""]
+# ---------------------------------------------------------------------------
+# Catalogues of the SIM logical models (CLMs.md) and FHIR profiles (profiles.md)
+# ---------------------------------------------------------------------------
+# Modelling status: every SIM logical model and every FHIR profile has its own, manually
+# chosen status in its own FSH source, in the closing section "Status en openstaande
+# controles" (see docs/modelleerworkflow.md):
+#     // Status: Ready for validation
+#     // TODO: ...
+# No status comment means "Not reviewed". A status is never derived from mappings, TODOs
+# or a linked model/profile, and it is a claim, not proof of validation.
+STATUSES = ["Not reviewed", "In progress", "Ready for validation", "Validated"]  # in order of progress
+DEFAULT_STATUS = "Not reviewed"
+STATUS_LINE = re.compile(r"^\s*//\s*Status:\s*(.*?)\s*$", re.I)
+STATUS_SECTION = re.compile(r"^\s*//\s*Status en openstaande controles\s*$", re.I)
+TODO_LINE = re.compile(r"(?:^|\s)//\s*TODO\b:?\s*(.*?)\s*$")  # also after a rule: * x -> "y" // TODO: ...
+FSH_KEYWORD = re.compile(r"^(Alias|Profile|Logical|Resource|Extension|Instance|Invariant|ValueSet|CodeSystem|"
+                         r"RuleSet|Mapping)\s*:\s*(\S+)")
+
+# How a mapping is presented, recognised by its Target (mapping.uri).
+SIM_SOURCE_URI = "urn:santeon:sim:csv"
+NICTIZ_SD = "http://ig.nictiz.nl/gbb/StructureDefinition/"
+MAPPING_LABELS = {"source": "Bron", "gbb": "Nictiz GBB", "fhir": "Santeon FHIR", "nl-core": "Nictiz nl-core"}
+
+def status_legend(own):
+    return [
+        f"**Status** is the own status of each {own}, chosen by review and recorded at the bottom of its FSH "
+        "source. It is never taken over from a linked model or profile.",
+        "",
+        "- **Not reviewed** – present, but not yet checked against the modelling convention (default).",
+        "- **In progress** – the definition and/or its mappings are being worked out or revised.",
+        "- **Ready for validation** – modelling and documentation are worked out; checks or technical "
+        "validation may still be open.",
+        "- **Validated** – the agreed content reviews and technical validations have been completed and checked.",
+        "- *Open checks* – the number of `// TODO:` items in the FSH source of this definition.",
+    ]
+
+
+CONVENTION_NOTE = [
+    "",
+    'The modelling convention (the fixed mapping order, delta indicators and '
+    "consistency checks) is described in `docs/modelleerworkflow.md` in the project repository. "
+    "The 🟢/🟡 indicators are used only within the delta-analysis mappings, not as a status of a building block.",
+]
+
+
+def md_cell(s):
+    return one_line(s).replace("|", "\\|")
+
+
+def used_mappings(sd):
+    """The mappings of an SD that have element mappings in its differential, in declaration order
+    (inherited base-resource mappings such as rim or v2 are left out)."""
+    used = {m["identity"] for e in sd.get("differential", {}).get("element", []) for m in e.get("mapping", [])}
+    return [m for m in sd.get("mapping", []) if m["identity"] in used]
+
+
+def mapping_kind(uri, profile_urls):
+    if uri == SIM_SOURCE_URI:
+        return "source"
+    if uri.startswith(NICTIZ_SD + "LogicalModel"):
+        return "gbb"
+    if uri.startswith(NICTIZ_SD + "nl-core-"):
+        return "nl-core"
+    if uri in profile_urls:
+        return "fhir"
+    return None
+
+
+def lm_label(sd):
+    """Patiënt (SIMPatient): the title without its ' (model)' suffix, then the model name."""
+    title = re.sub(r"\s*\(model\)\s*$", "", one_line(sd.get("title") or sd["id"]))
+    return f"{title} ({sd.get('name') or sd['id']})"
+
+
+def profile_label(sd):
+    return one_line(sd.get("title") or sd.get("name") or sd["id"])
+
+
+def sd_link(label, sd_id):
+    return f"[{md_cell(label)}](StructureDefinition-{sd_id}.html)"
+
+
+_FSH_BLOCKS = {}
+
+
+def fsh_lines(defs, sd_id):
+    """The (line number, text) pairs of the FSH source that belong to one definition: its own block,
+    the Mapping blocks whose Source is this definition, and the comments that follow those blocks
+    (such as the closing status section). Other definitions in the same file are left out."""
+    sd = defs["logical"].get(sd_id) or defs["profile"].get(sd_id)
+    f = defs["fsh_file"].get(sd_id)
+    if not sd or not f:
+        return []
+    if f not in _FSH_BLOCKS:
+        blocks = []
+        for n, line in enumerate((FSH_DIR / f).read_text(encoding="utf-8").splitlines(), 1):
+            m = FSH_KEYWORD.match(line)
+            if m:
+                blocks.append([m.group(1) + ":" + m.group(2), []])
+            elif not blocks:
+                blocks.append([None, []])  # comments above the first definition
+            if line.startswith("Source:") and blocks[-1][0] and blocks[-1][0].startswith("Mapping:"):
+                blocks[-1][0] = "Source:" + line.split(":", 1)[1].strip()
+            blocks[-1][1].append((n, line))
+        if len(blocks) > 1 and blocks[0][0] is None:  # header comments belong to the first definition
+            blocks[1][1][:0] = blocks.pop(0)[1]
+        _FSH_BLOCKS[f] = blocks
+    name = sd.get("name") or sd_id
+    owners = {"Logical:" + name, "Profile:" + name, "Source:" + name}
+    return [nl for owner, lines in _FSH_BLOCKS[f] if owner in owners for nl in lines]
+
+
+def is_placeholder_todo(lines, i):
+    """`// TODO: -` and a bare `// TODO:` without follow-up comment text are empty placeholders.
+    A bare `// TODO:` followed by comment lines is a multi-line TODO and counts."""
+    raw = TODO_LINE.search(lines[i][1]).group(1)
+    if raw.strip("-–—.… "):
+        return False
+    if raw:  # only punctuation, e.g. "// TODO: -"
+        return True
+    nxt = lines[i + 1][1].strip() if i + 1 < len(lines) else ""
+    text = nxt[2:].strip() if nxt.startswith("//") else ""
+    return not text or bool(re.match(r"(TODO|Status:|=)", text))
+
+
+def open_checks(defs, sd_id):
+    """The real `// TODO:` checks of a definition, wherever they are in its FSH source."""
+    lines = fsh_lines(defs, sd_id)
+    return sum(1 for i, (_, line) in enumerate(lines) if TODO_LINE.search(line) and not is_placeholder_todo(lines, i))
+
+
+def fsh_status(defs, sd_id):
+    """The own `// Status:` of a logical model or profile, read from its FSH source."""
+    lines, f = fsh_lines(defs, sd_id), defs["fsh_file"].get(sd_id)
+    section = next((n for n, line in lines if STATUS_SECTION.match(line)), None)
+    found = []
+    for n, line in lines:
+        m = STATUS_LINE.match(line)
+        if not m:
+            continue
+        status = next((s for s in STATUSES if s.casefold() == m.group(1).casefold()), None)
+        in_section = section is not None and n > section
+        if status:
+            found.append((n, status))
+            if not in_section:
+                print(f"  WARNING: {f}:{n} '// Status:' is outside the section 'Status en openstaande controles'")
+        elif in_section:  # elsewhere, '// Status: ...' may be an ordinary comment on a Status element
+            raise DefinitionError(f"{f}:{n} '// Status: {m.group(1)}' is not one of: {', '.join(STATUSES)}")
+    if len(found) > 1:
+        raise DefinitionError(f"{f} has more than one '// Status:' for {sd_id} (lines "
+                              + ", ".join(str(n) for n, _ in found) + ")")
+    return found[0][1] if found else DEFAULT_STATUS
+
+
+def status_cell(status, checks):
+    cell = status
+    if checks:
+        cell += f" · {checks} open check{'s' if checks != 1 else ''}"
+    return cell
+
+
+def status_summary(statuses, noun):
+    counts = [f"{statuses.count(s)} {s.lower()}" for s in reversed(STATUSES) if s in statuses]
+    return f"{len(statuses)} {noun}: " + ", ".join(counts) + "."
+
+
+def catalogue(defs):
+    """Relations and mappings of the manual logical models and profiles, derived from the mappings only."""
+    profile_urls = {sd["url"]: pid for pid, sd in defs["profile"].items()}
+    lms, profiles = {}, {pid: dict(kinds=[], lms=[]) for pid in defs["profile"]}
+    for lm_id, sd in defs["logical"].items():
+        entry = lms[lm_id] = dict(kinds=[], profiles=[], status=fsh_status(defs, lm_id))
+        for m in used_mappings(sd):
+            kind = mapping_kind(m.get("uri", ""), profile_urls)
+            if kind and kind not in entry["kinds"]:
+                entry["kinds"].append(kind)
+            if kind == "fhir":
+                pid = profile_urls[m["uri"]]
+                entry["profiles"].append(pid)
+                profiles[pid]["lms"].append(lm_id)
+    for pid, sd in defs["profile"].items():
+        entry = profiles[pid]
+        for m in used_mappings(sd):
+            kind = mapping_kind(m.get("uri", ""), profile_urls)
+            if kind and kind not in entry["kinds"]:
+                entry["kinds"].append(kind)
+        entry["status"] = fsh_status(defs, pid)  # its own status, never the one of its logical model
+    return lms, profiles
+
+
+def mapping_links(sd_id, kinds, order):
+    page = f"StructureDefinition-{sd_id}-mappings.html"
+    links = [f"[{MAPPING_LABELS[k]}]({page})" for k in order if k in kinds]
+    return " · ".join(links) or "–"
+
+
+def update_clms(defs, cat):
+    """CLMs.md: one catalogue table of the SIM logical models from input/fsh/sim/."""
+    lms, _ = cat
+    logicals, profiles = defs["logical"], defs["profile"]
+    rows = sorted(logicals, key=lambda i: lm_label(logicals[i]).casefold())
+    lines = [
+        "The Santeon Information Model (SIM) is the content authority of this guide. Each logical model "
+        "describes a selection of SIM data elements and their meaning, independent of any exchange format. "
+        "Its mappings record where the data comes from, how it compares semantically with the Nictiz "
+        "GBB-afsprakenmodel, and how it is translated into a Santeon FHIR profile. The resulting FHIR "
+        "representation is described on [FHIR Profiles](profiles.html).",
+        "",
+        "### Overview",
+        "",
+        status_summary([lms[i]["status"] for i in rows], "logical models"),
+        "",
+        "| Logical Model | FHIR profile | Mappings | Status |",
+        "|---|---|---|---|",
+    ]
+    for lm_id in rows:
+        e = lms[lm_id]
+        fhir = ", ".join(sd_link(profile_label(profiles[p]), p) for p in e["profiles"]) or "–"
+        lines.append(f"| {sd_link(lm_label(logicals[lm_id]), lm_id)} | {fhir} "
+                     f"| {mapping_links(lm_id, e['kinds'], ['source', 'gbb', 'fhir'])} "
+                     f"| {status_cell(e['status'], open_checks(defs, lm_id))} |")
+    lines += [
+        "",
+        "### Reading the table",
+        "",
+        "**Mappings** are listed in their fixed order and only where they exist; each links to the mapping "
+        "page of the logical model.",
+        "",
+        "- **Bron** – provenance: the original SIM source attributes.",
+        "- **Nictiz GBB** – semantic delta analysis with the Nictiz GBB-afsprakenmodel.",
+        "- **Santeon FHIR** – technical translation, harmonisation and required conversions to the Santeon "
+        "FHIR profile. "
+        "The *FHIR profile* column is derived from this mapping.",
+        "",
+    ] + status_legend("logical model") + CONVENTION_NOTE + [""]
     replace_marked("CLMs.md", "manual-sim", lines)
 
 
-def update_profiles(profiles):
-    """The manual FHIR profiles from input/fsh/fhir/ in profiles.md."""
-    lines = []
-    for profile_id, sd in sorted(profiles.items(), key=lambda kv: kv[1].get("name") or kv[0]):
-        name = sd.get("name") or profile_id
-        link = f"See the [{name}](StructureDefinition-{profile_id}.html) profile for details"
-        if has_mappings(sd):
-            link += f" and [Mappings](StructureDefinition-{profile_id}-mappings.html) for the mapping to SIM"
-        lines += [f"### {one_line(sd.get('title') or name)}", "", link + ".", ""]
+def update_profiles(defs, cat):
+    """profiles.md: one catalogue table of the FHIR profiles from input/fsh/fhir/."""
+    lms, profs = cat
+    logicals, profiles = defs["logical"], defs["profile"]
+    rows = sorted(profiles, key=lambda i: profile_label(profiles[i]).casefold())
+    lines = [
+        "The Santeon FHIR profiles describe the standardised FHIR R4 representation of the SIM building "
+        "blocks: the datatypes, cardinalities, terminology bindings and constraints that a resource must "
+        "meet. The meaning of the data is defined by the corresponding [SIM Logical Model](CLMs.html); "
+        "the Nictiz nl-core mapping records the technical comparison with the Nictiz nl-core profiles.",
+        "",
+        "### Overview",
+        "",
+        status_summary([profs[i]["status"] for i in rows], "profiles"),
+        "",
+        "| FHIR profile | Logical Model | Mappings | Status |",
+        "|---|---|---|---|",
+    ]
+    for pid in rows:
+        e = profs[pid]
+        kinds = e["kinds"] + (["fhir"] if e["lms"] else [])
+        lm = ", ".join(sd_link(lm_label(logicals[i]), i) for i in e["lms"]) or "–"
+        lines.append(f"| {sd_link(profile_label(profiles[pid]), pid)} | {lm} "
+                     f"| {mapping_links(pid, kinds, ['fhir', 'nl-core', 'source'])} "
+                     f"| {status_cell(e['status'], open_checks(defs, pid))} |")
+    lines += [
+        "",
+        "### Reading the table",
+        "",
+        "**Mappings** are listed only where they exist; each links to the mapping page of the profile.",
+        "",
+        "- **Santeon FHIR** – the translation from the logical model. It is maintained with the logical model "
+        "only and shown on the profile's mapping page under *Mappings to Structures in this Implementation "
+        "Guide*. The *Logical Model* column is derived from this mapping.",
+        "- **Nictiz nl-core** – technical delta analysis with the Nictiz nl-core profile.",
+        "- **Bron** – a direct mapping from the SIM source attributes that predates the logical-model convention.",
+        "",
+    ] + status_legend("FHIR profile") + CONVENTION_NOTE + [""]
     replace_marked("profiles.md", "manual-profiles", lines)
 
 
@@ -836,8 +1092,9 @@ def main():
     write(GEN_DIR / "Model.fsh", gen_model_fsh(defs, res, model))
     write(GEN_DIR / "Exports.fsh", gen_exports_fsh(defs, res))
     write(PAGE_DIR / "datasets.md", gen_overview_page(defs, res, model))
-    update_clms(defs["logical"])
-    update_profiles(defs["profile"])
+    cat = catalogue(defs)
+    update_clms(defs, cat)
+    update_profiles(defs, cat)
     update_menu(defs)
     cfg = (ROOT / "sushi-config.yaml").read_text(encoding="utf-8")
     for ds in defs["dataset"].values():

@@ -1,71 +1,54 @@
 Profile: PatientSan
 Parent: Patient
+// Parent: http://ig.nictiz.nl/gbb/StructureDefinition/nl-core-Patient
+// nl-core wordt nog via een technische delta-mapping vergeleken.
 Id: patient-san
 Title: "Patient (SAN)"
-Description: """
-Generiek Santeon FHIR R4-profiel voor patiëntgegevens.
+Description: "Santeon FHIR R4-profiel voor patiëntgegevens, gebaseerd op het Santeon Informatiemodel (SIMPatient)."
 
-Gebaseerd op het Santeon Informatiemodel (SIMPatient).
-
-De-identificatie wordt uitgevoerd volgens afzonderlijke
-transformatiespecificaties en is geen inherente
-eigenschap van dit profiel.
-"""
-
-// Meta overhead: conform huidige opzet van de SAN-profielen.
-// Beoordeel deze beperkingen opnieuw wanneer meta.profile/securityLabel nodig is.
-* meta 0..0
-* implicitRules 0..0
-* language 0..0
-* text 0..0
-* contained 0..0
-* extension 0..0
-* modifierExtension 0..0
-
-// Identificatie (SIMPatient.Identificatienummer)
-* identifier 1..1
-* identifier.use 0..0
+// IBD-scope
+* identifier 1..*
 * identifier.value 1..1
-// identifier.system blijft toegestaan; het bronveld bevat
-// identifier_system|identifier_value als samengestelde representatie.
-
-// Administratief geslacht (SIMPatient.Geslacht)
 * gender 0..1
-// Patient.gender is FHIR R4 code, geen CodeableConcept.
-// SIM-codering moet naar AdministrativeGender worden vertaald.
-
-// Geboortedatum (SIMPatient.Geboortedatum)
 * birthDate 0..1
-
-// Datum overlijden (SIMPatient.DatumOverlijden)
 * deceased[x] only dateTime
-// Een bronwaarde met alleen een datum mag als gedeeltelijke dateTime
-// worden opgenomen; geen onbekend tijdstip aanvullen.
 
-// Niet in de huidige IBD-scope; later heroverwegen voor generiek gebruik.
-* active 0..0
-* name 0..0
-* telecom 0..0
-* address 0..0
-* maritalStatus 0..0
-* multipleBirth[x] 0..0
-* photo 0..0
-* contact 0..0
-* communication 0..0
-* generalPractitioner 0..0
-* managingOrganization 0..0
-* link 0..0
+// Buiten IBD-scope - nog niet meegenomen
+// Standaard FHIR-elementen blijven toegestaan.
+// Eventuele toekomstige beperkingen worden alleen toegevoegd op basis van expliciete eisen.
 
-// Gedetailleerde bronmapping: FHIR-profiel naar SIM CSV.
-// Een FSH Mapping documenteert de relatie; voert geen ETL-transformatie uit.
-Mapping: PatientSanFromSIMCSV
-Id: sim
-Title: "Santeon Informatiemodel (SIM CSV)"
+// Terminologie
+* gender from http://hl7.org/fhir/ValueSet/administrative-gender (required)
+
+
+
+// ============================================
+// MAPPING 1: Technische delta-analyse - PatientSan naar Nictiz nl-core
+// ============================================
+
+Mapping: PatientSanToNlCore
+Id: PatientSanToNlCore
+Title: "Nictiz nl-core-Patient"
+Description: "Technische vergelijking tussen PatientSan en Nictiz nl-core Patient (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen in FHIR-elementen, cardinaliteiten, datatypes en terminologiebindingen. Legenda: 🟢 Beoordeeld, equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."
 Source: PatientSan
-Target: "urn:santeon:sim:csv"
+Target: "http://ig.nictiz.nl/gbb/StructureDefinition/nl-core-Patient"
 
-* identifier.system -> "Patient;Identificatienummer" "Systeemdeel van de samengestelde identifier."
-* identifier.value -> "Patient;Identificatienummer" "Waardedeel van de samengestelde identifier; hashed."
-* gender -> "Patient;GeslachtCodeSysteem, Patient;GeslachtCode, Patient;GeslachtOmschrijving" "Vertaling van SIM CodeableConcept naar FHIR AdministrativeGender vereist."
-* birthDate -> "Patient;Geboortedatum" "Bron dateTime naar FHIR date, met geboortedatum_birthdateshift en zonder onbedoelde precisieverandering."
-* deceasedDateTime -> "Patient;DatumOverlijden" "Bron date naar FHIR dateTime met dezelfde datumprecisie; dateshift."
+// IBD-scope
+* identifier -> "Patient.identifier" "🟡 Verschil in profilering: Nictiz definieert aanvullend een optionele BSN-slice 0..1."
+* gender -> "Patient.gender" "🟢 Equivalent: beide gebruiken FHIR AdministrativeGender met required binding en cardinaliteit 0..1."
+* birthDate -> "Patient.birthDate" "🟢 Equivalent: beide gebruiken FHIR date met cardinaliteit 0..1."
+* deceased[x] -> "Patient.deceasedDateTime" "🟡 Verschil in representatie: PatientSan beperkt deceased[x] tot dateTime; nl-core ondersteunt daarnaast boolean."
+
+// Buiten IBD-scope - nog te beoordelen
+// -
+
+
+
+// ============================================
+// Status en openstaande controles
+// ============================================
+
+// Status: Ready for validation
+// TODO: Controleer identifier-slicing met Nictiz.
+// TODO: Beoordeel aanvullende nl-core obligations.
+
