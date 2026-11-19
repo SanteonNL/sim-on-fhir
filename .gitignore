@@ -7,7 +7,9 @@
 # IG Publisher generated output
 /output
 /temp
+/ig-build.log
 /template
+/.publish-output
 
 # Downloaded publisher and dependencies
 /input-cache

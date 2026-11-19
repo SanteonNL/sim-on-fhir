@@ -1,0 +1,99 @@
+# dataset-export-request: oncology-active-2024.yaml
+
+implementation-guide: "https://dlswesanhipsp04.z6.web.core.windows.net/ig/ibd/en/profiles.html"  # profiles applied to both cohort filters and exported resources
+
+cohort:
+  id: IBD-active-2026
+  name: Active IBD patients 2026
+  filter:
+    - resource: Condition
+      params: "code=363346000&clinical-status=active"
+    - resource: Encounter
+      params: "date=ge2023-01-01&class=IMP"
+
+
+---
+#cohort
+/*
+Alle patiënten met:
+    - CarePlanCategoryCodingCode ZBJ_IBD gestart op of na 01-01-2018. (Let op, niet dynamisch!); of
+    - één van de volgende DOTs:
+        - 0313 (Interne Geneeskunde) met diagnosecode 922, 923 indien een internist werkzaam is met specialisatie maag-darm-leverziekten; of
+        - 0318 (MDL)                 met diagnosecode 601, 602;
+      De DOT moet zorgtype 11 of 21 hebben en geopend zijn op of na 01-01-2018. (Let op, niet dynamisch!)
+Patiënten jonger dan 18 jaar op het moment van aanleveren worden geëxcludeerd.
+*/
+
+/*prescript*/
+SELECT
+    DISTINCT identificatienummer = e.PATIENTNR
+FROM
+    EPISODE_DBCPER d
+    JOIN EPISODE_EPISODE e ON d.EPISODE = e.EPISODE
+    JOIN CSZISLIB_SPEC s ON d.SPECIALISM = s.SPECCODE
+    JOIN EPISODE_ZORGTYPE z ON d.ZORGTYPE = z.CODE
+    JOIN PATIENT_PATIENT p ON e.PATIENTNR = p.PATIENTNR
+/*joinstatement*/
+WHERE 1=1
+    AND d.BEGINDAT >= '2018-01-01'
+    AND p.GEBDAT < DATEADD(year, -18, GETDATE())
+    AND z.LANDELIJK IN ('11','21')
+    AND d.VERVALLEN = 0
+    AND (
+            (
+                CONCAT(s.ZORGVSOORT, FORMAT(s.COTGCODE, '00')) = '0313' AND d.HOOFDDIAG IN ('922','923')
+            )
+            OR
+            (
+                CONCAT(s.ZORGVSOORT, FORMAT(s.COTGCODE, '00')) = '0318' AND d.HOOFDDIAG IN ('601','602')
+            )
+    )
+---
+
+
+'Voorbeeld: 
+export-query:
+  - resource: Patient
+    params: ""
+  - resource: Observation
+    params: "code=363346000&status=final&date=ge2023-01-01"
+  - resource: Condition
+    params: "code=363346000&clinical-status=active"
+  - resource: MedicationStatement
+    params: "status=active"
+  - resource: CarePlan
+    params: "status=active"'
+
+export-query:
+  - resource: AlgemeneMeting
+    params:
+      - field: Identificatienummer   
+      - field: MetingDatumTijd       
+      - field: MetingNaamCode
+        operator: in 
+        value: ${s_MetingNaamCode}
+  - resource: Verrichting
+    params:
+      - field: Aanvrager_Specialisme       
+      - field: Identificatienummer         
+      - field: Uitvoerder_Specialisme      
+      - field: VerrichtingAantal          
+      - field: VerrichtingStartDatum       
+      - field: VerrichtingTypeCodeDHD      
+      - field: VerrichtingTypeCodeNZa
+        operator: in
+        value: ${l_VerrichtingTypeCode}
+      - field: VerrichtingTypeCodeSnomedCT
+
+frequency:
+  mode: on-demand          # on-demand | scheduled
+  cron: ~                  # only set when mode is scheduled, e.g. "0 2 * * *"
+  cohort-refresh: dynamic  # dynamic = re-evaluate who is in scope each run
+                           # snapshot = patient list frozen at first run
+
+de-identification:
+  base: "https://ig.santeon.nl/sim-on-fhir/de-identification"  # standard ruleset from the IG
+  # no overrides — standard rules apply as-is
+
+
+
