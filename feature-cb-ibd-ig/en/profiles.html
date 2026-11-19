@@ -112,25 +112,7 @@
       <!-- datasets:end -->
     </ul>
   </li>
-
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-      Indicatoren
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-<!--      <li>
-        <a href="indicatoren.html">Indicatoren I</a>
-      </li>
--->
-      <li>
-        <a href="K312.html">K3.1.2 Scopie (nog in FHIR)</a>
-      </li>
-      <li>
-        <a href="K363.html">K3.6.3 Calprotectine voor scopie (nog in FHIR)</a>
-      </li>
-    </ul>
-  </li>
+  
   <li>
     <a href="kpi-definitions.html">KPI definitions</a>
   </li>
@@ -195,60 +177,113 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#careplan-san" id="markdown-toc-careplan-san">CarePlan (SAN)</a></li>
-  <li><a href="#condition-san" id="markdown-toc-condition-san">Condition (SAN)</a></li>
-  <li><a href="#encounter-san" id="markdown-toc-encounter-san">Encounter (SAN)</a></li>
-  <li><a href="#episodeofcare-san" id="markdown-toc-episodeofcare-san">EpisodeOfCare (SAN)</a></li>
-  <li><a href="#medicationrequest-san" id="markdown-toc-medicationrequest-san">MedicationRequest (SAN)</a></li>
-  <li><a href="#observation-san" id="markdown-toc-observation-san">Observation (SAN)</a></li>
-  <li><a href="#observation-tabakgebruik-san" id="markdown-toc-observation-tabakgebruik-san">Observation TabakGebruik (SAN)</a></li>
-  <li><a href="#patient-san" id="markdown-toc-patient-san">Patient (SAN)</a></li>
-  <li><a href="#procedure-san" id="markdown-toc-procedure-san">Procedure (SAN)</a></li>
-  <li><a href="#questionnaireresponse-san" id="markdown-toc-questionnaireresponse-san">QuestionnaireResponse (SAN)</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#reading-the-table" id="markdown-toc-reading-the-table">Reading the table</a></li>
 </ul>
 
 </div>
 <!-- manual-profiles:start -->
 
-<h3 id="careplan-san">CarePlan (SAN)</h3>
+<p>The Santeon FHIR profiles describe the standardised FHIR R4 representation of the SIM building blocks: the datatypes, cardinalities, terminology bindings and constraints that a resource must meet. The meaning of the data is defined by the corresponding <a href="CLMs.html">SIM Logical Model</a>; the Nictiz nl-core mapping records the technical comparison with the Nictiz nl-core profiles.</p>
 
-<p>See the <a href="StructureDefinition-carePlan-san.html">CarePlanSan</a> profile for details and <a href="StructureDefinition-carePlan-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
+<h3 id="overview">Overview</h3>
 
-<h3 id="condition-san">Condition (SAN)</h3>
+<p>10 profiles: 1 ready for validation, 9 not reviewed.</p>
 
-<p>See the <a href="StructureDefinition-condition-san.html">ConditionSan</a> profile for details and <a href="StructureDefinition-condition-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
+<table>
+  <thead>
+    <tr>
+      <th>FHIR profile</th>
+      <th>Logical Model</th>
+      <th>Mappings</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-carePlan-san.html">CarePlan (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMCarePlan.html">Zorgplan (SIMCarePlan)</a></td>
+      <td><a href="StructureDefinition-carePlan-san-mappings.html">Santeon FHIR</a> · <a href="StructureDefinition-carePlan-san-mappings.html">Bron</a></td>
+      <td>Not reviewed · 2 open checks</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-condition-san.html">Condition (SAN)</a></td>
+      <td>–</td>
+      <td><a href="StructureDefinition-condition-san-mappings.html">Bron</a></td>
+      <td>Not reviewed · 1 open check</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-encounter-san.html">Encounter (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMContact.html">Contact (SIMContact)</a></td>
+      <td><a href="StructureDefinition-encounter-san-mappings.html">Santeon FHIR</a> · <a href="StructureDefinition-encounter-san-mappings.html">Bron</a></td>
+      <td>Not reviewed · 2 open checks</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-episodeOfCare-san.html">EpisodeOfCare (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMDBC.html">DBC/Zorgtraject (SIMDBC)</a></td>
+      <td><a href="StructureDefinition-episodeOfCare-san-mappings.html">Santeon FHIR</a> · <a href="StructureDefinition-episodeOfCare-san-mappings.html">Bron</a></td>
+      <td>Not reviewed · 2 open checks</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-medicationRequest-san.html">MedicationRequest (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMMedicatieAfspraak.html">Medicatieafspraak (SIMMedicatieAfspraak)</a></td>
+      <td><a href="StructureDefinition-medicationRequest-san-mappings.html">Santeon FHIR</a> · <a href="StructureDefinition-medicationRequest-san-mappings.html">Bron</a></td>
+      <td>Not reviewed · 2 open checks</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-observation-san.html">Observation (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMAlgemeneMeting.html">Algemene meting (SIMAlgemeneMeting)</a></td>
+      <td><a href="StructureDefinition-observation-san-mappings.html">Santeon FHIR</a> · <a href="StructureDefinition-observation-san-mappings.html">Bron</a></td>
+      <td>Not reviewed · 1 open check</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-observation-san-tabakgebruik.html">Observation TabakGebruik (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMTabakGebruik.html">Tabakgebruik (SIMTabakGebruik)</a></td>
+      <td><a href="StructureDefinition-observation-san-tabakgebruik-mappings.html">Santeon FHIR</a> · <a href="StructureDefinition-observation-san-tabakgebruik-mappings.html">Bron</a></td>
+      <td>Not reviewed</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-patient-san.html">Patient (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMPatient.html">Patiënt (SIMPatient)</a></td>
+      <td><a href="StructureDefinition-patient-san-mappings.html">Santeon FHIR</a> · <a href="StructureDefinition-patient-san-mappings.html">Nictiz nl-core</a></td>
+      <td>Ready for validation · 2 open checks</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-procedure-san.html">Procedure (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMVerrichting.html">Verrichting (SIMVerrichting)</a></td>
+      <td><a href="StructureDefinition-procedure-san-mappings.html">Santeon FHIR</a> · <a href="StructureDefinition-procedure-san-mappings.html">Nictiz nl-core</a> · <a href="StructureDefinition-procedure-san-mappings.html">Bron</a></td>
+      <td>Not reviewed</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-questionnaireResponse-san.html">QuestionnaireResponse (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMVragenlijstAntwoord.html">Vragenlijstantwoord (SIMVragenlijstAntwoord)</a></td>
+      <td><a href="StructureDefinition-questionnaireResponse-san-mappings.html">Santeon FHIR</a> · <a href="StructureDefinition-questionnaireResponse-san-mappings.html">Bron</a></td>
+      <td>Not reviewed · 1 open check</td>
+    </tr>
+  </tbody>
+</table>
 
-<h3 id="encounter-san">Encounter (SAN)</h3>
+<h3 id="reading-the-table">Reading the table</h3>
 
-<p>See the <a href="StructureDefinition-encounter-san.html">EncounterSan</a> profile for details and <a href="StructureDefinition-encounter-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
+<p><strong>Mappings</strong> are listed only where they exist; each links to the mapping page of the profile.</p>
 
-<h3 id="episodeofcare-san">EpisodeOfCare (SAN)</h3>
+<ul>
+  <li><strong>Santeon FHIR</strong> – the translation from the logical model. It is maintained with the logical model only and shown on the profile's mapping page under <em>Mappings to Structures in this Implementation Guide</em>. The <em>Logical Model</em> column is derived from this mapping.</li>
+  <li><strong>Nictiz nl-core</strong> – technical delta analysis with the Nictiz nl-core profile.</li>
+  <li><strong>Bron</strong> – a direct mapping from the SIM source attributes that predates the logical-model convention.</li>
+</ul>
 
-<p>See the <a href="StructureDefinition-episodeOfCare-san.html">EpisodeOfCareSan</a> profile for details and <a href="StructureDefinition-episodeOfCare-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
+<p><strong>Status</strong> is the own status of each FHIR profile, chosen by review and recorded at the bottom of its FSH source. It is never taken over from a linked model or profile.</p>
 
-<h3 id="medicationrequest-san">MedicationRequest (SAN)</h3>
+<ul>
+  <li><strong>Not reviewed</strong> – present, but not yet checked against the modelling convention (default).</li>
+  <li><strong>In progress</strong> – the definition and/or its mappings are being worked out or revised.</li>
+  <li><strong>Ready for validation</strong> – modelling and documentation are worked out; checks or technical validation may still be open.</li>
+  <li><strong>Validated</strong> – the agreed content reviews and technical validations have been completed and checked.</li>
+  <li><em>Open checks</em> – the number of <code class="language-plaintext highlighter-rouge">// TODO:</code> items in the FSH source of this definition.</li>
+</ul>
 
-<p>See the <a href="StructureDefinition-medicationRequest-san.html">MedicationRequestSan</a> profile for details and <a href="StructureDefinition-medicationRequest-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
-
-<h3 id="observation-san">Observation (SAN)</h3>
-
-<p>See the <a href="StructureDefinition-observation-san.html">ObservationSan</a> profile for details and <a href="StructureDefinition-observation-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
-
-<h3 id="observation-tabakgebruik-san">Observation TabakGebruik (SAN)</h3>
-
-<p>See the <a href="StructureDefinition-observation-san-tabakgebruik.html">ObservationSanTabakGebruik</a> profile for details and <a href="StructureDefinition-observation-san-tabakgebruik-mappings.html">Mappings</a> for the mapping to SIM.</p>
-
-<h3 id="patient-san">Patient (SAN)</h3>
-
-<p>See the <a href="StructureDefinition-patient-san.html">PatientSan</a> profile for details and <a href="StructureDefinition-patient-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
-
-<h3 id="procedure-san">Procedure (SAN)</h3>
-
-<p>See the <a href="StructureDefinition-procedure-san.html">ProcedureSan</a> profile for details and <a href="StructureDefinition-procedure-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
-
-<h3 id="questionnaireresponse-san">QuestionnaireResponse (SAN)</h3>
-
-<p>See the <a href="StructureDefinition-questionnaireResponse-san.html">QuestionnaireResponseSan</a> profile for details and <a href="StructureDefinition-questionnaireResponse-san-mappings.html">Mappings</a> for the mapping to SIM.</p>
+<p>The modelling convention (the fixed mapping order, delta indicators and consistency checks) is described in <code class="language-plaintext highlighter-rouge">docs/modelleerworkflow.md</code> in the project repository. The 🟢/🟡 indicators are used only within the delta-analysis mappings, not as a status of a building block.</p>
 
 <!-- manual-profiles:end -->
 
@@ -280,8 +315,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.sim-on-fhir#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-11-11 17:43:00 +0000">
-    2026-11-11
+  <span title="2026-11-19 16:54:00 +0000">
+    2026-11-19
   </span>
 
           <br/>

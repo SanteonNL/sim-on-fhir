@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
   "name" : "ProcedureSan",
   "title" : "Procedure (SAN)",
   "status" : "draft",
-  "date" : "2026-11-11T17:43:54+00:00",
+  "date" : "2026-11-19T16:54:56+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -52,6 +52,12 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
     "uri" : "urn:santeon:sim:csv",
     "name" : "Santeon Informatiemodel (SIM CSV)",
     "comment" : "Informatieve mapping van het FHIR-profiel naar SIM CSV-bronvelden."
+  },
+  {
+    "identity" : "ProcedureSanToNlCore",
+    "uri" : "http://ig.nictiz.nl/gbb/StructureDefinition/nl-core-Procedure",
+    "name" : "ProcedureSan naar Nictiz nl-core-Procedure",
+    "comment" : "FHIR-profielvergelijking tussen ProcedureSan en Nictiz nl-core-Procedure (GBB 1.0.0-alpha.2), binnen de huidige IBD-scope."
   },
   {
     "identity" : "workflow",
@@ -109,25 +115,25 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
       "max" : "0"
     },
     {
-      "id" : "Procedure.extension",
-      "path" : "Procedure.extension",
-      "max" : "0"
-    },
-    {
-      "id" : "Procedure.modifierExtension",
-      "path" : "Procedure.modifierExtension",
-      "max" : "0"
-    },
-    {
       "id" : "Procedure.identifier",
       "path" : "Procedure.identifier",
       "min" : 1,
-      "max" : "1"
+      "max" : "1",
+      "mapping" : [{
+        "identity" : "ProcedureSanToNlCore",
+        "map" : "Procedure.identifier",
+        "comment" : "Santeon 1..1; nl-core 0..*. Santeon strenger."
+      }]
     },
     {
       "id" : "Procedure.identifier.use",
       "path" : "Procedure.identifier.use",
-      "max" : "0"
+      "max" : "0",
+      "mapping" : [{
+        "identity" : "ProcedureSanToNlCore",
+        "map" : "Procedure.identifier.use",
+        "comment" : "Santeon 0..0; nl-core staat dit toe."
+      }]
     },
     {
       "id" : "Procedure.identifier.system",
@@ -136,6 +142,11 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
         "identity" : "sim",
         "map" : "Verrichting;VerrichtingID",
         "comment" : "Systeemdeel van identifier_system|identifier_value."
+      },
+      {
+        "identity" : "ProcedureSanToNlCore",
+        "map" : "Procedure.identifier.system",
+        "comment" : "Identificatiesysteem behouden."
       }]
     },
     {
@@ -146,6 +157,11 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
         "identity" : "sim",
         "map" : "Verrichting;VerrichtingID",
         "comment" : "Waardedeel; hashed."
+      },
+      {
+        "identity" : "ProcedureSanToNlCore",
+        "map" : "Procedure.identifier.value",
+        "comment" : "Santeon vereist een waarde (1..1)."
       }]
     },
     {
@@ -164,9 +180,31 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
       "max" : "0"
     },
     {
+      "id" : "Procedure.status",
+      "path" : "Procedure.status",
+      "short" : "Status van de verrichting",
+      "comment" : "Verplicht vanuit FHIR R4. De huidige SIMVerrichting bevat geen statusveld 🔴. Herkomst en eventuele afleiding vanuit de verrichtingsregistratie nader te bepalen.",
+      "mapping" : [{
+        "identity" : "ProcedureSanToNlCore",
+        "map" : "Procedure.status",
+        "comment" : "Beide 1..1, required FHIR EventStatus. Herkomst vanuit SIM nog te bepalen."
+      }]
+    },
+    {
       "id" : "Procedure.statusReason",
       "path" : "Procedure.statusReason",
       "max" : "0"
+    },
+    {
+      "id" : "Procedure.category",
+      "path" : "Procedure.category",
+      "short" : "Santeon zorgprofielklasse",
+      "comment" : "Gebaseerd op de lokale Santeon VerrichtingCategorieCodelijst. Deze classificatie is niet één-op-één equivalent aan de Nictiz GBB VerrichtingCategorieCodelijst 🟠.",
+      "mapping" : [{
+        "identity" : "ProcedureSanToNlCore",
+        "map" : "Procedure.category",
+        "comment" : "Beide 0..1. Santeon lokale zorgprofielklassen; Nictiz preferred SNOMED ValueSet. Geen directe één-op-één-equivalentie."
+      }]
     },
     {
       "id" : "Procedure.category.coding.system",
@@ -193,9 +231,23 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
       }]
     },
     {
+      "id" : "Procedure.code",
+      "path" : "Procedure.code",
+      "mapping" : [{
+        "identity" : "ProcedureSanToNlCore",
+        "map" : "Procedure.code",
+        "comment" : "Santeon 0..1 versus nl-core 1..1. Nictiz preferred SNOMED ValueSet; Santeon NZa, DHD en/of SNOMED CT."
+      }]
+    },
+    {
       "id" : "Procedure.code.coding",
       "path" : "Procedure.code.coding",
-      "min" : 1
+      "min" : 1,
+      "mapping" : [{
+        "identity" : "ProcedureSanToNlCore",
+        "map" : "Procedure.code.coding",
+        "comment" : "Santeon vereist minimaal een Coding wanneer code aanwezig is. Meerdere coderingen uitsluitend bij semantische equivalentie."
+      }]
     },
     {
       "id" : "Procedure.code.coding.system",
@@ -267,6 +319,11 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
         "identity" : "sim",
         "map" : "Verrichting;Identificatienummer",
         "comment" : "Reference naar gepseudonimiseerde PatientSan op basis van patiëntidentifier."
+      },
+      {
+        "identity" : "ProcedureSanToNlCore",
+        "map" : "Procedure.subject",
+        "comment" : "Beide 1..1. Santeon Reference(PatientSan); nl-core ondersteunt onder andere nl-core-Patient."
       }]
     },
     {
@@ -280,6 +337,11 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
         "identity" : "sim",
         "map" : "Verrichting;ContactID",
         "comment" : "Reference naar Encounter op basis van ContactID."
+      },
+      {
+        "identity" : "ProcedureSanToNlCore",
+        "map" : "Procedure.encounter",
+        "comment" : "Santeon Reference(EncounterSan). Doelprofiel en eventuele aanvullende constraints verschillen."
       }]
     },
     {
@@ -298,6 +360,11 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
       },
       {
         "code" : "Period"
+      }],
+      "mapping" : [{
+        "identity" : "ProcedureSanToNlCore",
+        "map" : "Procedure.performed[x]",
+        "comment" : "Santeon beperkt tot dateTime of Period; nl-core ondersteunt daarnaast andere FHIR R4-varianten."
       }]
     },
     {
@@ -317,6 +384,20 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
         "identity" : "sim",
         "map" : "Verrichting;VerrichtingStartDatum",
         "comment" : "Verrichting met tijdsduur; dateshift."
+      },
+      {
+        "identity" : "ProcedureSanToNlCore",
+        "map" : "Procedure.performedPeriod.start",
+        "comment" : "Startmoment van verrichting."
+      }]
+    },
+    {
+      "id" : "Procedure.performed[x]:performedPeriod.end",
+      "path" : "Procedure.performed[x].end",
+      "mapping" : [{
+        "identity" : "ProcedureSanToNlCore",
+        "map" : "Procedure.performedPeriod.end",
+        "comment" : "Eindmoment; nog niet actief in huidige SIM-scope."
       }]
     },
     {
@@ -332,6 +413,11 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
         "identity" : "sim",
         "map" : "Verrichting;VerrichtingStartDatum",
         "comment" : "Momentane verrichting; dateshift."
+      },
+      {
+        "identity" : "ProcedureSanToNlCore",
+        "map" : "Procedure.performedDateTime",
+        "comment" : "Moment van verrichting; Nictiz ondersteunt deze representatie."
       }]
     },
     {

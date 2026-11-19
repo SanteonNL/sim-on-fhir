@@ -1,8 +1,8 @@
-"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: SIM CSV","Mapping: SIMVerrichting naar FHIR","Mapping: SIMVerrichting naar Nictiz GBB Procedure"
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: SIM CSV","Mapping: SIMVerrichting naar Nictiz GBB Procedure","Mapping: SIMVerrichting naar FHIR"
 "SIMVerrichting","SIMVerrichting","","","",0,*,"","","","null {[]} {[]}
 ","Verrichting (model)","Generiek logisch model voor een verrichting binnen het Santeon Informatiemodel.","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
 "SIMVerrichting.VerrichtingID","SIMVerrichting.VerrichtingID","","","",1,1,"","","","Identifier {[]} {[]}
-","Uniek ID (key) binnen patiënt per verrichting","Uniek ID (key) binnen patiënt per verrichting","","","","","","","","","",,,,,"",,,,"SIMVerrichting.VerrichtingID",1,1,"","","Verrichting;VerrichtingID","Procedure.identifier","Procedure.feederAuditOriginatingSystemItemIds"
+","Uniek ID (key) binnen patiënt per verrichting","Uniek ID (key) binnen patiënt per verrichting","","","","","","","","","",,,,,"",,,,"SIMVerrichting.VerrichtingID",1,1,"","","Verrichting;VerrichtingID","Procedure.feederAuditOriginatingSystemItemIds","Procedure.identifier"
 "SIMVerrichting.ContactID","SIMVerrichting.ContactID","","","",0,1,"","","","Identifier {[]} {[]}
 ","Uniek ID (key) binnen patiënt per contact","Uniek ID (key) binnen patiënt per contact","","","","","","","","","",,,,,"",,,,"SIMVerrichting.ContactID",0,1,"","","Verrichting;ContactID","Procedure.encounter"
 "SIMVerrichting.OperatieID","SIMVerrichting.OperatieID","","","",0,1,"","","","Identifier {[]} {[]}
@@ -10,10 +10,10 @@
 "SIMVerrichting.SubtrajectNummer","SIMVerrichting.SubtrajectNummer","","","",0,1,"","","","Identifier {[]} {[]}
 ","Identificatienummer van het DBC-subtraject","Identificatienummer van het DBC-subtraject","","","","","","","","","",,,,,"",,,,"SIMVerrichting.SubtrajectNummer",0,1,"","","Verrichting;SubtrajectNr"
 "SIMVerrichting.PatientIdentificatienummer","SIMVerrichting.PatientIdentificatienummer","","","",1,1,"","","","Identifier {[]} {[]}
-","Identificatienummer van de patiënt","Identificatienummer van de patiënt","","","","","","","","","",,,,,"",,,,"SIMVerrichting.PatientIdentificatienummer",1,1,"","","Verrichting;Identificatienummer","Procedure.subject","Procedure.subject.patient.patientIdentificationNumber"
+","Identificatienummer van de patiënt","Identificatienummer van de patiënt","","","","","","","","","",,,,,"",,,,"SIMVerrichting.PatientIdentificatienummer",1,1,"","","Verrichting;Identificatienummer","Procedure.subject.patient.patientIdentificationNumber","Procedure.subject"
 "SIMVerrichting.VerrichtingType","SIMVerrichting.VerrichtingType","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Type verrichting","Type verrichting, gecodeerd met NZa, SNOMED CT en/of DHD. Meerdere coderingen worden alleen gecombineerd wanneer zij hetzelfde verrichtingsconcept vertegenwoordigen.","","","","","","","","","",,,,,"",,,,"SIMVerrichting.VerrichtingType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Procedure.code","Procedure.procedureName"
+","Procedure.procedureName","Procedure.code"
 "SIMVerrichting.VerrichtingType.id","SIMVerrichting.VerrichtingType.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "SIMVerrichting.VerrichtingType.extension","SIMVerrichting.VerrichtingType.extension","","extensions
@@ -33,10 +33,10 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "SIMVerrichting.VerrichtingAantal","SIMVerrichting.VerrichtingAantal","","","",0,1,"","","","integer {[]} {[]}
 ","Aantal verrichtingen","Aantal verrichtingen","","","","","","","","","",,,,,"",,,,"SIMVerrichting.VerrichtingAantal",0,1,"","","Verrichting;VerrichtingAantal"
 "SIMVerrichting.VerrichtingStartDatum","SIMVerrichting.VerrichtingStartDatum","","","",0,1,"","","","dateTime {[]} {[]}
-","Datum en eventueel tijd waarop de verrichting is gestart","Datum en eventueel tijd waarop de verrichting is gestart","","","","","","","","","",,,,,"",,,,"SIMVerrichting.VerrichtingStartDatum",0,1,"","","Verrichting;VerrichtingStartDatum","Procedure.performedPeriod.start","Procedure.startDateTime"
+","Datum en eventueel tijd waarop de verrichting is gestart","Datum en eventueel tijd waarop de verrichting is gestart","","","","","","","","","",,,,,"",,,,"SIMVerrichting.VerrichtingStartDatum",0,1,"","","Verrichting;VerrichtingStartDatum","Procedure.startDateTime","Procedure.performedPeriod.start"
 "SIMVerrichting.AanvragerSpecialisme","SIMVerrichting.AanvragerSpecialisme","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Medisch specialisme dat de verrichting heeft aangevraagd","Medisch specialisme dat de verrichting heeft aangevraagd","","","","","","","","","",,,,,"",,,,"SIMVerrichting.AanvragerSpecialisme",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
+",""
 "SIMVerrichting.AanvragerSpecialisme.id","SIMVerrichting.AanvragerSpecialisme.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "SIMVerrichting.AanvragerSpecialisme.extension","SIMVerrichting.AanvragerSpecialisme.extension","","extensions
@@ -54,7 +54,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "SIMVerrichting.UitvoerderSpecialisme","SIMVerrichting.UitvoerderSpecialisme","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Medisch specialisme dat de verrichting heeft uitgevoerd","Medisch specialisme dat de verrichting heeft uitgevoerd","","","","","","","","","",,,,,"",,,,"SIMVerrichting.UitvoerderSpecialisme",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
+",""
 "SIMVerrichting.UitvoerderSpecialisme.id","SIMVerrichting.UitvoerderSpecialisme.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "SIMVerrichting.UitvoerderSpecialisme.extension","SIMVerrichting.UitvoerderSpecialisme.extension","","extensions
@@ -72,7 +72,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "SIMVerrichting.VerrichtingCategorie","SIMVerrichting.VerrichtingCategorie","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Duiding tot welke zorgprofielklasse een verrichting behoort","Duiding tot welke zorgprofielklasse een verrichting behoort","","","","","","","","","",,,,,"",,,,"SIMVerrichting.VerrichtingCategorie",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Procedure.category","Procedure.procedureType"
+","Procedure.procedureType","Procedure.category"
 "SIMVerrichting.VerrichtingCategorie.id","SIMVerrichting.VerrichtingCategorie.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
 "SIMVerrichting.VerrichtingCategorie.extension","SIMVerrichting.VerrichtingCategorie.extension","","extensions

@@ -10,8 +10,6 @@
 * [KPI definitions](kpi-definitions.md)
 * [SIM Logical Models](CLMs.md)
 * [De-identification](deidentification.md)
-* [K3.6.3 Calprotectine voor scopie](K363.md)
-* [K3.1.2 Scopie](K312.md)
 
 ## Resources
 

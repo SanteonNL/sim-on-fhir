@@ -112,25 +112,7 @@
       <!-- datasets:end -->
     </ul>
   </li>
-
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-      Indicatoren
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-<!--      <li>
-        <a href="indicatoren.html">Indicatoren I</a>
-      </li>
--->
-      <li>
-        <a href="K312.html">K3.1.2 Scopie (nog in FHIR)</a>
-      </li>
-      <li>
-        <a href="K363.html">K3.6.3 Calprotectine voor scopie (nog in FHIR)</a>
-      </li>
-    </ul>
-  </li>
+  
   <li>
     <a href="kpi-definitions.html">KPI definitions</a>
   </li>
@@ -195,60 +177,113 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#logical-model-algemene-meting-model" id="markdown-toc-logical-model-algemene-meting-model">Logical Model Algemene meting (model)</a></li>
-  <li><a href="#logical-model-zorgplan-model" id="markdown-toc-logical-model-zorgplan-model">Logical Model Zorgplan (model)</a></li>
-  <li><a href="#logical-model-contact-model" id="markdown-toc-logical-model-contact-model">Logical Model Contact (model)</a></li>
-  <li><a href="#logical-model-dbczorgtraject-model" id="markdown-toc-logical-model-dbczorgtraject-model">Logical Model DBC/Zorgtraject (model)</a></li>
-  <li><a href="#logical-model-fasering-model" id="markdown-toc-logical-model-fasering-model">Logical Model Fasering (model)</a></li>
-  <li><a href="#logical-model-medicatieafspraak-model" id="markdown-toc-logical-model-medicatieafspraak-model">Logical Model Medicatieafspraak (model)</a></li>
-  <li><a href="#logical-model-patiënt-model" id="markdown-toc-logical-model-patiënt-model">Logical Model Patiënt (model)</a></li>
-  <li><a href="#logical-model-tabakgebruik-model" id="markdown-toc-logical-model-tabakgebruik-model">Logical Model Tabakgebruik (model)</a></li>
-  <li><a href="#logical-model-verrichting-model" id="markdown-toc-logical-model-verrichting-model">Logical Model Verrichting (model)</a></li>
-  <li><a href="#logical-model-vragenlijstantwoord-model" id="markdown-toc-logical-model-vragenlijstantwoord-model">Logical Model Vragenlijstantwoord (model)</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#reading-the-table" id="markdown-toc-reading-the-table">Reading the table</a></li>
 </ul>
 
 </div>
 <!-- manual-sim:start -->
 
-<h3 id="logical-model-algemene-meting-model">Logical Model Algemene meting (model)</h3>
+<p>The Santeon Information Model (SIM) is the content authority of this guide. Each logical model describes a selection of SIM data elements and their meaning, independent of any exchange format. Its mappings record where the data comes from, how it compares semantically with the Nictiz GBB-afsprakenmodel, and how it is translated into a Santeon FHIR profile. The resulting FHIR representation is described on <a href="profiles.html">FHIR Profiles</a>.</p>
 
-<p>See the <a href="StructureDefinition-SIMAlgemeneMeting.html">SIMAlgemeneMeting</a> Logical Model for details and <a href="StructureDefinition-SIMAlgemeneMeting-mappings.html">Mappings</a> for mapping details.</p>
+<h3 id="overview">Overview</h3>
 
-<h3 id="logical-model-zorgplan-model">Logical Model Zorgplan (model)</h3>
+<p>10 logical models: 1 ready for validation, 1 in progress, 8 not reviewed.</p>
 
-<p>See the <a href="StructureDefinition-SIMCarePlan.html">SIMCarePlan</a> Logical Model for details and <a href="StructureDefinition-SIMCarePlan-mappings.html">Mappings</a> for mapping details.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Logical Model</th>
+      <th>FHIR profile</th>
+      <th>Mappings</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-SIMAlgemeneMeting.html">Algemene meting (SIMAlgemeneMeting)</a></td>
+      <td><a href="StructureDefinition-observation-san.html">Observation (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMAlgemeneMeting-mappings.html">Bron</a> · <a href="StructureDefinition-SIMAlgemeneMeting-mappings.html">Santeon FHIR</a></td>
+      <td>Not reviewed</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-SIMContact.html">Contact (SIMContact)</a></td>
+      <td><a href="StructureDefinition-encounter-san.html">Encounter (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMContact-mappings.html">Bron</a> · <a href="StructureDefinition-SIMContact-mappings.html">Santeon FHIR</a></td>
+      <td>Not reviewed</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-SIMDBC.html">DBC/Zorgtraject (SIMDBC)</a></td>
+      <td><a href="StructureDefinition-episodeOfCare-san.html">EpisodeOfCare (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMDBC-mappings.html">Bron</a> · <a href="StructureDefinition-SIMDBC-mappings.html">Santeon FHIR</a></td>
+      <td>Not reviewed · 1 open check</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-SIMFasering.html">Fasering (SIMFasering)</a></td>
+      <td>–</td>
+      <td><a href="StructureDefinition-SIMFasering-mappings.html">Bron</a></td>
+      <td>Not reviewed</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-SIMMedicatieAfspraak.html">Medicatieafspraak (SIMMedicatieAfspraak)</a></td>
+      <td><a href="StructureDefinition-medicationRequest-san.html">MedicationRequest (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMMedicatieAfspraak-mappings.html">Bron</a> · <a href="StructureDefinition-SIMMedicatieAfspraak-mappings.html">Santeon FHIR</a></td>
+      <td>Not reviewed</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-SIMPatient.html">Patiënt (SIMPatient)</a></td>
+      <td><a href="StructureDefinition-patient-san.html">Patient (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMPatient-mappings.html">Bron</a> · <a href="StructureDefinition-SIMPatient-mappings.html">Nictiz GBB</a> · <a href="StructureDefinition-SIMPatient-mappings.html">Santeon FHIR</a></td>
+      <td>Ready for validation</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-SIMTabakGebruik.html">Tabakgebruik (SIMTabakGebruik)</a></td>
+      <td><a href="StructureDefinition-observation-san-tabakgebruik.html">Observation TabakGebruik (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMTabakGebruik-mappings.html">Bron</a> · <a href="StructureDefinition-SIMTabakGebruik-mappings.html">Santeon FHIR</a></td>
+      <td>Not reviewed</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-SIMVerrichting.html">Verrichting (SIMVerrichting)</a></td>
+      <td><a href="StructureDefinition-procedure-san.html">Procedure (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMVerrichting-mappings.html">Bron</a> · <a href="StructureDefinition-SIMVerrichting-mappings.html">Nictiz GBB</a> · <a href="StructureDefinition-SIMVerrichting-mappings.html">Santeon FHIR</a></td>
+      <td>In progress</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-SIMVragenlijstAntwoord.html">Vragenlijstantwoord (SIMVragenlijstAntwoord)</a></td>
+      <td><a href="StructureDefinition-questionnaireResponse-san.html">QuestionnaireResponse (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMVragenlijstAntwoord-mappings.html">Bron</a> · <a href="StructureDefinition-SIMVragenlijstAntwoord-mappings.html">Santeon FHIR</a></td>
+      <td>Not reviewed</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-SIMCarePlan.html">Zorgplan (SIMCarePlan)</a></td>
+      <td><a href="StructureDefinition-carePlan-san.html">CarePlan (SAN)</a></td>
+      <td><a href="StructureDefinition-SIMCarePlan-mappings.html">Bron</a> · <a href="StructureDefinition-SIMCarePlan-mappings.html">Santeon FHIR</a></td>
+      <td>Not reviewed</td>
+    </tr>
+  </tbody>
+</table>
 
-<h3 id="logical-model-contact-model">Logical Model Contact (model)</h3>
+<h3 id="reading-the-table">Reading the table</h3>
 
-<p>See the <a href="StructureDefinition-SIMContact.html">SIMContact</a> Logical Model for details and <a href="StructureDefinition-SIMContact-mappings.html">Mappings</a> for mapping details.</p>
+<p><strong>Mappings</strong> are listed in their fixed order and only where they exist; each links to the mapping page of the logical model.</p>
 
-<h3 id="logical-model-dbczorgtraject-model">Logical Model DBC/Zorgtraject (model)</h3>
+<ul>
+  <li><strong>Bron</strong> – provenance: the original SIM source attributes.</li>
+  <li><strong>Nictiz GBB</strong> – semantic delta analysis with the Nictiz GBB-afsprakenmodel.</li>
+  <li><strong>Santeon FHIR</strong> – technical translation, harmonisation and required conversions to the Santeon FHIR profile. The <em>FHIR profile</em> column is derived from this mapping.</li>
+</ul>
 
-<p>See the <a href="StructureDefinition-SIMDBC.html">SIMDBC</a> Logical Model for details and <a href="StructureDefinition-SIMDBC-mappings.html">Mappings</a> for mapping details.</p>
+<p><strong>Status</strong> is the own status of each logical model, chosen by review and recorded at the bottom of its FSH source. It is never taken over from a linked model or profile.</p>
 
-<h3 id="logical-model-fasering-model">Logical Model Fasering (model)</h3>
+<ul>
+  <li><strong>Not reviewed</strong> – present, but not yet checked against the modelling convention (default).</li>
+  <li><strong>In progress</strong> – the definition and/or its mappings are being worked out or revised.</li>
+  <li><strong>Ready for validation</strong> – modelling and documentation are worked out; checks or technical validation may still be open.</li>
+  <li><strong>Validated</strong> – the agreed content reviews and technical validations have been completed and checked.</li>
+  <li><em>Open checks</em> – the number of <code class="language-plaintext highlighter-rouge">// TODO:</code> items in the FSH source of this definition.</li>
+</ul>
 
-<p>See the <a href="StructureDefinition-SIMFasering.html">SIMFasering</a> Logical Model for details and <a href="StructureDefinition-SIMFasering-mappings.html">Mappings</a> for mapping details.</p>
-
-<h3 id="logical-model-medicatieafspraak-model">Logical Model Medicatieafspraak (model)</h3>
-
-<p>See the <a href="StructureDefinition-SIMMedicatieAfspraak.html">SIMMedicatieAfspraak</a> Logical Model for details and <a href="StructureDefinition-SIMMedicatieAfspraak-mappings.html">Mappings</a> for mapping details.</p>
-
-<h3 id="logical-model-patiënt-model">Logical Model Patiënt (model)</h3>
-
-<p>See the <a href="StructureDefinition-SIMPatient.html">SIMPatient</a> Logical Model for details and <a href="StructureDefinition-SIMPatient-mappings.html">Mappings</a> for mapping details.</p>
-
-<h3 id="logical-model-tabakgebruik-model">Logical Model Tabakgebruik (model)</h3>
-
-<p>See the <a href="StructureDefinition-SIMTabakGebruik.html">SIMTabakGebruik</a> Logical Model for details and <a href="StructureDefinition-SIMTabakGebruik-mappings.html">Mappings</a> for mapping details.</p>
-
-<h3 id="logical-model-verrichting-model">Logical Model Verrichting (model)</h3>
-
-<p>See the <a href="StructureDefinition-SIMVerrichting.html">SIMVerrichting</a> Logical Model for details and <a href="StructureDefinition-SIMVerrichting-mappings.html">Mappings</a> for mapping details.</p>
-
-<h3 id="logical-model-vragenlijstantwoord-model">Logical Model Vragenlijstantwoord (model)</h3>
-
-<p>See the <a href="StructureDefinition-SIMVragenlijstAntwoord.html">SIMVragenlijstAntwoord</a> Logical Model for details and <a href="StructureDefinition-SIMVragenlijstAntwoord-mappings.html">Mappings</a> for mapping details.</p>
+<p>The modelling convention (the fixed mapping order, delta indicators and consistency checks) is described in <code class="language-plaintext highlighter-rouge">docs/modelleerworkflow.md</code> in the project repository. The 🟢/🟡 indicators are used only within the delta-analysis mappings, not as a status of a building block.</p>
 
 <!-- manual-sim:end -->
 
@@ -280,8 +315,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.sim-on-fhir#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-11-11 17:43:00 +0000">
-    2026-11-11
+  <span title="2026-11-19 16:54:00 +0000">
+    2026-11-19
   </span>
 
           <br/>

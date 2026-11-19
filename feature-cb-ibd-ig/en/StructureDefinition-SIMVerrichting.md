@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
   "name" : "SIMVerrichting",
   "title" : "Verrichting (model)",
   "status" : "draft",
-  "date" : "2026-11-11T17:43:54+00:00",
+  "date" : "2026-11-19T16:54:56+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -53,14 +53,15 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
     "name" : "SIM CSV"
   },
   {
+    "identity" : "SIMVerrichtingToGBB",
+    "uri" : "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelProcedure",
+    "name" : "SIMVerrichting naar Nictiz GBB Procedure",
+    "comment" : "Semantische mapping tussen SIMVerrichting en Nictiz GBB Procedure (1.0.0-alpha.2), binnen de IBD-scope."
+  },
+  {
     "identity" : "SIMVerrichtingToFHIR",
     "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/procedure-san",
     "name" : "SIMVerrichting naar FHIR"
-  },
-  {
-    "identity" : "SIMVerrichtingToGBB",
-    "uri" : "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelProcedure",
-    "name" : "SIMVerrichting naar Nictiz GBB Procedure"
   }],
   "kind" : "logical",
   "abstract" : false,
@@ -89,12 +90,13 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
         "map" : "Verrichting;VerrichtingID"
       },
       {
-        "identity" : "SIMVerrichtingToFHIR",
-        "map" : "Procedure.identifier"
+        "identity" : "SIMVerrichtingToGBB",
+        "map" : "Procedure.feederAuditOriginatingSystemItemIds",
+        "comment" : "Cardinaliteit verschilt: SIM 1..1, GBB 0..*."
       },
       {
-        "identity" : "SIMVerrichtingToGBB",
-        "map" : "Procedure.feederAuditOriginatingSystemItemIds"
+        "identity" : "SIMVerrichtingToFHIR",
+        "map" : "Procedure.identifier"
       }]
     },
     {
@@ -162,14 +164,14 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
         "map" : "Verrichting;Identificatienummer"
       },
       {
+        "identity" : "SIMVerrichtingToGBB",
+        "map" : "Procedure.subject.patient.patientIdentificationNumber",
+        "comment" : "Koppeling via GBB Patient."
+      },
+      {
         "identity" : "SIMVerrichtingToFHIR",
         "map" : "Procedure.subject",
         "comment" : "Patient-reference op basis van identificatienummer."
-      },
-      {
-        "identity" : "SIMVerrichtingToGBB",
-        "map" : "Procedure.subject.patient.patientIdentificationNumber",
-        "comment" : "Koppeling naar de patiëntidentificatie binnen GBB Patient."
       }]
     },
     {
@@ -183,14 +185,14 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
         "code" : "CodeableConcept"
       }],
       "mapping" : [{
+        "identity" : "SIMVerrichtingToGBB",
+        "map" : "Procedure.procedureName",
+        "comment" : "Binding verschilt: SIM NZa, SNOMED CT en/of DHD; GBB required SNOMED ValueSet."
+      },
+      {
         "identity" : "SIMVerrichtingToFHIR",
         "map" : "Procedure.code",
         "comment" : "Coderingen combineren wanneer zij hetzelfde concept vertegenwoordigen."
-      },
-      {
-        "identity" : "SIMVerrichtingToGBB",
-        "map" : "Procedure.procedureName",
-        "comment" : "Alleen passende coderingen; GBB gebruikt een verplichte SNOMED-ValueSet."
       }]
     },
     {
@@ -247,13 +249,14 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
         "map" : "Verrichting;VerrichtingStartDatum"
       },
       {
+        "identity" : "SIMVerrichtingToGBB",
+        "map" : "Procedure.startDateTime",
+        "comment" : "🟢"
+      },
+      {
         "identity" : "SIMVerrichtingToFHIR",
         "map" : "Procedure.performedPeriod.start",
         "comment" : "Bij een verrichting met tijdsduur; anders performedDateTime."
-      },
-      {
-        "identity" : "SIMVerrichtingToGBB",
-        "map" : "Procedure.startDateTime"
       }]
     },
     {
@@ -265,6 +268,10 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
       "max" : "1",
       "type" : [{
         "code" : "CodeableConcept"
+      }],
+      "mapping" : [{
+        "identity" : "SIMVerrichtingToGBB",
+        "comment" : "SIM-specifiek 🟠"
       }]
     },
     {
@@ -292,6 +299,9 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
       "max" : "1",
       "type" : [{
         "code" : "CodeableConcept"
+      }],
+      "mapping" : [{
+        "identity" : "SIMVerrichtingToGBB"
       }]
     },
     {
@@ -321,13 +331,13 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
         "code" : "CodeableConcept"
       }],
       "mapping" : [{
-        "identity" : "SIMVerrichtingToFHIR",
-        "map" : "Procedure.category"
-      },
-      {
         "identity" : "SIMVerrichtingToGBB",
         "map" : "Procedure.procedureType",
-        "comment" : "Semantische en terminologische overeenstemming controleren."
+        "comment" : "Semantische delta: SIM gebruikt lokale zorgprofielklassen (25 codes); GBB gebruikt een required SNOMED CT ValueSet (3 codes), GBB heeft required binding. Geen directe één-op-één-equivalentie.🟠"
+      },
+      {
+        "identity" : "SIMVerrichtingToFHIR",
+        "map" : "Procedure.category"
       }]
     },
     {
