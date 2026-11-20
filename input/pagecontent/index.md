@@ -6,7 +6,7 @@ How the **Santeon Informatie Model (SIM)** maps to FHIR. The guide is general; i
 
 - **SIM logical models**, including mappings to the source CSVs and to FHIR.
 - **FHIR profiles**: Condition, EpisodeOfCare, Patient, Procedure and Observation.
-- **Datasets**, one per disease area (currently IBD): the cohort, the KPI definitions and the export request for each, derived from [KPI definitions](kpi-definitions.html).
+- **Datasets**, one per disease area (currently sb-ibd): the cohort, the data requirements, the generated profiles and the export request for each, derived from [data requirements](data-requirements.html).
 - **Indicators** that use the datasets.
 - **De-identification** of exports.
 - **Source**: the Santeon Informatie Model.

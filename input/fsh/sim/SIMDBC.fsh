@@ -16,7 +16,7 @@ Description: "Generiek logisch model voor een DBC binnen het Santeon Informatiem
 * ZorgProduct 0..1 CodeableConcept "Zorgproduct van de DBC"
 
 * Gevuld 0..1 boolean "Geeft aan of de DBC verrichtingen bevat"
-* Geldig 0..1 boolean "Geeft aan of de DBC administratief geldig is"
+* Geldig 0..1 boolean "Geeft aan of de DBC administratief geldig is (niet vervallen; HIX: VERVALLEN = 0)"
 
 * OpeningsDatum 0..1 date "Openingsdatum van de DBC"
 * SluitingsDatum 0..1 date "Sluitingsdatum van de DBC"
@@ -105,10 +105,12 @@ Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/episodeOfCare-san
 // Periode
 * OpeningsDatum -> "EpisodeOfCare.period.start" "Alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."
 * SluitingsDatum -> "EpisodeOfCare.period.end" "Alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."
-// Nog uit te werken:
 
-// EpisodeOfCare.status:
-// Verplicht in FHIR R4; niet rechtstreeks afleiden uit DBCgeldig.
+// Status: afgeleid uit Geldig en SluitingsDatum (verplicht in FHIR R4).
+// Nodig voor cohorten die alleen geldige DOT's selecteren (bijv. sb-ibd: VERVALLEN = 0).
+* Geldig -> "EpisodeOfCare.status" "Afleiding: Geldig = false -> entered-in-error; Geldig = true zonder SluitingsDatum -> active; Geldig = true met SluitingsDatum -> finished."
+
+// Nog uit te werken:
 
 // Diagnose en SpecialismeDiagnose:
 // Kunnen via ConditionSan.code worden gerepresenteerd
@@ -126,7 +128,7 @@ Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/episodeOfCare-san
 // Relatie tussen zorgtraject en DBC-subtraject uitwerken
 // voordat een FHIR-mapping wordt gekozen.
 
-// ZorgProduct, Gevuld, Geldig, UitvoerderSpecialisme en Verwijzer:
+// ZorgProduct, Gevuld, UitvoerderSpecialisme en Verwijzer:
 // Nog geen directe FHIR-mapping vastgesteld.
 
 

@@ -1,4 +1,4 @@
-// Aliassen $SCT en $NullFlavor staan in AlcoholGebruikStatusCodelijst.fsh.
+Alias: $NullFlavor = http://terminology.hl7.org/CodeSystem/v3-NullFlavor
 
 ValueSet: TabakGebruikStatusCodelijst
 Id: TabakGebruikStatusCodelijst

@@ -1,24 +1,34 @@
 #!/usr/bin/env python3
 """
-_syncValueSets.py
+_syncDefinitions.py
 
-Keeps the ValueSets that are maintained outside this repository (ART-DECOR, a
-FHIR terminology server such as the Nationale Terminologieserver) in step with
-the version this repository has pinned.
+Keeps the definitions that are maintained outside this repository (ValueSets and
+Questionnaires in ART-DECOR, on the Nationale Terminologieserver or on another
+FHIR server) in step with the version this repository has pinned.
 
-The pinned state lives in input/fsh/definitions/external-valuesets.json and is
-committed. KPI and dataset definitions refer to an entry by its key, for example
-{vs:ibd-diagnosis}; the generator resolves that to the pinned canonical.
+The pinned state lives in input/fsh/definitions/external-definitions.yaml and is
+committed. Data requirements and dataset definitions refer to an entry by its key,
+for example {vs:ibd-diagnosis} or {q:luscii-prems}; the generator resolves that to
+the pinned canonical.
 
-  py -3 _syncValueSets.py fetch     download the pinned version of every entry
+  py -3 _syncDefinitions.py fetch     download the pinned version of every entry
                                     marked "download" into input/resources/
                                     (what the build runs); a version already
                                     present is skipped, --force downloads again
-  py -3 _syncValueSets.py check     ask the source for the latest version of
+  py -3 _syncDefinitions.py check     ask the source for the latest version of
                                     every entry; exit 1 when one has moved on
-  py -3 _syncValueSets.py update    move drifted entries to the latest version
+  py -3 _syncDefinitions.py update    move drifted entries to the latest version
                                     and download them; then regenerate
-  py -3 _syncValueSets.py add URL   register a ValueSet (see --help)
+  py -3 _syncDefinitions.py add URL   register a ValueSet (see --help)
+  py -3 _syncDefinitions.py add URL --type Questionnaire --key luscii-prems
+                                    register a Questionnaire (ART-DECOR); data
+                                    requirements refer to it as {q:<key>}
+
+Types
+  ValueSet and Questionnaire; every entry states its `type`. It decides the endpoint
+  (<base>/<type>/<id>) and the file name in input/resources/. A Questionnaire
+  from ART-DECOR is pinned on the effective date in its canonical, because its
+  `version` element is the ART-DECOR release, not the questionnaire's.
 
 Modes
   download   the definition has enumerable content (extensional); it is
@@ -31,12 +41,14 @@ Modes
 Sources
   decor      ART-DECOR FHIR endpoint. ValueSet/<oid> returns the latest
              version, ValueSet/<oid>--<effectiveDate> a fixed one.
-  fhir       Any FHIR terminology server (NTS). Searched by canonical url and
-             version. `auth: nts` signs in to the Nationale Terminologieserver the
-             way HipsETL does (OpenID password grant, client cli_client) with the
-             environment variables NTS_USERNAME and NTS_PASSWORD, which are never
-             stored in this repository. Alternatively `tokenEnv` names an environment
-             variable that holds a ready bearer token.
+  nts        The Nationale Terminologieserver (base defaults to
+             https://terminologieserver.nl/fhir). Searched by canonical url and
+             version. Signs in the way HipsETL does (OpenID password grant, client
+             cli_client) with the environment variables NTS_USERNAME and
+             NTS_PASSWORD, which are never stored in this repository.
+  fhir       Any other FHIR server (base required). Searched by canonical url and
+             version. `tokenEnv` names an environment variable that holds a ready
+             bearer token, when the server needs one.
              An implicit value set (a canonical containing "?fhir_vs=", for example a
              SNOMED ECL query) has no resource and no version of its own: it is
              "reference" mode and is skipped by check.
@@ -55,9 +67,12 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-MANIFEST = ROOT / "input" / "fsh" / "definitions" / "external-valuesets.yaml"
+MANIFEST = ROOT / "input" / "fsh" / "definitions" / "external-definitions.yaml"
 OUT_DIR = ROOT / "input" / "resources"
 DECOR_BASE = "https://decor.nictiz.nl/fhir/4.0/san-gen-"
+NTS_BASE = "https://terminologieserver.nl/fhir"
+TYPES = ("ValueSet", "Questionnaire")
+SOURCES = ("decor", "nts", "fhir")
 NTS_TOKEN_URL = "https://terminologieserver.nl/authorisation/auth/realms/nictiz/protocol/openid-connect/token"
 TIMEOUT = 30
 
@@ -96,10 +111,18 @@ def parse_manifest(text):
             continue
         raise SyncError(f"{MANIFEST.name}: cannot read line {line!r}")
     for e in out:
+        if e.get("type") not in TYPES:
+            raise SyncError(f"{MANIFEST.name}: '{e['key']}' needs a type ({' | '.join(TYPES)})")
         e.setdefault("source", "decor")
+        if e["source"] not in SOURCES:
+            raise SyncError(f"{MANIFEST.name}: '{e['key']}' has an unknown source '{e['source']}' ({' | '.join(SOURCES)})")
         e.setdefault("mode", "download")
         if e["source"] == "decor":
             e.setdefault("base", DECOR_BASE)
+        elif e["source"] == "nts":
+            e.setdefault("base", NTS_BASE)
+        elif "base" not in e:
+            raise SyncError(f"{MANIFEST.name}: '{e['key']}' has source fhir and needs a base")
         e.setdefault("version", "")
         if "canonical" not in e or (not e["version"] and e["mode"] != "reference"):
             raise SyncError(f"{MANIFEST.name}: '{e['key']}' needs a canonical and, unless mode is reference, a version")
@@ -139,7 +162,7 @@ def set_fields(key, fields):
 
 def append_entry(e):
     text = MANIFEST.read_text(encoding="utf-8") if MANIFEST.exists() else ""
-    block = [f"{e['key']}:"] + [_fmt(f, e[f]) for f in ("source", "base", "canonical", "version", "mode", "auth", "tokenEnv") if f in e]
+    block = [f"{e['key']}:"] + [_fmt(f, e[f]) for f in ("type", "source", "base", "canonical", "version", "mode", "tokenEnv") if f in e]
     sep = "\n\n" if text.strip() else ""
     MANIFEST.write_text(text.rstrip("\n") + sep + "\n".join(block) + "\n", encoding="utf-8", newline="\n")
 
@@ -168,7 +191,7 @@ def nts_token():
 
 
 def bearer(entry):
-    if entry and entry.get("auth") == "nts":
+    if entry and entry.get("source") == "nts":
         return nts_token()
     env = entry.get("tokenEnv") if entry else None
     if env:
@@ -196,8 +219,22 @@ def get_json(url, entry=None):
                 raise SyncError(f"cannot reach {url}: {e}")
 
 
+def effective_version(canonical):
+    """'...--20250714064425' -> '2025-07-14T06:44:25' (the ART-DECOR effective date), or ''."""
+    eff = split_decor(canonical)[1] or ""
+    if not re.fullmatch(r"\d{14}", eff):
+        return ""
+    return f"{eff[0:4]}-{eff[4:6]}-{eff[6:8]}T{eff[8:10]}:{eff[10:12]}:{eff[12:14]}"
+
+
+def resource_version(entry, r):
+    if entry["type"] != "ValueSet" and entry["source"] == "decor":
+        return effective_version(r["url"])
+    return r.get("version", "")
+
+
 def split_decor(canonical):
-    """'http://decor.../ValueSet/<oid>[--<effective>]' -> (oid, effective or None)."""
+    """'http://decor.../<Type>/<oid>[--<effective>]' -> (oid, effective or None)."""
     last = canonical.rstrip("/").split("/")[-1]
     oid, _, eff = last.partition("--")
     return oid, eff or None
@@ -225,16 +262,17 @@ def latest(entry, full=False):
     check does not transfer the codes. ART-DECOR ignores _elements and _summary and
     sends no ETag, so there the resource itself is the smallest answer.
     """
+    t = entry["type"]
     if entry["source"] == "decor":
         oid, _ = split_decor(entry["canonical"])
-        r = get_json(f"{entry['base']}/ValueSet/{oid}?_format=json", entry)
-        return r["url"], r.get("version", ""), r
+        r = get_json(f"{entry['base']}/{t}/{oid}?_format=json", entry)
+        return r["url"], resource_version(entry, r), r
     base = unpinned(entry["canonical"])
     params = {"url": base, "_sort": "-date", "_count": "1"}
     if not full:
         params["_elements"] = "url,version,date"
     q = urllib.parse.urlencode(params)
-    b = get_json(f"{entry['base']}/ValueSet?{q}", entry)
+    b = get_json(f"{entry['base']}/{t}?{q}", entry)
     if not b.get("entry"):
         raise SyncError(f"{base} not found on {entry['base']}")
     r = b["entry"][0]["resource"]
@@ -245,22 +283,22 @@ def pinned_fetch(entry):
     if entry["source"] == "decor":
         oid, eff = split_decor(entry["canonical"])
         vid = f"{oid}--{eff}" if eff else oid
-        return get_json(f"{entry['base']}/ValueSet/{vid}?_format=json", entry)
+        return get_json(f"{entry['base']}/{entry['type']}/{vid}?_format=json", entry)
     q = urllib.parse.urlencode({"url": unpinned(entry["canonical"]), "version": entry["version"]})
-    b = get_json(f"{entry['base']}/ValueSet?{q}", entry)
+    b = get_json(f"{entry['base']}/{entry['type']}?{q}", entry)
     if not b.get("entry"):
         raise SyncError(f"{entry['canonical']} version {entry['version']} not found")
     return b["entry"][0]["resource"]
 
 
 def out_file(entry):
-    """Where an entry's pinned ValueSet is stored. ART-DECOR: the versioned id, as _fetchValueSets.ps1 names it."""
+    """Where an entry's pinned resource is stored. ART-DECOR: the versioned id, as _fetchValueSets.ps1 names it."""
     if entry["source"] == "decor":
         oid, eff = split_decor(entry["canonical"])
         name = f"{oid}--{eff}" if eff else oid
     else:
         name = entry["key"]
-    return OUT_DIR / ("ValueSet-" + re.sub(r"[^a-zA-Z0-9._-]", "-", name) + ".json")
+    return OUT_DIR / (f"{entry['type']}-" + re.sub(r"[^a-zA-Z0-9._-]", "-", name) + ".json")
 
 
 def is_current(entry, f):
@@ -275,7 +313,30 @@ def is_current(entry, f):
         return False
 
 
+def fix_contained_ids(r):
+    """ART-DECOR can export a contained resource whose id is several ids separated by spaces (a value set
+    reused by several items). A FHIR id has no spaces, and the IG Publisher names a page after it, which makes
+    Jekyll fail. Keep the first id and point every '#old' reference at it."""
+    renamed = {}
+    for c in r.get("contained", []):
+        old = c.get("id", "")
+        if re.search(r"\s", old):
+            c["id"] = old.split()[0]
+            renamed["#" + old] = "#" + c["id"]
+    if not renamed:
+        return r
+
+    def walk(x):
+        if isinstance(x, dict):
+            return {k: walk(v) for k, v in x.items()}
+        if isinstance(x, list):
+            return [walk(v) for v in x]
+        return renamed.get(x, x) if isinstance(x, str) else x
+    return walk(r)
+
+
 def write_vs(entry, r):
+    r = fix_contained_ids(r)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     f = out_file(entry)
     f.write_text(json.dumps(r, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
@@ -335,9 +396,9 @@ def cmd_update(args):
             continue
         if canon == e["canonical"] and ver == e["version"]:
             continue
-        if e["mode"] == "download" and "compose" not in r:
+        if e["type"] == "ValueSet" and e["mode"] == "download" and "compose" not in r:
             r = latest(e, full=True)[2]  # the light check had no content; classify on the full resource
-        if e["mode"] == "download" and is_intensional(r):
+        if e["type"] == "ValueSet" and e["mode"] == "download" and is_intensional(r):
             print(f"  {e['key']}: now intensional, switching to reference")
             e["mode"] = "reference"
         print(f"  {e['key']}: {e['version']} -> {ver}")
@@ -357,14 +418,14 @@ def cmd_add(args):
     if args.source == "decor":
         oid, _ = split_decor(canonical)
         base = args.base or DECOR_BASE
-        entry = dict(key=args.key or oid, source="decor", base=base, canonical=canonical, version="", mode="download")
+        entry = dict(key=args.key or oid, type=args.type, source="decor", base=base, canonical=canonical, version="",
+                     mode="download")
     else:
-        if not args.base:
+        base = args.base or (NTS_BASE if args.source == "nts" else None)
+        if not base:
             raise SyncError("--base is required for --source fhir")
-        entry = dict(key=args.key or canonical.rstrip("/").split("/")[-1], source="fhir", base=args.base.rstrip("/"),
-                     canonical=canonical, version="", mode="download")
-    if args.nts:
-        entry["auth"] = "nts"
+        entry = dict(key=args.key or canonical.rstrip("/").split("/")[-1], type=args.type, source=args.source,
+                     base=base.rstrip("/"), canonical=canonical, version="", mode="download")
     if args.token_env:
         entry["tokenEnv"] = args.token_env
     if any(e["key"] == entry["key"] for e in data["valuesets"]):
@@ -375,10 +436,10 @@ def cmd_add(args):
     else:
         canon, ver, r = latest(entry, full=True)  # classifying needs the content
     entry["canonical"], entry["version"] = canon, ver
-    if args.reference or is_intensional(r):
+    if args.reference or (entry["type"] == "ValueSet" and is_intensional(r)):
         entry["mode"] = "reference"
         print(f"  {entry['key']}: intensional or forced, registered as reference only")
-    if entry["source"] == "decor" and entry["base"] == DECOR_BASE:
+    if (entry["source"], entry["base"]) in (("decor", DECOR_BASE), ("nts", NTS_BASE)):
         del entry["base"]  # the default; keeps the file short
     append_entry(entry)
     if entry["mode"] == "download":
@@ -396,12 +457,12 @@ def main():
     sub.add_parser("check")
     sub.add_parser("update")
     a = sub.add_parser("add")
-    a.add_argument("url", help="canonical URL of the ValueSet")
-    a.add_argument("--source", choices=["decor", "fhir"], default="decor")
-    a.add_argument("--base", help="server base URL (default for decor: " + DECOR_BASE + ")")
+    a.add_argument("url", help="canonical URL of the ValueSet or Questionnaire")
+    a.add_argument("--type", choices=["ValueSet", "Questionnaire"], default="ValueSet")
+    a.add_argument("--source", choices=list(SOURCES), default="decor")
+    a.add_argument("--base", help=f"server base URL (default for decor: {DECOR_BASE}, for nts: {NTS_BASE})")
     a.add_argument("--key", help="short key used in {vs:<key>} (default: last URL segment)")
     a.add_argument("--token-env", help="environment variable holding a bearer token")
-    a.add_argument("--nts", action="store_true", help="sign in to the NTS with NTS_USERNAME / NTS_PASSWORD")
     a.add_argument("--reference", action="store_true", help="never download; reference only")
     args = ap.parse_args()
     try:

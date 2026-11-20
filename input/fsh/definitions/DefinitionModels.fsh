@@ -1,12 +1,13 @@
 // =====================================================================
 // DefinitionModels.fsh
-// Logical Models for KPI definitions and dataset definitions, plus the
+// Logical Models for data requirements and dataset definitions, plus the
 // extension that lets an ObservationDefinition describe a panel.
 //
-// The definitions in this folder (ObservationDefinitions, ValueSets, KPI
-// definitions, dataset definitions) are the SOURCE from which
-// _generateFromDefinitions.py derives the profiles, the export Groups and
-// the export Parameters. Nothing under input/fsh/generated/ is edited by hand.
+// The definitions in this folder (ObservationDefinitions, ValueSets, data
+// requirements, dataset definitions) are the SOURCE from which
+// _generateFromDefinitions.py derives the per-dataset profiles, the export
+// Groups and the export Parameters. Nothing under input/fsh/generated/ is
+// edited by hand.
 // =====================================================================
 
 
@@ -25,20 +26,23 @@ Description: "Points from a panel ObservationDefinition (e.g. blood pressure) to
 
 
 // ---------------------------------------------------------------------
-// Logical Model — KPI definition
-// A KPI definition is role-neutral: it only says which data (resource +
-// FHIR search parameters) is needed. Whether a criterion acts as numerator,
-// denominator or exclusion is decided downstream, not here.
+// Logical Model — data requirement
+// A data requirement is role-neutral: it only says which data (resource +
+// FHIR search parameters + elements) is needed, for a KPI, a PREM or any
+// other use. Whether a criterion acts as numerator, denominator or
+// exclusion is decided downstream, not here.
 // ---------------------------------------------------------------------
-Logical: KpiDefinition
+Logical: DataRequirementDefinition
 Parent: Base
-Id: kpi-definition
-Title: "KPI definition (model)"
+Id: data-requirement-definition
+Title: "Data requirement (model)"
 Description: """
-The data a KPI needs, expressed as a list of FHIR search criteria. The union of
-all KPI definitions determines the model: the generated profiles accept exactly
-the codes and elements the KPIs ask for, and the generated export request
-selects exactly the records they filter on.
+The data a use (a KPI, a questionnaire, an analysis) needs, expressed as a list of
+FHIR search criteria and the elements to release. The data requirements of a dataset
+determine its profiles: the generated profiles accept exactly the codes and elements
+they ask for, and the generated export request selects exactly the records they
+filter on. Every element asked for must be allowed by the hand-written SAN profile
+the generated profile derives from; the generator warns when it is not.
 
 **Parameter values** are FHIR search values and may contain references that the
 generator resolves:
@@ -53,19 +57,19 @@ generator resolves:
 
 A value may also be a literal: `code:in=<canonical URL>` names an external value set, and
 `type=system|code,system|code` lists codes inline. Literal codes on a `code` parameter of a
-KPI criterion are added to the generated code value set.
+requirement criterion are added to the generated code value set.
 
 Anything else in curly braces, such as `{period.start}`, is a placeholder that
 the exporter fills in at run time.
 """
 * ^status = #draft
 
-* id 1..1 string "KPI identifier, e.g. 'k363-calprotectin-before-scopie'."
-* version 1..1 string "Semantic version of this KPI definition."
+* id 1..1 string "Data requirement identifier, e.g. 'k363-calprotectin-before-scopie'."
+* version 1..1 string "Semantic version of this data requirement."
 * title 1..1 string "Human-readable name."
-* description 0..1 markdown "What the KPI measures."
+* description 0..1 markdown "What the data is needed for."
 
-* criteria 1..* BackboneElement "The data the KPI needs."
+* criteria 1..* BackboneElement "The data needed."
 * criteria.resource 1..1 code "FHIR resource type, e.g. Observation."
 * criteria.param 0..* BackboneElement "A FHIR search parameter."
 * criteria.param.name 1..1 string "Search parameter name including modifier, e.g. 'code:in'."
@@ -86,15 +90,15 @@ Parent: Base
 Id: dataset-definition
 Title: "Dataset definition (model)"
 Description: """
-One dataset (for example IBD or COPD): the cohort that forms the Group, and the
-KPI definitions whose data the export releases. The generator resolves a dataset
-into a `Group` (cohort as bulk-data `member-filter`s) and a `Parameters`
-(`_type`, `_typeFilter`, `_elements`), and renders the whole definition as a
-readable page.
+One dataset (for example sb-ibd or sb-copd): the cohort that forms the Group, and the
+data requirements whose data the export releases. The generator resolves a dataset
+into a `Group` (cohort as bulk-data `member-filter`s), a `Parameters`
+(`_type`, `_typeFilter`, `_elements`) and one profile per resource type (derived from
+the SAN profile), and renders the whole definition as a readable page.
 """
 * ^status = #draft
 
-* id 1..1 string "Dataset identifier, e.g. 'ibd'."
+* id 1..1 string "Dataset identifier, e.g. 'sb-ibd'. Prefixes the generated Group, Parameters and profiles."
 * version 1..1 string "Semantic version of this dataset definition."
 * title 1..1 string "Human-readable name."
 * description 0..1 markdown "What the dataset is for."
@@ -105,16 +109,16 @@ readable page.
 * cohort.criteria.resource 1..1 code "FHIR resource type the criterion searches."
 * cohort.criteria.param 0..* BackboneElement "A FHIR search parameter."
 * cohort.criteria.param.name 1..1 string "Search parameter name including modifier."
-* cohort.criteria.param.value 1..1 string "Search value; same reference syntax as in a KPI definition."
+* cohort.criteria.param.value 1..1 string "Search value; same reference syntax as in a data requirement."
 * cohort.postFilter 0..* BackboneElement "Cohort logic that cannot be expressed as a FHIR search."
 * cohort.postFilter.description 1..1 markdown "What is filtered, in words."
 * cohort.postFilter.expression 0..1 string "Optional formalisation."
 
-* kpi 1..* string "Id of a KpiDefinition whose data the export releases."
+* requirement 1..* string "Id of a DataRequirementDefinition whose data the export releases."
 
-* include 0..* BackboneElement "Data the dataset releases that does not belong to any KPI, for example the Patient model with a filter on gender. Same shape as a KPI criterion."
+* include 0..* BackboneElement "Data the dataset releases that does not belong to any data requirement, for example the Patient model with a filter on gender. Same shape as a requirement criterion."
 * include.resource 1..1 code "FHIR resource type."
 * include.param 0..* BackboneElement "A FHIR search parameter."
 * include.param.name 1..1 string "Search parameter name including modifier."
-* include.param.value 1..1 string "Search value; same reference syntax as in a KPI definition."
+* include.param.value 1..1 string "Search value; same reference syntax as in a data requirement."
 * include.element 0..* string "Elements of the resource that must be released, as ElementName. Drives _elements and bounds the generated profile."

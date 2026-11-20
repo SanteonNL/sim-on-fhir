@@ -1,54 +1,33 @@
 Profile: PatientSan
-Parent: Patient
-// Parent: http://ig.nictiz.nl/gbb/StructureDefinition/nl-core-Patient
-// nl-core wordt nog via een technische delta-mapping vergeleken.
+Parent: http://ig.nictiz.nl/gbb/StructureDefinition/nl-core-Patient
 Id: patient-san
 Title: "Patient (SAN)"
-Description: "Santeon FHIR R4-profiel voor patiëntgegevens, gebaseerd op het Santeon Informatiemodel (SIMPatient)."
+Description: "Generiek Santeon-profiel voor patiënten (SIMPatient), gebaseerd op Nictiz nl-core-Patient. Datasetprofielen sluiten de elementen die zij niet gebruiken."
 
-// IBD-scope
-* identifier 1..*
+// Opgenomen
+* identifier 1..* MS
 * identifier.value 1..1
-* gender 0..1
-* birthDate 0..1
+* gender 0..1 MS
+* birthDate 0..1 MS
+* deceased[x] 0..1 MS
 * deceased[x] only dateTime
 
-// Buiten IBD-scope - nog niet meegenomen
-// Standaard FHIR-elementen blijven toegestaan.
-// Eventuele toekomstige beperkingen worden alleen toegevoegd op basis van expliciete eisen.
+// Uitgesloten
+* identifier[bsn] 0..0
+* implicitRules 0..0
+* text 0..0
+* contained 0..0
+* modifierExtension 0..0
 
-// Terminologie
-* gender from http://hl7.org/fhir/ValueSet/administrative-gender (required)
 
-
-
-// ============================================
-// MAPPING 1: Technische delta-analyse - PatientSan naar Nictiz nl-core
-// ============================================
-
-Mapping: PatientSanToNlCore
-Id: PatientSanToNlCore
-Title: "Nictiz nl-core-Patient"
-Description: "Technische vergelijking tussen PatientSan en Nictiz nl-core Patient (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen in FHIR-elementen, cardinaliteiten, datatypes en terminologiebindingen. Legenda: 🟢 Beoordeeld, equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."
+Mapping: PatientSanFromSIMPatient
+Id: sim
+Title: "Santeon Informatiemodel (SIMPatient)"
+Description: "Herkomst van de PatientSan-elementen in het logisch model SIMPatient."
 Source: PatientSan
-Target: "http://ig.nictiz.nl/gbb/StructureDefinition/nl-core-Patient"
+Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMPatient"
 
-// IBD-scope
-* identifier -> "Patient.identifier" "🟡 Verschil in profilering: Nictiz definieert aanvullend een optionele BSN-slice 0..1."
-* gender -> "Patient.gender" "🟢 Equivalent: beide gebruiken FHIR AdministrativeGender met required binding en cardinaliteit 0..1."
-* birthDate -> "Patient.birthDate" "🟢 Equivalent: beide gebruiken FHIR date met cardinaliteit 0..1."
-* deceased[x] -> "Patient.deceasedDateTime" "🟡 Verschil in representatie: PatientSan beperkt deceased[x] tot dateTime; nl-core ondersteunt daarnaast boolean."
-
-// Buiten IBD-scope - nog te beoordelen
-// -
-
-
-
-// ============================================
-// Status en openstaande controles
-// ============================================
-
-// Status: Ready for validation
-// TODO: Controleer identifier-slicing met Nictiz.
-// TODO: Beoordeel aanvullende nl-core obligations.
-
+* identifier -> "SIMPatient.Identificatienummer"
+* gender -> "SIMPatient.Geslacht" "Terminologiemapping van SIM GeslachtCodelijst (zib 2020) naar FHIR AdministrativeGender."
+* birthDate -> "SIMPatient.Geboortedatum"
+* deceasedDateTime -> "SIMPatient.DatumOverlijden" "SIM date als dateTime met dagprecisie."

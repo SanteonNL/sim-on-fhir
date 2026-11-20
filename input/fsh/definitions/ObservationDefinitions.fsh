@@ -26,6 +26,18 @@ Description: "Faecal calprotectin, numeric result in microgram per gram."
 * quantitativeDetails.unit = $UCUM#ug/g "microgram per gram"
 
 
+Instance: od-nihss-total
+InstanceOf: ObservationDefinition
+Usage: #definition
+Title: "NIHSS totaalscore"
+Description: "Total score of the NIH Stroke Scale (0-42), a score without unit."
+* category = $ObsCategory#survey
+* code = $LOINC#72089-6 "Total score NIH Stroke Scale"
+* preferredReportName = "NIHSS totaalscore"
+* permittedDataType = #Quantity
+* quantitativeDetails.unit = $UCUM#{score} "score"
+
+
 // --- coded result ----------------------------------------------------
 Instance: od-alcohol-use
 InstanceOf: ObservationDefinition
@@ -37,7 +49,7 @@ Description: "Alcohol use status; the answer is a code from the valid coded valu
 * preferredReportName = "Alcoholgebruik"
 * permittedDataType = #CodeableConcept
 // The answers are the zib value set AlcoholGebruikStatusCodelijst, maintained in ART-DECOR.
-// It is referenced by its canonical URL and registered in external-valuesets.yaml (key
+// It is referenced by its canonical URL and registered in external-definitions.yaml (key
 // alcohol-use-status), which pins the version that the generated profile uses.
 * validCodedValueSet.reference = "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2"
 
@@ -51,6 +63,6 @@ Description: "Tobacco smoking status (illustrative); the answers come from the N
 * preferredReportName = "Rookstatus"
 * permittedDataType = #CodeableConcept
 // The answers are a SNOMED ECL query on the NTS (smoker, non-smoker, ex-smoker and their
-// descendants). Such a set cannot be downloaded, so it is registered in external-valuesets.yaml
+// descendants). Such a set cannot be downloaded, so it is registered in external-definitions.yaml
 // (key smoking-status-nts) as reference only; the terminology server resolves it.
 * validCodedValueSet.reference = "http://snomed.info/sct?fhir_vs=ecl/%3C%3C%2077176002%20OR%20%3C%3C%208392000%20OR%20%3C%3C%208517006"

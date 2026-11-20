@@ -80,7 +80,7 @@ jobs:
         run: npm install -g fsh-sushi
 
       - name: Download pinned external ValueSets
-        run: python3 _syncValueSets.py fetch
+        run: python3 _syncDefinitions.py fetch
 
       - name: Check generated definitions are up to date
         run: |

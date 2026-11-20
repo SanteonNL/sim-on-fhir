@@ -1,27 +1,34 @@
-# ValueSets maintained outside this repository.
+# Definitions maintained outside this repository: ValueSets and Questionnaires.
 #
-# Each entry pins one version. KPI and dataset definitions refer to it by key,
-# for example  code:in={vs:careplan-category}, and the generator resolves that
-# to the pinned canonical below.
+# Each entry pins one version. Data requirements and dataset definitions refer to
+# it by key, for example  code:in={vs:careplan-category}  or
+# questionnaire={q:luscii-prems}, and the generator resolves that to the pinned
+# canonical below.
 #
-#   source     decor (ART-DECOR, default) | fhir (a FHIR terminology server, e.g. NTS)
-#   base       server base URL; optional for decor, required for fhir
-#   canonical  the ValueSet's canonical URL
+#   type       ValueSet | Questionnaire
+#   source     decor  ART-DECOR (base optional, default the Santeon project san-gen-)
+#              nts    Nationale Terminologieserver (base optional, sign-in with
+#                     NTS_USERNAME / NTS_PASSWORD)
+#              fhir   any other FHIR server (base required)
+#   base       server base URL; optional for decor and nts, required for fhir
+#   canonical  the canonical URL of the ValueSet or Questionnaire
 #   version    the pinned version
 #   mode       download  = fetched in the build, so the IG renders it
 #              reference = content cannot be downloaded (e.g. a SNOMED ECL query);
 #                          only the canonical is used, the terminology server resolves it
 #   tokenEnv   optional: name of an environment variable with a bearer token
 #
-# Maintained with _syncValueSets.py (add, fetch, check, update); edit by hand when needed.
+# Maintained with _syncDefinitions.py (add, fetch, check, update); edit by hand when needed.
 
 careplan-category:
+  type: ValueSet
   source: decor
   canonical: http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229
   version: "2024-09-25T07:02:29"
   mode: download
 
 alcohol-use-status:
+  type: ValueSet
   source: decor
   base: https://decor.nictiz.nl/fhir/4.0/zib2020bbr-
   canonical: http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000
@@ -29,9 +36,15 @@ alcohol-use-status:
   mode: download
 
 smoking-status-nts:
-  source: fhir
-  base: https://terminologieserver.nl/fhir
+  type: ValueSet
+  source: nts
   canonical: http://snomed.info/sct?fhir_vs=ecl/%3C%3C%2077176002%20OR%20%3C%3C%208392000%20OR%20%3C%3C%208517006
   version: ""
   mode: reference
-  auth: nts
+
+luscii-prems:
+  type: Questionnaire
+  source: decor
+  canonical: http://decor.nictiz.nl/fhir/Questionnaire/2.16.840.1.113883.2.4.3.11.60.124.27.62--20250714064425
+  version: "2025-07-14T06:44:25"
+  mode: download

@@ -14,7 +14,7 @@ Je beschrijft **wat je wilt weten** (een indicator, een dataset, een meting) in 
 | **Indicator** (KPI-definitie) | Welke gegevens een indicator nodig heeft, als FHIR-zoekvragen | `input/fsh/definitions/Kpis.fsh` |
 | **Dataset** | Eén export per ziektebeeld: wie in het cohort zit, welke indicatoren erbij horen, welke extra gegevens | `input/fsh/datasets/IBD.fsh` (één bestand per dataset) |
 | **ValueSet** (lijst van codes) | Welke codes bij een cohort, meting of antwoord horen | lokaal in `input/fsh/valuesets/`, of extern in ART-DECOR of op de NTS (zie hieronder) |
-| **Configuratie externe ValueSets** | Welke externe lijsten we gebruiken en op welke versie ze vastgepind zijn | `input/fsh/definitions/external-valuesets.yaml` |
+| **Configuratie externe definities** | Welke externe ValueSets en vragenlijsten we gebruiken, uit welke bron (ART-DECOR, NTS) en op welke versie ze vastgepind zijn | `input/fsh/definitions/external-definitions.yaml` |
 
 De structuur van een indicator en een dataset (welke velden ze mogen hebben) staat in `input/fsh/definitions/DefinitionModels.fsh`. Daar hoef je normaal niets aan te veranderen.
 
@@ -85,7 +85,7 @@ Waar een lijst woont, hangt af van wie hem beheert.
 | Twee of drie codes voor één doel | vast in de definitie | `code=systeem\|code,systeem\|code` |
 | Eigen lijsten van dit project | `input/fsh/valuesets/` | `{vs:<naam>}` |
 
-Een externe lijst wordt **niet** gekopieerd. In `external-valuesets.yaml` staat per lijst de bron en de versie. Zo kun je later controleren of er een nieuwere versie is.
+Een externe lijst wordt **niet** gekopieerd. In `external-definitions.yaml` staat per lijst de bron en de versie. Zo kun je later controleren of er een nieuwere versie is.
 
 **Antwoorden bij een meting** kunnen op twee manieren: als lijst bij de meting zelf (bijvoorbeeld uit ART-DECOR) of als `value-concept` in een indicator. Het script voegt beide samen tot één antwoordenlijst per meting.
 
@@ -100,14 +100,14 @@ Een externe lijst wordt **niet** gekopieerd. In `external-valuesets.yaml` staat 
 **Een externe ValueSet.** Registreer hem eenmalig:
 
 ```
-py -3 _syncValueSets.py add <url> --key <naam>
+py -3 _syncDefinitions.py add <url> --key <naam>
 ```
 
 Controleer later of de versie nog klopt:
 
 ```
-py -3 _syncValueSets.py check      # meldt wat verouderd is
-py -3 _syncValueSets.py update     # zet verouderde lijsten op de nieuwste versie
+py -3 _syncDefinitions.py check      # meldt wat verouderd is
+py -3 _syncDefinitions.py update     # zet verouderde lijsten op de nieuwste versie
 ```
 
 Voor de NTS zijn `NTS_USERNAME` en `NTS_PASSWORD` nodig als omgevingsvariabelen. Ze staan nergens in de repository.
@@ -126,9 +126,9 @@ Wat het script schrijft (`input/fsh/generated/`, `datasets.md`, `<dataset>.md`) 
 
 De export is een reeks gewone FHIR-aanroepen, na elkaar:
 
-1. Het cohort als Group aanmaken (`PUT [base]/Group/ibd-dataset-cohort`).
+1. Het cohort als Group aanmaken (`PUT [base]/Group/sb-ibd-cohort`).
 2. Wachten tot de Group bestaat.
-3. De export starten op die Group (`POST [base]/Group/ibd-dataset-cohort/$export`), met de gegenereerde Parameters als body.
+3. De export starten op die Group (`POST [base]/Group/sb-ibd-cohort/$export`), met de gegenereerde Parameters als body.
 4. Wachten tot de export klaar is.
 5. De bestanden ophalen.
 

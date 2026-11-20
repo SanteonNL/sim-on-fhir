@@ -117,15 +117,15 @@ Run `sushi .` first and build straight after a merge, before making other change
 
 ## Folder layout and naming
 
-Naming follows the HL7 Europe / EHDS conventions: logical models are `<Family><Name>` with the title "Name (model)"; FHIR profiles have the id `<resource>-san` (camelCase resource, family suffix) and the title "Resource (SAN)"; a use-case suffix is added after the family (`-san-kpi` for profiles generated from the KPI definitions).
+Naming follows the HL7 Europe / EHDS conventions: logical models are `<Family><Name>` with the title "Name (model)"; FHIR profiles have the id `<resource>-san` (camelCase resource, family suffix) and the title "Resource (SAN)"; profiles generated per dataset are named `<Dataset><Resource>` with the id `<dataset>-<resource>` and the title "Resource (dataset)", for example `SbIbdObservation` / `sb-ibd-observation` / "Observation (sb-ibd)", and derive from the SAN profile.
 
 ```
 input/fsh/
 ├── sim/               SIM logical models (SIMPatient, SIMVerrichting, ...) and the IBD dataset/cohort models
 ├── fhir/              FHIR profiles (ObservationSan, ProcedureSan, ...), extensions, concept maps
 ├── valuesets/         value sets
-├── datasets/          one file per dataset (IBD.fsh): cohort + the KPIs it releases
-├── definitions/       ObservationDefinitions, KPI definitions, the definition models, external-valuesets.yaml
+├── datasets/          one file per dataset (sb-ibd.fsh): cohort + the data requirements it releases
+├── definitions/       ObservationDefinitions, data requirements, the definition models, external-definitions.yaml
 ├── deidentification/  de-identification ruleset model and standard ruleset
 └── generated/         written by _generateFromDefinitions.py, never edited
 ```
@@ -151,27 +151,29 @@ py -3 -m http.server 8080 -d output    # Preview at http://localhost:8080 (stop 
 - **Open checks:** Document unresolved checks as `// TODO:` in the relevant FSH file.
 - **Sources:** The SIM defines the information model; indicator definitions, `sb-ibd`, and HIPS ETL inform the dataset scope. FHIR R4 defines the technical representation.
 
-If the field must also be exported, it requires a KPI definition; see the next section.
+If the field must also be exported, a dataset must ask for it in a data requirement; see the next section. The other way round: when a dataset asks for an element the SAN profile closes, the generator warns, and the element has to be modelled in the SAN profile first.
 
-## When you change a KPI, dataset or measurement definition
+## When you change a data requirement, dataset or measurement definition
 
-The model for datasets (IBD, COPD, ...) is derived from definitions, not written per measurement. Edit the definitions in [input/fsh/definitions/](input/fsh/definitions/):
+The profiles per dataset (sb-ibd, sb-copd, ...) are derived from definitions, not written per measurement. Edit the definitions in [input/fsh/definitions/](input/fsh/definitions/):
 
 | File | Contains |
 |------|----------|
 | `ObservationDefinitions.fsh` | one ObservationDefinition per measurement (code, value type, unit, answers) |
 | `ValueSets.fsh` | terminology for cohorts and coded answers |
-| `Kpis.fsh` | KPI definitions: resource + FHIR search parameters, post-query filters |
-| `../datasets/<Name>.fsh` | one file per dataset (in `input/fsh/datasets/`): cohort + the KPIs it releases |
-| `DefinitionModels.fsh` | the `KpiDefinition` / `DatasetDefinition` logical models |
+| `DataRequirements.fsh` | data requirements (for a KPI, a questionnaire, ...): resource + FHIR search parameters + elements, post-query filters |
+| `../datasets/<id>.fsh` | one file per dataset (in `input/fsh/datasets/`): cohort + the data requirements it releases |
+| `DefinitionModels.fsh` | the `DataRequirementDefinition` / `DatasetDefinition` logical models |
 
-ValueSets maintained in ART-DECOR or on a terminology server are not copied into the repository. They are registered in `external-valuesets.json` with a pinned version and referenced as `{vs:<key>}`:
+ValueSets and Questionnaires maintained in ART-DECOR, on the NTS or on another FHIR server are not copied into the repository. They are registered in `external-definitions.yaml` with their `type`, `source` (`decor`, `nts` or `fhir`) and a pinned version, and referenced as `{vs:<key>}` or `{q:<key>}`:
 
 ```powershell
-py -3 _syncValueSets.py add <canonical-url> --key ibd-diagnosis     # register (ART-DECOR by default)
-py -3 _syncValueSets.py fetch                                        # download the pinned versions (the build does this)
-py -3 _syncValueSets.py check                                        # is every pin still the latest? exit 1 when not
-py -3 _syncValueSets.py update                                       # move outdated pins, then regenerate
+py -3 _syncDefinitions.py add <canonical-url> --key ibd-diagnosis     # register a ValueSet (ART-DECOR by default)
+py -3 _syncDefinitions.py add <canonical-url> --type Questionnaire --key luscii-prems   # register a Questionnaire
+py -3 _syncDefinitions.py add <canonical-url> --source nts --key ...   # from the NTS (NTS_USERNAME / NTS_PASSWORD)
+py -3 _syncDefinitions.py fetch                                        # download the pinned versions (the build does this)
+py -3 _syncDefinitions.py check                                        # is every pin still the latest? exit 1 when not
+py -3 _syncDefinitions.py update                                       # move outdated pins, then regenerate
 ```
 
 Content that cannot be downloaded (for example a SNOMED ECL query on the terminology server) is registered as `reference` and only resolved by the terminology server at validation time.
@@ -182,7 +184,7 @@ Then regenerate (needs SUSHI on the PATH):
 py -3 _generateFromDefinitions.py
 ```
 
-This rewrites `input/fsh/generated/` (profiles, code value sets, Groups, Parameters) and the dataset pages in `input/pagecontent/` (`datasets.md`, `dataset-<id>.md`). Commit the generated files; CI regenerates and fails when they are out of date. A new dataset also needs its page added under `datasets.md` in `sushi-config.yaml`. See the [KPI definitions](input/pagecontent/kpi-definitions.md) page for how it works.
+This rewrites `input/fsh/generated/` (per dataset: profiles, code value sets, Groups, Parameters) and the dataset pages in `input/pagecontent/` (`datasets.md`, `<dataset-id>.md`). Commit the generated files; CI regenerates and fails when they are out of date. A new dataset also needs its page added under `datasets.md` in `sushi-config.yaml`. See the [Data requirements](input/pagecontent/data-requirements.md) page for how it works.
 
 ---
 

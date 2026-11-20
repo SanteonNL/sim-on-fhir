@@ -2,61 +2,33 @@
 
 ## Datasets
 
-One dataset per disease area. Each dataset is exported on its own Group; its definition, cohort, KPIs, post-query filters and resolved export request are on its page. How the definitions work is described under [KPI definitions](kpi-definitions.html).
+Each dataset is exported on its own Group and has its own generated profiles, derived from the hand-written SAN profiles. Its definition, Group, data requirements, post-query filters, profiles and resolved export request are on its page. How the definitions work is described under [Data requirements](data-requirements.html).
 
-| Dataset | Version | KPIs | Cohort criteria |
-|---|---|---|---|
-| [IBD](ibd-dataset.html) | 0.1.0 | 3 | 2 |
+| Dataset | Version | Data requirements | Group filters | Profiles |
+|---|---|---|---|---|
+| [sb-cva](sb-cva.html) | 0.1.0 | 3 | 2 | [SbCvaObservation](StructureDefinition-sb-cva-observation.html), [SbCvaProcedure](StructureDefinition-sb-cva-procedure.html), [SbCvaQuestionnaireResponse](StructureDefinition-sb-cva-questionnaireresponse.html), [SbCvaPatient](StructureDefinition-sb-cva-patient.html) |
+| [sb-ibd](sb-ibd.html) | 0.1.0 | 3 | 2 | [SbIbdProcedure](StructureDefinition-sb-ibd-procedure.html), [SbIbdObservation](StructureDefinition-sb-ibd-observation.html), [SbIbdQuestionnaireResponse](StructureDefinition-sb-ibd-questionnaireresponse.html), [SbIbdPatient](StructureDefinition-sb-ibd-patient.html) |
 
-### KPI definitions in use
+### Data requirements in use
 
-| KPI | Version | Used in |
+| Data requirement | Version | Used in |
 |---|---|---|
-| [Alcoholgebruik vastgelegd](Binary-alcohol-status-recorded.html) | 0.1.0 | [IBD](ibd-dataset.html) |
-| [K3.1.2 Scopie](Binary-k312-scopie.html) | 0.1.0 | [IBD](ibd-dataset.html) |
-| [K3.6.3 Calprotectine voor scopie](Binary-k363-calprotectin-before-scopie.html) | 0.1.0 | [IBD](ibd-dataset.html) |
+| [Alcoholgebruik vastgelegd](Binary-alcohol-status-recorded.html) | 0.1.0 | _none_ |
+| [Acute CVA-verrichtingen](Binary-cva-acute-procedures.html) | 0.1.0 | [sb-cva](sb-cva.html) |
+| [NIHSS bij CVA](Binary-cva-nihss.html) | 0.1.0 | [sb-cva](sb-cva.html) |
+| [K3.1.2 Scopie](Binary-k312-scopie.html) | 0.1.0 | [sb-ibd](sb-ibd.html) |
+| [K3.6.3 Calprotectine voor scopie](Binary-k363-calprotectin-before-scopie.html) | 0.1.0 | [sb-ibd](sb-ibd.html) |
+| [Luscii PREMs](Binary-luscii-prems.html) | 0.1.0 | [sb-cva](sb-cva.html), [sb-ibd](sb-ibd.html) |
 
 ---
 
-### Derived model
+### External definitions
 
-The union of all KPI definitions determines the model. One profile per resource type is generated; it accepts exactly the codes the KPIs ask for and closes every element no KPI asks for.
+ValueSets and Questionnaires maintained outside this repository and pinned in `external-definitions.yaml`. `_syncDefinitions.py check` compares each pin with its source.
 
-#### Observation
-
-Profile: [Observation (SAN KPI)](StructureDefinition-observation-san-kpi.html) · code value set: [Observation code (SAN KPI)](ValueSet-observationCode-san-kpi.html) · used by `alcohol-status-recorded`, `k363-calprotectin-before-scopie`
-
-Code sources: [od-alcohol-use](ObservationDefinition-od-alcohol-use.html), [od-calprotectin](ObservationDefinition-od-calprotectin.html)
-
-Elements released: `code`, `value[x]`, `effective[x]`, `subject`
-
-| Measurement | Constraint derived from its ObservationDefinition |
-|---|---|
-| [Alcoholgebruik](ObservationDefinition-od-alcohol-use.html) | value[x] is a CodeableConcept from alcohol-use-status (`observation-san-kpi-od-alcohol-use`) |
-| [Calprotectine (feces)](ObservationDefinition-od-calprotectin.html) | value[x] is a Quantity in ug/g (`observation-san-kpi-od-calprotectin`) |
-
-#### Procedure
-
-Profile: [Procedure (SAN KPI)](StructureDefinition-procedure-san-kpi.html) · code value set: [Procedure code (SAN KPI)](ValueSet-procedureCode-san-kpi.html) · used by `k312-scopie`, `k363-calprotectin-before-scopie`
-
-Code sources: [local-verrichting-codes-nza](ValueSet-local-verrichting-codes-nza.html)
-
-Elements released: `code`, `performed[x]`, `subject`
-
-#### Patient
-
-Profile: [Patient (SAN KPI)](StructureDefinition-patient-san-kpi.html) · used by `ibd-dataset`
-
-Elements released: `gender`, `birthDate`
-
----
-
-### External ValueSets
-
-Maintained outside this repository and pinned here. `_syncValueSets.py check` compares each pin with its source.
-
-| Key | Source | Pinned version | Mode |
-|---|---|---|---|
-| [careplan-category](http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229) | decor | 2024-09-25T07:02:29 | downloaded in the build |
-| [alcohol-use-status](http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000) | decor | 2020-09-01T00:00:00 | downloaded in the build |
-| [smoking-status-nts](http://snomed.info/sct?fhir_vs=ecl/%3C%3C%2077176002%20OR%20%3C%3C%208392000%20OR%20%3C%3C%208517006) | fhir | not versioned (implicit) | reference only (not downloadable) |
+| Key | Type | Source | Pinned version | Mode |
+|---|---|---|---|---|
+| [careplan-category](http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.124.11.140--20240925070229) | ValueSet | decor | 2024-09-25T07:02:29 | downloaded in the build |
+| [alcohol-use-status](http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.7.3.2--20200901000000) | ValueSet | decor | 2020-09-01T00:00:00 | downloaded in the build |
+| [smoking-status-nts](http://snomed.info/sct?fhir_vs=ecl/%3C%3C%2077176002%20OR%20%3C%3C%208392000%20OR%20%3C%3C%208517006) | ValueSet | nts | not versioned (implicit) | reference only (not downloadable) |
+| [luscii-prems](http://decor.nictiz.nl/fhir/Questionnaire/2.16.840.1.113883.2.4.3.11.60.124.27.62--20250714064425) | Questionnaire | decor | 2025-07-14T06:44:25 | downloaded in the build |
