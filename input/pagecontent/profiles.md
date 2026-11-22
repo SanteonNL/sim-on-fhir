@@ -4,20 +4,19 @@ The Santeon FHIR profiles describe the standardised FHIR R4 representation of th
 
 ### Overview
 
-10 profiles: 10 not reviewed.
+9 profiles: 9 not reviewed.
 
 | FHIR profile | Logical Model | Mappings | Status |
 |---|---|---|---|
-| [CarePlan (SAN)](StructureDefinition-carePlan-san.html) | [Zorgplan (SIMCarePlan)](StructureDefinition-SIMCarePlan.html) | [Santeon FHIR](StructureDefinition-carePlan-san-mappings.html) · [Bron](StructureDefinition-carePlan-san-mappings.html) | Not reviewed · 2 open checks |
-| [Condition (SAN)](StructureDefinition-condition-san.html) | – | [Bron](StructureDefinition-condition-san-mappings.html) | Not reviewed · 1 open check |
-| [Encounter (SAN)](StructureDefinition-encounter-san.html) | [Contact (SIMContact)](StructureDefinition-SIMContact.html) | [Santeon FHIR](StructureDefinition-encounter-san-mappings.html) · [Bron](StructureDefinition-encounter-san-mappings.html) | Not reviewed · 2 open checks |
-| [EpisodeOfCare (SAN)](StructureDefinition-episodeOfCare-san.html) | [DBC/Zorgtraject (SIMDBC)](StructureDefinition-SIMDBC.html) | [Santeon FHIR](StructureDefinition-episodeOfCare-san-mappings.html) · [Bron](StructureDefinition-episodeOfCare-san-mappings.html) | Not reviewed · 1 open check |
-| [MedicationRequest (SAN)](StructureDefinition-medicationRequest-san.html) | [Medicatieafspraak (SIMMedicatieAfspraak)](StructureDefinition-SIMMedicatieAfspraak.html) | [Santeon FHIR](StructureDefinition-medicationRequest-san-mappings.html) · [Bron](StructureDefinition-medicationRequest-san-mappings.html) | Not reviewed · 2 open checks |
-| [Observation (SAN)](StructureDefinition-observation-san.html) | [Algemene meting (SIMAlgemeneMeting)](StructureDefinition-SIMAlgemeneMeting.html) | [Santeon FHIR](StructureDefinition-observation-san-mappings.html) · [Bron](StructureDefinition-observation-san-mappings.html) | Not reviewed · 1 open check |
-| [Observation TabakGebruik (SAN)](StructureDefinition-observation-san-tabakgebruik.html) | [Tabakgebruik (SIMTabakGebruik)](StructureDefinition-SIMTabakGebruik.html) | [Santeon FHIR](StructureDefinition-observation-san-tabakgebruik-mappings.html) · [Bron](StructureDefinition-observation-san-tabakgebruik-mappings.html) | Not reviewed |
+| [CarePlan (SAN)](StructureDefinition-carePlan-san.html) | [Zorgplan (SIMCarePlan)](StructureDefinition-SIMCarePlan.html) | [Santeon FHIR](StructureDefinition-carePlan-san-mappings.html) · [Bron](StructureDefinition-carePlan-san-mappings.html) | Not reviewed |
+| [Condition (SAN)](StructureDefinition-condition-san.html) | – | [Bron](StructureDefinition-condition-san-mappings.html) | Not reviewed |
+| [Encounter (SAN)](StructureDefinition-encounter-san.html) | [Contact (SIMContact)](StructureDefinition-SIMContact.html) | [Santeon FHIR](StructureDefinition-encounter-san-mappings.html) · [Bron](StructureDefinition-encounter-san-mappings.html) | Not reviewed |
+| [EpisodeOfCare (SAN)](StructureDefinition-episodeOfCare-san.html) | [DBC/Zorgtraject (SIMDBC)](StructureDefinition-SIMDBC.html) | [Santeon FHIR](StructureDefinition-episodeOfCare-san-mappings.html) · [Bron](StructureDefinition-episodeOfCare-san-mappings.html) | Not reviewed |
+| [MedicationRequest (SAN)](StructureDefinition-medicationRequest-san.html) | [Medicatieafspraak (SIMMedicatieAfspraak)](StructureDefinition-SIMMedicatieAfspraak.html) | [Santeon FHIR](StructureDefinition-medicationRequest-san-mappings.html) · [Bron](StructureDefinition-medicationRequest-san-mappings.html) | Not reviewed |
+| [Observation (SAN)](StructureDefinition-observation-san.html) | [Algemene meting (SIMAlgemeneMeting)](StructureDefinition-SIMAlgemeneMeting.html) | [Santeon FHIR](StructureDefinition-observation-san-mappings.html) · [Bron](StructureDefinition-observation-san-mappings.html) | Not reviewed |
 | [Patient (SAN)](StructureDefinition-patient-san.html) | [Patiënt (SIMPatient)](StructureDefinition-SIMPatient.html) | [Santeon FHIR](StructureDefinition-patient-san-mappings.html) | Not reviewed |
-| [Procedure (SAN)](StructureDefinition-procedure-san.html) | [Verrichting (SIMVerrichting)](StructureDefinition-SIMVerrichting.html) | [Santeon FHIR](StructureDefinition-procedure-san-mappings.html) · [Nictiz nl-core](StructureDefinition-procedure-san-mappings.html) · [Bron](StructureDefinition-procedure-san-mappings.html) | Not reviewed |
-| [QuestionnaireResponse (SAN)](StructureDefinition-questionnaireResponse-san.html) | [Vragenlijstantwoord (SIMVragenlijstAntwoord)](StructureDefinition-SIMVragenlijstAntwoord.html) | [Santeon FHIR](StructureDefinition-questionnaireResponse-san-mappings.html) · [Bron](StructureDefinition-questionnaireResponse-san-mappings.html) | Not reviewed · 1 open check |
+| [Procedure (SAN)](StructureDefinition-procedure-san.html) | [Verrichting (SIMVerrichting)](StructureDefinition-SIMVerrichting.html) | [Santeon FHIR](StructureDefinition-procedure-san-mappings.html) · [Bron](StructureDefinition-procedure-san-mappings.html) | Not reviewed |
+| [QuestionnaireResponse (SAN)](StructureDefinition-questionnaireResponse-san.html) | [Vragenlijstantwoord (SIMVragenlijstAntwoord)](StructureDefinition-SIMVragenlijstAntwoord.html) | [Santeon FHIR](StructureDefinition-questionnaireResponse-san-mappings.html) · [Bron](StructureDefinition-questionnaireResponse-san-mappings.html) | Not reviewed |
 
 ### Reading the table
 

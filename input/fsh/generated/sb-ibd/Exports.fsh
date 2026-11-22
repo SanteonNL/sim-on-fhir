@@ -17,7 +17,7 @@ Description: "Group of the sb-ibd dataset as bulk-data member-filters."
 * modifierExtension[=].valueExpression.expression = "Patient?birthdate=le{today-18y}"
 * modifierExtension[+].url = "http://hl7.org/fhir/uv/bulkdata/StructureDefinition/member-filter"
 * modifierExtension[=].valueExpression.language = #application/x-fhir-query
-* modifierExtension[=].valueExpression.expression = "EpisodeOfCare?type=https://declaratie.nza.nl/zorgtype|11,https://declaratie.nza.nl/zorgtype|21&status=active,finished&date=ge2018-01-01&diagnosis:Condition.code=https://ig.santeon.nl/CodeSystem/specialisme-diagnose|0313\\|922,https://ig.santeon.nl/CodeSystem/specialisme-diagnose|0313\\|923,https://ig.santeon.nl/CodeSystem/specialisme-diagnose|0318\\|601,https://ig.santeon.nl/CodeSystem/specialisme-diagnose|0318\\|602"
+* modifierExtension[=].valueExpression.expression = "EpisodeOfCare?type=https://declaratie.nza.nl/zorgtype|11,https://declaratie.nza.nl/zorgtype|21&status=active,finished&date=ge2018-01-01&condition:Condition.code=urn:oid:2.16.840.1.113883.2.4.3.27.15.4.313|922,urn:oid:2.16.840.1.113883.2.4.3.27.15.4.313|923,urn:oid:2.16.840.1.113883.2.4.3.27.15.4.318|601,urn:oid:2.16.840.1.113883.2.4.3.27.15.4.318|602"
 
 Instance: sb-ibd-export
 InstanceOf: Parameters
@@ -27,7 +27,9 @@ Description: "_type, _typeFilter and _elements of the sb-ibd export."
 * parameter[+].name = "_type"
 * parameter[=].valueString = "Procedure,Observation,QuestionnaireResponse,Patient"
 * parameter[+].name = "_typeFilter"
-* parameter[=].valueString = "Procedure?code:in=https://ig.santeon.nl/sim-on-fhir/ValueSet/local-verrichting-codes-nza,https://ig.santeon.nl/sim-on-fhir/ValueSet/ibd-verrichting-codes-nza&date=ge2018-01-01"
+* parameter[=].valueString = "Procedure?code=urn:oid:2.16.840.1.113883.2.4.3.27.15.5|034620,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|034686,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|034690,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|035582&date=ge2018-01-01"
+* parameter[+].name = "_typeFilter"
+* parameter[=].valueString = "Procedure?code:in=https://ig.santeon.nl/sim-on-fhir/ValueSet/ibd-verrichting-codes-nza&date=ge2018-01-01"
 * parameter[+].name = "_typeFilter"
 * parameter[=].valueString = "Observation?code=http://loinc.org|38445-3&date=ge2018-01-01"
 * parameter[+].name = "_typeFilter"

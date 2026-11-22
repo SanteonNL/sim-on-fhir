@@ -3,8 +3,8 @@
 // One ObservationDefinition per measurement. These are the single source
 // for code, value type, unit and permitted answers; the generated
 // observation profile derives one invariant from each of them.
-// The codes follow Santeon_MetingNaamCodelijst (the measurement names of
-// the SIM AlgemeneMeting model).
+// Their codes together form the generated ValueSet ObservationCodesSan
+// (input/fsh/valuesets/ObservationCodesSan.fsh), bound to ObservationSan.code.
 // =====================================================================
 
 Alias: $LOINC = http://loinc.org

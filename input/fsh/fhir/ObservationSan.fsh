@@ -9,7 +9,7 @@ Description: "Generiek Santeon-profiel voor metingen (SIMAlgemeneMeting), gebase
 * identifier.value 1..1
 * status 1..1 MS
 * code 1..1 MS
-* code from Santeon_MetingNaamCodelijst (required)
+* code from ObservationCodesSan (required)
 * code.coding 1..*
 * code.coding.system 1..1
 * code.coding.code 1..1

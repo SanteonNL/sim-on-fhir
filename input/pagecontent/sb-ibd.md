@@ -32,7 +32,7 @@ A patient is in the Group when **all** filters apply.
 | **EpisodeOfCare** | `type` | `type` | NZa zorgtype 11, 21 |
 |  | `status` | `status` | active (open), finished (closed) |
 |  | `period` | `date` | ≥ 2018-01-01 |
-|  | `diagnosis.condition.code` | `diagnosis:Condition.code` | specialisme-diagnose 0313\|922, 0313\|923, 0318\|601, 0318\|602 |
+|  | `diagnosis.condition.code` | `condition:Condition.code` | DBC-diagnose Interne Geneeskunde (0313) 922, 923; DBC-diagnose Maag-Darm-Leverziekten (0318) 601, 602 |
 
 Checked after selection:
 
@@ -44,7 +44,10 @@ The fields requested for the patients in the Group; a field with a filter shows 
 
 | Resource | Field | Parameter | Condition | Needed for |
 |---|---|---|---|---|
-| **Procedure** | `code` | `code:in` | [Verrichting Type Codes NZa (Scopie)](ValueSet-local-verrichting-codes-nza.html) (4 codes) **or** [Verrichting Type Codes NZa (sb-ibd)](ValueSet-ibd-verrichting-codes-nza.html) (73 codes) | [K3.1.2 Scopie](Binary-k312-scopie.html), [K3.6.3 Calprotectine voor scopie](Binary-k363-calprotectin-before-scopie.html), the dataset itself |
+| **Procedure** | `code` | `code` | NZa zorgactiviteit 034620, 034686, 034690, 035582 | [K3.1.2 Scopie](Binary-k312-scopie.html) |
+|  | `performed[x]` | `date` | ≥ 2018-01-01 |  |
+|  | `subject` |  |  |  |
+| **Procedure** | `code` | `code:in` | [Verrichting Type Codes NZa (sb-ibd)](ValueSet-ibd-verrichting-codes-nza.html) (73 codes) | [K3.6.3 Calprotectine voor scopie](Binary-k363-calprotectin-before-scopie.html) |
 |  | `performed[x]` | `date` | ≥ 2018-01-01 |  |
 |  | `subject` |  |  |  |
 | **Observation** | `code` | `code` | Calprotectine (feces) (LOINC 38445-3) | [K3.6.3 Calprotectine voor scopie](Binary-k363-calprotectin-before-scopie.html) |
@@ -73,14 +76,16 @@ PUT [base]/Group/sb-ibd-cohort
     EpisodeOfCare?type=https://declaratie.nza.nl/zorgtype|11,https://declaratie.nza.nl/zorgtype|21
                  &status=active,finished
                  &date=ge2018-01-01
-                 &diagnosis:Condition.code=https://ig.santeon.nl/CodeSystem/specialisme-diagnose|0313\|922,https://ig.santeon.nl/CodeSystem/specialisme-diagnose|0313\|923,https://ig.santeon.nl/CodeSystem/specialisme-diagnose|0318\|601,https://ig.santeon.nl/CodeSystem/specialisme-diagnose|0318\|602
+                 &condition:Condition.code=urn:oid:2.16.840.1.113883.2.4.3.27.15.4.313|922,urn:oid:2.16.840.1.113883.2.4.3.27.15.4.313|923,urn:oid:2.16.840.1.113883.2.4.3.27.15.4.318|601,urn:oid:2.16.840.1.113883.2.4.3.27.15.4.318|602
 
 POST [base]/Group/sb-ibd-cohort/$export
   Prefer: respond-async
 
   _type       = Procedure,Observation,QuestionnaireResponse,Patient
 
-  _typeFilter = Procedure?code:in=https://ig.santeon.nl/sim-on-fhir/ValueSet/local-verrichting-codes-nza,https://ig.santeon.nl/sim-on-fhir/ValueSet/ibd-verrichting-codes-nza
+  _typeFilter = Procedure?code=urn:oid:2.16.840.1.113883.2.4.3.27.15.5|034620,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|034686,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|034690,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|035582
+                         &date=ge2018-01-01
+  _typeFilter = Procedure?code:in=https://ig.santeon.nl/sim-on-fhir/ValueSet/ibd-verrichting-codes-nza
                          &date=ge2018-01-01
   _typeFilter = Observation?code=http://loinc.org|38445-3
                            &date=ge2018-01-01

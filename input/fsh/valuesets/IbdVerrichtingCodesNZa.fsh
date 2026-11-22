@@ -1,4 +1,4 @@
-Alias: $NZaZorgactiviteit = https://declaratie.nza.nl/zorgactiviteit
+Alias: $NZaZorgactiviteit = urn:oid:2.16.840.1.113883.2.4.3.27.15.5
 
 ValueSet: IbdVerrichtingCodesNZa
 Id: ibd-verrichting-codes-nza

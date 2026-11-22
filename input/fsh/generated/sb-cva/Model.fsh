@@ -79,10 +79,29 @@ Description: "Procedure as exported in dataset sb-cva: derived from ProcedureSan
 * code 1..1
 * code from SbCvaProcedureCode (required)
 * subject only Reference(SbCvaPatient)
+* instantiatesCanonical 0..0
+* instantiatesUri 0..0
 * basedOn 0..0
+* partOf 0..0
+* statusReason 0..0
 * category 0..0
 * encounter 0..0
+* recorder 0..0
+* asserter 0..0
 * performer 0..0
+* location 0..0
+* reasonCode 0..0
+* reasonReference 0..0
+* bodySite 0..0
+* outcome 0..0
+* report 0..0
+* complication 0..0
+* complicationDetail 0..0
+* followUp 0..0
+* note 0..0
+* focalDevice 0..0
+* usedCode 0..0
+* usedReference 0..0
 
 // ---------------------------------------------------------------------
 // QuestionnaireResponse (sb-cva)
@@ -124,4 +143,16 @@ Id: sb-cva-patient
 Title: "Patient (sb-cva)"
 Description: "Patient as exported in dataset sb-cva: derived from PatientSan, generated from the data requirements of the dataset. Elements the dataset does not ask for are closed."
 * ^status = #draft
+* active 0..0
+* name 0..0
+* telecom 0..0
 * deceased[x] 0..0
+* address 0..0
+* maritalStatus 0..0
+* multipleBirth[x] 0..0
+* photo 0..0
+* contact 0..0
+* communication 0..0
+* generalPractitioner 0..0
+* managingOrganization 0..0
+* link 0..0

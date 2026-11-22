@@ -28,6 +28,6 @@ Source: ConditionSan
 Target: "urn:santeon:sim:csv"
 
 * subject -> "DBC;Identificatienummer" "Patient-reference op basis van identificatienummer."
-* code.coding.system -> "DBC;SpecialismeDiagnoseSysteem"
-* code.coding.code -> "DBC;SpecialismeDiagnoseCode"
+* code.coding.system -> "DBC;SpecialismeDiagnoseSysteem" "DBC-diagnosecodes per specialisme: urn:oid:2.16.840.1.113883.2.4.3.27.15.4.<specialisme zonder voorloopnullen>, bijv. 0313 -> ...27.15.4.313."
+* code.coding.code -> "DBC;SpecialismeDiagnoseCode" "Alleen de diagnosecode (bijv. 922), zonder specialismeprefix."
 * code.coding.display -> "DBC;SpecialismeDiagnoseOmschrijving"

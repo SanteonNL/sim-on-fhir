@@ -44,11 +44,12 @@ De startdatum 01-01-2018 is bewust niet dynamisch.
 * cohort.criteria[=].param[=].value = "active,finished"
 * cohort.criteria[=].param[+].name = "date"
 * cohort.criteria[=].param[=].value = "ge2018-01-01"
-// Specialisme-diagnose als losse codes: 0313 Interne Geneeskunde 922, 923 (internist MDL)
-// en 0318 Maag-Darm-Leverziekten 601, 602. De code bevat zelf een '|'; in een FHIR-zoekwaarde
-// wordt die geschreven als '\|' (de eerste, onge-escapete '|' scheidt systeem en code).
-* cohort.criteria[=].param[+].name = "diagnosis:Condition.code"
-* cohort.criteria[=].param[=].value = "https://ig.santeon.nl/CodeSystem/specialisme-diagnose|0313\\|922,https://ig.santeon.nl/CodeSystem/specialisme-diagnose|0313\\|923,https://ig.santeon.nl/CodeSystem/specialisme-diagnose|0318\\|601,https://ig.santeon.nl/CodeSystem/specialisme-diagnose|0318\\|602"
+// DBC-diagnosecodes (DBC Onderhoud): één codesysteem per specialisme,
+// urn:oid:2.16.840.1.113883.2.4.3.27.15.4.<specialisme zonder voorloopnullen>.
+// 0313 Interne Geneeskunde 922, 923 (internist MDL) en 0318 Maag-Darm-Leverziekten 601, 602.
+// R4-zoekparameter condition (EpisodeOfCare.diagnosis.condition), geketend naar Condition.code.
+* cohort.criteria[=].param[+].name = "condition:Condition.code"
+* cohort.criteria[=].param[=].value = "urn:oid:2.16.840.1.113883.2.4.3.27.15.4.313|922,urn:oid:2.16.840.1.113883.2.4.3.27.15.4.313|923,urn:oid:2.16.840.1.113883.2.4.3.27.15.4.318|601,urn:oid:2.16.840.1.113883.2.4.3.27.15.4.318|602"
 * cohort.postFilter[+].description = "De DOT moet op of na 01-01-2018 geopend zijn. Een FHIR-datumzoekactie op EpisodeOfCare.period (`date=ge2018-01-01`) selecteert elke DOT die 2018 of later overlapt, dus ook een DOT die eerder begon; de begindatum wordt daarom na de query gecontroleerd."
 * cohort.postFilter[=].expression = "EpisodeOfCare.period.start >= @2018-01-01"
 

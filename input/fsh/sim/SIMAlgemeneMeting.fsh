@@ -10,7 +10,7 @@ Description: "Generiek logisch model voor een algemene meting binnen het Santeon
 * PatientIdentificatienummer 1..1 Identifier "Identificatienummer van de patiënt"
 
 * MetingNaam 1..1 CodeableConcept "Type of naam van de meting"
-* MetingNaam from Santeon_MetingNaamCodelijst (required)
+* MetingNaam from ObservationCodesSan (required)
 
 * MetingDatumTijd 0..1 dateTime "Datum en eventueel tijd die het dichtst ligt bij het daadwerkelijke meetmoment of de observatie"
 

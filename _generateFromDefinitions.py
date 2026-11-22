@@ -7,6 +7,9 @@ Derives the IG model from the definitions in input/fsh/definitions/:
   ObservationDefinitions + ValueSets + DataRequirementDefinitions + DatasetDefinitions
         |
         v
+  input/fsh/valuesets/ObservationCodesSan.fsh
+                                     every ObservationDefinition code; the
+                                     required binding of ObservationSan.code
   input/fsh/generated/<dataset>/Model.fsh
                                      per dataset: one profile per resource type
                                      (parent: the hand-written SAN profile), the
@@ -532,6 +535,30 @@ def od_title(od):
     return od.get("preferredReportName") or od["code"]["coding"][0].get("display", od["id"])
 
 
+OBSERVATION_CODES = ("ObservationCodesSan", "observation-codes-san")
+
+
+def gen_observation_codes(defs):
+    """ObservationCodesSan: every code of every ObservationDefinition, the allowed Observation.code
+    values of ObservationSan."""
+    name, vs_id = OBSERVATION_CODES
+    L = [f"// {HEADER}", "",
+         f"ValueSet: {name}", f"Id: {vs_id}", 'Title: "Observation codes (SAN)"',
+         'Description: "Alle codes van de ObservationDefinitions (input/fsh/definitions/ObservationDefinitions.fsh): '
+         'de toegestane Observation.code-waarden van ObservationSan."',
+         "* ^status = #draft", "* ^experimental = false"]
+    seen = set()
+    for od_id in sorted(defs["od"]):
+        for c in defs["od"][od_id].get("code", {}).get("coding", []):
+            key = (c["system"], c["code"])
+            if key in seen:
+                continue
+            seen.add(key)
+            display = f' {q(c["display"])}' if c.get("display") else ""
+            L.append(f"* {c['system']}#{c['code']}{display}")
+    return "\n".join(L) + "\n"
+
+
 def component_ods(defs, od):
     out = []
     for ext in od.get("extension", []):
@@ -784,9 +811,10 @@ SYSTEM_LABEL = {
     "http://loinc.org": "LOINC",
     "http://snomed.info/sct": "SNOMED CT",
     "https://declaratie.nza.nl/zorgtype": "NZa zorgtype",
-    "https://declaratie.nza.nl/zorgactiviteit": "NZa zorgactiviteit",
+    "urn:oid:2.16.840.1.113883.2.4.3.27.15.5": "NZa zorgactiviteit",
     "http://hl7.org/fhir/sid/icd-10-nl": "ICD-10",
-    "https://ig.santeon.nl/CodeSystem/specialisme-diagnose": "specialisme-diagnose",
+    "urn:oid:2.16.840.1.113883.2.4.3.27.15.4.313": "DBC-diagnose Interne Geneeskunde (0313)",
+    "urn:oid:2.16.840.1.113883.2.4.3.27.15.4.318": "DBC-diagnose Maag-Darm-Leverziekten (0318)",
     "https://santeon.nl/sct": "Santeon",
     "http://unitsofmeasure.org": "UCUM",
 }
@@ -895,23 +923,54 @@ def request_groups(res, criteria):
     return list(groups.values())
 
 
-# The element a search parameter filters on, where it differs from the parameter's own name.
-PARAM_FIELD = {
-    ("Procedure", "date"): "performed[x]",
-    ("Observation", "date"): "effective[x]",
-    ("EpisodeOfCare", "date"): "period",
-    ("Patient", "birthdate"): "birthDate",
-    ("Condition", "onset-date"): "onset[x]",
-    ("Condition", "recorded-date"): "recordedDate",
-}
+# The element a search parameter filters on comes from the FHIR R4 SearchParameter
+# definitions in the core package (the FHIR package cache SUSHI fills), e.g.
+# EpisodeOfCare.condition -> EpisodeOfCare.diagnosis.condition, Procedure.date -> performed[x].
+CORE_PACKAGE = Path.home() / ".fhir" / "packages" / f"hl7.fhir.r4.core#{sushi_config_value('fhirVersion') or '4.0.1'}" / "package"
+_SEARCH_PARAMS = {}  # (resource type, code) -> element path below the resource
+_CHOICE_ELEMENTS = {}  # resource type -> its choice element names ("performed", "effective", ...)
+
+
+def _core_search_params():
+    if not _SEARCH_PARAMS:
+        for f in CORE_PACKAGE.glob("SearchParameter-*.json"):
+            sp = json.loads(f.read_text(encoding="utf-8"))
+            for part in (sp.get("expression") or "").split("|"):
+                part = part.strip().strip("()")
+                for base in sp.get("base", []):
+                    if part.startswith(base + "."):
+                        path = re.sub(r"\.(where|as|ofType)\(.*$|\s+as\s+\w+.*$", "", part[len(base) + 1:])
+                        _SEARCH_PARAMS.setdefault((base, sp["code"]), path)
+    return _SEARCH_PARAMS
+
+
+def _choice_elements(rt):
+    if rt not in _CHOICE_ELEMENTS:
+        names = set()
+        sd = CORE_PACKAGE / f"StructureDefinition-{rt}.json"
+        if sd.exists():
+            for e in json.loads(sd.read_text(encoding="utf-8"))["snapshot"]["element"]:
+                if e["path"].endswith("[x]") and e["path"].count(".") == 1:
+                    names.add(e["path"].split(".")[1][:-3])
+        _CHOICE_ELEMENTS[rt] = names
+    return _CHOICE_ELEMENTS[rt]
+
+
+def _element(rt, code):
+    path = _core_search_params().get((rt, code), code)
+    head, dot, rest = path.partition(".")
+    if head in _choice_elements(rt):
+        head += "[x]"
+    return head + dot + rest
 
 
 def param_field(rt, name):
+    """The element a search parameter filters on: condition:Condition.code -> diagnosis.condition.code."""
     base, _, modifier = name.partition(":")
-    if "." in modifier:  # chained: diagnosis:Condition.code -> diagnosis.condition.code
-        target, path = modifier.split(".", 1)
-        return f"{base}.{target.lower()}.{path}"
-    return PARAM_FIELD.get((rt, base), base)
+    if "." in modifier:  # chained: <reference param>:<Type>.<param of Type>
+        target, param = modifier.split(".", 1)
+        return f"{_element(rt, base)}.{_element(target, param)}"
+    return _element(rt, base)
 
 
 def request_table(res, groups, uses=True):
@@ -1413,6 +1472,7 @@ def main():
     # One folder per dataset: generated/<dataset-id>/Model.fsh and Exports.fsh. Everything under
     # generated/ belongs to the generator, so files of datasets that no longer exist are removed.
     keep = set()
+    write(FSH_DIR / "valuesets" / f"{OBSERVATION_CODES[0]}.fsh", gen_observation_codes(defs))
     for ds in defs["dataset"].values():
         d = GEN_DIR / ds["id"]
         write(d / "Model.fsh", gen_model_fsh(defs, res, ds["id"], models[ds["id"]]))
