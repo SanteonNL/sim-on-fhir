@@ -17,7 +17,7 @@ Derives the IG model from the definitions in input/fsh/definitions/:
                                      ObservationDefinition. Warns when a dataset
                                      asks for an element its SAN profile closes.
   input/fsh/generated/<dataset>/Exports.fsh
-                                     per dataset: a Group (cohort as bulk-data
+                                     per dataset: a Group (group requirement as bulk-data
                                      member-filters) and a Parameters
                                      (_type, _typeFilter, _elements)
   input/pagecontent/datasets.md      overview + derived model
@@ -406,6 +406,15 @@ def answer_vs_id(ds, od_id):
     return f"{ds}-answers-{od_id}"
 
 
+def group_of(defs, ds):
+    """The data requirement that selects the patients of the dataset's Group."""
+    gid = ds.get("group")
+    r = defs["req"].get(gid)
+    if not r:
+        raise DefinitionError(f"Dataset '{ds['id']}': group requirement '{gid}' is not defined")
+    return r
+
+
 def requirements_of(defs, ds):
     out = []
     for rid in ds.get("requirement", []):
@@ -758,7 +767,7 @@ def rolled_up_filters(res, criteria):
 
 def exports(defs, res, ds):
     """Resolved export request of one dataset: Group filters and Parameters."""
-    cohort = [res.query(c) for c in ds["cohort"]["criteria"]]
+    group = [res.query(c) for c in group_of(defs, ds)["criteria"]]
     types, elements, criteria = [], [], []
     sources = []
     for r in requirements_of(defs, ds):
@@ -774,7 +783,7 @@ def exports(defs, res, ds):
             item = f"{c['resource']}.{e}"
             if item not in elements:
                 elements.append(item)
-    return dict(cohort=cohort, types=types, filters=rolled_up_filters(res, criteria), elements=elements)
+    return dict(group=group, types=types, filters=rolled_up_filters(res, criteria), elements=elements)
 
 
 def gen_exports_fsh(defs, res, ds):
@@ -787,7 +796,7 @@ def gen_exports_fsh(defs, res, ds):
          f'Title: "{T} Group (generated)"',
          f'Description: "Group of the {T} dataset as bulk-data member-filters."',
          "* type = #person", "* actual = true", f"* name = {q(T + ' Group')}"]
-    for expr in x["cohort"]:
+    for expr in x["group"]:
         L += [f"* modifierExtension[+].url = {q(MEMBER_FILTER_URL)}",
               "* modifierExtension[=].valueExpression.language = #application/x-fhir-query",
               f"* modifierExtension[=].valueExpression.expression = {q(expr)}"]
@@ -1013,14 +1022,15 @@ def gen_dataset_page(defs, res, ds, x, model):
          f"Version {ds['version']} · definition [{i}](Binary-{i}.html) · "
          f"[Group](Group-{i}-cohort.html) · [Parameters](Parameters-{i}-export.html) · profiles {profiles}", ""]
 
-    # 1. The Group: which patients are in it
-    L += ["### Group", ""]
-    if ds["cohort"].get("description"):
-        L += [ds["cohort"]["description"].strip(), ""]
+    # 1. The Group: which patients are in it (the group data requirement)
+    g = group_of(defs, ds)
+    L += ["### Group", "", f"Selected by the data requirement [{g['title']}](Binary-{g['id']}.html).", ""]
+    if g.get("description"):
+        L += [g["description"].strip(), ""]
     L += ["A patient is in the Group when **all** filters apply.", ""]
-    L += request_table(res, request_groups(res, [(c, None) for c in ds["cohort"]["criteria"]]), uses=False)
-    if ds["cohort"].get("postFilter"):
-        L += ["Checked after selection:", ""] + [f"- {p['description'].strip()}" for p in ds["cohort"]["postFilter"]] + [""]
+    L += request_table(res, request_groups(res, [(c, None) for c in g["criteria"]]), uses=False)
+    if g.get("postFilter"):
+        L += ["Checked after selection:", ""] + [f"- {p['description'].strip()}" for p in g["postFilter"]] + [""]
 
     # 2. The export: what is requested for the Group
     L += ["### Export", "",
@@ -1040,7 +1050,7 @@ def gen_dataset_page(defs, res, ds, x, model):
           "must be covered by the [de-identification](deidentification.html#core-principles) ruleset. "
           "Long values are wrapped for reading: a line starting with `&` continues the filter above it.", "",
           "```text", f"PUT [base]/Group/{i}-cohort", "  member-filter (all must match):"]
-    for e in x["cohort"]:
+    for e in x["group"]:
         L += wrap_query(e, "    ")
     L += ["", f"POST [base]/Group/{i}-cohort/$export", "  Prefer: respond-async", "",
           f"  _type       = {','.join(x['types'])}", ""]
@@ -1096,10 +1106,11 @@ def gen_overview_page(defs, res, models):
         profs = ", ".join(f"[{profile_name(ds['id'], rt)}](StructureDefinition-{profile_id(ds['id'], rt)}.html)"
                           for rt in resources_of(models[ds["id"]]))
         L.append(f"| [{ds['title']}]({ds['id']}.html) | {ds['version']} | {len(ds.get('requirement', []))} | "
-                 f"{len(ds['cohort']['criteria'])} | {profs} |")
+                 f"{len(group_of(defs, ds)['criteria'])} | {profs} |")
     L += ["", "### Data requirements in use", "", "| Data requirement | Version | Used in |", "|---|---|---|"]
     for rid, k in defs["req"].items():
-        used = ", ".join(f"[{d['title']}]({d['id']}.html)" for d in defs["dataset"].values() if rid in d.get("requirement", [])) or "_none_"
+        used = ", ".join([f"[{d['title']}]({d['id']}.html)" for d in defs["dataset"].values() if rid in d.get("requirement", [])]
+                         + [f"[{d['title']}]({d['id']}.html) (Group)" for d in defs["dataset"].values() if d.get("group") == rid]) or "_none_"
         L.append(f"| [{k['title']}](Binary-{rid}.html) | {k['version']} | {used} |")
     L.append("")
     L += gen_external_section(res)
@@ -1437,7 +1448,7 @@ def show_resolved(defs, res, today):
     for ds in defs["dataset"].values():
         x = exports(defs, res, ds)
         print(f"== {ds['title']} (as of {today})")
-        for q_ in x["cohort"]:
+        for q_ in x["group"]:
             print("  member-filter:", fill_today(q_, today))
         for q_ in x["filters"]:
             print("  _typeFilter:  ", fill_today(q_, today))

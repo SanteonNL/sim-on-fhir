@@ -90,9 +90,10 @@ Parent: Base
 Id: dataset-definition
 Title: "Dataset definition (model)"
 Description: """
-One dataset (for example sb-ibd or sb-copd): the cohort that forms the Group, and the
-data requirements whose data the export releases. The generator resolves a dataset
-into a `Group` (cohort as bulk-data `member-filter`s), a `Parameters`
+One dataset (for example sb-ibd or sb-copd): the data requirement that selects the
+patients of the Group, and the data requirements whose data the export releases. The
+generator resolves a dataset into a `Group` (the criteria of the group requirement as
+bulk-data `member-filter`s), a `Parameters`
 (`_type`, `_typeFilter`, `_elements`) and one profile per resource type (derived from
 the SAN profile), and renders the whole definition as a readable page.
 """
@@ -103,16 +104,7 @@ the SAN profile), and renders the whole definition as a readable page.
 * title 1..1 string "Human-readable name."
 * description 0..1 markdown "What the dataset is for."
 
-* cohort 1..1 BackboneElement "Who is in the Group."
-* cohort.description 0..1 markdown "The cohort in words, including anything the criteria cannot express."
-* cohort.criteria 1..* BackboneElement "A member filter. A patient must satisfy every criterion."
-* cohort.criteria.resource 1..1 code "FHIR resource type the criterion searches."
-* cohort.criteria.param 0..* BackboneElement "A FHIR search parameter."
-* cohort.criteria.param.name 1..1 string "Search parameter name including modifier."
-* cohort.criteria.param.value 1..1 string "Search value; same reference syntax as in a data requirement."
-* cohort.postFilter 0..* BackboneElement "Cohort logic that cannot be expressed as a FHIR search."
-* cohort.postFilter.description 1..1 markdown "What is filtered, in words."
-* cohort.postFilter.expression 0..1 string "Optional formalisation."
+* group 1..1 string "Id of the DataRequirementDefinition that selects who is in the Group. Each of its criteria becomes a member-filter (a patient must satisfy every criterion); its description and postFilters describe the Group. Its elements are not used."
 
 * requirement 1..* string "Id of a DataRequirementDefinition whose data the export releases."
 
