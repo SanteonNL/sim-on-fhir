@@ -23,6 +23,15 @@ Where the version comes from (the git tag is the single source of truth):
       sim-on-fhir_<version>_site.zip      the rendered IG website (output/full-ig.zip)
       checksums.txt                       sha256 of the files above
 
+  py -3 _release.py pack             quick: SUSHI only, no IG Publisher, no site. Runs
+                                     SUSHI with the version stamped (sushi-config.yaml is
+                                     restored afterwards) and packs fsh-generated/resources
+                                     into dist/santeon.sim-on-fhir-<version>.tgz (+ checksums).
+                                     Differentials only: no snapshots, narratives or
+                                     expansions, which the IG Publisher would add.
+      --snapshot                     let SUSHI add snapshots to the profiles
+      --no-sushi                     pack the existing fsh-generated/ without running SUSHI
+
   --tag v0.2.0-rc.1   use this tag instead of detecting it (GITHUB_REF_NAME, or a
                       tag that points exactly at HEAD)
 
@@ -34,6 +43,7 @@ Standard library only.
 
 import argparse
 import hashlib
+import io
 import json
 import os
 import re
@@ -171,12 +181,116 @@ def cmd_dist(args):
         print(f"  {f.name}  ({f.stat().st_size / 1e6:.1f} MB)")
 
 
+def config_scalar(text, key):
+    m = re.search(rf"^{key}:\s*(.+?)\s*$", text, re.M)
+    return m.group(1).strip("\"'") if m else None
+
+
+def config_dependencies(text):
+    """The `dependencies:` block as {package: version} (simple `id: version` form)."""
+    m = re.search(r"^dependencies:\s*\n((?:[ \t]+.*\n?)+)", text, re.M)
+    deps = {}
+    for line in (m.group(1).splitlines() if m else []):
+        d = re.match(r"^\s+([\w.\-]+):\s*([^\s#]+)", line)
+        if d:
+            deps[d.group(1)] = d.group(2).strip("\"'")
+    return deps
+
+
+def run_sushi(args):
+    sushi = shutil.which("sushi")
+    if not sushi:
+        sys.exit("ERROR: sushi not found. Install it with: npm install -g fsh-sushi")
+    original = CONFIG.read_bytes()
+    try:
+        cmd_stamp(args)
+        r = subprocess.run([sushi, "build", ".", *(["--snapshot"] if args.snapshot else [])], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace")
+        summary = [l for l in r.stdout.splitlines() if "Errors" in l and "Warnings" in l]
+        print("SUSHI: " + (summary[0].strip(" |=") if summary else f"exit {r.returncode}"))
+        if r.returncode != 0:
+            print("\n".join(l for l in r.stdout.splitlines() if l.startswith("error"))[:4000])
+            sys.exit("ERROR: SUSHI failed")
+    finally:
+        CONFIG.write_bytes(original)
+
+
+def cmd_pack(args):
+    version, _label, tag = resolve(args.tag)
+    if not args.no_sushi:
+        run_sushi(args)
+    resources = ROOT / "fsh-generated" / "resources"
+    if not resources.is_dir():
+        sys.exit("ERROR: fsh-generated/resources not found. Run without --no-sushi.")
+
+    text = CONFIG.read_text(encoding="utf-8")
+    name = config_scalar(text, "id")
+    fhir_version = config_scalar(text, "fhirVersion") or "4.0.1"
+    canonical = config_scalar(text, "canonical")
+
+    files, index = [], []
+    for p in sorted(resources.glob("*.json")):
+        res = json.loads(p.read_text(encoding="utf-8"))
+        if res.get("resourceType") == "ImplementationGuide":
+            if res.get("version") != version:
+                sys.exit(f"ERROR: fsh-generated has version {res.get('version')}, expected {version}. Run without --no-sushi.")
+        entry = {"filename": p.name, "resourceType": res.get("resourceType"), "id": res.get("id")}
+        for k in ("url", "version", "kind", "type"):
+            if isinstance(res.get(k), str):
+                entry[k] = res[k]
+        index.append(entry)
+        files.append(p)
+    if not files:
+        sys.exit("ERROR: fsh-generated/resources is empty")
+
+    package_json = {
+        "name": name,
+        "version": version,
+        "tools-version": 3,
+        "type": "IG",
+        "canonical": canonical,
+        "url": canonical,
+        "title": config_scalar(text, "title"),
+        "description": config_scalar(text, "description"),
+        "fhirVersions": [fhir_version],
+        "dependencies": {"hl7.fhir.r4.core": fhir_version, **config_dependencies(text)},
+        "author": "Santeon",
+        "jurisdiction": "urn:iso:std:iso:3166#NL",
+    }
+
+    if DIST.exists():
+        shutil.rmtree(DIST)
+    DIST.mkdir()
+    pkg = DIST / f"{name}-{version}.tgz"
+
+    def add_bytes(t, arcname, data):
+        info = tarfile.TarInfo(arcname)
+        info.size = len(data)
+        info.mode = 0o644
+        t.addfile(info, io.BytesIO(data))
+
+    with tarfile.open(pkg, "w:gz") as t:
+        add_bytes(t, "package/package.json", json.dumps(package_json, indent=2, ensure_ascii=False).encode("utf-8"))
+        add_bytes(t, "package/.index.json", json.dumps({"index-version": 2, "files": index}, indent=2).encode("utf-8"))
+        for p in files:
+            add_bytes(t, f"package/{p.name}", p.read_bytes())
+
+    (DIST / "checksums.txt").write_text(f"{sha256(pkg)}  {pkg.name}\n", encoding="utf-8")
+    snap = any("snapshot" in json.loads(p.read_text(encoding="utf-8")) for p in files if p.name.startswith("StructureDefinition-"))
+    print(f"dist/{pkg.name}  ({len(files)} resources, {pkg.stat().st_size / 1e3:.0f} kB, {'with' if snap else 'without'} snapshots)" + (f"  tag {tag}" if tag else "  snapshot"))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("command", choices=["version", "stamp", "dist"])
+    ap.add_argument("command", nargs="?", choices=["version", "stamp", "dist", "pack"])
     ap.add_argument("--tag", help="release tag to use instead of detecting it")
+    ap.add_argument("--no-sushi", action="store_true", help="pack: use the existing fsh-generated/")
+    ap.add_argument("--snapshot", action="store_true", help="pack: let SUSHI add snapshots to the profiles")
     args = ap.parse_args()
-    {"version": cmd_version, "stamp": cmd_stamp, "dist": cmd_dist}[args.command](args)
+    if args.command is None:
+        ap.print_help()
+        print(f"\nThis commit builds as version {resolve(args.tag)[0]}. Quick package: py -3 _release.py pack")
+        return
+    {"version": cmd_version, "stamp": cmd_stamp, "dist": cmd_dist, "pack": cmd_pack}[args.command](args)
 
 
 if __name__ == "__main__":

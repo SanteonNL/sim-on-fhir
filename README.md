@@ -255,6 +255,8 @@ Progress and logs for any run are visible under the repo's [Actions tab](https:/
 
 ## Release process
 
+> Step-by-step guide in Dutch, including the quick local package: [docs/release.md](docs/release.md).
+
 Releases follow the same release-branch + release-candidate flow as our GoReleaser repos (e.g. `fenix`), adapted to a FHIR IG instead of Go binaries. As with GoReleaser, **the git tag is the version**: [_release.py](_release.py) stamps it into `sushi-config.yaml` at build time (the IG equivalent of `-X main.version={{.Version}}`), so the FHIR package carries the exact tag version, and the release files get versioned names. Every tag push is picked up automatically by [.github/workflows/publish-ig.yml](.github/workflows/publish-ig.yml) — nothing else needs to be triggered manually.
 
 ```text
@@ -349,6 +351,8 @@ The version in the file name is read from the package itself, so the name always
 | tag `v0.2.0` | `0.2.0` (`releaseLabel: release`) |
 | tag `v0.2.0-rc.1` | `0.2.0-rc.1` (`releaseLabel: release candidate`) |
 | anything else (branch, PR, local) | `<base>-snapshot-<shortsha>` (`releaseLabel: ci-build`) — never mistaken for a release |
+
+**Quick package without the site:** `py -3 _release.py pack` runs only SUSHI (about 30 s) and writes `dist/santeon.sim-on-fhir-<version>.tgz` + `checksums.txt` from `fsh-generated/resources`. It holds the differentials only (no snapshots, narratives or expansions, which the IG Publisher adds), add `--snapshot` to let SUSHI write the snapshots; use the full build for an official release.
 
 Non-tag CI runs upload `dist/` as a workflow artifact (kept 14 days). Locally, `py -3 _release.py version` prints the version the current commit builds as; `_buildIG.py` stamps it for the build and restores `sushi-config.yaml` afterwards.
 
