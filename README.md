@@ -339,7 +339,7 @@ Like GoReleaser's `dist/`, every build (CI and local `_buildIG.py`) ends with:
 | File | Contents |
 | --- | --- |
 | `santeon.sim-on-fhir-<version>.tgz` | The FHIR NPM package (`output/package.tgz`), with `<version>` in its `package.json` |
-| `sim-on-fhir_<version>_site.zip` | The rendered IG website, without local-only files (`qa.json`, `package.db`, …) |
+| `sim-on-fhir_<version>_site.zip` | The rendered IG website: the publisher's own `output/full-ig.zip`, renamed (zipped from `output/` only when that file is missing) |
 | `checksums.txt` | SHA-256 of both files |
 
 The version in the file name is read from the package itself, so the name always matches what is inside:

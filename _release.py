@@ -20,7 +20,7 @@ Where the version comes from (the git tag is the single source of truth):
                                      with `git checkout sushi-config.yaml`)
   py -3 _release.py dist             package output/ into dist/:
       santeon.sim-on-fhir-<version>.tgz   the FHIR package (output/package.tgz)
-      sim-on-fhir_<version>_site.zip      the rendered IG website
+      sim-on-fhir_<version>_site.zip      the rendered IG website (output/full-ig.zip)
       checksums.txt                       sha256 of the files above
 
   --tag v0.2.0-rc.1   use this tag instead of detecting it (GITHUB_REF_NAME, or a
@@ -152,10 +152,15 @@ def cmd_dist(args):
     files.append(pkg)
 
     site = DIST / f"{PROJECT}_{version}_site.zip"
-    with zipfile.ZipFile(site, "w", zipfile.ZIP_DEFLATED) as z:
-        for p in sorted(OUTPUT.rglob("*")):
-            if p.is_file() and p.relative_to(OUTPUT).as_posix() not in SITE_EXCLUDE:
-                z.write(p, p.relative_to(OUTPUT).as_posix())
+    full_ig = OUTPUT / "full-ig.zip"
+    if full_ig.exists():
+        # The publisher already zipped the site; copying it takes seconds instead of minutes.
+        shutil.copy2(full_ig, site)
+    else:
+        with zipfile.ZipFile(site, "w", zipfile.ZIP_DEFLATED) as z:
+            for p in sorted(OUTPUT.rglob("*")):
+                if p.is_file() and p.relative_to(OUTPUT).as_posix() not in SITE_EXCLUDE:
+                    z.write(p, p.relative_to(OUTPUT).as_posix())
     files.append(site)
 
     checksums = DIST / "checksums.txt"
