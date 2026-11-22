@@ -21,6 +21,11 @@ to hang for an hour. This script reads the publisher log as it is written and
   py -3 _buildIG.py --no-tx         build without a terminology server (faster, fewer checks)
   py -3 _buildIG.py --no-sushi      skip SUSHI (run `sushi .` yourself first)
   py -3 _buildIG.py --keep          do not clean temp/ and output/ first
+  py -3 _buildIG.py --no-dist       do not write versioned release files to dist/
+
+After a build, dist/ holds santeon.sim-on-fhir-<version>.tgz, the site zip and
+checksums.txt (see _release.py). The version comes from the git tag, or is
+<base>-snapshot-<sha> for an untagged commit.
 
 Exit code 0: built. 1: failed (the reason is printed). QA errors and warnings in the
 IG itself are reported but do not fail the build; read output/qa.html for those.
@@ -43,6 +48,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 JAR = ROOT / "input-cache" / "publisher.jar"
 LOG = ROOT / "ig-build.log"
+CONFIG = ROOT / "sushi-config.yaml"
 ANSI = re.compile(r"\x1b\[[0-9;]*m")
 FAIL_FAST = re.compile(r"Exception generating resource|java\.lang\.OutOfMemoryError|^FATAL")
 
@@ -89,8 +95,26 @@ def main():
     ap.add_argument("--keep", action="store_true", help="do not remove temp/ and output/ first")
     ap.add_argument("--stall", type=int, default=240, help="seconds without progress in the Jekyll step before giving up")
     ap.add_argument("--timeout", type=int, default=1800, help="overall limit in seconds")
+    ap.add_argument("--no-dist", action="store_true", help="do not write the versioned release files to dist/")
     args = ap.parse_args()
 
+    # Build with the version _release.py derives from git (tag, or <base>-snapshot-<sha>),
+    # so output/package.tgz says which commit it is. sushi-config.yaml is restored afterwards.
+    # With --no-sushi the caller ran SUSHI, so the version is already fixed (CI stamps it first).
+    original = None
+    if not args.no_sushi:
+        original = CONFIG.read_bytes()
+        subprocess.run([sys.executable, str(ROOT / "_release.py"), "stamp"], cwd=ROOT, check=True)
+    try:
+        build(args)
+    finally:
+        if original is not None:
+            CONFIG.write_bytes(original)
+    if not args.no_dist:
+        subprocess.run([sys.executable, str(ROOT / "_release.py"), "dist"], cwd=ROOT, check=True)
+
+
+def build(args):
     if not JAR.exists():
         sys.exit("ERROR: input-cache/publisher.jar not found. Run _updatePublisher.bat first.")
     if not args.keep:

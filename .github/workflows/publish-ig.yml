@@ -7,10 +7,13 @@ name: Build and publish IG preview
 #   - pull_request into main  -> https://<org>.github.io/<repo>/pr-<number>/
 #   - manual run              -> https://<org>.github.io/<repo>/<keyword>/  (via the "keyword" input)
 #
-# Pushing a tag (v*) additionally creates a GitHub Release with the built IG
-# packaged as a zip asset, instead of publishing a preview folder.
-#   - v0.2.0-rc.1, v0.2.0-rc.2, ... -> GitHub pre-release
-#   - v0.2.0                        -> GitHub release
+# Versioning works like GoReleaser: the git tag is the version. _release.py stamps it
+# into sushi-config.yaml before SUSHI runs, so the FHIR package carries it:
+#   - tag v0.2.0-rc.1  -> package version 0.2.0-rc.1 -> GitHub pre-release
+#   - tag v0.2.0       -> package version 0.2.0      -> GitHub release
+#   - any other build  -> package version <base>-snapshot-<sha> (preview only)
+# A tag push creates a GitHub Release with the files from dist/ (versioned FHIR package,
+# site zip, checksums.txt) instead of publishing a preview folder.
 # See "Release process" in README.md for the full branch/tag workflow.
 
 on:
@@ -45,18 +48,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Verify tag matches IG version
-        if: github.ref_type == 'tag'
-        run: |
-          IG_VERSION=$(grep -m1 '^version:' sushi-config.yaml | sed -E 's/^version:[[:space:]]*//')
-          # Strip the leading 'v' and any '-rc.N' pre-release suffix, e.g. v0.2.0-rc.1 -> 0.2.0
-          TAG_VERSION="${GITHUB_REF_NAME#v}"
-          TAG_VERSION="${TAG_VERSION%%-rc.*}"
-          if [ "$IG_VERSION" != "$TAG_VERSION" ]; then
-            echo "::error::Tag $GITHUB_REF_NAME (version $TAG_VERSION) does not match sushi-config.yaml version $IG_VERSION"
-            exit 1
-          fi
-
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
@@ -90,6 +81,12 @@ jobs:
             exit 1
           }
 
+      - name: Stamp version
+        # Tag -> its version (v0.2.0-rc.1 -> 0.2.0-rc.1); otherwise <base>-snapshot-<sha>.
+        # Fails on a tag that is not vX.Y.Z or vX.Y.Z-rc.N.
+        id: version
+        run: python3 _release.py stamp
+
       - name: Run SUSHI
         run: sushi .
 
@@ -111,6 +108,10 @@ jobs:
         # _buildIG.py stops at the first resource the publisher cannot render and at a stalled
         # Jekyll step, and prints the cause; a bare publisher call would hang silently.
         run: python3 _buildIG.py --no-sushi ${{ steps.txcheck.outputs.txoption && '--no-tx' || '' }}
+
+      - name: Package release files
+        # dist/: santeon.sim-on-fhir-<version>.tgz, sim-on-fhir_<version>_site.zip, checksums.txt
+        run: python3 _release.py dist
 
       - name: Upload build log on failure
         if: failure()
@@ -149,34 +150,31 @@ jobs:
           destination_dir: ${{ steps.slug.outputs.slug }}
           keep_files: true
 
-      - name: Upload IG output artifact
-        if: github.ref_type == 'tag'
+      - name: Upload release files
         uses: actions/upload-artifact@v4
         with:
-          name: ig-output
-          path: output
-          retention-days: 1
+          name: sim-on-fhir-${{ steps.version.outputs.version }}
+          path: dist
+          retention-days: ${{ github.ref_type == 'tag' && 1 || 14 }}
+    outputs:
+      version: ${{ steps.version.outputs.version }}
 
   release:
     needs: build-and-publish
     if: github.ref_type == 'tag'
     runs-on: ubuntu-latest
     steps:
-      - name: Download IG output artifact
+      - name: Download release files
         uses: actions/download-artifact@v4
         with:
-          name: ig-output
-          path: output
-
-      - name: Zip IG output
-        run: |
-          cd output
-          zip -r "../sim-on-fhir-ig-${{ github.ref_name }}.zip" .
+          name: sim-on-fhir-${{ needs.build-and-publish.outputs.version }}
+          path: dist
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: sim-on-fhir-ig-${{ github.ref_name }}.zip
+          name: sim-on-fhir ${{ github.ref_name }}
+          files: dist/*
           generate_release_notes: true
           prerelease: ${{ contains(github.ref_name, '-rc.') }}
         env:
