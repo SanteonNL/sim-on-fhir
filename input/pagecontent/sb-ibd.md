@@ -4,9 +4,11 @@
 
 Gegevensset voor volwassen patiënten met inflammatoire darmziekten (IBD): verrichtingen (waaronder scopieën), calprotectinemetingen en de Luscii PREMs.
 
-Version 0.1.0 · definition [sb-ibd](Binary-sb-ibd.html) · [Group](Group-sb-ibd-cohort.html) · [Parameters](Parameters-sb-ibd-export.html) · profiles [Procedure](StructureDefinition-sb-ibd-procedure.html), [Observation](StructureDefinition-sb-ibd-observation.html), [QuestionnaireResponse](StructureDefinition-sb-ibd-questionnaireresponse.html), [Patient](StructureDefinition-sb-ibd-patient.html)
+Version 0.1.0 · definition [sb-ibd](Binary-sb-ibd.html) · [Group](Group-sb-ibd-cohort.html) · [Parameters](Parameters-sb-ibd-export.html) · profiles [Procedure](StructureDefinition-sb-ibd-procedure.html), [Observation](StructureDefinition-sb-ibd-observation.html), [QuestionnaireResponse](StructureDefinition-sb-ibd-questionnaireresponse.html)
 
 ### Group
+
+Selected by the data requirement [IBD bij volwassenen (Group sb-ibd)](Binary-sb-ibd-group.html).
 
 **IBD bij volwassenen** (HIX: cohort_sb-ibd_dbc.sql). Alle patiënten van 18 jaar of ouder op het moment van
 aanleveren met een geldige DOT (niet vervallen) met zorgtype 11 of 21, geopend op of na 01-01-2018, en:
@@ -58,8 +60,6 @@ The fields requested for the patients in the Group; a field with a filter shows 
 |  | `authored` | `authored` | ≥ 2018-01-01 |  |
 |  | `item` |  |  |  |
 |  | `subject` |  |  |  |
-| **Patient** | `gender` | `gender` | male, female | the dataset itself |
-|  | `birthDate` |  |  |  |
 
 Calculated after delivery:
 
@@ -81,7 +81,7 @@ PUT [base]/Group/sb-ibd-cohort
 POST [base]/Group/sb-ibd-cohort/$export
   Prefer: respond-async
 
-  _type       = Procedure,Observation,QuestionnaireResponse,Patient
+  _type       = Procedure,Observation,QuestionnaireResponse
 
   _typeFilter = Procedure?code=urn:oid:2.16.840.1.113883.2.4.3.27.15.5|034620,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|034686,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|034690,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|035582
                          &date=ge2018-01-01
@@ -91,10 +91,8 @@ POST [base]/Group/sb-ibd-cohort/$export
                            &date=ge2018-01-01
   _typeFilter = QuestionnaireResponse?questionnaire=http://decor.nictiz.nl/fhir/Questionnaire/2.16.840.1.113883.2.4.3.11.60.124.27.62--20250714064425
                                      &authored=ge2018-01-01
-  _typeFilter = Patient?gender=male,female
 
   _elements   = Procedure.identifier,Procedure.code,Procedure.performed[x],Procedure.subject,
                 Observation.identifier,Observation.code,Observation.value[x],Observation.effective[x],Observation.subject,
-                QuestionnaireResponse.identifier,QuestionnaireResponse.questionnaire,QuestionnaireResponse.authored,QuestionnaireResponse.item,QuestionnaireResponse.subject,
-                Patient.identifier,Patient.gender,Patient.birthDate
+                QuestionnaireResponse.identifier,QuestionnaireResponse.questionnaire,QuestionnaireResponse.authored,QuestionnaireResponse.item,QuestionnaireResponse.subject
 ```

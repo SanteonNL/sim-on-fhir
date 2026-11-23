@@ -8,9 +8,11 @@ Version 0.1.0 · definition [sb-cva](Binary-sb-cva.html) · [Group](Group-sb-cva
 
 ### Group
 
+Selected by the data requirement [CVA bij volwassenen (Group sb-cva)](Binary-sb-cva-group.html).
+
 Alle patiënten van 18 jaar of ouder op het moment van aanleveren met een diagnose herseninfarct (ICD-10 I63)
 of hersenbloeding (ICD-10 I61, I62), inclusief subcodes, met een begindatum op of na 01-01-2018.
-In HipsETL komt het cohort daarnaast uit DBC's neurologie/cardiologie en uit de DASA-registratie; dat is
+In HipsETL komen de patiënten daarnaast ook uit DBC's neurologie/cardiologie en uit de DASA-registratie; dat is
 in dit voorbeeld weggelaten.
 
 A patient is in the Group when **all** filters apply.

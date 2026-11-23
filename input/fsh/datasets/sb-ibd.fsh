@@ -16,6 +16,7 @@ Description: "Dataset for adult IBD patients."
 * version = "0.1.0"
 * title = "sb-ibd"
 * description = "Gegevensset voor volwassen patiënten met inflammatoire darmziekten (IBD): verrichtingen (waaronder scopieën), calprotectinemetingen en de Luscii PREMs."
+
 * group = "sb-ibd-group"
 
 * requirement[+] = "k312-scopie"

@@ -28,7 +28,6 @@ Description: "Procedure as exported in dataset sb-ibd: derived from ProcedureSan
 * ^status = #draft
 * code 1..1
 * code from SbIbdProcedureCode (required)
-* subject only Reference(SbIbdPatient)
 * instantiatesCanonical 0..0
 * instantiatesUri 0..0
 * basedOn 0..0
@@ -78,7 +77,6 @@ Description: "Observation as exported in dataset sb-ibd: derived from Observatio
 * ^status = #draft
 * code 1..1
 * code from SbIbdObservationCode (required)
-* subject only Reference(SbIbdPatient)
 * basedOn 0..0
 * partOf 0..0
 * category 0..0
@@ -120,7 +118,6 @@ Id: sb-ibd-questionnaireresponse
 Title: "QuestionnaireResponse (sb-ibd)"
 Description: "QuestionnaireResponse as exported in dataset sb-ibd: derived from QuestionnaireResponseSan, generated from the data requirements of the dataset. Elements the dataset does not ask for are closed."
 * ^status = #draft
-* subject only Reference(SbIbdPatient)
 * basedOn 0..0
 * partOf 0..0
 * encounter 0..0
@@ -129,27 +126,3 @@ Description: "QuestionnaireResponse as exported in dataset sb-ibd: derived from 
 * questionnaire 1..1
 * obeys sb-ibd-questionnaireresponse-questionnaire
 * obeys sb-ibd-questionnaireresponse-luscii-prems
-
-// ---------------------------------------------------------------------
-// Patient (sb-ibd)
-// ---------------------------------------------------------------------
-
-Profile: SbIbdPatient
-Parent: PatientSan
-Id: sb-ibd-patient
-Title: "Patient (sb-ibd)"
-Description: "Patient as exported in dataset sb-ibd: derived from PatientSan, generated from the data requirements of the dataset. Elements the dataset does not ask for are closed."
-* ^status = #draft
-* active 0..0
-* name 0..0
-* telecom 0..0
-* deceased[x] 0..0
-* address 0..0
-* maritalStatus 0..0
-* multipleBirth[x] 0..0
-* photo 0..0
-* contact 0..0
-* communication 0..0
-* generalPractitioner 0..0
-* managingOrganization 0..0
-* link 0..0

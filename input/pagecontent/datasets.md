@@ -7,7 +7,7 @@ Each dataset is exported on its own Group and has its own generated profiles, de
 | Dataset | Version | Data requirements | Group filters | Profiles |
 |---|---|---|---|---|
 | [sb-cva](sb-cva.html) | 0.1.0 | 3 | 2 | [SbCvaObservation](StructureDefinition-sb-cva-observation.html), [SbCvaProcedure](StructureDefinition-sb-cva-procedure.html), [SbCvaQuestionnaireResponse](StructureDefinition-sb-cva-questionnaireresponse.html), [SbCvaPatient](StructureDefinition-sb-cva-patient.html) |
-| [sb-ibd](sb-ibd.html) | 0.1.0 | 3 | 2 | [SbIbdProcedure](StructureDefinition-sb-ibd-procedure.html), [SbIbdObservation](StructureDefinition-sb-ibd-observation.html), [SbIbdQuestionnaireResponse](StructureDefinition-sb-ibd-questionnaireresponse.html), [SbIbdPatient](StructureDefinition-sb-ibd-patient.html) |
+| [sb-ibd](sb-ibd.html) | 0.1.0 | 3 | 2 | [SbIbdProcedure](StructureDefinition-sb-ibd-procedure.html), [SbIbdObservation](StructureDefinition-sb-ibd-observation.html), [SbIbdQuestionnaireResponse](StructureDefinition-sb-ibd-questionnaireresponse.html) |
 
 ### Data requirements in use
 
@@ -19,6 +19,8 @@ Each dataset is exported on its own Group and has its own generated profiles, de
 | [K3.1.2 Scopie](Binary-k312-scopie.html) | 0.1.0 | [sb-ibd](sb-ibd.html) |
 | [K3.6.3 Calprotectine voor scopie](Binary-k363-calprotectin-before-scopie.html) | 0.1.0 | [sb-ibd](sb-ibd.html) |
 | [Luscii PREMs](Binary-luscii-prems.html) | 0.1.0 | [sb-cva](sb-cva.html), [sb-ibd](sb-ibd.html) |
+| [CVA bij volwassenen (Group sb-cva)](Binary-sb-cva-group.html) | 0.1.0 | [sb-cva](sb-cva.html) (Group) |
+| [IBD bij volwassenen (Group sb-ibd)](Binary-sb-ibd-group.html) | 0.1.0 | [sb-ibd](sb-ibd.html) (Group) |
 
 ---
 
