@@ -21,7 +21,7 @@
   <name value="SIMCarePlan"/>
   <title value="Zorgplan (model)"/>
   <status value="draft"/>
-  <date value="2026-11-19T16:54:56+00:00"/>
+  <date value="2026-11-25T16:23:53+00:00"/>
   <publisher value="Santeon"/>
   <contact>
     <name value="Santeon"/>
@@ -43,11 +43,13 @@
     <identity value="SIMCarePlanFromSIMCSV"/>
     <uri value="urn:santeon:sim:csv"/>
     <name value="SIM CSV"/>
+    <comment value="Herleidbaarheid van SIMCarePlan-elementen naar de oorspronkelijke SIM CSV-attributen."/>
   </mapping>
   <mapping>
     <identity value="SIMCarePlanToFHIR"/>
     <uri value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/carePlan-san"/>
-    <name value="SIMCarePlan naar FHIR"/>
+    <name value="FHIR-mapping naar CarePlanSan"/>
+    <comment value="Mapping van SIMCarePlan-elementen naar het Santeon FHIR-profiel CarePlanSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."/>
   </mapping>
   <kind value="logical"/>
   <abstract value="false"/>
@@ -92,6 +94,7 @@
       <mapping>
         <identity value="SIMCarePlanToFHIR"/>
         <map value="CarePlan.identifier"/>
+        <comment value="Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."/>
       </mapping>
     </element>
     <element id="SIMCarePlan.PatientIdentificatienummer">
@@ -115,7 +118,7 @@
       <mapping>
         <identity value="SIMCarePlanToFHIR"/>
         <map value="CarePlan.subject"/>
-        <comment value="Patient-reference op basis van identificatienummer."/>
+        <comment value="Structuurconversie: Patient-reference op basis van identificatienummer."/>
       </mapping>
     </element>
     <element id="SIMCarePlan.Status">
@@ -139,6 +142,7 @@
       <mapping>
         <identity value="SIMCarePlanToFHIR"/>
         <map value="CarePlan.status"/>
+        <comment value="Direct: SIM code wordt overgenomen als FHIR code; aansluiting op FHIR request-status nog te bevestigen."/>
       </mapping>
     </element>
     <element id="SIMCarePlan.Categorie">
@@ -166,6 +170,7 @@
       <mapping>
         <identity value="SIMCarePlanToFHIR"/>
         <map value="CarePlan.category"/>
+        <comment value="Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."/>
       </mapping>
     </element>
     <element id="SIMCarePlan.Categorie.id">
@@ -376,6 +381,7 @@
       <mapping>
         <identity value="SIMCarePlanToFHIR"/>
         <map value="CarePlan.period.start"/>
+        <comment value="Structuurconversie: SIM StartDatumTijd en EindDatumTijd vormen samen de FHIR Period."/>
       </mapping>
     </element>
     <element id="SIMCarePlan.EindDatumTijd">
@@ -399,6 +405,7 @@
       <mapping>
         <identity value="SIMCarePlanToFHIR"/>
         <map value="CarePlan.period.end"/>
+        <comment value="Structuurconversie: SIM StartDatumTijd en EindDatumTijd vormen samen de FHIR Period."/>
       </mapping>
     </element>
   </snapshot>
@@ -424,6 +431,7 @@
       <mapping>
         <identity value="SIMCarePlanToFHIR"/>
         <map value="CarePlan.identifier"/>
+        <comment value="Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."/>
       </mapping>
     </element>
     <element id="SIMCarePlan.PatientIdentificatienummer">
@@ -442,7 +450,7 @@
       <mapping>
         <identity value="SIMCarePlanToFHIR"/>
         <map value="CarePlan.subject"/>
-        <comment value="Patient-reference op basis van identificatienummer."/>
+        <comment value="Structuurconversie: Patient-reference op basis van identificatienummer."/>
       </mapping>
     </element>
     <element id="SIMCarePlan.Status">
@@ -461,6 +469,7 @@
       <mapping>
         <identity value="SIMCarePlanToFHIR"/>
         <map value="CarePlan.status"/>
+        <comment value="Direct: SIM code wordt overgenomen als FHIR code; aansluiting op FHIR request-status nog te bevestigen."/>
       </mapping>
     </element>
     <element id="SIMCarePlan.Categorie">
@@ -475,6 +484,7 @@
       <mapping>
         <identity value="SIMCarePlanToFHIR"/>
         <map value="CarePlan.category"/>
+        <comment value="Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."/>
       </mapping>
     </element>
     <element id="SIMCarePlan.Categorie.coding.system">
@@ -514,6 +524,7 @@
       <mapping>
         <identity value="SIMCarePlanToFHIR"/>
         <map value="CarePlan.period.start"/>
+        <comment value="Structuurconversie: SIM StartDatumTijd en EindDatumTijd vormen samen de FHIR Period."/>
       </mapping>
     </element>
     <element id="SIMCarePlan.EindDatumTijd">
@@ -532,6 +543,7 @@
       <mapping>
         <identity value="SIMCarePlanToFHIR"/>
         <map value="CarePlan.period.end"/>
+        <comment value="Structuurconversie: SIM StartDatumTijd en EindDatumTijd vormen samen de FHIR Period."/>
       </mapping>
     </element>
   </differential>

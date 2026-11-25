@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMAlgemeneMeting
   "name" : "SIMAlgemeneMeting",
   "title" : "Algemene meting (model)",
   "status" : "draft",
-  "date" : "2026-11-19T16:54:56+00:00",
+  "date" : "2026-11-25T16:23:53+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -50,12 +50,14 @@ Other representations of profile: [CSV](../StructureDefinition-SIMAlgemeneMeting
   "mapping" : [{
     "identity" : "SIMAlgemeneMetingFromSIMCSV",
     "uri" : "urn:santeon:sim:csv",
-    "name" : "SIM CSV"
+    "name" : "SIM CSV",
+    "comment" : "Herleidbaarheid van SIMAlgemeneMeting-elementen naar de oorspronkelijke SIM CSV-attributen."
   },
   {
     "identity" : "SIMAlgemeneMetingToFHIR",
     "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san",
-    "name" : "SIMAlgemeneMeting naar FHIR"
+    "name" : "FHIR-mapping naar ObservationSan",
+    "comment" : "Mapping van SIMAlgemeneMeting-elementen naar het Santeon FHIR-profiel ObservationSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."
   }],
   "kind" : "logical",
   "abstract" : false,
@@ -85,7 +87,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMAlgemeneMeting
       },
       {
         "identity" : "SIMAlgemeneMetingToFHIR",
-        "map" : "Observation.identifier"
+        "map" : "Observation.identifier",
+        "comment" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
       }]
     },
     {
@@ -105,7 +108,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMAlgemeneMeting
       {
         "identity" : "SIMAlgemeneMetingToFHIR",
         "map" : "Observation.subject",
-        "comment" : "Patient-reference op basis van identificatienummer."
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer."
       }]
     },
     {
@@ -124,7 +127,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMAlgemeneMeting
       },
       "mapping" : [{
         "identity" : "SIMAlgemeneMetingToFHIR",
-        "map" : "Observation.code"
+        "map" : "Observation.code",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
       }]
     },
     {
@@ -167,7 +171,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMAlgemeneMeting
       },
       {
         "identity" : "SIMAlgemeneMetingToFHIR",
-        "map" : "Observation.effectiveDateTime"
+        "map" : "Observation.effectiveDateTime",
+        "comment" : "Direct: SIM dateTime wordt overgenomen als FHIR dateTime."
       }]
     },
     {
@@ -182,7 +187,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMAlgemeneMeting
       }],
       "mapping" : [{
         "identity" : "SIMAlgemeneMetingToFHIR",
-        "map" : "Observation.valueQuantity"
+        "map" : "Observation.valueQuantity",
+        "comment" : "Direct: SIM Quantity wordt overgenomen als FHIR Quantity."
       }]
     },
     {
@@ -229,7 +235,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMAlgemeneMeting
       }],
       "mapping" : [{
         "identity" : "SIMAlgemeneMetingToFHIR",
-        "map" : "Observation.valueRange"
+        "map" : "Observation.valueRange",
+        "comment" : "Direct: SIM Range wordt overgenomen als FHIR Range."
       }]
     },
     {
@@ -308,7 +315,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMAlgemeneMeting
       }],
       "mapping" : [{
         "identity" : "SIMAlgemeneMetingToFHIR",
-        "map" : "Observation.valueCodeableConcept"
+        "map" : "Observation.valueCodeableConcept",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
       }]
     },
     {
@@ -351,7 +359,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMAlgemeneMeting
       },
       {
         "identity" : "SIMAlgemeneMetingToFHIR",
-        "map" : "Observation.valueDateTime"
+        "map" : "Observation.valueDateTime",
+        "comment" : "Direct: SIM dateTime wordt overgenomen als FHIR dateTime."
       }]
     },
     {
@@ -366,7 +375,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMAlgemeneMeting
       }],
       "mapping" : [{
         "identity" : "SIMAlgemeneMetingToFHIR",
-        "map" : "Observation.method"
+        "map" : "Observation.method",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
       }]
     },
     {

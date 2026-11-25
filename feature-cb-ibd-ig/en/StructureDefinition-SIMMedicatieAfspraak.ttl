@@ -18,7 +18,7 @@
   fhir:StructureDefinition.name [ fhir:value "SIMMedicatieAfspraak"] ;
   fhir:StructureDefinition.title [ fhir:value "Medicatieafspraak (model)"] ;
   fhir:StructureDefinition.status [ fhir:value "draft"] ;
-  fhir:StructureDefinition.date [ fhir:value "2026-11-19T16:54:56+00:00"^^xsd:dateTime] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-11-25T16:23:53+00:00"^^xsd:dateTime] ;
   fhir:StructureDefinition.publisher [ fhir:value "Santeon"] ;
   fhir:StructureDefinition.contact [
      fhir:index -1 ;
@@ -44,12 +44,14 @@
      fhir:index -1 ;
      fhir:StructureDefinition.mapping.identity [ fhir:value "SIMMedicatieAfspraakFromSIMCSV" ] ;
      fhir:StructureDefinition.mapping.uri [ fhir:value "urn:santeon:sim:csv" ] ;
-     fhir:StructureDefinition.mapping.name [ fhir:value "SIM CSV" ]
+     fhir:StructureDefinition.mapping.name [ fhir:value "SIM CSV" ] ;
+     fhir:StructureDefinition.mapping.comment [ fhir:value "Herleidbaarheid van SIMMedicatieAfspraak-elementen naar de oorspronkelijke SIM CSV-attributen." ]
   ], [
      fhir:index -1 ;
      fhir:StructureDefinition.mapping.identity [ fhir:value "SIMMedicatieAfspraakToFHIR" ] ;
      fhir:StructureDefinition.mapping.uri [ fhir:value "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/medicationRequest-san" ] ;
-     fhir:StructureDefinition.mapping.name [ fhir:value "SIMMedicatieAfspraak naar FHIR" ]
+     fhir:StructureDefinition.mapping.name [ fhir:value "FHIR-mapping naar MedicationRequestSan" ] ;
+     fhir:StructureDefinition.mapping.comment [ fhir:value "Mapping van SIMMedicatieAfspraak-elementen naar het Santeon FHIR-profiel MedicationRequestSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies." ]
   ] ;
   fhir:StructureDefinition.kind [ fhir:value "logical"] ;
   fhir:StructureDefinition.abstract [ fhir:value "false"^^xsd:boolean] ;
@@ -103,7 +105,8 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMMedicatieAfspraakToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.identifier" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.identifier" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie." ]
        ]
      ], [
        fhir:index -1 ;
@@ -130,7 +133,7 @@
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMMedicatieAfspraakToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.subject" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Patient-reference op basis van identificatienummer." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: Patient-reference op basis van identificatienummer." ]
        ]
      ], [
        fhir:index -1 ;
@@ -165,7 +168,7 @@
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMMedicatieAfspraakToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.medicationCodeableConcept" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Het SIM documenteert medicationReference naar een Medication met deze code; keuze nog te maken." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept. Het SIM documenteert medicationReference naar een Medication met deze code; keuze nog te maken." ]
        ]
      ], [
        fhir:index -1 ;
@@ -432,7 +435,8 @@
        fhir:ElementDefinition.mapping [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMMedicatieAfspraakToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.dosageInstruction.route" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.dosageInstruction.route" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept." ]
        ]
      ], [
        fhir:index -1 ;
@@ -1074,7 +1078,8 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMMedicatieAfspraakToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM dateTime wordt overgenomen als FHIR dateTime." ]
        ]
      ], [
        fhir:index -1 ;
@@ -1108,7 +1113,8 @@
        fhir:ElementDefinition.mapping [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMMedicatieAfspraakToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.status" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.status" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Datatypeconversie: SIM Coding naar FHIR code; codes volgens MedicatieAfspraakStatusSysteem, overeenkomst met FHIR medicationrequest-status verifiëren." ]
        ]
      ], [
        fhir:index -1 ;
@@ -1724,7 +1730,8 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMMedicatieAfspraakToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.identifier" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.identifier" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie." ]
        ]
      ], [
        fhir:index -1 ;
@@ -1746,7 +1753,7 @@
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMMedicatieAfspraakToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.subject" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Patient-reference op basis van identificatienummer." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: Patient-reference op basis van identificatienummer." ]
        ]
      ], [
        fhir:index -1 ;
@@ -1764,7 +1771,7 @@
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMMedicatieAfspraakToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.medicationCodeableConcept" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Het SIM documenteert medicationReference naar een Medication met deze code; keuze nog te maken." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept. Het SIM documenteert medicationReference naar een Medication met deze code; keuze nog te maken." ]
        ]
      ], [
        fhir:index -1 ;
@@ -1808,7 +1815,8 @@
        fhir:ElementDefinition.mapping [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMMedicatieAfspraakToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.dosageInstruction.route" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.dosageInstruction.route" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept." ]
        ]
      ], [
        fhir:index -1 ;
@@ -1886,7 +1894,8 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMMedicatieAfspraakToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM dateTime wordt overgenomen als FHIR dateTime." ]
        ]
      ], [
        fhir:index -1 ;
@@ -1903,7 +1912,8 @@
        fhir:ElementDefinition.mapping [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMMedicatieAfspraakToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.status" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "MedicationRequest.status" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Datatypeconversie: SIM Coding naar FHIR code; codes volgens MedicatieAfspraakStatusSysteem, overeenkomst met FHIR medicationrequest-status verifiëren." ]
        ]
      ], [
        fhir:index -1 ;

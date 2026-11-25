@@ -12,7 +12,7 @@
   <name value="SanteonSimOnFhir"/>
   <title value="SIM on FHIR"/>
   <status value="draft"/>
-  <date value="2026-11-19T16:54:56+00:00"/>
+  <date value="2026-11-25T16:23:53+00:00"/>
   <publisher value="Santeon"/>
   <contact>
     <name value="Santeon"/>
@@ -359,7 +359,7 @@
         <reference value="StructureDefinition/carePlan-san"/>
       </reference>
       <name value="CarePlan (SAN)"/>
-      <description value="Generiek Santeon FHIR R4-profiel voor zorgplannen, zoals deelname&#xA;aan een zorgpad of thuismonitoringprogramma.&#xA;&#xA;Gebaseerd op het Santeon Informatiemodel (SIMCarePlan).&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
+      <description value="Santeon FHIR R4-profiel voor zorgplannen (deelname aan een zorgpad of thuismonitoringprogramma), gebaseerd op het Santeon Informatiemodel (SIMCarePlan) en afgeleid van FHIR R4 CarePlan."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -370,7 +370,7 @@
         <reference value="StructureDefinition/condition-san"/>
       </reference>
       <name value="Condition (SAN)"/>
-      <description value="Generiek Santeon FHIR R4-profiel voor aandoeningen en diagnoses.&#xA;&#xA;De aansluiting op het Santeon Informatiemodel wordt&#xA;vastgelegd via afzonderlijke mappings naar de&#xA;relevante bronmodellen.&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
+      <description value="Santeon FHIR R4-profiel voor aandoeningen en diagnoses, afgeleid van Nictiz nl-core-Condition. SIMDBC is de beoogde bron voor de diagnosegegevens. De mapping vanuit het Santeon Informatiemodel is nog niet vastgelegd."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -447,7 +447,7 @@
         <reference value="StructureDefinition/encounter-san"/>
       </reference>
       <name value="Encounter (SAN)"/>
-      <description value="Generiek Santeon FHIR R4-profiel voor zorgcontacten.&#xA;&#xA;Gebaseerd op het Santeon Informatiemodel (SIMContact).&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
+      <description value="Santeon FHIR R4-profiel voor zorgcontacten, gebaseerd op het Santeon Informatiemodel (SIMContact) en afgeleid van FHIR R4 Encounter."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -458,7 +458,7 @@
         <reference value="StructureDefinition/episodeOfCare-san"/>
       </reference>
       <name value="EpisodeOfCare (SAN)"/>
-      <description value="Generiek Santeon FHIR R4-profiel voor zorgepisodes.&#xA;&#xA;Gebaseerd op het Santeon Informatiemodel (SIMDBC), waarbij&#xA;nog moet worden vastgesteld hoe een DBC-subtraject zich&#xA;verhoudt tot een FHIR EpisodeOfCare.&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
+      <description value="Santeon FHIR R4-profiel voor zorgepisodes, gebaseerd op het Santeon Informatiemodel (SIMDBC) en afgeleid van FHIR R4 EpisodeOfCare."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -588,7 +588,7 @@
         <reference value="StructureDefinition/medicationRequest-san"/>
       </reference>
       <name value="MedicationRequest (SAN)"/>
-      <description value="Generiek Santeon FHIR R4-profiel voor medicatieafspraken.&#xA;&#xA;Gebaseerd op het Santeon Informatiemodel (SIMMedicatieAfspraak).&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
+      <description value="Santeon FHIR R4-profiel voor medicatieafspraken, gebaseerd op het Santeon Informatiemodel (SIMMedicatieAfspraak) en afgeleid van FHIR R4 MedicationRequest."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -610,7 +610,7 @@
         <reference value="StructureDefinition/observation-san"/>
       </reference>
       <name value="Observation (SAN)"/>
-      <description value="Generiek Santeon FHIR R4-profiel voor algemene metingen.&#xA;&#xA;Gebaseerd op het Santeon Informatiemodel (SIMAlgemeneMeting).&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
+      <description value="Santeon FHIR R4-profiel voor algemene metingen, gebaseerd op het Santeon Informatiemodel (SIMAlgemeneMeting) en afgeleid van FHIR R4 Observation."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -632,7 +632,7 @@
         <reference value="StructureDefinition/observation-san-tabakgebruik"/>
       </reference>
       <name value="Observation TabakGebruik (SAN)"/>
-      <description value="Santeon FHIR R4-profiel voor de vastgelegde rookstatus van een patiënt.&#xA;&#xA;Afgeleid van ObservationSan en gebaseerd op het&#xA;Santeon Informatiemodel (SIMTabakGebruik).&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
+      <description value="Santeon FHIR R4-profiel voor de vastgelegde rookstatus van een patiënt, gebaseerd op het Santeon Informatiemodel (SIMTabakGebruik) en afgeleid van FHIR R4 Observation."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -665,7 +665,7 @@
         <reference value="StructureDefinition/patient-san"/>
       </reference>
       <name value="Patient (SAN)"/>
-      <description value="Santeon FHIR R4-profiel voor patiëntgegevens, gebaseerd op het Santeon Informatiemodel (SIMPatient)."/>
+      <description value="Santeon FHIR R4-profiel voor patiëntgegevens, gebaseerd op het Santeon Informatiemodel (SIMPatient) en afgeleid van Nictiz nl-core-Patient."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -698,7 +698,7 @@
         <reference value="StructureDefinition/procedure-san"/>
       </reference>
       <name value="Procedure (SAN)"/>
-      <description value="Generiek Santeon FHIR R4-profiel voor verrichtingen.&#xA;&#xA;Gebaseerd op het Santeon Informatiemodel (SIMVerrichting).&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
+      <description value="Santeon FHIR R4-profiel voor verrichtingen, gebaseerd op het Santeon Informatiemodel (SIMVerrichting) en afgeleid van Nictiz nl-core-Procedure."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -720,7 +720,7 @@
         <reference value="StructureDefinition/questionnaireResponse-san"/>
       </reference>
       <name value="QuestionnaireResponse (SAN)"/>
-      <description value="Generiek Santeon FHIR R4-profiel voor ingevulde vragenlijsten.&#xA;&#xA;Gebaseerd op het Santeon Informatiemodel (SIMVragenlijstAntwoord).&#xA;Het SIM levert één record per antwoord; records met hetzelfde&#xA;VragenlijstAntwoordID vormen samen één QuestionnaireResponse.&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
+      <description value="Santeon FHIR R4-profiel voor ingevulde vragenlijsten, gebaseerd op het Santeon Informatiemodel (SIMVragenlijstAntwoord) en afgeleid van FHIR R4 QuestionnaireResponse."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

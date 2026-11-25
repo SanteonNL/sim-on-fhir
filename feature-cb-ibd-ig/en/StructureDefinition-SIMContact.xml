@@ -35,7 +35,7 @@
   <name value="SIMContact"/>
   <title value="Contact (model)"/>
   <status value="draft"/>
-  <date value="2026-11-19T16:54:56+00:00"/>
+  <date value="2026-11-25T16:23:53+00:00"/>
   <publisher value="Santeon"/>
   <contact>
     <name value="Santeon"/>
@@ -57,11 +57,13 @@
     <identity value="SIMContactFromSIMCSV"/>
     <uri value="urn:santeon:sim:csv"/>
     <name value="SIM CSV"/>
+    <comment value="Herleidbaarheid van SIMContact-elementen naar de oorspronkelijke SIM CSV-attributen."/>
   </mapping>
   <mapping>
     <identity value="SIMContactToFHIR"/>
     <uri value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/encounter-san"/>
-    <name value="SIMContact naar FHIR"/>
+    <name value="FHIR-mapping naar EncounterSan"/>
+    <comment value="Mapping van SIMContact-elementen naar het Santeon FHIR-profiel EncounterSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."/>
   </mapping>
   <kind value="logical"/>
   <abstract value="false"/>
@@ -106,6 +108,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.identifier"/>
+        <comment value="Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."/>
       </mapping>
     </element>
     <element id="SIMContact.VerrichtingID">
@@ -148,7 +151,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.episodeOfCare"/>
-        <comment value="Indien het DBC-subtraject als EpisodeOfCare wordt gerepresenteerd."/>
+        <comment value="Structuurconversie: EpisodeOfCare-reference op basis van SubtrajectNummer, indien het DBC-subtraject als EpisodeOfCare wordt gerepresenteerd."/>
       </mapping>
     </element>
     <element id="SIMContact.PatientIdentificatienummer">
@@ -172,7 +175,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.subject"/>
-        <comment value="Patient-reference op basis van identificatienummer."/>
+        <comment value="Structuurconversie: Patient-reference op basis van identificatienummer."/>
       </mapping>
     </element>
     <element id="SIMContact.ContactType">
@@ -200,6 +203,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.class"/>
+        <comment value="Direct: SIM Coding wordt overgenomen als FHIR Coding; aansluiting van Santeon_ContactTypeCodelijst op de FHIR-binding nog te beoordelen."/>
       </mapping>
     </element>
     <element id="SIMContact.ContactType.id">
@@ -511,6 +515,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.priority"/>
+        <comment value="Direct: SIM en FHIR gebruiken beide v3-ActPriority (example)."/>
       </mapping>
     </element>
     <element id="SIMContact.ContactPrioriteit.id">
@@ -725,7 +730,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.hospitalization.dischargeDisposition"/>
-        <comment value="Wanneer het gegeven de ontslagbestemming beschrijft."/>
+        <comment value="Direct: wanneer het gegeven de ontslagbestemming beschrijft."/>
       </mapping>
     </element>
     <element id="SIMContact.Bestemming.id">
@@ -936,6 +941,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.period.start"/>
+        <comment value="Structuurconversie: SIM BeginDatumTijd en EindDatumTijd vormen samen de FHIR Period; dateshift volgens afzonderlijke transformatiespecificatie."/>
       </mapping>
     </element>
     <element id="SIMContact.EindDatumTijd">
@@ -959,6 +965,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.period.end"/>
+        <comment value="Structuurconversie: SIM BeginDatumTijd en EindDatumTijd vormen samen de FHIR Period; dateshift volgens afzonderlijke transformatiespecificatie."/>
       </mapping>
     </element>
     <element id="SIMContact.ContactMet">
@@ -1283,6 +1290,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.identifier"/>
+        <comment value="Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."/>
       </mapping>
     </element>
     <element id="SIMContact.VerrichtingID">
@@ -1315,7 +1323,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.episodeOfCare"/>
-        <comment value="Indien het DBC-subtraject als EpisodeOfCare wordt gerepresenteerd."/>
+        <comment value="Structuurconversie: EpisodeOfCare-reference op basis van SubtrajectNummer, indien het DBC-subtraject als EpisodeOfCare wordt gerepresenteerd."/>
       </mapping>
     </element>
     <element id="SIMContact.PatientIdentificatienummer">
@@ -1334,7 +1342,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.subject"/>
-        <comment value="Patient-reference op basis van identificatienummer."/>
+        <comment value="Structuurconversie: Patient-reference op basis van identificatienummer."/>
       </mapping>
     </element>
     <element id="SIMContact.ContactType">
@@ -1349,6 +1357,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.class"/>
+        <comment value="Direct: SIM Coding wordt overgenomen als FHIR Coding; aansluiting van Santeon_ContactTypeCodelijst op de FHIR-binding nog te beoordelen."/>
       </mapping>
     </element>
     <element id="SIMContact.ContactType.system">
@@ -1388,6 +1397,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.priority"/>
+        <comment value="Direct: SIM en FHIR gebruiken beide v3-ActPriority (example)."/>
       </mapping>
     </element>
     <element id="SIMContact.ContactPrioriteit.coding.system">
@@ -1423,7 +1433,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.hospitalization.dischargeDisposition"/>
-        <comment value="Wanneer het gegeven de ontslagbestemming beschrijft."/>
+        <comment value="Direct: wanneer het gegeven de ontslagbestemming beschrijft."/>
       </mapping>
     </element>
     <element id="SIMContact.Bestemming.coding.system">
@@ -1463,6 +1473,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.period.start"/>
+        <comment value="Structuurconversie: SIM BeginDatumTijd en EindDatumTijd vormen samen de FHIR Period; dateshift volgens afzonderlijke transformatiespecificatie."/>
       </mapping>
     </element>
     <element id="SIMContact.EindDatumTijd">
@@ -1481,6 +1492,7 @@
       <mapping>
         <identity value="SIMContactToFHIR"/>
         <map value="Encounter.period.end"/>
+        <comment value="Structuurconversie: SIM BeginDatumTijd en EindDatumTijd vormen samen de FHIR Period; dateshift volgens afzonderlijke transformatiespecificatie."/>
       </mapping>
     </element>
     <element id="SIMContact.ContactMet">

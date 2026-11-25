@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Derived from this Profile: [Observation TabakGebruik (SAN)](StructureDefinition-observation-san-tabakgebruik.md)
+* This Profile is not used by any profiles in this Specification
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/santeon.sim-on-fhir|current/StructureDefinition/StructureDefinition-observation-san.json)
 
@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
   "name" : "ObservationSan",
   "title" : "Observation (SAN)",
   "status" : "draft",
-  "date" : "2026-11-19T16:54:56+00:00",
+  "date" : "2026-11-25T16:23:53+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "Generiek Santeon FHIR R4-profiel voor algemene metingen.\n\nGebaseerd op het Santeon Informatiemodel (SIMAlgemeneMeting).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
+  "description" : "Santeon FHIR R4-profiel voor algemene metingen, gebaseerd op het Santeon Informatiemodel (SIMAlgemeneMeting) en afgeleid van FHIR R4 Observation.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -48,10 +48,10 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "sim",
-    "uri" : "urn:santeon:sim:csv",
-    "name" : "Santeon Informatiemodel (SIM CSV)",
-    "comment" : "Informatieve mapping van FHIR Observation naar SIM CSV-bronvelden."
+    "identity" : "ObservationSanFromSIMAlgemeneMeting",
+    "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMAlgemeneMeting",
+    "name" : "SIM Logical Model SIMAlgemeneMeting",
+    "comment" : "Herkomst van de ObservationSan-elementen in Algemene meting (SIMAlgemeneMeting), met de conversietoelichting. Afgeleid van SIMAlgemeneMetingToFHIR; wijzigingen alleen daar aanbrengen."
   },
   {
     "identity" : "workflow",
@@ -96,96 +96,55 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
     {
       "id" : "Observation.identifier",
       "path" : "Observation.identifier",
-      "min" : 1,
-      "max" : "1"
-    },
-    {
-      "id" : "Observation.identifier.use",
-      "path" : "Observation.identifier.use",
-      "max" : "0"
-    },
-    {
-      "id" : "Observation.identifier.system",
-      "path" : "Observation.identifier.system",
-      "max" : "0",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;MetingID",
-        "comment" : "Systeemdeel van de samengestelde identifier."
-      }]
-    },
-    {
-      "id" : "Observation.identifier.value",
-      "path" : "Observation.identifier.value",
-      "min" : 1,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;MetingID",
-        "comment" : "Waardedeel van de samengestelde identifier; hash."
+        "identity" : "ObservationSanFromSIMAlgemeneMeting",
+        "map" : "SIMAlgemeneMeting.MetingID",
+        "comment" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
       }]
     },
     {
       "id" : "Observation.code",
       "path" : "Observation.code",
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/Santeon-MetingNaamCodelijst"
-      }
-    },
-    {
-      "id" : "Observation.code.coding",
-      "path" : "Observation.code.coding",
-      "min" : 1
-    },
-    {
-      "id" : "Observation.code.coding.system",
-      "path" : "Observation.code.coding.system",
-      "min" : 1,
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;MetingNaamCodeSysteem"
-      }]
-    },
-    {
-      "id" : "Observation.code.coding.code",
-      "path" : "Observation.code.coding.code",
-      "min" : 1,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;MetingNaamCode"
-      }]
-    },
-    {
-      "id" : "Observation.code.coding.display",
-      "path" : "Observation.code.coding.display",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;MetingNaamOmschrijving"
+        "identity" : "ObservationSanFromSIMAlgemeneMeting",
+        "map" : "SIMAlgemeneMeting.MetingNaam",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
       }]
     },
     {
       "id" : "Observation.subject",
       "path" : "Observation.subject",
-      "min" : 1,
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"]
-      }],
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;Identificatienummer",
-        "comment" : "Patient-reference op basis van patiëntidentifier."
+        "identity" : "ObservationSanFromSIMAlgemeneMeting",
+        "map" : "SIMAlgemeneMeting.PatientIdentificatienummer",
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer."
       }]
     },
     {
       "id" : "Observation.effective[x]",
       "path" : "Observation.effective[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Observation.effective[x]:effectiveDateTime",
+      "path" : "Observation.effective[x]",
+      "sliceName" : "effectiveDateTime",
+      "min" : 0,
+      "max" : "1",
       "type" : [{
         "code" : "dateTime"
       }],
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;MetingDatumTijd"
+        "identity" : "ObservationSanFromSIMAlgemeneMeting",
+        "map" : "SIMAlgemeneMeting.MetingDatumTijd",
+        "comment" : "Direct: SIM dateTime wordt overgenomen als FHIR dateTime."
       }]
     },
     {
@@ -198,19 +157,7 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
         }],
         "ordered" : false,
         "rules" : "open"
-      },
-      "type" : [{
-        "code" : "Quantity"
-      },
-      {
-        "code" : "CodeableConcept"
-      },
-      {
-        "code" : "Range"
-      },
-      {
-        "code" : "dateTime"
-      }]
+      }
     },
     {
       "id" : "Observation.value[x]:valueQuantity",
@@ -220,38 +167,11 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
       "max" : "1",
       "type" : [{
         "code" : "Quantity"
-      }]
-    },
-    {
-      "id" : "Observation.value[x]:valueQuantity.value",
-      "path" : "Observation.value[x].value",
+      }],
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;UitslagWaarde"
-      }]
-    },
-    {
-      "id" : "Observation.value[x]:valueQuantity.comparator",
-      "path" : "Observation.value[x].comparator",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;UitslagWaardeOperator"
-      }]
-    },
-    {
-      "id" : "Observation.value[x]:valueQuantity.system",
-      "path" : "Observation.value[x].system",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;UitslagWaardeEenheidSysteem"
-      }]
-    },
-    {
-      "id" : "Observation.value[x]:valueQuantity.code",
-      "path" : "Observation.value[x].code",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;UitslagWaardeEenheid"
+        "identity" : "ObservationSanFromSIMAlgemeneMeting",
+        "map" : "SIMAlgemeneMeting.UitslagWaarde",
+        "comment" : "Direct: SIM Quantity wordt overgenomen als FHIR Quantity."
       }]
     },
     {
@@ -262,70 +182,11 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
       "max" : "1",
       "type" : [{
         "code" : "Range"
-      }]
-    },
-    {
-      "id" : "Observation.value[x]:valueRange.low.value",
-      "path" : "Observation.value[x].low.value",
+      }],
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;ObservationValueRangeLow"
-      }]
-    },
-    {
-      "id" : "Observation.value[x]:valueRange.low.unit",
-      "path" : "Observation.value[x].low.unit",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;ObservationValueRangeLowUnit"
-      }]
-    },
-    {
-      "id" : "Observation.value[x]:valueRange.low.system",
-      "path" : "Observation.value[x].low.system",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;ObservationValueRangeLowSystem"
-      }]
-    },
-    {
-      "id" : "Observation.value[x]:valueRange.low.code",
-      "path" : "Observation.value[x].low.code",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;ObservationValueRangeLowCode"
-      }]
-    },
-    {
-      "id" : "Observation.value[x]:valueRange.high.value",
-      "path" : "Observation.value[x].high.value",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;ObservationValueRangeHigh"
-      }]
-    },
-    {
-      "id" : "Observation.value[x]:valueRange.high.unit",
-      "path" : "Observation.value[x].high.unit",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;ObservationValueRangeHighUnit"
-      }]
-    },
-    {
-      "id" : "Observation.value[x]:valueRange.high.system",
-      "path" : "Observation.value[x].high.system",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;ObservationValueRangeHighSystem"
-      }]
-    },
-    {
-      "id" : "Observation.value[x]:valueRange.high.code",
-      "path" : "Observation.value[x].high.code",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;ObservationValueRangeHighCode"
+        "identity" : "ObservationSanFromSIMAlgemeneMeting",
+        "map" : "SIMAlgemeneMeting.UitslagBereik",
+        "comment" : "Direct: SIM Range wordt overgenomen als FHIR Range."
       }]
     },
     {
@@ -336,30 +197,11 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
       "max" : "1",
       "type" : [{
         "code" : "CodeableConcept"
-      }]
-    },
-    {
-      "id" : "Observation.value[x]:valueCodeableConcept.coding.system",
-      "path" : "Observation.value[x].coding.system",
+      }],
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;UitslagCodeSysteem"
-      }]
-    },
-    {
-      "id" : "Observation.value[x]:valueCodeableConcept.coding.code",
-      "path" : "Observation.value[x].coding.code",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;UitslagCode"
-      }]
-    },
-    {
-      "id" : "Observation.value[x]:valueCodeableConcept.coding.display",
-      "path" : "Observation.value[x].coding.display",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;UitslagCodeOmschrijving"
+        "identity" : "ObservationSanFromSIMAlgemeneMeting",
+        "map" : "SIMAlgemeneMeting.UitslagCode",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
       }]
     },
     {
@@ -372,32 +214,18 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san.c
         "code" : "dateTime"
       }],
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;UitslagDatumTijd"
+        "identity" : "ObservationSanFromSIMAlgemeneMeting",
+        "map" : "SIMAlgemeneMeting.UitslagDatumTijd",
+        "comment" : "Direct: SIM dateTime wordt overgenomen als FHIR dateTime."
       }]
     },
     {
-      "id" : "Observation.method.coding.system",
-      "path" : "Observation.method.coding.system",
+      "id" : "Observation.method",
+      "path" : "Observation.method",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;MeetmethodeCodeSysteem"
-      }]
-    },
-    {
-      "id" : "Observation.method.coding.code",
-      "path" : "Observation.method.coding.code",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;MeetmethodeCode"
-      }]
-    },
-    {
-      "id" : "Observation.method.coding.display",
-      "path" : "Observation.method.coding.display",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "AlgemeneMeting;MeetmethodeOmschrijving"
+        "identity" : "ObservationSanFromSIMAlgemeneMeting",
+        "map" : "SIMAlgemeneMeting.Meetmethode",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
       }]
     }]
   }

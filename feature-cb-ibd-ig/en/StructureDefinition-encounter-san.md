@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Refer to this Profile: [Procedure (SAN)](StructureDefinition-procedure-san.md)
+* This Profile is not used by any profiles in this Specification
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/santeon.sim-on-fhir|current/StructureDefinition/StructureDefinition-encounter-san.json)
 
@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-encounter-san.csv
   "name" : "EncounterSan",
   "title" : "Encounter (SAN)",
   "status" : "draft",
-  "date" : "2026-11-19T16:54:56+00:00",
+  "date" : "2026-11-25T16:23:53+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-encounter-san.csv
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "Generiek Santeon FHIR R4-profiel voor zorgcontacten.\n\nGebaseerd op het Santeon Informatiemodel (SIMContact).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
+  "description" : "Santeon FHIR R4-profiel voor zorgcontacten, gebaseerd op het Santeon Informatiemodel (SIMContact) en afgeleid van FHIR R4 Encounter.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -48,10 +48,10 @@ Other representations of profile: [CSV](../StructureDefinition-encounter-san.csv
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "sim",
-    "uri" : "urn:santeon:sim:csv",
-    "name" : "Santeon Informatiemodel (SIM CSV)",
-    "comment" : "Informatieve mapping van FHIR Encounter naar SIM Contact-bronvelden."
+    "identity" : "EncounterSanFromSIMContact",
+    "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMContact",
+    "name" : "SIM Logical Model SIMContact",
+    "comment" : "Herkomst van de EncounterSan-elementen in Contact (SIMContact), met de conversietoelichting. Afgeleid van SIMContactToFHIR; wijzigingen alleen daar aanbrengen."
   },
   {
     "identity" : "workflow",
@@ -86,163 +86,73 @@ Other representations of profile: [CSV](../StructureDefinition-encounter-san.csv
     {
       "id" : "Encounter.identifier",
       "path" : "Encounter.identifier",
-      "min" : 1,
-      "max" : "1"
-    },
-    {
-      "id" : "Encounter.identifier.system",
-      "path" : "Encounter.identifier.system",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;ContactID",
-        "comment" : "Systeemdeel van identifier_system|identifier_value."
+        "identity" : "EncounterSanFromSIMContact",
+        "map" : "SIMContact.ContactID",
+        "comment" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
       }]
     },
     {
-      "id" : "Encounter.identifier.value",
-      "path" : "Encounter.identifier.value",
-      "min" : 1,
+      "id" : "Encounter.class",
+      "path" : "Encounter.class",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;ContactID",
-        "comment" : "Waardedeel van de identifier; hash volgens ETL-specificatie."
-      }]
-    },
-    {
-      "id" : "Encounter.class.system",
-      "path" : "Encounter.class.system",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;ContactTypeCodeSysteem"
-      }]
-    },
-    {
-      "id" : "Encounter.class.code",
-      "path" : "Encounter.class.code",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;ContactTypeCode"
-      }]
-    },
-    {
-      "id" : "Encounter.class.display",
-      "path" : "Encounter.class.display",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;ContactTypeOmschrijving"
+        "identity" : "EncounterSanFromSIMContact",
+        "map" : "SIMContact.ContactType",
+        "comment" : "Direct: SIM Coding wordt overgenomen als FHIR Coding; aansluiting van Santeon_ContactTypeCodelijst op de FHIR-binding nog te beoordelen."
       }]
     },
     {
       "id" : "Encounter.priority",
       "path" : "Encounter.priority",
-      "binding" : {
-        "strength" : "example",
-        "valueSet" : "http://terminology.hl7.org/ValueSet/v3-ActPriority"
-      }
-    },
-    {
-      "id" : "Encounter.priority.coding.system",
-      "path" : "Encounter.priority.coding.system",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;EncounterPriorityCodingSystem"
-      }]
-    },
-    {
-      "id" : "Encounter.priority.coding.code",
-      "path" : "Encounter.priority.coding.code",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;EncounterPriorityCodingCode"
-      }]
-    },
-    {
-      "id" : "Encounter.priority.coding.display",
-      "path" : "Encounter.priority.coding.display",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;EncounterPriorityCodingDisplay"
+        "identity" : "EncounterSanFromSIMContact",
+        "map" : "SIMContact.ContactPrioriteit",
+        "comment" : "Direct: SIM en FHIR gebruiken beide v3-ActPriority (example)."
       }]
     },
     {
       "id" : "Encounter.subject",
       "path" : "Encounter.subject",
-      "min" : 1,
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"]
-      }],
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;Identificatienummer",
-        "comment" : "Patient-reference op basis van de patiëntidentifier."
+        "identity" : "EncounterSanFromSIMContact",
+        "map" : "SIMContact.PatientIdentificatienummer",
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer."
       }]
     },
     {
       "id" : "Encounter.episodeOfCare",
       "path" : "Encounter.episodeOfCare",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://ig.santeon.nl/sim-on-fhir/StructureDefinition/episodeOfCare-san"]
-      }],
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;SubtrajectNr",
-        "comment" : "Alleen indien DBC-subtraject als EpisodeOfCareSan wordt gerepresenteerd."
-      }]
-    },
-    {
-      "id" : "Encounter.appointment",
-      "path" : "Encounter.appointment",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;AfspraakID",
-        "comment" : "Reference naar Appointment op basis van AfspraakID."
+        "identity" : "EncounterSanFromSIMContact",
+        "map" : "SIMContact.SubtrajectNummer",
+        "comment" : "Structuurconversie: EpisodeOfCare-reference op basis van SubtrajectNummer, indien het DBC-subtraject als EpisodeOfCare wordt gerepresenteerd."
       }]
     },
     {
       "id" : "Encounter.period.start",
       "path" : "Encounter.period.start",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;BeginDatumTijd",
-        "comment" : "Dateshift volgens afzonderlijke transformatiespecificatie."
+        "identity" : "EncounterSanFromSIMContact",
+        "map" : "SIMContact.BeginDatumTijd",
+        "comment" : "Structuurconversie: SIM BeginDatumTijd en EindDatumTijd vormen samen de FHIR Period; dateshift volgens afzonderlijke transformatiespecificatie."
       }]
     },
     {
       "id" : "Encounter.period.end",
       "path" : "Encounter.period.end",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;EindDatumTijd",
-        "comment" : "Dateshift volgens afzonderlijke transformatiespecificatie."
+        "identity" : "EncounterSanFromSIMContact",
+        "map" : "SIMContact.EindDatumTijd",
+        "comment" : "Structuurconversie: SIM BeginDatumTijd en EindDatumTijd vormen samen de FHIR Period; dateshift volgens afzonderlijke transformatiespecificatie."
       }]
     },
     {
-      "id" : "Encounter.hospitalization.dischargeDisposition.coding.system",
-      "path" : "Encounter.hospitalization.dischargeDisposition.coding.system",
+      "id" : "Encounter.hospitalization.dischargeDisposition",
+      "path" : "Encounter.hospitalization.dischargeDisposition",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;BestemmingCodeSysteem",
-        "comment" : "Alleen bij ontslagbestemming."
-      }]
-    },
-    {
-      "id" : "Encounter.hospitalization.dischargeDisposition.coding.code",
-      "path" : "Encounter.hospitalization.dischargeDisposition.coding.code",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;BestemmingCode",
-        "comment" : "Alleen bij ontslagbestemming."
-      }]
-    },
-    {
-      "id" : "Encounter.hospitalization.dischargeDisposition.coding.display",
-      "path" : "Encounter.hospitalization.dischargeDisposition.coding.display",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "Contact;BestemmingOmschrijving",
-        "comment" : "Alleen bij ontslagbestemming."
+        "identity" : "EncounterSanFromSIMContact",
+        "map" : "SIMContact.Bestemming",
+        "comment" : "Direct: wanneer het gegeven de ontslagbestemming beschrijft."
       }]
     }]
   }

@@ -17,7 +17,7 @@
   fhir:StructureDefinition.name [ fhir:value "SIMDBC"] ;
   fhir:StructureDefinition.title [ fhir:value "DBC/Zorgtraject (model)"] ;
   fhir:StructureDefinition.status [ fhir:value "draft"] ;
-  fhir:StructureDefinition.date [ fhir:value "2026-11-19T16:54:56+00:00"^^xsd:dateTime] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-11-25T16:23:53+00:00"^^xsd:dateTime] ;
   fhir:StructureDefinition.publisher [ fhir:value "Santeon"] ;
   fhir:StructureDefinition.contact [
      fhir:index 0 ;
@@ -43,12 +43,14 @@
      fhir:index 0 ;
      fhir:StructureDefinition.mapping.identity [ fhir:value "SIMDBCFromSIMCSV" ] ;
      fhir:StructureDefinition.mapping.uri [ fhir:value "urn:santeon:sim:csv" ] ;
-     fhir:StructureDefinition.mapping.name [ fhir:value "SIM CSV" ]
+     fhir:StructureDefinition.mapping.name [ fhir:value "SIM CSV" ] ;
+     fhir:StructureDefinition.mapping.comment [ fhir:value "Herleidbaarheid van SIMDBC-elementen naar de oorspronkelijke SIM CSV-attributen." ]
   ], [
      fhir:index 1 ;
      fhir:StructureDefinition.mapping.identity [ fhir:value "SIMDBCToFHIR" ] ;
      fhir:StructureDefinition.mapping.uri [ fhir:value "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/episodeOfCare-san" ] ;
-     fhir:StructureDefinition.mapping.name [ fhir:value "SIMDBC naar FHIR" ]
+     fhir:StructureDefinition.mapping.name [ fhir:value "FHIR-mapping naar EpisodeOfCareSan" ] ;
+     fhir:StructureDefinition.mapping.comment [ fhir:value "Mapping van SIMDBC-elementen naar het Santeon FHIR-profiel EpisodeOfCareSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies." ]
   ] ;
   fhir:StructureDefinition.kind [ fhir:value "logical"] ;
   fhir:StructureDefinition.abstract [ fhir:value "false"^^xsd:boolean] ;
@@ -103,7 +105,7 @@
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMDBCToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "EpisodeOfCare.patient" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Patient-reference op basis van identificatienummer." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: Patient-reference op basis van identificatienummer." ]
        ]
      ], [
        fhir:index 2 ;
@@ -130,7 +132,7 @@
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMDBCToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "EpisodeOfCare.identifier" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Indien één EpisodeOfCare één DBC-subtraject representeert." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: indien één EpisodeOfCare één DBC-subtraject representeert; samengestelde identifier (system|value), waardedeel gehasht volgens de ETL-specificatie." ]
        ]
      ], [
        fhir:index 3 ;
@@ -676,7 +678,7 @@
          fhir:index 0 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMDBCToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "EpisodeOfCare.type" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Mits het zorgtype de zorgepisode correct classificeert." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: mits het zorgtype de zorgepisode correct classificeert." ]
        ]
      ], [
        fhir:index 19 ;
@@ -1242,7 +1244,7 @@
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMDBCToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "EpisodeOfCare.period.start" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode." ]
        ]
      ], [
        fhir:index 37 ;
@@ -1269,7 +1271,7 @@
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMDBCToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "EpisodeOfCare.period.end" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode." ]
        ]
      ], [
        fhir:index 38 ;
@@ -1666,7 +1668,7 @@
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMDBCToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "EpisodeOfCare.patient" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Patient-reference op basis van identificatienummer." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: Patient-reference op basis van identificatienummer." ]
        ]
      ], [
        fhir:index 2 ;
@@ -1688,7 +1690,7 @@
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMDBCToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "EpisodeOfCare.identifier" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Indien één EpisodeOfCare één DBC-subtraject representeert." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: indien één EpisodeOfCare één DBC-subtraject representeert; samengestelde identifier (system|value), waardedeel gehasht volgens de ETL-specificatie." ]
        ]
      ], [
        fhir:index 3 ;
@@ -1775,7 +1777,7 @@
          fhir:index 0 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMDBCToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "EpisodeOfCare.type" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Mits het zorgtype de zorgepisode correct classificeert." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: mits het zorgtype de zorgepisode correct classificeert." ]
        ]
      ], [
        fhir:index 11 ;
@@ -1897,7 +1899,7 @@
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMDBCToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "EpisodeOfCare.period.start" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode." ]
        ]
      ], [
        fhir:index 21 ;
@@ -1919,7 +1921,7 @@
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMDBCToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "EpisodeOfCare.period.end" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode." ]
        ]
      ], [
        fhir:index 22 ;

@@ -47,7 +47,7 @@
   <name value="SIMAlgemeneMeting"/>
   <title value="Algemene meting (model)"/>
   <status value="draft"/>
-  <date value="2026-11-19T16:54:56+00:00"/>
+  <date value="2026-11-25T16:23:53+00:00"/>
   <publisher value="Santeon"/>
   <contact>
     <name value="Santeon"/>
@@ -69,11 +69,13 @@
     <identity value="SIMAlgemeneMetingFromSIMCSV"/>
     <uri value="urn:santeon:sim:csv"/>
     <name value="SIM CSV"/>
+    <comment value="Herleidbaarheid van SIMAlgemeneMeting-elementen naar de oorspronkelijke SIM CSV-attributen."/>
   </mapping>
   <mapping>
     <identity value="SIMAlgemeneMetingToFHIR"/>
     <uri value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san"/>
-    <name value="SIMAlgemeneMeting naar FHIR"/>
+    <name value="FHIR-mapping naar ObservationSan"/>
+    <comment value="Mapping van SIMAlgemeneMeting-elementen naar het Santeon FHIR-profiel ObservationSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."/>
   </mapping>
   <kind value="logical"/>
   <abstract value="false"/>
@@ -118,6 +120,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.identifier"/>
+        <comment value="Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.PatientIdentificatienummer">
@@ -141,7 +144,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.subject"/>
-        <comment value="Patient-reference op basis van identificatienummer."/>
+        <comment value="Structuurconversie: Patient-reference op basis van identificatienummer."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.MetingNaam">
@@ -173,6 +176,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.code"/>
+        <comment value="Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.MetingNaam.id">
@@ -383,6 +387,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.effectiveDateTime"/>
+        <comment value="Direct: SIM dateTime wordt overgenomen als FHIR dateTime."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.UitslagWaarde">
@@ -417,6 +422,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.valueQuantity"/>
+        <comment value="Direct: SIM Quantity wordt overgenomen als FHIR Quantity."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.UitslagWaarde.id">
@@ -726,6 +732,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.valueRange"/>
+        <comment value="Direct: SIM Range wordt overgenomen als FHIR Range."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.UitslagBereik.id">
@@ -1006,6 +1013,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.valueCodeableConcept"/>
+        <comment value="Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.UitslagCode.id">
@@ -1216,6 +1224,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.valueDateTime"/>
+        <comment value="Direct: SIM dateTime wordt overgenomen als FHIR dateTime."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.Meetmethode">
@@ -1243,6 +1252,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.method"/>
+        <comment value="Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.Meetmethode.id">
@@ -1455,6 +1465,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.identifier"/>
+        <comment value="Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.PatientIdentificatienummer">
@@ -1473,7 +1484,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.subject"/>
-        <comment value="Patient-reference op basis van identificatienummer."/>
+        <comment value="Structuurconversie: Patient-reference op basis van identificatienummer."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.MetingNaam">
@@ -1492,6 +1503,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.code"/>
+        <comment value="Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.MetingNaam.coding.system">
@@ -1531,6 +1543,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.effectiveDateTime"/>
+        <comment value="Direct: SIM dateTime wordt overgenomen als FHIR dateTime."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.UitslagWaarde">
@@ -1545,6 +1558,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.valueQuantity"/>
+        <comment value="Direct: SIM Quantity wordt overgenomen als FHIR Quantity."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.UitslagWaarde.value">
@@ -1587,6 +1601,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.valueRange"/>
+        <comment value="Direct: SIM Range wordt overgenomen als FHIR Range."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.UitslagBereik.low.value">
@@ -1657,6 +1672,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.valueCodeableConcept"/>
+        <comment value="Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.UitslagCode.coding.system">
@@ -1696,6 +1712,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.valueDateTime"/>
+        <comment value="Direct: SIM dateTime wordt overgenomen als FHIR dateTime."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.Meetmethode">
@@ -1710,6 +1727,7 @@
       <mapping>
         <identity value="SIMAlgemeneMetingToFHIR"/>
         <map value="Observation.method"/>
+        <comment value="Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."/>
       </mapping>
     </element>
     <element id="SIMAlgemeneMeting.Meetmethode.coding.system">

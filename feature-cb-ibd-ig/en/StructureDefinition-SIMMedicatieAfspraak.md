@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMMedicatieAfspr
   "name" : "SIMMedicatieAfspraak",
   "title" : "Medicatieafspraak (model)",
   "status" : "draft",
-  "date" : "2026-11-19T16:54:56+00:00",
+  "date" : "2026-11-25T16:23:53+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -50,12 +50,14 @@ Other representations of profile: [CSV](../StructureDefinition-SIMMedicatieAfspr
   "mapping" : [{
     "identity" : "SIMMedicatieAfspraakFromSIMCSV",
     "uri" : "urn:santeon:sim:csv",
-    "name" : "SIM CSV"
+    "name" : "SIM CSV",
+    "comment" : "Herleidbaarheid van SIMMedicatieAfspraak-elementen naar de oorspronkelijke SIM CSV-attributen."
   },
   {
     "identity" : "SIMMedicatieAfspraakToFHIR",
     "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/medicationRequest-san",
-    "name" : "SIMMedicatieAfspraak naar FHIR"
+    "name" : "FHIR-mapping naar MedicationRequestSan",
+    "comment" : "Mapping van SIMMedicatieAfspraak-elementen naar het Santeon FHIR-profiel MedicationRequestSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."
   }],
   "kind" : "logical",
   "abstract" : false,
@@ -85,7 +87,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMMedicatieAfspr
       },
       {
         "identity" : "SIMMedicatieAfspraakToFHIR",
-        "map" : "MedicationRequest.identifier"
+        "map" : "MedicationRequest.identifier",
+        "comment" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
       }]
     },
     {
@@ -105,7 +108,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMMedicatieAfspr
       {
         "identity" : "SIMMedicatieAfspraakToFHIR",
         "map" : "MedicationRequest.subject",
-        "comment" : "Patient-reference op basis van identificatienummer."
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer."
       }]
     },
     {
@@ -121,7 +124,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMMedicatieAfspr
       "mapping" : [{
         "identity" : "SIMMedicatieAfspraakToFHIR",
         "map" : "MedicationRequest.medicationCodeableConcept",
-        "comment" : "Het SIM documenteert medicationReference naar een Medication met deze code; keuze nog te maken."
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept. Het SIM documenteert medicationReference naar een Medication met deze code; keuze nog te maken."
       }]
     },
     {
@@ -160,7 +163,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMMedicatieAfspr
       }],
       "mapping" : [{
         "identity" : "SIMMedicatieAfspraakToFHIR",
-        "map" : "MedicationRequest.dosageInstruction.route"
+        "map" : "MedicationRequest.dosageInstruction.route",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
       }]
     },
     {
@@ -230,7 +234,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMMedicatieAfspr
       },
       {
         "identity" : "SIMMedicatieAfspraakToFHIR",
-        "map" : "MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start"
+        "map" : "MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start",
+        "comment" : "Direct: SIM dateTime wordt overgenomen als FHIR dateTime."
       }]
     },
     {
@@ -245,7 +250,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMMedicatieAfspr
       }],
       "mapping" : [{
         "identity" : "SIMMedicatieAfspraakToFHIR",
-        "map" : "MedicationRequest.status"
+        "map" : "MedicationRequest.status",
+        "comment" : "Datatypeconversie: SIM Coding naar FHIR code; codes volgens MedicatieAfspraakStatusSysteem, overeenkomst met FHIR medicationrequest-status verifiëren."
       }]
     },
     {

@@ -18,7 +18,7 @@
   fhir:StructureDefinition.name [ fhir:value "SIMCarePlan"] ;
   fhir:StructureDefinition.title [ fhir:value "Zorgplan (model)"] ;
   fhir:StructureDefinition.status [ fhir:value "draft"] ;
-  fhir:StructureDefinition.date [ fhir:value "2026-11-19T16:54:56+00:00"^^xsd:dateTime] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-11-25T16:23:53+00:00"^^xsd:dateTime] ;
   fhir:StructureDefinition.publisher [ fhir:value "Santeon"] ;
   fhir:StructureDefinition.contact [
      fhir:index -1 ;
@@ -44,12 +44,14 @@
      fhir:index -1 ;
      fhir:StructureDefinition.mapping.identity [ fhir:value "SIMCarePlanFromSIMCSV" ] ;
      fhir:StructureDefinition.mapping.uri [ fhir:value "urn:santeon:sim:csv" ] ;
-     fhir:StructureDefinition.mapping.name [ fhir:value "SIM CSV" ]
+     fhir:StructureDefinition.mapping.name [ fhir:value "SIM CSV" ] ;
+     fhir:StructureDefinition.mapping.comment [ fhir:value "Herleidbaarheid van SIMCarePlan-elementen naar de oorspronkelijke SIM CSV-attributen." ]
   ], [
      fhir:index -1 ;
      fhir:StructureDefinition.mapping.identity [ fhir:value "SIMCarePlanToFHIR" ] ;
      fhir:StructureDefinition.mapping.uri [ fhir:value "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/carePlan-san" ] ;
-     fhir:StructureDefinition.mapping.name [ fhir:value "SIMCarePlan naar FHIR" ]
+     fhir:StructureDefinition.mapping.name [ fhir:value "FHIR-mapping naar CarePlanSan" ] ;
+     fhir:StructureDefinition.mapping.comment [ fhir:value "Mapping van SIMCarePlan-elementen naar het Santeon FHIR-profiel CarePlanSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies." ]
   ] ;
   fhir:StructureDefinition.kind [ fhir:value "logical"] ;
   fhir:StructureDefinition.abstract [ fhir:value "false"^^xsd:boolean] ;
@@ -103,7 +105,8 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMCarePlanToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.identifier" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.identifier" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie." ]
        ]
      ], [
        fhir:index -1 ;
@@ -130,7 +133,7 @@
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMCarePlanToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.subject" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Patient-reference op basis van identificatienummer." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: Patient-reference op basis van identificatienummer." ]
        ]
      ], [
        fhir:index -1 ;
@@ -156,7 +159,8 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMCarePlanToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.status" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.status" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM code wordt overgenomen als FHIR code; aansluiting op FHIR request-status nog te bevestigen." ]
        ]
      ], [
        fhir:index -1 ;
@@ -190,7 +194,8 @@
        fhir:ElementDefinition.mapping [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMCarePlanToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.category" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.category" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept." ]
        ]
      ], [
        fhir:index -1 ;
@@ -449,7 +454,8 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMCarePlanToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.period.start" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.period.start" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: SIM StartDatumTijd en EindDatumTijd vormen samen de FHIR Period." ]
        ]
      ], [
        fhir:index -1 ;
@@ -475,7 +481,8 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMCarePlanToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.period.end" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.period.end" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: SIM StartDatumTijd en EindDatumTijd vormen samen de FHIR Period." ]
        ]
      ]
   ] ;
@@ -505,7 +512,8 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMCarePlanToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.identifier" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.identifier" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie." ]
        ]
      ], [
        fhir:index -1 ;
@@ -527,7 +535,7 @@
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMCarePlanToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.subject" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Patient-reference op basis van identificatienummer." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: Patient-reference op basis van identificatienummer." ]
        ]
      ], [
        fhir:index -1 ;
@@ -548,7 +556,8 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMCarePlanToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.status" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.status" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM code wordt overgenomen als FHIR code; aansluiting op FHIR request-status nog te bevestigen." ]
        ]
      ], [
        fhir:index -1 ;
@@ -565,7 +574,8 @@
        fhir:ElementDefinition.mapping [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMCarePlanToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.category" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.category" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept." ]
        ]
      ], [
        fhir:index -1 ;
@@ -613,7 +623,8 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMCarePlanToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.period.start" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.period.start" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: SIM StartDatumTijd en EindDatumTijd vormen samen de FHIR Period." ]
        ]
      ], [
        fhir:index -1 ;
@@ -634,7 +645,8 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMCarePlanToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.period.end" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "CarePlan.period.end" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: SIM StartDatumTijd en EindDatumTijd vormen samen de FHIR Period." ]
        ]
      ]
   ] .

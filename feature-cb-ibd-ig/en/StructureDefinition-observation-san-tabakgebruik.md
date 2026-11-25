@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san-t
   "name" : "ObservationSanTabakGebruik",
   "title" : "Observation TabakGebruik (SAN)",
   "status" : "draft",
-  "date" : "2026-11-19T16:54:56+00:00",
+  "date" : "2026-11-25T16:23:53+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san-t
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "Santeon FHIR R4-profiel voor de vastgelegde rookstatus van een patiënt.\n\nAfgeleid van ObservationSan en gebaseerd op het\nSanteon Informatiemodel (SIMTabakGebruik).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
+  "description" : "Santeon FHIR R4-profiel voor de vastgelegde rookstatus van een patiënt, gebaseerd op het Santeon Informatiemodel (SIMTabakGebruik) en afgeleid van FHIR R4 Observation.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -48,10 +48,10 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san-t
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "sim-tabakgebruik",
-    "uri" : "urn:santeon:sim:csv",
-    "name" : "Santeon Informatiemodel (SIM CSV) - TabakGebruik",
-    "comment" : "Informatieve mapping van FHIR Observation naar SIM TabakGebruik-bronvelden."
+    "identity" : "ObservationSanTabakGebruikFromSIMTabakGebruik",
+    "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMTabakGebruik",
+    "name" : "SIM Logical Model SIMTabakGebruik",
+    "comment" : "Herkomst van de ObservationSanTabakGebruik-elementen in Tabakgebruik (SIMTabakGebruik), met de conversietoelichting. Afgeleid van SIMTabakGebruikToFHIR; wijzigingen alleen daar aanbrengen."
   },
   {
     "identity" : "workflow",
@@ -86,7 +86,7 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san-t
   "kind" : "resource",
   "abstract" : false,
   "type" : "Observation",
-  "baseDefinition" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Observation",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -94,21 +94,12 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san-t
       "path" : "Observation"
     },
     {
-      "id" : "Observation.identifier.system",
-      "path" : "Observation.identifier.system",
+      "id" : "Observation.identifier",
+      "path" : "Observation.identifier",
       "mapping" : [{
-        "identity" : "sim-tabakgebruik",
-        "map" : "TabakGebruik;MetingID",
-        "comment" : "Systeemdeel van de samengestelde identifier."
-      }]
-    },
-    {
-      "id" : "Observation.identifier.value",
-      "path" : "Observation.identifier.value",
-      "mapping" : [{
-        "identity" : "sim-tabakgebruik",
-        "map" : "TabakGebruik;MetingID",
-        "comment" : "Waardedeel van de samengestelde identifier; hash."
+        "identity" : "ObservationSanTabakGebruikFromSIMTabakGebruik",
+        "map" : "SIMTabakGebruik.MetingID",
+        "comment" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
       }]
     },
     {
@@ -125,18 +116,36 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san-t
       "id" : "Observation.subject",
       "path" : "Observation.subject",
       "mapping" : [{
-        "identity" : "sim-tabakgebruik",
-        "map" : "TabakGebruik;Identificatienummer",
-        "comment" : "Patient-reference op basis van patiëntidentifier."
+        "identity" : "ObservationSanTabakGebruikFromSIMTabakGebruik",
+        "map" : "SIMTabakGebruik.PatientIdentificatienummer",
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer."
       }]
     },
     {
       "id" : "Observation.effective[x]",
       "path" : "Observation.effective[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Observation.effective[x]:effectiveDateTime",
+      "path" : "Observation.effective[x]",
+      "sliceName" : "effectiveDateTime",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "dateTime"
+      }],
       "mapping" : [{
-        "identity" : "sim-tabakgebruik",
-        "map" : "TabakGebruik;TabakGebruikStatusDatumVastleggen",
-        "comment" : "Datum uit SIM; datumprecisie behouden."
+        "identity" : "ObservationSanTabakGebruikFromSIMTabakGebruik",
+        "map" : "SIMTabakGebruik.DatumVastleggen",
+        "comment" : "Datatypeconversie: SIM date naar FHIR dateTime, met behoud van de oorspronkelijke datumprecisie."
       }]
     },
     {
@@ -148,36 +157,12 @@ Other representations of profile: [CSV](../StructureDefinition-observation-san-t
       "binding" : {
         "strength" : "extensible",
         "valueSet" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/TabakGebruikStatusCodelijst"
-      }
-    },
-    {
-      "id" : "Observation.value[x].coding.system",
-      "path" : "Observation.value[x].coding.system",
+      },
       "mapping" : [{
-        "identity" : "sim-tabakgebruik",
-        "map" : "TabakGebruik;TabakGebruikStatusSysteem"
+        "identity" : "ObservationSanTabakGebruikFromSIMTabakGebruik",
+        "map" : "SIMTabakGebruik.TabakGebruikStatus",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept, gebonden aan TabakGebruikStatusCodelijst."
       }]
-    },
-    {
-      "id" : "Observation.value[x].coding.code",
-      "path" : "Observation.value[x].coding.code",
-      "mapping" : [{
-        "identity" : "sim-tabakgebruik",
-        "map" : "TabakGebruik;TabakGebruikStatus"
-      }]
-    },
-    {
-      "id" : "Observation.value[x].coding.display",
-      "path" : "Observation.value[x].coding.display",
-      "mapping" : [{
-        "identity" : "sim-tabakgebruik",
-        "map" : "TabakGebruik;TabakGebruikStatusOmschrijving"
-      }]
-    },
-    {
-      "id" : "Observation.method",
-      "path" : "Observation.method",
-      "max" : "0"
     }]
   }
 }

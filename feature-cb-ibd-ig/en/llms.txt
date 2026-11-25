@@ -3,13 +3,13 @@
 ## Pages
 
 * [Home](index.md)
+* [De-identification](deidentification.md)
+* [IBD](ibd-dataset.md)
+* [SIM Logical Models](CLMs.md)
 * [FHIR Profiles](profiles.md)
 * [Datasets](datasets.md)
-* [IBD](ibd-dataset.md)
-* [Artifacts Summary](artifacts.md)
 * [KPI definitions](kpi-definitions.md)
-* [SIM Logical Models](CLMs.md)
-* [De-identification](deidentification.md)
+* [Artifacts Summary](artifacts.md)
 
 ## Resources
 

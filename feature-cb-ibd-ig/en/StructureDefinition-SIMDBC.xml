@@ -40,7 +40,7 @@
   <name value="SIMDBC"/>
   <title value="DBC/Zorgtraject (model)"/>
   <status value="draft"/>
-  <date value="2026-11-19T16:54:56+00:00"/>
+  <date value="2026-11-25T16:23:53+00:00"/>
   <publisher value="Santeon"/>
   <contact>
     <name value="Santeon"/>
@@ -62,11 +62,13 @@
     <identity value="SIMDBCFromSIMCSV"/>
     <uri value="urn:santeon:sim:csv"/>
     <name value="SIM CSV"/>
+    <comment value="Herleidbaarheid van SIMDBC-elementen naar de oorspronkelijke SIM CSV-attributen."/>
   </mapping>
   <mapping>
     <identity value="SIMDBCToFHIR"/>
     <uri value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/episodeOfCare-san"/>
-    <name value="SIMDBC naar FHIR"/>
+    <name value="FHIR-mapping naar EpisodeOfCareSan"/>
+    <comment value="Mapping van SIMDBC-elementen naar het Santeon FHIR-profiel EpisodeOfCareSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."/>
   </mapping>
   <kind value="logical"/>
   <abstract value="false"/>
@@ -111,7 +113,7 @@
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.patient"/>
-        <comment value="Patient-reference op basis van identificatienummer."/>
+        <comment value="Structuurconversie: Patient-reference op basis van identificatienummer."/>
       </mapping>
     </element>
     <element id="SIMDBC.SubtrajectNummer">
@@ -135,7 +137,7 @@
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.identifier"/>
-        <comment value="Indien één EpisodeOfCare één DBC-subtraject representeert."/>
+        <comment value="Direct: indien één EpisodeOfCare één DBC-subtraject representeert; samengestelde identifier (system|value), waardedeel gehasht volgens de ETL-specificatie."/>
       </mapping>
     </element>
     <element id="SIMDBC.Diagnose">
@@ -572,7 +574,7 @@
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.type"/>
-        <comment value="Mits het zorgtype de zorgepisode correct classificeert."/>
+        <comment value="Direct: mits het zorgtype de zorgepisode correct classificeert."/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgType.id">
@@ -1031,7 +1033,7 @@
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.period.start"/>
-        <comment value="Alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."/>
+        <comment value="Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."/>
       </mapping>
     </element>
     <element id="SIMDBC.SluitingsDatum">
@@ -1055,7 +1057,7 @@
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.period.end"/>
-        <comment value="Alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."/>
+        <comment value="Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."/>
       </mapping>
     </element>
     <element id="SIMDBC.UitvoerderSpecialisme">
@@ -1380,7 +1382,7 @@
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.patient"/>
-        <comment value="Patient-reference op basis van identificatienummer."/>
+        <comment value="Structuurconversie: Patient-reference op basis van identificatienummer."/>
       </mapping>
     </element>
     <element id="SIMDBC.SubtrajectNummer">
@@ -1399,7 +1401,7 @@
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.identifier"/>
-        <comment value="Indien één EpisodeOfCare één DBC-subtraject representeert."/>
+        <comment value="Direct: indien één EpisodeOfCare één DBC-subtraject representeert; samengestelde identifier (system|value), waardedeel gehasht volgens de ETL-specificatie."/>
       </mapping>
     </element>
     <element id="SIMDBC.Diagnose">
@@ -1469,7 +1471,7 @@
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.type"/>
-        <comment value="Mits het zorgtype de zorgepisode correct classificeert."/>
+        <comment value="Direct: mits het zorgtype de zorgepisode correct classificeert."/>
       </mapping>
     </element>
     <element id="SIMDBC.ZorgType.coding.system">
@@ -1568,7 +1570,7 @@
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.period.start"/>
-        <comment value="Alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."/>
+        <comment value="Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."/>
       </mapping>
     </element>
     <element id="SIMDBC.SluitingsDatum">
@@ -1587,7 +1589,7 @@
       <mapping>
         <identity value="SIMDBCToFHIR"/>
         <map value="EpisodeOfCare.period.end"/>
-        <comment value="Alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."/>
+        <comment value="Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."/>
       </mapping>
     </element>
     <element id="SIMDBC.UitvoerderSpecialisme">

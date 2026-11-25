@@ -18,7 +18,7 @@
   fhir:ImplementationGuide.name [ fhir:value "SanteonSimOnFhir"] ;
   fhir:ImplementationGuide.title [ fhir:value "SIM on FHIR"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-11-19T16:54:56+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-11-25T16:23:53+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "Santeon"] ;
   fhir:ImplementationGuide.contact [
      fhir:index -1 ;
@@ -530,7 +530,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/carePlan-san" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "CarePlan (SAN)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek Santeon FHIR R4-profiel voor zorgplannen, zoals deelname\naan een zorgpad of thuismonitoringprogramma.\n\nGebaseerd op het Santeon Informatiemodel (SIMCarePlan).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Santeon FHIR R4-profiel voor zorgplannen (deelname aan een zorgpad of thuismonitoringprogramma), gebaseerd op het Santeon Informatiemodel (SIMCarePlan) en afgeleid van FHIR R4 CarePlan." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -544,7 +544,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/condition-san" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Condition (SAN)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek Santeon FHIR R4-profiel voor aandoeningen en diagnoses.\n\nDe aansluiting op het Santeon Informatiemodel wordt\nvastgelegd via afzonderlijke mappings naar de\nrelevante bronmodellen.\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Santeon FHIR R4-profiel voor aandoeningen en diagnoses, afgeleid van Nictiz nl-core-Condition. SIMDBC is de beoogde bron voor de diagnosegegevens. De mapping vanuit het Santeon Informatiemodel is nog niet vastgelegd." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -642,7 +642,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/encounter-san" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Encounter (SAN)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek Santeon FHIR R4-profiel voor zorgcontacten.\n\nGebaseerd op het Santeon Informatiemodel (SIMContact).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Santeon FHIR R4-profiel voor zorgcontacten, gebaseerd op het Santeon Informatiemodel (SIMContact) en afgeleid van FHIR R4 Encounter." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -656,7 +656,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/episodeOfCare-san" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "EpisodeOfCare (SAN)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek Santeon FHIR R4-profiel voor zorgepisodes.\n\nGebaseerd op het Santeon Informatiemodel (SIMDBC), waarbij\nnog moet worden vastgesteld hoe een DBC-subtraject zich\nverhoudt tot een FHIR EpisodeOfCare.\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Santeon FHIR R4-profiel voor zorgepisodes, gebaseerd op het Santeon Informatiemodel (SIMDBC) en afgeleid van FHIR R4 EpisodeOfCare." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -822,7 +822,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/medicationRequest-san" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "MedicationRequest (SAN)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek Santeon FHIR R4-profiel voor medicatieafspraken.\n\nGebaseerd op het Santeon Informatiemodel (SIMMedicatieAfspraak).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Santeon FHIR R4-profiel voor medicatieafspraken, gebaseerd op het Santeon Informatiemodel (SIMMedicatieAfspraak) en afgeleid van FHIR R4 MedicationRequest." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -850,7 +850,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/observation-san" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Observation (SAN)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek Santeon FHIR R4-profiel voor algemene metingen.\n\nGebaseerd op het Santeon Informatiemodel (SIMAlgemeneMeting).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Santeon FHIR R4-profiel voor algemene metingen, gebaseerd op het Santeon Informatiemodel (SIMAlgemeneMeting) en afgeleid van FHIR R4 Observation." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -878,7 +878,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/observation-san-tabakgebruik" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Observation TabakGebruik (SAN)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Santeon FHIR R4-profiel voor de vastgelegde rookstatus van een patiënt.\n\nAfgeleid van ObservationSan en gebaseerd op het\nSanteon Informatiemodel (SIMTabakGebruik).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Santeon FHIR R4-profiel voor de vastgelegde rookstatus van een patiënt, gebaseerd op het Santeon Informatiemodel (SIMTabakGebruik) en afgeleid van FHIR R4 Observation." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -920,7 +920,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/patient-san" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Patient (SAN)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Santeon FHIR R4-profiel voor patiëntgegevens, gebaseerd op het Santeon Informatiemodel (SIMPatient)." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Santeon FHIR R4-profiel voor patiëntgegevens, gebaseerd op het Santeon Informatiemodel (SIMPatient) en afgeleid van Nictiz nl-core-Patient." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -962,7 +962,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/procedure-san" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Procedure (SAN)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek Santeon FHIR R4-profiel voor verrichtingen.\n\nGebaseerd op het Santeon Informatiemodel (SIMVerrichting).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Santeon FHIR R4-profiel voor verrichtingen, gebaseerd op het Santeon Informatiemodel (SIMVerrichting) en afgeleid van Nictiz nl-core-Procedure." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -990,7 +990,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/questionnaireResponse-san" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "QuestionnaireResponse (SAN)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Generiek Santeon FHIR R4-profiel voor ingevulde vragenlijsten.\n\nGebaseerd op het Santeon Informatiemodel (SIMVragenlijstAntwoord).\nHet SIM levert één record per antwoord; records met hetzelfde\nVragenlijstAntwoordID vormen samen één QuestionnaireResponse.\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Santeon FHIR R4-profiel voor ingevulde vragenlijsten, gebaseerd op het Santeon Informatiemodel (SIMVragenlijstAntwoord) en afgeleid van FHIR R4 QuestionnaireResponse." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;

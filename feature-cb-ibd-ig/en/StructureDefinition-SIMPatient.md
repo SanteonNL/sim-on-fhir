@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
   "name" : "SIMPatient",
   "title" : "Patiënt (model)",
   "status" : "draft",
-  "date" : "2026-11-19T16:54:56+00:00",
+  "date" : "2026-11-25T16:23:53+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -57,12 +57,12 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
     "identity" : "SIMPatientToGBB",
     "uri" : "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelPatient",
     "name" : "Nictiz GBB-afsprakenmodel",
-    "comment" : "Semantische vergelijking tussen SIMPatient en Nictiz GBB Patient (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen. Legenda: 🟢 Beoordeeld, equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."
+    "comment" : "Semantische vergelijking tussen SIMPatient en Nictiz GBB Patient (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen. Legenda: 🟢 Equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."
   },
   {
     "identity" : "SIMPatientToFHIR",
     "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san",
-    "name" : "Santeon FHIR PatientSan",
+    "name" : "FHIR-mapping naar PatientSan",
     "comment" : "Mapping van SIMPatient-elementen naar het Santeon FHIR-profiel PatientSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."
   }],
   "kind" : "logical",
@@ -98,7 +98,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
       },
       {
         "identity" : "SIMPatientToFHIR",
-        "map" : "Patient.identifier"
+        "map" : "Patient.identifier",
+        "comment" : "Direct: system en value worden behouden conform de afgesproken identificatiesystematiek."
       }]
     },
     {
@@ -123,7 +124,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
       {
         "identity" : "SIMPatientToFHIR",
         "map" : "Patient.gender",
-        "comment" : "Terminologiemapping van SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender vereist."
+        "comment" : "Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender."
       }]
     },
     {
@@ -167,11 +168,12 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
       {
         "identity" : "SIMPatientToGBB",
         "map" : "Patient.dateOfBirth",
-        "comment" : "🟢 Equivalent: SIM date is compatibel met GBB dateTime op dagniveau."
+        "comment" : "🟢 Semantisch compatibel op dagniveau: SIM gebruikt date; GBB gebruikt dateTime."
       },
       {
         "identity" : "SIMPatientToFHIR",
-        "map" : "Patient.birthDate"
+        "map" : "Patient.birthDate",
+        "comment" : "Direct: SIM date wordt overgenomen als FHIR date."
       }]
     },
     {
@@ -190,13 +192,13 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
       },
       {
         "identity" : "SIMPatientToGBB",
-        "map" : "Patient.deceasedDateTime",
-        "comment" : "🟡 Verschil in representatie: SIM gebruikt date; GBB ondersteunt dateTime en boolean."
+        "map" : "Patient.deceased[x]",
+        "comment" : "🟡 Verschil in representatie: SIM registreert uitsluitend de overlijdensdatum als date; GBB ondersteunt zowel dateTime als boolean."
       },
       {
         "identity" : "SIMPatientToFHIR",
-        "map" : "Patient.deceased[x]",
-        "comment" : "SIM date wordt gerepresenteerd als FHIR dateTime met dagprecisie. De boolean-variant wordt niet vanuit dit SIM-element gevuld."
+        "map" : "Patient.deceasedDateTime",
+        "comment" : "Datatypeconversie: SIM date naar FHIR dateTime met dagprecisie; deceasedBoolean wordt vanuit dit SIM-element niet gevuld."
       }]
     }]
   }

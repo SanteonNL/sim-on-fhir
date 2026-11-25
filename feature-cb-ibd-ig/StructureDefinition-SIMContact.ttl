@@ -17,7 +17,7 @@
   fhir:StructureDefinition.name [ fhir:value "SIMContact"] ;
   fhir:StructureDefinition.title [ fhir:value "Contact (model)"] ;
   fhir:StructureDefinition.status [ fhir:value "draft"] ;
-  fhir:StructureDefinition.date [ fhir:value "2026-11-19T16:54:56+00:00"^^xsd:dateTime] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-11-25T16:23:53+00:00"^^xsd:dateTime] ;
   fhir:StructureDefinition.publisher [ fhir:value "Santeon"] ;
   fhir:StructureDefinition.contact [
      fhir:index 0 ;
@@ -43,12 +43,14 @@
      fhir:index 0 ;
      fhir:StructureDefinition.mapping.identity [ fhir:value "SIMContactFromSIMCSV" ] ;
      fhir:StructureDefinition.mapping.uri [ fhir:value "urn:santeon:sim:csv" ] ;
-     fhir:StructureDefinition.mapping.name [ fhir:value "SIM CSV" ]
+     fhir:StructureDefinition.mapping.name [ fhir:value "SIM CSV" ] ;
+     fhir:StructureDefinition.mapping.comment [ fhir:value "Herleidbaarheid van SIMContact-elementen naar de oorspronkelijke SIM CSV-attributen." ]
   ], [
      fhir:index 1 ;
      fhir:StructureDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
      fhir:StructureDefinition.mapping.uri [ fhir:value "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/encounter-san" ] ;
-     fhir:StructureDefinition.mapping.name [ fhir:value "SIMContact naar FHIR" ]
+     fhir:StructureDefinition.mapping.name [ fhir:value "FHIR-mapping naar EncounterSan" ] ;
+     fhir:StructureDefinition.mapping.comment [ fhir:value "Mapping van SIMContact-elementen naar het Santeon FHIR-profiel EncounterSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies." ]
   ] ;
   fhir:StructureDefinition.kind [ fhir:value "logical"] ;
   fhir:StructureDefinition.abstract [ fhir:value "false"^^xsd:boolean] ;
@@ -102,7 +104,8 @@
        ], [
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.identifier" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.identifier" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie." ]
        ]
      ], [
        fhir:index 2 ;
@@ -151,7 +154,7 @@
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.episodeOfCare" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Indien het DBC-subtraject als EpisodeOfCare wordt gerepresenteerd." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: EpisodeOfCare-reference op basis van SubtrajectNummer, indien het DBC-subtraject als EpisodeOfCare wordt gerepresenteerd." ]
        ]
      ], [
        fhir:index 4 ;
@@ -178,7 +181,7 @@
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.subject" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Patient-reference op basis van identificatienummer." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: Patient-reference op basis van identificatienummer." ]
        ]
      ], [
        fhir:index 5 ;
@@ -212,7 +215,8 @@
        fhir:ElementDefinition.mapping [
          fhir:index 0 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.class" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.class" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM Coding wordt overgenomen als FHIR Coding; aansluiting van Santeon_ContactTypeCodelijst op de FHIR-binding nog te beoordelen." ]
        ]
      ], [
        fhir:index 6 ;
@@ -594,7 +598,8 @@
        fhir:ElementDefinition.mapping [
          fhir:index 0 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.priority" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.priority" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM en FHIR gebruiken beide v3-ActPriority (example)." ]
        ]
      ], [
        fhir:index 14 ;
@@ -862,7 +867,7 @@
          fhir:index 0 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.hospitalization.dischargeDisposition" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Wanneer het gegeven de ontslagbestemming beschrijft." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: wanneer het gegeven de ontslagbestemming beschrijft." ]
        ]
      ], [
        fhir:index 22 ;
@@ -1121,7 +1126,8 @@
        ], [
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.period.start" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.period.start" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: SIM BeginDatumTijd en EindDatumTijd vormen samen de FHIR Period; dateshift volgens afzonderlijke transformatiespecificatie." ]
        ]
      ], [
        fhir:index 30 ;
@@ -1147,7 +1153,8 @@
        ], [
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.period.end" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.period.end" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: SIM BeginDatumTijd en EindDatumTijd vormen samen de FHIR Period; dateshift volgens afzonderlijke transformatiespecificatie." ]
        ]
      ], [
        fhir:index 31 ;
@@ -1543,7 +1550,8 @@
        ], [
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.identifier" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.identifier" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie." ]
        ]
      ], [
        fhir:index 2 ;
@@ -1582,7 +1590,7 @@
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.episodeOfCare" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Indien het DBC-subtraject als EpisodeOfCare wordt gerepresenteerd." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: EpisodeOfCare-reference op basis van SubtrajectNummer, indien het DBC-subtraject als EpisodeOfCare wordt gerepresenteerd." ]
        ]
      ], [
        fhir:index 4 ;
@@ -1604,7 +1612,7 @@
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.subject" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Patient-reference op basis van identificatienummer." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: Patient-reference op basis van identificatienummer." ]
        ]
      ], [
        fhir:index 5 ;
@@ -1621,7 +1629,8 @@
        fhir:ElementDefinition.mapping [
          fhir:index 0 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.class" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.class" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM Coding wordt overgenomen als FHIR Coding; aansluiting van Santeon_ContactTypeCodelijst op de FHIR-binding nog te beoordelen." ]
        ]
      ], [
        fhir:index 6 ;
@@ -1672,7 +1681,8 @@
        fhir:ElementDefinition.mapping [
          fhir:index 0 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.priority" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.priority" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM en FHIR gebruiken beide v3-ActPriority (example)." ]
        ]
      ], [
        fhir:index 10 ;
@@ -1717,7 +1727,7 @@
          fhir:index 0 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.hospitalization.dischargeDisposition" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Wanneer het gegeven de ontslagbestemming beschrijft." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: wanneer het gegeven de ontslagbestemming beschrijft." ]
        ]
      ], [
        fhir:index 14 ;
@@ -1765,7 +1775,8 @@
        ], [
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.period.start" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.period.start" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: SIM BeginDatumTijd en EindDatumTijd vormen samen de FHIR Period; dateshift volgens afzonderlijke transformatiespecificatie." ]
        ]
      ], [
        fhir:index 18 ;
@@ -1786,7 +1797,8 @@
        ], [
          fhir:index 1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMContactToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.period.end" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Encounter.period.end" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Structuurconversie: SIM BeginDatumTijd en EindDatumTijd vormen samen de FHIR Period; dateshift volgens afzonderlijke transformatiespecificatie." ]
        ]
      ], [
        fhir:index 19 ;

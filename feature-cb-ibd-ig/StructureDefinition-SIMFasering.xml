@@ -22,7 +22,7 @@
   <name value="SIMFasering"/>
   <title value="Fasering (model)"/>
   <status value="draft"/>
-  <date value="2026-11-19T16:54:56+00:00"/>
+  <date value="2026-11-25T16:23:53+00:00"/>
   <publisher value="Santeon"/>
   <contact>
     <name value="Santeon"/>
@@ -44,6 +44,7 @@
     <identity value="SIMFaseringFromSIMCSV"/>
     <uri value="urn:santeon:sim:csv"/>
     <name value="SIM CSV"/>
+    <comment value="Herleidbaarheid van SIMFasering-elementen naar de oorspronkelijke SIM CSV-attributen."/>
   </mapping>
   <kind value="logical"/>
   <abstract value="false"/>

@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVragenlijstAnt
   "name" : "SIMVragenlijstAntwoord",
   "title" : "Vragenlijstantwoord (model)",
   "status" : "draft",
-  "date" : "2026-11-19T16:54:56+00:00",
+  "date" : "2026-11-25T16:23:53+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -50,12 +50,14 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVragenlijstAnt
   "mapping" : [{
     "identity" : "SIMVragenlijstAntwoordFromSIMCSV",
     "uri" : "urn:santeon:sim:csv",
-    "name" : "SIM CSV"
+    "name" : "SIM CSV",
+    "comment" : "Herleidbaarheid van SIMVragenlijstAntwoord-elementen naar de oorspronkelijke SIM CSV-attributen."
   },
   {
     "identity" : "SIMVragenlijstAntwoordToFHIR",
     "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/questionnaireResponse-san",
-    "name" : "SIMVragenlijstAntwoord naar FHIR"
+    "name" : "FHIR-mapping naar QuestionnaireResponseSan",
+    "comment" : "Mapping van SIMVragenlijstAntwoord-elementen naar het Santeon FHIR-profiel QuestionnaireResponseSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."
   }],
   "kind" : "logical",
   "abstract" : false,
@@ -85,7 +87,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVragenlijstAnt
       },
       {
         "identity" : "SIMVragenlijstAntwoordToFHIR",
-        "map" : "QuestionnaireResponse.identifier"
+        "map" : "QuestionnaireResponse.identifier",
+        "comment" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
       }]
     },
     {
@@ -105,7 +108,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVragenlijstAnt
       {
         "identity" : "SIMVragenlijstAntwoordToFHIR",
         "map" : "QuestionnaireResponse.subject",
-        "comment" : "Patient-reference op basis van identificatienummer; SIM benoemt daarnaast QuestionnaireResponse.source."
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer; SIM benoemt daarnaast QuestionnaireResponse.source."
       }]
     },
     {
@@ -124,7 +127,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVragenlijstAnt
       },
       {
         "identity" : "SIMVragenlijstAntwoordToFHIR",
-        "map" : "QuestionnaireResponse.authored"
+        "map" : "QuestionnaireResponse.authored",
+        "comment" : "Direct: SIM dateTime wordt overgenomen als FHIR dateTime."
       }]
     },
     {
@@ -209,7 +213,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVragenlijstAnt
       }],
       "mapping" : [{
         "identity" : "SIMVragenlijstAntwoordToFHIR",
-        "map" : "QuestionnaireResponse.item.answer.valueQuantity"
+        "map" : "QuestionnaireResponse.item.answer.valueQuantity",
+        "comment" : "Structuurconversie: één SIM-record wordt één item met één answer; SIM Quantity wordt overgenomen als FHIR Quantity."
       }]
     },
     {
@@ -256,7 +261,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVragenlijstAnt
       }],
       "mapping" : [{
         "identity" : "SIMVragenlijstAntwoordToFHIR",
-        "map" : "QuestionnaireResponse.item.answer.valueCoding"
+        "map" : "QuestionnaireResponse.item.answer.valueCoding",
+        "comment" : "Structuurconversie: één SIM-record wordt één item met één answer; SIM Coding wordt overgenomen als FHIR Coding."
       }]
     },
     {
@@ -299,7 +305,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVragenlijstAnt
       },
       {
         "identity" : "SIMVragenlijstAntwoordToFHIR",
-        "map" : "QuestionnaireResponse.item.answer.valueDateTime"
+        "map" : "QuestionnaireResponse.item.answer.valueDateTime",
+        "comment" : "Structuurconversie: één SIM-record wordt één item met één answer; SIM dateTime wordt overgenomen als FHIR dateTime."
       }]
     }]
   }
