@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Refer to this Profile: [EpisodeOfCare (SAN)](StructureDefinition-episodeOfCare-san.md)
+* This Profile is not used by any profiles in this Specification
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/santeon.sim-on-fhir|current/StructureDefinition/StructureDefinition-condition-san.json)
 
@@ -24,12 +24,16 @@ Other representations of profile: [CSV](../StructureDefinition-condition-san.csv
 {
   "resourceType" : "StructureDefinition",
   "id" : "condition-san",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile",
+    "valueCanonical" : "http://hl7.eu/fhir/base/StructureDefinition/condition-eu-core"
+  }],
   "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/condition-san",
   "version" : "0.1.0",
   "name" : "ConditionSan",
   "title" : "Condition (SAN)",
   "status" : "draft",
-  "date" : "2026-11-19T16:55:06+00:00",
+  "date" : "2026-11-25T16:23:55+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -38,7 +42,7 @@ Other representations of profile: [CSV](../StructureDefinition-condition-san.csv
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "Generiek Santeon FHIR R4-profiel voor aandoeningen en diagnoses.\n\nDe aansluiting op het Santeon Informatiemodel wordt\nvastgelegd via afzonderlijke mappings naar de\nrelevante bronmodellen.\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
+  "description" : "Santeon FHIR R4-profiel voor aandoeningen en diagnoses, afgeleid van Nictiz nl-core-Condition. SIMDBC is de beoogde bron voor de diagnosegegevens. De mapping vanuit het Santeon Informatiemodel is nog niet vastgelegd.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -48,9 +52,14 @@ Other representations of profile: [CSV](../StructureDefinition-condition-san.csv
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "ConditionSanFromDBC",
-    "uri" : "urn:santeon:sim:csv",
-    "name" : "ConditionSan vanuit SIM DBC"
+    "identity" : "requirements-Condition",
+    "uri" : "http://ig.nictiz.nl/gbb/Requirements/Condition",
+    "name" : "Information requirements for Condition"
+  },
+  {
+    "identity" : "lm-Condition",
+    "uri" : "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelCondition",
+    "name" : "Logical model for Condition"
   },
   {
     "identity" : "workflow",
@@ -85,161 +94,12 @@ Other representations of profile: [CSV](../StructureDefinition-condition-san.csv
   "kind" : "resource",
   "abstract" : false,
   "type" : "Condition",
-  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Condition",
+  "baseDefinition" : "http://ig.nictiz.nl/gbb/StructureDefinition/nl-core-Condition",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
       "id" : "Condition",
       "path" : "Condition"
-    },
-    {
-      "id" : "Condition.meta",
-      "path" : "Condition.meta",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.implicitRules",
-      "path" : "Condition.implicitRules",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.language",
-      "path" : "Condition.language",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.text",
-      "path" : "Condition.text",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.contained",
-      "path" : "Condition.contained",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.extension",
-      "path" : "Condition.extension",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.modifierExtension",
-      "path" : "Condition.modifierExtension",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.identifier.use",
-      "path" : "Condition.identifier.use",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.identifier.value",
-      "path" : "Condition.identifier.value",
-      "min" : 1
-    },
-    {
-      "id" : "Condition.severity",
-      "path" : "Condition.severity",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.code",
-      "path" : "Condition.code",
-      "min" : 1
-    },
-    {
-      "id" : "Condition.code.coding",
-      "path" : "Condition.code.coding",
-      "min" : 1
-    },
-    {
-      "id" : "Condition.code.coding.system",
-      "path" : "Condition.code.coding.system",
-      "min" : 1,
-      "mapping" : [{
-        "identity" : "ConditionSanFromDBC",
-        "map" : "DBC;SpecialismeDiagnoseSysteem"
-      }]
-    },
-    {
-      "id" : "Condition.code.coding.code",
-      "path" : "Condition.code.coding.code",
-      "min" : 1,
-      "mapping" : [{
-        "identity" : "ConditionSanFromDBC",
-        "map" : "DBC;SpecialismeDiagnoseCode"
-      }]
-    },
-    {
-      "id" : "Condition.code.coding.display",
-      "path" : "Condition.code.coding.display",
-      "mapping" : [{
-        "identity" : "ConditionSanFromDBC",
-        "map" : "DBC;SpecialismeDiagnoseOmschrijving"
-      }]
-    },
-    {
-      "id" : "Condition.bodySite",
-      "path" : "Condition.bodySite",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.subject",
-      "path" : "Condition.subject",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"]
-      }],
-      "mapping" : [{
-        "identity" : "ConditionSanFromDBC",
-        "map" : "DBC;Identificatienummer",
-        "comment" : "Patient-reference op basis van identificatienummer."
-      }]
-    },
-    {
-      "id" : "Condition.encounter",
-      "path" : "Condition.encounter",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.onset[x]",
-      "path" : "Condition.onset[x]",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.abatement[x]",
-      "path" : "Condition.abatement[x]",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.recordedDate",
-      "path" : "Condition.recordedDate",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.recorder",
-      "path" : "Condition.recorder",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.asserter",
-      "path" : "Condition.asserter",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.stage",
-      "path" : "Condition.stage",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.evidence",
-      "path" : "Condition.evidence",
-      "max" : "0"
-    },
-    {
-      "id" : "Condition.note",
-      "path" : "Condition.note",
-      "max" : "0"
     }]
   }
 }

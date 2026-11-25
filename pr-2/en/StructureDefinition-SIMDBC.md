@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
   "name" : "SIMDBC",
   "title" : "DBC/Zorgtraject (model)",
   "status" : "draft",
-  "date" : "2026-11-19T16:55:06+00:00",
+  "date" : "2026-11-25T16:23:55+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -50,12 +50,14 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
   "mapping" : [{
     "identity" : "SIMDBCFromSIMCSV",
     "uri" : "urn:santeon:sim:csv",
-    "name" : "SIM CSV"
+    "name" : "SIM CSV",
+    "comment" : "Herleidbaarheid van SIMDBC-elementen naar de oorspronkelijke SIM CSV-attributen."
   },
   {
     "identity" : "SIMDBCToFHIR",
     "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/episodeOfCare-san",
-    "name" : "SIMDBC naar FHIR"
+    "name" : "FHIR-mapping naar EpisodeOfCareSan",
+    "comment" : "Mapping van SIMDBC-elementen naar het Santeon FHIR-profiel EpisodeOfCareSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."
   }],
   "kind" : "logical",
   "abstract" : false,
@@ -86,7 +88,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       {
         "identity" : "SIMDBCToFHIR",
         "map" : "EpisodeOfCare.patient",
-        "comment" : "Patient-reference op basis van identificatienummer."
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer."
       }]
     },
     {
@@ -106,7 +108,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       {
         "identity" : "SIMDBCToFHIR",
         "map" : "EpisodeOfCare.identifier",
-        "comment" : "Indien één EpisodeOfCare één DBC-subtraject representeert."
+        "comment" : "Direct: indien één EpisodeOfCare één DBC-subtraject representeert; samengestelde identifier (system|value), waardedeel gehasht volgens de ETL-specificatie."
       }]
     },
     {
@@ -184,7 +186,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       "mapping" : [{
         "identity" : "SIMDBCToFHIR",
         "map" : "EpisodeOfCare.type",
-        "comment" : "Mits het zorgtype de zorgepisode correct classificeert."
+        "comment" : "Direct: mits het zorgtype de zorgepisode correct classificeert."
       }]
     },
     {
@@ -293,7 +295,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       {
         "identity" : "SIMDBCToFHIR",
         "map" : "EpisodeOfCare.period.start",
-        "comment" : "Alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."
+        "comment" : "Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."
       }]
     },
     {
@@ -313,7 +315,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMDBC.csv), [Exc
       {
         "identity" : "SIMDBCToFHIR",
         "map" : "EpisodeOfCare.period.end",
-        "comment" : "Alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."
+        "comment" : "Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."
       }]
     },
     {

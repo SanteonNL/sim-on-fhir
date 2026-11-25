@@ -239,7 +239,7 @@ JSON Profile
           
 
             as of 
-2026-11-19
+2026-11-25
 
           
         
@@ -272,7 +272,7 @@ JSON Profile
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.name">name</a>" : "SIMPatient",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.title">title</a>" : "Patiënt (model)",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.status">status</a>" : "draft",
-  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">date</a>" : "2026-11-19T16:55:06+00:00",
+  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">date</a>" : "2026-11-25T16:23:55+00:00",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.publisher">publisher</a>" : "Santeon",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.contact">contact</a>" : [
     {
@@ -309,12 +309,12 @@ JSON Profile
       "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.identity">identity</a>" : "SIMPatientToGBB",
       "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.uri">uri</a>" : "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelPatient",
       "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.name">name</a>" : "Nictiz GBB-afsprakenmodel",
-      "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.comment">comment</a>" : "Semantische vergelijking tussen SIMPatient en Nictiz GBB Patient (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen. Legenda: 🟢 Beoordeeld, equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."
+      "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.comment">comment</a>" : "Semantische vergelijking tussen SIMPatient en Nictiz GBB Patient (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen. Legenda: 🟢 Equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."
     },
     {
       "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.identity">identity</a>" : "SIMPatientToFHIR",
       "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.uri">uri</a>" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san",
-      "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.name">name</a>" : "Santeon FHIR PatientSan",
+      "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.name">name</a>" : "FHIR-mapping naar PatientSan",
       "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.comment">comment</a>" : "Mapping van SIMPatient-elementen naar het Santeon FHIR-profiel PatientSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."
     }
   ],
@@ -374,7 +374,8 @@ JSON Profile
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMPatientToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.identifier"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.identifier",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Direct: system en value worden behouden conform de afgesproken identificatiesystematiek."
           }
         ]
       },
@@ -418,7 +419,7 @@ JSON Profile
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMPatientToFHIR",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.gender",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Terminologiemapping van SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender vereist."
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender."
           }
         ]
       },
@@ -681,11 +682,12 @@ JSON Profile
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMPatientToGBB",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.dateOfBirth",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "🟢 Equivalent: SIM date is compatibel met GBB dateTime op dagniveau."
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "🟢 Semantisch compatibel op dagniveau: SIM gebruikt date; GBB gebruikt dateTime."
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMPatientToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.birthDate"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.birthDate",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Direct: SIM date wordt overgenomen als FHIR date."
           }
         ]
       },
@@ -713,13 +715,13 @@ JSON Profile
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMPatientToGBB",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.deceasedDateTime",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "🟡 Verschil in representatie: SIM gebruikt date; GBB ondersteunt dateTime en boolean."
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.deceased[x]",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "🟡 Verschil in representatie: SIM registreert uitsluitend de overlijdensdatum als date; GBB ondersteunt zowel dateTime als boolean."
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMPatientToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.deceased[x]",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "SIM date wordt gerepresenteerd als FHIR dateTime met dagprecisie. De boolean-variant wordt niet vanuit dit SIM-element gevuld."
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.deceasedDateTime",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Datatypeconversie: SIM date naar FHIR dateTime met dagprecisie; deceasedBoolean wordt vanuit dit SIM-element niet gevuld."
           }
         ]
       }
@@ -757,7 +759,8 @@ JSON Profile
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMPatientToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.identifier"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.identifier",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Direct: system en value worden behouden conform de afgesproken identificatiesystematiek."
           }
         ]
       },
@@ -786,7 +789,7 @@ JSON Profile
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMPatientToFHIR",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.gender",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Terminologiemapping van SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender vereist."
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender."
           }
         ]
       },
@@ -840,11 +843,12 @@ JSON Profile
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMPatientToGBB",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.dateOfBirth",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "🟢 Equivalent: SIM date is compatibel met GBB dateTime op dagniveau."
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "🟢 Semantisch compatibel op dagniveau: SIM gebruikt date; GBB gebruikt dateTime."
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMPatientToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.birthDate"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.birthDate",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Direct: SIM date wordt overgenomen als FHIR date."
           }
         ]
       },
@@ -867,13 +871,13 @@ JSON Profile
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMPatientToGBB",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.deceasedDateTime",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "🟡 Verschil in representatie: SIM gebruikt date; GBB ondersteunt dateTime en boolean."
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.deceased[x]",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "🟡 Verschil in representatie: SIM registreert uitsluitend de overlijdensdatum als date; GBB ondersteunt zowel dateTime als boolean."
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMPatientToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.deceased[x]",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "SIM date wordt gerepresenteerd als FHIR dateTime met dagprecisie. De boolean-variant wordt niet vanuit dit SIM-element gevuld."
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "Patient.deceasedDateTime",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Datatypeconversie: SIM date naar FHIR dateTime met dagprecisie; deceasedBoolean wordt vanuit dit SIM-element niet gevuld."
           }
         ]
       }
@@ -915,8 +919,8 @@ JSON Profile
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.sim-on-fhir#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-11-19 16:55:00 +0000">
-    2026-11-19
+  <span title="2026-11-25 16:23:00 +0000">
+    2026-11-25
   </span>
 
           <br/>

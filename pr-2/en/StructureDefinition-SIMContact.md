@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMContact.csv), 
   "name" : "SIMContact",
   "title" : "Contact (model)",
   "status" : "draft",
-  "date" : "2026-11-19T16:55:06+00:00",
+  "date" : "2026-11-25T16:23:55+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -50,12 +50,14 @@ Other representations of profile: [CSV](../StructureDefinition-SIMContact.csv), 
   "mapping" : [{
     "identity" : "SIMContactFromSIMCSV",
     "uri" : "urn:santeon:sim:csv",
-    "name" : "SIM CSV"
+    "name" : "SIM CSV",
+    "comment" : "Herleidbaarheid van SIMContact-elementen naar de oorspronkelijke SIM CSV-attributen."
   },
   {
     "identity" : "SIMContactToFHIR",
     "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/encounter-san",
-    "name" : "SIMContact naar FHIR"
+    "name" : "FHIR-mapping naar EncounterSan",
+    "comment" : "Mapping van SIMContact-elementen naar het Santeon FHIR-profiel EncounterSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."
   }],
   "kind" : "logical",
   "abstract" : false,
@@ -85,7 +87,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMContact.csv), 
       },
       {
         "identity" : "SIMContactToFHIR",
-        "map" : "Encounter.identifier"
+        "map" : "Encounter.identifier",
+        "comment" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
       }]
     },
     {
@@ -120,7 +123,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMContact.csv), 
       {
         "identity" : "SIMContactToFHIR",
         "map" : "Encounter.episodeOfCare",
-        "comment" : "Indien het DBC-subtraject als EpisodeOfCare wordt gerepresenteerd."
+        "comment" : "Structuurconversie: EpisodeOfCare-reference op basis van SubtrajectNummer, indien het DBC-subtraject als EpisodeOfCare wordt gerepresenteerd."
       }]
     },
     {
@@ -140,7 +143,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMContact.csv), 
       {
         "identity" : "SIMContactToFHIR",
         "map" : "Encounter.subject",
-        "comment" : "Patient-reference op basis van identificatienummer."
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer."
       }]
     },
     {
@@ -155,7 +158,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMContact.csv), 
       }],
       "mapping" : [{
         "identity" : "SIMContactToFHIR",
-        "map" : "Encounter.class"
+        "map" : "Encounter.class",
+        "comment" : "Direct: SIM Coding wordt overgenomen als FHIR Coding; aansluiting van Santeon_ContactTypeCodelijst op de FHIR-binding nog te beoordelen."
       }]
     },
     {
@@ -198,7 +202,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMContact.csv), 
       },
       "mapping" : [{
         "identity" : "SIMContactToFHIR",
-        "map" : "Encounter.priority"
+        "map" : "Encounter.priority",
+        "comment" : "Direct: SIM en FHIR gebruiken beide v3-ActPriority (example)."
       }]
     },
     {
@@ -238,7 +243,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMContact.csv), 
       "mapping" : [{
         "identity" : "SIMContactToFHIR",
         "map" : "Encounter.hospitalization.dischargeDisposition",
-        "comment" : "Wanneer het gegeven de ontslagbestemming beschrijft."
+        "comment" : "Direct: wanneer het gegeven de ontslagbestemming beschrijft."
       }]
     },
     {
@@ -281,7 +286,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMContact.csv), 
       },
       {
         "identity" : "SIMContactToFHIR",
-        "map" : "Encounter.period.start"
+        "map" : "Encounter.period.start",
+        "comment" : "Structuurconversie: SIM BeginDatumTijd en EindDatumTijd vormen samen de FHIR Period; dateshift volgens afzonderlijke transformatiespecificatie."
       }]
     },
     {
@@ -300,7 +306,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMContact.csv), 
       },
       {
         "identity" : "SIMContactToFHIR",
-        "map" : "Encounter.period.end"
+        "map" : "Encounter.period.end",
+        "comment" : "Structuurconversie: SIM BeginDatumTijd en EindDatumTijd vormen samen de FHIR Period; dateshift volgens afzonderlijke transformatiespecificatie."
       }]
     },
     {

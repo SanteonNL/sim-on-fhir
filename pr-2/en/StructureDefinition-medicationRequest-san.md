@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-medicationRequest
   "name" : "MedicationRequestSan",
   "title" : "MedicationRequest (SAN)",
   "status" : "draft",
-  "date" : "2026-11-19T16:55:06+00:00",
+  "date" : "2026-11-25T16:23:55+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-medicationRequest
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "Generiek Santeon FHIR R4-profiel voor medicatieafspraken.\n\nGebaseerd op het Santeon Informatiemodel (SIMMedicatieAfspraak).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
+  "description" : "Santeon FHIR R4-profiel voor medicatieafspraken, gebaseerd op het Santeon Informatiemodel (SIMMedicatieAfspraak) en afgeleid van FHIR R4 MedicationRequest.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -48,10 +48,10 @@ Other representations of profile: [CSV](../StructureDefinition-medicationRequest
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "sim",
-    "uri" : "urn:santeon:sim:csv",
-    "name" : "Santeon Informatiemodel (SIM CSV)",
-    "comment" : "Informatieve mapping van FHIR MedicationRequest naar SIM CSV-bronvelden."
+    "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+    "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMMedicatieAfspraak",
+    "name" : "SIM Logical Model SIMMedicatieAfspraak",
+    "comment" : "Herkomst van de MedicationRequestSan-elementen in Medicatieafspraak (SIMMedicatieAfspraak), met de conversietoelichting. Afgeleid van SIMMedicatieAfspraakToFHIR; wijzigingen alleen daar aanbrengen."
   },
   {
     "identity" : "workflow",
@@ -91,40 +91,19 @@ Other representations of profile: [CSV](../StructureDefinition-medicationRequest
     {
       "id" : "MedicationRequest.identifier",
       "path" : "MedicationRequest.identifier",
-      "min" : 1,
-      "max" : "1"
-    },
-    {
-      "id" : "MedicationRequest.identifier.use",
-      "path" : "MedicationRequest.identifier.use",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.identifier.system",
-      "path" : "MedicationRequest.identifier.system",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;MedicatieAfspraakID",
-        "comment" : "Systeemdeel van de samengestelde identifier."
-      }]
-    },
-    {
-      "id" : "MedicationRequest.identifier.value",
-      "path" : "MedicationRequest.identifier.value",
-      "min" : 1,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;MedicatieAfspraakID",
-        "comment" : "Waardedeel van de samengestelde identifier; hash."
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.MedicatieAfspraakID",
+        "comment" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
       }]
     },
     {
       "id" : "MedicationRequest.status",
       "path" : "MedicationRequest.status",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;MedicatieAfspraakStatus",
-        "comment" : "Codes volgens MedicatieAfspraakStatusSysteem; overeenkomst met medicationrequest-status verifiëren."
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.MedicatieAfspraakStatus",
+        "comment" : "Datatypeconversie: SIM Coding naar FHIR code; codes volgens MedicatieAfspraakStatusSysteem, overeenkomst met FHIR medicationrequest-status verifiëren."
       }]
     },
     {
@@ -147,43 +126,20 @@ Other representations of profile: [CSV](../StructureDefinition-medicationRequest
       "max" : "1",
       "type" : [{
         "code" : "CodeableConcept"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.system",
-      "path" : "MedicationRequest.medication[x].coding.system",
+      }],
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;ProductCodeSysteem"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.code",
-      "path" : "MedicationRequest.medication[x].coding.code",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;ProductCode"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.display",
-      "path" : "MedicationRequest.medication[x].coding.display",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;ProductNaam"
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.Product",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept. Het SIM documenteert medicationReference naar een Medication met deze code; keuze nog te maken."
       }]
     },
     {
       "id" : "MedicationRequest.subject",
       "path" : "MedicationRequest.subject",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"]
-      }],
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;Identificatienummer",
-        "comment" : "Patient-reference op basis van patiëntidentifier."
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.PatientIdentificatienummer",
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer."
       }]
     },
     {
@@ -212,32 +168,18 @@ Other representations of profile: [CSV](../StructureDefinition-medicationRequest
       "id" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsPeriod.start",
       "path" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].start",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;MedicationRequestDosageInstructionTimingRepeatBoundsPeriodStart"
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.GebruiksperiodeStart",
+        "comment" : "Direct: SIM dateTime wordt overgenomen als FHIR dateTime."
       }]
     },
     {
-      "id" : "MedicationRequest.dosageInstruction.route.coding.system",
-      "path" : "MedicationRequest.dosageInstruction.route.coding.system",
+      "id" : "MedicationRequest.dosageInstruction.route",
+      "path" : "MedicationRequest.dosageInstruction.route",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;ToedieningswegSystem"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction.route.coding.code",
-      "path" : "MedicationRequest.dosageInstruction.route.coding.code",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;ToedieningswegCode"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction.route.coding.display",
-      "path" : "MedicationRequest.dosageInstruction.route.coding.display",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;Toedieningsweg"
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.Toedieningsweg",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
       }]
     }]
   }

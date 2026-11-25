@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
   "name" : "SIMVerrichting",
   "title" : "Verrichting (model)",
   "status" : "draft",
-  "date" : "2026-11-19T16:55:06+00:00",
+  "date" : "2026-11-25T16:23:55+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -50,18 +50,20 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
   "mapping" : [{
     "identity" : "SIMVerrichtingFromSIMCSV",
     "uri" : "urn:santeon:sim:csv",
-    "name" : "SIM CSV"
+    "name" : "SIM CSV",
+    "comment" : "Herleidbaarheid van SIMVerrichting-elementen naar de oorspronkelijke SIM CSV-attributen."
   },
   {
     "identity" : "SIMVerrichtingToGBB",
     "uri" : "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelProcedure",
-    "name" : "SIMVerrichting naar Nictiz GBB Procedure",
-    "comment" : "Semantische mapping tussen SIMVerrichting en Nictiz GBB Procedure (1.0.0-alpha.2), binnen de IBD-scope."
+    "name" : "Nictiz GBB-afsprakenmodel",
+    "comment" : "Semantische vergelijking tussen SIMVerrichting en Nictiz GBB Procedure (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen. Legenda: 🟢 Equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."
   },
   {
     "identity" : "SIMVerrichtingToFHIR",
     "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/procedure-san",
-    "name" : "SIMVerrichting naar FHIR"
+    "name" : "FHIR-mapping naar ProcedureSan",
+    "comment" : "Mapping van SIMVerrichting-elementen naar het Santeon FHIR-profiel ProcedureSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."
   }],
   "kind" : "logical",
   "abstract" : false,
@@ -92,11 +94,12 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
       {
         "identity" : "SIMVerrichtingToGBB",
         "map" : "Procedure.feederAuditOriginatingSystemItemIds",
-        "comment" : "Cardinaliteit verschilt: SIM 1..1, GBB 0..*."
+        "comment" : "🟡 Verschil in cardinaliteit: SIM 1..1, GBB 0..*."
       },
       {
         "identity" : "SIMVerrichtingToFHIR",
-        "map" : "Procedure.identifier"
+        "map" : "Procedure.identifier",
+        "comment" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
       }]
     },
     {
@@ -116,7 +119,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
       {
         "identity" : "SIMVerrichtingToFHIR",
         "map" : "Procedure.encounter",
-        "comment" : "Encounter-reference op basis van ContactID."
+        "comment" : "Structuurconversie: Encounter-reference op basis van ContactID."
       }]
     },
     {
@@ -166,12 +169,12 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
       {
         "identity" : "SIMVerrichtingToGBB",
         "map" : "Procedure.subject.patient.patientIdentificationNumber",
-        "comment" : "Koppeling via GBB Patient."
+        "comment" : "🟡 Nog te beoordelen: SIM legt het identificatienummer direct vast; GBB koppelt via GBB Patient."
       },
       {
         "identity" : "SIMVerrichtingToFHIR",
         "map" : "Procedure.subject",
-        "comment" : "Patient-reference op basis van identificatienummer."
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer."
       }]
     },
     {
@@ -187,12 +190,12 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
       "mapping" : [{
         "identity" : "SIMVerrichtingToGBB",
         "map" : "Procedure.procedureName",
-        "comment" : "Binding verschilt: SIM NZa, SNOMED CT en/of DHD; GBB required SNOMED ValueSet."
+        "comment" : "🟡 Verschil in terminologiebinding: SIM gebruikt NZa, SNOMED CT en/of DHD; GBB gebruikt een required SNOMED CT ValueSet."
       },
       {
         "identity" : "SIMVerrichtingToFHIR",
         "map" : "Procedure.code",
-        "comment" : "Coderingen combineren wanneer zij hetzelfde concept vertegenwoordigen."
+        "comment" : "Direct: NZa-, SNOMED CT- en DHD-coderingen worden alleen gecombineerd wanneer zij hetzelfde concept vertegenwoordigen. Verschil in cardinaliteit: VerrichtingType is in het SIM 0..1, maar ProcedureSan erft Procedure.code 1..1 van nl-core-Procedure; een verrichting zonder VerrichtingType kan niet als ProcedureSan worden aangeleverd. De IBD-aanlevering selecteert al op code, zodat daar geen verrichtingen wegvallen."
       }]
     },
     {
@@ -251,12 +254,12 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
       {
         "identity" : "SIMVerrichtingToGBB",
         "map" : "Procedure.startDateTime",
-        "comment" : "🟢"
+        "comment" : "🟢 Equivalent: beide gebruiken dateTime met cardinaliteit 0..1."
       },
       {
         "identity" : "SIMVerrichtingToFHIR",
         "map" : "Procedure.performedPeriod.start",
-        "comment" : "Bij een verrichting met tijdsduur; anders performedDateTime."
+        "comment" : "Structuurconversie: bij een verrichting met tijdsduur performedPeriod.start, anders performedDateTime; dateshift volgens afzonderlijke transformatiespecificatie."
       }]
     },
     {
@@ -268,10 +271,6 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
       "max" : "1",
       "type" : [{
         "code" : "CodeableConcept"
-      }],
-      "mapping" : [{
-        "identity" : "SIMVerrichtingToGBB",
-        "comment" : "SIM-specifiek 🟠"
       }]
     },
     {
@@ -299,9 +298,6 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
       "max" : "1",
       "type" : [{
         "code" : "CodeableConcept"
-      }],
-      "mapping" : [{
-        "identity" : "SIMVerrichtingToGBB"
       }]
     },
     {
@@ -333,11 +329,12 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
       "mapping" : [{
         "identity" : "SIMVerrichtingToGBB",
         "map" : "Procedure.procedureType",
-        "comment" : "Semantische delta: SIM gebruikt lokale zorgprofielklassen (25 codes); GBB gebruikt een required SNOMED CT ValueSet (3 codes), GBB heeft required binding. Geen directe één-op-één-equivalentie.🟠"
+        "comment" : "🟡 Verschil in terminologiebinding: SIM gebruikt lokale zorgprofielklassen (25 codes); GBB gebruikt een required SNOMED CT ValueSet (3 codes). Geen directe één-op-één-equivalentie."
       },
       {
         "identity" : "SIMVerrichtingToFHIR",
-        "map" : "Procedure.category"
+        "map" : "Procedure.category",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
       }]
     },
     {

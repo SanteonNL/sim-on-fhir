@@ -239,7 +239,7 @@ JSON Profile
           
 
             as of 
-2026-11-19
+2026-11-25
 
           
         
@@ -272,7 +272,7 @@ JSON Profile
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.name">name</a>" : "SIMVragenlijstAntwoord",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.title">title</a>" : "Vragenlijstantwoord (model)",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.status">status</a>" : "draft",
-  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">date</a>" : "2026-11-19T16:55:06+00:00",
+  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">date</a>" : "2026-11-25T16:23:55+00:00",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.publisher">publisher</a>" : "Santeon",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.contact">contact</a>" : [
     {
@@ -302,12 +302,14 @@ JSON Profile
     {
       "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.identity">identity</a>" : "SIMVragenlijstAntwoordFromSIMCSV",
       "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.uri">uri</a>" : "urn:santeon:sim:csv",
-      "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.name">name</a>" : "SIM CSV"
+      "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.name">name</a>" : "SIM CSV",
+      "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.comment">comment</a>" : "Herleidbaarheid van SIMVragenlijstAntwoord-elementen naar de oorspronkelijke SIM CSV-attributen."
     },
     {
       "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.identity">identity</a>" : "SIMVragenlijstAntwoordToFHIR",
       "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.uri">uri</a>" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/questionnaireResponse-san",
-      "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.name">name</a>" : "SIMVragenlijstAntwoord naar FHIR"
+      "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.name">name</a>" : "FHIR-mapping naar QuestionnaireResponseSan",
+      "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.comment">comment</a>" : "Mapping van SIMVragenlijstAntwoord-elementen naar het Santeon FHIR-profiel QuestionnaireResponseSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."
     }
   ],
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.kind">kind</a>" : "logical",
@@ -361,7 +363,8 @@ JSON Profile
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMVragenlijstAntwoordToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.identifier"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.identifier",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
           }
         ]
       },
@@ -390,7 +393,7 @@ JSON Profile
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMVragenlijstAntwoordToFHIR",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.subject",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Patient-reference op basis van identificatienummer; SIM benoemt daarnaast QuestionnaireResponse.source."
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Structuurconversie: Patient-reference op basis van identificatienummer; SIM benoemt daarnaast QuestionnaireResponse.source."
           }
         ]
       },
@@ -418,7 +421,8 @@ JSON Profile
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMVragenlijstAntwoordToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.authored"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.authored",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Direct: SIM dateTime wordt overgenomen als FHIR dateTime."
           }
         ]
       },
@@ -1193,7 +1197,8 @@ JSON Profile
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMVragenlijstAntwoordToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.item.answer.valueQuantity"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.item.answer.valueQuantity",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Structuurconversie: één SIM-record wordt één item met één answer; SIM Quantity wordt overgenomen als FHIR Quantity."
           }
         ]
       },
@@ -1566,7 +1571,8 @@ JSON Profile
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMVragenlijstAntwoordToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.item.answer.valueCoding"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.item.answer.valueCoding",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Structuurconversie: één SIM-record wordt één item met één answer; SIM Coding wordt overgenomen als FHIR Coding."
           }
         ]
       },
@@ -1933,7 +1939,8 @@ JSON Profile
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMVragenlijstAntwoordToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.item.answer.valueDateTime"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.item.answer.valueDateTime",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Structuurconversie: één SIM-record wordt één item met één answer; SIM dateTime wordt overgenomen als FHIR dateTime."
           }
         ]
       }
@@ -1966,7 +1973,8 @@ JSON Profile
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMVragenlijstAntwoordToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.identifier"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.identifier",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
           }
         ]
       },
@@ -1990,7 +1998,7 @@ JSON Profile
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMVragenlijstAntwoordToFHIR",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.subject",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Patient-reference op basis van identificatienummer; SIM benoemt daarnaast QuestionnaireResponse.source."
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Structuurconversie: Patient-reference op basis van identificatienummer; SIM benoemt daarnaast QuestionnaireResponse.source."
           }
         ]
       },
@@ -2013,7 +2021,8 @@ JSON Profile
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMVragenlijstAntwoordToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.authored"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.authored",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Direct: SIM dateTime wordt overgenomen als FHIR dateTime."
           }
         ]
       },
@@ -2118,7 +2127,8 @@ JSON Profile
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMVragenlijstAntwoordToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.item.answer.valueQuantity"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.item.answer.valueQuantity",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Structuurconversie: één SIM-record wordt één item met één answer; SIM Quantity wordt overgenomen als FHIR Quantity."
           }
         ]
       },
@@ -2177,7 +2187,8 @@ JSON Profile
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMVragenlijstAntwoordToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.item.answer.valueCoding"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.item.answer.valueCoding",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Structuurconversie: één SIM-record wordt één item met één answer; SIM Coding wordt overgenomen als FHIR Coding."
           }
         ]
       },
@@ -2230,7 +2241,8 @@ JSON Profile
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "SIMVragenlijstAntwoordToFHIR",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.item.answer.valueDateTime"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "QuestionnaireResponse.item.answer.valueDateTime",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Structuurconversie: één SIM-record wordt één item met één answer; SIM dateTime wordt overgenomen als FHIR dateTime."
           }
         ]
       }
@@ -2272,8 +2284,8 @@ JSON Profile
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.sim-on-fhir#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-11-19 16:55:00 +0000">
-    2026-11-19
+  <span title="2026-11-25 16:23:00 +0000">
+    2026-11-25
   </span>
 
           <br/>

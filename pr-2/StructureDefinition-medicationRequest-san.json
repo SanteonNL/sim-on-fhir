@@ -3,14 +3,14 @@
   "id" : "medicationRequest-san",
   "text" : {
     "status" : "extensions",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureDefinition medicationRequest-san</b></p><a name=\"medicationRequest-san\"> </a><a name=\"hcmedicationRequest-san\"> </a><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"xhtTableBorder0\"><tr class=\"xhtRowBorder1\"><th scope=\"col\" style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"The logical name of the element\">Name</a></th><th scope=\"col\" style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Information about the use of the element\">Flags</a></th><th scope=\"col\" style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Minimum and Maximum # of times the element can appear in the instance\">Card.</a></th><th scope=\"col\" style=\"; width: 100px\" class=\"hierarchy xhtCellBorder0\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Reference to the type of the element\">Type</a></th><th scope=\"col\" style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Additional information about the element\">Description &amp; Constraints</a><span style=\"float: right\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck1.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest\">MedicationRequest</a><a name=\"MedicationRequest\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">*</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/medicationrequest.html\">MedicationRequest</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Ordering of medication for patient or group</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck11.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.identifier\">identifier</a><a name=\"MedicationRequest.identifier\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\">1..1</td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\" class=\"xhtPieceDeEmphasized\">Identifier</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">External ids for this request</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck110.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.identifier.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.identifier.use\" class=\"xhtPieceStrikeout\">use</a><a name=\"MedicationRequest.identifier.use\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceStrikeout\"/><span class=\"xhtPieceStrikeout xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceStrikeout\">..</span><span class=\"xhtPieceStrikeout\">0</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">usual | official | temp | secondary | old (If known)</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck110.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.identifier.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.identifier.system\">system</a><a name=\"MedicationRequest.identifier.system\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#uri\" class=\"xhtPieceDeEmphasized\">uri</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">The namespace for the identifier value</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck100.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.identifier.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.identifier.value\">value</a><a name=\"MedicationRequest.identifier.value\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\">1..<span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\" class=\"xhtPieceDeEmphasized\">string</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">The value that is unique</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck10.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.status\">status</a><a name=\"MedicationRequest.status\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">1</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\" class=\"xhtPieceDeEmphasized\">code</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck13.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_slice.png\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Slice Definition\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.medication[x]\" class=\"xhtPieceItalic\">Slices for medication[x]</a><a name=\"MedicationRequest.medication_x_\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceItalic\"/><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">1</span><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\" class=\"xhtPieceItalic xhtPieceDeEmphasized\">CodeableConcept</a><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">, </span><a href=\"http://hl7.org/fhir/R4/references.html\" class=\"xhtPieceItalic\">Reference</a><span class=\"xhtPieceItalic\">(</span><a href=\"http://hl7.org/fhir/R4/medication.html\" class=\"xhtPieceItalic xhtPieceDeEmphasized\">Medication</a><span class=\"xhtPieceItalic\">)</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">Medication to be taken</span><br class=\"xhtPieceItalic\"/><span class=\"xhtPieceBold xhtPieceItalic\">Slice: </span><span class=\"xhtPieceItalic\">Unordered, Open by type:$this</span><br class=\"xhtPieceItalic\"/><span class=\"xhtPieceBold xhtPieceItalic\">Slicing Note: </span><span class=\"xhtPieceItalic\">Other type slices that contain no new information are not shown in this view</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck125.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end_slicer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_slice_item.png\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Slice Item\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.Slices for medication[x].</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.medication[x]:medicationCodeableConcept\" title=\"Slice medicationCodeableConcept\">medication[x]:medicationCodeableConcept</a><a name=\"MedicationRequest.medication_x_:medicationCodeableConcept\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\">0..1</td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Medication to be taken</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck1241.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end_slice.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.Slices for medication[x].medication[x]:medicationCodeableConcept.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.medication[x]:medicationCodeableConcept.coding\">coding</a><a name=\"MedicationRequest.medication_x_:medicationCodeableConcept.coding\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck12410.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.Slices for medication[x].medication[x]:medicationCodeableConcept.coding.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.medication[x]:medicationCodeableConcept.coding.system\">system</a><a name=\"MedicationRequest.medication_x_:medicationCodeableConcept.coding.system\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#uri\" class=\"xhtPieceDeEmphasized\">uri</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Identity of the terminology system</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck12410.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.Slices for medication[x].medication[x]:medicationCodeableConcept.coding.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.medication[x]:medicationCodeableConcept.coding.code\">code</a><a name=\"MedicationRequest.medication_x_:medicationCodeableConcept.coding.code\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\" class=\"xhtPieceDeEmphasized\">code</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Symbol in syntax defined by the system</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck12400.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.Slices for medication[x].medication[x]:medicationCodeableConcept.coding.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.medication[x]:medicationCodeableConcept.coding.display\">display</a><a name=\"MedicationRequest.medication_x_:medicationCodeableConcept.coding.display\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\" class=\"xhtPieceDeEmphasized\">string</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Representation defined by the system</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck10.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_reference.png\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.subject\">subject</a><a name=\"MedicationRequest.subject\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">1</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(<a href=\"StructureDefinition-patient-san.html\">Patient (SAN)</a>)</td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Who or group medication request is for</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck01.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction\">dosageInstruction</a><a name=\"MedicationRequest.dosageInstruction\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck011.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.timing\">timing</a><a name=\"MedicationRequest.dosageInstruction.timing\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck0101.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.timing.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.timing.repeat\">repeat</a><a name=\"MedicationRequest.dosageInstruction.timing.repeat\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck01003.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_slice.png\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Slice Definition\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.timing.repeat.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.timing.repeat.bounds[x]\" class=\"xhtPieceItalic\">Slices for bounds[x]</a><a name=\"MedicationRequest.dosageInstruction.timing.repeat.bounds_x_\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceItalic\"/><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Duration\" class=\"xhtPieceItalic xhtPieceDeEmphasized\">Duration</a><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">, </span><a href=\"http://hl7.org/fhir/R4/datatypes.html#Range\" class=\"xhtPieceItalic xhtPieceDeEmphasized\">Range</a><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">, </span><a href=\"http://hl7.org/fhir/R4/datatypes.html#Period\" class=\"xhtPieceItalic xhtPieceDeEmphasized\">Period</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">Length/Range of lengths, or (Start and/or end) limits</span><br class=\"xhtPieceItalic\"/><span class=\"xhtPieceBold xhtPieceItalic\">Slice: </span><span class=\"xhtPieceItalic\">Unordered, Open by type:$this</span><br class=\"xhtPieceItalic\"/><span class=\"xhtPieceBold xhtPieceItalic\">Slicing Note: </span><span class=\"xhtPieceItalic\">Other type slices that contain no new information are not shown in this view</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck010025.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end_slicer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_slice_item.png\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Slice Item\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.timing.repeat.Slices for bounds[x].</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsPeriod\" title=\"Slice boundsPeriod\">bounds[x]:boundsPeriod</a><a name=\"MedicationRequest.dosageInstruction.timing.repeat.bounds_x_:boundsPeriod\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\">0..1</td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Period\">Period</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Length/Range of lengths, or (Start and/or end) limits</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck0100240.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end_slice.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.timing.repeat.Slices for bounds[x].bounds[x]:boundsPeriod.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsPeriod.start\">start</a><a name=\"MedicationRequest.dosageInstruction.timing.repeat.bounds_x_:boundsPeriod.start\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\" class=\"xhtPieceDeEmphasized\">dateTime</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Starting time with inclusive boundary</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck001.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.route\">route</a><a name=\"MedicationRequest.dosageInstruction.route\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck0001.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.route.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.route.coding\">coding</a><a name=\"MedicationRequest.dosageInstruction.route.coding\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck00010.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.route.coding.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.route.coding.system\">system</a><a name=\"MedicationRequest.dosageInstruction.route.coding.system\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#uri\" class=\"xhtPieceDeEmphasized\">uri</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Identity of the terminology system</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck00010.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.route.coding.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.route.coding.code\">code</a><a name=\"MedicationRequest.dosageInstruction.route.coding.code\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\" class=\"xhtPieceDeEmphasized\">code</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Symbol in syntax defined by the system</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck00000.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.route.coding.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.route.coding.display\">display</a><a name=\"MedicationRequest.dosageInstruction.route.coding.display\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\" class=\"xhtPieceDeEmphasized\">string</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Representation defined by the system</span></td></tr>\r\n<tr><td colspan=\"5\" class=\"hierarchy\"><br/><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureDefinition medicationRequest-san</b></p><a name=\"medicationRequest-san\"> </a><a name=\"hcmedicationRequest-san\"> </a><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"xhtTableBorder0\"><tr class=\"xhtRowBorder1\"><th scope=\"col\" style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"The logical name of the element\">Name</a></th><th scope=\"col\" style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Information about the use of the element\">Flags</a></th><th scope=\"col\" style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Minimum and Maximum # of times the element can appear in the instance\">Card.</a></th><th scope=\"col\" style=\"; width: 100px\" class=\"hierarchy xhtCellBorder0\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Reference to the type of the element\">Type</a></th><th scope=\"col\" style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Additional information about the element\">Description &amp; Constraints</a><span style=\"float: right\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck1.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest\">MedicationRequest</a><a name=\"MedicationRequest\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">*</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/medicationrequest.html\">MedicationRequest</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Ordering of medication for patient or group</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck10.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.identifier\">identifier</a><a name=\"MedicationRequest.identifier\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">*</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\" class=\"xhtPieceDeEmphasized\">Identifier</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">External ids for this request</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck10.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.status\">status</a><a name=\"MedicationRequest.status\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">1</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\" class=\"xhtPieceDeEmphasized\">code</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck13.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_slice.png\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Slice Definition\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.medication[x]\" class=\"xhtPieceItalic\">Slices for medication[x]</a><a name=\"MedicationRequest.medication_x_\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceItalic\"/><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">1</span><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\" class=\"xhtPieceItalic xhtPieceDeEmphasized\">CodeableConcept</a><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">, </span><a href=\"http://hl7.org/fhir/R4/references.html\" class=\"xhtPieceItalic\">Reference</a><span class=\"xhtPieceItalic\">(</span><a href=\"http://hl7.org/fhir/R4/medication.html\" class=\"xhtPieceItalic xhtPieceDeEmphasized\">Medication</a><span class=\"xhtPieceItalic\">)</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">Medication to be taken</span><br class=\"xhtPieceItalic\"/><span class=\"xhtPieceBold xhtPieceItalic\">Slice: </span><span class=\"xhtPieceItalic\">Unordered, Open by type:$this</span><br class=\"xhtPieceItalic\"/><span class=\"xhtPieceBold xhtPieceItalic\">Slicing Note: </span><span class=\"xhtPieceItalic\">Other type slices that contain no new information are not shown in this view</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck124.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end_slicer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_slice_item.png\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Slice Item\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.Slices for medication[x].</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.medication[x]:medicationCodeableConcept\" title=\"Slice medicationCodeableConcept\">medication[x]:medicationCodeableConcept</a><a name=\"MedicationRequest.medication_x_:medicationCodeableConcept\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\">0..1</td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Medication to be taken</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck10.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.subject\">subject</a><a name=\"MedicationRequest.subject\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">1</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(<a href=\"http://hl7.org/fhir/R4/patient.html\" class=\"xhtPieceDeEmphasized\">Patient</a> | <a href=\"http://hl7.org/fhir/R4/group.html\" class=\"xhtPieceDeEmphasized\">Group</a>)</td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Who or group medication request is for</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck01.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction\">dosageInstruction</a><a name=\"MedicationRequest.dosageInstruction\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck011.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.timing\">timing</a><a name=\"MedicationRequest.dosageInstruction.timing\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck0101.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.timing.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.timing.repeat\">repeat</a><a name=\"MedicationRequest.dosageInstruction.timing.repeat\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"/></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck01003.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_slice.png\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Slice Definition\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.timing.repeat.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.timing.repeat.bounds[x]\" class=\"xhtPieceItalic\">Slices for bounds[x]</a><a name=\"MedicationRequest.dosageInstruction.timing.repeat.bounds_x_\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceItalic\"/><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Duration\" class=\"xhtPieceItalic xhtPieceDeEmphasized\">Duration</a><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">, </span><a href=\"http://hl7.org/fhir/R4/datatypes.html#Range\" class=\"xhtPieceItalic xhtPieceDeEmphasized\">Range</a><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">, </span><a href=\"http://hl7.org/fhir/R4/datatypes.html#Period\" class=\"xhtPieceItalic xhtPieceDeEmphasized\">Period</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceItalic xhtPieceDeEmphasized\">Length/Range of lengths, or (Start and/or end) limits</span><br class=\"xhtPieceItalic\"/><span class=\"xhtPieceBold xhtPieceItalic\">Slice: </span><span class=\"xhtPieceItalic\">Unordered, Open by type:$this</span><br class=\"xhtPieceItalic\"/><span class=\"xhtPieceBold xhtPieceItalic\">Slicing Note: </span><span class=\"xhtPieceItalic\">Other type slices that contain no new information are not shown in this view</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck010025.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end_slicer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_slice_item.png\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Slice Item\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.timing.repeat.Slices for bounds[x].</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsPeriod\" title=\"Slice boundsPeriod\">bounds[x]:boundsPeriod</a><a name=\"MedicationRequest.dosageInstruction.timing.repeat.bounds_x_:boundsPeriod\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\">0..1</td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Period\">Period</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Length/Range of lengths, or (Start and/or end) limits</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowOdd\"><td style=\"background-image: url(tbl_bck0100240.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end_slice.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.timing.repeat.Slices for bounds[x].bounds[x]:boundsPeriod.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsPeriod.start\">start</a><a name=\"MedicationRequest.dosageInstruction.timing.repeat.bounds_x_:boundsPeriod.start\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\" class=\"xhtPieceDeEmphasized\">dateTime</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">Starting time with inclusive boundary</span></td></tr>\r\n<tr class=\"xhtRowBorder0 xhtRowEven\"><td style=\"background-image: url(tbl_bck000.png)\" class=\"hierarchy xhtCellBorder0 xhtCellNoWrap\"><img src=\"tbl_spacer.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\"\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\"\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <span style=\"position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0\" class=\"sr-only\">MedicationRequest.dosageInstruction.</span><a href=\"StructureDefinition-medicationRequest-san-definitions.html#MedicationRequest.dosageInstruction.route\">route</a><a name=\"MedicationRequest.dosageInstruction.route\"> </a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"/><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">0</span><span class=\"xhtPieceDeEmphasized\">..</span><span class=\"xhtPieceDeEmphasized\">1</span></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\" class=\"xhtPieceDeEmphasized\">CodeableConcept</a></td><td style=\"\" class=\"hierarchy xhtCellBorder0\"><span class=\"xhtPieceDeEmphasized\">How drug should enter body</span></td></tr>\r\n<tr><td colspan=\"5\" class=\"hierarchy\"><br/><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table></div>"
   },
   "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/medicationRequest-san",
   "version" : "0.1.0",
   "name" : "MedicationRequestSan",
   "title" : "MedicationRequest (SAN)",
   "status" : "draft",
-  "date" : "2026-11-19T16:55:06+00:00",
+  "date" : "2026-11-25T16:23:55+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -19,7 +19,7 @@
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "Generiek Santeon FHIR R4-profiel voor medicatieafspraken.\n\nGebaseerd op het Santeon Informatiemodel (SIMMedicatieAfspraak).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
+  "description" : "Santeon FHIR R4-profiel voor medicatieafspraken, gebaseerd op het Santeon Informatiemodel (SIMMedicatieAfspraak) en afgeleid van FHIR R4 MedicationRequest.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -29,10 +29,10 @@
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "sim",
-    "uri" : "urn:santeon:sim:csv",
-    "name" : "Santeon Informatiemodel (SIM CSV)",
-    "comment" : "Informatieve mapping van FHIR MedicationRequest naar SIM CSV-bronvelden."
+    "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+    "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMMedicatieAfspraak",
+    "name" : "SIM Logical Model SIMMedicatieAfspraak",
+    "comment" : "Herkomst van de MedicationRequestSan-elementen in Medicatieafspraak (SIMMedicatieAfspraak), met de conversietoelichting. Afgeleid van SIMMedicatieAfspraakToFHIR; wijzigingen alleen daar aanbrengen."
   },
   {
     "identity" : "workflow",
@@ -418,8 +418,8 @@
       "short" : "External ids for this request",
       "definition" : "Identifiers associated with this medication request that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. They are business identifiers assigned to this resource by the performer or other systems and remain constant as the resource is updated and propagates from server to server.",
       "comment" : "This is a business identifier, not a resource identifier.",
-      "min" : 1,
-      "max" : "1",
+      "min" : 0,
+      "max" : "*",
       "base" : {
         "path" : "MedicationRequest.identifier",
         "min" : 0,
@@ -439,6 +439,11 @@
       "isModifier" : false,
       "isSummary" : false,
       "mapping" : [{
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.MedicatieAfspraakID",
+        "comment" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
+      },
+      {
         "identity" : "workflow",
         "map" : "Request.identifier"
       },
@@ -457,348 +462,6 @@
       {
         "identity" : "rim",
         "map" : ".id"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.identifier.id",
-      "path" : "MedicationRequest.identifier.id",
-      "representation" : ["xmlAttr"],
-      "short" : "Unique id for inter-element referencing",
-      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.id",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "string"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.identifier.extension",
-      "path" : "MedicationRequest.identifier.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
-      "short" : "Additional content defined by implementations",
-      "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-      "alias" : ["extensions",
-      "user content"],
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.identifier.use",
-      "path" : "MedicationRequest.identifier.use",
-      "short" : "usual | official | temp | secondary | old (If known)",
-      "definition" : "The purpose of this identifier.",
-      "comment" : "Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.",
-      "requirements" : "Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers.",
-      "min" : 0,
-      "max" : "0",
-      "base" : {
-        "path" : "Identifier.use",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "code"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : true,
-      "isModifierReason" : "This is labeled as \"Is Modifier\" because applications should not mistake a temporary id for a permanent one.",
-      "isSummary" : true,
-      "binding" : {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-          "valueString" : "IdentifierUse"
-        }],
-        "strength" : "required",
-        "description" : "Identifies the purpose for this identifier, if known .",
-        "valueSet" : "http://hl7.org/fhir/ValueSet/identifier-use|4.0.1"
-      },
-      "mapping" : [{
-        "identity" : "v2",
-        "map" : "N/A"
-      },
-      {
-        "identity" : "rim",
-        "map" : "Role.code or implied by context"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.identifier.type",
-      "path" : "MedicationRequest.identifier.type",
-      "short" : "Description of identifier",
-      "definition" : "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
-      "comment" : "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.",
-      "requirements" : "Allows users to make use of identifiers when the identifier system is not known.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Identifier.type",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "CodeableConcept"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "binding" : {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-          "valueString" : "IdentifierType"
-        }],
-        "strength" : "extensible",
-        "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
-        "valueSet" : "http://hl7.org/fhir/ValueSet/identifier-type|4.0.1"
-      },
-      "mapping" : [{
-        "identity" : "v2",
-        "map" : "CX.5"
-      },
-      {
-        "identity" : "rim",
-        "map" : "Role.code or implied by context"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.identifier.system",
-      "path" : "MedicationRequest.identifier.system",
-      "short" : "The namespace for the identifier value",
-      "definition" : "Establishes the namespace for the value - that is, a URL that describes a set values that are unique.",
-      "comment" : "Identifier.system is always case sensitive.",
-      "requirements" : "There are many sets  of identifiers.  To perform matching of two identifiers, we need to know what set we're dealing with. The system identifies a particular set of unique identifiers.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Identifier.system",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "uri"
-      }],
-      "example" : [{
-        "label" : "General",
-        "valueUri" : "http://www.acme.com/identifiers/patient"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;MedicatieAfspraakID",
-        "comment" : "Systeemdeel van de samengestelde identifier."
-      },
-      {
-        "identity" : "v2",
-        "map" : "CX.4 / EI-2-4"
-      },
-      {
-        "identity" : "rim",
-        "map" : "II.root or Role.id.root"
-      },
-      {
-        "identity" : "servd",
-        "map" : "./IdentifierType"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.identifier.value",
-      "path" : "MedicationRequest.identifier.value",
-      "short" : "The value that is unique",
-      "definition" : "The portion of the identifier typically relevant to the user and which is unique within the context of the system.",
-      "comment" : "If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](http://hl7.org/fhir/R4/extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe.",
-      "min" : 1,
-      "max" : "1",
-      "base" : {
-        "path" : "Identifier.value",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "string"
-      }],
-      "example" : [{
-        "label" : "General",
-        "valueString" : "123456"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;MedicatieAfspraakID",
-        "comment" : "Waardedeel van de samengestelde identifier; hash."
-      },
-      {
-        "identity" : "v2",
-        "map" : "CX.1 / EI.1"
-      },
-      {
-        "identity" : "rim",
-        "map" : "II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)"
-      },
-      {
-        "identity" : "servd",
-        "map" : "./Value"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.identifier.period",
-      "path" : "MedicationRequest.identifier.period",
-      "short" : "Time period when id is/was valid for use",
-      "definition" : "Time period during which identifier is/was valid for use.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Identifier.period",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "Period"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "v2",
-        "map" : "CX.7 + CX.8"
-      },
-      {
-        "identity" : "rim",
-        "map" : "Role.effectiveTime or implied by context"
-      },
-      {
-        "identity" : "servd",
-        "map" : "./StartDate and ./EndDate"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.identifier.assigner",
-      "path" : "MedicationRequest.identifier.assigner",
-      "short" : "Organization that issued id (may be just text)",
-      "definition" : "Organization that issued/manages the identifier.",
-      "comment" : "The Identifier.assigner may omit the .reference element and only contain a .display element reflecting the name or other textual information about the assigning organization.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Identifier.assigner",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"]
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "v2",
-        "map" : "CX.4 / (CX.4,CX.9,CX.10)"
-      },
-      {
-        "identity" : "rim",
-        "map" : "II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper"
-      },
-      {
-        "identity" : "servd",
-        "map" : "./IdentifierIssuingAuthority"
       }]
     },
     {
@@ -838,9 +501,9 @@
         "valueSet" : "http://hl7.org/fhir/ValueSet/medicationrequest-status|4.0.1"
       },
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;MedicatieAfspraakStatus",
-        "comment" : "Codes volgens MedicatieAfspraakStatusSysteem; overeenkomst met medicationrequest-status verifiëren."
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.MedicatieAfspraakStatus",
+        "comment" : "Datatypeconversie: SIM Coding naar FHIR code; codes volgens MedicatieAfspraakStatusSysteem, overeenkomst met FHIR medicationrequest-status verifiëren."
       },
       {
         "identity" : "workflow",
@@ -1222,6 +885,11 @@
         "valueSet" : "http://hl7.org/fhir/ValueSet/medication-codes|4.0.1"
       },
       "mapping" : [{
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.Product",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept. Het SIM documenteert medicationReference naar een Medication met deze code; keuze nog te maken."
+      },
+      {
         "identity" : "workflow",
         "map" : "Request.code"
       },
@@ -1240,455 +908,6 @@
       {
         "identity" : "rim",
         "map" : "consumable.administrableMedication"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.id",
-      "path" : "MedicationRequest.medication[x].id",
-      "representation" : ["xmlAttr"],
-      "short" : "Unique id for inter-element referencing",
-      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.id",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "string"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.extension",
-      "path" : "MedicationRequest.medication[x].extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
-      "short" : "Additional content defined by implementations",
-      "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-      "alias" : ["extensions",
-      "user content"],
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding",
-      "path" : "MedicationRequest.medication[x].coding",
-      "short" : "Code defined by a terminology system",
-      "definition" : "A reference to a code defined by a terminology system.",
-      "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
-      "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "CodeableConcept.coding",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Coding"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "v2",
-        "map" : "C*E.1-8, C*E.10-22"
-      },
-      {
-        "identity" : "rim",
-        "map" : "union(., ./translation)"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.id",
-      "path" : "MedicationRequest.medication[x].coding.id",
-      "representation" : ["xmlAttr"],
-      "short" : "Unique id for inter-element referencing",
-      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.id",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "string"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.extension",
-      "path" : "MedicationRequest.medication[x].coding.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
-      "short" : "Additional content defined by implementations",
-      "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-      "alias" : ["extensions",
-      "user content"],
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.system",
-      "path" : "MedicationRequest.medication[x].coding.system",
-      "short" : "Identity of the terminology system",
-      "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
-      "comment" : "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should reference to some definition that establishes the system clearly and unambiguously.",
-      "requirements" : "Need to be unambiguous about the source of the definition of the symbol.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Coding.system",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "uri"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;ProductCodeSysteem"
-      },
-      {
-        "identity" : "v2",
-        "map" : "C*E.3"
-      },
-      {
-        "identity" : "rim",
-        "map" : "./codeSystem"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.version",
-      "path" : "MedicationRequest.medication[x].coding.version",
-      "short" : "Version of the system - if relevant",
-      "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
-      "comment" : "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Coding.version",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "string"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "v2",
-        "map" : "C*E.7"
-      },
-      {
-        "identity" : "rim",
-        "map" : "./codeSystemVersion"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.code",
-      "path" : "MedicationRequest.medication[x].coding.code",
-      "short" : "Symbol in syntax defined by the system",
-      "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
-      "requirements" : "Need to refer to a particular code in the system.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Coding.code",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "code"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;ProductCode"
-      },
-      {
-        "identity" : "v2",
-        "map" : "C*E.1"
-      },
-      {
-        "identity" : "rim",
-        "map" : "./code"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.display",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
-        "valueBoolean" : true
-      }],
-      "path" : "MedicationRequest.medication[x].coding.display",
-      "short" : "Representation defined by the system",
-      "definition" : "A representation of the meaning of the code in the system, following the rules of the system.",
-      "requirements" : "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Coding.display",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "string"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;ProductNaam"
-      },
-      {
-        "identity" : "v2",
-        "map" : "C*E.2 - but note this is not well followed"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CV.displayName"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.userSelected",
-      "path" : "MedicationRequest.medication[x].coding.userSelected",
-      "short" : "If this coding was chosen directly by the user",
-      "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
-      "comment" : "Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.",
-      "requirements" : "This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Coding.userSelected",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "boolean"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "v2",
-        "map" : "Sometimes implied by being first"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CD.codingRationale"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\\#true a [     fhir:source \"true\";     fhir:target dt:CDCoding.codingRationale\\#O   ]"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.text",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
-        "valueBoolean" : true
-      }],
-      "path" : "MedicationRequest.medication[x].text",
-      "short" : "Plain text representation of the concept",
-      "definition" : "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
-      "comment" : "Very often the text is the same as a displayName of one of the codings.",
-      "requirements" : "The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "CodeableConcept.text",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "string"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "v2",
-        "map" : "C*E.9. But note many systems use C*E.2 for this"
-      },
-      {
-        "identity" : "rim",
-        "map" : "./originalText[mediaType/code=\"text/plain\"]/data"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"
       }]
     },
     {
@@ -1759,7 +978,8 @@
       },
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Patient|4.0.1",
+        "http://hl7.org/fhir/StructureDefinition/Group|4.0.1"]
       }],
       "constraint" : [{
         "key" : "ele-1",
@@ -1772,9 +992,9 @@
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;Identificatienummer",
-        "comment" : "Patient-reference op basis van patiëntidentifier."
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.PatientIdentificatienummer",
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer."
       },
       {
         "identity" : "workflow",
@@ -3300,8 +2520,9 @@
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;MedicationRequestDosageInstructionTimingRepeatBoundsPeriodStart"
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.GebruiksperiodeStart",
+        "comment" : "Direct: SIM dateTime wordt overgenomen als FHIR dateTime."
       },
       {
         "identity" : "v2",
@@ -4053,461 +3274,17 @@
         "valueSet" : "http://hl7.org/fhir/ValueSet/route-codes|4.0.1"
       },
       "mapping" : [{
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.Toedieningsweg",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
+      },
+      {
         "identity" : "v2",
         "map" : "RXR-1"
       },
       {
         "identity" : "rim",
         "map" : ".routeCode"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction.route.id",
-      "path" : "MedicationRequest.dosageInstruction.route.id",
-      "representation" : ["xmlAttr"],
-      "short" : "Unique id for inter-element referencing",
-      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.id",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "string"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction.route.extension",
-      "path" : "MedicationRequest.dosageInstruction.route.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
-      "short" : "Additional content defined by implementations",
-      "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-      "alias" : ["extensions",
-      "user content"],
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction.route.coding",
-      "path" : "MedicationRequest.dosageInstruction.route.coding",
-      "short" : "Code defined by a terminology system",
-      "definition" : "A reference to a code defined by a terminology system.",
-      "comment" : "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
-      "requirements" : "Allows for alternative encodings within a code system, and translations to other code systems.",
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "CodeableConcept.coding",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Coding"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "v2",
-        "map" : "C*E.1-8, C*E.10-22"
-      },
-      {
-        "identity" : "rim",
-        "map" : "union(., ./translation)"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction.route.coding.id",
-      "path" : "MedicationRequest.dosageInstruction.route.coding.id",
-      "representation" : ["xmlAttr"],
-      "short" : "Unique id for inter-element referencing",
-      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.id",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "string"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction.route.coding.extension",
-      "path" : "MedicationRequest.dosageInstruction.route.coding.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "description" : "Extensions are always sliced by (at least) url",
-        "rules" : "open"
-      },
-      "short" : "Additional content defined by implementations",
-      "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-      "alias" : ["extensions",
-      "user content"],
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction.route.coding.system",
-      "path" : "MedicationRequest.dosageInstruction.route.coding.system",
-      "short" : "Identity of the terminology system",
-      "definition" : "The identification of the code system that defines the meaning of the symbol in the code.",
-      "comment" : "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should reference to some definition that establishes the system clearly and unambiguously.",
-      "requirements" : "Need to be unambiguous about the source of the definition of the symbol.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Coding.system",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "uri"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;ToedieningswegSystem"
-      },
-      {
-        "identity" : "v2",
-        "map" : "C*E.3"
-      },
-      {
-        "identity" : "rim",
-        "map" : "./codeSystem"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction.route.coding.version",
-      "path" : "MedicationRequest.dosageInstruction.route.coding.version",
-      "short" : "Version of the system - if relevant",
-      "definition" : "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
-      "comment" : "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Coding.version",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "string"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "v2",
-        "map" : "C*E.7"
-      },
-      {
-        "identity" : "rim",
-        "map" : "./codeSystemVersion"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction.route.coding.code",
-      "path" : "MedicationRequest.dosageInstruction.route.coding.code",
-      "short" : "Symbol in syntax defined by the system",
-      "definition" : "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
-      "requirements" : "Need to refer to a particular code in the system.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Coding.code",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "code"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;ToedieningswegCode"
-      },
-      {
-        "identity" : "v2",
-        "map" : "C*E.1"
-      },
-      {
-        "identity" : "rim",
-        "map" : "./code"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction.route.coding.display",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
-        "valueBoolean" : true
-      }],
-      "path" : "MedicationRequest.dosageInstruction.route.coding.display",
-      "short" : "Representation defined by the system",
-      "definition" : "A representation of the meaning of the code in the system, following the rules of the system.",
-      "requirements" : "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Coding.display",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "string"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;Toedieningsweg"
-      },
-      {
-        "identity" : "v2",
-        "map" : "C*E.2 - but note this is not well followed"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CV.displayName"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction.route.coding.userSelected",
-      "path" : "MedicationRequest.dosageInstruction.route.coding.userSelected",
-      "short" : "If this coding was chosen directly by the user",
-      "definition" : "Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).",
-      "comment" : "Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.",
-      "requirements" : "This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Coding.userSelected",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "boolean"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "v2",
-        "map" : "Sometimes implied by being first"
-      },
-      {
-        "identity" : "rim",
-        "map" : "CD.codingRationale"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\\#true a [     fhir:source \"true\";     fhir:target dt:CDCoding.codingRationale\\#O   ]"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction.route.text",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
-        "valueBoolean" : true
-      }],
-      "path" : "MedicationRequest.dosageInstruction.route.text",
-      "short" : "Plain text representation of the concept",
-      "definition" : "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
-      "comment" : "Very often the text is the same as a displayName of one of the codings.",
-      "requirements" : "The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "CodeableConcept.text",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "string"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "mapping" : [{
-        "identity" : "v2",
-        "map" : "C*E.9. But note many systems use C*E.2 for this"
-      },
-      {
-        "identity" : "rim",
-        "map" : "./originalText[mediaType/code=\"text/plain\"]/data"
-      },
-      {
-        "identity" : "orim",
-        "map" : "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"
       }]
     },
     {
@@ -5864,40 +4641,19 @@
     {
       "id" : "MedicationRequest.identifier",
       "path" : "MedicationRequest.identifier",
-      "min" : 1,
-      "max" : "1"
-    },
-    {
-      "id" : "MedicationRequest.identifier.use",
-      "path" : "MedicationRequest.identifier.use",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.identifier.system",
-      "path" : "MedicationRequest.identifier.system",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;MedicatieAfspraakID",
-        "comment" : "Systeemdeel van de samengestelde identifier."
-      }]
-    },
-    {
-      "id" : "MedicationRequest.identifier.value",
-      "path" : "MedicationRequest.identifier.value",
-      "min" : 1,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;MedicatieAfspraakID",
-        "comment" : "Waardedeel van de samengestelde identifier; hash."
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.MedicatieAfspraakID",
+        "comment" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
       }]
     },
     {
       "id" : "MedicationRequest.status",
       "path" : "MedicationRequest.status",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;MedicatieAfspraakStatus",
-        "comment" : "Codes volgens MedicatieAfspraakStatusSysteem; overeenkomst met medicationrequest-status verifiëren."
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.MedicatieAfspraakStatus",
+        "comment" : "Datatypeconversie: SIM Coding naar FHIR code; codes volgens MedicatieAfspraakStatusSysteem, overeenkomst met FHIR medicationrequest-status verifiëren."
       }]
     },
     {
@@ -5920,43 +4676,20 @@
       "max" : "1",
       "type" : [{
         "code" : "CodeableConcept"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.system",
-      "path" : "MedicationRequest.medication[x].coding.system",
+      }],
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;ProductCodeSysteem"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.code",
-      "path" : "MedicationRequest.medication[x].coding.code",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;ProductCode"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.display",
-      "path" : "MedicationRequest.medication[x].coding.display",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;ProductNaam"
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.Product",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept. Het SIM documenteert medicationReference naar een Medication met deze code; keuze nog te maken."
       }]
     },
     {
       "id" : "MedicationRequest.subject",
       "path" : "MedicationRequest.subject",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"]
-      }],
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;Identificatienummer",
-        "comment" : "Patient-reference op basis van patiëntidentifier."
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.PatientIdentificatienummer",
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer."
       }]
     },
     {
@@ -5985,32 +4718,18 @@
       "id" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsPeriod.start",
       "path" : "MedicationRequest.dosageInstruction.timing.repeat.bounds[x].start",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;MedicationRequestDosageInstructionTimingRepeatBoundsPeriodStart"
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.GebruiksperiodeStart",
+        "comment" : "Direct: SIM dateTime wordt overgenomen als FHIR dateTime."
       }]
     },
     {
-      "id" : "MedicationRequest.dosageInstruction.route.coding.system",
-      "path" : "MedicationRequest.dosageInstruction.route.coding.system",
+      "id" : "MedicationRequest.dosageInstruction.route",
+      "path" : "MedicationRequest.dosageInstruction.route",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;ToedieningswegSystem"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction.route.coding.code",
-      "path" : "MedicationRequest.dosageInstruction.route.coding.code",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;ToedieningswegCode"
-      }]
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction.route.coding.display",
-      "path" : "MedicationRequest.dosageInstruction.route.coding.display",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "MedicatieAfspraak;Toedieningsweg"
+        "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
+        "map" : "SIMMedicatieAfspraak.Toedieningsweg",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
       }]
     }]
   }

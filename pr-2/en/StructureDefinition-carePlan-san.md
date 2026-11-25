@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-carePlan-san.csv)
   "name" : "CarePlanSan",
   "title" : "CarePlan (SAN)",
   "status" : "draft",
-  "date" : "2026-11-19T16:55:06+00:00",
+  "date" : "2026-11-25T16:23:55+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-carePlan-san.csv)
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "Generiek Santeon FHIR R4-profiel voor zorgplannen, zoals deelname\naan een zorgpad of thuismonitoringprogramma.\n\nGebaseerd op het Santeon Informatiemodel (SIMCarePlan).\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
+  "description" : "Santeon FHIR R4-profiel voor zorgplannen (deelname aan een zorgpad of thuismonitoringprogramma), gebaseerd op het Santeon Informatiemodel (SIMCarePlan) en afgeleid van FHIR R4 CarePlan.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -48,10 +48,10 @@ Other representations of profile: [CSV](../StructureDefinition-carePlan-san.csv)
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "sim",
-    "uri" : "urn:santeon:sim:csv",
-    "name" : "Santeon Informatiemodel (SIM CSV)",
-    "comment" : "Informatieve mapping van FHIR CarePlan naar SIM CSV-bronvelden."
+    "identity" : "CarePlanSanFromSIMCarePlan",
+    "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMCarePlan",
+    "name" : "SIM Logical Model SIMCarePlan",
+    "comment" : "Herkomst van de CarePlanSan-elementen in Zorgplan (SIMCarePlan), met de conversietoelichting. Afgeleid van SIMCarePlanToFHIR; wijzigingen alleen daar aanbrengen."
   },
   {
     "identity" : "workflow",
@@ -86,101 +86,55 @@ Other representations of profile: [CSV](../StructureDefinition-carePlan-san.csv)
     {
       "id" : "CarePlan.identifier",
       "path" : "CarePlan.identifier",
-      "min" : 1,
-      "max" : "1"
-    },
-    {
-      "id" : "CarePlan.identifier.use",
-      "path" : "CarePlan.identifier.use",
-      "max" : "0"
-    },
-    {
-      "id" : "CarePlan.identifier.system",
-      "path" : "CarePlan.identifier.system",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "CarePlan;CarePlanIdentifier",
-        "comment" : "Systeemdeel van de samengestelde identifier."
-      }]
-    },
-    {
-      "id" : "CarePlan.identifier.value",
-      "path" : "CarePlan.identifier.value",
-      "min" : 1,
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "CarePlan;CarePlanIdentifier",
-        "comment" : "Waardedeel van de samengestelde identifier; hash."
+        "identity" : "CarePlanSanFromSIMCarePlan",
+        "map" : "SIMCarePlan.CarePlanID",
+        "comment" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
       }]
     },
     {
       "id" : "CarePlan.status",
       "path" : "CarePlan.status",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "CarePlan;CarePlanStatus"
+        "identity" : "CarePlanSanFromSIMCarePlan",
+        "map" : "SIMCarePlan.Status",
+        "comment" : "Direct: SIM code wordt overgenomen als FHIR code; aansluiting op FHIR request-status nog te bevestigen."
       }]
     },
     {
-      "id" : "CarePlan.intent",
-      "path" : "CarePlan.intent",
+      "id" : "CarePlan.category",
+      "path" : "CarePlan.category",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "CarePlan;CarePlanIntent",
-        "comment" : "Uitgeschakeld in het SIM LM (buiten IBD-scope)."
-      }]
-    },
-    {
-      "id" : "CarePlan.category.coding.system",
-      "path" : "CarePlan.category.coding.system",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "CarePlan;CarePlanCategoryCodingSystem"
-      }]
-    },
-    {
-      "id" : "CarePlan.category.coding.code",
-      "path" : "CarePlan.category.coding.code",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "CarePlan;CarePlanCategoryCodingCode"
-      }]
-    },
-    {
-      "id" : "CarePlan.category.coding.display",
-      "path" : "CarePlan.category.coding.display",
-      "mapping" : [{
-        "identity" : "sim",
-        "map" : "CarePlan;CarePlanCategoryCodingDisplay"
+        "identity" : "CarePlanSanFromSIMCarePlan",
+        "map" : "SIMCarePlan.Categorie",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
       }]
     },
     {
       "id" : "CarePlan.subject",
       "path" : "CarePlan.subject",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"]
-      }],
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "CarePlan;Identificatienummer",
-        "comment" : "Patient-reference op basis van patiëntidentifier."
+        "identity" : "CarePlanSanFromSIMCarePlan",
+        "map" : "SIMCarePlan.PatientIdentificatienummer",
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer."
       }]
     },
     {
       "id" : "CarePlan.period.start",
       "path" : "CarePlan.period.start",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "CarePlan;CarePlanPeriodStart"
+        "identity" : "CarePlanSanFromSIMCarePlan",
+        "map" : "SIMCarePlan.StartDatumTijd",
+        "comment" : "Structuurconversie: SIM StartDatumTijd en EindDatumTijd vormen samen de FHIR Period."
       }]
     },
     {
       "id" : "CarePlan.period.end",
       "path" : "CarePlan.period.end",
       "mapping" : [{
-        "identity" : "sim",
-        "map" : "CarePlan;CarePlanPeriodEnd"
+        "identity" : "CarePlanSanFromSIMCarePlan",
+        "map" : "SIMCarePlan.EindDatumTijd",
+        "comment" : "Structuurconversie: SIM StartDatumTijd en EindDatumTijd vormen samen de FHIR Period."
       }]
     }]
   }

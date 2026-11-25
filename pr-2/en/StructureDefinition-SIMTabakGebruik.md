@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMTabakGebruik.c
   "name" : "SIMTabakGebruik",
   "title" : "Tabakgebruik (model)",
   "status" : "draft",
-  "date" : "2026-11-19T16:55:06+00:00",
+  "date" : "2026-11-25T16:23:55+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -50,12 +50,14 @@ Other representations of profile: [CSV](../StructureDefinition-SIMTabakGebruik.c
   "mapping" : [{
     "identity" : "SIMTabakGebruikFromSIMCSV",
     "uri" : "urn:santeon:sim:csv",
-    "name" : "SIM CSV"
+    "name" : "SIM CSV",
+    "comment" : "Herleidbaarheid van SIMTabakGebruik-elementen naar de oorspronkelijke SIM CSV-attributen."
   },
   {
     "identity" : "SIMTabakGebruikToFHIR",
     "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san-tabakgebruik",
-    "name" : "SIMTabakGebruik naar FHIR"
+    "name" : "FHIR-mapping naar ObservationSanTabakGebruik",
+    "comment" : "Mapping van SIMTabakGebruik-elementen naar het Santeon FHIR-profiel ObservationSanTabakGebruik, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."
   }],
   "kind" : "logical",
   "abstract" : false,
@@ -85,7 +87,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMTabakGebruik.c
       },
       {
         "identity" : "SIMTabakGebruikToFHIR",
-        "map" : "Observation.identifier"
+        "map" : "Observation.identifier",
+        "comment" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
       }]
     },
     {
@@ -105,7 +108,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMTabakGebruik.c
       {
         "identity" : "SIMTabakGebruikToFHIR",
         "map" : "Observation.subject",
-        "comment" : "Patient-reference op basis van identificatienummer."
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer."
       }]
     },
     {
@@ -124,7 +127,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMTabakGebruik.c
       },
       "mapping" : [{
         "identity" : "SIMTabakGebruikToFHIR",
-        "map" : "Observation.valueCodeableConcept"
+        "map" : "Observation.valueCodeableConcept",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept, gebonden aan TabakGebruikStatusCodelijst."
       }]
     },
     {
@@ -168,7 +172,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMTabakGebruik.c
       {
         "identity" : "SIMTabakGebruikToFHIR",
         "map" : "Observation.effectiveDateTime",
-        "comment" : "Datum uit SIM omzetten naar FHIR dateTime, met behoud van de oorspronkelijke datumprecisie."
+        "comment" : "Datatypeconversie: SIM date naar FHIR dateTime, met behoud van de oorspronkelijke datumprecisie."
       }]
     }]
   }

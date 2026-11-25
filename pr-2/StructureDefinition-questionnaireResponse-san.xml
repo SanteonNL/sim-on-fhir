@@ -4,30 +4,15 @@
   <id value="questionnaireResponse-san"/>
   <text>
     <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureDefinition questionnaireResponse-san</b></p><a name="questionnaireResponse-san"> </a><a name="hcquestionnaireResponse-san"> </a><table border="0" cellpadding="0" cellspacing="0" class="xhtTableBorder0"><tr class="xhtRowBorder1"><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Information about the use of the element">Flags</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Minimum and Maximum # of times the element can appear in the instance">Card.</a></th><th scope="col" style="; width: 100px" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Reference to the type of the element">Type</a></th><th scope="col" style="" class="hierarchy xhtCellBorder0"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck1.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_resource.png" alt="" style="background-color: white; background-color: inherit" title="Resource" class="hierarchy"/> <a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse">QuestionnaireResponse</a><a name="QuestionnaireResponse"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">*</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/questionnaireresponse.html">QuestionnaireResponse</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">A structured set of questions and their answers</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck11.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.identifier">identifier</a><a name="QuestionnaireResponse.identifier"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..<span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier" class="xhtPieceDeEmphasized">Identifier</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Unique id for this set of answers</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.identifier.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.identifier.use" class="xhtPieceStrikeout">use</a><a name="QuestionnaireResponse.identifier.use"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceStrikeout"/><span class="xhtPieceStrikeout xhtPieceDeEmphasized">0</span><span class="xhtPieceStrikeout">..</span><span class="xhtPieceStrikeout">0</span></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic xhtPieceDeEmphasized">usual | official | temp | secondary | old (If known)</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck110.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.identifier.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.identifier.system">system</a><a name="QuestionnaireResponse.identifier.system"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#uri" class="xhtPieceDeEmphasized">uri</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">The namespace for the identifier value</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck100.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.identifier.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.identifier.value">value</a><a name="QuestionnaireResponse.identifier.value"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..<span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string" class="xhtPieceDeEmphasized">string</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">The value that is unique</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.questionnaire">questionnaire</a><a name="QuestionnaireResponse.questionnaire"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/references.html">canonical</a>(<a href="http://hl7.org/fhir/R4/questionnaire.html" class="xhtPieceDeEmphasized">Questionnaire</a>)</td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Form being answered</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="" style="background-color: white; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.subject">subject</a><a name="QuestionnaireResponse.subject"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">1..<span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-patient-san.html">Patient (SAN)</a>)</td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">The subject of the questions</span></td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.identifier">identifier</a><a name="QuestionnaireResponse.identifier"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier" class="xhtPieceDeEmphasized">Identifier</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Unique id for this set of answers</span></td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.subject">subject</a><a name="QuestionnaireResponse.subject"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/resource.html" class="xhtPieceDeEmphasized">Resource</a>)</td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">The subject of the questions</span></td></tr>
 <tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck10.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.authored">authored</a><a name="QuestionnaireResponse.authored"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime" class="xhtPieceDeEmphasized">dateTime</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Date the answers were gathered</span></td></tr>
 <tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck01.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item">item</a><a name="QuestionnaireResponse.item"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck010.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.linkId">linkId</a><a name="QuestionnaireResponse.item.linkId"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">1</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string" class="xhtPieceDeEmphasized">string</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Pointer to specific item from Questionnaire</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck001.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer">answer</a><a name="QuestionnaireResponse.item.answer"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck0003.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_slice.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Slice Definition" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer.value[x]" class="xhtPieceItalic">Slices for value[x]</a><a name="QuestionnaireResponse.item.answer.value_x_"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic"/><span class="xhtPieceItalic xhtPieceDeEmphasized">0</span><span class="xhtPieceItalic xhtPieceDeEmphasized">..</span><span class="xhtPieceItalic xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic xhtPieceDeEmphasized">Single-valued answer to the question</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Open by type:$this</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck00030.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="" style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].</span><span title="Base StructureDefinition for dateTime Type: A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored.                 Dates SHALL be valid dates.">valueDateTime</span></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td><td style="" class="hierarchy xhtCellBorder0"/></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck00030.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].</span><span title="Base StructureDefinition for Coding Type: A reference to a code defined by a terminology system.">valueCoding</span></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td style="" class="hierarchy xhtCellBorder0"/></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck00030.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="" style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].</span><span title="Base StructureDefinition for Quantity Type: A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies.">valueQuantity</span></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Quantity">Quantity</a></td><td style="" class="hierarchy xhtCellBorder0"/></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck00035.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer.value[x]:valueQuantity" title="Slice valueQuantity">value[x]:valueQuantity</a><a name="QuestionnaireResponse.item.answer.value_x_:valueQuantity"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Quantity">Quantity</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Single-valued answer to the question</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck000350.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slice.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].value[x]:valueQuantity.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer.value[x]:valueQuantity.value">value</a><a name="QuestionnaireResponse.item.answer.value_x_:valueQuantity.value"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#decimal" class="xhtPieceDeEmphasized">decimal</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Numerical value (with implicit precision)</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck000350.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slice.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].value[x]:valueQuantity.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer.value[x]:valueQuantity.comparator">comparator</a><a name="QuestionnaireResponse.item.answer.value_x_:valueQuantity.comparator"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code" class="xhtPieceDeEmphasized">code</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">&lt; | &lt;= | &gt;= | &gt; - how to understand the value</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck000350.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slice.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].value[x]:valueQuantity.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer.value[x]:valueQuantity.system">system</a><a name="QuestionnaireResponse.item.answer.value_x_:valueQuantity.system"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#uri" class="xhtPieceDeEmphasized">uri</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">System that defines coded unit form</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck000340.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slice.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].value[x]:valueQuantity.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer.value[x]:valueQuantity.code">code</a><a name="QuestionnaireResponse.item.answer.value_x_:valueQuantity.code"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code" class="xhtPieceDeEmphasized">code</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Coded form of the unit</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck00035.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="" style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer.value[x]:valueCoding" title="Slice valueCoding">value[x]:valueCoding</a><a name="QuestionnaireResponse.item.answer.value_x_:valueCoding"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Single-valued answer to the question</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck000350.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slice.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].value[x]:valueCoding.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer.value[x]:valueCoding.system">system</a><a name="QuestionnaireResponse.item.answer.value_x_:valueCoding.system"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#uri" class="xhtPieceDeEmphasized">uri</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Identity of the terminology system</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck000350.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slice.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].value[x]:valueCoding.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer.value[x]:valueCoding.code">code</a><a name="QuestionnaireResponse.item.answer.value_x_:valueCoding.code"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#code" class="xhtPieceDeEmphasized">code</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Symbol in syntax defined by the system</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck000340.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slice.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].value[x]:valueCoding.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer.value[x]:valueCoding.display">display</a><a name="QuestionnaireResponse.item.answer.value_x_:valueCoding.display"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">0</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#string" class="xhtPieceDeEmphasized">string</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Representation defined by the system</span></td></tr>
-<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck00024.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="" style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer.value[x]:valueDateTime" title="Slice valueDateTime">value[x]:valueDateTime</a><a name="QuestionnaireResponse.item.answer.value_x_:valueDateTime"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Single-valued answer to the question</span></td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck001.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer">answer</a><a name="QuestionnaireResponse.item.answer"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"/></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck0003.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_slice.png" alt="" style="background-color: white; background-color: inherit" title="Slice Definition" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer.value[x]" class="xhtPieceItalic">Slices for value[x]</a><a name="QuestionnaireResponse.item.answer.value_x_"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic"/><span class="xhtPieceItalic xhtPieceDeEmphasized">0</span><span class="xhtPieceItalic xhtPieceDeEmphasized">..</span><span class="xhtPieceItalic xhtPieceDeEmphasized">1</span></td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#boolean" class="xhtPieceItalic xhtPieceDeEmphasized">boolean</a><span class="xhtPieceItalic xhtPieceDeEmphasized">, </span><a href="http://hl7.org/fhir/R4/datatypes.html#decimal" class="xhtPieceItalic xhtPieceDeEmphasized">decimal</a><span class="xhtPieceItalic xhtPieceDeEmphasized">, </span><a href="http://hl7.org/fhir/R4/datatypes.html#integer" class="xhtPieceItalic xhtPieceDeEmphasized">integer</a><span class="xhtPieceItalic xhtPieceDeEmphasized">, </span><a href="http://hl7.org/fhir/R4/datatypes.html#date" class="xhtPieceItalic xhtPieceDeEmphasized">date</a><span class="xhtPieceItalic xhtPieceDeEmphasized">, </span><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime" class="xhtPieceItalic xhtPieceDeEmphasized">dateTime</a><span class="xhtPieceItalic xhtPieceDeEmphasized">, </span><a href="http://hl7.org/fhir/R4/datatypes.html#time" class="xhtPieceItalic xhtPieceDeEmphasized">time</a><span class="xhtPieceItalic xhtPieceDeEmphasized">, </span><a href="http://hl7.org/fhir/R4/datatypes.html#string" class="xhtPieceItalic xhtPieceDeEmphasized">string</a><span class="xhtPieceItalic xhtPieceDeEmphasized">, </span><a href="http://hl7.org/fhir/R4/datatypes.html#uri" class="xhtPieceItalic xhtPieceDeEmphasized">uri</a><span class="xhtPieceItalic xhtPieceDeEmphasized">, </span><a href="http://hl7.org/fhir/R4/datatypes.html#Attachment" class="xhtPieceItalic xhtPieceDeEmphasized">Attachment</a><span class="xhtPieceItalic xhtPieceDeEmphasized">, </span><a href="http://hl7.org/fhir/R4/datatypes.html#Coding" class="xhtPieceItalic xhtPieceDeEmphasized">Coding</a><span class="xhtPieceItalic xhtPieceDeEmphasized">, </span><a href="http://hl7.org/fhir/R4/datatypes.html#Quantity" class="xhtPieceItalic xhtPieceDeEmphasized">Quantity</a><span class="xhtPieceItalic xhtPieceDeEmphasized">, </span><a href="http://hl7.org/fhir/R4/references.html" class="xhtPieceItalic">Reference</a><span class="xhtPieceItalic">(</span><a href="http://hl7.org/fhir/R4/resource.html" class="xhtPieceItalic xhtPieceDeEmphasized">Resource</a><span class="xhtPieceItalic">)</span></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic xhtPieceDeEmphasized">Single-valued answer to the question</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Open by type:$this</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">Other type slices that contain no new information are not shown in this view</span></td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck00034.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer.value[x]:valueQuantity" title="Slice valueQuantity">value[x]:valueQuantity</a><a name="QuestionnaireResponse.item.answer.value_x_:valueQuantity"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Quantity">Quantity</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Single-valued answer to the question</span></td></tr>
+<tr class="xhtRowBorder0 xhtRowEven"><td style="background-image: url(tbl_bck00034.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="" style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer.value[x]:valueCoding" title="Slice valueCoding">value[x]:valueCoding</a><a name="QuestionnaireResponse.item.answer.value_x_:valueCoding"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Single-valued answer to the question</span></td></tr>
+<tr class="xhtRowBorder0 xhtRowOdd"><td style="background-image: url(tbl_bck00024.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">QuestionnaireResponse.item.answer.Slices for value[x].</span><a href="StructureDefinition-questionnaireResponse-san-definitions.html#QuestionnaireResponse.item.answer.value[x]:valueDateTime" title="Slice valueDateTime">value[x]:valueDateTime</a><a name="QuestionnaireResponse.item.answer.value_x_:valueDateTime"> </a></td><td style="" class="hierarchy xhtCellBorder0"/><td style="" class="hierarchy xhtCellBorder0">0..1</td><td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td><td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">Single-valued answer to the question</span></td></tr>
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/questionnaireResponse-san"/>
@@ -35,7 +20,7 @@
   <name value="QuestionnaireResponseSan"/>
   <title value="QuestionnaireResponse (SAN)"/>
   <status value="draft"/>
-  <date value="2026-11-19T16:55:06+00:00"/>
+  <date value="2026-11-25T16:23:55+00:00"/>
   <publisher value="Santeon"/>
   <contact>
     <name value="Santeon"/>
@@ -44,7 +29,7 @@
       <value value="https://www.santeon.nl"/>
     </telecom>
   </contact>
-  <description value="Generiek Santeon FHIR R4-profiel voor ingevulde vragenlijsten.&#xA;&#xA;Gebaseerd op het Santeon Informatiemodel (SIMVragenlijstAntwoord).&#xA;Het SIM levert één record per antwoord; records met hetzelfde&#xA;VragenlijstAntwoordID vormen samen één QuestionnaireResponse.&#xA;&#xA;De-identificatie wordt uitgevoerd volgens afzonderlijke&#xA;transformatiespecificaties en is geen inherente&#xA;eigenschap van dit profiel."/>
+  <description value="Santeon FHIR R4-profiel voor ingevulde vragenlijsten, gebaseerd op het Santeon Informatiemodel (SIMVragenlijstAntwoord) en afgeleid van FHIR R4 QuestionnaireResponse."/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -54,10 +39,10 @@
   </jurisdiction>
   <fhirVersion value="4.0.1"/>
   <mapping>
-    <identity value="sim"/>
-    <uri value="urn:santeon:sim:csv"/>
-    <name value="Santeon Informatiemodel (SIM CSV)"/>
-    <comment value="Informatieve mapping van FHIR QuestionnaireResponse naar SIM CSV-bronvelden."/>
+    <identity value="QuestionnaireResponseSanFromSIMVragenlijstAntwoord"/>
+    <uri value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMVragenlijstAntwoord"/>
+    <name value="SIM Logical Model SIMVragenlijstAntwoord"/>
+    <comment value="Herkomst van de QuestionnaireResponseSan-elementen in Vragenlijstantwoord (SIMVragenlijstAntwoord), met de conversietoelichting. Afgeleid van SIMVragenlijstAntwoordToFHIR; wijzigingen alleen daar aanbrengen."/>
   </mapping>
   <mapping>
     <identity value="workflow"/>
@@ -414,7 +399,7 @@
       <short value="Unique id for this set of answers"/>
       <definition value="A business identifier assigned to a particular completed (or partially completed) questionnaire."/>
       <requirements value="Used for tracking, registration and other business purposes."/>
-      <min value="1"/>
+      <min value="0"/>
       <max value="1"/>
       <base>
         <path value="QuestionnaireResponse.identifier"/>
@@ -435,6 +420,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="QuestionnaireResponseSanFromSIMVragenlijstAntwoord"/>
+        <map value="SIMVragenlijstAntwoord.VragenlijstAntwoordID"/>
+        <comment value="Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.identifier"/>
       </mapping>
@@ -445,337 +435,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".id"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.identifier.id">
-      <path value="QuestionnaireResponse.identifier.id"/>
-      <representation value="xmlAttr"/>
-      <short value="Unique id for inter-element referencing"/>
-      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Element.id"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
-          <valueUrl value="string"/>
-        </extension>
-        <code value="http://hl7.org/fhirpath/System.String"/>
-      </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.identifier.extension">
-      <path value="QuestionnaireResponse.identifier.extension"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="url"/>
-        </discriminator>
-        <description value="Extensions are always sliced by (at least) url"/>
-        <rules value="open"/>
-      </slicing>
-      <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="Element.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.identifier.use">
-      <path value="QuestionnaireResponse.identifier.use"/>
-      <short value="usual | official | temp | secondary | old (If known)"/>
-      <definition value="The purpose of this identifier."/>
-      <comment value="Applications can assume that an identifier is permanent unless it explicitly says that it is temporary."/>
-      <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers."/>
-      <min value="0"/>
-      <max value="0"/>
-      <base>
-        <path value="Identifier.use"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="code"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="true"/>
-      <isModifierReason value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one."/>
-      <isSummary value="true"/>
-      <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="IdentifierUse"/>
-        </extension>
-        <strength value="required"/>
-        <description value="Identifies the purpose for this identifier, if known ."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/identifier-use|4.0.1"/>
-      </binding>
-      <mapping>
-        <identity value="v2"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="Role.code or implied by context"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.identifier.type">
-      <path value="QuestionnaireResponse.identifier.type"/>
-      <short value="Description of identifier"/>
-      <definition value="A coded type for the identifier that can be used to determine which identifier to use for a specific purpose."/>
-      <comment value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type."/>
-      <requirements value="Allows users to make use of identifiers when the identifier system is not known."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Identifier.type"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="CodeableConcept"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="IdentifierType"/>
-        </extension>
-        <strength value="extensible"/>
-        <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/identifier-type|4.0.1"/>
-      </binding>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CX.5"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="Role.code or implied by context"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.identifier.system">
-      <path value="QuestionnaireResponse.identifier.system"/>
-      <short value="The namespace for the identifier value"/>
-      <definition value="Establishes the namespace for the value - that is, a URL that describes a set values that are unique."/>
-      <comment value="Identifier.system is always case sensitive."/>
-      <requirements value="There are many sets  of identifiers.  To perform matching of two identifiers, we need to know what set we're dealing with. The system identifies a particular set of unique identifiers."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Identifier.system"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="uri"/>
-      </type>
-      <example>
-        <label value="General"/>
-        <valueUri value="http://www.acme.com/identifiers/patient"/>
-      </example>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;VragenlijstAntwoordID"/>
-        <comment value="Systeemdeel van de samengestelde identifier."/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CX.4 / EI-2-4"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="II.root or Role.id.root"/>
-      </mapping>
-      <mapping>
-        <identity value="servd"/>
-        <map value="./IdentifierType"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.identifier.value">
-      <path value="QuestionnaireResponse.identifier.value"/>
-      <short value="The value that is unique"/>
-      <definition value="The portion of the identifier typically relevant to the user and which is unique within the context of the system."/>
-      <comment value="If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](http://hl7.org/fhir/R4/extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe."/>
-      <min value="1"/>
-      <max value="1"/>
-      <base>
-        <path value="Identifier.value"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="string"/>
-      </type>
-      <example>
-        <label value="General"/>
-        <valueString value="123456"/>
-      </example>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;VragenlijstAntwoordID"/>
-        <comment value="Waardedeel van de samengestelde identifier; hash."/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CX.1 / EI.1"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)"/>
-      </mapping>
-      <mapping>
-        <identity value="servd"/>
-        <map value="./Value"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.identifier.period">
-      <path value="QuestionnaireResponse.identifier.period"/>
-      <short value="Time period when id is/was valid for use"/>
-      <definition value="Time period during which identifier is/was valid for use."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Identifier.period"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="Period"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CX.7 + CX.8"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="Role.effectiveTime or implied by context"/>
-      </mapping>
-      <mapping>
-        <identity value="servd"/>
-        <map value="./StartDate and ./EndDate"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.identifier.assigner">
-      <path value="QuestionnaireResponse.identifier.assigner"/>
-      <short value="Organization that issued id (may be just text)"/>
-      <definition value="Organization that issued/manages the identifier."/>
-      <comment value="The Identifier.assigner may omit the .reference element and only contain a .display element reflecting the name or other textual information about the assigning organization."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Identifier.assigner"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="v2"/>
-        <map value="CX.4 / (CX.4,CX.9,CX.10)"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper"/>
-      </mapping>
-      <mapping>
-        <identity value="servd"/>
-        <map value="./IdentifierIssuingAuthority"/>
       </mapping>
     </element>
     <element id="QuestionnaireResponse.basedOn">
@@ -880,11 +539,6 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;QuestionnaireResponseQuestionnaire"/>
-        <comment value="Canonical-verwijzing naar de Questionnaire."/>
-      </mapping>
-      <mapping>
         <identity value="workflow"/>
         <map value="Event.instantiates"/>
       </mapping>
@@ -949,7 +603,7 @@
       <requirements value="Allows linking the answers to the individual the answers describe.  May also affect access control."/>
       <alias value="Patient"/>
       <alias value="Focus"/>
-      <min value="1"/>
+      <min value="0"/>
       <max value="1"/>
       <base>
         <path value="QuestionnaireResponse.subject"/>
@@ -958,7 +612,7 @@
       </base>
       <type>
         <code value="Reference"/>
-        <targetProfile value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -971,9 +625,9 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;Identificatienummer"/>
-        <comment value="Patient-reference op basis van patiëntidentifier."/>
+        <identity value="QuestionnaireResponseSanFromSIMVragenlijstAntwoord"/>
+        <map value="SIMVragenlijstAntwoord.PatientIdentificatienummer"/>
+        <comment value="Structuurconversie: Patient-reference op basis van identificatienummer; SIM benoemt daarnaast QuestionnaireResponse.source."/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1063,8 +717,9 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;InvulDatumTijd"/>
+        <identity value="QuestionnaireResponseSanFromSIMVragenlijstAntwoord"/>
+        <map value="SIMVragenlijstAntwoord.InvulDatumTijd"/>
+        <comment value="Direct: SIM dateTime wordt overgenomen als FHIR dateTime."/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1341,11 +996,6 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;QuestionnaireResponseItemLinkId"/>
-        <comment value="Verwijzing naar het item in de Questionnaire."/>
-      </mapping>
-      <mapping>
         <identity value="rim"/>
         <map value=".outboundRelationship[typeCode=DEFN].target[classCode=OBS, moodCode=DEFN].id"/>
       </mapping>
@@ -1571,13 +1221,41 @@
         <max value="1"/>
       </base>
       <type>
+        <code value="boolean"/>
+      </type>
+      <type>
+        <code value="decimal"/>
+      </type>
+      <type>
+        <code value="integer"/>
+      </type>
+      <type>
+        <code value="date"/>
+      </type>
+      <type>
         <code value="dateTime"/>
+      </type>
+      <type>
+        <code value="time"/>
+      </type>
+      <type>
+        <code value="string"/>
+      </type>
+      <type>
+        <code value="uri"/>
+      </type>
+      <type>
+        <code value="Attachment"/>
       </type>
       <type>
         <code value="Coding"/>
       </type>
       <type>
         <code value="Quantity"/>
+      </type>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -1638,283 +1316,13 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/questionnaire-answers|4.0.1"/>
       </binding>
       <mapping>
+        <identity value="QuestionnaireResponseSanFromSIMVragenlijstAntwoord"/>
+        <map value="SIMVragenlijstAntwoord.AntwoordWaarde"/>
+        <comment value="Structuurconversie: één SIM-record wordt één item met één answer; SIM Quantity wordt overgenomen als FHIR Quantity."/>
+      </mapping>
+      <mapping>
         <identity value="rim"/>
         <map value=".item"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueQuantity.id">
-      <path value="QuestionnaireResponse.item.answer.value[x].id"/>
-      <representation value="xmlAttr"/>
-      <short value="Unique id for inter-element referencing"/>
-      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Element.id"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
-          <valueUrl value="string"/>
-        </extension>
-        <code value="http://hl7.org/fhirpath/System.String"/>
-      </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueQuantity.extension">
-      <path value="QuestionnaireResponse.item.answer.value[x].extension"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="url"/>
-        </discriminator>
-        <description value="Extensions are always sliced by (at least) url"/>
-        <rules value="open"/>
-      </slicing>
-      <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="Element.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueQuantity.value">
-      <path value="QuestionnaireResponse.item.answer.value[x].value"/>
-      <short value="Numerical value (with implicit precision)"/>
-      <definition value="The value of the measured amount. The value includes an implicit precision in the presentation of the value."/>
-      <comment value="The implicit precision in the value should always be honored. Monetary values have their own rules for handling precision (refer to standard accounting text books)."/>
-      <requirements value="Precision is handled implicitly in almost all cases of measurement."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Quantity.value"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="decimal"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordWaarde"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="SN.2  / CQ - N/A"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueQuantity.comparator">
-      <path value="QuestionnaireResponse.item.answer.value[x].comparator"/>
-      <short value="&lt; | &lt;= | &gt;= | &gt; - how to understand the value"/>
-      <definition value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
-      <requirements value="Need a framework for handling measures where the value is &lt;5ug/L or &gt;400mg/L due to the limitations of measuring methodology."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Quantity.comparator"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="code"/>
-      </type>
-      <meaningWhenMissing value="If there is no comparator, then there is no modification of the value"/>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="true"/>
-      <isModifierReason value="This is labeled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no modification of the value"/>
-      <isSummary value="true"/>
-      <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="QuantityComparator"/>
-        </extension>
-        <strength value="required"/>
-        <description value="How the Quantity should be understood and represented."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/quantity-comparator|4.0.1"/>
-      </binding>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordWaardeOperator"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="SN.1  / CQ.1"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="IVL properties"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueQuantity.unit">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true"/>
-      </extension>
-      <path value="QuestionnaireResponse.item.answer.value[x].unit"/>
-      <short value="Unit representation"/>
-      <definition value="A human-readable form of the unit."/>
-      <requirements value="There are many representations for units of measure and in many contexts, particular representations are fixed and required. I.e. mcg for micrograms."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Quantity.unit"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="string"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="v2"/>
-        <map value="(see OBX.6 etc.) / CQ.2"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="PQ.unit"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueQuantity.system">
-      <path value="QuestionnaireResponse.item.answer.value[x].system"/>
-      <short value="System that defines coded unit form"/>
-      <definition value="The identification of the system that provides the coded form of the unit."/>
-      <requirements value="Need to know the system that defines the coded form of the unit."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Quantity.system"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="uri"/>
-      </type>
-      <condition value="qty-3"/>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordWaardeEenheidSysteem"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="(see OBX.6 etc.) / CQ.2"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="CO.codeSystem, PQ.translation.codeSystem"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueQuantity.code">
-      <path value="QuestionnaireResponse.item.answer.value[x].code"/>
-      <short value="Coded form of the unit"/>
-      <definition value="A computer processable form of the unit in some unit representation system."/>
-      <comment value="The preferred system is UCUM, but SNOMED CT can also be used (for customary units) or ISO 4217 for currency.  The context of use may additionally require a code from a particular system."/>
-      <requirements value="Need a computable form of the unit that is fixed across all forms. UCUM provides this for quantities, but SNOMED CT provides many units of interest."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Quantity.code"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="code"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordWaardeEenheid"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="(see OBX.6 etc.) / CQ.2"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="PQ.code, MO.currency, PQ.translation.code"/>
       </mapping>
     </element>
     <element id="QuestionnaireResponse.item.answer.value[x]:valueCoding">
@@ -1953,288 +1361,13 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/questionnaire-answers|4.0.1"/>
       </binding>
       <mapping>
+        <identity value="QuestionnaireResponseSanFromSIMVragenlijstAntwoord"/>
+        <map value="SIMVragenlijstAntwoord.AntwoordCode"/>
+        <comment value="Structuurconversie: één SIM-record wordt één item met één answer; SIM Coding wordt overgenomen als FHIR Coding."/>
+      </mapping>
+      <mapping>
         <identity value="rim"/>
         <map value=".item"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueCoding.id">
-      <path value="QuestionnaireResponse.item.answer.value[x].id"/>
-      <representation value="xmlAttr"/>
-      <short value="Unique id for inter-element referencing"/>
-      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Element.id"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
-          <valueUrl value="string"/>
-        </extension>
-        <code value="http://hl7.org/fhirpath/System.String"/>
-      </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueCoding.extension">
-      <path value="QuestionnaireResponse.item.answer.value[x].extension"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="url"/>
-        </discriminator>
-        <description value="Extensions are always sliced by (at least) url"/>
-        <rules value="open"/>
-      </slicing>
-      <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="Element.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueCoding.system">
-      <path value="QuestionnaireResponse.item.answer.value[x].system"/>
-      <short value="Identity of the terminology system"/>
-      <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
-      <comment value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should reference to some definition that establishes the system clearly and unambiguously."/>
-      <requirements value="Need to be unambiguous about the source of the definition of the symbol."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Coding.system"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="uri"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordCodeSysteem"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="C*E.3"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="./codeSystem"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueCoding.version">
-      <path value="QuestionnaireResponse.item.answer.value[x].version"/>
-      <short value="Version of the system - if relevant"/>
-      <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
-      <comment value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Coding.version"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="string"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="v2"/>
-        <map value="C*E.7"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="./codeSystemVersion"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueCoding.code">
-      <path value="QuestionnaireResponse.item.answer.value[x].code"/>
-      <short value="Symbol in syntax defined by the system"/>
-      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
-      <requirements value="Need to refer to a particular code in the system."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Coding.code"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="code"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordCode"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="C*E.1"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="./code"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueCoding.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true"/>
-      </extension>
-      <path value="QuestionnaireResponse.item.answer.value[x].display"/>
-      <short value="Representation defined by the system"/>
-      <definition value="A representation of the meaning of the code in the system, following the rules of the system."/>
-      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Coding.display"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="string"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordCodeOmschrijving"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="C*E.2 - but note this is not well followed"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="CV.displayName"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueCoding.userSelected">
-      <path value="QuestionnaireResponse.item.answer.value[x].userSelected"/>
-      <short value="If this coding was chosen directly by the user"/>
-      <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
-      <comment value="Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely."/>
-      <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Coding.userSelected"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="boolean"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="v2"/>
-        <map value="Sometimes implied by being first"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="CD.codingRationale"/>
-      </mapping>
-      <mapping>
-        <identity value="orim"/>
-        <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
     <element id="QuestionnaireResponse.item.answer.value[x]:valueDateTime">
@@ -2265,9 +1398,342 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordDatumTijd"/>
+        <identity value="QuestionnaireResponseSanFromSIMVragenlijstAntwoord"/>
+        <map value="SIMVragenlijstAntwoord.AntwoordDatumTijd"/>
+        <comment value="Structuurconversie: één SIM-record wordt één item met één answer; SIM dateTime wordt overgenomen als FHIR dateTime."/>
       </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".item"/>
+      </mapping>
+    </element>
+    <element id="QuestionnaireResponse.item.answer.value[x]:valueBoolean">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implied-type-slice">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="QuestionnaireResponse.item.answer.value[x]"/>
+      <sliceName value="valueBoolean"/>
+      <short value="Single-valued answer to the question"/>
+      <definition value="The answer (or one of the answers) provided by the respondent to the question."/>
+      <comment value="More complex structures (Attachment, Resource and Quantity) will typically be limited to electronic forms that can expose an appropriate user interface to capture the components and enforce the constraints of a complex data type.  Additional complex types can be introduced through extensions. Must match the datatype specified by Questionnaire.item.type in the corresponding Questionnaire."/>
+      <requirements value="Ability to retain a single-valued answer to a question."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="QuestionnaireResponse.item.answer.value[x]"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="boolean"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".item"/>
+      </mapping>
+    </element>
+    <element id="QuestionnaireResponse.item.answer.value[x]:valueDecimal">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implied-type-slice">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="QuestionnaireResponse.item.answer.value[x]"/>
+      <sliceName value="valueDecimal"/>
+      <short value="Single-valued answer to the question"/>
+      <definition value="The answer (or one of the answers) provided by the respondent to the question."/>
+      <comment value="More complex structures (Attachment, Resource and Quantity) will typically be limited to electronic forms that can expose an appropriate user interface to capture the components and enforce the constraints of a complex data type.  Additional complex types can be introduced through extensions. Must match the datatype specified by Questionnaire.item.type in the corresponding Questionnaire."/>
+      <requirements value="Ability to retain a single-valued answer to a question."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="QuestionnaireResponse.item.answer.value[x]"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="decimal"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".item"/>
+      </mapping>
+    </element>
+    <element id="QuestionnaireResponse.item.answer.value[x]:valueInteger">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implied-type-slice">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="QuestionnaireResponse.item.answer.value[x]"/>
+      <sliceName value="valueInteger"/>
+      <short value="Single-valued answer to the question"/>
+      <definition value="The answer (or one of the answers) provided by the respondent to the question."/>
+      <comment value="More complex structures (Attachment, Resource and Quantity) will typically be limited to electronic forms that can expose an appropriate user interface to capture the components and enforce the constraints of a complex data type.  Additional complex types can be introduced through extensions. Must match the datatype specified by Questionnaire.item.type in the corresponding Questionnaire."/>
+      <requirements value="Ability to retain a single-valued answer to a question."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="QuestionnaireResponse.item.answer.value[x]"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="integer"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".item"/>
+      </mapping>
+    </element>
+    <element id="QuestionnaireResponse.item.answer.value[x]:valueDate">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implied-type-slice">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="QuestionnaireResponse.item.answer.value[x]"/>
+      <sliceName value="valueDate"/>
+      <short value="Single-valued answer to the question"/>
+      <definition value="The answer (or one of the answers) provided by the respondent to the question."/>
+      <comment value="More complex structures (Attachment, Resource and Quantity) will typically be limited to electronic forms that can expose an appropriate user interface to capture the components and enforce the constraints of a complex data type.  Additional complex types can be introduced through extensions. Must match the datatype specified by Questionnaire.item.type in the corresponding Questionnaire."/>
+      <requirements value="Ability to retain a single-valued answer to a question."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="QuestionnaireResponse.item.answer.value[x]"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="date"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".item"/>
+      </mapping>
+    </element>
+    <element id="QuestionnaireResponse.item.answer.value[x]:valueTime">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implied-type-slice">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="QuestionnaireResponse.item.answer.value[x]"/>
+      <sliceName value="valueTime"/>
+      <short value="Single-valued answer to the question"/>
+      <definition value="The answer (or one of the answers) provided by the respondent to the question."/>
+      <comment value="More complex structures (Attachment, Resource and Quantity) will typically be limited to electronic forms that can expose an appropriate user interface to capture the components and enforce the constraints of a complex data type.  Additional complex types can be introduced through extensions. Must match the datatype specified by Questionnaire.item.type in the corresponding Questionnaire."/>
+      <requirements value="Ability to retain a single-valued answer to a question."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="QuestionnaireResponse.item.answer.value[x]"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="time"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".item"/>
+      </mapping>
+    </element>
+    <element id="QuestionnaireResponse.item.answer.value[x]:valueString">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implied-type-slice">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="QuestionnaireResponse.item.answer.value[x]"/>
+      <sliceName value="valueString"/>
+      <short value="Single-valued answer to the question"/>
+      <definition value="The answer (or one of the answers) provided by the respondent to the question."/>
+      <comment value="More complex structures (Attachment, Resource and Quantity) will typically be limited to electronic forms that can expose an appropriate user interface to capture the components and enforce the constraints of a complex data type.  Additional complex types can be introduced through extensions. Must match the datatype specified by Questionnaire.item.type in the corresponding Questionnaire."/>
+      <requirements value="Ability to retain a single-valued answer to a question."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="QuestionnaireResponse.item.answer.value[x]"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="QuestionnaireAnswer"/>
+        </extension>
+        <strength value="example"/>
+        <description value="Code indicating the response provided for a question."/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/questionnaire-answers|4.0.1"/>
+      </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".item"/>
+      </mapping>
+    </element>
+    <element id="QuestionnaireResponse.item.answer.value[x]:valueUri">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implied-type-slice">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="QuestionnaireResponse.item.answer.value[x]"/>
+      <sliceName value="valueUri"/>
+      <short value="Single-valued answer to the question"/>
+      <definition value="The answer (or one of the answers) provided by the respondent to the question."/>
+      <comment value="More complex structures (Attachment, Resource and Quantity) will typically be limited to electronic forms that can expose an appropriate user interface to capture the components and enforce the constraints of a complex data type.  Additional complex types can be introduced through extensions. Must match the datatype specified by Questionnaire.item.type in the corresponding Questionnaire."/>
+      <requirements value="Ability to retain a single-valued answer to a question."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="QuestionnaireResponse.item.answer.value[x]"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="uri"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="QuestionnaireAnswer"/>
+        </extension>
+        <strength value="example"/>
+        <description value="Code indicating the response provided for a question."/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/questionnaire-answers|4.0.1"/>
+      </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".item"/>
+      </mapping>
+    </element>
+    <element id="QuestionnaireResponse.item.answer.value[x]:valueAttachment">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implied-type-slice">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="QuestionnaireResponse.item.answer.value[x]"/>
+      <sliceName value="valueAttachment"/>
+      <short value="Single-valued answer to the question"/>
+      <definition value="The answer (or one of the answers) provided by the respondent to the question."/>
+      <comment value="More complex structures (Attachment, Resource and Quantity) will typically be limited to electronic forms that can expose an appropriate user interface to capture the components and enforce the constraints of a complex data type.  Additional complex types can be introduced through extensions. Must match the datatype specified by Questionnaire.item.type in the corresponding Questionnaire."/>
+      <requirements value="Ability to retain a single-valued answer to a question."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="QuestionnaireResponse.item.answer.value[x]"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Attachment"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".item"/>
+      </mapping>
+    </element>
+    <element id="QuestionnaireResponse.item.answer.value[x]:valueReference">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implied-type-slice">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="QuestionnaireResponse.item.answer.value[x]"/>
+      <sliceName value="valueReference"/>
+      <short value="Single-valued answer to the question"/>
+      <definition value="The answer (or one of the answers) provided by the respondent to the question."/>
+      <comment value="More complex structures (Attachment, Resource and Quantity) will typically be limited to electronic forms that can expose an appropriate user interface to capture the components and enforce the constraints of a complex data type.  Additional complex types can be introduced through extensions. Must match the datatype specified by Questionnaire.item.type in the corresponding Questionnaire."/>
+      <requirements value="Ability to retain a single-valued answer to a question."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="QuestionnaireResponse.item.answer.value[x]"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource|4.0.1"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value=".item"/>
@@ -2336,63 +1802,26 @@
     </element>
     <element id="QuestionnaireResponse.identifier">
       <path value="QuestionnaireResponse.identifier"/>
-      <min value="1"/>
-    </element>
-    <element id="QuestionnaireResponse.identifier.use">
-      <path value="QuestionnaireResponse.identifier.use"/>
-      <max value="0"/>
-    </element>
-    <element id="QuestionnaireResponse.identifier.system">
-      <path value="QuestionnaireResponse.identifier.system"/>
       <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;VragenlijstAntwoordID"/>
-        <comment value="Systeemdeel van de samengestelde identifier."/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.identifier.value">
-      <path value="QuestionnaireResponse.identifier.value"/>
-      <min value="1"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;VragenlijstAntwoordID"/>
-        <comment value="Waardedeel van de samengestelde identifier; hash."/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.questionnaire">
-      <path value="QuestionnaireResponse.questionnaire"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;QuestionnaireResponseQuestionnaire"/>
-        <comment value="Canonical-verwijzing naar de Questionnaire."/>
+        <identity value="QuestionnaireResponseSanFromSIMVragenlijstAntwoord"/>
+        <map value="SIMVragenlijstAntwoord.VragenlijstAntwoordID"/>
+        <comment value="Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."/>
       </mapping>
     </element>
     <element id="QuestionnaireResponse.subject">
       <path value="QuestionnaireResponse.subject"/>
-      <min value="1"/>
-      <type>
-        <code value="Reference"/>
-        <targetProfile value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"/>
-      </type>
       <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;Identificatienummer"/>
-        <comment value="Patient-reference op basis van patiëntidentifier."/>
+        <identity value="QuestionnaireResponseSanFromSIMVragenlijstAntwoord"/>
+        <map value="SIMVragenlijstAntwoord.PatientIdentificatienummer"/>
+        <comment value="Structuurconversie: Patient-reference op basis van identificatienummer; SIM benoemt daarnaast QuestionnaireResponse.source."/>
       </mapping>
     </element>
     <element id="QuestionnaireResponse.authored">
       <path value="QuestionnaireResponse.authored"/>
       <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;InvulDatumTijd"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.linkId">
-      <path value="QuestionnaireResponse.item.linkId"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;QuestionnaireResponseItemLinkId"/>
-        <comment value="Verwijzing naar het item in de Questionnaire."/>
+        <identity value="QuestionnaireResponseSanFromSIMVragenlijstAntwoord"/>
+        <map value="SIMVragenlijstAntwoord.InvulDatumTijd"/>
+        <comment value="Direct: SIM dateTime wordt overgenomen als FHIR dateTime."/>
       </mapping>
     </element>
     <element id="QuestionnaireResponse.item.answer.value[x]">
@@ -2405,15 +1834,6 @@
         <ordered value="false"/>
         <rules value="open"/>
       </slicing>
-      <type>
-        <code value="dateTime"/>
-      </type>
-      <type>
-        <code value="Coding"/>
-      </type>
-      <type>
-        <code value="Quantity"/>
-      </type>
     </element>
     <element id="QuestionnaireResponse.item.answer.value[x]:valueQuantity">
       <path value="QuestionnaireResponse.item.answer.value[x]"/>
@@ -2423,33 +1843,10 @@
       <type>
         <code value="Quantity"/>
       </type>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueQuantity.value">
-      <path value="QuestionnaireResponse.item.answer.value[x].value"/>
       <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordWaarde"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueQuantity.comparator">
-      <path value="QuestionnaireResponse.item.answer.value[x].comparator"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordWaardeOperator"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueQuantity.system">
-      <path value="QuestionnaireResponse.item.answer.value[x].system"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordWaardeEenheidSysteem"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueQuantity.code">
-      <path value="QuestionnaireResponse.item.answer.value[x].code"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordWaardeEenheid"/>
+        <identity value="QuestionnaireResponseSanFromSIMVragenlijstAntwoord"/>
+        <map value="SIMVragenlijstAntwoord.AntwoordWaarde"/>
+        <comment value="Structuurconversie: één SIM-record wordt één item met één answer; SIM Quantity wordt overgenomen als FHIR Quantity."/>
       </mapping>
     </element>
     <element id="QuestionnaireResponse.item.answer.value[x]:valueCoding">
@@ -2460,26 +1857,10 @@
       <type>
         <code value="Coding"/>
       </type>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueCoding.system">
-      <path value="QuestionnaireResponse.item.answer.value[x].system"/>
       <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordCodeSysteem"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueCoding.code">
-      <path value="QuestionnaireResponse.item.answer.value[x].code"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordCode"/>
-      </mapping>
-    </element>
-    <element id="QuestionnaireResponse.item.answer.value[x]:valueCoding.display">
-      <path value="QuestionnaireResponse.item.answer.value[x].display"/>
-      <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordCodeOmschrijving"/>
+        <identity value="QuestionnaireResponseSanFromSIMVragenlijstAntwoord"/>
+        <map value="SIMVragenlijstAntwoord.AntwoordCode"/>
+        <comment value="Structuurconversie: één SIM-record wordt één item met één answer; SIM Coding wordt overgenomen als FHIR Coding."/>
       </mapping>
     </element>
     <element id="QuestionnaireResponse.item.answer.value[x]:valueDateTime">
@@ -2491,8 +1872,9 @@
         <code value="dateTime"/>
       </type>
       <mapping>
-        <identity value="sim"/>
-        <map value="VragenlijstAntwoord;AntwoordDatumTijd"/>
+        <identity value="QuestionnaireResponseSanFromSIMVragenlijstAntwoord"/>
+        <map value="SIMVragenlijstAntwoord.AntwoordDatumTijd"/>
+        <comment value="Structuurconversie: één SIM-record wordt één item met één answer; SIM dateTime wordt overgenomen als FHIR dateTime."/>
       </mapping>
     </element>
   </differential>

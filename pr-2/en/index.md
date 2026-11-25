@@ -8,8 +8,8 @@ How the **Santeon Informatie Model (SIM)** maps to FHIR. The guide is general; i
 
 #### Scope
 
-* **SIM logical models**, including mappings to the source CSVs and to FHIR.
-* **FHIR profiles**: Condition, EpisodeOfCare, Patient, Procedure and Observation.
+* **SIM logical models**, including mappings to the source CSVs, the Nictiz GBB and FHIR ([overview](CLMs.md)).
+* **FHIR profiles** for the SIM building blocks, each with the SIM provenance per element and, where a matching profile exists, a technical comparison with Nictiz nl-core ([overview](profiles.md)).
 * **Datasets**, one per disease area (currently IBD): the cohort, the KPI definitions and the export request for each, derived from [KPI definitions](kpi-definitions.md).
 * **Indicators** that use the datasets.
 * **De-identification** of exports.

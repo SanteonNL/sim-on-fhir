@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMCarePlan.csv),
   "name" : "SIMCarePlan",
   "title" : "Zorgplan (model)",
   "status" : "draft",
-  "date" : "2026-11-19T16:55:06+00:00",
+  "date" : "2026-11-25T16:23:55+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -50,12 +50,14 @@ Other representations of profile: [CSV](../StructureDefinition-SIMCarePlan.csv),
   "mapping" : [{
     "identity" : "SIMCarePlanFromSIMCSV",
     "uri" : "urn:santeon:sim:csv",
-    "name" : "SIM CSV"
+    "name" : "SIM CSV",
+    "comment" : "Herleidbaarheid van SIMCarePlan-elementen naar de oorspronkelijke SIM CSV-attributen."
   },
   {
     "identity" : "SIMCarePlanToFHIR",
     "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/carePlan-san",
-    "name" : "SIMCarePlan naar FHIR"
+    "name" : "FHIR-mapping naar CarePlanSan",
+    "comment" : "Mapping van SIMCarePlan-elementen naar het Santeon FHIR-profiel CarePlanSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."
   }],
   "kind" : "logical",
   "abstract" : false,
@@ -85,7 +87,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMCarePlan.csv),
       },
       {
         "identity" : "SIMCarePlanToFHIR",
-        "map" : "CarePlan.identifier"
+        "map" : "CarePlan.identifier",
+        "comment" : "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
       }]
     },
     {
@@ -105,7 +108,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMCarePlan.csv),
       {
         "identity" : "SIMCarePlanToFHIR",
         "map" : "CarePlan.subject",
-        "comment" : "Patient-reference op basis van identificatienummer."
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer."
       }]
     },
     {
@@ -124,7 +127,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMCarePlan.csv),
       },
       {
         "identity" : "SIMCarePlanToFHIR",
-        "map" : "CarePlan.status"
+        "map" : "CarePlan.status",
+        "comment" : "Direct: SIM code wordt overgenomen als FHIR code; aansluiting op FHIR request-status nog te bevestigen."
       }]
     },
     {
@@ -139,7 +143,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMCarePlan.csv),
       }],
       "mapping" : [{
         "identity" : "SIMCarePlanToFHIR",
-        "map" : "CarePlan.category"
+        "map" : "CarePlan.category",
+        "comment" : "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
       }]
     },
     {
@@ -182,7 +187,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMCarePlan.csv),
       },
       {
         "identity" : "SIMCarePlanToFHIR",
-        "map" : "CarePlan.period.start"
+        "map" : "CarePlan.period.start",
+        "comment" : "Structuurconversie: SIM StartDatumTijd en EindDatumTijd vormen samen de FHIR Period."
       }]
     },
     {
@@ -201,7 +207,8 @@ Other representations of profile: [CSV](../StructureDefinition-SIMCarePlan.csv),
       },
       {
         "identity" : "SIMCarePlanToFHIR",
-        "map" : "CarePlan.period.end"
+        "map" : "CarePlan.period.end",
+        "comment" : "Structuurconversie: SIM StartDatumTijd en EindDatumTijd vormen samen de FHIR Period."
       }]
     }]
   }

@@ -1,17 +1,5 @@
 {
   "codeSystems" : [{
-    "url" : "http://hl7.org/fhir/administrative-gender",
-    "version" : "4.0.1",
-    "status" : "active",
-    "name" : "AdministrativeGender",
-    "title" : "AdministrativeGender",
-    "description" : "The gender of a person used for administrative purposes.",
-    "oids" : ["2.16.840.1.113883.4.642.4.2"],
-    "uses" : {
-    },
-    "http://hl7.org/fhir/R4/valueset-administrative-gender.html" : "AdministrativeGender"
-  },
-  {
     "url" : "http://loinc.org",
     "version" : "3.1.0",
     "status" : "active",
@@ -21,8 +9,8 @@
     "oids" : ["2.16.840.1.113883.6.1"],
     "uses" : {
     },
-    "ValueSet-observationCode-san-kpi.html" : "Observation code (SAN KPI)",
-    "ValueSet-Santeon-MetingNaamCodelijst.html" : "Santeon_MetingNaamCodelijst"
+    "ValueSet-Santeon-MetingNaamCodelijst.html" : "Santeon_MetingNaamCodelijst",
+    "ValueSet-observationCode-san-kpi.html" : "Observation code (SAN KPI)"
   },
   {
     "url" : "http://snomed.info/sct",
@@ -34,10 +22,10 @@
     "oids" : ["2.16.840.1.113883.6.96"],
     "uses" : {
     },
-    "ValueSet-observationCode-san-kpi.html" : "Observation code (SAN KPI)",
-    "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst",
+    "ValueSet-TabakGebruikStatusCodelijst.html" : "TabakGebruikStatusCodelijst",
     "ValueSet-Santeon-MetingNaamCodelijst.html" : "Santeon_MetingNaamCodelijst",
-    "ValueSet-TabakGebruikStatusCodelijst.html" : "TabakGebruikStatusCodelijst"
+    "ValueSet-observationCode-san-kpi.html" : "Observation code (SAN KPI)",
+    "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
@@ -61,8 +49,8 @@
     "oids" : ["2.16.840.1.113883.5.1008"],
     "uses" : {
     },
-    "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst",
-    "ValueSet-TabakGebruikStatusCodelijst.html" : "TabakGebruikStatusCodelijst"
+    "ValueSet-TabakGebruikStatusCodelijst.html" : "TabakGebruikStatusCodelijst",
+    "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst"
   },
   {
     "url" : "https://ig.santeon.nl/sim-on-fhir/CodeSystem/deidentification-action-cs",

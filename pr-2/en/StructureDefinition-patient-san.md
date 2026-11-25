@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Refer to this Profile: [CarePlan (SAN)](StructureDefinition-carePlan-san.md), [Condition (SAN)](StructureDefinition-condition-san.md), [Encounter (SAN)](StructureDefinition-encounter-san.md), [EpisodeOfCare (SAN)](StructureDefinition-episodeOfCare-san.md)... Show 4 more, [MedicationRequest (SAN)](StructureDefinition-medicationRequest-san.md), [Observation (SAN)](StructureDefinition-observation-san.md), [Procedure (SAN)](StructureDefinition-procedure-san.md) and [QuestionnaireResponse (SAN)](StructureDefinition-questionnaireResponse-san.md)
+* This Profile is not used by any profiles in this Specification
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/santeon.sim-on-fhir|current/StructureDefinition/StructureDefinition-patient-san.json)
 
@@ -24,12 +24,16 @@ Other representations of profile: [CSV](../StructureDefinition-patient-san.csv),
 {
   "resourceType" : "StructureDefinition",
   "id" : "patient-san",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile",
+    "valueCanonical" : "http://hl7.eu/fhir/base/StructureDefinition/patient-eu-core"
+  }],
   "url" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san",
   "version" : "0.1.0",
   "name" : "PatientSan",
   "title" : "Patient (SAN)",
   "status" : "draft",
-  "date" : "2026-11-19T16:55:06+00:00",
+  "date" : "2026-11-25T16:23:55+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -38,7 +42,7 @@ Other representations of profile: [CSV](../StructureDefinition-patient-san.csv),
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "Santeon FHIR R4-profiel voor patiëntgegevens, gebaseerd op het Santeon Informatiemodel (SIMPatient).",
+  "description" : "Santeon FHIR R4-profiel voor patiëntgegevens, gebaseerd op het Santeon Informatiemodel (SIMPatient) en afgeleid van Nictiz nl-core-Patient.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -48,10 +52,26 @@ Other representations of profile: [CSV](../StructureDefinition-patient-san.csv),
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
+    "identity" : "PatientSanFromSIMPatient",
+    "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMPatient",
+    "name" : "SIM Logical Model SIMPatient",
+    "comment" : "Herkomst van de PatientSan-elementen in Patiënt (SIMPatient), met de conversietoelichting. Afgeleid van SIMPatientToFHIR; wijzigingen alleen daar aanbrengen."
+  },
+  {
     "identity" : "PatientSanToNlCore",
     "uri" : "http://ig.nictiz.nl/gbb/StructureDefinition/nl-core-Patient",
     "name" : "Nictiz nl-core-Patient",
-    "comment" : "Technische vergelijking tussen PatientSan en Nictiz nl-core Patient (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen in FHIR-elementen, cardinaliteiten, datatypes en terminologiebindingen. Legenda: 🟢 Beoordeeld, equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."
+    "comment" : "Technische delta-analyse tussen PatientSan en Nictiz nl-core-Patient (referentieversie 1.0.0-alpha.2). Legt per FHIR-element binnen de IBD-scope de uitkomst van de vergelijking vast. Equivalent betekent dat het element is beoordeeld en er geen relevant technisch verschil is vastgesteld. 🟡 markeert een vastgesteld verschil of een openstaande beoordeling."
+  },
+  {
+    "identity" : "requirements-Patient",
+    "uri" : "http://ig.nictiz.nl/gbb/Requirements/Patient",
+    "name" : "Information requirements for Patient"
+  },
+  {
+    "identity" : "lm-Patient",
+    "uri" : "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelPatient",
+    "name" : "Logical model for Patient"
   },
   {
     "identity" : "rim",
@@ -81,7 +101,7 @@ Other representations of profile: [CSV](../StructureDefinition-patient-san.csv),
   "kind" : "resource",
   "abstract" : false,
   "type" : "Patient",
-  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Patient",
+  "baseDefinition" : "http://ig.nictiz.nl/gbb/StructureDefinition/nl-core-Patient",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -91,50 +111,61 @@ Other representations of profile: [CSV](../StructureDefinition-patient-san.csv),
     {
       "id" : "Patient.identifier",
       "path" : "Patient.identifier",
-      "min" : 1,
       "mapping" : [{
+        "identity" : "PatientSanFromSIMPatient",
+        "map" : "SIMPatient.Identificatienummer",
+        "comment" : "Direct: system en value worden behouden conform de afgesproken identificatiesystematiek."
+      },
+      {
         "identity" : "PatientSanToNlCore",
         "map" : "Patient.identifier",
-        "comment" : "🟡 Verschil in profilering: Nictiz definieert aanvullend een optionele BSN-slice 0..1."
+        "comment" : "Equivalent"
       }]
-    },
-    {
-      "id" : "Patient.identifier.value",
-      "path" : "Patient.identifier.value",
-      "min" : 1
     },
     {
       "id" : "Patient.gender",
       "path" : "Patient.gender",
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "http://hl7.org/fhir/ValueSet/administrative-gender"
-      },
       "mapping" : [{
+        "identity" : "PatientSanFromSIMPatient",
+        "map" : "SIMPatient.Geslacht",
+        "comment" : "Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender."
+      },
+      {
         "identity" : "PatientSanToNlCore",
         "map" : "Patient.gender",
-        "comment" : "🟢 Equivalent: beide gebruiken FHIR AdministrativeGender met required binding en cardinaliteit 0..1."
+        "comment" : "Equivalent"
       }]
     },
     {
       "id" : "Patient.birthDate",
       "path" : "Patient.birthDate",
       "mapping" : [{
+        "identity" : "PatientSanFromSIMPatient",
+        "map" : "SIMPatient.Geboortedatum",
+        "comment" : "Direct: SIM date wordt overgenomen als FHIR date."
+      },
+      {
         "identity" : "PatientSanToNlCore",
         "map" : "Patient.birthDate",
-        "comment" : "🟢 Equivalent: beide gebruiken FHIR date met cardinaliteit 0..1."
+        "comment" : "Equivalent"
       }]
     },
     {
-      "id" : "Patient.deceased[x]",
+      "id" : "Patient.deceased[x]:deceasedDateTime",
       "path" : "Patient.deceased[x]",
+      "sliceName" : "deceasedDateTime",
       "type" : [{
         "code" : "dateTime"
       }],
       "mapping" : [{
+        "identity" : "PatientSanFromSIMPatient",
+        "map" : "SIMPatient.DatumOverlijden",
+        "comment" : "Datatypeconversie: SIM date naar FHIR dateTime met dagprecisie; deceasedBoolean wordt vanuit dit SIM-element niet gevuld."
+      },
+      {
         "identity" : "PatientSanToNlCore",
         "map" : "Patient.deceasedDateTime",
-        "comment" : "🟡 Verschil in representatie: PatientSan beperkt deceased[x] tot dateTime; nl-core ondersteunt daarnaast boolean."
+        "comment" : "Equivalent"
       }]
     }]
   }

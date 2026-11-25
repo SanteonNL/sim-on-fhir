@@ -19,7 +19,7 @@
   <name value="SIMPatient"/>
   <title value="Patiënt (model)"/>
   <status value="draft"/>
-  <date value="2026-11-19T16:55:06+00:00"/>
+  <date value="2026-11-25T16:23:55+00:00"/>
   <publisher value="Santeon"/>
   <contact>
     <name value="Santeon"/>
@@ -47,12 +47,12 @@
     <identity value="SIMPatientToGBB"/>
     <uri value="http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelPatient"/>
     <name value="Nictiz GBB-afsprakenmodel"/>
-    <comment value="Semantische vergelijking tussen SIMPatient en Nictiz GBB Patient (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen. Legenda: 🟢 Beoordeeld, equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."/>
+    <comment value="Semantische vergelijking tussen SIMPatient en Nictiz GBB Patient (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen. Legenda: 🟢 Equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."/>
   </mapping>
   <mapping>
     <identity value="SIMPatientToFHIR"/>
     <uri value="https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"/>
-    <name value="Santeon FHIR PatientSan"/>
+    <name value="FHIR-mapping naar PatientSan"/>
     <comment value="Mapping van SIMPatient-elementen naar het Santeon FHIR-profiel PatientSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."/>
   </mapping>
   <kind value="logical"/>
@@ -103,6 +103,7 @@
       <mapping>
         <identity value="SIMPatientToFHIR"/>
         <map value="Patient.identifier"/>
+        <comment value="Direct: system en value worden behouden conform de afgesproken identificatiesystematiek."/>
       </mapping>
     </element>
     <element id="SIMPatient.Geslacht">
@@ -139,7 +140,7 @@
       <mapping>
         <identity value="SIMPatientToFHIR"/>
         <map value="Patient.gender"/>
-        <comment value="Terminologiemapping van SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender vereist."/>
+        <comment value="Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender."/>
       </mapping>
     </element>
     <element id="SIMPatient.Geslacht.id">
@@ -350,11 +351,12 @@
       <mapping>
         <identity value="SIMPatientToGBB"/>
         <map value="Patient.dateOfBirth"/>
-        <comment value="🟢 Equivalent: SIM date is compatibel met GBB dateTime op dagniveau."/>
+        <comment value="🟢 Semantisch compatibel op dagniveau: SIM gebruikt date; GBB gebruikt dateTime."/>
       </mapping>
       <mapping>
         <identity value="SIMPatientToFHIR"/>
         <map value="Patient.birthDate"/>
+        <comment value="Direct: SIM date wordt overgenomen als FHIR date."/>
       </mapping>
     </element>
     <element id="SIMPatient.DatumOverlijden">
@@ -377,13 +379,13 @@
       </mapping>
       <mapping>
         <identity value="SIMPatientToGBB"/>
-        <map value="Patient.deceasedDateTime"/>
-        <comment value="🟡 Verschil in representatie: SIM gebruikt date; GBB ondersteunt dateTime en boolean."/>
+        <map value="Patient.deceased[x]"/>
+        <comment value="🟡 Verschil in representatie: SIM registreert uitsluitend de overlijdensdatum als date; GBB ondersteunt zowel dateTime als boolean."/>
       </mapping>
       <mapping>
         <identity value="SIMPatientToFHIR"/>
-        <map value="Patient.deceased[x]"/>
-        <comment value="SIM date wordt gerepresenteerd als FHIR dateTime met dagprecisie. De boolean-variant wordt niet vanuit dit SIM-element gevuld."/>
+        <map value="Patient.deceasedDateTime"/>
+        <comment value="Datatypeconversie: SIM date naar FHIR dateTime met dagprecisie; deceasedBoolean wordt vanuit dit SIM-element niet gevuld."/>
       </mapping>
     </element>
   </snapshot>
@@ -414,6 +416,7 @@
       <mapping>
         <identity value="SIMPatientToFHIR"/>
         <map value="Patient.identifier"/>
+        <comment value="Direct: system en value worden behouden conform de afgesproken identificatiesystematiek."/>
       </mapping>
     </element>
     <element id="SIMPatient.Geslacht">
@@ -437,7 +440,7 @@
       <mapping>
         <identity value="SIMPatientToFHIR"/>
         <map value="Patient.gender"/>
-        <comment value="Terminologiemapping van SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender vereist."/>
+        <comment value="Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender."/>
       </mapping>
     </element>
     <element id="SIMPatient.Geslacht.coding.system">
@@ -477,11 +480,12 @@
       <mapping>
         <identity value="SIMPatientToGBB"/>
         <map value="Patient.dateOfBirth"/>
-        <comment value="🟢 Equivalent: SIM date is compatibel met GBB dateTime op dagniveau."/>
+        <comment value="🟢 Semantisch compatibel op dagniveau: SIM gebruikt date; GBB gebruikt dateTime."/>
       </mapping>
       <mapping>
         <identity value="SIMPatientToFHIR"/>
         <map value="Patient.birthDate"/>
+        <comment value="Direct: SIM date wordt overgenomen als FHIR date."/>
       </mapping>
     </element>
     <element id="SIMPatient.DatumOverlijden">
@@ -499,13 +503,13 @@
       </mapping>
       <mapping>
         <identity value="SIMPatientToGBB"/>
-        <map value="Patient.deceasedDateTime"/>
-        <comment value="🟡 Verschil in representatie: SIM gebruikt date; GBB ondersteunt dateTime en boolean."/>
+        <map value="Patient.deceased[x]"/>
+        <comment value="🟡 Verschil in representatie: SIM registreert uitsluitend de overlijdensdatum als date; GBB ondersteunt zowel dateTime als boolean."/>
       </mapping>
       <mapping>
         <identity value="SIMPatientToFHIR"/>
-        <map value="Patient.deceased[x]"/>
-        <comment value="SIM date wordt gerepresenteerd als FHIR dateTime met dagprecisie. De boolean-variant wordt niet vanuit dit SIM-element gevuld."/>
+        <map value="Patient.deceasedDateTime"/>
+        <comment value="Datatypeconversie: SIM date naar FHIR dateTime met dagprecisie; deceasedBoolean wordt vanuit dit SIM-element niet gevuld."/>
       </mapping>
     </element>
   </differential>

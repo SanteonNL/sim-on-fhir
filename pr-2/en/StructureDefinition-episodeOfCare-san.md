@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Refer to this Profile: [Encounter (SAN)](StructureDefinition-encounter-san.md)
+* This Profile is not used by any profiles in this Specification
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/santeon.sim-on-fhir|current/StructureDefinition/StructureDefinition-episodeOfCare-san.json)
 
@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-episodeOfCare-san
   "name" : "EpisodeOfCareSan",
   "title" : "EpisodeOfCare (SAN)",
   "status" : "draft",
-  "date" : "2026-11-19T16:55:06+00:00",
+  "date" : "2026-11-25T16:23:55+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-episodeOfCare-san
       "value" : "https://www.santeon.nl"
     }]
   }],
-  "description" : "Generiek Santeon FHIR R4-profiel voor zorgepisodes.\n\nGebaseerd op het Santeon Informatiemodel (SIMDBC), waarbij\nnog moet worden vastgesteld hoe een DBC-subtraject zich\nverhoudt tot een FHIR EpisodeOfCare.\n\nDe-identificatie wordt uitgevoerd volgens afzonderlijke\ntransformatiespecificaties en is geen inherente\neigenschap van dit profiel.",
+  "description" : "Santeon FHIR R4-profiel voor zorgepisodes, gebaseerd op het Santeon Informatiemodel (SIMDBC) en afgeleid van FHIR R4 EpisodeOfCare.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -48,10 +48,10 @@ Other representations of profile: [CSV](../StructureDefinition-episodeOfCare-san
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
-    "identity" : "sim-dbc",
-    "uri" : "urn:santeon:sim:csv",
-    "name" : "Santeon Informatiemodel (SIM CSV)",
-    "comment" : "Informatieve mapping van FHIR EpisodeOfCare naar SIM DBC-bronvelden."
+    "identity" : "EpisodeOfCareSanFromSIMDBC",
+    "uri" : "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMDBC",
+    "name" : "SIM Logical Model SIMDBC",
+    "comment" : "Herkomst van de EpisodeOfCareSan-elementen in DBC/Zorgtraject (SIMDBC), met de conversietoelichting. Afgeleid van SIMDBCToFHIR; wijzigingen alleen daar aanbrengen."
   },
   {
     "identity" : "workflow",
@@ -79,85 +79,48 @@ Other representations of profile: [CSV](../StructureDefinition-episodeOfCare-san
       "path" : "EpisodeOfCare"
     },
     {
-      "id" : "EpisodeOfCare.identifier.system",
-      "path" : "EpisodeOfCare.identifier.system",
+      "id" : "EpisodeOfCare.identifier",
+      "path" : "EpisodeOfCare.identifier",
       "mapping" : [{
-        "identity" : "sim-dbc",
-        "map" : "DBC;SubtrajectNr",
-        "comment" : "Systeemdeel van de samengestelde identifier."
+        "identity" : "EpisodeOfCareSanFromSIMDBC",
+        "map" : "SIMDBC.SubtrajectNummer",
+        "comment" : "Direct: indien één EpisodeOfCare één DBC-subtraject representeert; samengestelde identifier (system|value), waardedeel gehasht volgens de ETL-specificatie."
       }]
     },
     {
-      "id" : "EpisodeOfCare.identifier.value",
-      "path" : "EpisodeOfCare.identifier.value",
-      "min" : 1,
+      "id" : "EpisodeOfCare.type",
+      "path" : "EpisodeOfCare.type",
       "mapping" : [{
-        "identity" : "sim-dbc",
-        "map" : "DBC;SubtrajectNr",
-        "comment" : "Waardedeel van de samengestelde identifier; hash volgens ETL-specificatie."
-      }]
-    },
-    {
-      "id" : "EpisodeOfCare.type.coding.system",
-      "path" : "EpisodeOfCare.type.coding.system",
-      "mapping" : [{
-        "identity" : "sim-dbc",
-        "map" : "DBC;ZorgTypeCodeSysteem"
-      }]
-    },
-    {
-      "id" : "EpisodeOfCare.type.coding.code",
-      "path" : "EpisodeOfCare.type.coding.code",
-      "mapping" : [{
-        "identity" : "sim-dbc",
-        "map" : "DBC;ZorgTypeCode"
-      }]
-    },
-    {
-      "id" : "EpisodeOfCare.type.coding.display",
-      "path" : "EpisodeOfCare.type.coding.display",
-      "mapping" : [{
-        "identity" : "sim-dbc",
-        "map" : "DBC;ZorgTypeOmschrijving"
-      }]
-    },
-    {
-      "id" : "EpisodeOfCare.diagnosis.condition",
-      "path" : "EpisodeOfCare.diagnosis.condition",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://ig.santeon.nl/sim-on-fhir/StructureDefinition/condition-san"]
+        "identity" : "EpisodeOfCareSanFromSIMDBC",
+        "map" : "SIMDBC.ZorgType",
+        "comment" : "Direct: mits het zorgtype de zorgepisode correct classificeert."
       }]
     },
     {
       "id" : "EpisodeOfCare.patient",
       "path" : "EpisodeOfCare.patient",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"]
-      }],
       "mapping" : [{
-        "identity" : "sim-dbc",
-        "map" : "DBC;Identificatienummer",
-        "comment" : "Reference naar PatientSan op basis van patiëntidentifier."
+        "identity" : "EpisodeOfCareSanFromSIMDBC",
+        "map" : "SIMDBC.PatientIdentificatienummer",
+        "comment" : "Structuurconversie: Patient-reference op basis van identificatienummer."
       }]
     },
     {
       "id" : "EpisodeOfCare.period.start",
       "path" : "EpisodeOfCare.period.start",
       "mapping" : [{
-        "identity" : "sim-dbc",
-        "map" : "DBC;DBCOpeningsDatum",
-        "comment" : "Alleen indien gelijk aan begin van de zorgepisode."
+        "identity" : "EpisodeOfCareSanFromSIMDBC",
+        "map" : "SIMDBC.OpeningsDatum",
+        "comment" : "Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."
       }]
     },
     {
       "id" : "EpisodeOfCare.period.end",
       "path" : "EpisodeOfCare.period.end",
       "mapping" : [{
-        "identity" : "sim-dbc",
-        "map" : "DBC;DBCSluitingsDatum",
-        "comment" : "Alleen indien gelijk aan einde van de zorgepisode."
+        "identity" : "EpisodeOfCareSanFromSIMDBC",
+        "map" : "SIMDBC.SluitingsDatum",
+        "comment" : "Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."
       }]
     }]
   }

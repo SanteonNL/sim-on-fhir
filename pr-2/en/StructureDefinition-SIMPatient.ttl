@@ -18,7 +18,7 @@
   fhir:StructureDefinition.name [ fhir:value "SIMPatient"] ;
   fhir:StructureDefinition.title [ fhir:value "Patiënt (model)"] ;
   fhir:StructureDefinition.status [ fhir:value "draft"] ;
-  fhir:StructureDefinition.date [ fhir:value "2026-11-19T16:55:06+00:00"^^xsd:dateTime] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-11-25T16:23:55+00:00"^^xsd:dateTime] ;
   fhir:StructureDefinition.publisher [ fhir:value "Santeon"] ;
   fhir:StructureDefinition.contact [
      fhir:index -1 ;
@@ -51,12 +51,12 @@
      fhir:StructureDefinition.mapping.identity [ fhir:value "SIMPatientToGBB" ] ;
      fhir:StructureDefinition.mapping.uri [ fhir:value "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelPatient" ] ;
      fhir:StructureDefinition.mapping.name [ fhir:value "Nictiz GBB-afsprakenmodel" ] ;
-     fhir:StructureDefinition.mapping.comment [ fhir:value "Semantische vergelijking tussen SIMPatient en Nictiz GBB Patient (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen. Legenda: 🟢 Beoordeeld, equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen." ]
+     fhir:StructureDefinition.mapping.comment [ fhir:value "Semantische vergelijking tussen SIMPatient en Nictiz GBB Patient (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen. Legenda: 🟢 Equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen." ]
   ], [
      fhir:index -1 ;
      fhir:StructureDefinition.mapping.identity [ fhir:value "SIMPatientToFHIR" ] ;
      fhir:StructureDefinition.mapping.uri [ fhir:value "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san" ] ;
-     fhir:StructureDefinition.mapping.name [ fhir:value "Santeon FHIR PatientSan" ] ;
+     fhir:StructureDefinition.mapping.name [ fhir:value "FHIR-mapping naar PatientSan" ] ;
      fhir:StructureDefinition.mapping.comment [ fhir:value "Mapping van SIMPatient-elementen naar het Santeon FHIR-profiel PatientSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies." ]
   ] ;
   fhir:StructureDefinition.kind [ fhir:value "logical"] ;
@@ -116,7 +116,8 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMPatientToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.identifier" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.identifier" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: system en value worden behouden conform de afgesproken identificatiesystematiek." ]
        ]
      ], [
        fhir:index -1 ;
@@ -163,7 +164,7 @@
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMPatientToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Patient.gender" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Terminologiemapping van SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender vereist." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender." ]
        ]
      ], [
        fhir:index -1 ;
@@ -423,11 +424,12 @@
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMPatientToGBB" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Patient.dateOfBirth" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "🟢 Equivalent: SIM date is compatibel met GBB dateTime op dagniveau." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "🟢 Semantisch compatibel op dagniveau: SIM gebruikt date; GBB gebruikt dateTime." ]
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMPatientToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.birthDate" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.birthDate" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM date wordt overgenomen als FHIR date." ]
        ]
      ], [
        fhir:index -1 ;
@@ -453,13 +455,13 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMPatientToGBB" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.deceasedDateTime" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "🟡 Verschil in representatie: SIM gebruikt date; GBB ondersteunt dateTime en boolean." ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.deceased[x]" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "🟡 Verschil in representatie: SIM registreert uitsluitend de overlijdensdatum als date; GBB ondersteunt zowel dateTime als boolean." ]
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMPatientToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.deceased[x]" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "SIM date wordt gerepresenteerd als FHIR dateTime met dagprecisie. De boolean-variant wordt niet vanuit dit SIM-element gevuld." ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.deceasedDateTime" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Datatypeconversie: SIM date naar FHIR dateTime met dagprecisie; deceasedBoolean wordt vanuit dit SIM-element niet gevuld." ]
        ]
      ]
   ] ;
@@ -494,7 +496,8 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMPatientToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.identifier" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.identifier" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: system en value worden behouden conform de afgesproken identificatiesystematiek." ]
        ]
      ], [
        fhir:index -1 ;
@@ -524,7 +527,7 @@
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMPatientToFHIR" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Patient.gender" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "Terminologiemapping van SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender vereist." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender." ]
        ]
      ], [
        fhir:index -1 ;
@@ -573,11 +576,12 @@
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMPatientToGBB" ] ;
          fhir:ElementDefinition.mapping.map [ fhir:value "Patient.dateOfBirth" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "🟢 Equivalent: SIM date is compatibel met GBB dateTime op dagniveau." ]
+         fhir:ElementDefinition.mapping.comment [ fhir:value "🟢 Semantisch compatibel op dagniveau: SIM gebruikt date; GBB gebruikt dateTime." ]
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMPatientToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.birthDate" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.birthDate" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Direct: SIM date wordt overgenomen als FHIR date." ]
        ]
      ], [
        fhir:index -1 ;
@@ -598,13 +602,13 @@
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMPatientToGBB" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.deceasedDateTime" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "🟡 Verschil in representatie: SIM gebruikt date; GBB ondersteunt dateTime en boolean." ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.deceased[x]" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "🟡 Verschil in representatie: SIM registreert uitsluitend de overlijdensdatum als date; GBB ondersteunt zowel dateTime als boolean." ]
        ], [
          fhir:index -1 ;
          fhir:ElementDefinition.mapping.identity [ fhir:value "SIMPatientToFHIR" ] ;
-         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.deceased[x]" ] ;
-         fhir:ElementDefinition.mapping.comment [ fhir:value "SIM date wordt gerepresenteerd als FHIR dateTime met dagprecisie. De boolean-variant wordt niet vanuit dit SIM-element gevuld." ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "Patient.deceasedDateTime" ] ;
+         fhir:ElementDefinition.mapping.comment [ fhir:value "Datatypeconversie: SIM date naar FHIR dateTime met dagprecisie; deceasedBoolean wordt vanuit dit SIM-element niet gevuld." ]
        ]
      ]
   ] .
