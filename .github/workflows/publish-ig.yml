@@ -85,7 +85,7 @@ jobs:
       - name: Check generated definitions are up to date
         run: |
           python3 _generateFromDefinitions.py
-          git diff --exit-code -- input/fsh/generated input/pagecontent || {
+          git diff --exit-code -- input/fsh/generated input/fsh/fhir input/pagecontent || {
             echo "::error::Generated files are out of date. Run '_generateFromDefinitions.py' and commit the result."
             exit 1
           }

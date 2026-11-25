@@ -13,6 +13,13 @@ Derives the IG model from the definitions in input/fsh/definitions/:
   input/fsh/generated/Exports.fsh    per dataset: a Group (cohort as bulk-data
                                      member-filters) and a Parameters
                                      (_type, _typeFilter, _elements)
+  input/fsh/fhir/<Profile>.fsh       every LM -> FHIR mapping, reversed into
+                                     its target profile (map + comment), so
+                                     it shows on the profile's Mappings tab;
+                                     written between the markers
+                                     // BEGIN GENERATED SIM MAPPING and
+                                     // END GENERATED SIM MAPPING of the file
+                                     that defines the profile
   input/pagecontent/datasets.md      overview + derived model
   input/pagecontent/dataset-<id>.md  one readable page per dataset
   input/pagecontent/CLMs.md          catalogue of the SIM logical models (input/fsh/sim/)
@@ -147,6 +154,13 @@ def compile_definitions():
     # The whole FSH tree (minus generated/) with the real config, so value sets, profiles and
     # logical models defined next to the definitions resolve.
     shutil.copytree(FSH_DIR, tmp / "input" / "fsh", ignore=shutil.ignore_patterns("generated"))
+    # Without the generated SIM mapping blocks: a mapping rule on a choice variant (valueQuantity) makes
+    # SUSHI create that type slice, and the next run must not depend on what the previous run wrote.
+    for f in (tmp / "input" / "fsh").rglob("*.fsh"):
+        text = f.read_bytes().decode("utf-8")
+        stripped = strip_generated_mapping(text, f.relative_to(tmp).as_posix())
+        if stripped != text:
+            f.write_bytes(stripped.encode("utf-8"))
     cfg = (ROOT / "sushi-config.yaml").read_text(encoding="utf-8")
     (tmp / "sushi-config.yaml").write_text(cfg.rstrip() + "\nFSHOnly: true\n", encoding="utf-8")
     res = subprocess.run([sushi, "build", str(tmp)], capture_output=True, text=True)
@@ -777,7 +791,8 @@ FSH_KEYWORD = re.compile(r"^(Alias|Profile|Logical|Resource|Extension|Instance|I
 # How a mapping is presented, recognised by its Target (mapping.uri).
 SIM_SOURCE_URI = "urn:santeon:sim:csv"
 NICTIZ_SD = "http://ig.nictiz.nl/gbb/StructureDefinition/"
-MAPPING_LABELS = {"source": "Bron", "gbb": "Nictiz GBB", "fhir": "Santeon FHIR", "nl-core": "Nictiz nl-core"}
+MAPPING_LABELS = {"source": "SIM CSV", "gbb": "Nictiz GBB", "fhir": "Santeon FHIR", "nl-core": "Nictiz nl-core"}
+PROFILE_MAPPING_LABELS = {**MAPPING_LABELS, "fhir": "SIM Logical Model"}  # on a profile, "fhir" is mapping 1
 
 def status_legend(own):
     return [
@@ -797,7 +812,8 @@ CONVENTION_NOTE = [
     "",
     'The modelling convention (the fixed mapping order, delta indicators and '
     "consistency checks) is described in `docs/modelleerworkflow.md` in the project repository. "
-    "The 🟢/🟡 indicators are used only within the delta-analysis mappings, not as a status of a building block.",
+"Delta outcomes are recorded per element: 🟢/🟡 for Nictiz GBB and "
+"Equivalent/🟡 for Nictiz nl-core. The modelling status is recorded separately.",
 ]
 
 
@@ -861,7 +877,8 @@ def fsh_lines(defs, sd_id):
                 blocks[-1][0] = "Source:" + line.split(":", 1)[1].strip()
             blocks[-1][1].append((n, line))
         if len(blocks) > 1 and blocks[0][0] is None:  # header comments belong to the first definition
-            blocks[1][1][:0] = blocks.pop(0)[1]
+            header = blocks.pop(0)[1]  # pop first: the right-hand side would otherwise shift the index
+            blocks[0][1][:0] = header
         _FSH_BLOCKS[f] = blocks
     name = sd.get("name") or sd_id
     owners = {"Logical:" + name, "Profile:" + name, "Source:" + name}
@@ -946,9 +963,9 @@ def catalogue(defs):
     return lms, profiles
 
 
-def mapping_links(sd_id, kinds, order):
+def mapping_links(sd_id, kinds, order, labels=MAPPING_LABELS):
     page = f"StructureDefinition-{sd_id}-mappings.html"
-    links = [f"[{MAPPING_LABELS[k]}]({page})" for k in order if k in kinds]
+    links = [f"[{labels[k]}]({page})" for k in order if k in kinds]
     return " · ".join(links) or "–"
 
 
@@ -984,11 +1001,11 @@ def update_clms(defs, cat):
         "**Mappings** are listed in their fixed order and only where they exist; each links to the mapping "
         "page of the logical model.",
         "",
-        "- **Bron** – provenance: the original SIM source attributes.",
+        "- **SIM CSV** – provenance: the original SIM CSV attributes.",
         "- **Nictiz GBB** – semantic delta analysis with the Nictiz GBB-afsprakenmodel.",
         "- **Santeon FHIR** – technical translation, harmonisation and required conversions to the Santeon "
-        "FHIR profile. "
-        "The *FHIR profile* column is derived from this mapping.",
+        "FHIR profile, including the delivery and conversion agreements. The generator also writes it into "
+        "the profile as mapping 1. The *FHIR profile* column is derived from this mapping.",
         "",
     ] + status_legend("logical model") + CONVENTION_NOTE + [""]
     replace_marked("CLMs.md", "manual-sim", lines)
@@ -1001,9 +1018,9 @@ def update_profiles(defs, cat):
     rows = sorted(profiles, key=lambda i: profile_label(profiles[i]).casefold())
     lines = [
         "The Santeon FHIR profiles describe the standardised FHIR R4 representation of the SIM building "
-        "blocks: the datatypes, cardinalities, terminology bindings and constraints that a resource must "
-        "meet. The meaning of the data is defined by the corresponding [SIM Logical Model](CLMs.html); "
-        "the Nictiz nl-core mapping records the technical comparison with the Nictiz nl-core profiles.",
+        "blocks. A profile only adds rules for agreed FHIR requirements that its parent does not cover yet. "
+        "The scope and the delivery and conversion agreements are maintained in the corresponding "
+        "[SIM Logical Model](CLMs.html) and its mapping to FHIR.",
         "",
         "### Overview",
         "",
@@ -1017,22 +1034,288 @@ def update_profiles(defs, cat):
         kinds = e["kinds"] + (["fhir"] if e["lms"] else [])
         lm = ", ".join(sd_link(lm_label(logicals[i]), i) for i in e["lms"]) or "–"
         lines.append(f"| {sd_link(profile_label(profiles[pid]), pid)} | {lm} "
-                     f"| {mapping_links(pid, kinds, ['fhir', 'nl-core', 'source'])} "
+                     f"| {mapping_links(pid, kinds, ['fhir', 'nl-core', 'source'], PROFILE_MAPPING_LABELS)} "
                      f"| {status_cell(e['status'], open_checks(defs, pid))} |")
     lines += [
         "",
         "### Reading the table",
         "",
-        "**Mappings** are listed only where they exist; each links to the mapping page of the profile.",
+        "**Mappings** are listed in their fixed order and only where they exist; each links to the mapping "
+        "page of the profile.",
         "",
-        "- **Santeon FHIR** – the translation from the logical model. It is maintained with the logical model "
-        "only and shown on the profile's mapping page under *Mappings to Structures in this Implementation "
-        "Guide*. The *Logical Model* column is derived from this mapping.",
-        "- **Nictiz nl-core** – technical delta analysis with the Nictiz nl-core profile.",
-        "- **Bron** – a direct mapping from the SIM source attributes that predates the logical-model convention.",
+        "- **SIM Logical Model** (mapping 1) – SIM provenance and conversion per FHIR element. Generated from "
+        "the logical model's mapping to FHIR; maintained there only. The *Logical Model* column is derived "
+        "from this mapping.",
+        "- **Nictiz nl-core** (mapping 2) – manual technical delta analysis with the Nictiz nl-core profile "
+        "(nictiz.nl.gbb 1.0.0-alpha.2). Where no technical delta is recorded, the FSH source explains why.",
         "",
     ] + status_legend("FHIR profile") + CONVENTION_NOTE + [""]
     replace_marked("profiles.md", "manual-profiles", lines)
+
+
+# ---------------------------------------------------------------------------
+# LM -> FHIR mapping, also recorded in the target profile (between the GENERATED SIM MAPPING markers)
+# ---------------------------------------------------------------------------
+# Generate profile mapping 1 from Logical Model mapping 3.
+# It links FHIR elements back to their SIM sources and includes conversion notes.
+# The generator replaces only the content between GEN_BEGIN and GEN_END.
+# It compiles profiles without those blocks so it can rebuild them from scratch.
+GEN_BEGIN = "// BEGIN GENERATED SIM MAPPING"
+GEN_END = "// END GENERATED SIM MAPPING"
+GEN_HEADER = [
+    "// MAPPING 1: Herkomst uit het SIM Logical Model",
+    "// Generated by _generateFromDefinitions.py from the LM-to-FHIR mappings in input/fsh/sim/.",
+    "// ! Do not edit this block directly. Maintain mapping rules and conversion notes in the Logical Model. "
+    "See docs/modelleerworkflow.md.",
+    "// ============================================",
+]
+OLD_PROFILE_MAPPINGS = GEN_DIR / "ProfileMappings.fsh"  # former central output, removed by the generator
+
+
+def generated_span(text, where):
+    """(start, end) of the text strictly between the two marker lines, or None when the file has no markers."""
+    if GEN_BEGIN not in text and GEN_END not in text:
+        return None
+    i, j = text.find(GEN_BEGIN), text.find(GEN_END)
+    if text.count(GEN_BEGIN) != 1 or text.count(GEN_END) != 1 or j < i:
+        raise DefinitionError(f"{where} needs exactly one '{GEN_BEGIN}' / '{GEN_END}' marker pair")
+    return text.index("\n", i) + 1, text.rfind("\n", 0, j) + 1
+
+
+def strip_generated_mapping(text, where):
+    span = generated_span(text, where)
+    return text if span is None else text[:span[0]] + text[span[1]:]
+
+
+def write_profile_mappings(defs, blocks):
+    """Write the generated mappings (profile id -> FSH lines) between the markers of the FSH file that
+    defines each profile. A file with a profile that has an LM -> FHIR mapping needs the markers."""
+    files = {}
+    for pid in defs["profile"]:
+        files.setdefault(defs["fsh_file"][pid], []).append(pid)
+    for rel, pids in sorted(files.items()):
+        f = FSH_DIR / rel
+        text = f.read_bytes().decode("utf-8")
+        span = generated_span(text, rel)
+        lines = [line for pid in pids for line in blocks.get(pid, [])]
+        if span is None:
+            if lines:
+                raise DefinitionError(f"{rel} defines a profile with an LM -> FHIR mapping but has no "
+                                      f"'{GEN_BEGIN}' / '{GEN_END}' markers (see docs/modelleerworkflow.md)")
+            continue
+        if not lines:
+            lines = ["// Geen SIM-herkomstmapping: geen SIM Logical Model heeft een LM-naar-FHIR-mapping naar dit profiel.", ""]
+        newline = "\r\n" if "\r\n" in text else "\n"
+        body = newline.join(GEN_HEADER + [""] + lines) + newline
+        updated = text[:span[0]] + body + text[span[1]:]
+        if updated != text:
+            f.write_bytes(updated.encode("utf-8"))
+            print(f"  wrote {f.relative_to(ROOT)}")
+    if OLD_PROFILE_MAPPINGS.exists():
+        OLD_PROFILE_MAPPINGS.unlink()
+        print(f"  removed {OLD_PROFILE_MAPPINGS.relative_to(ROOT)} (the mappings are now in the profile files)")
+PACKAGE_CACHE = Path.home() / ".fhir" / "packages"
+R4_CORE = "hl7.fhir.r4.core#4.0.1"
+
+
+class Packages:
+    """StructureDefinitions of the FHIR packages this IG depends on, read from the local package cache
+    (filled by the SUSHI run of compile_definitions)."""
+
+    def __init__(self):
+        cfg = (ROOT / "sushi-config.yaml").read_text(encoding="utf-8")
+        block = re.search(r"^dependencies:\s*\n((?:[ \t]+.*\n?)*)", cfg, re.M)
+        deps = re.findall(r"^[ \t]{2}([\w.-]+):\s*(\S+)\s*$", block.group(1), re.M) if block else []
+        self.files = {}
+        for name, version in [tuple(R4_CORE.split("#"))] + deps:
+            pkg = PACKAGE_CACHE / f"{name}#{version}" / "package"
+            index = pkg / ".index.json"
+            if not index.exists():
+                print(f"  WARNING: package {name}#{version} not in {PACKAGE_CACHE}; its profiles cannot be checked")
+                continue
+            for e in json.loads(index.read_text(encoding="utf-8")).get("files", []):
+                if e.get("resourceType") == "StructureDefinition" and e.get("url"):
+                    self.files.setdefault(e["url"], pkg / e["filename"])
+        self.cache = {}
+
+    def elements(self, url):
+        """Snapshot elements by id, or None when the StructureDefinition is not available."""
+        if url not in self.cache:
+            f = self.files.get(url)
+            sd = json.loads(f.read_text(encoding="utf-8")) if f else None
+            self.cache[url] = {e["id"]: e for e in sd["snapshot"]["element"]} if sd and "snapshot" in sd else None
+        return self.cache[url]
+
+
+def profile_elements(defs, sd, packages):
+    """The elements of a local profile by id: the snapshot of its package base, overlaid with the
+    differentials of the local profiles in between (so slices defined in this IG are known too)."""
+    local = {p["url"]: p for p in defs["profile"].values()}
+    chain = [sd]
+    while chain[-1]["baseDefinition"] in local:
+        chain.append(local[chain[-1]["baseDefinition"]])
+    base = packages.elements(chain[-1]["baseDefinition"])
+    if base is None:
+        return None
+    elems = dict(base)
+    for p in reversed(chain):
+        for e in p.get("differential", {}).get("element", []):
+            elems[e["id"]] = {**elems.get(e["id"], {}), **e}
+    # A differential element inside a datatype (dosageInstruction.timing.repeat.bounds[x]) carries no type of
+    # its own; take it from the datatype definition, so choice types can be checked there too.
+    where = {eid: (None, eid) for eid in base}  # element id -> (datatype SD or None for the base, its id there)
+    for eid in sorted((k for k in elems if k not in base), key=lambda k: k.count(".")):
+        parent, _, seg = eid.rpartition(".")
+        if ":" in seg or parent not in elems or parent not in where:
+            continue
+        codes = type_codes(elems[parent])
+        sd_type, pid = where[parent]
+        if len(codes) == 1 and codes[0][:1].isupper() and codes[0] not in ("Element", "BackboneElement"):
+            sd_type, pid = codes[0], codes[0]
+        where[eid] = (sd_type, f"{pid}.{seg}")
+        if sd_type and "type" not in elems[eid]:
+            dt = packages.elements(f"http://hl7.org/fhir/StructureDefinition/{sd_type}") or {}
+            if "type" in dt.get(f"{pid}.{seg}", {}):
+                elems[eid] = {**elems[eid], "type": dt[f"{pid}.{seg}"]["type"]}
+    return elems
+
+
+def type_codes(element):
+    return [t["code"] for t in element.get("type", [])]
+
+
+def resolve_target(path, elems, packages):
+    """Resolve an LM -> FHIR target path (FHIR dot notation, e.g. Patient.deceasedDateTime) to the
+    element id it denotes in the profile. Returns (id, note) or (None, reason).
+
+    - A plain element is the element itself, never one of its slices (Patient.identifier is not
+      Patient.identifier:bsn); a slice is only meant when written explicitly (Patient.identifier:bsn).
+    - A choice variant (deceasedDateTime) is the type slice deceased[x]:deceasedDateTime, whether or not the
+      profile already defines it: the choice element deceased[x] must exist and allow the type, otherwise the
+      path is reported as invalid. The specific path is kept, so it is never folded into deceased[x]; mapping
+      to the choice element itself stays possible by writing it (Patient.deceased[x]).
+    - Paths into a datatype (period.start) are followed into that datatype's definition.
+    The profile elements come from the profiles without their generated blocks (compile_definitions), so
+    the result never depends on an earlier run."""
+    rt, *segs = path.split(".")
+    if rt not in elems:
+        return None, f"resource type {rt} does not match the profile"
+    cur, out, note, chosen = rt, rt, None, None
+    for i, seg in enumerate(segs):
+        nxt, cur_type, chosen = None, chosen, None
+        if f"{cur}.{seg}" in elems:
+            nxt = f"{cur}.{seg}"
+        else:
+            name = seg.split(":")[0]
+            for c in (k for k in elems if k.startswith(cur + ".") and k.endswith("[x]") and k.count(".") == cur.count(".") + 1):
+                prefix = c[len(cur) + 1:-3]
+                if not name.startswith(prefix) or not name[len(prefix):][:1].isupper():
+                    continue
+                types = type_codes(elems[c])
+                code = next((t for t in types if t[:1].upper() + t[1:] == name[len(prefix):]), None)
+                if code is None:
+                    return None, (f"{name} is not a type allowed by {c.split('.')[-1]} in the profile "
+                                  f"(allowed: {', '.join(types) or 'none'})")
+                chosen, nxt = code, f"{c}:{name}"
+                break
+        if nxt is None:  # step into the datatype of the current element (period.start, valueQuantity.value)
+            codes = [cur_type] if cur_type else type_codes(elems.get(cur, {}))
+            if len(codes) == 1 and codes[0][:1].isupper() and cur != rt:
+                dt = packages.elements(f"http://hl7.org/fhir/StructureDefinition/{codes[0]}")
+                if dt and f"{codes[0]}.{seg}" in dt:
+                    elems, cur, out = dt, f"{codes[0]}.{seg}", f"{out}.{seg}"
+                    continue
+            return None, f"unknown element {seg} under {out}"
+        out = out + nxt[len(cur):]
+        cur = nxt
+    return out, note
+
+
+def fsh_path(element_id):
+    """Element id -> FSH path: Patient.identifier:bsn -> identifier[bsn];
+    Patient.deceased[x]:deceasedDateTime -> deceasedDateTime (FSH choice shorthand)."""
+    parts = []
+    for seg in element_id.split(".")[1:]:
+        name, _, slice_ = seg.partition(":")
+        if not slice_:
+            parts.append(name)
+        elif name.endswith("[x]") and slice_.startswith(name[:-3]):
+            parts.append(slice_)
+        else:
+            parts.append(f"{name}[{slice_}]")
+    return ".".join(parts)
+
+
+def gen_profile_mappings_fsh(defs):
+    """One Mapping per LM -> FHIR relation (mapping_kind "fhir"): Source is the profile, Target the logical
+    model; map = the LM element, comment = the comment of the LM -> FHIR mapping. Several logical models
+    mapping to one profile each get their own Mapping, so they never overwrite each other.
+    Returns profile id -> the FSH lines of its mappings."""
+    blocks = {}
+    profile_urls = {sd["url"]: pid for pid, sd in defs["profile"].items()}
+    packages = Packages()
+    used, relations, written, skipped, warned = set(), 0, 0, 0, 0
+    for lm_id, lm in sorted(defs["logical"].items()):
+        for decl in lm.get("mapping", []):
+            if mapping_kind(decl.get("uri", ""), profile_urls) != "fhir":
+                continue
+            relations += 1
+            pid = profile_urls[decl["uri"]]
+            profile = defs["profile"][pid]
+            identity = f"{profile['name']}From{lm['name']}"
+            if identity in used:  # a second LM -> FHIR mapping of the same model to the same profile
+                identity = f"{profile['name']}From{decl['identity']}"
+            used.add(identity)
+            rel = defs["fsh_file"][pid]
+            outside = strip_generated_mapping((FSH_DIR / rel).read_bytes().decode("utf-8"), rel)
+            if re.search(rf"^Mapping:\s*{re.escape(identity)}\s*$", outside, re.M):
+                raise DefinitionError(f"{defs['fsh_file'][pid]} defines mapping {identity} outside the generated "
+                                      f"block; it is generated, remove it")
+            elems = profile_elements(defs, profile, packages)
+            if elems is None:  # stop before any profile file is written, so every existing block stays
+                local = {p["url"] for p in defs["profile"].values()}
+                base = profile["baseDefinition"]
+                while base in local:
+                    base = next(p for p in defs["profile"].values() if p["url"] == base)["baseDefinition"]
+                raise DefinitionError(f"{decl['identity']} maps to profile {profile['name']} ({rel}), but its parent "
+                                      f"{base} cannot be loaded from the package cache ({PACKAGE_CACHE}). "
+                                      "Run 'sushi .' to fetch the dependencies, or check the Parent of the profile.")
+            rules = {}  # profile element id -> [(LM element id, comment)], in LM order
+            for e in lm.get("differential", {}).get("element", []):
+                for m in e.get("mapping", []):
+                    if m["identity"] != decl["identity"]:
+                        continue
+                    for target in (t.strip() for t in m.get("map", "").split(",") if t.strip()):
+                        el_id, note = resolve_target(target, elems, packages)
+                        where = f"{decl['identity']}: {e['id']} -> {target}"
+                        if el_id is None:
+                            print(f"  WARNING: {where}: {note}; not written to {pid}")
+                            skipped += 1
+                            continue
+                        if note:
+                            print(f"  WARNING: {where}: {note}")
+                            warned += 1
+                        rules.setdefault(el_id, []).append((e["id"], one_line(m.get("comment", ""))))
+                        written += 1
+            if not rules:  # the block would otherwise wrongly say that there is no SIM mapping
+                raise DefinitionError(f"{decl['identity']} maps to profile {profile['name']} ({rel}), but none of its "
+                                      "element mappings could be placed (see the warnings above)")
+            description = (f"Herkomst van de {profile['name']}-elementen in {lm_label(lm)}, met de conversietoelichting. "
+                           f"Afgeleid van {decl['identity']}; wijzigingen alleen daar aanbrengen.")
+            L = blocks.setdefault(pid, [])
+            L += [f"Mapping: {identity}", f"Id: {identity}",
+                  f"Title: {q('SIM Logical Model ' + lm['name'])}",
+                  f"Description: {q(description)}",
+                  f"Source: {profile['name']}", f"Target: {q(lm['url'])}", ""]
+            for el_id, sources in rules.items():
+                if len(sources) > 1:
+                    print(f"  WARNING: {decl['identity']}: {', '.join(s for s, _ in sources)} all map to {el_id}; combined")
+                comment = " | ".join(c for _, c in sources if c)
+                L.append(f"* {fsh_path(el_id)} -> {q(', '.join(s for s, _ in sources))}" + (f" {q(comment)}" if comment else ""))
+            L.append("")
+    print(f"  LM -> FHIR: {relations} relations, {written} element mappings written to the profiles "
+          f"({warned} with a warning), {skipped} skipped")
+    return blocks
 
 
 def update_menu(defs):
@@ -1095,6 +1378,7 @@ def main():
     cat = catalogue(defs)
     update_clms(defs, cat)
     update_profiles(defs, cat)
+    write_profile_mappings(defs, gen_profile_mappings_fsh(defs))
     update_menu(defs)
     cfg = (ROOT / "sushi-config.yaml").read_text(encoding="utf-8")
     for ds in defs["dataset"].values():

@@ -29,7 +29,7 @@ cd sim-on-fhir
 | **Java** (JRE 11+) | Runs the HL7 FHIR IG Publisher | [adoptium.net](https://adoptium.net) |
 | **Ruby + Devkit** | Required by the IG Publisher for Jekyll templating | [rubyinstaller.org](https://rubyinstaller.org/downloads/) — pick **Ruby+Devkit** |
 | **Jekyll** | Processes IG templates into HTML | `gem install jekyll` (after Ruby) |
-| **Python 3** | SQL mapping generator + local dev server | [python.org](https://www.python.org) — on Windows use `py -3` |
+| **Python 3** | Generates IG artefacts and SIM mappings (`_generateFromDefinitions.py`) and synchronises external ValueSets (`_syncValueSets.py`). | [python.org](https://www.python.org) – on Windows use `py -3` |
 | **HL7 IG Publisher** (`publisher.jar`) | Builds the IG from FSH sources | Run `_updatePublisher.bat` (downloads ~100 MB) |
 
 Verify each tool:
@@ -132,9 +132,13 @@ input/fsh/
 
 ## When you add or modify a SIM model or FHIR profile
 
-Follow the same workflow when adding a new model or extending an existing one. For a new field, update the relevant existing files.
+The steps, conventions and examples are in [docs/modelleerworkflow.md](docs/modelleerworkflow.md) (start with §1.1). In short:
 
-See [Modeling Workflow](docs/modelleerworkflow.md) for the modeling process, including SIM Logical Models, FHIR profiles, mappings, and semantic and technical delta analyses against Nictiz GBB.
+- Change scope, elements, source provenance and the mappings in the Logical Model (`input/fsh/sim/`). The LM-to-FHIR mapping holds the FHIR target paths and the delivery and conversion agreements.
+- Add a rule in `input/fsh/fhir/` only for an agreed FHIR requirement that the parent does not cover. Update the technical delta (mapping 2) if the change affects the comparison with Nictiz nl-core.
+- Never edit mapping 1 in a profile: the generator writes it between `// BEGIN GENERATED SIM MAPPING` and `// END GENERATED SIM MAPPING`.
+
+Regenerate and validate:
 
 ```powershell
 py -3 _generateFromDefinitions.py
@@ -142,14 +146,6 @@ sushi .
 py -3 _buildIG.py --no-tx    # Fast build without terminology server
 py -3 -m http.server 8080 -d output    # Preview at http://localhost:8080 (stop with Ctrl+C before the next build)
 ```
-
-### Rules
-
-- **Logical Model:** The SIM is the source of truth for definitions, datatypes, and cardinalities. Elements outside the current scope remain commented under `// Buiten IBD-scope - nog niet meegenomen`.
-- **FHIR profile:** Constraints follow the SIM scope and FHIR R4 requirements. Additional restrictions must be explicitly justified.
-- **Terminology:** Reuse existing SIM and Santeon terminology where applicable; harmonize with FHIR and Nictiz where necessary.
-- **Open checks:** Document unresolved checks as `// TODO:` in the relevant FSH file.
-- **Sources:** The SIM defines the information model; indicator definitions, `sb-ibd`, and HIPS ETL inform the dataset scope. FHIR R4 defines the technical representation.
 
 If the field must also be exported, it requires a KPI definition; see the next section.
 
@@ -182,7 +178,17 @@ Then regenerate (needs SUSHI on the PATH):
 py -3 _generateFromDefinitions.py
 ```
 
-This rewrites `input/fsh/generated/` (profiles, code value sets, Groups, Parameters) and the dataset pages in `input/pagecontent/` (`datasets.md`, `dataset-<id>.md`). Commit the generated files; CI regenerates and fails when they are out of date. A new dataset also needs its page added under `datasets.md` in `sushi-config.yaml`. See the [KPI definitions](input/pagecontent/kpi-definitions.md) page for how it works.
+The generator updates:
+
+- `input/fsh/generated/` — profiles, code ValueSets, Groups and Parameters.
+- `input/fsh/fhir/` — generated Mapping 1 blocks in the profile files.
+- `input/pagecontent/` — `CLMs.md`, `profiles.md`, `datasets.md` and individual dataset pages such as `ibd-dataset.md`.
+
+Commit the regenerated changes. CI reruns the generator and checks that the
+tracked output is up to date.
+
+For a new dataset, also register its page under `datasets.md` in
+`sushi-config.yaml`. See [KPI definitions](input/pagecontent/kpi-definitions.md).
 
 ---
 

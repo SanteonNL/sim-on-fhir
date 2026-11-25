@@ -22,3 +22,6 @@
 /_updatePublisher.bat
 /_updatePublisher.sh
 /_build.bat
+
+# Python bytecode
+__pycache__/

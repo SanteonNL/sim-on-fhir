@@ -1,7 +1,5 @@
 Logical: SIMPatient
 Parent: Base
-// Parent: http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelPatient
-// GBB wordt nog via een semantische delta-mapping vergeleken.
 Id: SIMPatient
 Title: "Patiënt (model)"
 Description: "Generiek logisch model voor patiëntgegevens binnen het Santeon Informatiemodel."
@@ -59,52 +57,47 @@ Target: "urn:santeon:sim:csv"
 // * Naam.Achternaam -> "Patient;PatientNameFamilyName"
 
 
- // ============================================
- // MAPPING 2: Semantische delta-analyse - SIMPatient naar Nictiz GBB-afsprakenmodel
- // ============================================
+// ============================================
+// MAPPING 2: Semantische delta-analyse - SIMPatient naar Nictiz GBB-afsprakenmodel
+// ============================================
 
 Mapping: SIMPatientToGBB
 Id: SIMPatientToGBB
 Title: "Nictiz GBB-afsprakenmodel"
-Description: "Semantische vergelijking tussen SIMPatient en Nictiz GBB Patient (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen. Legenda: 🟢 Beoordeeld, equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."
+Description: "Semantische vergelijking tussen SIMPatient en Nictiz GBB Patient (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen. Legenda: 🟢 Equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."
 Source: SIMPatient
 Target: "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelPatient"
 
 // IBD-scope
 * Identificatienummer -> "Patient.patientIdentificationNumber" "🟢 Equivalent: beide gebruiken Identifier met cardinaliteit 1..*."
 * Geslacht -> "Patient.gender" "🟡 Verschil in terminologiebinding: SIM gebruikt GeslachtCodelijst ZIB 2020; GBB gebruikt FHIR AdministrativeGender."
-* Geboortedatum -> "Patient.dateOfBirth" "🟢 Equivalent: SIM date is compatibel met GBB dateTime op dagniveau."
-* DatumOverlijden -> "Patient.deceasedDateTime" "🟡 Verschil in representatie: SIM gebruikt date; GBB ondersteunt dateTime en boolean."
+* Geboortedatum -> "Patient.dateOfBirth" "🟢 Semantisch compatibel op dagniveau: SIM gebruikt date; GBB gebruikt dateTime."
+* DatumOverlijden -> "Patient.deceased[x]" "🟡 Verschil in representatie: SIM registreert uitsluitend de overlijdensdatum als date; GBB ondersteunt zowel dateTime als boolean."
 
 // Buiten IBD-scope - nog te beoordelen
-// * Naam -> "Patient.nameInformation" "(nameInformation.humanName) Structuur en cardinaliteit vergelijken."
-// * Land -> "Patient.address" "Land valt binnen adresgegevens; geen directe equivalent van volledig adres."
-// * GerelateerdePersoon -> "" "Beoordelen of contact of RelatedPerson passend is."
-// * DatumCheckStatusOverlijden -> "" "Geen direct GBB-equivalent vastgesteld."
+// * Naam -> 
+// * Land -> 
+// * GerelateerdePersoon -> 
+// * DatumCheckStatusOverlijden -> 
 
 
 // ============================================
-// MAPPING 3: Technische vertaling, harmonisatie en conversie - SIMPatient naar Santeon FHIR PatientSan
+// MAPPING 3: Technische vertaling, harmonisatie en conversie - SIMPatient naar PatientSan
+// De omgekeerde mapping (PatientSan naar SIMPatient) wordt automatisch gegenereerd.
 // ============================================
 
 Mapping: SIMPatientToFHIR
 Id: SIMPatientToFHIR
-Title: "Santeon FHIR PatientSan"
+Title: "FHIR-mapping naar PatientSan"
 Description: "Mapping van SIMPatient-elementen naar het Santeon FHIR-profiel PatientSan, inclusief harmonisatie met FHIR-standaarden en toelichting op benodigde conversies."
 Source: SIMPatient
 Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"
 
 // IBD-scope
-* Identificatienummer -> "Patient.identifier"
-* Geslacht -> "Patient.gender" "Terminologiemapping van SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender vereist."
-* Geboortedatum -> "Patient.birthDate"
-* DatumOverlijden -> "Patient.deceased[x]" "SIM date wordt gerepresenteerd als FHIR dateTime met dagprecisie. De boolean-variant wordt niet vanuit dit SIM-element gevuld."
-
-// Buiten IBD-scope - nog niet meegenomen
-// * Land -> "Patient.address.country" "Landcode naar string, bijvoorbeeld ISO 3166."
-// * Naam.Initialen -> "Patient.name.given" "Initialen als given wanneer volledige voornamen ontbreken."
-// * Naam.Achternaam -> "Patient.name.family"
-
+* Identificatienummer -> "Patient.identifier" "Direct: system en value worden behouden conform de afgesproken identificatiesystematiek."
+* Geslacht -> "Patient.gender" "Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender."
+* Geboortedatum -> "Patient.birthDate" "Direct: SIM date wordt overgenomen als FHIR date."
+* DatumOverlijden -> "Patient.deceasedDateTime" "Datatypeconversie: SIM date naar FHIR dateTime met dagprecisie; deceasedBoolean wordt vanuit dit SIM-element niet gevuld."
 
 
 // ============================================
@@ -112,3 +105,5 @@ Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"
 // ============================================
 
 // Status: Ready for validation
+// TODO: Terminologieconversie naar AdministrativeGender valideren.
+// TODO: Identificatiesystematiek voor Identifier.system valideren.
