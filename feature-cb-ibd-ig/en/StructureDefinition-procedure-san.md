@@ -33,7 +33,7 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
   "name" : "ProcedureSan",
   "title" : "Procedure (SAN)",
   "status" : "draft",
-  "date" : "2026-11-25T16:23:53+00:00",
+  "date" : "2026-11-26T10:18:33+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -61,7 +61,7 @@ Other representations of profile: [CSV](../StructureDefinition-procedure-san.csv
     "identity" : "ProcedureSanToNlCore",
     "uri" : "http://ig.nictiz.nl/gbb/StructureDefinition/nl-core-Procedure",
     "name" : "Nictiz nl-core-Procedure",
-    "comment" : "Technische delta-analyse tussen ProcedureSan en Nictiz nl-core-Procedure (referentieversie 1.0.0-alpha.2). Legt per FHIR-element binnen de IBD-scope de uitkomst van de vergelijking vast. Equivalent betekent dat het element is beoordeeld en er geen relevant technisch verschil is vastgesteld. 🟡 markeert een vastgesteld verschil of een openstaande beoordeling."
+    "comment" : "Technische delta-analyse tussen ProcedureSan en Nictiz nl-core-Procedure (referentieversie 1.0.0-alpha.2). Legt per FHIR-element binnen de IBD-scope de uitkomst van de vergelijking vast. Equivalent betekent dat het element is beoordeeld en er geen relevant technisch verschil is vastgesteld. 🟡 Verschil vastgesteld of nader te beoordelen."
   },
   {
     "identity" : "requirements-Procedure",

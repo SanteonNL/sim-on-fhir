@@ -28,7 +28,7 @@
 "SIMMedicatieAfspraak.Doseerduur.system","","",""
 "SIMMedicatieAfspraak.Doseerduur.code","MedicatieAfspraak;DoseerDuurEenheid","",""
 "SIMMedicatieAfspraak.GebruiksperiodeStart","MedicatieAfspraak;MedicationRequestDosageInstructionTimingRepeatBoundsPeriodStart","MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start","Direct: SIM dateTime wordt overgenomen als FHIR dateTime."
-"SIMMedicatieAfspraak.MedicatieAfspraakStatus","","MedicationRequest.status","Datatypeconversie: SIM Coding naar FHIR code; codes volgens MedicatieAfspraakStatusSysteem, overeenkomst met FHIR medicationrequest-status verifiëren."
+"SIMMedicatieAfspraak.MedicatieAfspraakStatus","","MedicationRequest.status","Datatypeconversie: SIM Coding naar FHIR code; de codewaarde wordt ongewijzigd overgenomen. De in de IBD-indicatoren gebruikte codes active, completed, stopped en cancelled komen ongewijzigd voor in FHIR medicationrequest-status; aansluiting van overige codes uit MedicatieAfspraakStatusSysteem nog te beoordelen."
 "SIMMedicatieAfspraak.MedicatieAfspraakStatus.id","","",""
 "SIMMedicatieAfspraak.MedicatieAfspraakStatus.extension","","",""
 "SIMMedicatieAfspraak.MedicatieAfspraakStatus.system","MedicatieAfspraak;MedicatieAfspraakStatusSysteem","",""

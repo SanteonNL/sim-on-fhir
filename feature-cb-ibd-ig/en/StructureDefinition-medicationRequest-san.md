@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-medicationRequest
   "name" : "MedicationRequestSan",
   "title" : "MedicationRequest (SAN)",
   "status" : "draft",
-  "date" : "2026-11-25T16:23:53+00:00",
+  "date" : "2026-11-26T10:18:33+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -103,7 +103,7 @@ Other representations of profile: [CSV](../StructureDefinition-medicationRequest
       "mapping" : [{
         "identity" : "MedicationRequestSanFromSIMMedicatieAfspraak",
         "map" : "SIMMedicatieAfspraak.MedicatieAfspraakStatus",
-        "comment" : "Datatypeconversie: SIM Coding naar FHIR code; codes volgens MedicatieAfspraakStatusSysteem, overeenkomst met FHIR medicationrequest-status verifiëren."
+        "comment" : "Datatypeconversie: SIM Coding naar FHIR code; de codewaarde wordt ongewijzigd overgenomen. De in de IBD-indicatoren gebruikte codes active, completed, stopped en cancelled komen ongewijzigd voor in FHIR medicationrequest-status; aansluiting van overige codes uit MedicatieAfspraakStatusSysteem nog te beoordelen."
       }]
     },
     {

@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
   "name" : "SIMVerrichting",
   "title" : "Verrichting (model)",
   "status" : "draft",
-  "date" : "2026-11-25T16:23:53+00:00",
+  "date" : "2026-11-26T10:18:33+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -57,7 +57,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
     "identity" : "SIMVerrichtingToGBB",
     "uri" : "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelProcedure",
     "name" : "Nictiz GBB-afsprakenmodel",
-    "comment" : "Semantische vergelijking tussen SIMVerrichting en Nictiz GBB Procedure (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen. Legenda: 🟢 Equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."
+    "comment" : "Semantische vergelijking tussen SIMVerrichting en Nictiz GBB Procedure (referentieversie 1.0.0-alpha.2). Legt per element binnen de IBD-scope de uitkomst van de vergelijking vast. Equivalent betekent dat het element is beoordeeld en er geen relevant semantisch verschil is vastgesteld. 🟡 Verschil vastgesteld of nader te beoordelen."
   },
   {
     "identity" : "SIMVerrichtingToFHIR",
@@ -254,7 +254,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMVerrichting.cs
       {
         "identity" : "SIMVerrichtingToGBB",
         "map" : "Procedure.startDateTime",
-        "comment" : "🟢 Equivalent: beide gebruiken dateTime met cardinaliteit 0..1."
+        "comment" : "Equivalent"
       },
       {
         "identity" : "SIMVerrichtingToFHIR",

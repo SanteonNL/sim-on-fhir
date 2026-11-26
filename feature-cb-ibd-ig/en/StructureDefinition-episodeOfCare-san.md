@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-episodeOfCare-san
   "name" : "EpisodeOfCareSan",
   "title" : "EpisodeOfCare (SAN)",
   "status" : "draft",
-  "date" : "2026-11-25T16:23:53+00:00",
+  "date" : "2026-11-26T10:18:33+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -111,7 +111,7 @@ Other representations of profile: [CSV](../StructureDefinition-episodeOfCare-san
       "mapping" : [{
         "identity" : "EpisodeOfCareSanFromSIMDBC",
         "map" : "SIMDBC.OpeningsDatum",
-        "comment" : "Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."
+        "comment" : "Structuurconversie: SIM OpeningsDatum en SluitingsDatum vormen samen de FHIR Period; OpeningsDatum vult period.start; SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."
       }]
     },
     {
@@ -120,7 +120,7 @@ Other representations of profile: [CSV](../StructureDefinition-episodeOfCare-san
       "mapping" : [{
         "identity" : "EpisodeOfCareSanFromSIMDBC",
         "map" : "SIMDBC.SluitingsDatum",
-        "comment" : "Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."
+        "comment" : "Structuurconversie: SIM OpeningsDatum en SluitingsDatum vormen samen de FHIR Period; SluitingsDatum vult period.end; SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."
       }]
     }]
   }

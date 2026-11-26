@@ -18,7 +18,7 @@
   fhir:ImplementationGuide.name [ fhir:value "SanteonSimOnFhir"] ;
   fhir:ImplementationGuide.title [ fhir:value "SIM on FHIR"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-11-25T16:23:53+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-11-26T10:18:33+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "Santeon"] ;
   fhir:ImplementationGuide.contact [
      fhir:index -1 ;
@@ -1124,82 +1124,42 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ] ;
      fhir:ImplementationGuide.definition.page [
-       fhir:Element.extension [
-         fhir:index -1 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-         fhir:Extension.valueUrl [ fhir:value "toc.html" ]
-       ] ;
        fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "toc.html" ] ;
        fhir:ImplementationGuide.definition.page.title [ fhir:value "Table of Contents" ] ;
        fhir:ImplementationGuide.definition.page.generation [ fhir:value "html" ] ;
        fhir:ImplementationGuide.definition.page.page [
          fhir:index -1 ;
-         fhir:Element.extension [
-           fhir:index -1 ;
-           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-           fhir:Extension.valueUrl [ fhir:value "index.html" ]
-         ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "index.html" ] ;
          fhir:ImplementationGuide.definition.page.title [ fhir:value "Home" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index -1 ;
-         fhir:Element.extension [
-           fhir:index -1 ;
-           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-           fhir:Extension.valueUrl [ fhir:value "CLMs.html" ]
-         ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "CLMs.html" ] ;
          fhir:ImplementationGuide.definition.page.title [ fhir:value "SIM Logical Models" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index -1 ;
-         fhir:Element.extension [
-           fhir:index -1 ;
-           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-           fhir:Extension.valueUrl [ fhir:value "profiles.html" ]
-         ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "profiles.html" ] ;
          fhir:ImplementationGuide.definition.page.title [ fhir:value "FHIR Profiles" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index -1 ;
-         fhir:Element.extension [
-           fhir:index -1 ;
-           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-           fhir:Extension.valueUrl [ fhir:value "datasets.html" ]
-         ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "datasets.html" ] ;
          fhir:ImplementationGuide.definition.page.title [ fhir:value "Datasets" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ] ;
          fhir:ImplementationGuide.definition.page.page [
            fhir:index -1 ;
-           fhir:Element.extension [
-             fhir:index -1 ;
-             fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-             fhir:Extension.valueUrl [ fhir:value "ibd-dataset.html" ]
-           ] ;
            fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "ibd-dataset.html" ] ;
            fhir:ImplementationGuide.definition.page.title [ fhir:value "IBD" ] ;
            fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
          ]
        ], [
          fhir:index -1 ;
-         fhir:Element.extension [
-           fhir:index -1 ;
-           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-           fhir:Extension.valueUrl [ fhir:value "kpi-definitions.html" ]
-         ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "kpi-definitions.html" ] ;
          fhir:ImplementationGuide.definition.page.title [ fhir:value "KPI definitions" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index -1 ;
-         fhir:Element.extension [
-           fhir:index -1 ;
-           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-           fhir:Extension.valueUrl [ fhir:value "deidentification.html" ]
-         ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "deidentification.html" ] ;
          fhir:ImplementationGuide.definition.page.title [ fhir:value "De-identification" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]

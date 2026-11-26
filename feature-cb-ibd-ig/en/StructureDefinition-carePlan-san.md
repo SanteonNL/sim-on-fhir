@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-carePlan-san.csv)
   "name" : "CarePlanSan",
   "title" : "CarePlan (SAN)",
   "status" : "draft",
-  "date" : "2026-11-25T16:23:53+00:00",
+  "date" : "2026-11-26T10:18:33+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -98,7 +98,7 @@ Other representations of profile: [CSV](../StructureDefinition-carePlan-san.csv)
       "mapping" : [{
         "identity" : "CarePlanSanFromSIMCarePlan",
         "map" : "SIMCarePlan.Status",
-        "comment" : "Direct: SIM code wordt overgenomen als FHIR code; aansluiting op FHIR request-status nog te bevestigen."
+        "comment" : "Direct: SIM code wordt ongewijzigd overgenomen als FHIR code. De in de IBD-indicatoren gebruikte code active komt voor in FHIR request-status; aansluiting van overige SIM-statuscodes nog te beoordelen."
       }]
     },
     {

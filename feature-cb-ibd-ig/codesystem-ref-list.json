@@ -22,10 +22,10 @@
     "oids" : ["2.16.840.1.113883.6.96"],
     "uses" : {
     },
-    "ValueSet-TabakGebruikStatusCodelijst.html" : "TabakGebruikStatusCodelijst",
     "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst",
     "ValueSet-observationCode-san-kpi.html" : "Observation code (SAN KPI)",
-    "ValueSet-Santeon-MetingNaamCodelijst.html" : "Santeon_MetingNaamCodelijst"
+    "ValueSet-Santeon-MetingNaamCodelijst.html" : "Santeon_MetingNaamCodelijst",
+    "ValueSet-TabakGebruikStatusCodelijst.html" : "TabakGebruikStatusCodelijst"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
@@ -49,8 +49,8 @@
     "oids" : ["2.16.840.1.113883.5.1008"],
     "uses" : {
     },
-    "ValueSet-TabakGebruikStatusCodelijst.html" : "TabakGebruikStatusCodelijst",
-    "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst"
+    "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst",
+    "ValueSet-TabakGebruikStatusCodelijst.html" : "TabakGebruikStatusCodelijst"
   },
   {
     "url" : "https://ig.santeon.nl/sim-on-fhir/CodeSystem/deidentification-action-cs",

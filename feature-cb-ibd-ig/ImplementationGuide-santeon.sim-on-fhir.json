@@ -11,7 +11,7 @@
   "name" : "SanteonSimOnFhir",
   "title" : "SIM on FHIR",
   "status" : "draft",
-  "date" : "2026-11-25T16:23:53+00:00",
+  "date" : "2026-11-26T10:18:33+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -971,72 +971,40 @@
       "exampleBoolean" : false
     }],
     "page" : {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-        "valueUrl" : "toc.html"
-      }],
       "nameUrl" : "toc.html",
       "title" : "Table of Contents",
       "generation" : "html",
       "page" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "index.html"
-        }],
         "nameUrl" : "index.html",
         "title" : "Home",
         "generation" : "markdown"
       },
       {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "CLMs.html"
-        }],
         "nameUrl" : "CLMs.html",
         "title" : "SIM Logical Models",
         "generation" : "markdown"
       },
       {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "profiles.html"
-        }],
         "nameUrl" : "profiles.html",
         "title" : "FHIR Profiles",
         "generation" : "markdown"
       },
       {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "datasets.html"
-        }],
         "nameUrl" : "datasets.html",
         "title" : "Datasets",
         "generation" : "markdown",
         "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "ibd-dataset.html"
-          }],
           "nameUrl" : "ibd-dataset.html",
           "title" : "IBD",
           "generation" : "markdown"
         }]
       },
       {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "kpi-definitions.html"
-        }],
         "nameUrl" : "kpi-definitions.html",
         "title" : "KPI definitions",
         "generation" : "markdown"
       },
       {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "deidentification.html"
-        }],
         "nameUrl" : "deidentification.html",
         "title" : "De-identification",
         "generation" : "markdown"

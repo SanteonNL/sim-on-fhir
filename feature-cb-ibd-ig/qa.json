@@ -6,15 +6,15 @@
   "status" : "draft",
   "package-id" : "santeon.sim-on-fhir",
   "ig-ver" : "0.1.0",
-  "date" : "Wed, 25 Nov, 2026 16:23:53 +0000",
-  "dateISO8601" : "2026-11-25T16:23:53+00:00",
-  "errs" : 278,
+  "date" : "Thu, 26 Nov, 2026 10:18:33 +0000",
+  "dateISO8601" : "2026-11-26T10:18:33+00:00",
+  "errs" : 279,
   "warnings" : 658,
-  "hints" : 211,
+  "hints" : 209,
   "broken-links" : 0,
   "suppressed-hints" : 0,
   "suppressed-warnings" : 0,
   "version" : "4.0.1",
   "tool" : "6.0.0-snapshot1 (3)",
-  "maxMemory" : 2300191424
+  "maxMemory" : 2098259968
 }

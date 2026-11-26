@@ -246,7 +246,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td><a href="StructureDefinition-SIMVerrichting.html">Verrichting (SIMVerrichting)</a></td>
       <td><a href="StructureDefinition-procedure-san.html">Procedure (SAN)</a></td>
       <td><a href="StructureDefinition-SIMVerrichting-mappings.html">SIM CSV</a> · <a href="StructureDefinition-SIMVerrichting-mappings.html">Nictiz GBB</a> · <a href="StructureDefinition-SIMVerrichting-mappings.html">Santeon FHIR</a></td>
-      <td>In progress · 5 open checks</td>
+      <td>In progress · 6 open checks</td>
     </tr>
     <tr>
       <td><a href="StructureDefinition-SIMVragenlijstAntwoord.html">Vragenlijstantwoord (SIMVragenlijstAntwoord)</a></td>
@@ -273,6 +273,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Santeon FHIR</strong> – technical translation, harmonisation and required conversions to the Santeon FHIR profile, including the delivery and conversion agreements. The generator also writes it into the profile as mapping 1. The <em>FHIR profile</em> column is derived from this mapping.</li>
 </ul>
 
+<p>Each conversion note starts with one label, the first that applies:</p>
+
+<ul>
+  <li><strong>Afleiding</strong> – the FHIR value is not in the source and is derived or calculated from SIM data or a fixed agreement.</li>
+  <li><strong>Structuurconversie</strong> – the structure changes: SIM elements are combined or split, an identifier becomes a reference, records are grouped, or the target path depends on a condition.</li>
+  <li><strong>Terminologieconversie</strong> – codes are translated to another code system or value set.</li>
+  <li><strong>Datatypeconversie</strong> – the value stays the same, but the datatype changes (such as date to dateTime).</li>
+  <li><strong>Direct</strong> – one SIM value goes unchanged to one FHIR element, also under another element name, a specific choice type or a nested path.</li>
+</ul>
+
 <p><strong>Status</strong> is the own status of each logical model, chosen by review and recorded at the bottom of its FSH source. It is never taken over from a linked model or profile.</p>
 
 <ul>
@@ -283,7 +293,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><em>Open checks</em> – the number of <code class="language-plaintext highlighter-rouge">// TODO:</code> items in the FSH source of this definition.</li>
 </ul>
 
-<p>The modelling convention (the fixed mapping order, delta indicators and consistency checks) is described in <code class="language-plaintext highlighter-rouge">docs/modelleerworkflow.md</code> in the project repository. Delta outcomes are recorded per element: 🟢/🟡 for Nictiz GBB and Equivalent/🟡 for Nictiz nl-core. The modelling status is recorded separately.</p>
+<p>The modelling convention (the fixed mapping order, delta indicators and consistency checks) is described in <code class="language-plaintext highlighter-rouge">docs/modelleerworkflow.md</code> in the project repository. Delta outcomes against Nictiz GBB and Nictiz nl-core are recorded per element: Equivalent, or 🟡 for a difference or an open assessment. The modelling status is recorded separately.</p>
 
 <!-- manual-sim:end -->
 
@@ -315,8 +325,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.santeon.nl">Santeon</a>.  
           Package santeon.sim-on-fhir#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-11-25 16:23:00 +0000">
-    2026-11-25
+  <span title="2026-11-26 10:18:00 +0000">
+    2026-11-26
   </span>
 
           <br/>

@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
   "name" : "SIMPatient",
   "title" : "Patiënt (model)",
   "status" : "draft",
-  "date" : "2026-11-25T16:23:53+00:00",
+  "date" : "2026-11-26T10:18:33+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -57,7 +57,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
     "identity" : "SIMPatientToGBB",
     "uri" : "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelPatient",
     "name" : "Nictiz GBB-afsprakenmodel",
-    "comment" : "Semantische vergelijking tussen SIMPatient en Nictiz GBB Patient (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen. Legenda: 🟢 Equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."
+    "comment" : "Semantische vergelijking tussen SIMPatient en Nictiz GBB Patient (referentieversie 1.0.0-alpha.2). Legt per element binnen de IBD-scope de uitkomst van de vergelijking vast. Equivalent betekent dat het element is beoordeeld en er geen relevant semantisch verschil is vastgesteld. 🟡 Verschil vastgesteld of nader te beoordelen."
   },
   {
     "identity" : "SIMPatientToFHIR",
@@ -94,7 +94,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
       {
         "identity" : "SIMPatientToGBB",
         "map" : "Patient.patientIdentificationNumber",
-        "comment" : "🟢 Equivalent: beide gebruiken Identifier met cardinaliteit 1..*."
+        "comment" : "Equivalent"
       },
       {
         "identity" : "SIMPatientToFHIR",
@@ -124,7 +124,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
       {
         "identity" : "SIMPatientToFHIR",
         "map" : "Patient.gender",
-        "comment" : "Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender."
+        "comment" : "Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender volgens de Nictiz-ConceptMap GeslachtCodelijst-to-AdministrativeGender (http://nictiz.nl/fhir/ConceptMap/GeslachtCodelijst-to-AdministrativeGender, zib2020, draft): M naar male, F naar female, UN naar other (narrower), UNK naar unknown; toepassing van deze ConceptMap in de ETL nog te bevestigen."
       }]
     },
     {
@@ -168,7 +168,7 @@ Other representations of profile: [CSV](../StructureDefinition-SIMPatient.csv), 
       {
         "identity" : "SIMPatientToGBB",
         "map" : "Patient.dateOfBirth",
-        "comment" : "🟢 Semantisch compatibel op dagniveau: SIM gebruikt date; GBB gebruikt dateTime."
+        "comment" : "Semantisch compatibel op dagniveau: SIM gebruikt date; GBB gebruikt dateTime."
       },
       {
         "identity" : "SIMPatientToFHIR",
