@@ -44,7 +44,7 @@ Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMVerrichting"
 Mapping: ProcedureSanToNlCore
 Id: ProcedureSanToNlCore
 Title: "Nictiz nl-core-Procedure"
-Description: "Technische delta-analyse tussen ProcedureSan en Nictiz nl-core-Procedure (referentieversie 1.0.0-alpha.2). Legt per FHIR-element binnen de IBD-scope de uitkomst van de vergelijking vast. Equivalent betekent dat het element is beoordeeld en er geen relevant technisch verschil is vastgesteld. 🟡 markeert een vastgesteld verschil of een openstaande beoordeling."
+Description: "Technische delta-analyse tussen ProcedureSan en Nictiz nl-core-Procedure (referentieversie 1.0.0-alpha.2). Legt per FHIR-element binnen de IBD-scope de uitkomst van de vergelijking vast. Equivalent betekent dat het element is beoordeeld en er geen relevant technisch verschil is vastgesteld. 🟡 Verschil vastgesteld of nader te beoordelen."
 Source: ProcedureSan
 Target: "http://ig.nictiz.nl/gbb/StructureDefinition/nl-core-Procedure"
 
@@ -63,7 +63,6 @@ Target: "http://ig.nictiz.nl/gbb/StructureDefinition/nl-core-Procedure"
 
 // Status: Not reviewed
 // Moet nog uitgewerkt worden.
-// TODO: Leg in SIMVerrichtingToFHIR vast wanneer de ETL performedDateTime of performedPeriod vult en hoe VerrichtingDatumEinde wordt verwerkt.
 // TODO: Beoordeel aanvullende nl-core obligations.
 // TODO: Vaststellen hoe Procedure.status bij aanlevering wordt gevuld.
 

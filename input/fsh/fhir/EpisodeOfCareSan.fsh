@@ -29,8 +29,8 @@ Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMDBC"
 * patient -> "SIMDBC.PatientIdentificatienummer" "Structuurconversie: Patient-reference op basis van identificatienummer."
 * identifier -> "SIMDBC.SubtrajectNummer" "Direct: indien één EpisodeOfCare één DBC-subtraject representeert; samengestelde identifier (system|value), waardedeel gehasht volgens de ETL-specificatie."
 * type -> "SIMDBC.ZorgType" "Direct: mits het zorgtype de zorgepisode correct classificeert."
-* period.start -> "SIMDBC.OpeningsDatum" "Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."
-* period.end -> "SIMDBC.SluitingsDatum" "Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."
+* period.start -> "SIMDBC.OpeningsDatum" "Structuurconversie: SIM OpeningsDatum en SluitingsDatum vormen samen de FHIR Period; OpeningsDatum vult period.start; SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."
+* period.end -> "SIMDBC.SluitingsDatum" "Structuurconversie: SIM OpeningsDatum en SluitingsDatum vormen samen de FHIR Period; SluitingsDatum vult period.end; SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."
 
 // END GENERATED SIM MAPPING
 

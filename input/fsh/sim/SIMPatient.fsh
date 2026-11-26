@@ -64,14 +64,14 @@ Target: "urn:santeon:sim:csv"
 Mapping: SIMPatientToGBB
 Id: SIMPatientToGBB
 Title: "Nictiz GBB-afsprakenmodel"
-Description: "Semantische vergelijking tussen SIMPatient en Nictiz GBB Patient (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen. Legenda: 🟢 Equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."
+Description: "Semantische vergelijking tussen SIMPatient en Nictiz GBB Patient (referentieversie 1.0.0-alpha.2). Legt per element binnen de IBD-scope de uitkomst van de vergelijking vast. Equivalent betekent dat het element is beoordeeld en er geen relevant semantisch verschil is vastgesteld. 🟡 Verschil vastgesteld of nader te beoordelen."
 Source: SIMPatient
 Target: "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelPatient"
 
 // IBD-scope
-* Identificatienummer -> "Patient.patientIdentificationNumber" "🟢 Equivalent: beide gebruiken Identifier met cardinaliteit 1..*."
+* Identificatienummer -> "Patient.patientIdentificationNumber" "Equivalent"
 * Geslacht -> "Patient.gender" "🟡 Verschil in terminologiebinding: SIM gebruikt GeslachtCodelijst ZIB 2020; GBB gebruikt FHIR AdministrativeGender."
-* Geboortedatum -> "Patient.dateOfBirth" "🟢 Semantisch compatibel op dagniveau: SIM gebruikt date; GBB gebruikt dateTime."
+* Geboortedatum -> "Patient.dateOfBirth" "Semantisch compatibel op dagniveau: SIM gebruikt date; GBB gebruikt dateTime."
 * DatumOverlijden -> "Patient.deceased[x]" "🟡 Verschil in representatie: SIM registreert uitsluitend de overlijdensdatum als date; GBB ondersteunt zowel dateTime als boolean."
 
 // Buiten IBD-scope - nog te beoordelen
@@ -95,7 +95,7 @@ Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/patient-san"
 
 // IBD-scope
 * Identificatienummer -> "Patient.identifier" "Direct: system en value worden behouden conform de afgesproken identificatiesystematiek."
-* Geslacht -> "Patient.gender" "Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender."
+* Geslacht -> "Patient.gender" "Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender volgens de Nictiz-ConceptMap GeslachtCodelijst-to-AdministrativeGender (http://nictiz.nl/fhir/ConceptMap/GeslachtCodelijst-to-AdministrativeGender, zib2020, draft): M naar male, F naar female, UN naar other (narrower), UNK naar unknown; toepassing van deze ConceptMap in de ETL nog te bevestigen."
 * Geboortedatum -> "Patient.birthDate" "Direct: SIM date wordt overgenomen als FHIR date."
 * DatumOverlijden -> "Patient.deceasedDateTime" "Datatypeconversie: SIM date naar FHIR dateTime met dagprecisie; deceasedBoolean wordt vanuit dit SIM-element niet gevuld."
 

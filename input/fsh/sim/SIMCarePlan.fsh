@@ -77,7 +77,7 @@ Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/carePlan-san"
 // IBD-scope
 * CarePlanID -> "CarePlan.identifier" "Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
 * PatientIdentificatienummer -> "CarePlan.subject" "Structuurconversie: Patient-reference op basis van identificatienummer."
-* Status -> "CarePlan.status" "Direct: SIM code wordt overgenomen als FHIR code; aansluiting op FHIR request-status nog te bevestigen."
+* Status -> "CarePlan.status" "Direct: SIM code wordt ongewijzigd overgenomen als FHIR code. De in de IBD-indicatoren gebruikte code active komt voor in FHIR request-status; aansluiting van overige SIM-statuscodes nog te beoordelen."
 * Categorie -> "CarePlan.category" "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
 * StartDatumTijd -> "CarePlan.period.start" "Structuurconversie: SIM StartDatumTijd en EindDatumTijd vormen samen de FHIR Period."
 * EindDatumTijd -> "CarePlan.period.end" "Structuurconversie: SIM StartDatumTijd en EindDatumTijd vormen samen de FHIR Period."

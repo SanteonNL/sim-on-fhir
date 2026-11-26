@@ -27,7 +27,7 @@ Source: PatientSan
 Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMPatient"
 
 * identifier -> "SIMPatient.Identificatienummer" "Direct: system en value worden behouden conform de afgesproken identificatiesystematiek."
-* gender -> "SIMPatient.Geslacht" "Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender."
+* gender -> "SIMPatient.Geslacht" "Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender volgens de Nictiz-ConceptMap GeslachtCodelijst-to-AdministrativeGender (http://nictiz.nl/fhir/ConceptMap/GeslachtCodelijst-to-AdministrativeGender, zib2020, draft): M naar male, F naar female, UN naar other (narrower), UNK naar unknown; toepassing van deze ConceptMap in de ETL nog te bevestigen."
 * birthDate -> "SIMPatient.Geboortedatum" "Direct: SIM date wordt overgenomen als FHIR date."
 * deceasedDateTime -> "SIMPatient.DatumOverlijden" "Datatypeconversie: SIM date naar FHIR dateTime met dagprecisie; deceasedBoolean wordt vanuit dit SIM-element niet gevuld."
 
@@ -42,7 +42,7 @@ Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMPatient"
 Mapping: PatientSanToNlCore
 Id: PatientSanToNlCore
 Title: "Nictiz nl-core-Patient"
-Description: "Technische delta-analyse tussen PatientSan en Nictiz nl-core-Patient (referentieversie 1.0.0-alpha.2). Legt per FHIR-element binnen de IBD-scope de uitkomst van de vergelijking vast. Equivalent betekent dat het element is beoordeeld en er geen relevant technisch verschil is vastgesteld. 🟡 markeert een vastgesteld verschil of een openstaande beoordeling."
+Description: "Technische delta-analyse tussen PatientSan en Nictiz nl-core-Patient (referentieversie 1.0.0-alpha.2). Legt per FHIR-element binnen de IBD-scope de uitkomst van de vergelijking vast. Equivalent betekent dat het element is beoordeeld en er geen relevant technisch verschil is vastgesteld. 🟡 Verschil vastgesteld of nader te beoordelen."
 Source: PatientSan
 Target: "http://ig.nictiz.nl/gbb/StructureDefinition/nl-core-Patient"
 

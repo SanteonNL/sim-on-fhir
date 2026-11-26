@@ -73,7 +73,7 @@ Target: "urn:santeon:sim:csv"
 Mapping: SIMVerrichtingToGBB
 Id: SIMVerrichtingToGBB
 Title: "Nictiz GBB-afsprakenmodel"
-Description: "Semantische vergelijking tussen SIMVerrichting en Nictiz GBB Procedure (referentieversie 1.0.0-alpha.2), inclusief toelichting op verschillen. Legenda: 🟢 Equivalent of compatibel zonder relevante afwijking; 🟡 Verschil vastgesteld of nader te beoordelen."
+Description: "Semantische vergelijking tussen SIMVerrichting en Nictiz GBB Procedure (referentieversie 1.0.0-alpha.2). Legt per element binnen de IBD-scope de uitkomst van de vergelijking vast. Equivalent betekent dat het element is beoordeeld en er geen relevant semantisch verschil is vastgesteld. 🟡 Verschil vastgesteld of nader te beoordelen."
 Source: SIMVerrichting
 Target: "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelProcedure"
 
@@ -81,7 +81,7 @@ Target: "http://ig.nictiz.nl/gbb/StructureDefinition/LogicalModelProcedure"
 * VerrichtingID -> "Procedure.feederAuditOriginatingSystemItemIds" "🟡 Verschil in cardinaliteit: SIM 1..1, GBB 0..*."
 * PatientIdentificatienummer -> "Procedure.subject.patient.patientIdentificationNumber" "🟡 Nog te beoordelen: SIM legt het identificatienummer direct vast; GBB koppelt via GBB Patient."
 * VerrichtingType -> "Procedure.procedureName" "🟡 Verschil in terminologiebinding: SIM gebruikt NZa, SNOMED CT en/of DHD; GBB gebruikt een required SNOMED CT ValueSet."
-* VerrichtingStartDatum -> "Procedure.startDateTime" "🟢 Equivalent: beide gebruiken dateTime met cardinaliteit 0..1."
+* VerrichtingStartDatum -> "Procedure.startDateTime" "Equivalent"
 * VerrichtingCategorie -> "Procedure.procedureType" "🟡 Verschil in terminologiebinding: SIM gebruikt lokale zorgprofielklassen (25 codes); GBB gebruikt een required SNOMED CT ValueSet (3 codes). Geen directe één-op-één-equivalentie."
 // Geen directe GBB-equivalent vastgesteld: ContactID, OperatieID, SubtrajectNummer, VerrichtingAantal, AanvragerSpecialisme (SIM-specifiek) en UitvoerderSpecialisme.
 // GBB-elementen zonder direct SIM-equivalent: currentActionState (1..1) en dateAndTimeActionstepPerformed (1..1).
@@ -107,6 +107,9 @@ Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/procedure-san"
 * PatientIdentificatienummer -> "Procedure.subject" "Structuurconversie: Patient-reference op basis van identificatienummer."
 * ContactID -> "Procedure.encounter" "Structuurconversie: Encounter-reference op basis van ContactID."
 * VerrichtingType -> "Procedure.code" "Direct: NZa-, SNOMED CT- en DHD-coderingen worden alleen gecombineerd wanneer zij hetzelfde concept vertegenwoordigen. Verschil in cardinaliteit: VerrichtingType is in het SIM 0..1, maar ProcedureSan erft Procedure.code 1..1 van nl-core-Procedure; een verrichting zonder VerrichtingType kan niet als ProcedureSan worden aangeleverd. De IBD-aanlevering selecteert al op code, zodat daar geen verrichtingen wegvallen."
+// TODO: Verifieer in de HIPS-transformatie of procedureperformedstart
+// voor de IBD-aanlevering altijd Procedure.performedPeriod.start vult,
+// zoals K3.6.3 verwacht. Bevestig ook het brondatatype en de dateshift.
 * VerrichtingStartDatum -> "Procedure.performedPeriod.start" "Structuurconversie: bij een verrichting met tijdsduur performedPeriod.start, anders performedDateTime; dateshift volgens afzonderlijke transformatiespecificatie."
 * VerrichtingCategorie -> "Procedure.category" "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
 

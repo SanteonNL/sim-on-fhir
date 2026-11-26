@@ -15,7 +15,7 @@ The Santeon Information Model (SIM) is the content authority of this guide. Each
 | [Medicatieafspraak (SIMMedicatieAfspraak)](StructureDefinition-SIMMedicatieAfspraak.html) | [MedicationRequest (SAN)](StructureDefinition-medicationRequest-san.html) | [SIM CSV](StructureDefinition-SIMMedicatieAfspraak-mappings.html) · [Santeon FHIR](StructureDefinition-SIMMedicatieAfspraak-mappings.html) | In progress · 5 open checks |
 | [Patiënt (SIMPatient)](StructureDefinition-SIMPatient.html) | [Patient (SAN)](StructureDefinition-patient-san.html) | [SIM CSV](StructureDefinition-SIMPatient-mappings.html) · [Nictiz GBB](StructureDefinition-SIMPatient-mappings.html) · [Santeon FHIR](StructureDefinition-SIMPatient-mappings.html) | Ready for validation · 2 open checks |
 | [Tabakgebruik (SIMTabakGebruik)](StructureDefinition-SIMTabakGebruik.html) | [Observation TabakGebruik (SAN)](StructureDefinition-observation-san-tabakgebruik.html) | [SIM CSV](StructureDefinition-SIMTabakGebruik-mappings.html) · [Santeon FHIR](StructureDefinition-SIMTabakGebruik-mappings.html) | In progress · 2 open checks |
-| [Verrichting (SIMVerrichting)](StructureDefinition-SIMVerrichting.html) | [Procedure (SAN)](StructureDefinition-procedure-san.html) | [SIM CSV](StructureDefinition-SIMVerrichting-mappings.html) · [Nictiz GBB](StructureDefinition-SIMVerrichting-mappings.html) · [Santeon FHIR](StructureDefinition-SIMVerrichting-mappings.html) | In progress · 5 open checks |
+| [Verrichting (SIMVerrichting)](StructureDefinition-SIMVerrichting.html) | [Procedure (SAN)](StructureDefinition-procedure-san.html) | [SIM CSV](StructureDefinition-SIMVerrichting-mappings.html) · [Nictiz GBB](StructureDefinition-SIMVerrichting-mappings.html) · [Santeon FHIR](StructureDefinition-SIMVerrichting-mappings.html) | In progress · 6 open checks |
 | [Vragenlijstantwoord (SIMVragenlijstAntwoord)](StructureDefinition-SIMVragenlijstAntwoord.html) | [QuestionnaireResponse (SAN)](StructureDefinition-questionnaireResponse-san.html) | [SIM CSV](StructureDefinition-SIMVragenlijstAntwoord-mappings.html) · [Santeon FHIR](StructureDefinition-SIMVragenlijstAntwoord-mappings.html) | In progress · 5 open checks |
 | [Zorgplan (SIMCarePlan)](StructureDefinition-SIMCarePlan.html) | [CarePlan (SAN)](StructureDefinition-carePlan-san.html) | [SIM CSV](StructureDefinition-SIMCarePlan-mappings.html) · [Santeon FHIR](StructureDefinition-SIMCarePlan-mappings.html) | In progress · 3 open checks |
 
@@ -27,6 +27,14 @@ The Santeon Information Model (SIM) is the content authority of this guide. Each
 - **Nictiz GBB** – semantic delta analysis with the Nictiz GBB-afsprakenmodel.
 - **Santeon FHIR** – technical translation, harmonisation and required conversions to the Santeon FHIR profile, including the delivery and conversion agreements. The generator also writes it into the profile as mapping 1. The *FHIR profile* column is derived from this mapping.
 
+Each conversion note starts with one label, the first that applies:
+
+- **Afleiding** – the FHIR value is not in the source and is derived or calculated from SIM data or a fixed agreement.
+- **Structuurconversie** – the structure changes: SIM elements are combined or split, an identifier becomes a reference, records are grouped, or the target path depends on a condition.
+- **Terminologieconversie** – codes are translated to another code system or value set.
+- **Datatypeconversie** – the value stays the same, but the datatype changes (such as date to dateTime).
+- **Direct** – one SIM value goes unchanged to one FHIR element, also under another element name, a specific choice type or a nested path.
+
 **Status** is the own status of each logical model, chosen by review and recorded at the bottom of its FSH source. It is never taken over from a linked model or profile.
 
 - **Not reviewed** – present, but not yet checked against the modelling convention (default).
@@ -35,6 +43,6 @@ The Santeon Information Model (SIM) is the content authority of this guide. Each
 - **Validated** – the agreed content reviews and technical validations have been completed and checked.
 - *Open checks* – the number of `// TODO:` items in the FSH source of this definition.
 
-The modelling convention (the fixed mapping order, delta indicators and consistency checks) is described in `docs/modelleerworkflow.md` in the project repository. Delta outcomes are recorded per element: 🟢/🟡 for Nictiz GBB and Equivalent/🟡 for Nictiz nl-core. The modelling status is recorded separately.
+The modelling convention (the fixed mapping order, delta indicators and consistency checks) is described in `docs/modelleerworkflow.md` in the project repository. Delta outcomes against Nictiz GBB and Nictiz nl-core are recorded per element: Equivalent, or 🟡 for a difference or an open assessment. The modelling status is recorded separately.
 
 <!-- manual-sim:end -->

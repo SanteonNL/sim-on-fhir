@@ -31,7 +31,7 @@ Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/SIMMedicatieAfspr
 * medicationCodeableConcept -> "SIMMedicatieAfspraak.Product" "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept. Het SIM documenteert medicationReference naar een Medication met deze code; keuze nog te maken."
 * dosageInstruction.route -> "SIMMedicatieAfspraak.Toedieningsweg" "Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
 * dosageInstruction.timing.repeat.boundsPeriod.start -> "SIMMedicatieAfspraak.GebruiksperiodeStart" "Direct: SIM dateTime wordt overgenomen als FHIR dateTime."
-* status -> "SIMMedicatieAfspraak.MedicatieAfspraakStatus" "Datatypeconversie: SIM Coding naar FHIR code; codes volgens MedicatieAfspraakStatusSysteem, overeenkomst met FHIR medicationrequest-status verifiëren."
+* status -> "SIMMedicatieAfspraak.MedicatieAfspraakStatus" "Datatypeconversie: SIM Coding naar FHIR code; de codewaarde wordt ongewijzigd overgenomen. De in de IBD-indicatoren gebruikte codes active, completed, stopped en cancelled komen ongewijzigd voor in FHIR medicationrequest-status; aansluiting van overige codes uit MedicatieAfspraakStatusSysteem nog te beoordelen."
 
 // END GENERATED SIM MAPPING
 

@@ -22,12 +22,35 @@ deze volgorde.
 | Mapping | Wat leg je vast? |
 |---|---|
 | 1. SIM CSV | Uit welk SIM-attribuut het element komt. |
-| 2. Nictiz GBB | De semantische vergelijking met het GBB-afsprakenmodel en de gebruikte referentieversie. Gebruik 🟢 voor beoordeeld en passend, en 🟡 voor een verschil of open beoordeling. |
-| 3. Santeon FHIR | Het FHIR-doelpad per SIM-element en de benodigde conversie of invulafspraak. Verwijs voor concrete vertaaltabellen naar de beheerde ETL- of transformatiespecificatie. |
+| 2. Nictiz GBB | De semantische vergelijking met het GBB-afsprakenmodel en de gebruikte referentieversie. Gebruik `Equivalent` als de beoordeling equivalentie vaststelt, en 🟡 met korte uitleg bij een verschil of open beoordeling. |
+| 3. Santeon FHIR | Het FHIR-doelpad per SIM-element en de benodigde conversie of invulafspraak, met een conversielabel (zie hieronder). Verwijs voor concrete vertaaltabellen naar de beheerde ETL- of transformatiespecificatie. |
 
 Gebruik een specifiek doelpad als de aanleverafspraak een specifiek type
 kiest, bijvoorbeeld `Observation.effectiveDateTime`. Als een mapping nog
 ontbreekt, licht kort toe waarom.
+
+### Conversielabels in mapping 3
+
+Begin elke toelichting met één label, gevolgd door een dubbele punt.
+Gebruik het eerste toepasselijke label uit de tabel. De generator neemt de
+toelichting letterlijk over in Mapping 1 van het FHIR-profiel.
+
+| Label | Gebruik als | Leg vast |
+|---|---|---|
+| `Afleiding` | De FHIR-waarde wordt berekend, afgeleid of volgens afspraak vast ingevuld. | De brongegevens en de reken- of beslisregel, of de afgesproken vaste waarde. |
+| `Structuurconversie` | Elementen of records worden samengevoegd, opgesplitst of gegroepeerd, een identificatienummer wordt een `Reference`, of een voorwaarde bepaalt het doelpad. | Hoe de structuur wordt opgebouwd, welke sleutel de referentie bepaalt of welk doelpad per voorwaarde geldt. |
+| `Terminologieconversie` | Codes worden vertaald naar een ander codesysteem of een andere ValueSet. | De bron- en doelterminologie en de vertaalregel. Verwijs bij een vertaaltabel naar de beheerde ConceptMap of transformatiespecificatie. |
+| `Datatypeconversie` | De waarde blijft gelijk en het datatype verandert. | Het bron- en doeldatatype en wat er met de precisie gebeurt. |
+| `Direct` | Eén SIM-waarde vult ongewijzigd één FHIR-element. Ook een andere naam, een vast gekozen type of een genest doelpad kan `Direct` zijn. | Het overgenomen datatype en eventuele voorwaarden. |
+
+Vermeld na de hoofdomzetting achtereenvolgens eventuele aanvullende
+omzettingen, voorwaarden, de-identificatie en open punten. Scheid ze met
+een puntkomma. Verwijs voor de-identificatie naar de specificatie.
+De-identificatie bepaalt het label niet. Leg open punten ook vast met
+`// TODO:` in de statussectie.
+
+Voorbeeld bij `SIMContact.BeginDatumTijd` → `Encounter.period.start`:
+`Structuurconversie: BeginDatumTijd en EindDatumTijd vormen samen de FHIR Period; dateshift volgens de transformatiespecificatie.`
 
 ## 3. Pas het FHIR-profiel aan
 
@@ -54,7 +77,7 @@ wilt afdwingen welke typen het profiel accepteert.
 |---|---|
 | Profieldefinitie | Parent, scopecomment en eventuele aanvullende profielregels. |
 | Mapping 1 | De gegenereerde SIM-herkomstmapping. Onderhoud bronpaden en conversietoelichtingen in Mapping 3 van het Logical Model. |
-| Mapping 2 | De handmatige technische vergelijking met het passende Nictiz nl-core-profiel, inclusief referentieversie. Gebruik `Equivalent` na een afgeronde vergelijking zonder relevant verschil en 🟡 met uitleg bij een verschil of open beoordeling. Ontbreekt de vergelijking, vermeld dan kort waarom. |
+| Mapping 2 | De handmatige technische vergelijking met het passende Nictiz nl-core-profiel, inclusief referentieversie. Gebruik `Equivalent` na een afgeronde vergelijking zonder relevant verschil, en 🟡 met korte uitleg bij een verschil of open beoordeling. Ontbreekt de vergelijking, vermeld dan kort waarom. |
 | Status en openstaande controles | Eén `// Status:` per bestand en concrete `// TODO:`-regels bij open punten. |
 
 Neem bij een nieuw profiel met een SIM-herkomstmapping de onderstaande

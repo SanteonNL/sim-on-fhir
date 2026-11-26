@@ -812,10 +812,25 @@ CONVENTION_NOTE = [
     "",
     'The modelling convention (the fixed mapping order, delta indicators and '
     "consistency checks) is described in `docs/modelleerworkflow.md` in the project repository. "
-"Delta outcomes are recorded per element: 🟢/🟡 for Nictiz GBB and "
-"Equivalent/🟡 for Nictiz nl-core. The modelling status is recorded separately.",
+"Delta outcomes against Nictiz GBB and Nictiz nl-core are recorded per element: "
+"Equivalent, or 🟡 for a difference or an open assessment. The modelling status is recorded separately.",
 ]
 
+
+# The conversion labels of the LM -> FHIR mapping notes; the full convention is in docs/modelleerworkflow.md.
+CONVERSION_LEGEND = [
+    "Each conversion note starts with one label, the first that applies:",
+    "",
+    "- **Afleiding** – the FHIR value is not in the source and is derived or calculated from SIM data or a "
+    "fixed agreement.",
+    "- **Structuurconversie** – the structure changes: SIM elements are combined or split, an identifier "
+    "becomes a reference, records are grouped, or the target path depends on a condition.",
+    "- **Terminologieconversie** – codes are translated to another code system or value set.",
+    "- **Datatypeconversie** – the value stays the same, but the datatype changes (such as date to dateTime).",
+    "- **Direct** – one SIM value goes unchanged to one FHIR element, also under another element name, a "
+    "specific choice type or a nested path.",
+    "",
+]
 
 def md_cell(s):
     return one_line(s).replace("|", "\\|")
@@ -1007,7 +1022,7 @@ def update_clms(defs, cat):
         "FHIR profile, including the delivery and conversion agreements. The generator also writes it into "
         "the profile as mapping 1. The *FHIR profile* column is derived from this mapping.",
         "",
-    ] + status_legend("logical model") + CONVENTION_NOTE + [""]
+    ] + CONVERSION_LEGEND + status_legend("logical model") + CONVENTION_NOTE + [""]
     replace_marked("CLMs.md", "manual-sim", lines)
 
 
@@ -1049,7 +1064,7 @@ def update_profiles(defs, cat):
         "- **Nictiz nl-core** (mapping 2) – manual technical delta analysis with the Nictiz nl-core profile "
         "(nictiz.nl.gbb 1.0.0-alpha.2). Where no technical delta is recorded, the FSH source explains why.",
         "",
-    ] + status_legend("FHIR profile") + CONVENTION_NOTE + [""]
+    ] + CONVERSION_LEGEND + status_legend("FHIR profile") + CONVENTION_NOTE + [""]
     replace_marked("profiles.md", "manual-profiles", lines)
 
 

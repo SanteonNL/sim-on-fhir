@@ -98,8 +98,8 @@ Target: "https://ig.santeon.nl/sim-on-fhir/StructureDefinition/episodeOfCare-san
 * PatientIdentificatienummer -> "EpisodeOfCare.patient" "Structuurconversie: Patient-reference op basis van identificatienummer."
 * SubtrajectNummer -> "EpisodeOfCare.identifier" "Direct: indien één EpisodeOfCare één DBC-subtraject representeert; samengestelde identifier (system|value), waardedeel gehasht volgens de ETL-specificatie."
 * ZorgType -> "EpisodeOfCare.type" "Direct: mits het zorgtype de zorgepisode correct classificeert."
-* OpeningsDatum -> "EpisodeOfCare.period.start" "Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."
-* SluitingsDatum -> "EpisodeOfCare.period.end" "Datatypeconversie: SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."
+* OpeningsDatum -> "EpisodeOfCare.period.start" "Structuurconversie: SIM OpeningsDatum en SluitingsDatum vormen samen de FHIR Period; OpeningsDatum vult period.start; SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-openingsdatum overeenkomt met de start van de zorgepisode."
+* SluitingsDatum -> "EpisodeOfCare.period.end" "Structuurconversie: SIM OpeningsDatum en SluitingsDatum vormen samen de FHIR Period; SluitingsDatum vult period.end; SIM date naar FHIR dateTime met behoud van datumprecisie (geen tijdstip toevoegen); alleen indien de DBC-sluitingsdatum overeenkomt met het einde van de zorgepisode."
 
 
 // ============================================
