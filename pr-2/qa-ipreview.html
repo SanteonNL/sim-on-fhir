@@ -170,7 +170,7 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
           Package santeon.sim-on-fhir#0.1.0 based on FHIR 4.0.1.
           Generated 
   
-    2026-11-25
+    2026-11-26
   
 
           
@@ -197,6 +197,336 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
              
                 Creative Commons 0
          (        <a href="en/searchform.html">src</a>
+)
+      </li>
+      <li>
+  // 16b77021-288e-47ad-98eb-81960d24d20a
+if (typeof htColToggle === 'undefined') {
+  window.htColApply = function(k, show) {
+    document.querySelectorAll('[data-col="'+k+'"]').forEach(function(c) { c.style.display = show ? '' : 'none'; });
+    document.querySelectorAll('input[data-col-toggle="'+k+'"]').forEach(function(c) { c.checked = show; });
+  };
+  window.htColToggle = function(cb) {
+    var k = cb.getAttribute('data-col-toggle');
+    try { if (cb.checked) { localStorage.removeItem('ht-col-'+k); } else { localStorage.setItem('ht-col-'+k, 'false'); } } catch (e) { }
+    htColApply(k, cb.checked);
+  };
+}
+document.querySelectorAll('#ctcarePlan-sanMo input[data-col-toggle]').forEach(function(cb) {
+  var k = cb.getAttribute('data-col-toggle');
+  var s = null;
+  try { s = localStorage.getItem('ht-col-'+k); } catch (e) { }
+  if (s === 'false') { htColApply(k, false); }
+});
+ (        <a href="en/StructureDefinition-carePlan-san-mappings.html">src</a>
+)
+      </li>
+      <li>
+  // 16b77021-288e-47ad-98eb-81960d24d20a
+if (typeof htColToggle === 'undefined') {
+  window.htColApply = function(k, show) {
+    document.querySelectorAll('[data-col="'+k+'"]').forEach(function(c) { c.style.display = show ? '' : 'none'; });
+    document.querySelectorAll('input[data-col-toggle="'+k+'"]').forEach(function(c) { c.checked = show; });
+  };
+  window.htColToggle = function(cb) {
+    var k = cb.getAttribute('data-col-toggle');
+    try { if (cb.checked) { localStorage.removeItem('ht-col-'+k); } else { localStorage.setItem('ht-col-'+k, 'false'); } } catch (e) { }
+    htColApply(k, cb.checked);
+  };
+}
+document.querySelectorAll('#ctcondition-sanMo input[data-col-toggle]').forEach(function(cb) {
+  var k = cb.getAttribute('data-col-toggle');
+  var s = null;
+  try { s = localStorage.getItem('ht-col-'+k); } catch (e) { }
+  if (s === 'false') { htColApply(k, false); }
+});
+ (        <a href="en/StructureDefinition-condition-san-mappings.html">src</a>
+)
+      </li>
+      <li>
+  // 16b77021-288e-47ad-98eb-81960d24d20a
+if (typeof htColToggle === 'undefined') {
+  window.htColApply = function(k, show) {
+    document.querySelectorAll('[data-col="'+k+'"]').forEach(function(c) { c.style.display = show ? '' : 'none'; });
+    document.querySelectorAll('input[data-col-toggle="'+k+'"]').forEach(function(c) { c.checked = show; });
+  };
+  window.htColToggle = function(cb) {
+    var k = cb.getAttribute('data-col-toggle');
+    try { if (cb.checked) { localStorage.removeItem('ht-col-'+k); } else { localStorage.setItem('ht-col-'+k, 'false'); } } catch (e) { }
+    htColApply(k, cb.checked);
+  };
+}
+document.querySelectorAll('#ctencounter-sanMo input[data-col-toggle]').forEach(function(cb) {
+  var k = cb.getAttribute('data-col-toggle');
+  var s = null;
+  try { s = localStorage.getItem('ht-col-'+k); } catch (e) { }
+  if (s === 'false') { htColApply(k, false); }
+});
+ (        <a href="en/StructureDefinition-encounter-san-mappings.html">src</a>
+)
+      </li>
+      <li>
+  // 16b77021-288e-47ad-98eb-81960d24d20a
+if (typeof htColToggle === 'undefined') {
+  window.htColApply = function(k, show) {
+    document.querySelectorAll('[data-col="'+k+'"]').forEach(function(c) { c.style.display = show ? '' : 'none'; });
+    document.querySelectorAll('input[data-col-toggle="'+k+'"]').forEach(function(c) { c.checked = show; });
+  };
+  window.htColToggle = function(cb) {
+    var k = cb.getAttribute('data-col-toggle');
+    try { if (cb.checked) { localStorage.removeItem('ht-col-'+k); } else { localStorage.setItem('ht-col-'+k, 'false'); } } catch (e) { }
+    htColApply(k, cb.checked);
+  };
+}
+document.querySelectorAll('#ctepisodeOfCare-sanMo input[data-col-toggle]').forEach(function(cb) {
+  var k = cb.getAttribute('data-col-toggle');
+  var s = null;
+  try { s = localStorage.getItem('ht-col-'+k); } catch (e) { }
+  if (s === 'false') { htColApply(k, false); }
+});
+ (        <a href="en/StructureDefinition-episodeOfCare-san-mappings.html">src</a>
+)
+      </li>
+      <li>
+  // 16b77021-288e-47ad-98eb-81960d24d20a
+if (typeof htColToggle === 'undefined') {
+  window.htColApply = function(k, show) {
+    document.querySelectorAll('[data-col="'+k+'"]').forEach(function(c) { c.style.display = show ? '' : 'none'; });
+    document.querySelectorAll('input[data-col-toggle="'+k+'"]').forEach(function(c) { c.checked = show; });
+  };
+  window.htColToggle = function(cb) {
+    var k = cb.getAttribute('data-col-toggle');
+    try { if (cb.checked) { localStorage.removeItem('ht-col-'+k); } else { localStorage.setItem('ht-col-'+k, 'false'); } } catch (e) { }
+    htColApply(k, cb.checked);
+  };
+}
+document.querySelectorAll('#ctmedicationRequest-sanMo input[data-col-toggle]').forEach(function(cb) {
+  var k = cb.getAttribute('data-col-toggle');
+  var s = null;
+  try { s = localStorage.getItem('ht-col-'+k); } catch (e) { }
+  if (s === 'false') { htColApply(k, false); }
+});
+ (        <a href="en/StructureDefinition-medicationRequest-san-mappings.html">src</a>
+)
+      </li>
+      <li>
+  // 16b77021-288e-47ad-98eb-81960d24d20a
+if (typeof htColToggle === 'undefined') {
+  window.htColApply = function(k, show) {
+    document.querySelectorAll('[data-col="'+k+'"]').forEach(function(c) { c.style.display = show ? '' : 'none'; });
+    document.querySelectorAll('input[data-col-toggle="'+k+'"]').forEach(function(c) { c.checked = show; });
+  };
+  window.htColToggle = function(cb) {
+    var k = cb.getAttribute('data-col-toggle');
+    try { if (cb.checked) { localStorage.removeItem('ht-col-'+k); } else { localStorage.setItem('ht-col-'+k, 'false'); } } catch (e) { }
+    htColApply(k, cb.checked);
+  };
+}
+document.querySelectorAll('#ctobservation-san-kpiMo input[data-col-toggle]').forEach(function(cb) {
+  var k = cb.getAttribute('data-col-toggle');
+  var s = null;
+  try { s = localStorage.getItem('ht-col-'+k); } catch (e) { }
+  if (s === 'false') { htColApply(k, false); }
+});
+ (        <a href="en/StructureDefinition-observation-san-kpi-mappings.html">src</a>
+)
+      </li>
+      <li>
+  // 16b77021-288e-47ad-98eb-81960d24d20a
+if (typeof htColToggle === 'undefined') {
+  window.htColApply = function(k, show) {
+    document.querySelectorAll('[data-col="'+k+'"]').forEach(function(c) { c.style.display = show ? '' : 'none'; });
+    document.querySelectorAll('input[data-col-toggle="'+k+'"]').forEach(function(c) { c.checked = show; });
+  };
+  window.htColToggle = function(cb) {
+    var k = cb.getAttribute('data-col-toggle');
+    try { if (cb.checked) { localStorage.removeItem('ht-col-'+k); } else { localStorage.setItem('ht-col-'+k, 'false'); } } catch (e) { }
+    htColApply(k, cb.checked);
+  };
+}
+document.querySelectorAll('#ctobservation-san-tabakgebruikMo input[data-col-toggle]').forEach(function(cb) {
+  var k = cb.getAttribute('data-col-toggle');
+  var s = null;
+  try { s = localStorage.getItem('ht-col-'+k); } catch (e) { }
+  if (s === 'false') { htColApply(k, false); }
+});
+ (        <a href="en/StructureDefinition-observation-san-tabakgebruik-mappings.html">src</a>
+)
+      </li>
+      <li>
+  // 16b77021-288e-47ad-98eb-81960d24d20a
+if (typeof htColToggle === 'undefined') {
+  window.htColApply = function(k, show) {
+    document.querySelectorAll('[data-col="'+k+'"]').forEach(function(c) { c.style.display = show ? '' : 'none'; });
+    document.querySelectorAll('input[data-col-toggle="'+k+'"]').forEach(function(c) { c.checked = show; });
+  };
+  window.htColToggle = function(cb) {
+    var k = cb.getAttribute('data-col-toggle');
+    try { if (cb.checked) { localStorage.removeItem('ht-col-'+k); } else { localStorage.setItem('ht-col-'+k, 'false'); } } catch (e) { }
+    htColApply(k, cb.checked);
+  };
+}
+document.querySelectorAll('#ctobservation-sanMo input[data-col-toggle]').forEach(function(cb) {
+  var k = cb.getAttribute('data-col-toggle');
+  var s = null;
+  try { s = localStorage.getItem('ht-col-'+k); } catch (e) { }
+  if (s === 'false') { htColApply(k, false); }
+});
+ (        <a href="en/StructureDefinition-observation-san-mappings.html">src</a>
+)
+      </li>
+      <li>
+  // 16b77021-288e-47ad-98eb-81960d24d20a
+if (typeof htColToggle === 'undefined') {
+  window.htColApply = function(k, show) {
+    document.querySelectorAll('[data-col="'+k+'"]').forEach(function(c) { c.style.display = show ? '' : 'none'; });
+    document.querySelectorAll('input[data-col-toggle="'+k+'"]').forEach(function(c) { c.checked = show; });
+  };
+  window.htColToggle = function(cb) {
+    var k = cb.getAttribute('data-col-toggle');
+    try { if (cb.checked) { localStorage.removeItem('ht-col-'+k); } else { localStorage.setItem('ht-col-'+k, 'false'); } } catch (e) { }
+    htColApply(k, cb.checked);
+  };
+}
+document.querySelectorAll('#ctpatient-san-kpiMo input[data-col-toggle]').forEach(function(cb) {
+  var k = cb.getAttribute('data-col-toggle');
+  var s = null;
+  try { s = localStorage.getItem('ht-col-'+k); } catch (e) { }
+  if (s === 'false') { htColApply(k, false); }
+});
+ (        <a href="en/StructureDefinition-patient-san-kpi-mappings.html">src</a>
+)
+      </li>
+      <li>
+  // 16b77021-288e-47ad-98eb-81960d24d20a
+if (typeof htColToggle === 'undefined') {
+  window.htColApply = function(k, show) {
+    document.querySelectorAll('[data-col="'+k+'"]').forEach(function(c) { c.style.display = show ? '' : 'none'; });
+    document.querySelectorAll('input[data-col-toggle="'+k+'"]').forEach(function(c) { c.checked = show; });
+  };
+  window.htColToggle = function(cb) {
+    var k = cb.getAttribute('data-col-toggle');
+    try { if (cb.checked) { localStorage.removeItem('ht-col-'+k); } else { localStorage.setItem('ht-col-'+k, 'false'); } } catch (e) { }
+    htColApply(k, cb.checked);
+  };
+}
+document.querySelectorAll('#ctpatient-sanMe input[data-col-toggle]').forEach(function(cb) {
+  var k = cb.getAttribute('data-col-toggle');
+  var s = null;
+  try { s = localStorage.getItem('ht-col-'+k); } catch (e) { }
+  if (s === 'false') { htColApply(k, false); }
+});
+ (        <a href="en/StructureDefinition-patient-san-mappings.html">src</a>
+)
+      </li>
+      <li>
+  // 16b77021-288e-47ad-98eb-81960d24d20a
+if (typeof htColToggle === 'undefined') {
+  window.htColApply = function(k, show) {
+    document.querySelectorAll('[data-col="'+k+'"]').forEach(function(c) { c.style.display = show ? '' : 'none'; });
+    document.querySelectorAll('input[data-col-toggle="'+k+'"]').forEach(function(c) { c.checked = show; });
+  };
+  window.htColToggle = function(cb) {
+    var k = cb.getAttribute('data-col-toggle');
+    try { if (cb.checked) { localStorage.removeItem('ht-col-'+k); } else { localStorage.setItem('ht-col-'+k, 'false'); } } catch (e) { }
+    htColApply(k, cb.checked);
+  };
+}
+document.querySelectorAll('#ctpatient-sanMo input[data-col-toggle]').forEach(function(cb) {
+  var k = cb.getAttribute('data-col-toggle');
+  var s = null;
+  try { s = localStorage.getItem('ht-col-'+k); } catch (e) { }
+  if (s === 'false') { htColApply(k, false); }
+});
+ (        <a href="en/StructureDefinition-patient-san-mappings.html">src</a>
+)
+      </li>
+      <li>
+  // 16b77021-288e-47ad-98eb-81960d24d20a
+if (typeof htColToggle === 'undefined') {
+  window.htColApply = function(k, show) {
+    document.querySelectorAll('[data-col="'+k+'"]').forEach(function(c) { c.style.display = show ? '' : 'none'; });
+    document.querySelectorAll('input[data-col-toggle="'+k+'"]').forEach(function(c) { c.checked = show; });
+  };
+  window.htColToggle = function(cb) {
+    var k = cb.getAttribute('data-col-toggle');
+    try { if (cb.checked) { localStorage.removeItem('ht-col-'+k); } else { localStorage.setItem('ht-col-'+k, 'false'); } } catch (e) { }
+    htColApply(k, cb.checked);
+  };
+}
+document.querySelectorAll('#ctprocedure-san-kpiMo input[data-col-toggle]').forEach(function(cb) {
+  var k = cb.getAttribute('data-col-toggle');
+  var s = null;
+  try { s = localStorage.getItem('ht-col-'+k); } catch (e) { }
+  if (s === 'false') { htColApply(k, false); }
+});
+ (        <a href="en/StructureDefinition-procedure-san-kpi-mappings.html">src</a>
+)
+      </li>
+      <li>
+  // 16b77021-288e-47ad-98eb-81960d24d20a
+if (typeof htColToggle === 'undefined') {
+  window.htColApply = function(k, show) {
+    document.querySelectorAll('[data-col="'+k+'"]').forEach(function(c) { c.style.display = show ? '' : 'none'; });
+    document.querySelectorAll('input[data-col-toggle="'+k+'"]').forEach(function(c) { c.checked = show; });
+  };
+  window.htColToggle = function(cb) {
+    var k = cb.getAttribute('data-col-toggle');
+    try { if (cb.checked) { localStorage.removeItem('ht-col-'+k); } else { localStorage.setItem('ht-col-'+k, 'false'); } } catch (e) { }
+    htColApply(k, cb.checked);
+  };
+}
+document.querySelectorAll('#ctprocedure-sanMe input[data-col-toggle]').forEach(function(cb) {
+  var k = cb.getAttribute('data-col-toggle');
+  var s = null;
+  try { s = localStorage.getItem('ht-col-'+k); } catch (e) { }
+  if (s === 'false') { htColApply(k, false); }
+});
+ (        <a href="en/StructureDefinition-procedure-san-mappings.html">src</a>
+)
+      </li>
+      <li>
+  // 16b77021-288e-47ad-98eb-81960d24d20a
+if (typeof htColToggle === 'undefined') {
+  window.htColApply = function(k, show) {
+    document.querySelectorAll('[data-col="'+k+'"]').forEach(function(c) { c.style.display = show ? '' : 'none'; });
+    document.querySelectorAll('input[data-col-toggle="'+k+'"]').forEach(function(c) { c.checked = show; });
+  };
+  window.htColToggle = function(cb) {
+    var k = cb.getAttribute('data-col-toggle');
+    try { if (cb.checked) { localStorage.removeItem('ht-col-'+k); } else { localStorage.setItem('ht-col-'+k, 'false'); } } catch (e) { }
+    htColApply(k, cb.checked);
+  };
+}
+document.querySelectorAll('#ctprocedure-sanMo input[data-col-toggle]').forEach(function(cb) {
+  var k = cb.getAttribute('data-col-toggle');
+  var s = null;
+  try { s = localStorage.getItem('ht-col-'+k); } catch (e) { }
+  if (s === 'false') { htColApply(k, false); }
+});
+ (        <a href="en/StructureDefinition-procedure-san-mappings.html">src</a>
+)
+      </li>
+      <li>
+  // 16b77021-288e-47ad-98eb-81960d24d20a
+if (typeof htColToggle === 'undefined') {
+  window.htColApply = function(k, show) {
+    document.querySelectorAll('[data-col="'+k+'"]').forEach(function(c) { c.style.display = show ? '' : 'none'; });
+    document.querySelectorAll('input[data-col-toggle="'+k+'"]').forEach(function(c) { c.checked = show; });
+  };
+  window.htColToggle = function(cb) {
+    var k = cb.getAttribute('data-col-toggle');
+    try { if (cb.checked) { localStorage.removeItem('ht-col-'+k); } else { localStorage.setItem('ht-col-'+k, 'false'); } } catch (e) { }
+    htColApply(k, cb.checked);
+  };
+}
+document.querySelectorAll('#ctquestionnaireResponse-sanMo input[data-col-toggle]').forEach(function(cb) {
+  var k = cb.getAttribute('data-col-toggle');
+  var s = null;
+  try { s = localStorage.getItem('ht-col-'+k); } catch (e) { }
+  if (s === 'false') { htColApply(k, false); }
+});
+ (        <a href="en/StructureDefinition-questionnaireResponse-san-mappings.html">src</a>
 )
       </li>
       <li>
@@ -410,8 +740,8 @@ Administratief geslacht van de patiënt          <br class="binding"/>
           Package santeon.sim-on-fhir#0.1.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
 .
           Generated 
-            <span title="2026-11-25 16:23:00 +0000">
-    2026-11-25
+            <span title="2026-11-26 10:19:00 +0000">
+    2026-11-26
   </span>
 
 
@@ -463,18 +793,19 @@ The codes SHALL be taken from            <a href="http://decor.nictiz.nl/fhir/Va
       </tr>
       <tr>
         <td>
-          <a href="en/StructureDefinition-condition-san-mappings.html">web</a>
+          <a href="en/StructureDefinition-condition-san-definitions.html">web</a>
         </td>
         <td>
           <a href="http://snomed.info/conceptdomain">snomed.info</a>
         </td>
         <td>
-          <a href="http://snomed.info/conceptdomain" title="http://snomed.info/conceptdomain">SNOMED CT Concept Domain Binding</a>
+          <a href="http://snomed.info/conceptdomain">SNOMED CT Concept Domain Binding</a>
+ (sct-concept)
         </td>
       </tr>
       <tr>
         <td>
-          <a href="en/StructureDefinition-condition-san.html">web</a>
+          <a href="en/StructureDefinition-condition-san-definitions.html">web</a>
         </td>
         <td>
           <a href="http://tx.hl7europe.eu/r4/ValueSet/2-eHDSIIllnessandDisorder-8.1.0">tx.hl7europe.eu</a>
@@ -486,13 +817,70 @@ eHDSI Illness and Disorder <img src="external.png" alt=""/>          </a>
       </tr>
       <tr>
         <td>
+          <a href="en/StructureDefinition-condition-san-mappings.html">web</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/conceptdomain">snomed.info</a>
+        </td>
+        <td>
+          <a href="http://snomed.info/conceptdomain" title="SNOMED CT Concept Domain Binding">SNOMED CT Concept Domain Binding</a>
+          <a name="sct-concept"> </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-condition-san.html">web</a>
+        </td>
+        <td>
+          <a href="http://tx.hl7europe.eu/r4/ValueSet/2-eHDSIIllnessandDisorder-8.1.0">tx.hl7europe.eu</a>
+        </td>
+        <td>
+
+                <a href="http://tx.hl7europe.eu/r4/ValueSet/2-eHDSIIllnessandDisorder-8.1.0">eHDSI Illness and Disorder</a>
+
+                <button data-clipboard-text="http://terminology.ehdsi.eu/ValueSet/eHDSIIllnessandDisorder" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
+
+                <img src="external.png" alt=""/>
+
+    
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-condition-san.html">web</a>
+        </td>
+        <td>
+          <a href="http://tx.hl7europe.eu/r4">tx.hl7europe.eu</a>
+        </td>
+        <td>
+
+                <a href="http://tx.hl7europe.eu/r4">tx.hl7europe.eu</a>
+
+    
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-medicationRequest-san-definitions.html">web</a>
+        </td>
+        <td>
+          <a href="http://www.ncpdp.org/NCPDP/media/pdf/NCPDPEprescribing101.pdf">www.ncpdp.org</a>
+        </td>
+        <td>
+          <a href="http://www.ncpdp.org/NCPDP/media/pdf/NCPDPEprescribing101.pdf">Mapping to NCPDP SCRIPT 10.6</a>
+ (script10.6)
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="en/StructureDefinition-medicationRequest-san-mappings.html">web</a>
         </td>
         <td>
-          <a href="http://ncpdp.org/SCRIPT10_6">ncpdp.org</a>
+          <a href="http://www.ncpdp.org/NCPDP/media/pdf/NCPDPEprescribing101.pdf">www.ncpdp.org</a>
         </td>
         <td>
-          <a href="http://ncpdp.org/SCRIPT10_6" title="http://ncpdp.org/SCRIPT10_6">Mapping to NCPDP SCRIPT 10.6</a>
+          <a href="http://www.ncpdp.org/NCPDP/media/pdf/NCPDPEprescribing101.pdf" title="Mapping to NCPDP SCRIPT 10.6">Mapping to NCPDP SCRIPT 10.6</a>
+          <a name="script10.6"> </a>
         </td>
       </tr>
       <tr>
@@ -510,6 +898,17 @@ The codes SHOULD be taken from           <span class="removedStyle">For codes, s
  to           <span class="copy-text-inline">
 <code>http://ig.nictiz.nl/gbb/ValueSet/2.16.840.1.113883.2.4.3.11.60.153.11.21</code><button data-clipboard-text="http://ig.nictiz.nl/gbb/ValueSet/2.16.840.1.113883.2.4.3.11.60.153.11.21" title="Click to Copy URL" class="btn-copy" aria-label="copy"></button>          </span>
 )
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-procedure-san-definitions.html">web</a>
+        </td>
+        <td>
+          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.21&amp;effectiveDate=2026-06-19T10:32:21">decor.nictiz.nl</a>
+        </td>
+        <td>
+          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.21&amp;effectiveDate=2026-06-19T10:32:21" title="http://ig.nictiz.nl/gbb/ValueSet/2.16.840.1.113883.2.4.3.11.60.153.11.21">VerrichtingMethodeCodelijst</a>
         </td>
       </tr>
       <tr>
@@ -535,6 +934,17 @@ The codes SHOULD be taken from           <span class="removedStyle">For example 
           <a href="en/StructureDefinition-procedure-san-definitions.html">web</a>
         </td>
         <td>
+          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.25&amp;effectiveDate=2026-06-19T10:36:37">decor.nictiz.nl</a>
+        </td>
+        <td>
+          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.25&amp;effectiveDate=2026-06-19T10:36:37" title="http://ig.nictiz.nl/gbb/ValueSet/2.16.840.1.113883.2.4.3.11.60.153.11.25">VerrichtingCategorieCodelijst</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-procedure-san-definitions.html">web</a>
+        </td>
+        <td>
           <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.7&amp;effectiveDate=2026-06-19T09:25:03">decor.nictiz.nl</a>
         </td>
         <td>
@@ -553,6 +963,17 @@ The codes SHOULD be taken from           <span class="removedStyle">For example 
           <a href="en/StructureDefinition-procedure-san-definitions.html">web</a>
         </td>
         <td>
+          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.6&amp;effectiveDate=2026-06-19T09:21:06">decor.nictiz.nl</a>
+        </td>
+        <td>
+          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.6&amp;effectiveDate=2026-06-19T09:21:06" title="http://ig.nictiz.nl/gbb/ValueSet/2.16.840.1.113883.2.4.3.11.60.153.11.6">VerrichtingNaamCodelijsten</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-procedure-san-definitions.html">web</a>
+        </td>
+        <td>
           <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.27&amp;effectiveDate=2026-06-19T11:44:24">decor.nictiz.nl</a>
         </td>
         <td>
@@ -564,6 +985,17 @@ The codes SHOULD be taken from           <span class="removedStyle">For example 
  to           <span class="copy-text-inline">
 <code>http://ig.nictiz.nl/gbb/ValueSet/2.16.840.1.113883.2.4.3.11.60.153.11.27</code><button data-clipboard-text="http://ig.nictiz.nl/gbb/ValueSet/2.16.840.1.113883.2.4.3.11.60.153.11.27" title="Click to Copy URL" class="btn-copy" aria-label="copy"></button>          </span>
 )
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-procedure-san-definitions.html">web</a>
+        </td>
+        <td>
+          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.19&amp;effectiveDate=2026-06-19T10:28:38">decor.nictiz.nl</a>
+        </td>
+        <td>
+          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.19&amp;effectiveDate=2026-06-19T10:28:38" title="http://ig.nictiz.nl/gbb/ValueSet/2.16.840.1.113883.2.4.3.11.60.153.11.19">IndicatieCodelijsten</a>
         </td>
       </tr>
       <tr>
@@ -716,9 +1148,12 @@ Method          <br class="binding"/>
           <table class="binding grid">
             <tr>
               <td style="font-size: 11px">
-                <b>Additional Bindings</b>
+                <b>
+<a href="http://hl7.org/fhir/tools/StructureDefinition-additional-binding.html">Additional Bindings</a>                </b>
               </td>
-              <td style="font-size: 11px">Purpose</td>
+              <td style="font-size: 11px">
+                <b>Purpose</b>
+              </td>
             </tr>
 
             <tr>
@@ -782,17 +1217,6 @@ from                 <a href="http://ig.nictiz.nl/gbb/1.0.0-alpha.2/StructureDef
           <a href="en/StructureDefinition-procedure-san.html">web</a>
         </td>
         <td>
-          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.21&amp;effectiveDate=2026-06-19T10:32:21">decor.nictiz.nl</a>
-        </td>
-        <td>
-          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.21&amp;effectiveDate=2026-06-19T10:32:21" title="http://ig.nictiz.nl/gbb/ValueSet/2.16.840.1.113883.2.4.3.11.60.153.11.21">VerrichtingMethodeCodelijst</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="en/StructureDefinition-procedure-san.html">web</a>
-        </td>
-        <td>
           <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.25&amp;effectiveDate=2026-06-19T10:36:37">decor.nictiz.nl</a>
         </td>
         <td>
@@ -806,9 +1230,12 @@ ProcedureType          <br class="binding"/>
           <table class="binding grid">
             <tr>
               <td style="font-size: 11px">
-                <b>Additional Bindings</b>
+                <b>
+<a href="http://hl7.org/fhir/tools/StructureDefinition-additional-binding.html">Additional Bindings</a>                </b>
               </td>
-              <td style="font-size: 11px">Purpose</td>
+              <td style="font-size: 11px">
+                <b>Purpose</b>
+              </td>
             </tr>
 
             <tr>
@@ -872,17 +1299,6 @@ from                 <a href="http://ig.nictiz.nl/gbb/1.0.0-alpha.2/StructureDef
           <a href="en/StructureDefinition-procedure-san.html">web</a>
         </td>
         <td>
-          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.25&amp;effectiveDate=2026-06-19T10:36:37">decor.nictiz.nl</a>
-        </td>
-        <td>
-          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.25&amp;effectiveDate=2026-06-19T10:36:37" title="http://ig.nictiz.nl/gbb/ValueSet/2.16.840.1.113883.2.4.3.11.60.153.11.25">VerrichtingCategorieCodelijst</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="en/StructureDefinition-procedure-san.html">web</a>
-        </td>
-        <td>
           <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.7&amp;effectiveDate=2026-06-19T09:25:03">decor.nictiz.nl</a>
         </td>
         <td>
@@ -896,9 +1312,12 @@ ProcedureName          <br class="binding"/>
           <table class="binding grid">
             <tr>
               <td style="font-size: 11px">
-                <b>Additional Bindings</b>
+                <b>
+<a href="http://hl7.org/fhir/tools/StructureDefinition-additional-binding.html">Additional Bindings</a>                </b>
               </td>
-              <td style="font-size: 11px">Purpose</td>
+              <td style="font-size: 11px">
+                <b>Purpose</b>
+              </td>
             </tr>
 
             <tr>
@@ -962,17 +1381,6 @@ from                 <a href="http://ig.nictiz.nl/gbb/1.0.0-alpha.2/StructureDef
           <a href="en/StructureDefinition-procedure-san.html">web</a>
         </td>
         <td>
-          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.6&amp;effectiveDate=2026-06-19T09:21:06">decor.nictiz.nl</a>
-        </td>
-        <td>
-          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.6&amp;effectiveDate=2026-06-19T09:21:06" title="http://ig.nictiz.nl/gbb/ValueSet/2.16.840.1.113883.2.4.3.11.60.153.11.6">VerrichtingNaamCodelijsten</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="en/StructureDefinition-procedure-san.html">web</a>
-        </td>
-        <td>
           <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.27&amp;effectiveDate=2026-06-19T11:44:24">decor.nictiz.nl</a>
         </td>
         <td>
@@ -986,9 +1394,12 @@ Indication          <br class="binding"/>
           <table class="binding grid">
             <tr>
               <td style="font-size: 11px">
-                <b>Additional Bindings</b>
+                <b>
+<a href="http://hl7.org/fhir/tools/StructureDefinition-additional-binding.html">Additional Bindings</a>                </b>
               </td>
-              <td style="font-size: 11px">Purpose</td>
+              <td style="font-size: 11px">
+                <b>Purpose</b>
+              </td>
             </tr>
 
             <tr>
@@ -1046,17 +1457,6 @@ from                 <a href="http://ig.nictiz.nl/gbb/1.0.0-alpha.2/StructureDef
               </td>
             </tr>
           </table>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="en/StructureDefinition-procedure-san.html">web</a>
-        </td>
-        <td>
-          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.19&amp;effectiveDate=2026-06-19T10:28:38">decor.nictiz.nl</a>
-        </td>
-        <td>
-          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.19&amp;effectiveDate=2026-06-19T10:28:38" title="http://ig.nictiz.nl/gbb/ValueSet/2.16.840.1.113883.2.4.3.11.60.153.11.19">IndicatieCodelijsten</a>
         </td>
       </tr>
       <tr>
@@ -1233,6 +1633,22 @@ from                 <a href="http://ig.nictiz.nl/gbb/1.0.0-alpha.2/StructureDef
           <a href="en/StructureDefinition-procedure-san.html">web</a>
         </td>
         <td>
+          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.6&amp;effectiveDate=2026-06-19T09:21:06">decor.nictiz.nl</a>
+        </td>
+        <td>
+
+                <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.6&amp;effectiveDate=2026-06-19T09:21:06">VerrichtingNaamCodelijsten</a>
+
+                <button data-clipboard-text="http://ig.nictiz.nl/gbb/ValueSet/2.16.840.1.113883.2.4.3.11.60.153.11.6" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
+
+    
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-procedure-san.html">web</a>
+        </td>
+        <td>
           <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.27&amp;effectiveDate=2026-06-19T11:44:24">decor.nictiz.nl</a>
         </td>
         <td>
@@ -1240,6 +1656,22 @@ from                 <a href="http://ig.nictiz.nl/gbb/1.0.0-alpha.2/StructureDef
                 <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.27&amp;effectiveDate=2026-06-19T11:44:24">IndicatieCodelijstenMainBinding</a>
 
                 <button data-clipboard-text="http://ig.nictiz.nl/gbb/ValueSet/2.16.840.1.113883.2.4.3.11.60.153.11.27" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
+
+    
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="en/StructureDefinition-procedure-san.html">web</a>
+        </td>
+        <td>
+          <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.19&amp;effectiveDate=2026-06-19T10:28:38">decor.nictiz.nl</a>
+        </td>
+        <td>
+
+                <a href="http://decor.nictiz.nl/decor/services/RetrieveValueSet?prefix=gbb2026bbr-&amp;version=&amp;id=2.16.840.1.113883.2.4.3.11.60.153.11.19&amp;effectiveDate=2026-06-19T10:28:38">IndicatieCodelijsten</a>
+
+                <button data-clipboard-text="http://ig.nictiz.nl/gbb/ValueSet/2.16.840.1.113883.2.4.3.11.60.153.11.19" title="Click to copy URL" class="btn-copy" aria-label="copy"></button>
 
     
         </td>

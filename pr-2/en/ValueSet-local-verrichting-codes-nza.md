@@ -31,7 +31,7 @@ No Expansion for this valueset (Unknown Code System)
   "name" : "LocalVerrichtingCodesNZa",
   "title" : "Verrichting Type Codes NZa (Scopie)",
   "status" : "active",
-  "date" : "2026-11-25T16:23:55+00:00",
+  "date" : "2026-11-26T10:19:07+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",

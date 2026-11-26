@@ -3,7 +3,7 @@
 "SIMCarePlan","","",""
 "SIMCarePlan.CarePlanID","CarePlan;CarePlanIdentifier","CarePlan.identifier","Direct: samengestelde identifier (system|value); het waardedeel wordt gehasht volgens de ETL-specificatie."
 "SIMCarePlan.PatientIdentificatienummer","CarePlan;Identificatienummer","CarePlan.subject","Structuurconversie: Patient-reference op basis van identificatienummer."
-"SIMCarePlan.Status","CarePlan;CarePlanStatus","CarePlan.status","Direct: SIM code wordt overgenomen als FHIR code; aansluiting op FHIR request-status nog te bevestigen."
+"SIMCarePlan.Status","CarePlan;CarePlanStatus","CarePlan.status","Direct: SIM code wordt ongewijzigd overgenomen als FHIR code. De in de IBD-indicatoren gebruikte code active komt voor in FHIR request-status; aansluiting van overige SIM-statuscodes nog te beoordelen."
 "SIMCarePlan.Categorie","","CarePlan.category","Direct: SIM CodeableConcept wordt overgenomen als FHIR CodeableConcept."
 "SIMCarePlan.Categorie.id","","",""
 "SIMCarePlan.Categorie.extension","","",""

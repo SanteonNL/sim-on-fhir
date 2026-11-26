@@ -33,7 +33,7 @@ Other representations of profile: [CSV](../StructureDefinition-patient-san.csv),
   "name" : "PatientSan",
   "title" : "Patient (SAN)",
   "status" : "draft",
-  "date" : "2026-11-25T16:23:55+00:00",
+  "date" : "2026-11-26T10:19:07+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",
@@ -61,7 +61,7 @@ Other representations of profile: [CSV](../StructureDefinition-patient-san.csv),
     "identity" : "PatientSanToNlCore",
     "uri" : "http://ig.nictiz.nl/gbb/StructureDefinition/nl-core-Patient",
     "name" : "Nictiz nl-core-Patient",
-    "comment" : "Technische delta-analyse tussen PatientSan en Nictiz nl-core-Patient (referentieversie 1.0.0-alpha.2). Legt per FHIR-element binnen de IBD-scope de uitkomst van de vergelijking vast. Equivalent betekent dat het element is beoordeeld en er geen relevant technisch verschil is vastgesteld. 🟡 markeert een vastgesteld verschil of een openstaande beoordeling."
+    "comment" : "Technische delta-analyse tussen PatientSan en Nictiz nl-core-Patient (referentieversie 1.0.0-alpha.2). Legt per FHIR-element binnen de IBD-scope de uitkomst van de vergelijking vast. Equivalent betekent dat het element is beoordeeld en er geen relevant technisch verschil is vastgesteld. 🟡 Verschil vastgesteld of nader te beoordelen."
   },
   {
     "identity" : "requirements-Patient",
@@ -128,7 +128,7 @@ Other representations of profile: [CSV](../StructureDefinition-patient-san.csv),
       "mapping" : [{
         "identity" : "PatientSanFromSIMPatient",
         "map" : "SIMPatient.Geslacht",
-        "comment" : "Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender."
+        "comment" : "Terminologieconversie: SIM GeslachtCodelijst ZIB 2020 naar FHIR AdministrativeGender volgens de Nictiz-ConceptMap GeslachtCodelijst-to-AdministrativeGender (http://nictiz.nl/fhir/ConceptMap/GeslachtCodelijst-to-AdministrativeGender, zib2020, draft): M naar male, F naar female, UN naar other (narrower), UNK naar unknown; toepassing van deze ConceptMap in de ETL nog te bevestigen."
       },
       {
         "identity" : "PatientSanToNlCore",

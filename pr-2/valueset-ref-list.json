@@ -48,8 +48,8 @@
     "http://snomed.info/sct"],
     "uses" : {
     },
-    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)",
-    "StructureDefinition-SIMTabakGebruik.html" : "Tabakgebruik (model)"
+    "StructureDefinition-SIMTabakGebruik.html" : "Tabakgebruik (model)",
+    "StructureDefinition-observation-san-tabakgebruik.html" : "Observation TabakGebruik (SAN)"
   },
   {
     "url" : "https://ig.santeon.nl/sim-on-fhir/ValueSet/deidentification-action-vs",

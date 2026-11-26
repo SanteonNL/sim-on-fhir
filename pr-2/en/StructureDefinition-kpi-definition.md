@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-kpi-definition.cs
   "name" : "KpiDefinition",
   "title" : "KPI definition (model)",
   "status" : "draft",
-  "date" : "2026-11-25T16:23:55+00:00",
+  "date" : "2026-11-26T10:19:07+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",

@@ -33,7 +33,7 @@ Other representations of profile: [CSV](../StructureDefinition-od-component.csv)
   "name" : "ODComponent",
   "title" : "ObservationDefinition Component",
   "status" : "draft",
-  "date" : "2026-11-25T16:23:55+00:00",
+  "date" : "2026-11-26T10:19:07+00:00",
   "publisher" : "Santeon",
   "contact" : [{
     "name" : "Santeon",

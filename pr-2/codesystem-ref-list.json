@@ -9,8 +9,8 @@
     "oids" : ["2.16.840.1.113883.6.1"],
     "uses" : {
     },
-    "ValueSet-Santeon-MetingNaamCodelijst.html" : "Santeon_MetingNaamCodelijst",
-    "ValueSet-observationCode-san-kpi.html" : "Observation code (SAN KPI)"
+    "ValueSet-observationCode-san-kpi.html" : "Observation code (SAN KPI)",
+    "ValueSet-Santeon-MetingNaamCodelijst.html" : "Santeon_MetingNaamCodelijst"
   },
   {
     "url" : "http://snomed.info/sct",
@@ -22,10 +22,10 @@
     "oids" : ["2.16.840.1.113883.6.96"],
     "uses" : {
     },
-    "ValueSet-TabakGebruikStatusCodelijst.html" : "TabakGebruikStatusCodelijst",
-    "ValueSet-Santeon-MetingNaamCodelijst.html" : "Santeon_MetingNaamCodelijst",
     "ValueSet-observationCode-san-kpi.html" : "Observation code (SAN KPI)",
-    "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst"
+    "ValueSet-TabakGebruikStatusCodelijst.html" : "TabakGebruikStatusCodelijst",
+    "ValueSet-AlcoholGebruikStatusCodelijst.html" : "AlcoholGebruikStatusCodelijst",
+    "ValueSet-Santeon-MetingNaamCodelijst.html" : "Santeon_MetingNaamCodelijst"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-ActPriority",

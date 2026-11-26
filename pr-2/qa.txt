@@ -1,10 +1,10 @@
 SanteonSimOnFhir : Validation Results
 =========================================
 
-err = 278, warn = 658, info = 211, broken links = 0
-IG Publisher Version: 3.0.5
-Generated Wed Nov 25 16:25:46 UTC 2026. FHIR version 4.0.1 for santeon.sim-on-fhir#0.1.0 (canonical = https://ig.santeon.nl/sim-on-fhir)
- Build Errors : 2 / 3 / 0
+err = 279, warn = 658, info = 209, broken links = 0
+IG Publisher Version: 3.0.6
+Generated Thu Nov 26 10:21:09 UTC 2026. FHIR version 4.0.1 for santeon.sim-on-fhir#0.1.0 (canonical = https://ig.santeon.nl/sim-on-fhir)
+ Build Errors : 3 / 4 / 0
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/Binary-alcohol-status-recorded : 0 / 0 / 1
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/Binary-ibd-dataset : 0 / 0 / 1
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/Binary-k312-scopie : 0 / 0 / 1
@@ -34,16 +34,16 @@ Generated Wed Nov 25 16:25:46 UTC 2026. FHIR version 4.0.1 for santeon.sim-on-fh
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-encounter-san : 0 / 2 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-episodeOfCare-san : 0 / 1 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-kpi-definition : 0 / 40 / 2
- /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-medicationRequest-san : 0 / 1 / 3
+ /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-medicationRequest-san : 0 / 1 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-observation-san : 0 / 1 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-observation-san-kpi : 0 / 1 / 2
- /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-observation-san-tabakgebruik : 0 / 2 / 2
+ /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-observation-san-tabakgebruik : 0 / 1 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-od-component : 0 / 1 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-patient-san : 0 / 6 / 64
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-patient-san-kpi : 0 / 1 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-procedure-san : 0 / 5 / 48
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-procedure-san-kpi : 0 / 1 / 2
- /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-questionnaireResponse-san : 0 / 1 / 3
+ /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/StructureDefinition-questionnaireResponse-san : 0 / 1 / 2
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/ValueSet-AlcoholGebruikStatusCodelijst : 0 / 2 / 7
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/ValueSet-Santeon-MetingNaamCodelijst : 0 / 5 / 4
  /home/runner/work/sim-on-fhir/sim-on-fhir/fsh-generated/resources/ValueSet-TabakGebruikStatusCodelijst : 0 / 2 / 8
@@ -56,6 +56,8 @@ Generated Wed Nov 25 16:25:46 UTC 2026. FHIR version 4.0.1 for santeon.sim-on-fh
 </table>
 
 == n/a ==
+WARNING: ImplementationGuide: The IG's repository has a script or program in sub-folders: input/static/generate_fhir_sql_mappings.py. The IG Publisher doesn't run them, but they arrive with every pull: don't run them unless you know what they do. Scripts and programs don't belong in an IG's repository
+ERROR: ImplementationGuide: The IG's repository has 6 scripts or programs in its root folder (/home/runner/work/sim-on-fhir/sim-on-fhir): _buildIG.py, _fetchValueSets.ps1, _generateFromDefinitions.py, _prepare_publish_output.ps1, _publish.ps1, _syncValueSets.py. Scripts and programs don't belong in an IG's repository: they arrive with every pull, and people run them out of habit, so anyone who can change the repository can run code on the computer of everyone who builds the IG. Remove them from the repository (people who want them can get them from their source, and keep them out of the IG's repository). IMPORTANT: in a future version of the IG Publisher, the build will stop here, and the ci-build will refuse to build the IG. If you accept these as they are, you can say so now by running the IG Publisher with '-allow-committed-scripts' (recorded in /home/runner/.fhir/fhir-settings.json, for this IG), and local builds will go on then (but not the ci-build). The IG Publisher doesn't check what they do: accepting them is your decision
 ERROR: ImplementationGuide.definition.parameter[28].value: Supressed messages file not found
 ERROR: In your menu.xml file, it's no longer allowed to have href='#' on dropdown items.  Change them to be href='menu.html' instead.  (It won't link, but it needs to be something valid.)
 WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
@@ -1109,7 +1111,6 @@ INFORMATION: Resource: The resource StructureDefinition/kpi-definition could use
 
 
 == fsh-generated/resources/StructureDefinition-medicationRequest-san.json ==
-INFORMATION: StructureDefinition/medicationRequest-san: StructureDefinition.snapshot.element[17]: The Binding on the type slicer MedicationRequest.medication[x] applies to all its slices, but it only makes sense for some of its types, so it has no effect on the slices for Reference
 INFORMATION: Resource: The resource StructureDefinition/medicationRequest-san could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
 WARNING: StructureDefinition.where(url = 'https://ig.santeon.nl/sim-on-fhir/StructureDefinition/medicationRequest-san'): The Implementation Guide contains no examples for this profile
 
@@ -1125,7 +1126,6 @@ WARNING: StructureDefinition.where(url = 'https://ig.santeon.nl/sim-on-fhir/Stru
 
 
 == fsh-generated/resources/StructureDefinition-observation-san-tabakgebruik.json ==
-WARNING: StructureDefinition/observation-san-tabakgebruik: StructureDefinition: The profile fixes Observation.code: The SNOMED CT code 365980008 ('Finding of tobacco use and exposure') is a finding: the code of an observation says what was observed (an observable entity, or an evaluation procedure), and a finding goes in the value, or in a Condition
 INFORMATION: Resource: The resource StructureDefinition/observation-san-tabakgebruik could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
 WARNING: StructureDefinition.where(url = 'https://ig.santeon.nl/sim-on-fhir/StructureDefinition/observation-san-tabakgebruik'): The Implementation Guide contains no examples for this profile
 
@@ -1273,7 +1273,6 @@ WARNING: StructureDefinition.where(url = 'https://ig.santeon.nl/sim-on-fhir/Stru
 
 
 == fsh-generated/resources/StructureDefinition-questionnaireResponse-san.json ==
-INFORMATION: StructureDefinition/questionnaireResponse-san: StructureDefinition.snapshot.element[30]: The Binding on the type slicer QuestionnaireResponse.item.answer.value[x] applies to all its slices, but it only makes sense for some of its types, so it has no effect on the slices for boolean, decimal, integer, date, dateTime, time, Attachment, Reference
 INFORMATION: Resource: The resource StructureDefinition/questionnaireResponse-san could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
 WARNING: StructureDefinition.where(url = 'https://ig.santeon.nl/sim-on-fhir/StructureDefinition/questionnaireResponse-san'): The Implementation Guide contains no examples for this profile
 
