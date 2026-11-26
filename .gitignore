@@ -7,7 +7,9 @@
 # IG Publisher generated output
 /output
 /temp
+/ig-build.log
 /template
+/.publish-output
 
 # Downloaded publisher and dependencies
 /input-cache
@@ -20,3 +22,6 @@
 /_updatePublisher.bat
 /_updatePublisher.sh
 /_build.bat
+
+# Python bytecode
+__pycache__/
