@@ -69,11 +69,14 @@ the exporter fills in at run time.
 * title 1..1 string "Human-readable name."
 * description 0..1 markdown "What the data is needed for."
 
-* criteria 1..* BackboneElement "The data needed."
+* requirement 0..* string "Id of another DataRequirementDefinition this one builds on. Its criteria and postFilters (and those of the requirements it builds on) are part of this one, so a KPI that needs the data of another KPI plus more lists that KPI here and adds only its own criteria. Cycles are not allowed."
+
+* criteria 0..* BackboneElement "The data needed, in addition to that of the requirements it builds on. A data requirement has at least one criterion or builds on at least one other requirement."
 * criteria.resource 1..1 code "FHIR resource type, e.g. Observation."
 * criteria.param 0..* BackboneElement "A FHIR search parameter."
 * criteria.param.name 1..1 string "Search parameter name including modifier, e.g. 'code:in'."
-* criteria.param.value 1..1 string "Search value; may contain {vs:...} / {od:...} references and {placeholders}."
+* criteria.param.value 0..1 string "Search value; may contain {vs:...} / {od:...} references and {placeholders}. Either value or coding."
+* criteria.param.coding 0..* Coding "Codes for a token parameter, one per line with their display, instead of a value. The generator joins them into the search value system|code,system|code and shows the displays on the dataset page and in the generated code value set."
 * criteria.element 0..* string "Elements of the resource that must be released, as ElementName (e.g. 'value[x]'). Drives _elements and bounds the generated profile."
 
 * postFilter 0..* BackboneElement "Logic that cannot be expressed as a FHIR search and is applied after the query."
@@ -112,5 +115,6 @@ the SAN profile), and renders the whole definition as a readable page.
 * include.resource 1..1 code "FHIR resource type."
 * include.param 0..* BackboneElement "A FHIR search parameter."
 * include.param.name 1..1 string "Search parameter name including modifier."
-* include.param.value 1..1 string "Search value; same reference syntax as in a data requirement."
+* include.param.value 0..1 string "Search value; same reference syntax as in a data requirement. Either value or coding."
+* include.param.coding 0..* Coding "Codes with their display instead of a value, as in a data requirement."
 * include.element 0..* string "Elements of the resource that must be released, as ElementName. Drives _elements and bounds the generated profile."

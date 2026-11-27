@@ -31,10 +31,10 @@ A patient is in the Group when **all** filters apply.
 | Resource | Field | Parameter | Condition |
 |---|---|---|---|
 | **Patient** | `birthDate` | `birthdate` | 18 years or older at delivery |
-| **EpisodeOfCare** | `type` | `type` | NZa zorgtype 11, 21 |
+| **EpisodeOfCare** | `type` | `type` | NZa zorgtype:<br>11 Reguliere zorg<br>21 Vervolg |
 |  | `status` | `status` | active (open), finished (closed) |
 |  | `period` | `date` | ≥ 2018-01-01 |
-|  | `diagnosis.condition.code` | `condition:Condition.code` | DBC-diagnose Interne Geneeskunde (0313) 922, 923; DBC-diagnose Maag-Darm-Leverziekten (0318) 601, 602 |
+|  | `diagnosis.condition.code` | `condition:Condition.code` | DBC-diagnose Interne Geneeskunde (0313):<br>922 Crohn<br>923 Colitis ulcerosa<br>DBC-diagnose Maag-Darm-Leverziekten (0318):<br>601 Morbus Crohn<br>602 Colitis ulcerosa |
 
 Checked after selection:
 
@@ -46,10 +46,7 @@ The fields requested for the patients in the Group; a field with a filter shows 
 
 | Resource | Field | Parameter | Condition | Needed for |
 |---|---|---|---|---|
-| **Procedure** | `code` | `code` | NZa zorgactiviteit 034620, 034686, 034690, 035582 | [K3.1.2 Scopie](Binary-k312-scopie.html) |
-|  | `performed[x]` | `date` | ≥ 2018-01-01 |  |
-|  | `subject` |  |  |  |
-| **Procedure** | `code` | `code:in` | [Verrichting Type Codes NZa (sb-ibd)](ValueSet-ibd-verrichting-codes-nza.html) (73 codes) | [K3.6.3 Calprotectine voor scopie](Binary-k363-calprotectin-before-scopie.html) |
+| **Procedure** | `code` | `code` | NZa zorgactiviteit:<br>034620 Diagnostische endoscopie van oesofagus, maag en/of duodenum met behulp van flexibele endoscoop, eventueel inclusief biopten of antroduodenale manometrie.<br>034686 Diagnostische endoscopie van het colon met behulp van flexibele endoscoop, eventueel inclusief biopten, poliepectomie of colonmanometrie.<br>034690 Diagnostische endoscopie alleen van het sigmoïd met behulp van een flexibele endoscoop, inclusief eventuele biopten en poliepectomie.<br>035582 Diagnostische laparoscopie, inclusief eventuele proefexcisie(s) (excl. bij vruchtbaarheidsproblematiek, zie 035583). | [K3.1.2 Scopie](Binary-k312-scopie.html), [K3.6.3 Calprotectine voor scopie](Binary-k363-calprotectin-before-scopie.html) |
 |  | `performed[x]` | `date` | ≥ 2018-01-01 |  |
 |  | `subject` |  |  |  |
 | **Observation** | `code` | `code` | Calprotectine (feces) (LOINC 38445-3) | [K3.6.3 Calprotectine voor scopie](Binary-k363-calprotectin-before-scopie.html) |
@@ -84,8 +81,6 @@ POST [base]/Group/sb-ibd-cohort/$export
   _type       = Procedure,Observation,QuestionnaireResponse
 
   _typeFilter = Procedure?code=urn:oid:2.16.840.1.113883.2.4.3.27.15.5|034620,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|034686,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|034690,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|035582
-                         &date=ge2018-01-01
-  _typeFilter = Procedure?code:in=https://ig.santeon.nl/sim-on-fhir/ValueSet/ibd-verrichting-codes-nza
                          &date=ge2018-01-01
   _typeFilter = Observation?code=http://loinc.org|38445-3
                            &date=ge2018-01-01

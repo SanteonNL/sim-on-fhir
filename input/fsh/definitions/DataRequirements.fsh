@@ -5,6 +5,12 @@
 // (numerator/denominator) — that is decided downstream.
 // =====================================================================
 
+Alias: $NZaZorgactiviteit = urn:oid:2.16.840.1.113883.2.4.3.27.15.5
+Alias: $NZaZorgtype = https://declaratie.nza.nl/zorgtype
+Alias: $DBCDiagnose0313 = urn:oid:2.16.840.1.113883.2.4.3.27.15.4.313
+Alias: $DBCDiagnose0318 = urn:oid:2.16.840.1.113883.2.4.3.27.15.4.318
+Alias: $ICD10NL = http://hl7.org/fhir/sid/icd-10-nl
+
 // ---------------------------------------------------------------------
 // Group requirements: who is in the Group of a dataset. A dataset refers
 // to one with `* group = "<id>"`; each criterion becomes a member-filter.
@@ -39,9 +45,9 @@ De startdatum 01-01-2018 is bewust niet dynamisch.
 * criteria[=].param[+].name = "birthdate"
 * criteria[=].param[=].value = "le{today-18y}"
 * criteria[+].resource = #EpisodeOfCare
-// Zorgtype als losse codes: 11 regulier DBC-zorgtraject, 21 regulier vervolg-DBC-zorgtraject.
 * criteria[=].param[+].name = "type"
-* criteria[=].param[=].value = "https://declaratie.nza.nl/zorgtype|11,https://declaratie.nza.nl/zorgtype|21"
+* criteria[=].param[=].coding[+] = $NZaZorgtype#11 "Reguliere zorg"
+* criteria[=].param[=].coding[+] = $NZaZorgtype#21 "Vervolg"
 * criteria[=].param[+].name = "status"
 * criteria[=].param[=].value = "active,finished"
 * criteria[=].param[+].name = "date"
@@ -50,8 +56,12 @@ De startdatum 01-01-2018 is bewust niet dynamisch.
 // urn:oid:2.16.840.1.113883.2.4.3.27.15.4.<specialisme zonder voorloopnullen>.
 // 0313 Interne Geneeskunde 922, 923 (internist MDL) en 0318 Maag-Darm-Leverziekten 601, 602.
 // R4-zoekparameter condition (EpisodeOfCare.diagnosis.condition), geketend naar Condition.code.
+// Displays: the NZa Elektronische Typeringslijst (validated by the generator against nza-dbc-diagnose).
 * criteria[=].param[+].name = "condition:Condition.code"
-* criteria[=].param[=].value = "urn:oid:2.16.840.1.113883.2.4.3.27.15.4.313|922,urn:oid:2.16.840.1.113883.2.4.3.27.15.4.313|923,urn:oid:2.16.840.1.113883.2.4.3.27.15.4.318|601,urn:oid:2.16.840.1.113883.2.4.3.27.15.4.318|602"
+* criteria[=].param[=].coding[+] = $DBCDiagnose0313#922 "Crohn"
+* criteria[=].param[=].coding[+] = $DBCDiagnose0313#923 "Colitis ulcerosa"
+* criteria[=].param[=].coding[+] = $DBCDiagnose0318#601 "Morbus Crohn"
+* criteria[=].param[=].coding[+] = $DBCDiagnose0318#602 "Colitis ulcerosa"
 * postFilter[+].description = "De DOT moet op of na 01-01-2018 geopend zijn. Een FHIR-datumzoekactie op EpisodeOfCare.period (`date=ge2018-01-01`) selecteert elke DOT die 2018 of later overlapt, dus ook een DOT die eerder begon; de begindatum wordt daarom na de query gecontroleerd."
 * postFilter[=].expression = "EpisodeOfCare.period.start >= @2018-01-01"
 
@@ -74,7 +84,9 @@ in dit voorbeeld weggelaten.
 * criteria[=].param[=].value = "le{today-18y}"
 * criteria[+].resource = #Condition
 * criteria[=].param[+].name = "code:below"
-* criteria[=].param[=].value = "http://hl7.org/fhir/sid/icd-10-nl|I61,http://hl7.org/fhir/sid/icd-10-nl|I62,http://hl7.org/fhir/sid/icd-10-nl|I63"
+* criteria[=].param[=].coding[+] = $ICD10NL#I61 "Intracerebrale bloeding"
+* criteria[=].param[=].coding[+] = $ICD10NL#I62 "Overige niet-traumatische intracraniële bloeding"
+* criteria[=].param[=].coding[+] = $ICD10NL#I63 "Herseninfarct"
 * criteria[=].param[+].name = "onset-date"
 * criteria[=].param[=].value = "ge2018-01-01"
 
@@ -93,7 +105,10 @@ Description: "Number of adult IBD patients with a scopie since 2018."
 * description = "Aantal volwassen IBD-patiënten met een scopie-verrichting vanaf 2018. Alleen de NZa-scopiecodes 034620, 034686, 034690 en 035582; de codes staan inline."
 * criteria[+].resource = #Procedure
 * criteria[=].param[+].name = "code"
-* criteria[=].param[=].value = "urn:oid:2.16.840.1.113883.2.4.3.27.15.5|034620,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|034686,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|034690,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|035582"
+* criteria[=].param[=].coding[+] = $NZaZorgactiviteit#034620 "Diagnostische endoscopie van oesofagus, maag en/of duodenum met behulp van flexibele endoscoop, eventueel inclusief biopten of antroduodenale manometrie."
+* criteria[=].param[=].coding[+] = $NZaZorgactiviteit#034686 "Diagnostische endoscopie van het colon met behulp van flexibele endoscoop, eventueel inclusief biopten, poliepectomie of colonmanometrie."
+* criteria[=].param[=].coding[+] = $NZaZorgactiviteit#034690 "Diagnostische endoscopie alleen van het sigmoïd met behulp van een flexibele endoscoop, inclusief eventuele biopten en poliepectomie."
+* criteria[=].param[=].coding[+] = $NZaZorgactiviteit#035582 "Diagnostische laparoscopie, inclusief eventuele proefexcisie(s) (excl. bij vruchtbaarheidsproblematiek, zie 035583)."
 * criteria[=].param[+].name = "date"
 * criteria[=].param[=].value = "ge2018-01-01"
 * criteria[=].element[+] = "code"
@@ -103,20 +118,14 @@ Description: "Number of adult IBD patients with a scopie since 2018."
 Instance: req-k363-calprotectin-before-scopie
 InstanceOf: DataRequirementDefinition
 Usage: #definition
-Title: "K3.6.3 Calprotectine voor scopie"
+Title: "K3.6.3 Calprotectine voor scopie per bmi"
 Description: "Share of scopies preceded by a faecal calprotectin measurement."
 * id = "k363-calprotectin-before-scopie"
 * version = "0.1.0"
 * title = "K3.6.3 Calprotectine voor scopie"
-* description = "Percentage scopieën waarbij in de 90 dagen voorafgaand aan de scopie ten minste één fecaal calprotectinemeting is uitgevoerd."
-* criteria[+].resource = #Procedure
-* criteria[=].param[+].name = "code:in"
-* criteria[=].param[=].value = "{vs:ibd-verrichting-codes-nza}"
-* criteria[=].param[+].name = "date"
-* criteria[=].param[=].value = "ge2018-01-01"
-* criteria[=].element[+] = "code"
-* criteria[=].element[+] = "performed[x]"
-* criteria[=].element[+] = "subject"
+* description = "Percentage scopieën waarbij in de 90 dagen voorafgaand aan de scopie ten minste één fecaal calprotectinemeting is uitgevoerd. De scopieën komen uit K3.1.2; deze requirement voegt alleen de calprotectinemetingen toe."
+// The scopies: everything K3.1.2 asks for is part of this requirement.
+* requirement[+] = "k312-scopie"
 * criteria[+].resource = #Observation
 * criteria[=].param[+].name = "code"  
 * criteria[=].param[=].value = "{od:od-calprotectin.code}"  // Reference to the observation definition.

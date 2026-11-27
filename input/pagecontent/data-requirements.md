@@ -86,6 +86,26 @@ FHIR has no standard search parameter on the questions in a response, so a requi
 
 A cohort that only needs two or three codes does not need a ValueSet. List them as literal tokens, for example `type=https://declaratie.nza.nl/zorgtype|11,https://declaratie.nza.nl/zorgtype|21`. They are passed through unchanged to the Group `member-filter` and shown on the dataset page. Literal codes on a `code` parameter of a requirement criterion are also added to the dataset's generated code value set, so its profile accepts them.
 
+For readability, a parameter can list its codes as `coding` instead of `value`, one per line with its display:
+
+```text
+* criteria[=].param[+].name = "code"
+* criteria[=].param[=].coding[+] = $NZaZorgactiviteit#034620 "Diagnostische endoscopie van oesofagus, ..."
+* criteria[=].param[=].coding[+] = $NZaZorgactiviteit#034686 "DIAGN. COLOSCOPIE MET FIBERSC."
+```
+
+The generator joins them into the search value (`system|code,system|code`), so the export query is the same. The displays are shown on the dataset page and carried into the generated code value set. A parameter has either a `value` or codings, not both.
+
+**Building on another requirement.** A data requirement can include another one with `requirement`: all criteria and postFilters of that requirement (and of the ones it builds on in turn) become part of it, and it adds only its own. K3.6.3 *Calprotectine voor scopie* is K3.1.2 *Scopie* plus the calprotectin Observations:
+
+```text
+* requirement[+] = "k312-scopie"
+* criteria[+].resource = #Observation
+...
+```
+
+A dataset may list both; shared criteria are exported once. A requirement needs at least one criterion of its own or one requirement to build on, and requirements may not refer to each other in a cycle. A Group requirement can build on another requirement in the same way.
+
 **Post-query filters.** Some logic cannot be a FHIR search: "latest per patient", or a relation between resources such as "calprotectin within 90 days before the scopie". A data requirement states these in `postFilter`, in words with an optional formal expression. They are not part of the export query; they are applied after retrieval, and shown on the dataset pages so a reviewer sees the whole definition.
 
 ### Answers to a measurement

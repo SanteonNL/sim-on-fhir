@@ -178,7 +178,7 @@ def compile_definitions():
 
 
 def load(tmp):
-    out = dict(od={}, vs={}, q={}, req={}, dataset={}, logical={}, profile={}, fsh_file={})
+    out = dict(od={}, vs={}, cs={}, q={}, req={}, dataset={}, logical={}, profile={}, fsh_file={}, display={})
     index = json.loads((tmp / "fsh-generated" / "data" / "fsh-index.json").read_text(encoding="utf-8"))
     by_output = {e["outputFile"]: e["fshFile"].replace("\\", "/") for e in index}
 
@@ -193,6 +193,8 @@ def load(tmp):
         rt = r.get("resourceType", "")
         if rt == "ObservationDefinition":
             out["od"][r["id"]] = r
+        elif rt == "CodeSystem":
+            out["cs"][r["id"]] = r
         elif rt == "ValueSet":
             out["vs"][r["id"]] = r
         elif rt == "Questionnaire":
@@ -207,7 +209,26 @@ def load(tmp):
         elif rt == "StructureDefinition" and f.name in manual_profiles:
             out["profile"][r["id"]] = r
             out["fsh_file"][r["id"]] = by_output[f.name]
+    for owner, crits in [(f"Data requirement '{i}'", r.get("criteria", [])) for i, r in out["req"].items()] +                         [(f"Dataset '{i}'", d.get("include", [])) for i, d in out["dataset"].items()]:
+        for c in crits:
+            for p in c.get("param", []):
+                codings_to_value(p, owner, out["display"])
     return out
+
+
+def codings_to_value(p, owner, display):
+    """A parameter written as codings (one per line, with display) becomes the search value
+    system|code,system|code; the displays are kept for the pages and the generated value sets."""
+    codings = p.get("coding", [])
+    if codings and "value" in p:
+        raise DefinitionError(f"{owner}: parameter '{p['name']}' has both a value and codings")
+    if not codings and "value" not in p:
+        raise DefinitionError(f"{owner}: parameter '{p['name']}' has neither a value nor codings")
+    if codings:
+        p["value"] = ",".join(f"{c['system']}|{c['code'].replace('|', chr(92) + '|')}" for c in codings)
+        for c in codings:
+            if c.get("display"):
+                display[(c["system"], c["code"])] = c["display"]
 
 
 # ---------------------------------------------------------------------------
@@ -416,12 +437,52 @@ def group_of(defs, ds):
 
 
 def requirements_of(defs, ds):
+    """The data requirements the dataset lists (not expanded; see dataset_requirements)."""
     out = []
     for rid in ds.get("requirement", []):
         r = defs["req"].get(rid)
         if not r:
             raise DefinitionError(f"Dataset '{ds['id']}': data requirement '{rid}' is not defined")
         out.append(r)
+    return out
+
+
+def expand(defs, r, _path=()):
+    """A data requirement together with the requirements it builds on (`requirement`, recursively):
+    the bases first, the requirement itself last, each once."""
+    if r["id"] in _path:
+        raise DefinitionError("Data requirements refer to each other in a cycle: " + " -> ".join(_path + (r["id"],)))
+    out = []
+    for rid in r.get("requirement", []):
+        base = defs["req"].get(rid)
+        if not base:
+            raise DefinitionError(f"Data requirement '{r['id']}': requirement '{rid}' is not defined")
+        for k in expand(defs, base, _path + (r["id"],)):
+            if all(k["id"] != o["id"] for o in out):
+                out.append(k)
+    if not r.get("criteria") and not out:
+        raise DefinitionError(f"Data requirement '{r['id']}' has no criteria and builds on no other requirement")
+    return out + [r]
+
+
+def criteria_of(defs, r):
+    """Every criterion of a data requirement: its own and those of the requirements it builds on."""
+    return [c for k in expand(defs, r) for c in k.get("criteria", [])]
+
+
+def post_filters_of(defs, r):
+    """Every postFilter of a data requirement, paired with the requirement that states it."""
+    return [(k, p) for k in expand(defs, r) for p in k.get("postFilter", [])]
+
+
+def dataset_requirements(defs, ds):
+    """Every data requirement whose data the dataset releases: the listed ones and the ones they
+    build on, each once."""
+    out = []
+    for r in requirements_of(defs, ds):
+        for k in expand(defs, r):
+            if all(k["id"] != o["id"] for o in out):
+                out.append(k)
     return out
 
 
@@ -472,8 +533,8 @@ def derive_model(defs, res, ds):
         if owner_id not in m["reqs"]:
             m["reqs"].append(owner_id)
 
-    for r in requirements_of(defs, ds):
-        for c in r["criteria"]:
+    for r in dataset_requirements(defs, ds):
+        for c in r.get("criteria", []):
             absorb(c, f"Data requirement '{r['id']}'", r["id"])
     for c in ds.get("include", []):  # data the dataset releases outside any requirement
         absorb(c, f"Dataset '{ds['id']}'", ds["id"])
@@ -660,7 +721,8 @@ def gen_dataset_model(defs, res, ds, model):
                 for c in res.od(o)["code"]["coding"]:
                     L.append(f"* {c['system']}#{c['code']} {q(c.get('display', c['code']))}")
             for system, code in m["codes"]:
-                L.append(f"* {system}#{code}")
+                d = res.defs["display"].get((system, code))
+                L.append(f"* {system}#{code}" + (f" {q(d)}" if d else ""))
             for v in m["vss"]:
                 L.append(f"* include codes from valueset {res.vs_url(v)}")
             L.append("")
@@ -767,11 +829,11 @@ def rolled_up_filters(res, criteria):
 
 def exports(defs, res, ds):
     """Resolved export request of one dataset: Group filters and Parameters."""
-    group = [res.query(c) for c in group_of(defs, ds)["criteria"]]
+    group = [res.query(c) for c in criteria_of(defs, group_of(defs, ds))]
     types, elements, criteria = [], [], []
     sources = []
-    for r in requirements_of(defs, ds):
-        sources += r["criteria"]
+    for r in dataset_requirements(defs, ds):
+        sources += r.get("criteria", [])
     sources += ds.get("include", [])  # data the dataset releases outside any requirement
     for c in sources:
         if c["resource"] not in types:
@@ -883,8 +945,12 @@ def codes_text(res, value):
         inline.setdefault(system, []).append(code)
     for system, codes in inline.items():
         label = SYSTEM_LABEL.get(system, system) if system else ""
-        parts.append(f"{label} {', '.join(codes)}".strip())
-    return "; ".join(parts)
+        shown = [(c, res.defs["display"].get((system, c))) for c in codes]
+        if any(d for _, d in shown):  # with displays: one code per line
+            parts.append("<br>".join([f"{label}:"] + [f"{c} {d}" if d else c for c, d in shown]))
+        else:
+            parts.append(f"{label} {', '.join(codes)}".strip())
+    return ("<br>" if any("<br>" in x for x in parts) else "; ").join(parts)
 
 
 
@@ -1013,7 +1079,8 @@ def gen_dataset_page(defs, res, ds, x, model):
     i, T = ds["id"], ds["title"]
     res.ds, res.answers = i, model["_answers"]
     reqs = requirements_of(defs, ds)
-    uses = [((f"Binary-{k['id']}.html", k["title"]), k["criteria"]) for k in reqs]
+    # a criterion a listed requirement builds on is shown as used by both
+    uses = [((f"Binary-{k['id']}.html", k["title"]), criteria_of(defs, k)) for k in reqs]
     if ds.get("include"):
         uses.append(((None, "the dataset itself"), ds["include"]))
     profiles = ", ".join(f"[{rt}](StructureDefinition-{profile_id(i, rt)}.html)" for rt in resources_of(model))
@@ -1028,9 +1095,10 @@ def gen_dataset_page(defs, res, ds, x, model):
     if g.get("description"):
         L += [g["description"].strip(), ""]
     L += ["A patient is in the Group when **all** filters apply.", ""]
-    L += request_table(res, request_groups(res, [(c, None) for c in g["criteria"]]), uses=False)
-    if g.get("postFilter"):
-        L += ["Checked after selection:", ""] + [f"- {p['description'].strip()}" for p in g["postFilter"]] + [""]
+    L += request_table(res, request_groups(res, [(c, None) for c in criteria_of(defs, g)]), uses=False)
+    g_post = post_filters_of(defs, g)
+    if g_post:
+        L += ["Checked after selection:", ""] + [f"- {p['description'].strip()}" for _, p in g_post] + [""]
 
     # 2. The export: what is requested for the Group
     L += ["### Export", "",
@@ -1038,7 +1106,7 @@ def gen_dataset_page(defs, res, ds, x, model):
           "condition. Requests that differ only in their codes are merged (**or**). Every record also carries a "
           "hashed `identifier`.", ""]
     L += request_table(res, request_groups(res, [(c, u) for u, cs in uses for c in cs]))
-    post = [(k, p) for k in reqs for p in k.get("postFilter", [])]
+    post = [(k, p) for k in dataset_requirements(defs, ds) for p in k.get("postFilter", [])]
     if post:
         L += ["Calculated after delivery:", ""]
         L += [f"- **[{k['title']}](Binary-{k['id']}.html)**: {p['description'].strip()}" for k, p in post] + [""]
@@ -1106,12 +1174,21 @@ def gen_overview_page(defs, res, models):
         profs = ", ".join(f"[{profile_name(ds['id'], rt)}](StructureDefinition-{profile_id(ds['id'], rt)}.html)"
                           for rt in resources_of(models[ds["id"]]))
         L.append(f"| [{ds['title']}]({ds['id']}.html) | {ds['version']} | {len(ds.get('requirement', []))} | "
-                 f"{len(group_of(defs, ds)['criteria'])} | {profs} |")
-    L += ["", "### Data requirements in use", "", "| Data requirement | Version | Used in |", "|---|---|---|"]
+                 f"{len(criteria_of(defs, group_of(defs, ds)))} | {profs} |")
+    L += ["", "### Data requirements in use", "", "| Data requirement | Version | Builds on | Used in |", "|---|---|---|---|"]
     for rid, k in defs["req"].items():
-        used = ", ".join([f"[{d['title']}]({d['id']}.html)" for d in defs["dataset"].values() if rid in d.get("requirement", [])]
-                         + [f"[{d['title']}]({d['id']}.html) (Group)" for d in defs["dataset"].values() if d.get("group") == rid]) or "_none_"
-        L.append(f"| [{k['title']}](Binary-{rid}.html) | {k['version']} | {used} |")
+        used = []
+        for d in defs["dataset"].values():
+            if rid in d.get("requirement", []):
+                used.append(f"[{d['title']}]({d['id']}.html)")
+            else:
+                via = [r for r in requirements_of(defs, d) if any(b["id"] == rid for b in expand(defs, r)[:-1])]
+                if via:
+                    used.append(f"[{d['title']}]({d['id']}.html) (via " + ", ".join(f"[{r['title']}](Binary-{r['id']}.html)" for r in via) + ")")
+            if d.get("group") == rid or any(b["id"] == rid for b in expand(defs, group_of(defs, d))[:-1]):
+                used.append(f"[{d['title']}]({d['id']}.html) (Group)")
+        builds = ", ".join(f"[{defs['req'][b]['title']}](Binary-{b}.html)" for b in k.get("requirement", []))
+        L.append(f"| [{k['title']}](Binary-{rid}.html) | {k['version']} | {builds or '-'} | {', '.join(used) or '_none_'} |")
     L.append("")
     L += gen_external_section(res)
     return "\n".join(L)
@@ -1289,7 +1366,7 @@ def fsh_status(defs, sd_id):
         if status:
             found.append((n, status))
             if not in_section:
-                print(f"  WARNING: {f}:{n} '// Status:' is outside the section 'Status en openstaande controles'")
+                print(f"  WARNING  {f}:{n} '// Status:' is outside the section 'Status en openstaande controles'")
         elif in_section:  # elsewhere, '// Status: ...' may be an ordinary comment on a Status element
             raise DefinitionError(f"{f}:{n} '// Status: {m.group(1)}' is not one of: {', '.join(STATUSES)}")
     if len(found) > 1:
@@ -1430,7 +1507,7 @@ def update_menu(defs):
     start, end = "<!-- datasets:start", "<!-- datasets:end -->"
     i, j = text.find(start), text.find(end)
     if i < 0 or j < 0:
-        print("  WARNING: menu.xml has no datasets:start / datasets:end markers; menu not updated")
+        print("  WARNING  menu.xml has no datasets:start / datasets:end markers; menu not updated")
         return
     indent = "      "
     items = [f'{indent}<li>\n{indent}  <a href="{d["id"]}.html">{d["title"]}</a>\n{indent}</li>' for d in defs["dataset"].values()]
@@ -1454,6 +1531,51 @@ def show_resolved(defs, res, today):
             print("  _typeFilter:  ", fill_today(q_, today))
 
 
+def fhir_package_dirs():
+    """The package folders of the IG's FHIR core and its dependencies (sushi-config.yaml), in the local
+    FHIR package cache where SUSHI put them (~/.fhir/packages/<id>#<version>/package)."""
+    cfg = (ROOT / "sushi-config.yaml").read_text(encoding="utf-8")
+    pkgs = []
+    m = re.search(r"^fhirVersion:\s*(\S+)", cfg, re.M)
+    if m:
+        pkgs.append(("hl7.fhir.r4.core" if m.group(1).startswith("4.0") else "hl7.fhir.r5.core", m.group(1)))
+    block = re.search(r"^dependencies:\s*\n((?:[ \t]+.*\n?)*)", cfg, re.M)
+    for line in (block.group(1).splitlines() if block else []):
+        dm = re.match(r"^  ([A-Za-z0-9._-]+):\s*['\"]?([^'\"\s#]+)", line)  # `id: version` (two-space indent)
+        if dm:
+            pkgs.append((dm.group(1), dm.group(2)))
+    home = Path.home() / ".fhir" / "packages"
+    dirs = [home / f"{p}#{v}" / "package" for p, v in pkgs]
+    for d in dirs:
+        if not d.exists():
+            print(f"  WARNING  FHIR package {d.parent.name} not in {home}; run sushi once to download it")
+    return [d for d in dirs if d.exists()]
+
+
+def check_terminology(defs, offline=False):
+    """Validate every code of the definitions against its code system (_terminology.py); returns the
+    fragment CodeSystems of the table code systems (NZa) as FSH, or None when none is used."""
+    import _terminology as T
+    from _syncDefinitions import cache_file, lookup, CACHE_DIR
+    items = T.collect(defs, split_token, REF)
+    try:
+        sources = T.load_sources(load_external("CodeSystem").values(), cache_file, CACHE_DIR, lookup,
+                                 downloaded, defs["cs"].values(), offline,
+                                 fhir_package_dirs(), {i[1] for i in items})
+    except T.TerminologyError as e:
+        raise DefinitionError(str(e))
+    errors, warnings, used = T.validate(items, sources, defs["display"])
+    T.save_sources(sources)
+    print(f"Checking codes ({len(items)} codings, {len(sources)} code systems)")
+    for e in errors:
+        print(f"  ERROR    {e}")
+    for w in warnings:
+        print(f"  WARNING  {w}")
+    if errors:
+        raise DefinitionError(f"{len(errors)} code(s) do not match their code system; nothing was written")
+    return T.gen_fragments(sources, used, HEADER) if used else None
+
+
 def main():
     import datetime
     today = None
@@ -1466,14 +1588,15 @@ def main():
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
     res = Resolver(defs)
+    code_systems = check_terminology(defs, "--offline" in sys.argv)  # before the models: fills in missing displays
     models = {ds["id"]: derive_model(defs, res, ds) for ds in defs["dataset"].values()}
     for ds in defs["dataset"].values():
         for w in check_against_base(defs, ds, resources_of(models[ds["id"]])):
-            print(f"  WARNING: {w}")
+            print(f"  WARNING  {w}")
     for od_id, od in defs["od"].items():  # every referenced answer set must be local or registered
         ref = vs_ref_id(od)
         if ref and is_url(ref) and not any(unpinned(e["canonical"]) == unpinned(ref) for e in res.external.values()):
-            print(f"  WARNING: {od_id} refers to {ref}, which is not registered in external-definitions.yaml")
+            print(f"  WARNING  {od_id} refers to {ref}, which is not registered in external-definitions.yaml")
     if today:
         show_resolved(defs, res, today)
         return
@@ -1489,6 +1612,10 @@ def main():
         write(d / "Model.fsh", gen_model_fsh(defs, res, ds["id"], models[ds["id"]]))
         write(d / "Exports.fsh", gen_exports_fsh(defs, res, ds))
         keep |= {d / "Model.fsh", d / "Exports.fsh"}
+    if code_systems:
+        f = GEN_DIR / "terminology" / "NzaCodeSystems.fsh"
+        write(f, code_systems)
+        keep.add(f)
     for f in sorted(GEN_DIR.rglob("*.fsh")):
         if f not in keep:
             f.unlink()
@@ -1505,11 +1632,14 @@ def main():
     for ds in defs["dataset"].values():
         write(PAGE_DIR / f"{ds['id']}.md", gen_dataset_page(defs, res, ds, exports(defs, res, ds), models[ds["id"]]))
         if f"{ds['id']}.md" not in cfg:
-            print(f"  WARNING: add {ds['id']}.md under 'datasets.md' in the pages of sushi-config.yaml")
+            print(f"  WARNING  add {ds['id']}.md under 'datasets.md' in the pages of sushi-config.yaml")
 
 
 if __name__ == "__main__":
+    import _log
+    _log.install()
     try:
         main()
     except DefinitionError as e:
-        sys.exit(f"ERROR: {e}")
+        sys.stdout.flush()
+        sys.exit(f"\nERROR: {e}")

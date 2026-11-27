@@ -48,3 +48,57 @@ luscii-prems:
   canonical: http://decor.nictiz.nl/fhir/Questionnaire/2.16.840.1.113883.2.4.3.11.60.124.27.62--20250714064425
   version: "2025-07-14T06:44:25"
   mode: download
+
+# NZa code tables (dbc-pakket RZ26, puc.overheid.nl). No FHIR server offers these code systems;
+# fetch reads the table with the validity period per code into terminology-cache/, the generator
+# validates against it and generates a fragment CodeSystem with the codes in use.
+# The OIDs are an assumption (not confirmed in a public OID register).
+nza-dbc-diagnose:
+  type: CodeSystem
+  source: nza
+  table: typeringslijst-diagnose
+  puc: PUC_789350_22
+  canonical: urn:oid:2.16.840.1.113883.2.4.3.27.15.4.{specialisme}
+  version: "20250501"
+
+nza-zorgtype:
+  type: CodeSystem
+  source: nza
+  table: typeringslijst-zorgtype
+  puc: PUC_789350_22
+  canonical: https://declaratie.nza.nl/zorgtype
+  version: "20250501"
+
+nza-zorgactiviteit:
+  type: CodeSystem
+  source: nza
+  table: zorgactiviteiten
+  puc: PUC_801981_22
+  canonical: urn:oid:2.16.840.1.113883.2.4.3.27.15.5
+  version: "20251001"
+
+# Code systems checked per code with CodeSystem/$lookup (mode lookup). The answers are
+# kept in terminology-cache/lookups.json. NTS needs NTS_USERNAME / NTS_PASSWORD (.env).
+# ART-DECOR does not support $lookup, so it cannot serve as a source here.
+# CodeSystems of FHIR core and HL7 Terminology (the packages in sushi-config.yaml) need no entry:
+# the generator reads them from the local FHIR package cache.
+snomed:
+  type: CodeSystem
+  source: nts
+  canonical: http://snomed.info/sct
+
+loinc:
+  type: CodeSystem
+  source: nts
+  canonical: http://loinc.org
+
+icd-10-nl:
+  type: CodeSystem
+  source: nts
+  canonical: http://hl7.org/fhir/sid/icd-10-nl
+
+ucum:
+  type: CodeSystem
+  source: fhir
+  base: https://tx.fhir.org/r4
+  canonical: http://unitsofmeasure.org

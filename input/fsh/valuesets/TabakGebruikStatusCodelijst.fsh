@@ -5,7 +5,7 @@ Id: TabakGebruikStatusCodelijst
 Title: "TabakGebruikStatusCodelijst"
 Description: "Codelijst voor de rookstatus van een patiënt, zoals gebruikt in het Santeon Informatiemodel (SIM-versie 2024-04-24)."
 
-* $NullFlavor#OTH "Other"
+* $NullFlavor#OTH "other"
 * $SCT#449868002 "Rookt dagelijks tabak"
 * $SCT#428041000124106 "Rookt soms tabak"
 * $SCT#43381005 "Rookt passief tabak"

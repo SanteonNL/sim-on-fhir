@@ -14,11 +14,10 @@ Title: "Procedure code (sb-ibd)"
 Description: "Every code the data requirements of dataset sb-ibd ask for on Procedure: the ObservationDefinition codes and the value sets referenced by its Procedure criteria."
 * ^status = #draft
 * ^experimental = false
-* urn:oid:2.16.840.1.113883.2.4.3.27.15.5#034620
-* urn:oid:2.16.840.1.113883.2.4.3.27.15.5#034686
-* urn:oid:2.16.840.1.113883.2.4.3.27.15.5#034690
-* urn:oid:2.16.840.1.113883.2.4.3.27.15.5#035582
-* include codes from valueset https://ig.santeon.nl/sim-on-fhir/ValueSet/ibd-verrichting-codes-nza
+* urn:oid:2.16.840.1.113883.2.4.3.27.15.5#034620 "Diagnostische endoscopie van oesofagus, maag en/of duodenum met behulp van flexibele endoscoop, eventueel inclusief biopten of antroduodenale manometrie."
+* urn:oid:2.16.840.1.113883.2.4.3.27.15.5#034686 "Diagnostische endoscopie van het colon met behulp van flexibele endoscoop, eventueel inclusief biopten, poliepectomie of colonmanometrie."
+* urn:oid:2.16.840.1.113883.2.4.3.27.15.5#034690 "Diagnostische endoscopie alleen van het sigmoïd met behulp van een flexibele endoscoop, inclusief eventuele biopten en poliepectomie."
+* urn:oid:2.16.840.1.113883.2.4.3.27.15.5#035582 "Diagnostische laparoscopie, inclusief eventuele proefexcisie(s) (excl. bij vruchtbaarheidsproblematiek, zie 035583)."
 
 Profile: SbIbdProcedure
 Parent: ProcedureSan

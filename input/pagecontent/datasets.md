@@ -11,16 +11,16 @@ Each dataset is exported on its own Group and has its own generated profiles, de
 
 ### Data requirements in use
 
-| Data requirement | Version | Used in |
-|---|---|---|
-| [Alcoholgebruik vastgelegd](Binary-alcohol-status-recorded.html) | 0.1.0 | _none_ |
-| [Acute CVA-verrichtingen](Binary-cva-acute-procedures.html) | 0.1.0 | [sb-cva](sb-cva.html) |
-| [NIHSS bij CVA](Binary-cva-nihss.html) | 0.1.0 | [sb-cva](sb-cva.html) |
-| [K3.1.2 Scopie](Binary-k312-scopie.html) | 0.1.0 | [sb-ibd](sb-ibd.html) |
-| [K3.6.3 Calprotectine voor scopie](Binary-k363-calprotectin-before-scopie.html) | 0.1.0 | [sb-ibd](sb-ibd.html) |
-| [Luscii PREMs](Binary-luscii-prems.html) | 0.1.0 | [sb-cva](sb-cva.html), [sb-ibd](sb-ibd.html) |
-| [CVA bij volwassenen (Group sb-cva)](Binary-sb-cva-group.html) | 0.1.0 | [sb-cva](sb-cva.html) (Group) |
-| [IBD bij volwassenen (Group sb-ibd)](Binary-sb-ibd-group.html) | 0.1.0 | [sb-ibd](sb-ibd.html) (Group) |
+| Data requirement | Version | Builds on | Used in |
+|---|---|---|---|
+| [Alcoholgebruik vastgelegd](Binary-alcohol-status-recorded.html) | 0.1.0 | - | _none_ |
+| [Acute CVA-verrichtingen](Binary-cva-acute-procedures.html) | 0.1.0 | - | [sb-cva](sb-cva.html) |
+| [NIHSS bij CVA](Binary-cva-nihss.html) | 0.1.0 | - | [sb-cva](sb-cva.html) |
+| [K3.1.2 Scopie](Binary-k312-scopie.html) | 0.1.0 | - | [sb-ibd](sb-ibd.html) |
+| [K3.6.3 Calprotectine voor scopie](Binary-k363-calprotectin-before-scopie.html) | 0.1.0 | [K3.1.2 Scopie](Binary-k312-scopie.html) | [sb-ibd](sb-ibd.html) |
+| [Luscii PREMs](Binary-luscii-prems.html) | 0.1.0 | - | [sb-cva](sb-cva.html), [sb-ibd](sb-ibd.html) |
+| [CVA bij volwassenen (Group sb-cva)](Binary-sb-cva-group.html) | 0.1.0 | - | [sb-cva](sb-cva.html) (Group) |
+| [IBD bij volwassenen (Group sb-ibd)](Binary-sb-ibd-group.html) | 0.1.0 | - | [sb-ibd](sb-ibd.html) (Group) |
 
 ---
 

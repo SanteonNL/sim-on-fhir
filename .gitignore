@@ -25,3 +25,9 @@
 
 # Versioned release files (_release.py dist)
 /dist
+
+# NZa code tables read by _syncDefinitions.py fetch (validation input, not published)
+/terminology-cache/
+
+# Local secrets (NTS_USERNAME, NTS_PASSWORD), read by _syncDefinitions.py
+.env

@@ -20,7 +20,7 @@ A patient is in the Group when **all** filters apply.
 | Resource | Field | Parameter | Condition |
 |---|---|---|---|
 | **Patient** | `birthDate` | `birthdate` | 18 years or older at delivery |
-| **Condition** | `code` | `code:below` | ICD-10 I61, I62, I63 (incl. subcodes) |
+| **Condition** | `code` | `code:below` | ICD-10:<br>I61 Intracerebrale bloeding<br>I62 Overige niet-traumatische intracraniële bloeding<br>I63 Herseninfarct (incl. subcodes) |
 |  | `onset[x]` | `onset-date` | ≥ 2018-01-01 |
 
 ### Export

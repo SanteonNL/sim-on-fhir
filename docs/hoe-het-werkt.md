@@ -89,6 +89,36 @@ Een externe lijst wordt **niet** gekopieerd. In `external-definitions.yaml` staa
 
 **Antwoorden bij een meting** kunnen op twee manieren: als lijst bij de meting zelf (bijvoorbeeld uit ART-DECOR) of als `value-concept` in een indicator. Het script voegt beide samen tot één antwoordenlijst per meting.
 
+## Codes controleren
+
+Het script controleert elke code die je in een definitie gebruikt. Het gaat om de codes in zoekvragen, in metingen en in eigen ValueSets. Per code controleert het:
+
+- of de code bestaat in het codestelsel;
+- of de omschrijving (display) klopt;
+- of de code geldig was in de periode van de zoekvraag (bijvoorbeeld `date=ge2018-01-01`).
+
+Een fout stopt het script. Laat je de display weg, dan vult het script de officiële omschrijving in.
+
+Alles wordt eerst omgezet naar een **FHIR CodeSystem**. Daarna wordt alleen daartegen gecontroleerd. Per codestelsel staat in `external-definitions.yaml` (`type: CodeSystem`) waar dat CodeSystem vandaan komt:
+
+| Bron | Hoe het een FHIR CodeSystem wordt | Voorbeeld |
+|---|---|---|
+| NZa dbc-pakket (`source: nza`) | `fetch` haalt de tabel op en zet hem om naar een volledig CodeSystem, met ingangs- en afloopdatum per code | DBC-diagnosen, zorgactiviteiten |
+| ART-DECOR (`source: decor`) | `fetch` importeert het vastgepinde CodeSystem, net als een ValueSet. ART-DECOR kan geen losse codes opzoeken | eigen Santeon-codelijsten |
+| NTS of een andere FHIR-server (`mode: lookup`) | het script zoekt elke nieuwe code één keer op en bewaart het antwoord als CodeSystem-fragment in `terminology-cache/` | SNOMED, LOINC, UCUM |
+| Deze repository | een CodeSystem in de FSH telt automatisch mee | |
+| FHIR-packages uit `sushi-config.yaml` | het script leest ze uit de lokale package-cache van SUSHI, in precies de versie die SUSHI gebruikt. Geen entry nodig | `episode-of-care-status`, `v3-NullFlavor`, `observation-category` |
+
+Een codestelsel zonder bron meldt het script als "not validated". Voor de NZa-codestelsels zet het script een CodeSystem met alleen de gebruikte codes in de IG (`input/fsh/generated/terminology/`). De OID's van de NZa-codestelsels zijn een aanname.
+
+```
+py -3 _syncDefinitions.py fetch               # NZa-tabellen en ART-DECOR-CodeSystems ophalen en omzetten
+py -3 _generateFromDefinitions.py             # controleert de codes en genereert
+py -3 _generateFromDefinitions.py --offline   # geen server vragen; alleen wat al in terminology-cache/ staat
+```
+
+De NZa heeft geen API voor nieuwe releases. Bij een nieuw dbc-pakket pas je `puc` en `version` in `external-definitions.yaml` met de hand aan.
+
 ## Wat je doet bij...
 
 **Een nieuwe indicator.** Voeg in `Kpis.fsh` een indicator toe met zijn zoekvragen. Noem hem in `datasets/<naam>.fsh` onder `kpi`. Draai het script.
@@ -110,7 +140,7 @@ py -3 _syncDefinitions.py check      # meldt wat verouderd is
 py -3 _syncDefinitions.py update     # zet verouderde lijsten op de nieuwste versie
 ```
 
-Voor de NTS zijn `NTS_USERNAME` en `NTS_PASSWORD` nodig als omgevingsvariabelen. Ze staan nergens in de repository.
+Voor de NTS zijn `NTS_USERNAME` en `NTS_PASSWORD` nodig, als omgevingsvariabele of in een lokaal `.env`-bestand in de hoofdmap. Dat bestand staat in `.gitignore` en komt dus niet in de repository.
 
 **Alles opnieuw genereren en bouwen:**
 
